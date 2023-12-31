@@ -1,0 +1,225 @@
+[gd_scene load_steps=39 format=2]
+
+[ext_resource path="res://Enemies/military_incursion_bot_walk_red.png" type="Texture" id=1]
+[ext_resource path="res://Hitboxes and Hurtboxes/Hurtbox.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Shadows/LargeShadow.png" type="Texture" id=3]
+[ext_resource path="res://Enemies/DroidBoss.gd" type="Script" id=4]
+[ext_resource path="res://Stats.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Enemies/PlayerDetectionZone.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Enemies/WanderController.tscn" type="PackedScene" id=7]
+[ext_resource path="res://SoftCollision.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Hitboxes and Hurtboxes/Hitbox.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Enemies/military_incursion_bot_attack_red.png" type="Texture" id=10]
+[ext_resource path="res://Music and Sounds/MechEngineSound.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Enemies/Military Incursion Bot Sprite Stagger.png" type="Texture" id=12]
+[ext_resource path="res://Music and Sounds/OMT_TightHipHopDrums_DrumNBass_FullBeat_170bpm.wav" type="AudioStream" id=13]
+[ext_resource path="res://Music and Sounds/electricity_glitch_46.wav" type="AudioStream" id=14]
+
+[sub_resource type="AtlasTexture" id=28]
+atlas = ExtResource( 10 )
+region = Rect2( 0, 0, 160, 125 )
+
+[sub_resource type="AtlasTexture" id=29]
+atlas = ExtResource( 10 )
+region = Rect2( 160, 0, 160, 125 )
+
+[sub_resource type="AtlasTexture" id=30]
+atlas = ExtResource( 10 )
+region = Rect2( 320, 0, 160, 125 )
+
+[sub_resource type="AtlasTexture" id=31]
+atlas = ExtResource( 10 )
+region = Rect2( 480, 0, 160, 125 )
+
+[sub_resource type="AtlasTexture" id=32]
+atlas = ExtResource( 10 )
+region = Rect2( 640, 0, 160, 125 )
+
+[sub_resource type="AtlasTexture" id=33]
+atlas = ExtResource( 10 )
+region = Rect2( 800, 0, 160, 125 )
+
+[sub_resource type="AtlasTexture" id=34]
+atlas = ExtResource( 10 )
+region = Rect2( 960, 0, 160, 125 )
+
+[sub_resource type="AtlasTexture" id=35]
+atlas = ExtResource( 10 )
+region = Rect2( 1120, 0, 160, 125 )
+
+[sub_resource type="AtlasTexture" id=36]
+atlas = ExtResource( 10 )
+region = Rect2( 1280, 0, 160, 125 )
+
+[sub_resource type="AtlasTexture" id=37]
+atlas = ExtResource( 10 )
+region = Rect2( 1440, 0, 160, 125 )
+
+[sub_resource type="AtlasTexture" id=43]
+atlas = ExtResource( 12 )
+region = Rect2( 200, 0, 163, 116 )
+
+[sub_resource type="AtlasTexture" id=44]
+atlas = ExtResource( 12 )
+region = Rect2( 371, 0, 163, 116 )
+
+[sub_resource type="AtlasTexture" id=38]
+atlas = ExtResource( 1 )
+region = Rect2( 57, 0, 159, 130 )
+
+[sub_resource type="AtlasTexture" id=39]
+atlas = ExtResource( 1 )
+region = Rect2( 216, 0, 159, 130 )
+
+[sub_resource type="AtlasTexture" id=40]
+atlas = ExtResource( 1 )
+region = Rect2( 375, 0, 159, 130 )
+
+[sub_resource type="AtlasTexture" id=41]
+atlas = ExtResource( 1 )
+region = Rect2( 534, 0, 159, 130 )
+
+[sub_resource type="SpriteFrames" id=7]
+animations = [ {
+"frames": [ SubResource( 28 ), SubResource( 29 ), SubResource( 30 ), SubResource( 31 ), SubResource( 32 ), SubResource( 33 ), SubResource( 34 ), SubResource( 35 ), SubResource( 36 ), SubResource( 37 ) ],
+"loop": true,
+"name": "attack",
+"speed": 10.0
+}, {
+"frames": [ SubResource( 43 ), SubResource( 44 ) ],
+"loop": true,
+"name": "stagger",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 38 ), SubResource( 39 ), SubResource( 40 ), SubResource( 41 ), SubResource( 40 ), SubResource( 39 ) ],
+"loop": true,
+"name": "walk",
+"speed": 5.0
+} ]
+
+[sub_resource type="CapsuleShape2D" id=8]
+radius = 20.0
+
+[sub_resource type="CapsuleShape2D" id=9]
+radius = 21.6667
+height = 22.0
+
+[sub_resource type="CircleShape2D" id=10]
+radius = 183.341
+
+[sub_resource type="CapsuleShape2D" id=11]
+radius = 25.0
+
+[sub_resource type="CapsuleShape2D" id=12]
+radius = 26.6667
+
+[sub_resource type="CapsuleShape2D" id=23]
+radius = 22.3795
+height = 14.3579
+
+[sub_resource type="CircleShape2D" id=42]
+radius = 181.789
+
+[node name="DroidBoss" type="KinematicBody2D"]
+scale = Vector2( 0.6, 0.6 )
+script = ExtResource( 4 )
+MAX_SPEED = 50
+
+[node name="ShadowSprite" type="Sprite" parent="."]
+position = Vector2( 15, 6.66667 )
+scale = Vector2( 2.14062, 1.08333 )
+texture = ExtResource( 3 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( -70, -31.6667 )
+scale = Vector2( 1.2, 1.2 )
+frames = SubResource( 7 )
+animation = "attack"
+frame = 7
+playing = true
+centered = false
+offset = Vector2( 1, -60 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2( 15, -28.3333 )
+shape = SubResource( 8 )
+
+[node name="Hurtbox" parent="." instance=ExtResource( 2 )]
+visible = false
+collision_layer = 8
+
+[node name="CollisionShape2D" parent="Hurtbox" index="0"]
+position = Vector2( 15, -28.3333 )
+shape = SubResource( 9 )
+
+[node name="Stats" parent="." instance=ExtResource( 5 )]
+max_health = 6
+
+[node name="PlayerDetectionZone" parent="." instance=ExtResource( 6 )]
+
+[node name="CollisionShape2D" parent="PlayerDetectionZone" index="0"]
+position = Vector2( 15, -28.3333 )
+shape = SubResource( 10 )
+
+[node name="Hitbox" parent="." instance=ExtResource( 9 )]
+collision_mask = 4
+
+[node name="CollisionShape2D" parent="Hitbox" index="0"]
+position = Vector2( 16.6667, -28.3333 )
+shape = SubResource( 11 )
+
+[node name="SoftCollision" parent="." instance=ExtResource( 8 )]
+visible = false
+
+[node name="CollisionShape2D" parent="SoftCollision" index="0"]
+position = Vector2( 13.3333, -28.3333 )
+shape = SubResource( 12 )
+
+[node name="WanderController" parent="." instance=ExtResource( 7 )]
+
+[node name="Hitbox2" parent="." instance=ExtResource( 9 )]
+collision_mask = 4
+damage = 3
+
+[node name="CollisionShape2D" parent="Hitbox2" index="0"]
+position = Vector2( 45, -30 )
+rotation = 0.349066
+scale = Vector2( 0.819203, 1.01494 )
+shape = SubResource( 23 )
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
+[node name="SoundTrigger" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SoundTrigger"]
+position = Vector2( 15, -26.6667 )
+shape = SubResource( 42 )
+
+[node name="MechEngineSound" parent="." instance=ExtResource( 11 )]
+stream = ExtResource( 13 )
+volume_db = -10.0
+pitch_scale = 0.95
+
+[node name="Timer2" type="Timer" parent="."]
+wait_time = 2.0
+
+[node name="StaggerSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 14 )
+volume_db = -5.0
+
+[connection signal="area_entered" from="Hurtbox" to="." method="_on_Hurtbox_area_entered"]
+[connection signal="no_health" from="Stats" to="." method="_on_Stats_no_health"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[connection signal="area_entered" from="SoundTrigger" to="." method="_on_SoundTrigger_area_entered"]
+[connection signal="area_exited" from="SoundTrigger" to="." method="_on_SoundTrigger_area_exited"]
+[connection signal="timeout" from="Timer2" to="." method="_on_Timer2_timeout"]
+
+[editable path="Hurtbox"]
+[editable path="PlayerDetectionZone"]
+[editable path="Hitbox"]
+[editable path="SoftCollision"]
+[editable path="Hitbox2"]

@@ -1,0 +1,98 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://ForestBear.gd" type="Script" id=1]
+[ext_resource path="res://Animals/forest_bear_walking.png" type="Texture" id=2]
+[ext_resource path="res://Shadows/MediumShadow.png" type="Texture" id=3]
+[ext_resource path="res://UI/panel_Intro.png" type="Texture" id=4]
+[ext_resource path="res://Animals/FreedPopup.tscn" type="PackedScene" id=5]
+
+[sub_resource type="AtlasTexture" id=1]
+atlas = ExtResource( 2 )
+region = Rect2( 0, 0, 33, 30 )
+
+[sub_resource type="AtlasTexture" id=2]
+atlas = ExtResource( 2 )
+region = Rect2( 33, 0, 33, 30 )
+
+[sub_resource type="SpriteFrames" id=5]
+animations = [ {
+"frames": [ SubResource( 1 ), SubResource( 2 ) ],
+"loop": true,
+"name": "walk",
+"speed": 1.0
+} ]
+
+[sub_resource type="CapsuleShape2D" id=6]
+radius = 7.64704
+height = 8.0
+
+[sub_resource type="CapsuleShape2D" id=7]
+radius = 6.47059
+height = 4.70588
+
+[node name="ForestBear" type="KinematicBody2D"]
+scale = Vector2( 1.7, 1.7 )
+script = ExtResource( 1 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+frames = SubResource( 5 )
+animation = "walk"
+playing = true
+
+[node name="ShadowSprite" type="Sprite" parent="."]
+position = Vector2( 0, 0.4 )
+scale = Vector2( 1, 0.6 )
+texture = ExtResource( 3 )
+offset = Vector2( -1, 7 )
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+rotation = 1.5708
+shape = SubResource( 6 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+rotation = 1.5708
+shape = SubResource( 7 )
+
+[node name="RescuePopUp" type="PopupDialog" parent="."]
+visible = true
+margin_left = -18.0
+margin_top = 7.0
+margin_right = -18.0
+margin_bottom = 7.0
+
+[node name="Sprite" type="Sprite" parent="RescuePopUp"]
+position = Vector2( 78.2389, 15.3529 )
+scale = Vector2( 0.359232, 0.337255 )
+texture = ExtResource( 4 )
+
+[node name="RichTextLabel" type="RichTextLabel" parent="RescuePopUp"]
+margin_left = 6.12491
+margin_top = 4.17647
+margin_right = 294.124
+margin_bottom = 64.1764
+rect_scale = Vector2( 0.5, 0.5 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+bbcode_enabled = true
+bbcode_text = "[center] Thank you!  
+ I can finally return to my family.  They're probably wondering where I am. [/center]"
+tab_size = 3
+text = " Thank you!  
+ I can finally return to my family.  They're probably wondering where I am. "
+fit_content_height = true
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 8.0
+
+[node name="FreedPopup" parent="." instance=ExtResource( 5 )]
+
+[node name="Timer2" type="Timer" parent="."]
+wait_time = 3.0
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_Area2D_area_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[connection signal="timeout" from="Timer2" to="." method="_on_Timer2_timeout"]

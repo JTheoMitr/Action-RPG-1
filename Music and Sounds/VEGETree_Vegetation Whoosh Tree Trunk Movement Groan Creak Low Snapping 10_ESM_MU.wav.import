@@ -1,0 +1,23 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/VEGETree_Vegetation Whoosh Tree Trunk Movement Groan Creak Low Snapping 10_ESM_MU.wav-43fa8fbc89e53b3df7c53d3d92e9471b.sample"
+
+[deps]
+
+source_file="res://Music and Sounds/VEGETree_Vegetation Whoosh Tree Trunk Movement Groan Creak Low Snapping 10_ESM_MU.wav"
+dest_files=[ "res://.import/VEGETree_Vegetation Whoosh Tree Trunk Movement Groan Creak Low Snapping 10_ESM_MU.wav-43fa8fbc89e53b3df7c53d3d92e9471b.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

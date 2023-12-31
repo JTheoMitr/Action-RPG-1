@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Music and Sounds/Text-to-Speech_12-May-2023_00-30.mp3" type="AudioStream" id=1]
+
+[node name="VomvisTTS" type="AudioStreamPlayer"]
+stream = ExtResource( 1 )
+volume_db = -9.0
+pitch_scale = 0.95

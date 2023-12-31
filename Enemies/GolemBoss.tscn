@@ -1,0 +1,358 @@
+[gd_scene load_steps=66 format=2]
+
+[ext_resource path="res://Enemies/GolemBoss.gd" type="Script" id=1]
+[ext_resource path="res://Hitboxes and Hurtboxes/Hurtbox.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Shadows/LargeShadow.png" type="Texture" id=3]
+[ext_resource path="res://Enemies/golem_purple_idle_charge.png" type="Texture" id=4]
+[ext_resource path="res://Stats.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Enemies/PlayerDetectionZone.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Enemies/WanderController.tscn" type="PackedScene" id=7]
+[ext_resource path="res://SoftCollision.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Hitboxes and Hurtboxes/Hitbox.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Enemies/golem_purple_shield.png" type="Texture" id=10]
+[ext_resource path="res://Music and Sounds/MechEngineSound.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Enemies/golem_purple_attack.png" type="Texture" id=12]
+[ext_resource path="res://Music and Sounds/KOTWB_ICEBOSS_225BPM.wav" type="AudioStream" id=13]
+[ext_resource path="res://Music and Sounds/RumblePassByMetallicTonal_ADPTu_01.wav" type="AudioStream" id=14]
+[ext_resource path="res://Effects/SlideDust.png" type="Texture" id=15]
+[ext_resource path="res://Enemies/golem_blinking_attack.png" type="Texture" id=16]
+[ext_resource path="res://Music and Sounds/PSRS_Fx_One_Shot_Glitch_Click.wav" type="AudioStream" id=17]
+
+[sub_resource type="AtlasTexture" id=43]
+atlas = ExtResource( 12 )
+region = Rect2( 1, 0, 100, 100 )
+
+[sub_resource type="AtlasTexture" id=44]
+atlas = ExtResource( 12 )
+region = Rect2( 101, 0, 100, 100 )
+
+[sub_resource type="AtlasTexture" id=45]
+atlas = ExtResource( 12 )
+region = Rect2( 201, 0, 100, 100 )
+
+[sub_resource type="AtlasTexture" id=46]
+atlas = ExtResource( 12 )
+region = Rect2( 301, 0, 100, 100 )
+
+[sub_resource type="AtlasTexture" id=47]
+atlas = ExtResource( 12 )
+region = Rect2( 401, 0, 100, 100 )
+
+[sub_resource type="AtlasTexture" id=48]
+atlas = ExtResource( 12 )
+region = Rect2( 501, 0, 100, 100 )
+
+[sub_resource type="AtlasTexture" id=49]
+atlas = ExtResource( 12 )
+region = Rect2( 601, 0, 100, 100 )
+
+[sub_resource type="AtlasTexture" id=50]
+atlas = ExtResource( 12 )
+region = Rect2( 701, 0, 100, 100 )
+
+[sub_resource type="AtlasTexture" id=51]
+atlas = ExtResource( 12 )
+region = Rect2( 801, 0, 100, 100 )
+
+[sub_resource type="AtlasTexture" id=74]
+atlas = ExtResource( 16 )
+region = Rect2( 0, 0, 100, 100 )
+
+[sub_resource type="AtlasTexture" id=75]
+atlas = ExtResource( 16 )
+region = Rect2( 100, 0, 100, 100 )
+
+[sub_resource type="AtlasTexture" id=76]
+atlas = ExtResource( 16 )
+region = Rect2( 200, 0, 100, 100 )
+
+[sub_resource type="AtlasTexture" id=77]
+atlas = ExtResource( 16 )
+region = Rect2( 300, 0, 100, 100 )
+
+[sub_resource type="AtlasTexture" id=78]
+atlas = ExtResource( 16 )
+region = Rect2( 400, 0, 100, 100 )
+
+[sub_resource type="AtlasTexture" id=79]
+atlas = ExtResource( 16 )
+region = Rect2( 500, 0, 100, 100 )
+
+[sub_resource type="AtlasTexture" id=80]
+atlas = ExtResource( 16 )
+region = Rect2( 600, 0, 100, 100 )
+
+[sub_resource type="AtlasTexture" id=81]
+atlas = ExtResource( 16 )
+region = Rect2( 700, 0, 100, 100 )
+
+[sub_resource type="AtlasTexture" id=82]
+atlas = ExtResource( 16 )
+region = Rect2( 800, 0, 100, 100 )
+
+[sub_resource type="AtlasTexture" id=52]
+atlas = ExtResource( 10 )
+region = Rect2( 0, 0, 100, 100 )
+
+[sub_resource type="AtlasTexture" id=53]
+atlas = ExtResource( 10 )
+region = Rect2( 100, 0, 100, 100 )
+
+[sub_resource type="AtlasTexture" id=54]
+atlas = ExtResource( 10 )
+region = Rect2( 200, 0, 100, 100 )
+
+[sub_resource type="AtlasTexture" id=55]
+atlas = ExtResource( 10 )
+region = Rect2( 300, 0, 100, 100 )
+
+[sub_resource type="AtlasTexture" id=56]
+atlas = ExtResource( 10 )
+region = Rect2( 400, 0, 100, 100 )
+
+[sub_resource type="AtlasTexture" id=57]
+atlas = ExtResource( 10 )
+region = Rect2( 500, 0, 100, 100 )
+
+[sub_resource type="AtlasTexture" id=58]
+atlas = ExtResource( 10 )
+region = Rect2( 600, 0, 100, 100 )
+
+[sub_resource type="AtlasTexture" id=59]
+atlas = ExtResource( 10 )
+region = Rect2( 700, 0, 100, 100 )
+
+[sub_resource type="AtlasTexture" id=60]
+atlas = ExtResource( 4 )
+region = Rect2( 0, 0, 100, 100 )
+
+[sub_resource type="AtlasTexture" id=61]
+atlas = ExtResource( 4 )
+region = Rect2( 100, 0, 100, 100 )
+
+[sub_resource type="AtlasTexture" id=62]
+atlas = ExtResource( 4 )
+region = Rect2( 200, 0, 100, 100 )
+
+[sub_resource type="AtlasTexture" id=63]
+atlas = ExtResource( 4 )
+region = Rect2( 300, 0, 100, 100 )
+
+[sub_resource type="AtlasTexture" id=64]
+atlas = ExtResource( 4 )
+region = Rect2( 400, 0, 100, 100 )
+
+[sub_resource type="AtlasTexture" id=65]
+atlas = ExtResource( 4 )
+region = Rect2( 500, 0, 100, 100 )
+
+[sub_resource type="AtlasTexture" id=66]
+atlas = ExtResource( 4 )
+region = Rect2( 600, 0, 100, 100 )
+
+[sub_resource type="AtlasTexture" id=67]
+atlas = ExtResource( 4 )
+region = Rect2( 700, 0, 100, 100 )
+
+[sub_resource type="SpriteFrames" id=7]
+animations = [ {
+"frames": [ SubResource( 43 ), SubResource( 44 ), SubResource( 45 ), SubResource( 46 ), SubResource( 47 ), SubResource( 48 ), SubResource( 49 ), SubResource( 50 ), SubResource( 51 ) ],
+"loop": true,
+"name": "attack",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 74 ), SubResource( 75 ), SubResource( 76 ), SubResource( 77 ), SubResource( 78 ), SubResource( 79 ), SubResource( 80 ), SubResource( 81 ), SubResource( 82 ) ],
+"loop": true,
+"name": "blinking",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 52 ), SubResource( 53 ), SubResource( 54 ), SubResource( 55 ), SubResource( 56 ), SubResource( 57 ), SubResource( 58 ), SubResource( 59 ) ],
+"loop": true,
+"name": "shield",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 60 ), SubResource( 61 ), SubResource( 62 ), SubResource( 63 ), SubResource( 64 ), SubResource( 65 ), SubResource( 66 ), SubResource( 67 ) ],
+"loop": true,
+"name": "walk",
+"speed": 5.0
+} ]
+
+[sub_resource type="AtlasTexture" id=68]
+atlas = ExtResource( 15 )
+region = Rect2( 0, 0, 25, 21 )
+
+[sub_resource type="AtlasTexture" id=69]
+atlas = ExtResource( 15 )
+region = Rect2( 25, 0, 25, 21 )
+
+[sub_resource type="AtlasTexture" id=70]
+atlas = ExtResource( 15 )
+region = Rect2( 50, 0, 25, 21 )
+
+[sub_resource type="AtlasTexture" id=71]
+atlas = ExtResource( 15 )
+region = Rect2( 75, 0, 25, 21 )
+
+[sub_resource type="AtlasTexture" id=72]
+atlas = ExtResource( 15 )
+region = Rect2( 100, 0, 25, 21 )
+
+[sub_resource type="SpriteFrames" id=73]
+animations = [ {
+"frames": [ SubResource( 68 ), SubResource( 69 ), SubResource( 70 ), SubResource( 71 ), SubResource( 72 ) ],
+"loop": true,
+"name": "dusting",
+"speed": 5.0
+} ]
+
+[sub_resource type="CapsuleShape2D" id=8]
+radius = 20.0
+
+[sub_resource type="CapsuleShape2D" id=9]
+radius = 21.6667
+height = 22.0
+
+[sub_resource type="CircleShape2D" id=10]
+radius = 236.156
+
+[sub_resource type="CapsuleShape2D" id=11]
+radius = 25.0
+
+[sub_resource type="CapsuleShape2D" id=12]
+radius = 26.6667
+
+[sub_resource type="CapsuleShape2D" id=23]
+radius = 22.3795
+height = 14.3579
+
+[sub_resource type="CircleShape2D" id=42]
+radius = 240.023
+
+[node name="GolemBoss" type="KinematicBody2D"]
+scale = Vector2( 1.4, 1.4 )
+script = ExtResource( 1 )
+ACCELERATION = 300
+MAX_SPEED = 70
+
+[node name="ShadowSprite" type="Sprite" parent="."]
+position = Vector2( 15, 6.66667 )
+scale = Vector2( 2.14062, 1.08333 )
+texture = ExtResource( 3 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( -40, -10 )
+scale = Vector2( 1.2, 1.2 )
+frames = SubResource( 7 )
+animation = "walk"
+frame = 7
+playing = true
+centered = false
+offset = Vector2( 1, -60 )
+
+[node name="DustAnimation" type="AnimatedSprite" parent="."]
+position = Vector2( 15, -5 )
+scale = Vector2( 1.3, 1 )
+frames = SubResource( 73 )
+animation = "dusting"
+frame = 2
+playing = true
+
+[node name="DustAnimation2" type="AnimatedSprite" parent="."]
+position = Vector2( 25, -5 )
+scale = Vector2( 1.3, 1 )
+frames = SubResource( 73 )
+animation = "dusting"
+frame = 1
+playing = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2( 15, -28.3333 )
+shape = SubResource( 8 )
+
+[node name="Hurtbox" parent="." instance=ExtResource( 2 )]
+visible = false
+collision_layer = 8
+
+[node name="CollisionShape2D" parent="Hurtbox" index="0"]
+position = Vector2( 15, -28.3333 )
+shape = SubResource( 9 )
+
+[node name="Stats" parent="." instance=ExtResource( 5 )]
+max_health = 8
+
+[node name="PlayerDetectionZone" parent="." instance=ExtResource( 6 )]
+visible = false
+
+[node name="CollisionShape2D" parent="PlayerDetectionZone" index="0"]
+position = Vector2( 15, -28.3333 )
+shape = SubResource( 10 )
+
+[node name="Hitbox" parent="." instance=ExtResource( 9 )]
+collision_mask = 4
+
+[node name="CollisionShape2D" parent="Hitbox" index="0"]
+position = Vector2( 16.6667, -28.3333 )
+shape = SubResource( 11 )
+
+[node name="SoftCollision" parent="." instance=ExtResource( 8 )]
+visible = false
+
+[node name="CollisionShape2D" parent="SoftCollision" index="0"]
+position = Vector2( 13.3333, -28.3333 )
+shape = SubResource( 12 )
+
+[node name="WanderController" parent="." instance=ExtResource( 7 )]
+
+[node name="Hitbox2" parent="." instance=ExtResource( 9 )]
+collision_mask = 4
+damage = 2
+
+[node name="CollisionShape2D" parent="Hitbox2" index="0"]
+position = Vector2( 45, -30 )
+rotation = 0.349066
+scale = Vector2( 0.819203, 1.01494 )
+shape = SubResource( 23 )
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+
+[node name="SoundTrigger" type="Area2D" parent="."]
+visible = false
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SoundTrigger"]
+position = Vector2( 15, -26.6667 )
+shape = SubResource( 42 )
+
+[node name="GolemBossMusic" parent="." instance=ExtResource( 11 )]
+stream = ExtResource( 13 )
+volume_db = -10.0
+pitch_scale = 0.95
+
+[node name="Timer2" type="Timer" parent="."]
+wait_time = 2.0
+
+[node name="StaggerSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 14 )
+volume_db = -5.0
+pitch_scale = 0.8
+
+[node name="BreakingSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 17 )
+volume_db = -5.0
+pitch_scale = 0.52
+
+[connection signal="area_entered" from="Hurtbox" to="." method="_on_Hurtbox_area_entered"]
+[connection signal="no_health" from="Stats" to="." method="_on_Stats_no_health"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[connection signal="area_entered" from="SoundTrigger" to="." method="_on_SoundTrigger_area_entered"]
+[connection signal="area_exited" from="SoundTrigger" to="." method="_on_SoundTrigger_area_exited"]
+[connection signal="timeout" from="Timer2" to="." method="_on_Timer2_timeout"]
+
+[editable path="Hurtbox"]
+[editable path="PlayerDetectionZone"]
+[editable path="Hitbox"]
+[editable path="SoftCollision"]
+[editable path="Hitbox2"]

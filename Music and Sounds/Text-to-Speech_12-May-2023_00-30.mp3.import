@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Text-to-Speech_12-May-2023_00-30.mp3-770f0c26ad63034a4bd44208ffac0e61.mp3str"
+
+[deps]
+
+source_file="res://Music and Sounds/Text-to-Speech_12-May-2023_00-30.mp3"
+dest_files=[ "res://.import/Text-to-Speech_12-May-2023_00-30.mp3-770f0c26ad63034a4bd44208ffac0e61.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

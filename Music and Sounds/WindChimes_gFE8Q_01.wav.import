@@ -1,0 +1,23 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/WindChimes_gFE8Q_01.wav-2c62e269a6e49d1f212e94429d5da4ed.sample"
+
+[deps]
+
+source_file="res://Music and Sounds/WindChimes_gFE8Q_01.wav"
+dest_files=[ "res://.import/WindChimes_gFE8Q_01.wav-2c62e269a6e49d1f212e94429d5da4ed.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=2
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

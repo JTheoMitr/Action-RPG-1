@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Music and Sounds/game_over_sound_one.wav" type="AudioStream" id=1]
+[ext_resource path="res://Music and Sounds/DeathMelody.gd" type="Script" id=2]
+
+[node name="DeathMelody" type="AudioStreamPlayer"]
+stream = ExtResource( 1 )
+autoplay = true
+script = ExtResource( 2 )

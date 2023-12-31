@@ -1,0 +1,23 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Mobile_Game_UI_Alien_Chatter_Box_2.wav-dea70b0f44dbbe40fe254e5c35d54f8f.sample"
+
+[deps]
+
+source_file="res://Music and Sounds/Mobile_Game_UI_Alien_Chatter_Box_2.wav"
+dest_files=[ "res://.import/Mobile_Game_UI_Alien_Chatter_Box_2.wav-dea70b0f44dbbe40fe254e5c35d54f8f.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

@@ -1,0 +1,23 @@
+[gd_scene format=2]
+
+[node name="DemoEnd" type="CanvasLayer"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.0745098, 0.0745098, 0.0745098, 1 )
+
+[node name="RichTextLabel" type="RichTextLabel" parent="ColorRect"]
+margin_right = 318.0
+margin_bottom = 150.0
+bbcode_enabled = true
+bbcode_text = "[center] 
+
+
+ 
+Congratulations on completing the level![/center]"
+text = " 
+
+
+ 
+Congratulations on completing the level!"

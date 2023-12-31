@@ -1,0 +1,172 @@
+[gd_scene load_steps=17 format=2]
+
+[ext_resource path="res://UI/FrozencaScriptTypeface.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://IntroTitleScreen.gd" type="Script" id=2]
+[ext_resource path="res://World/FelledSprite.png" type="Texture" id=3]
+[ext_resource path="res://TitleMusic.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Effects/SnowFallOne.tscn" type="PackedScene" id=5]
+[ext_resource path="res://World/TallTreeOne.tscn" type="PackedScene" id=6]
+[ext_resource path="res://UI/mountain_scape_1_dark.png" type="Texture" id=7]
+[ext_resource path="res://Effects/LightningStrikeOne.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Music and Sounds/KOTWB_1_LOADSCREEN_1.wav" type="AudioStream" id=9]
+[ext_resource path="res://Music and Sounds/KOTWB_CHIME_1.wav" type="AudioStream" id=10]
+[ext_resource path="res://Music and Sounds/KOTWB_CHIME_2.wav" type="AudioStream" id=11]
+
+[sub_resource type="DynamicFont" id=1]
+font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0.803922, 0.67451, 0.67451, 0.509804 )
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0.117647, 0.109804, 0.109804, 0.52549 )
+
+[sub_resource type="StyleBoxFlat" id=5]
+bg_color = Color( 0.803922, 0.67451, 0.67451, 0.509804 )
+
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 0.117647, 0.109804, 0.109804, 0.52549 )
+
+[node name="IntroTitleScreen" type="ColorRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 2 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 177, 83 )
+scale = Vector2( 0.7, 0.7 )
+texture = ExtResource( 7 )
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+margin_left = 95.0
+margin_top = 22.0
+margin_right = 195.0
+margin_bottom = 90.0
+rect_scale = Vector2( 1.3, 1.3 )
+custom_fonts/normal_font = SubResource( 1 )
+bbcode_enabled = true
+bbcode_text = "[center] Keepers 
+ [/center]"
+text = " Keepers 
+ "
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="."]
+margin_left = 49.0
+margin_top = 45.0
+margin_right = 361.0
+margin_bottom = 113.0
+rect_scale = Vector2( 0.7, 0.7 )
+custom_fonts/normal_font = SubResource( 1 )
+bbcode_enabled = true
+bbcode_text = "[center] of the
+ [/center]"
+text = " of the
+ "
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="."]
+margin_left = 4.0
+margin_top = 38.0
+margin_right = 316.0
+margin_bottom = 106.0
+custom_fonts/normal_font = SubResource( 1 )
+bbcode_enabled = true
+bbcode_text = "[center] 
+ Winter Birch [/center]"
+text = " 
+ Winter Birch "
+
+[node name="FelledBirch" type="Sprite" parent="."]
+visible = false
+position = Vector2( 163, 108 )
+texture = ExtResource( 3 )
+
+[node name="SnowFallOne" parent="." instance=ExtResource( 5 )]
+visible = false
+position = Vector2( 163, 83.75 )
+scale = Vector2( 0.585, 1.025 )
+animation = "New Anim"
+frame = 22
+
+[node name="SnowFallOne2" parent="." instance=ExtResource( 5 )]
+modulate = Color( 1, 1, 1, 0.305882 )
+position = Vector2( 83, 89.5 )
+scale = Vector2( 1.6125, 1.81 )
+animation = "New Anim"
+frame = 22
+
+[node name="SnowFallOne3" parent="." instance=ExtResource( 5 )]
+modulate = Color( 1, 1, 1, 0.305882 )
+position = Vector2( 241, 90 )
+scale = Vector2( 1.6125, 1.82 )
+animation = "New Anim"
+frame = 21
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+margin_left = 133.0
+margin_top = 135.0
+margin_right = 247.0
+margin_bottom = 179.0
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="Button" type="Button" parent="VBoxContainer"]
+margin_right = 114.0
+margin_bottom = 14.0
+custom_styles/focus = SubResource( 2 )
+custom_styles/normal = SubResource( 3 )
+text = "Start"
+
+[node name="Button2" type="Button" parent="VBoxContainer"]
+margin_top = 18.0
+margin_right = 114.0
+margin_bottom = 32.0
+custom_styles/focus = SubResource( 5 )
+custom_styles/normal = SubResource( 4 )
+text = "Options"
+
+[node name="TitleMusic" parent="." instance=ExtResource( 4 )]
+stream = ExtResource( 9 )
+
+[node name="TallTreeOne" parent="." instance=ExtResource( 6 )]
+position = Vector2( 5, 90 )
+
+[node name="TallTreeOne2" parent="." instance=ExtResource( 6 )]
+position = Vector2( 310, 90 )
+
+[node name="Tween" type="Tween" parent="."]
+
+[node name="LightningStrikeOne" parent="." instance=ExtResource( 8 )]
+visible = false
+position = Vector2( 70, 106 )
+scale = Vector2( 0.553571, 0.589286 )
+
+[node name="LightningTimer" type="Timer" parent="."]
+wait_time = 7.0
+
+[node name="LightningStrikeOne2" parent="." instance=ExtResource( 8 )]
+position = Vector2( 255, 83 )
+scale = Vector2( 0.419643, 0.303571 )
+
+[node name="LightningTimerTwo" type="Timer" parent="."]
+wait_time = 5.0
+
+[node name="Button1Sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 10 )
+volume_db = -15.0
+
+[node name="Button2Sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 11 )
+volume_db = -15.0
+pitch_scale = 0.72
+
+[connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="VBoxContainer/Button2" to="." method="_on_Button2_pressed"]
+[connection signal="tween_completed" from="Tween" to="." method="_on_Tween_tween_completed"]
+[connection signal="animation_finished" from="LightningStrikeOne" to="." method="_on_LightningStrikeOne_animation_finished"]
+[connection signal="timeout" from="LightningTimer" to="." method="_on_LightningTimer_timeout"]
+[connection signal="animation_finished" from="LightningStrikeOne2" to="." method="_on_LightningStrikeOne2_animation_finished"]
+[connection signal="timeout" from="LightningTimerTwo" to="." method="_on_LightningTimerTwo_timeout"]

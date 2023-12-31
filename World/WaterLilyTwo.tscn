@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://World/Water Flora Two.png" type="Texture" id=1]
+
+[node name="WaterLilyTwo" type="Sprite"]
+rotation = -1.19381
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 1 )

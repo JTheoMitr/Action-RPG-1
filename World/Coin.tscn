@@ -1,0 +1,63 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://World/MonedaD.png" type="Texture" id=1]
+[ext_resource path="res://GemRed.gd" type="Script" id=2]
+
+[sub_resource type="AtlasTexture" id=8]
+atlas = ExtResource( 1 )
+region = Rect2( 0, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=9]
+atlas = ExtResource( 1 )
+region = Rect2( 16, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=10]
+atlas = ExtResource( 1 )
+region = Rect2( 32, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=11]
+atlas = ExtResource( 1 )
+region = Rect2( 48, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=12]
+atlas = ExtResource( 1 )
+region = Rect2( 64, 0, 16, 16 )
+
+[sub_resource type="SpriteFrames" id=5]
+animations = [ {
+"frames": [ SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ) ],
+"loop": true,
+"name": "shimmer",
+"speed": 2.0
+} ]
+
+[sub_resource type="CapsuleShape2D" id=6]
+radius = 5.0
+height = 4.0
+
+[sub_resource type="CapsuleShape2D" id=7]
+radius = 4.0
+height = 2.0
+
+[node name="Coin" type="KinematicBody2D"]
+scale = Vector2( 0.7, 0.7 )
+collision_layer = 0
+script = ExtResource( 2 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+frames = SubResource( 5 )
+animation = "shimmer"
+frame = 3
+playing = true
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource( 6 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 7 )
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_Area2D_area_entered"]

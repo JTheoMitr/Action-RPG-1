@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://World/single_purple_stone_1.png" type="Texture" id=1]
+[ext_resource path="res://Shadows/SmallShadow.png" type="Texture" id=2]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 12.0
+
+[node name="PurpleStoneSmall1" type="StaticBody2D"]
+scale = Vector2( 0.3, 0.3 )
+
+[node name="shadowsprite" type="Sprite" parent="."]
+position = Vector2( 1.25, 6.66666 )
+scale = Vector2( 2.41667, 1 )
+texture = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 1, -1 )
+shape = SubResource( 1 )

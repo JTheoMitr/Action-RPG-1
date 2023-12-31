@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Music and Sounds/05 SFX BELL RING2.wav" type="AudioStream" id=1]
+[ext_resource path="res://Music and Sounds/MarketSoundOne.gd" type="Script" id=2]
+
+[node name="MarketSoundOne" type="AudioStreamPlayer"]
+stream = ExtResource( 1 )
+volume_db = -8.0
+autoplay = true
+script = ExtResource( 2 )

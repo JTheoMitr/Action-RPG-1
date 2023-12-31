@@ -1,0 +1,241 @@
+[gd_scene load_steps=22 format=2]
+
+[ext_resource path="res://StoryArea2.gd" type="Script" id=1]
+[ext_resource path="res://Dialogue Headshots/robot_guide_face_still.png" type="Texture" id=2]
+[ext_resource path="res://fonts/PixelTandysoft-0rJG.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://UI/panel_Example2.png" type="Texture" id=4]
+[ext_resource path="res://World/gdb-playstation-2 triangle flat.png" type="Texture" id=5]
+[ext_resource path="res://UI/skill_panel_1.png" type="Texture" id=6]
+[ext_resource path="res://Player/overcharge_still.png" type="Texture" id=7]
+[ext_resource path="res://World/gdb-playstation-2 cross flat.png" type="Texture" id=8]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 85.0529
+
+[sub_resource type="StyleBoxTexture" id=4]
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0.184314, 0.266667, 0.25098, 0.427451 )
+
+[sub_resource type="DynamicFont" id=6]
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=7]
+size = 15
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=8]
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=9]
+size = 12
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=10]
+size = 12
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=11]
+font_data = ExtResource( 3 )
+
+[sub_resource type="StyleBoxTexture" id=5]
+texture = ExtResource( 6 )
+region_rect = Rect2( 0, 0, 450, 150 )
+
+[sub_resource type="DynamicFont" id=12]
+size = 15
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=13]
+size = 12
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=14]
+size = 14
+font_data = ExtResource( 3 )
+
+[node name="StoryArea2" type="Area2D"]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+
+[node name="StoryDialog2" type="PopupDialog" parent="."]
+visible = true
+margin_left = -47.0
+margin_top = 50.0
+margin_right = 124.0
+margin_bottom = 131.0
+rect_scale = Vector2( 0.6, 0.6 )
+custom_styles/panel = SubResource( 4 )
+
+[node name="BoxSprite" type="Sprite" parent="StoryDialog2"]
+position = Vector2( 112.857, 41.4286 )
+scale = Vector2( 0.640476, 1.20238 )
+texture = ExtResource( 4 )
+
+[node name="Panel" type="Panel" parent="StoryDialog2"]
+margin_left = 3.0
+margin_top = 7.0
+margin_right = 61.0
+margin_bottom = 75.0
+custom_styles/panel = SubResource( 3 )
+
+[node name="RichTextLabel" type="RichTextLabel" parent="StoryDialog2"]
+margin_left = 63.3333
+margin_top = -3.33333
+margin_right = 232.333
+margin_bottom = 106.667
+rect_clip_content = false
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_fonts/normal_font = SubResource( 6 )
+bbcode_enabled = true
+bbcode_text = "[center][shake amp=100 freq=5]
+ Wait! [/shake][/center]"
+text = "
+ Wait! "
+
+[node name="Sprite" type="Sprite" parent="StoryDialog2"]
+position = Vector2( 31.4286, 41.4286 )
+scale = Vector2( 0.6, 0.6 )
+texture = ExtResource( 2 )
+
+[node name="ButtonSprite" type="Sprite" parent="StoryDialog2"]
+position = Vector2( 173.333, 80 )
+texture = ExtResource( 8 )
+
+[node name="Continue" type="RichTextLabel" parent="StoryDialog2"]
+margin_left = 183.333
+margin_top = 71.6667
+margin_right = 259.333
+margin_bottom = 111.667
+rect_scale = Vector2( 0.7, 0.7 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_fonts/normal_font = SubResource( 7 )
+text = "Continue"
+
+[node name="QuestionPopUp" type="PopupDialog" parent="."]
+visible = true
+margin_right = 150.0
+margin_bottom = 48.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="QuestionPopUp"]
+margin_left = 9.0
+margin_top = 3.0
+margin_right = 163.0
+margin_bottom = 34.0
+custom_fonts/normal_font = SubResource( 8 )
+text = "Will you help?"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="QuestionPopUp"]
+margin_left = 50.0
+margin_top = 28.0
+margin_right = 130.0
+margin_bottom = 48.0
+rect_min_size = Vector2( 80, 20 )
+rect_scale = Vector2( 0.7, 0.7 )
+
+[node name="Yes" type="Button" parent="QuestionPopUp/HBoxContainer"]
+margin_right = 33.0
+margin_bottom = 22.0
+custom_fonts/font = SubResource( 9 )
+text = "YES"
+
+[node name="No" type="Button" parent="QuestionPopUp/HBoxContainer"]
+margin_left = 37.0
+margin_right = 62.0
+margin_bottom = 22.0
+custom_fonts/font = SubResource( 10 )
+text = "NO"
+
+[node name="Response" type="PopupDialog" parent="."]
+visible = true
+margin_right = 154.0
+margin_bottom = 23.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Response"]
+margin_left = -18.0
+margin_right = 175.0
+margin_bottom = 24.0
+custom_fonts/normal_font = SubResource( 11 )
+bbcode_enabled = true
+bbcode_text = "[center] Splendiferous! [/center]"
+text = " Splendiferous! "
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+
+[node name="SkillDescTimer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="SkillPopUp" type="PopupDialog" parent="CanvasLayer"]
+visible = true
+margin_left = 40.0
+margin_top = 19.0
+margin_right = 373.0
+margin_bottom = 226.0
+rect_scale = Vector2( 0.7, 0.7 )
+custom_styles/panel = SubResource( 5 )
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/SkillPopUp"]
+margin_left = 32.8571
+margin_top = 51.4286
+margin_right = 308.857
+margin_bottom = 99.4286
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_fonts/normal_font = SubResource( 12 )
+bbcode_enabled = true
+bbcode_text = "[center]You've learned OVERCHARGE: [/center]"
+text = "You've learned OVERCHARGE: "
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="CanvasLayer/SkillPopUp"]
+margin_left = 112.857
+margin_top = 78.5714
+margin_right = 311.857
+margin_bottom = 175.571
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_fonts/normal_font = SubResource( 13 )
+bbcode_enabled = true
+bbcode_text = "[center] Press    to damage all nearby enemies with an electric blast. Costs 1 battery. [/center]"
+text = " Press    to damage all nearby enemies with an electric blast. Costs 1 battery. "
+
+[node name="Panel" type="Panel" parent="CanvasLayer/SkillPopUp"]
+margin_left = 38.0
+margin_top = 78.0
+margin_right = 116.0
+margin_bottom = 148.0
+
+[node name="Sprite" type="Sprite" parent="CanvasLayer/SkillPopUp/Panel"]
+position = Vector2( 40, 34 )
+scale = Vector2( 0.793689, 0.783333 )
+texture = ExtResource( 7 )
+
+[node name="Sprite" type="Sprite" parent="CanvasLayer/SkillPopUp"]
+position = Vector2( 185, 88.5 )
+texture = ExtResource( 5 )
+
+[node name="ButtonSprite" type="Sprite" parent="CanvasLayer/SkillPopUp"]
+position = Vector2( 253, 151 )
+texture = ExtResource( 8 )
+
+[node name="Continue" type="RichTextLabel" parent="CanvasLayer/SkillPopUp"]
+margin_left = 261.429
+margin_top = 142.857
+margin_right = 337.429
+margin_bottom = 182.856
+rect_scale = Vector2( 0.7, 0.7 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_fonts/normal_font = SubResource( 14 )
+text = "Continue"
+
+[connection signal="area_entered" from="." to="." method="_on_StoryArea2_area_entered"]
+[connection signal="pressed" from="QuestionPopUp/HBoxContainer/Yes" to="." method="_on_Yes_pressed"]
+[connection signal="pressed" from="QuestionPopUp/HBoxContainer/No" to="." method="_on_No_pressed"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[connection signal="timeout" from="SkillDescTimer" to="." method="_on_SkillDescTimer_timeout"]

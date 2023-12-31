@@ -1,0 +1,89 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://World/master_key_red.png" type="Texture" id=1]
+[ext_resource path="res://DemoOverviewScreen.gd" type="Script" id=2]
+[ext_resource path="res://Animals/MiniDeer1 chill solo.png" type="Texture" id=3]
+[ext_resource path="res://World/cage_key_1.png" type="Texture" id=4]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.184314, 0.0431373, 0.0196078, 0.827451 )
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[node name="DemoOverviewScreen" type="ColorRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 1 )
+script = ExtResource( 2 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 1 )
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+margin_left = 15.0
+margin_top = 15.0
+margin_right = 334.0
+margin_bottom = 181.0
+rect_scale = Vector2( 0.9, 0.9 )
+bbcode_enabled = true
+bbcode_text = "[center] To complete the demo:
+
+- Find the 3 hidden keys
+
+- Free the 3 caged animals
+
+- Defeat the Level Boss
+ and retrieve the exit key 
+
+- Make your way to the Exit Door!
+[/center]"
+text = " To complete the demo:
+
+- Find the 3 hidden keys
+
+- Free the 3 caged animals
+
+- Defeat the Level Boss
+ and retrieve the exit key 
+
+- Make your way to the Exit Door!
+"
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 243, 47 )
+rotation = 0.785398
+scale = Vector2( 0.1, 0.1 )
+texture = ExtResource( 4 )
+
+[node name="Sprite2" type="Sprite" parent="."]
+position = Vector2( 250, 75 )
+texture = ExtResource( 3 )
+
+[node name="Sprite3" type="Sprite" parent="."]
+position = Vector2( 245, 109 )
+rotation = -0.785398
+scale = Vector2( 0.085, 0.085 )
+texture = ExtResource( 1 )
+
+[node name="Button" type="Button" parent="."]
+margin_left = 9.0
+margin_top = 7.0
+margin_right = 63.0
+margin_bottom = 27.0
+rect_scale = Vector2( 0.5, 0.5 )
+custom_styles/normal = SubResource( 1 )
+text = "Return"
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="."]
+margin_left = 269.0
+margin_top = 167.0
+margin_right = 433.0
+margin_bottom = 207.0
+rect_scale = Vector2( 0.3, 0.3 )
+text = "Disclaimer: Saving is disabled for the demo."
+
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]

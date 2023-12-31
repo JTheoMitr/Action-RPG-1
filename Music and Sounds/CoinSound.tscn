@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Music and Sounds/a_single_coin_drop_in_a_jar_1.wav" type="AudioStream" id=1]
+[ext_resource path="res://CoinSound.gd" type="Script" id=2]
+
+[node name="CoinSound" type="AudioStreamPlayer"]
+stream = ExtResource( 1 )
+volume_db = -5.0
+autoplay = true
+script = ExtResource( 2 )

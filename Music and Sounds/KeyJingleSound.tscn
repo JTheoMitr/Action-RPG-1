@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Music and Sounds/LHD2_Keys_Jingle_Foley_1_CLEAN.wav" type="AudioStream" id=1]
+[ext_resource path="res://Music and Sounds/KeyJingleSound.gd" type="Script" id=2]
+
+[node name="KeyJingleSound" type="AudioStreamPlayer"]
+stream = ExtResource( 1 )
+volume_db = -3.0
+autoplay = true
+script = ExtResource( 2 )

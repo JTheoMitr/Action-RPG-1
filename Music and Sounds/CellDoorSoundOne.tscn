@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Music and Sounds/ESM_Quest_Game_Door_Wood_Chest_Open_with_Metal_Lock_7_Door_Treasure_Chest_Open_Close_Wood_Metal_Pull_Shut_Slam_Turn_Lift_Unlock_Lock_Movement_Texture_Fantasy_Medieval_Epic_Movie.wav" type="AudioStream" id=1]
+[ext_resource path="res://Music and Sounds/CellDoorSoundOne.gd" type="Script" id=2]
+
+[node name="CellDoorSoundOne" type="AudioStreamPlayer"]
+stream = ExtResource( 1 )
+volume_db = -3.0
+autoplay = true
+script = ExtResource( 2 )

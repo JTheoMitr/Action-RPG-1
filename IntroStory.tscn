@@ -1,0 +1,73 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://IntroStory.gd" type="Script" id=1]
+[ext_resource path="res://Music and Sounds/KOTWB_TRANSITION_1.wav" type="AudioStream" id=2]
+[ext_resource path="res://Story/ForestClean.png" type="Texture" id=3]
+[ext_resource path="res://Story/CliffTanks.png" type="Texture" id=4]
+[ext_resource path="res://Story/refineries.png" type="Texture" id=5]
+[ext_resource path="res://Story/CEO.png" type="Texture" id=6]
+[ext_resource path="res://Story/ReturnTrip.png" type="Texture" id=7]
+[ext_resource path="res://Story/WinterBirch.png" type="Texture" id=8]
+
+[node name="IntroStory" type="ColorRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 1 )
+
+[node name="Forest" type="Sprite" parent="."]
+position = Vector2( 159, 100 )
+scale = Vector2( 0.3, 0.3 )
+texture = ExtResource( 3 )
+
+[node name="Refineries" type="Sprite" parent="."]
+modulate = Color( 1, 1, 1, 0.521569 )
+position = Vector2( 159, 100 )
+scale = Vector2( 0.3, 0.3 )
+texture = ExtResource( 5 )
+
+[node name="CliffTanks" type="Sprite" parent="."]
+modulate = Color( 1, 1, 1, 0.521569 )
+position = Vector2( 159, 100 )
+scale = Vector2( 0.3, 0.3 )
+texture = ExtResource( 4 )
+
+[node name="CEO" type="Sprite" parent="."]
+modulate = Color( 1, 1, 1, 0.521569 )
+position = Vector2( 159, 100 )
+scale = Vector2( 0.3, 0.3 )
+texture = ExtResource( 6 )
+
+[node name="WinterBirch" type="Sprite" parent="."]
+modulate = Color( 1, 1, 1, 0.521569 )
+position = Vector2( 159, 100 )
+scale = Vector2( 0.3, 0.3 )
+texture = ExtResource( 8 )
+
+[node name="TheReturn" type="Sprite" parent="."]
+modulate = Color( 1, 1, 1, 0.521569 )
+position = Vector2( 159, 100 )
+scale = Vector2( 0.3, 0.3 )
+texture = ExtResource( 7 )
+
+[node name="FadeTimer" type="Timer" parent="."]
+wait_time = 0.1
+
+[node name="MainTimer" type="Timer" parent="."]
+wait_time = 6.0
+autostart = true
+
+[node name="MusicTimer" type="Timer" parent="."]
+wait_time = 0.1
+autostart = true
+
+[node name="IntroStorySong" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 2 )
+
+[connection signal="timeout" from="FadeTimer" to="." method="_on_Timer_timeout"]
+[connection signal="timeout" from="MainTimer" to="." method="_on_Timer2_timeout"]
+[connection signal="timeout" from="MusicTimer" to="." method="_on_MusicTimer_timeout"]

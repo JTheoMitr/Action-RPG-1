@@ -1,0 +1,75 @@
+[gd_scene load_steps=16 format=2]
+
+[ext_resource path="res://Enemies/golem_purple_death_anim.png" type="Texture" id=1]
+[ext_resource path="res://Effects/GolemBossDeathAnim.gd" type="Script" id=2]
+[ext_resource path="res://Music and Sounds/DSGNBass_Turn Off Low Metal Power Engine Energy Broken_ESM_GB.wav" type="AudioStream" id=3]
+
+[sub_resource type="AtlasTexture" id=12]
+atlas = ExtResource( 1 )
+region = Rect2( 400, 0, 100, 100 )
+
+[sub_resource type="AtlasTexture" id=13]
+atlas = ExtResource( 1 )
+region = Rect2( 500, 0, 100, 100 )
+
+[sub_resource type="AtlasTexture" id=14]
+atlas = ExtResource( 1 )
+region = Rect2( 600, 0, 100, 100 )
+
+[sub_resource type="AtlasTexture" id=15]
+atlas = ExtResource( 1 )
+region = Rect2( 700, 0, 100, 100 )
+
+[sub_resource type="AtlasTexture" id=16]
+atlas = ExtResource( 1 )
+region = Rect2( 800, 0, 100, 100 )
+
+[sub_resource type="AtlasTexture" id=17]
+atlas = ExtResource( 1 )
+region = Rect2( 900, 0, 100, 100 )
+
+[sub_resource type="AtlasTexture" id=18]
+atlas = ExtResource( 1 )
+region = Rect2( 0, 100, 100, 100 )
+
+[sub_resource type="AtlasTexture" id=19]
+atlas = ExtResource( 1 )
+region = Rect2( 100, 100, 100, 100 )
+
+[sub_resource type="AtlasTexture" id=20]
+atlas = ExtResource( 1 )
+region = Rect2( 200, 100, 100, 100 )
+
+[sub_resource type="AtlasTexture" id=21]
+atlas = ExtResource( 1 )
+region = Rect2( 300, 100, 100, 100 )
+
+[sub_resource type="SpriteFrames" id=11]
+animations = [ {
+"frames": [ SubResource( 12 ), SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 16 ), SubResource( 17 ), SubResource( 18 ), SubResource( 19 ), SubResource( 20 ), SubResource( 21 ) ],
+"loop": true,
+"name": "Animate",
+"speed": 5.0
+} ]
+
+[sub_resource type="CircleShape2D" id=22]
+radius = 24.7129
+
+[node name="GolemBossDeathAnim" type="AnimatedSprite"]
+position = Vector2( 7, 7 )
+scale = Vector2( 1.7, 1.7 )
+frames = SubResource( 11 )
+animation = "Animate"
+offset = Vector2( 10, -25 )
+script = ExtResource( 2 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+volume_db = -2.0
+autoplay = true
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2( 7.64706, -24.7059 )
+shape = SubResource( 22 )

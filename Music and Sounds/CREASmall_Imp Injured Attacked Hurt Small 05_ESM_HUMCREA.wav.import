@@ -1,0 +1,23 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/CREASmall_Imp Injured Attacked Hurt Small 05_ESM_HUMCREA.wav-1046abe628c277cd9c7cd81ec4088025.sample"
+
+[deps]
+
+source_file="res://Music and Sounds/CREASmall_Imp Injured Attacked Hurt Small 05_ESM_HUMCREA.wav"
+dest_files=[ "res://.import/CREASmall_Imp Injured Attacked Hurt Small 05_ESM_HUMCREA.wav-1046abe628c277cd9c7cd81ec4088025.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Music and Sounds/Farm_Game_Footsteps_Grass_Cartoon_Plop_3.wav" type="AudioStream" id=1]
+[ext_resource path="res://Music and Sounds/Footstep2.gd" type="Script" id=2]
+
+[node name="Footstep2" type="AudioStreamPlayer"]
+stream = ExtResource( 1 )
+volume_db = -21.046
+autoplay = true
+script = ExtResource( 2 )

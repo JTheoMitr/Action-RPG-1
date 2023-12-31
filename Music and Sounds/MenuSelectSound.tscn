@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Music and Sounds/ESM_Dull_Menu_Select_2_Mobile_App_Game_FX_Sound_Magic_Fantasy_Touch_Accent_Stab_Hit.wav" type="AudioStream" id=1]
+[ext_resource path="res://Music and Sounds/MenuSelectSound.gd" type="Script" id=2]
+
+[node name="MenuSelectSound" type="AudioStreamPlayer"]
+stream = ExtResource( 1 )
+volume_db = -5.0
+autoplay = true
+script = ExtResource( 2 )

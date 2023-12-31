@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Music and Sounds/boss_key_found_one.wav" type="AudioStream" id=1]
+[ext_resource path="res://Music and Sounds/BossKeySound.gd" type="Script" id=2]
+
+[node name="BossKeySound" type="AudioStreamPlayer"]
+stream = ExtResource( 1 )
+autoplay = true
+script = ExtResource( 2 )

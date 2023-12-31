@@ -1,0 +1,23 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/CREAEthr_Banshee Hurt Hit Injured Screech Reverb 02_ESM_HUMCREA.wav-0ff5a2c3bd6fde4928e36d790f5a5708.sample"
+
+[deps]
+
+source_file="res://Music and Sounds/CREAEthr_Banshee Hurt Hit Injured Screech Reverb 02_ESM_HUMCREA.wav"
+dest_files=[ "res://.import/CREAEthr_Banshee Hurt Hit Injured Screech Reverb 02_ESM_HUMCREA.wav-0ff5a2c3bd6fde4928e36d790f5a5708.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

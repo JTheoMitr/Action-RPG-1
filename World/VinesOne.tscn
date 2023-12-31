@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://World/Sapling.png" type="Texture" id=2]
+
+[node name="VinesOne" type="Sprite"]
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 2 )
+
+[node name="Sprite2" type="Sprite" parent="."]
+position = Vector2( -4, 8 )
+texture = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 2, -6 )
+texture = ExtResource( 2 )

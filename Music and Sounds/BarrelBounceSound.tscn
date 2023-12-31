@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Music and Sounds/Dull Wood Hit Bounce 05.wav" type="AudioStream" id=1]
+[ext_resource path="res://Music and Sounds/BarrelBounceSound.gd" type="Script" id=2]
+
+[node name="BarrelBounceSound" type="AudioStreamPlayer"]
+stream = ExtResource( 1 )
+volume_db = -3.095
+pitch_scale = 0.9
+autoplay = true
+script = ExtResource( 2 )

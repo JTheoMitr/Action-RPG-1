@@ -1,0 +1,23 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/electricity_glitch_46.wav-3b000d3ca21aa7ead92a0cb84e26da9d.sample"
+
+[deps]
+
+source_file="res://Music and Sounds/electricity_glitch_46.wav"
+dest_files=[ "res://.import/electricity_glitch_46.wav-3b000d3ca21aa7ead92a0cb84e26da9d.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

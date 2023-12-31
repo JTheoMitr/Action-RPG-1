@@ -1,0 +1,29 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://KeyAlert.gd" type="Script" id=1]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.184314, 0.152941, 0.152941, 0.682353 )
+
+[node name="KeyAlert" type="PopupDialog"]
+margin_left = 136.0
+margin_top = 104.0
+margin_right = 192.0
+margin_bottom = 112.0
+custom_styles/panel = SubResource( 1 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+margin_left = 7.0
+margin_top = 2.0
+margin_right = 267.0
+margin_bottom = 18.0
+rect_scale = Vector2( 0.3, 0.3 )
+text = "You've obtained a key"
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

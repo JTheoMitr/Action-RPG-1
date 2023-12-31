@@ -1,0 +1,75 @@
+extends ColorRect
+
+
+# Declare member variables here. Examples:
+# var a = 2
+# var b = "text"
+onready var tween_out = $Tween
+onready var music = $TitleMusic
+onready var lightningTimer = $LightningTimer
+onready var lightningOne = $LightningStrikeOne
+onready var lightningTimerTwo = $LightningTimerTwo
+onready var lightningTwo = $LightningStrikeOne2
+onready var chimeOne = $Button1Sound
+onready var chimeTwo = $Button2Sound
+export var transition_duration = 2.00
+export var transition_type = 1 # TRANS_SINE
+
+func fade_out(stream_player):
+	# tween music volume down to 0
+	tween_out.interpolate_property(stream_player, "volume_db", -5, -80, transition_duration, transition_type, Tween.EASE_IN, 0)
+	tween_out.start()
+	# when the tween ends, the music will be stopped
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	$VBoxContainer/Button.grab_focus()
+	lightningOne.frame = 0
+	lightningOne.hide()
+	lightningTimer.start()
+	lightningTwo.frame = 0
+	lightningTwo.hide()
+	lightningTimerTwo.start()
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
+
+
+func _on_Button_pressed():
+	#SceneTransitionLong.change_scene("res://World.tscn")
+	fade_out(music)
+	chimeOne.play()
+	#SceneTransitionLong.change_scene("res://World2.tscn")
+	#SceneTransitionLong.change_scene("res://IntroStory.tscn")
+	SceneTransitionLong.change_scene("res://World.tscn")
+	
+
+
+func _on_Button2_pressed():
+	chimeTwo.play()
+	SceneTransitionLong.change_scene("res://DemoOverviewScreen.tscn")
+
+
+func _on_LightningTimer_timeout():
+	lightningOne.show()
+	lightningOne.play("default")
+
+
+func _on_LightningStrikeOne_animation_finished():
+	lightningOne.hide()
+	lightningOne.stop()
+	lightningOne.frame = 0
+
+
+
+func _on_LightningTimerTwo_timeout():
+	lightningTwo.show()
+	lightningTwo.play("default")
+
+
+func _on_LightningStrikeOne2_animation_finished():
+	lightningTwo.hide()
+	lightningTwo.stop()
+	lightningTwo.frame = 0

@@ -1,0 +1,126 @@
+[gd_scene load_steps=22 format=2]
+
+[ext_resource path="res://Enemies/droid_run_red.png" type="Texture" id=1]
+[ext_resource path="res://Hitboxes and Hurtboxes/Hurtbox.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Shadows/SmallShadow.png" type="Texture" id=3]
+[ext_resource path="res://Stats.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Hitboxes and Hurtboxes/Hitbox.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Enemies/PlayerDetectionZone.tscn" type="PackedScene" id=6]
+[ext_resource path="res://SoftCollision.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Enemies/Droid.gd" type="Script" id=8]
+[ext_resource path="res://Enemies/WanderController.tscn" type="PackedScene" id=9]
+
+[sub_resource type="AtlasTexture" id=13]
+atlas = ExtResource( 1 )
+region = Rect2( 0, 0, 99, 123 )
+
+[sub_resource type="AtlasTexture" id=14]
+atlas = ExtResource( 1 )
+region = Rect2( 0, 123, 99, 123 )
+
+[sub_resource type="AtlasTexture" id=15]
+atlas = ExtResource( 1 )
+region = Rect2( 0, 246, 99, 123 )
+
+[sub_resource type="AtlasTexture" id=16]
+atlas = ExtResource( 1 )
+region = Rect2( 0, 369, 99, 123 )
+
+[sub_resource type="AtlasTexture" id=17]
+atlas = ExtResource( 1 )
+region = Rect2( 0, 492, 99, 123 )
+
+[sub_resource type="AtlasTexture" id=18]
+atlas = ExtResource( 1 )
+region = Rect2( 0, 615, 99, 123 )
+
+[sub_resource type="SpriteFrames" id=7]
+animations = [ {
+"frames": [ SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 16 ), SubResource( 17 ), SubResource( 18 ) ],
+"loop": true,
+"name": "walk",
+"speed": 5.0
+} ]
+
+[sub_resource type="CapsuleShape2D" id=8]
+radius = 4.0
+height = 4.0
+
+[sub_resource type="CapsuleShape2D" id=9]
+radius = 4.0
+height = 10.0
+
+[sub_resource type="CircleShape2D" id=10]
+radius = 55.0364
+
+[sub_resource type="CapsuleShape2D" id=11]
+radius = 6.0
+height = 6.0
+
+[sub_resource type="CapsuleShape2D" id=12]
+radius = 4.0
+height = 6.0
+
+[node name="Droid" type="KinematicBody2D"]
+collision_layer = 17
+script = ExtResource( 8 )
+
+[node name="ShadowSprite" type="Sprite" parent="."]
+texture = ExtResource( 3 )
+offset = Vector2( 0, 1 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+scale = Vector2( 0.33, 0.33 )
+frames = SubResource( 7 )
+animation = "walk"
+frame = 1
+playing = true
+offset = Vector2( 1, -60 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2( 0, -3 )
+shape = SubResource( 8 )
+
+[node name="Hurtbox" parent="." instance=ExtResource( 2 )]
+visible = false
+collision_layer = 8
+
+[node name="CollisionShape2D" parent="Hurtbox" index="0"]
+position = Vector2( 0, -7 )
+shape = SubResource( 9 )
+
+[node name="Stats" parent="." instance=ExtResource( 4 )]
+max_health = 3
+
+[node name="PlayerDetectionZone" parent="." instance=ExtResource( 6 )]
+visible = false
+
+[node name="CollisionShape2D" parent="PlayerDetectionZone" index="0"]
+shape = SubResource( 10 )
+
+[node name="Hitbox" parent="." instance=ExtResource( 5 )]
+visible = false
+collision_mask = 4
+
+[node name="CollisionShape2D" parent="Hitbox" index="0"]
+position = Vector2( 0, -5 )
+shape = SubResource( 11 )
+
+[node name="SoftCollision" parent="." instance=ExtResource( 7 )]
+visible = false
+
+[node name="CollisionShape2D" parent="SoftCollision" index="0"]
+position = Vector2( 0, -5 )
+shape = SubResource( 12 )
+
+[node name="WanderController" parent="." instance=ExtResource( 9 )]
+visible = false
+
+[connection signal="area_entered" from="Hurtbox" to="." method="_on_Hurtbox_area_entered"]
+[connection signal="no_health" from="Stats" to="." method="_on_Stats_no_health"]
+
+[editable path="Hurtbox"]
+[editable path="PlayerDetectionZone"]
+[editable path="Hitbox"]
+[editable path="SoftCollision"]

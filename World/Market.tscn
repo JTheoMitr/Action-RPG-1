@@ -1,0 +1,131 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://Animals/cute_penguin_idle.png" type="Texture" id=1]
+[ext_resource path="res://World/ice_cream_truck_1.png" type="Texture" id=2]
+[ext_resource path="res://Shadows/LargeShadow.png" type="Texture" id=3]
+[ext_resource path="res://World/Market.gd" type="Script" id=4]
+[ext_resource path="res://UI/panel_Example2.png" type="Texture" id=5]
+[ext_resource path="res://Animals/cute_penguin_closeup.png" type="Texture" id=6]
+[ext_resource path="res://World/gdb-playstation-2 cross flat.png" type="Texture" id=7]
+
+[sub_resource type="AtlasTexture" id=1]
+atlas = ExtResource( 1 )
+region = Rect2( 0, 0, 38, 24 )
+
+[sub_resource type="AtlasTexture" id=2]
+atlas = ExtResource( 1 )
+region = Rect2( 38, 0, 38, 24 )
+
+[sub_resource type="SpriteFrames" id=3]
+animations = [ {
+"frames": [ SubResource( 1 ), SubResource( 2 ) ],
+"loop": true,
+"name": "chill",
+"speed": 2.0
+} ]
+
+[sub_resource type="StyleBoxFlat" id=6]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
+[sub_resource type="StyleBoxFlat" id=7]
+bg_color = Color( 0.619608, 0.423529, 0.596078, 1 )
+
+[sub_resource type="CircleShape2D" id=4]
+radius = 119.206
+
+[sub_resource type="CircleShape2D" id=5]
+radius = 69.5347
+
+[node name="Market" type="KinematicBody2D"]
+scale = Vector2( 0.48, 0.48 )
+script = ExtResource( 4 )
+
+[node name="ShadowSprite" type="Sprite" parent="."]
+position = Vector2( 0, 42.5 )
+scale = Vector2( 3.91406, 2.125 )
+texture = ExtResource( 3 )
+
+[node name="Sprite" type="Sprite" parent="."]
+scale = Vector2( 0.3, 0.3 )
+texture = ExtResource( 2 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( -31.25, 27.0833 )
+scale = Vector2( 2, 2 )
+frames = SubResource( 3 )
+animation = "chill"
+frame = 1
+playing = true
+
+[node name="PopupDialog" type="PopupDialog" parent="."]
+visible = true
+margin_left = -30.0
+margin_top = 60.0
+margin_right = 76.0
+margin_bottom = 89.0
+custom_styles/panel = SubResource( 6 )
+
+[node name="BoxSprite" type="Sprite" parent="PopupDialog"]
+position = Vector2( 48.75, 12.9167 )
+scale = Vector2( 0.4, 0.5 )
+texture = ExtResource( 5 )
+
+[node name="RichTextLabel" type="RichTextLabel" parent="PopupDialog"]
+margin_left = 0.833336
+margin_top = 2.5
+margin_right = 254.833
+margin_bottom = 48.5
+rect_scale = Vector2( 0.5, 0.5 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+bbcode_enabled = true
+bbcode_text = "[center] Hey, my dude... you lookin' to get down on some dairy? [/center]"
+text = " Hey, my dude... you lookin' to get down on some dairy? "
+fit_content_height = true
+scroll_active = false
+
+[node name="Panel" type="Panel" parent="PopupDialog"]
+margin_left = -20.0
+margin_top = -1.66666
+margin_right = 20.0
+margin_bottom = 38.3333
+rect_scale = Vector2( 0.7, 0.7 )
+custom_styles/panel = SubResource( 7 )
+
+[node name="Sprite" type="Sprite" parent="PopupDialog"]
+position = Vector2( -5.41667, 8.75 )
+scale = Vector2( 1.35, 1.35 )
+texture = ExtResource( 6 )
+
+[node name="Sprite2" type="Sprite" parent="PopupDialog"]
+position = Vector2( 90.4167, 25.4167 )
+scale = Vector2( 0.6, 0.6 )
+texture = ExtResource( 7 )
+
+[node name="Label" type="Label" parent="PopupDialog"]
+margin_left = 96.6667
+margin_top = 23.3333
+margin_right = 153.667
+margin_bottom = 37.3333
+rect_scale = Vector2( 0.4, 0.4 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+text = "Continue"
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+visible = false
+shape = SubResource( 4 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+shape = SubResource( 5 )
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 4.0
+one_shot = true
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_Area2D_area_entered"]
+[connection signal="area_exited" from="Area2D" to="." method="_on_Area2D_area_exited"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

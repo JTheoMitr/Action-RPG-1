@@ -1,0 +1,157 @@
+extends Area2D
+
+const ChatterSound = preload("res://Music and Sounds/GuideBotChatterSound.tscn")
+
+onready var popup = $StoryDialog2
+onready var question = $QuestionPopUp
+onready var dialog = $StoryDialog2/RichTextLabel
+onready var stats = PlayerStats
+onready var response = $Response
+onready var yes = $QuestionPopUp/HBoxContainer/Yes
+onready var responseText = $Response/RichTextLabel
+onready var timer = $Timer
+onready var skillTimer = $SkillDescTimer
+onready var skillPop = $CanvasLayer/SkillPopUp
+# onready var chatterSound = ChatterSound.instance()
+
+var inArea = false
+var yesPress = false
+var noPress = false
+var finalDialogue = false
+var soundCatch = false
+var skillPopShow = false
+
+var textNumber = 0
+var textNumberTwo = 0
+var textNumberThree = 0
+
+var textOptions = ["[center] \n \n WAIT[center]", "[center] \n I'm no enemy...I've come to help save your friends.[/center]", "[center] \n The red robots are drilling for the evil oil company...OILCO![/center]", "[center] \n I can stop them, but I need access to the OILCO mainframe...[/center]", "[center] \n Will you help me? Together we can save this forest![/center]"]
+var textOptionsTwo = ["[center] \n \n Splendiferous! [/center]", "[center]\n You will need to head to Wylde Caverns[/center]", "[center] \n They lead to the city outskirts.[/center]", "[center] \n The entrance lies in the Northeast corner of the forest[/center]", "[center] \n Once in the city, we can make our way to the Resistance HQ[/center]", "[center] \n There are many that want to stop OILCO, just like us...[/center]","[center] \n \n One more thing![/center]", "[center] \n Please allow me to teach you a new skill...[/center]", "[center][rainbow] OVERCHARGE [/rainbow][/center]", "[center] \n This ThermoCharge will overheat any battery it touches[/center]", "[center] \n Use it to emit a damaging energy blast.[/center]", "[center] \n I have a couple batteries to get you started [/center]", "[center]\n \n Here...take them.[/center]",  "[center] \n I shall see you again in the depths of Wylde Caverns[/center]", ""]
+var textOptionsThree = ["[center] \n Oh, my mistake.  You're giving off serious hero vibes...[/center]", "[center] \n I assumed you wanted to save the entire forest...[/center]", "[center] \n All good though, I'll look for someone a bit more up to it[/center]", "[center] \n Come on back if you change your mind...[/center]", ""]
+
+
+
+func _ready():
+	dialog.bbcode_enabled = true
+	
+func _process(delta):
+	popup.rect_global_position.x = self.position.x
+	popup.rect_global_position.y = self.position.y + 15
+
+	
+	question.rect_global_position = self.position
+	response.rect_global_position = self.position
+	
+	if skillPopShow == true:
+		if Input.is_action_just_pressed("interact"):
+			queue_free()
+			stats.emit_signal("player_resumed")
+
+	if textNumber >= 1 && textNumber < 5:
+		popup.show()
+		dialog.bbcode_text = textOptions[textNumber]
+		dialog.get_font("normal_font").size = 13
+	
+	if (inArea == true) && Input.is_action_just_pressed("interact"):
+		print(textNumber)
+		
+		if textNumber < 4:
+			textNumber +=1
+		elif textNumber == 4:
+			textNumber += 1
+			popup.hide()
+			question.show()
+			yes.grab_focus()
+		else:
+			textNumber = 5
+
+	if yesPress == true:
+		if Input.is_action_just_pressed("interact"):
+			if textNumberTwo >= 0 && textNumberTwo <= 7:
+				textNumberTwo += 1
+				dialog.bbcode_text = textOptionsTwo[textNumberTwo]
+			if textNumberTwo == 8:
+				if soundCatch == false:
+					var chatterSound = ChatterSound.instance()
+					get_tree().current_scene.add_child(chatterSound)
+					timer.start()
+				soundCatch = true
+				response.show()
+				popup.hide()
+				responseText.bbcode_text = textOptionsTwo[textNumberTwo]
+				
+	
+	if noPress == true:
+		if Input.is_action_just_pressed("interact"):
+			print(textNumberThree)
+			if textNumberThree >= 0 && textNumberThree <= 3:
+				textNumberThree += 1
+				dialog.bbcode_text = textOptionsThree[textNumberThree]
+			if textNumberThree == 4:
+				_reset()
+				
+	if finalDialogue == true:
+		if Input.is_action_just_pressed("interact"):
+			textNumberTwo += 1
+			if textNumberTwo < 14:
+				dialog.bbcode_text = textOptionsTwo[textNumberTwo]
+			if textNumberTwo == 14:
+				stats.emit_signal("player_resumed")
+				response.hide()
+				popup.hide()
+				skillTimer.start()
+			if textNumberTwo >= 15:
+				print("we past it all")
+				
+
+func _reset():
+	
+	popup.hide()
+	inArea = false
+	stats.emit_signal("player_resumed")
+	textNumber = 0
+	textNumberTwo = 0
+	textNumberThree = 0
+	noPress = false
+	dialog.bbcode_text = textOptions[textNumber]
+
+func _on_StoryArea2_area_entered(area):
+	popup.popup()
+	var chatterSound = ChatterSound.instance()
+	get_tree().current_scene.add_child(chatterSound)
+	inArea = true
+	stats.emit_signal("player_paused")
+
+
+func _on_Yes_pressed():
+	question.hide()
+	popup.show()
+	yesPress = true
+	dialog.bbcode_text = textOptionsTwo[textNumberTwo]
+	
+
+func _on_No_pressed():
+	question.hide()
+	popup.show()
+	noPress = true
+	dialog.bbcode_text = textOptionsThree[textNumberThree]
+
+
+func _on_Timer_timeout():
+	textNumberTwo = 9
+	response.hide()
+	popup.show()
+	dialog.bbcode_text = textOptionsTwo[textNumberTwo]
+	finalDialogue = true
+	timer.queue_free()
+
+
+func _on_SkillDescTimer_timeout():
+	var chatterSound = ChatterSound.instance()
+	get_tree().current_scene.add_child(chatterSound)
+	skillPop.show()
+	stats.overcharge = true
+	stats.emit_signal("player_paused")
+	skillPopShow = true
+	skillTimer.queue_free()
+

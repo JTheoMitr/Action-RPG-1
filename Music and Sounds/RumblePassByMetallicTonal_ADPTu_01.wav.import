@@ -1,0 +1,23 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/RumblePassByMetallicTonal_ADPTu_01.wav-925ef9bef9475878d335276be7f9c285.sample"
+
+[deps]
+
+source_file="res://Music and Sounds/RumblePassByMetallicTonal_ADPTu_01.wav"
+dest_files=[ "res://.import/RumblePassByMetallicTonal_ADPTu_01.wav-925ef9bef9475878d335276be7f9c285.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

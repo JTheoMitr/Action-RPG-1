@@ -1,0 +1,23 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Fighting_Game_Designed_Abilities_Special_FX_Pulse_Strike_Amp_Power_Up_Foley_Hit_Activate_Bass_Ascend_Low_Only.wav-ffbd18a218ba386179edab511c9eb089.sample"
+
+[deps]
+
+source_file="res://Music and Sounds/Fighting_Game_Designed_Abilities_Special_FX_Pulse_Strike_Amp_Power_Up_Foley_Hit_Activate_Bass_Ascend_Low_Only.wav"
+dest_files=[ "res://.import/Fighting_Game_Designed_Abilities_Special_FX_Pulse_Strike_Amp_Power_Up_Foley_Hit_Activate_Bass_Ascend_Low_Only.wav-ffbd18a218ba386179edab511c9eb089.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
