@@ -1,10 +1,11 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://ForestBear.gd" type="Script" id=1]
 [ext_resource path="res://Animals/forest_bear_walking.png" type="Texture" id=2]
 [ext_resource path="res://Shadows/MediumShadow.png" type="Texture" id=3]
 [ext_resource path="res://UI/panel_Intro.png" type="Texture" id=4]
 [ext_resource path="res://Animals/FreedPopup.tscn" type="PackedScene" id=5]
+[ext_resource path="res://fonts/PixelTandysoft-0rJG.ttf" type="DynamicFontData" id=6]
 
 [sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 2 )
@@ -29,6 +30,10 @@ height = 8.0
 [sub_resource type="CapsuleShape2D" id=7]
 radius = 6.47059
 height = 4.70588
+
+[sub_resource type="DynamicFont" id=8]
+size = 12
+font_data = ExtResource( 6 )
 
 [node name="ForestBear" type="KinematicBody2D"]
 scale = Vector2( 1.7, 1.7 )
@@ -71,12 +76,13 @@ scale = Vector2( 0.359232, 0.337255 )
 texture = ExtResource( 4 )
 
 [node name="RichTextLabel" type="RichTextLabel" parent="RescuePopUp"]
-margin_left = 6.12491
-margin_top = 4.17647
-margin_right = 294.124
-margin_bottom = 64.1764
+margin_left = 8.0
+margin_top = 1.82353
+margin_right = 295.0
+margin_bottom = 64.8235
 rect_scale = Vector2( 0.5, 0.5 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_fonts/normal_font = SubResource( 8 )
 bbcode_enabled = true
 bbcode_text = "[center] Thank you!  
  I can finally return to my family.  They're probably wondering where I am. [/center]"
@@ -86,9 +92,10 @@ text = " Thank you!
 fit_content_height = true
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 8.0
+wait_time = 6.0
 
 [node name="FreedPopup" parent="." instance=ExtResource( 5 )]
+visible = false
 
 [node name="Timer2" type="Timer" parent="."]
 wait_time = 3.0
