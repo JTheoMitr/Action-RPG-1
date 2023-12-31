@@ -1,10 +1,11 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Animals/MiniBunny chill.png" type="Texture" id=1]
 [ext_resource path="res://Shadows/SmallShadow.png" type="Texture" id=2]
 [ext_resource path="res://Animals/ForestBunny.gd" type="Script" id=3]
 [ext_resource path="res://UI/panel_Intro.png" type="Texture" id=4]
 [ext_resource path="res://Animals/FreedPopup.tscn" type="PackedScene" id=5]
+[ext_resource path="res://fonts/PixelTandysoft-0rJG.ttf" type="DynamicFontData" id=6]
 
 [sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 1 )
@@ -29,6 +30,10 @@ height = 0.0
 radius = 5.0
 height = 6.0
 
+[sub_resource type="DynamicFont" id=6]
+size = 13
+font_data = ExtResource( 6 )
+
 [node name="ForestBunny" type="KinematicBody2D"]
 script = ExtResource( 3 )
 
@@ -40,6 +45,7 @@ offset = Vector2( -2, 6 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 3 )
 animation = "chill"
+frame = 1
 playing = true
 
 [node name="Area2D" type="Area2D" parent="."]
@@ -68,12 +74,13 @@ scale = Vector2( 0.128269, 0.700245 )
 texture = ExtResource( 4 )
 
 [node name="RichTextLabel" type="RichTextLabel" parent="RescuePopUp"]
-margin_left = 5.66667
-margin_top = 8.33333
-margin_right = 300.667
-margin_bottom = 79.3334
+margin_left = 6.33334
+margin_top = 3.33333
+margin_right = 301.334
+margin_bottom = 74.3334
 rect_scale = Vector2( 0.15, 0.75 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_fonts/normal_font = SubResource( 6 )
 bbcode_enabled = true
 bbcode_text = "[center]I can't thank you enough for getting me out of here.  Please be sure to help the rest of my friends locked up in the area."
 tab_size = 3
@@ -81,9 +88,10 @@ text = "I can't thank you enough for getting me out of here.  Please be sure to 
 fit_content_height = true
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 5.0
+wait_time = 6.0
 
 [node name="FreedPopup" parent="." instance=ExtResource( 5 )]
+visible = false
 
 [node name="Timer2" type="Timer" parent="."]
 wait_time = 3.0

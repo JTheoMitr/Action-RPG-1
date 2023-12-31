@@ -1,9 +1,10 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Animals/MiniDeer1 chill.png" type="Texture" id=1]
 [ext_resource path="res://Animals/ForestDeerOne.gd" type="Script" id=2]
 [ext_resource path="res://UI/panel_Intro.png" type="Texture" id=3]
 [ext_resource path="res://Animals/FreedPopup.tscn" type="PackedScene" id=4]
+[ext_resource path="res://fonts/PixelTandysoft-0rJG.ttf" type="DynamicFontData" id=5]
 
 [sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 1 )
@@ -32,6 +33,10 @@ radius = 11.0
 radius = 7.0
 height = 6.0
 
+[sub_resource type="DynamicFont" id=7]
+size = 13
+font_data = ExtResource( 5 )
+
 [node name="ForestDeerOne" type="KinematicBody2D"]
 scale = Vector2( 1.2, 1.2 )
 script = ExtResource( 2 )
@@ -41,7 +46,6 @@ script = ExtResource( 2 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 4 )
 animation = "chill"
-frame = 1
 playing = true
 
 [node name="Area2D" type="Area2D" parent="."]
@@ -69,12 +73,13 @@ scale = Vector2( 0.479167, 0.493056 )
 texture = ExtResource( 3 )
 
 [node name="RichTextLabel" type="RichTextLabel" parent="RescuePopUp"]
-margin_left = 6.0
-margin_top = 3.83333
-margin_right = 326.0
-margin_bottom = 53.8333
+margin_left = 6.83333
+margin_top = 2.16667
+margin_right = 334.833
+margin_bottom = 60.1667
 rect_scale = Vector2( 0.5, 0.5 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_fonts/normal_font = SubResource( 7 )
 bbcode_enabled = true
 bbcode_text = "[center] Thank you! My brother wandered into the cave up in the Northeast corner.  If you see him, please send him home."
 text = " Thank you! My brother wandered into the cave up in the Northeast corner.  If you see him, please send him home."
@@ -83,6 +88,7 @@ text = " Thank you! My brother wandered into the cave up in the Northeast corner
 wait_time = 6.0
 
 [node name="FreedPopup" parent="." instance=ExtResource( 4 )]
+visible = false
 
 [node name="Timer2" type="Timer" parent="."]
 wait_time = 3.0

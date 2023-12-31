@@ -1,9 +1,10 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Animals/MiniFox.png" type="Texture" id=1]
 [ext_resource path="res://Animals/ForestDeerOne.gd" type="Script" id=2]
 [ext_resource path="res://UI/panel_Intro.png" type="Texture" id=3]
 [ext_resource path="res://Animals/FreedPopup.tscn" type="PackedScene" id=4]
+[ext_resource path="res://fonts/PixelTandysoft-0rJG.ttf" type="DynamicFontData" id=5]
 
 [sub_resource type="AtlasTexture" id=7]
 atlas = ExtResource( 1 )
@@ -36,6 +37,10 @@ radius = 11.0
 radius = 7.0
 height = 6.0
 
+[sub_resource type="DynamicFont" id=11]
+size = 13
+font_data = ExtResource( 5 )
+
 [node name="ForestFox" type="KinematicBody2D"]
 scale = Vector2( 1.2, 1.2 )
 script = ExtResource( 2 )
@@ -45,7 +50,7 @@ script = ExtResource( 2 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 4 )
 animation = "chill"
-frame = 2
+frame = 1
 playing = true
 offset = Vector2( 0, -10 )
 
@@ -75,11 +80,12 @@ texture = ExtResource( 3 )
 
 [node name="RichTextLabel" type="RichTextLabel" parent="RescuePopUp"]
 margin_left = 6.0
-margin_top = 3.83333
-margin_right = 326.0
-margin_bottom = 53.8333
+margin_top = 2.16667
+margin_right = 333.0
+margin_bottom = 69.1667
 rect_scale = Vector2( 0.5, 0.5 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_fonts/normal_font = SubResource( 11 )
 bbcode_enabled = true
 bbcode_text = "[center]  I can't believe it! I thought nobody would ever come. Have you seen my friend, Luka? He should be somewhere nearby..."
 text = "  I can't believe it! I thought nobody would ever come. Have you seen my friend, Luka? He should be somewhere nearby..."
