@@ -30,7 +30,7 @@ func _process(delta):
 	if saved:
 		if (Input.is_action_pressed("interact")):
 			popup.show()
-			text.bbcode_text = "[center] \nSaveCat now slumbers elsewhere [/center]"
+			text.bbcode_text = "[center] SaveCat now slumbers elsewhere [/center]"
 			stats.emit_signal("player_resumed")
 			cont.hide()
 			btnsprite.hide()
@@ -61,7 +61,7 @@ func _on_YesButton_pressed():
 	noButton.queue_free()
 	cont.show()
 	btnsprite.show()
-	text.bbcode_text = "[center] \nYour game has been saved. [/center]"
+	text.bbcode_text = "[center] Your game has been saved. [/center]"
 
 func _on_Timer_timeout():
 	queue_free()
