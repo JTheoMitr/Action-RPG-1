@@ -29,7 +29,7 @@ shape = SubResource( 1 )
 
 [node name="PopupDialog" type="PopupDialog" parent="."]
 visible = true
-margin_right = 76.0
+margin_right = 78.0
 margin_bottom = 18.0
 rect_scale = Vector2( 0.45, 0.45 )
 custom_styles/panel = SubResource( 2 )

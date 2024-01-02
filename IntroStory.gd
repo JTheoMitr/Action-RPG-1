@@ -18,12 +18,14 @@ var sceneCount = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	introTune.play(7.0)
+	introTune.play(7.5)
+	introTune.volume_db = 0.0
 	cliffTanks.modulate.a = 0.0
 	refineries.modulate.a = 0.0
 	ceo.modulate.a = 0.0
 	winterBirch.modulate.a = 0.0
 	theReturn.modulate.a = 0.0
+	musicTimer.start()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
