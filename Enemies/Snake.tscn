@@ -101,8 +101,8 @@ height = 6.0
 [node name="Snake" type="KinematicBody2D"]
 collision_layer = 16
 script = ExtResource( 3 )
-ACCELERATION = 390
-MAX_SPEED = 90
+ACCELERATION = 400
+MAX_SPEED = 95
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 scale = Vector2( 0.33, 0.33 )
