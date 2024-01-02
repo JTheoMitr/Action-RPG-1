@@ -20,6 +20,7 @@ func _ready():
 	worldStats.connect("fade_music_out", self, "lower_music_volume")
 	worldStats.connect("lowest_volume", self, "lower_music_volume")
 	generate_laser_effect(Vector2(-1248, 459.451538))
+	#$CanvasLayer/BatteryUI.hide()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

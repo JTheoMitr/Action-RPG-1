@@ -9,15 +9,12 @@ var stats = PlayerStats
 onready var battUIFull = $BattUIFull
 onready var battUIEmpty = $BattUIEmpty
 
-#func _process(delta):
-#	if stats.overcharge == false:
-#		self.hide()
-#	else:
-#		self.show()
-
-# need a new way to hide it until first encounter with guidebot
+func _process(delta):
+	if stats.overcharge == false:
+		self.hide()
+	else:
+		self.show()
 			
-
 
 func set_batts(value):
 	batts = clamp(value, 0, max_batts)
