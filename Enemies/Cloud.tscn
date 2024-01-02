@@ -60,7 +60,7 @@ scale = Vector2( 1.2, 1.2 )
 z_index = 1
 frames = SubResource( 6 )
 animation = "fly"
-frame = 1
+frame = 2
 playing = true
 offset = Vector2( 0, -12 )
 
@@ -84,7 +84,7 @@ shape = SubResource( 8 )
 wait_time = 0.6
 
 [node name="Stats" parent="." instance=ExtResource( 5 )]
-max_health = 2
+max_health = 4
 
 [node name="PlayerDetectionZone" parent="." instance=ExtResource( 6 )]
 visible = false
@@ -96,6 +96,7 @@ shape = SubResource( 9 )
 [node name="Hitbox" parent="." instance=ExtResource( 7 )]
 visible = false
 collision_mask = 4
+damage = 2
 
 [node name="CollisionShape2D" parent="Hitbox" index="0"]
 position = Vector2( 0, -15 )
