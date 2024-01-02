@@ -1104,55 +1104,56 @@ z_index = 1
 
 [node name="SwarmOne" parent="Swarms" instance=ExtResource( 68 )]
 position = Vector2( -37, 442 )
-frame = 0
 
 [node name="SwarmOne7" parent="Swarms" instance=ExtResource( 68 )]
 position = Vector2( -40, 444 )
 scale = Vector2( 0.475, 0.506251 )
+frame = 4
 
 [node name="SwarmOne11" parent="Swarms" instance=ExtResource( 68 )]
 position = Vector2( 455, 440 )
 scale = Vector2( 0.475, 0.506251 )
+frame = 4
 
 [node name="SwarmOne12" parent="Swarms" instance=ExtResource( 68 )]
 position = Vector2( 459, 441 )
 rotation = 1.309
 scale = Vector2( 0.3, 0.3 )
-frame = 1
+frame = 3
 
 [node name="SwarmOne3" parent="Swarms" instance=ExtResource( 68 )]
 position = Vector2( -23, 30 )
-frame = 5
+frame = 7
 
 [node name="SwarmOne8" parent="Swarms" instance=ExtResource( 68 )]
 position = Vector2( -113, -264 )
-frame = 4
+frame = 6
 
 [node name="SwarmOne9" parent="Swarms" instance=ExtResource( 68 )]
 position = Vector2( -115, -263 )
 scale = Vector2( 0.5, 0.4 )
-frame = 4
+frame = 6
 
 [node name="SwarmOne4" parent="Swarms" instance=ExtResource( 68 )]
 position = Vector2( 465, -145 )
-frame = 4
+frame = 6
 
 [node name="SwarmOne5" parent="Swarms" instance=ExtResource( 68 )]
 position = Vector2( 561, -1.00001 )
-frame = 4
+frame = 6
 
 [node name="SwarmOne6" parent="Swarms" instance=ExtResource( 68 )]
 position = Vector2( 684, -261 )
-frame = 4
+frame = 6
 
 [node name="SwarmOne10" parent="Swarms" instance=ExtResource( 68 )]
 position = Vector2( 682, -260 )
 rotation = 1.0472
 scale = Vector2( 0.5, 0.5 )
+frame = 4
 
 [node name="SwarmOne2" parent="Swarms" instance=ExtResource( 68 )]
 position = Vector2( -78, 221 )
-frame = 0
 
 [node name="WaterTileMap" type="TileMap" parent="."]
 tile_set = SubResource( 52 )
@@ -2595,7 +2596,7 @@ position = Vector2( 40, 56 )
 position = Vector2( 184, 16 )
 
 [node name="GreyStoneSmall3" parent="YSort/Stones" instance=ExtResource( 29 )]
-position = Vector2( -136, 96 )
+position = Vector2( -154, 96 )
 
 [node name="GreyStoneSmall8" parent="YSort/Stones" instance=ExtResource( 29 )]
 position = Vector2( -231, 413 )
@@ -3041,7 +3042,7 @@ position = Vector2( -16, -272 )
 [node name="ScreenCrackleOne" parent="YSort/OilCoDoors" instance=ExtResource( 57 )]
 position = Vector2( -17, -270.5 )
 scale = Vector2( 0.094, 0.0833333 )
-frame = 1
+frame = 5
 
 [node name="YellowFlowers" type="YSort" parent="YSort"]
 
@@ -3224,10 +3225,22 @@ position = Vector2( 698, -264 )
 [node name="OilBarrelsOne" parent="YSort/OilBarrels" instance=ExtResource( 72 )]
 position = Vector2( -736, -226 )
 
+[node name="OilBarrelsOne3" parent="YSort/OilBarrels" instance=ExtResource( 72 )]
+position = Vector2( 432, -128 )
+
+[node name="OilBarrelsOne2" parent="YSort/OilBarrels" instance=ExtResource( 72 )]
+position = Vector2( -135, 91 )
+
 [node name="Clouds" type="YSort" parent="YSort"]
 
 [node name="Cloud" parent="YSort/Clouds" instance=ExtResource( 76 )]
-position = Vector2( -356, 501 )
+position = Vector2( -139, 122 )
+
+[node name="Cloud2" parent="YSort/Clouds" instance=ExtResource( 76 )]
+position = Vector2( -751, -198 )
+
+[node name="Cloud3" parent="YSort/Clouds" instance=ExtResource( 76 )]
+position = Vector2( 433, -123 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
