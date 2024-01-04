@@ -66,8 +66,10 @@ custom_colors/default_color = Color( 1, 1, 1, 1 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_fonts/normal_font = SubResource( 4 )
 bbcode_enabled = true
-bbcode_text = "[center]Why is Bunny in a cage? I need to find out what's going on, and more importantly...a key![/center]"
-text = "Why is Bunny in a cage? I need to find out what's going on, and more importantly...a key!"
+bbcode_text = "[center]
+Why is Bunny in a cage? I need to find a key![/center]"
+text = "
+Why is Bunny in a cage? I need to find a key!"
 
 [node name="Sprite" type="Sprite" parent="StoryDialog1"]
 position = Vector2( 40, 65 )
