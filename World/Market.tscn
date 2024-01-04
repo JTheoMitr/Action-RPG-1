@@ -54,7 +54,6 @@ position = Vector2( -31.25, 27.0833 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 3 )
 animation = "chill"
-frame = 1
 playing = true
 
 [node name="PopupDialog" type="PopupDialog" parent="."]
