@@ -1,0 +1,74 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://TutorialArea2.gd" type="Script" id=1]
+[ext_resource path="res://World/gdb-playstation-2 pause pressed.png" type="Texture" id=2]
+[ext_resource path="res://fonts/PixelTandysoft-0rJG.ttf" type="DynamicFontData" id=3]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 66.0
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0.184314, 0.152941, 0.152941, 0.682353 )
+
+[sub_resource type="DynamicFont" id=8]
+size = 13
+font_data = ExtResource( 3 )
+
+[sub_resource type="AtlasTexture" id=9]
+atlas = ExtResource( 2 )
+region = Rect2( 0, 0, 16, 14 )
+
+[sub_resource type="AtlasTexture" id=10]
+atlas = ExtResource( 2 )
+region = Rect2( 16, 0, 16, 14 )
+
+[sub_resource type="AtlasTexture" id=11]
+atlas = ExtResource( 2 )
+region = Rect2( 32, 0, 16, 14 )
+
+[sub_resource type="AtlasTexture" id=12]
+atlas = ExtResource( 2 )
+region = Rect2( 48, 0, 16, 14 )
+
+[sub_resource type="SpriteFrames" id=7]
+animations = [ {
+"frames": [ SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ) ],
+"loop": true,
+"name": "Animate",
+"speed": 3.0
+} ]
+
+[node name="TutorialArea4" type="Area2D"]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+
+[node name="PopupDialog" type="PopupDialog" parent="."]
+visible = true
+margin_top = 3.0
+margin_right = 110.0
+margin_bottom = 33.0
+rect_scale = Vector2( 0.8, 0.8 )
+custom_styles/panel = SubResource( 2 )
+
+[node name="RichTextLabel" type="RichTextLabel" parent="PopupDialog"]
+margin_left = 31.25
+margin_top = 6.25
+margin_right = 160.25
+margin_bottom = 57.25
+custom_fonts/normal_font = SubResource( 8 )
+bbcode_enabled = true
+text = "pause menu"
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="PopupDialog"]
+position = Vector2( 18.75, 15 )
+frames = SubResource( 7 )
+animation = "Animate"
+frame = 1
+playing = true
+
+[connection signal="area_entered" from="." to="." method="_on_TutorialArea2_area_entered"]
+[connection signal="area_exited" from="." to="." method="_on_TutorialArea2_area_exited"]
