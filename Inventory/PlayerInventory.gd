@@ -35,7 +35,7 @@ func _process(_delta):
 		controlsPanel.hide()
 		get_tree().paused = false
 		menuOn = false
-	if Input.is_action_just_pressed("special_one"):
+	if (Input.is_action_just_pressed("special_one")) && self.visible:
 		if controlsOn:
 			controlsPanel.hide()
 			controlsOn = false
