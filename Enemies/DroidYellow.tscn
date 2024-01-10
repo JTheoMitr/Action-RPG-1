@@ -1,6 +1,6 @@
 [gd_scene load_steps=22 format=2]
 
-[ext_resource path="res://Enemies/droid_run_red.png" type="Texture" id=1]
+[ext_resource path="res://Enemies/droid_run_yellow.png" type="Texture" id=1]
 [ext_resource path="res://Hitboxes and Hurtboxes/Hurtbox.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Shadows/SmallShadow.png" type="Texture" id=3]
 [ext_resource path="res://Stats.tscn" type="PackedScene" id=4]
@@ -61,9 +61,10 @@ height = 6.0
 radius = 4.0
 height = 6.0
 
-[node name="Droid" type="KinematicBody2D"]
+[node name="DroidYellow" type="KinematicBody2D"]
 collision_layer = 17
 script = ExtResource( 8 )
+MAX_SPEED = 55
 
 [node name="ShadowSprite" type="Sprite" parent="."]
 texture = ExtResource( 3 )
@@ -73,7 +74,7 @@ offset = Vector2( 0, 1 )
 scale = Vector2( 0.33, 0.33 )
 frames = SubResource( 7 )
 animation = "walk"
-frame = 1
+frame = 3
 playing = true
 offset = Vector2( 1, -60 )
 
@@ -91,7 +92,6 @@ position = Vector2( 0, -7 )
 shape = SubResource( 9 )
 
 [node name="Stats" parent="." instance=ExtResource( 4 )]
-max_health = 2
 
 [node name="PlayerDetectionZone" parent="." instance=ExtResource( 6 )]
 visible = false
