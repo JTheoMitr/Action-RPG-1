@@ -4,6 +4,7 @@ const EnemyDeathEffect = preload("res://Effects/EnemyDeathEffect.tscn")
 const Battery = preload("res://World/Battery.tscn")
 const Ammo = preload("res://World/Ammo.tscn")
 const DroidSound = preload("res://Music and Sounds/DroidSound.tscn")
+const Laser = preload("res://Enemies/DroidLaser.tscn")
 
 export var ACCELERATION = 280
 export var MAX_SPEED = 40
@@ -27,6 +28,7 @@ onready var playerDetectionZone = $PlayerDetectionZone
 onready var hurtbox = $Hurtbox
 onready var softCollision = $SoftCollision
 onready var wanderController = $WanderController
+onready var timer = $Timer
 
 func _ready():
 	state = pick_random_state([IDLE, WANDER])
@@ -76,6 +78,10 @@ func seek_player():
 		var droidSound = DroidSound.instance()
 		get_parent().add_child(droidSound)
 		droidSound.play(0.0)
+		timer.start(0.0)
+		var laser = Laser.instance()
+		laser.global_position = global_position
+		get_parent().call_deferred("add_child", laser)
 		state = CHASE
 		
 
@@ -113,3 +119,9 @@ func _on_Stats_no_health():
 		var ammo = Ammo.instance()
 		get_parent().call_deferred("add_child", ammo)
 		ammo.global_position = global_position
+
+
+func _on_Timer_timeout():
+	var laser = Laser.instance()
+	laser.global_position = global_position
+	get_parent().call_deferred("add_child", laser)
