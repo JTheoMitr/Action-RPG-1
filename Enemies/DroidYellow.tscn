@@ -64,7 +64,7 @@ height = 6.0
 [node name="DroidYellow" type="KinematicBody2D"]
 collision_layer = 17
 script = ExtResource( 8 )
-MAX_SPEED = 55
+MAX_SPEED = 45
 
 [node name="ShadowSprite" type="Sprite" parent="."]
 texture = ExtResource( 3 )
@@ -74,7 +74,7 @@ offset = Vector2( 0, 1 )
 scale = Vector2( 0.33, 0.33 )
 frames = SubResource( 7 )
 animation = "walk"
-frame = 3
+frame = 4
 playing = true
 offset = Vector2( 1, -60 )
 
@@ -92,6 +92,7 @@ position = Vector2( 0, -7 )
 shape = SubResource( 9 )
 
 [node name="Stats" parent="." instance=ExtResource( 4 )]
+max_health = 2
 
 [node name="PlayerDetectionZone" parent="." instance=ExtResource( 6 )]
 visible = false
