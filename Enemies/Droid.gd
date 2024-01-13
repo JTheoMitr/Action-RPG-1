@@ -21,6 +21,7 @@ var velocity = Vector2.ZERO
 var knockback = Vector2.ZERO
 
 var state = CHASE
+var laserEngaged = false
 
 onready var sprite = $AnimatedSprite
 onready var stats = $Stats
@@ -79,9 +80,11 @@ func seek_player():
 		get_parent().add_child(droidSound)
 		droidSound.play(0.0)
 		timer.start(0.0)
-		# var laser = Laser.instance()
-		# laser.global_position = global_position
-		# get_parent().call_deferred("add_child", laser)
+		if laserEngaged == false:
+			var laser = Laser.instance()
+			laser.global_position = global_position
+			get_parent().call_deferred("add_child", laser)
+			laserEngaged = true
 		state = CHASE
 		
 
