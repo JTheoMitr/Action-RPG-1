@@ -7,7 +7,7 @@
 [ext_resource path="res://Hitboxes and Hurtboxes/Hitbox.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Enemies/PlayerDetectionZone.tscn" type="PackedScene" id=6]
 [ext_resource path="res://SoftCollision.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Enemies/Droid.gd" type="Script" id=8]
+[ext_resource path="res://Enemies/DroidYellow.gd" type="Script" id=8]
 [ext_resource path="res://Enemies/WanderController.tscn" type="PackedScene" id=9]
 
 [sub_resource type="AtlasTexture" id=13]
@@ -64,7 +64,6 @@ height = 6.0
 [node name="DroidYellow" type="KinematicBody2D"]
 collision_layer = 17
 script = ExtResource( 8 )
-MAX_SPEED = 45
 
 [node name="ShadowSprite" type="Sprite" parent="."]
 texture = ExtResource( 3 )
@@ -74,6 +73,7 @@ offset = Vector2( 0, 1 )
 scale = Vector2( 0.33, 0.33 )
 frames = SubResource( 7 )
 animation = "walk"
+frame = 4
 playing = true
 offset = Vector2( 1, -60 )
 
