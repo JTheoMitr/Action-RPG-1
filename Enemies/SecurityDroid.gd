@@ -3,6 +3,7 @@ extends KinematicBody2D
 const EnemyDeathEffect = preload("res://Effects/EnemyDeathEffect.tscn")
 const Battery = preload("res://World/Battery.tscn")
 const SecDroidSound = preload("res://Music and Sounds/SecurityDroidSound.tscn")
+const Laser = preload("res://Enemies/DroidLaser.tscn")
 
 export var ACCELERATION = 280
 export var MAX_SPEED = 40
@@ -28,6 +29,7 @@ onready var softCollision = $SoftCollision
 onready var wanderController = $WanderController
 onready var hitbox2 = $Hitbox2
 var droidSound = SecDroidSound.instance()
+var laserEngaged = false
 
 func _ready():
 	state = pick_random_state([IDLE, WANDER])
@@ -78,6 +80,11 @@ func seek_player():
 		
 		get_parent().add_child(droidSound)
 		droidSound.play(0.0)
+		if laserEngaged == false:
+			var laser = Laser.instance()
+			laser.global_position = global_position
+			get_parent().call_deferred("add_child", laser)
+			# laserEngaged = true
 		state = CHASE
 		
 
@@ -113,3 +120,9 @@ func _on_Stats_no_health():
 		var battery = Battery.instance()
 		get_parent().call_deferred("add_child", battery)
 		battery.global_position = global_position
+
+
+func _on_Timer_timeout():
+	var laser = Laser.instance()
+	laser.global_position = global_position
+	get_parent().call_deferred("add_child", laser)

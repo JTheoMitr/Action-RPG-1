@@ -125,6 +125,7 @@ func _on_Stats_no_health():
 
 
 func _on_Timer_timeout():
-	var laser = Laser.instance()
-	laser.global_position = global_position
-	get_parent().call_deferred("add_child", laser)
+	pass
+	# var laser = Laser.instance()
+	# laser.global_position = global_position
+	# get_parent().call_deferred("add_child", laser)

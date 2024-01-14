@@ -84,7 +84,7 @@ func seek_player():
 			var laser = Laser.instance()
 			laser.global_position = global_position
 			get_parent().call_deferred("add_child", laser)
-			# laserEngaged = true
+			laserEngaged = true
 		state = CHASE
 		
 
