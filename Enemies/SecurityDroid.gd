@@ -28,6 +28,7 @@ onready var hurtbox = $Hurtbox
 onready var softCollision = $SoftCollision
 onready var wanderController = $WanderController
 onready var hitbox2 = $Hitbox2
+onready var timer = $Timer
 var droidSound = SecDroidSound.instance()
 var laserEngaged = false
 
@@ -77,13 +78,14 @@ func accelerate_towards_point(point, delta):
 
 func seek_player():
 	if playerDetectionZone.can_see_player():
-		
+		var droidSound = SecDroidSound.instance()
 		get_parent().add_child(droidSound)
 		droidSound.play(0.0)
 		if laserEngaged == false:
 			var laser = Laser.instance()
 			laser.global_position = global_position
 			get_parent().call_deferred("add_child", laser)
+			timer.start(0.0)
 			# laserEngaged = true
 		state = CHASE
 		
