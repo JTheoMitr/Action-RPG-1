@@ -5,13 +5,16 @@ const BuzzerSound = preload("res://Music and Sounds/BuzzerSound.tscn")
 
 onready var redPopButton = $Control/CenterContainer/VBoxContainer/Button
 onready var coinLabel = $Control/CoinTextLabel
+onready var grooves = $BossaNova
+
 var stats = PlayerStats
 
 func _ready():
-	pass # Replace with function body.
+	grooves.play(0.0)
 	
 func _process(delta):
 	coinLabel.text = "x " + str(stats.coins)
+	
 
 func _on_Button_pressed(): #redpop
 	
@@ -50,4 +53,9 @@ func _on_Button3_pressed(): #sundae
 
 func _on_Button4_pressed():
 	hide()
+	grooves.stop()
 	stats.emit_signal("player_resumed")
+
+
+func _on_Timer_timeout():
+	self.call_deferred("queue_free")

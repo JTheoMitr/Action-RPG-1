@@ -65,6 +65,7 @@ func _physics_process(delta):
 				
 			else:
 				state = IDLE
+				droidSound.stop()
 
 	if softCollision.is_colliding():
 		velocity += softCollision.get_push_vector() * delta * 400
@@ -112,8 +113,8 @@ func _on_Hurtbox_area_entered(area):
 
 
 func _on_Stats_no_health():
-	droidSound.call_deferred("queue_free")
-	call_deferred("queue_free")
+	droidSound.stop()
+	self.call_deferred("queue_free")
 	var enemyDeathEffect = EnemyDeathEffect.instance()
 	get_parent().add_child(enemyDeathEffect)
 	enemyDeathEffect.global_position = global_position
