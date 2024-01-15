@@ -55,6 +55,7 @@ func _on_Button4_pressed():
 	hide()
 	grooves.stop()
 	stats.emit_signal("player_resumed")
+	WorldStats.emit_signal("fade_music_in")
 
 
 func _on_Timer_timeout():

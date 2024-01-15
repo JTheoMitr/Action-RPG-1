@@ -47,7 +47,7 @@ func _on_Area2D_area_exited(area):
 	inArea = false
 	textLabel.bbcode_text = textOptions[0]
 	popup.hide()
-	WorldStats.emit_signal("fade_music_in")
+	
 	
 
 func _on_Timer_timeout():
