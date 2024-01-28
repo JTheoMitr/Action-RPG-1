@@ -31,8 +31,12 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+func _process(delta):
+	if Input.is_action_just_pressed("ui_pause") || Input.is_action_just_pressed("interact"):
+		mainTimer.stop() # to avoid a double fade-in for world 1
+		musicTimer2.start()
+		fadeTimer.stop()
+		transitionTimer.start()
 
 
 
