@@ -15,6 +15,7 @@ onready var winterBirch = $WinterBirch
 onready var theReturn = $TheReturn
 onready var musicTimer = $MusicTimer
 onready var musicTimer2 = $MusicTimer2
+onready var transitionTimer = $TransitionTimer
 var sceneCount = 0
 
 # Called when the node enters the scene tree for the first time.
@@ -37,6 +38,7 @@ func _ready():
 
 
 func _on_Timer_timeout():
+	print_debug(sceneCount)
 	forest.modulate.a -= 0.05
 	if sceneCount == 1 && cliffTanks.modulate.a <= 1:
 		cliffTanks.modulate.a += 0.05
@@ -55,7 +57,9 @@ func _on_Timer_timeout():
 	if sceneCount >= 6:
 		mainTimer.stop() # to avoid a double fade-in for world 1
 		musicTimer2.start()
-		SceneTransitionLong.change_scene("res://World.tscn")
+		fadeTimer.stop()
+		transitionTimer.start()
+		
 		
 
 
@@ -75,3 +79,7 @@ func _on_MusicTimer2_timeout():
 	if (introTune.volume_db <= 1.95):
 		introTune.volume_db -= 1
 
+
+func _on_TransitionTimer_timeout():
+	SceneTransitionLong.change_scene("res://World.tscn")
+	print_debug("whattttt")

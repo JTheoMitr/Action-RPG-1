@@ -79,7 +79,6 @@ func accelerate_towards_point(point, delta):
 
 func seek_player():
 	if playerDetectionZone.can_see_player():
-		var droidSound = SecDroidSound.instance()
 		get_parent().add_child(droidSound)
 		droidSound.play(0.0)
 		if laserEngaged == false:
