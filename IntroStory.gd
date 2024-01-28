@@ -53,6 +53,7 @@ func _on_Timer_timeout():
 		winterBirch.modulate.a -= 0.05
 		theReturn.modulate.a += 0.05
 	if sceneCount >= 6:
+		mainTimer.stop() # to avoid a double fade-in for world 1
 		musicTimer2.start()
 		SceneTransitionLong.change_scene("res://World.tscn")
 		

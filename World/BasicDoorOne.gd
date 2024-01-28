@@ -26,9 +26,14 @@ func create_dust_effect():
 	dustEffect.global_position.y = global_position.y + 25
 	
 func _on_Area2D_area_entered(area):
-	if stats.boss_keys == 1 && WorldStats.freed == 3:
+	if stats.boss_keys == 1 && WorldStats.freed == 3: #check this for exit issues, change WorldStats to an onready var
 		create_dust_effect()
 		var creakSound = DoorCreak.instance()
 		get_tree().current_scene.add_child(creakSound)
 		queue_free()
+	else:
+		var creakSound = DoorCreak.instance()
+		get_tree().current_scene.add_child(creakSound)
+		print_debug(stats.boss_keys)
+		print_debug(WorldStats.freed)
 		
