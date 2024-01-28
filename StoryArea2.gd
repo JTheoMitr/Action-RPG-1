@@ -1,6 +1,7 @@
 extends Area2D
 
 const ChatterSound = preload("res://Music and Sounds/GuideBotChatterSound.tscn")
+const NewSkill = preload("res://Music and Sounds/NewSkill.tscn")
 
 onready var popup = $StoryDialog2
 onready var question = $QuestionPopUp
@@ -147,8 +148,8 @@ func _on_Timer_timeout():
 
 
 func _on_SkillDescTimer_timeout():
-	var chatterSound = ChatterSound.instance()
-	get_tree().current_scene.add_child(chatterSound)
+	var newSkill = NewSkill.instance()
+	get_tree().current_scene.add_child(newSkill)
 	skillPop.show()
 	stats.overcharge = true
 	stats.emit_signal("player_paused")

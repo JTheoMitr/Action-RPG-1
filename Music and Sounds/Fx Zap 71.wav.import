@@ -1,0 +1,23 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Fx Zap 71.wav-a20ad30a258297c07446c1fc1d8ceece.sample"
+
+[deps]
+
+source_file="res://Music and Sounds/Fx Zap 71.wav"
+dest_files=[ "res://.import/Fx Zap 71.wav-a20ad30a258297c07446c1fc1d8ceece.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
