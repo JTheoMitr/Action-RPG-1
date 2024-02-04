@@ -29,4 +29,18 @@ collision_mask = 2
 position = Vector2( 1, 7 )
 shape = SubResource( 2 )
 
+[node name="PopupDialog" type="PopupDialog" parent="."]
+visible = true
+margin_right = 87.0
+margin_bottom = 16.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="PopupDialog"]
+margin_left = 5.0
+margin_top = 5.0
+margin_right = 225.0
+margin_bottom = 22.0
+rect_scale = Vector2( 0.4, 0.4 )
+text = "You've not finished your tasks"
+
 [connection signal="area_entered" from="Area2D" to="." method="_on_Area2D_area_entered"]
+[connection signal="area_exited" from="Area2D" to="." method="_on_Area2D_area_exited"]

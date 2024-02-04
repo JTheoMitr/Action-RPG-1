@@ -2,6 +2,7 @@ extends StaticBody2D
 
 const DoorDust = preload("res://Effects/DoorDustEffectOne.tscn")
 const DoorCreak = preload("res://Music and Sounds/DoorCreak.tscn")
+onready var popup = $PopupDialog
 
 
 # Declare member variables here. Examples:
@@ -32,8 +33,11 @@ func _on_Area2D_area_entered(area):
 		get_tree().current_scene.add_child(creakSound)
 		queue_free()
 	else:
-		var creakSound = DoorCreak.instance()
-		get_tree().current_scene.add_child(creakSound)
+		popup.popup()
 		print_debug(stats.boss_keys)
 		print_debug(WorldStats.freed)
 		
+
+
+func _on_Area2D_area_exited(area):
+	popup.hide()
