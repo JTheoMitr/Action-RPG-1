@@ -1,4 +1,4 @@
-[gd_scene load_steps=179 format=2]
+[gd_scene load_steps=180 format=2]
 
 [ext_resource path="res://World/Bush.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=2]
@@ -78,6 +78,7 @@
 [ext_resource path="res://Enemies/Cloud.tscn" type="PackedScene" id=76]
 [ext_resource path="res://World/TutorialArea4.tscn" type="PackedScene" id=77]
 [ext_resource path="res://Enemies/DroidYellow.tscn" type="PackedScene" id=78]
+[ext_resource path="res://World/ExitSign.tscn" type="PackedScene" id=79]
 
 [sub_resource type="ConvexPolygonShape2D" id=53]
 points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
@@ -1106,55 +1107,56 @@ z_index = 1
 
 [node name="SwarmOne" parent="Swarms" instance=ExtResource( 68 )]
 position = Vector2( -37, 442 )
-frame = 0
 
 [node name="SwarmOne7" parent="Swarms" instance=ExtResource( 68 )]
 position = Vector2( -40, 444 )
 scale = Vector2( 0.475, 0.506251 )
+frame = 4
 
 [node name="SwarmOne11" parent="Swarms" instance=ExtResource( 68 )]
 position = Vector2( 455, 440 )
 scale = Vector2( 0.475, 0.506251 )
+frame = 4
 
 [node name="SwarmOne12" parent="Swarms" instance=ExtResource( 68 )]
 position = Vector2( 459, 441 )
 rotation = 1.309
 scale = Vector2( 0.3, 0.3 )
-frame = 1
+frame = 3
 
 [node name="SwarmOne3" parent="Swarms" instance=ExtResource( 68 )]
 position = Vector2( -23, 30 )
-frame = 5
+frame = 7
 
 [node name="SwarmOne8" parent="Swarms" instance=ExtResource( 68 )]
 position = Vector2( -113, -264 )
-frame = 4
+frame = 6
 
 [node name="SwarmOne9" parent="Swarms" instance=ExtResource( 68 )]
 position = Vector2( -115, -263 )
 scale = Vector2( 0.5, 0.4 )
-frame = 4
+frame = 6
 
 [node name="SwarmOne4" parent="Swarms" instance=ExtResource( 68 )]
 position = Vector2( 465, -145 )
-frame = 4
+frame = 6
 
 [node name="SwarmOne5" parent="Swarms" instance=ExtResource( 68 )]
 position = Vector2( 561, -1.00001 )
-frame = 4
+frame = 6
 
 [node name="SwarmOne6" parent="Swarms" instance=ExtResource( 68 )]
 position = Vector2( 684, -261 )
-frame = 4
+frame = 6
 
 [node name="SwarmOne10" parent="Swarms" instance=ExtResource( 68 )]
 position = Vector2( 682, -260 )
 rotation = 1.0472
 scale = Vector2( 0.5, 0.5 )
+frame = 4
 
 [node name="SwarmOne2" parent="Swarms" instance=ExtResource( 68 )]
 position = Vector2( -78, 221 )
-frame = 0
 
 [node name="WaterTileMap" type="TileMap" parent="."]
 tile_set = SubResource( 52 )
@@ -2654,7 +2656,7 @@ position = Vector2( -328, -128 )
 position = Vector2( 841, -257 )
 
 [node name="PurpleStoneLarge2" parent="YSort/Stones" instance=ExtResource( 32 )]
-position = Vector2( 936, -128 )
+position = Vector2( 935, -123 )
 
 [node name="Mushrooms" type="YSort" parent="YSort"]
 
@@ -3046,6 +3048,9 @@ position = Vector2( -371, -391 )
 
 [node name="BossSkull3" parent="YSort/Arrows and Skulls" instance=ExtResource( 53 )]
 position = Vector2( -359, -391 )
+
+[node name="ExitSign" parent="YSort/Arrows and Skulls" instance=ExtResource( 79 )]
+position = Vector2( 943, -135 )
 
 [node name="OilCoDoors" type="YSort" parent="YSort"]
 
