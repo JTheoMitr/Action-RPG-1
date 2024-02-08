@@ -75,9 +75,8 @@ texture = ExtResource( 4 )
 
 [node name="RichTextLabel" type="RichTextLabel" parent="RescuePopUp"]
 margin_left = 6.33334
-margin_top = 3.33333
 margin_right = 301.334
-margin_bottom = 74.3334
+margin_bottom = 71.0001
 rect_scale = Vector2( 0.15, 0.75 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_fonts/normal_font = SubResource( 6 )

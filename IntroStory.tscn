@@ -74,6 +74,14 @@ stream = ExtResource( 2 )
 wait_time = 2.0
 one_shot = true
 
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+margin_left = 261.0
+margin_top = 161.0
+margin_right = 388.0
+margin_bottom = 181.0
+rect_scale = Vector2( 0.3, 0.3 )
+text = "press pause to skip"
+
 [connection signal="timeout" from="FadeTimer" to="." method="_on_Timer_timeout"]
 [connection signal="timeout" from="MainTimer" to="." method="_on_Timer2_timeout"]
 [connection signal="timeout" from="MusicTimer" to="." method="_on_MusicTimer_timeout"]
