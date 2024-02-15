@@ -1,6 +1,7 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://World/Clouds V2 copy_2.png" type="Texture" id=1]
+[ext_resource path="res://Effects/MapClouds.gd" type="Script" id=2]
 [ext_resource path="res://World/Clouds V2 copy_1.png" type="Texture" id=3]
 [ext_resource path="res://World/Clouds V2 copy_3.png" type="Texture" id=4]
 
@@ -29,5 +30,5 @@ scale = Vector2( 0.2, 0.2 )
 z_index = 1
 frames = SubResource( 5 )
 animation = "Animate"
-frame = 2
 playing = true
+script = ExtResource( 2 )

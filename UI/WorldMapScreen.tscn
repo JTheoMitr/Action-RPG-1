@@ -91,21 +91,31 @@ frame = 0
 
 [node name="SandDustEffectOne" parent="YSort" instance=ExtResource( 8 )]
 position = Vector2( 122, 85 )
+frame = 3
 
 [node name="SandDustEffectOne3" parent="YSort" instance=ExtResource( 8 )]
 position = Vector2( 124, 85 )
+frame = 3
 
 [node name="SandDustEffectOne2" parent="YSort" instance=ExtResource( 8 )]
 position = Vector2( 101, 68 )
-frame = 1
 
 [node name="MapClouds" parent="YSort" instance=ExtResource( 9 )]
 position = Vector2( 173, 150 )
+frame = 1
 
 [node name="MapClouds2" parent="YSort" instance=ExtResource( 9 )]
-position = Vector2( 168, 151 )
-frame = 0
+position = Vector2( 171, 151 )
+frame = 2
+
+[node name="MapClouds4" parent="YSort" instance=ExtResource( 9 )]
+position = Vector2( 205, 144 )
+frame = 1
+
+[node name="MapClouds5" parent="YSort" instance=ExtResource( 9 )]
+position = Vector2( 214, 144 )
+frame = 1
 
 [node name="MapClouds3" parent="YSort" instance=ExtResource( 9 )]
-position = Vector2( 176, 156 )
-frame = 0
+position = Vector2( 169, 156 )
+frame = 2
