@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://UI/MapFinal1.png" type="Texture" id=1]
 [ext_resource path="res://UI/EquipmentIconsC330.png" type="Texture" id=2]
@@ -7,6 +7,8 @@
 [ext_resource path="res://UI/WorldMapScreen.gd" type="Script" id=5]
 [ext_resource path="res://Effects/MotionWaterMap.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Effects/SmokeStackEffectOne.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Effects/SandDustEffectOne.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Effects/MapClouds.tscn" type="PackedScene" id=9]
 
 [node name="WorldMapScreen" type="ColorRect"]
 margin_right = 320.0
@@ -75,13 +77,35 @@ position = Vector2( 227, 56 )
 position = Vector2( 208, 134 )
 
 [node name="SmokeStackEffectOne" parent="YSort" instance=ExtResource( 7 )]
-position = Vector2( 154, 62.1476 )
+position = Vector2( 154, 63.1476 )
 rotation = 1.5708
 scale = Vector2( 0.105515, 0.162135 )
-frame = 0
+z_index = 1
 
 [node name="SmokeStackEffectOne2" parent="YSort" instance=ExtResource( 7 )]
-position = Vector2( 162, 63 )
+position = Vector2( 160.708, 62.6218 )
 rotation = 1.5708
-scale = Vector2( 0.105515, 0.162135 )
+scale = Vector2( 0.0979507, 0.0814104 )
+z_index = 1
+frame = 0
+
+[node name="SandDustEffectOne" parent="YSort" instance=ExtResource( 8 )]
+position = Vector2( 122, 85 )
+
+[node name="SandDustEffectOne3" parent="YSort" instance=ExtResource( 8 )]
+position = Vector2( 124, 85 )
+
+[node name="SandDustEffectOne2" parent="YSort" instance=ExtResource( 8 )]
+position = Vector2( 101, 68 )
+frame = 1
+
+[node name="MapClouds" parent="YSort" instance=ExtResource( 9 )]
+position = Vector2( 173, 150 )
+
+[node name="MapClouds2" parent="YSort" instance=ExtResource( 9 )]
+position = Vector2( 168, 151 )
+frame = 0
+
+[node name="MapClouds3" parent="YSort" instance=ExtResource( 9 )]
+position = Vector2( 176, 156 )
 frame = 0
