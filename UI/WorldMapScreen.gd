@@ -3,6 +3,7 @@ extends ColorRect
 onready var wolfIcon = $WhiteWolf
 onready var forestButton = $ForestButton
 onready var caveButton = $CaveButton
+onready var levelText = $RichTextLabel
 
 
 # Declare member variables here. Examples:
@@ -20,7 +21,9 @@ func _process(delta):
 	if forestButton.has_focus():
 		wolfIcon.position.x = 191
 		wolfIcon.position.y = 159
+		levelText.text = "The \n Forest"
 	if caveButton.has_focus():
 		wolfIcon.position.x = 171
 		wolfIcon.position.y = 142
+		levelText.text = "Wylde \n Caverns"
 
