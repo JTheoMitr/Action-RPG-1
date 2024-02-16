@@ -88,6 +88,8 @@ func seek_player():
 			timer.start(0.0)
 			# laserEngaged = true
 		state = CHASE
+	else:
+		timer.stop()
 		
 
 func update_wander_state():
