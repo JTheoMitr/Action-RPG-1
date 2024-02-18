@@ -4,6 +4,7 @@ onready var wolfIcon = $WhiteWolf
 onready var forestButton = $ForestButton
 onready var caveButton = $CaveButton
 onready var levelText = $RichTextLabel
+onready var selectSound = $SelectSound
 
 
 # Declare member variables here. Examples:
@@ -26,4 +27,14 @@ func _process(delta):
 		wolfIcon.position.x = 171
 		wolfIcon.position.y = 142
 		levelText.text = "Wylde \n Caverns"
+		
+		
 
+
+
+func _on_ForestButton_focus_entered():
+	selectSound.play(0.0)
+
+
+func _on_CaveButton_focus_entered():
+	selectSound.play(0.0)
