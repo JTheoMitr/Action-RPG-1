@@ -33,18 +33,18 @@ animations = [ {
 } ]
 
 [sub_resource type="CapsuleShape2D" id=8]
-radius = 5.0
+radius = 3.33333
 height = 0.0
 
 [sub_resource type="CapsuleShape2D" id=9]
 radius = 4.0
-height = 10.0
+height = 0.0
 
 [sub_resource type="CircleShape2D" id=10]
 radius = 174.233
 
 [sub_resource type="CapsuleShape2D" id=11]
-radius = 6.0
+radius = 3.33333
 height = 0.0
 
 [sub_resource type="CapsuleShape2D" id=12]
@@ -58,7 +58,8 @@ ACCELERATION = 350
 MAX_SPEED = 70
 
 [node name="ShadowSprite" type="Sprite" parent="."]
-visible = false
+position = Vector2( 2, 9.33333 )
+scale = Vector2( 0.566667, 0.625 )
 texture = ExtResource( 3 )
 offset = Vector2( 0, 1 )
 
@@ -72,15 +73,14 @@ playing = true
 offset = Vector2( 1, -10 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 2, -2 )
+position = Vector2( 2, -1.33333 )
 shape = SubResource( 8 )
 
 [node name="Hurtbox" parent="." instance=ExtResource( 2 )]
-visible = false
 collision_layer = 8
 
 [node name="CollisionShape2D" parent="Hurtbox" index="0"]
-position = Vector2( 0, -7 )
+position = Vector2( 2, -1.33333 )
 shape = SubResource( 9 )
 
 [node name="Stats" parent="." instance=ExtResource( 4 )]
