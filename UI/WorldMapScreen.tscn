@@ -63,6 +63,9 @@ position = Vector2( 92, 162 )
 [node name="MotionWaterMap2" parent="YSort" instance=ExtResource( 6 )]
 position = Vector2( 93, 114 )
 
+[node name="MotionWaterMap14" parent="YSort" instance=ExtResource( 6 )]
+position = Vector2( 88, 121 )
+
 [node name="MotionWaterMap9" parent="YSort" instance=ExtResource( 6 )]
 position = Vector2( 135, 8 )
 
@@ -72,6 +75,9 @@ position = Vector2( 118, 148 )
 [node name="MotionWaterMap4" parent="YSort" instance=ExtResource( 6 )]
 position = Vector2( 91, 30 )
 
+[node name="MotionWaterMap16" parent="YSort" instance=ExtResource( 6 )]
+position = Vector2( 85, 37 )
+
 [node name="MotionWaterMap11" parent="YSort" instance=ExtResource( 6 )]
 position = Vector2( 83, 75 )
 
@@ -79,10 +85,19 @@ position = Vector2( 83, 75 )
 position = Vector2( 232, 31 )
 
 [node name="MotionWaterMap6" parent="YSort" instance=ExtResource( 6 )]
-position = Vector2( 213, 81 )
+position = Vector2( 231, 64 )
 
 [node name="MotionWaterMap10" parent="YSort" instance=ExtResource( 6 )]
-position = Vector2( 224, 108 )
+position = Vector2( 209, 87 )
+
+[node name="MotionWaterMap15" parent="YSort" instance=ExtResource( 6 )]
+position = Vector2( 223, 111 )
+
+[node name="MotionWaterMap12" parent="YSort" instance=ExtResource( 6 )]
+position = Vector2( 215, 138 )
+
+[node name="MotionWaterMap13" parent="YSort" instance=ExtResource( 6 )]
+position = Vector2( 221, 164 )
 
 [node name="MotionWaterMap7" parent="YSort" instance=ExtResource( 6 )]
 position = Vector2( 227, 56 )
@@ -95,59 +110,56 @@ position = Vector2( 154, 63.1476 )
 rotation = 1.5708
 scale = Vector2( 0.105515, 0.162135 )
 z_index = 1
+frame = 2
 
 [node name="SmokeStackEffectOne2" parent="YSort" instance=ExtResource( 7 )]
 position = Vector2( 160.708, 62.6218 )
 rotation = 1.5708
 scale = Vector2( 0.0979507, 0.0814104 )
 z_index = 1
-frame = 0
 
 [node name="SandDustEffectOne" parent="YSort" instance=ExtResource( 8 )]
 position = Vector2( 122, 85 )
+frame = 3
 
 [node name="SandDustEffectOne3" parent="YSort" instance=ExtResource( 8 )]
 position = Vector2( 124, 85 )
+frame = 3
 
 [node name="SandDustEffectOne4" parent="YSort" instance=ExtResource( 8 )]
 position = Vector2( 129, 100 )
-frame = 1
 
 [node name="SandDustEffectOne5" parent="YSort" instance=ExtResource( 8 )]
 position = Vector2( 130, 101 )
-frame = 0
+frame = 1
 
 [node name="SandDustEffectOne6" parent="YSort" instance=ExtResource( 8 )]
 position = Vector2( 127, 99 )
-frame = 0
+frame = 1
 
 [node name="SandDustEffectOne2" parent="YSort" instance=ExtResource( 8 )]
 position = Vector2( 101, 68 )
-frame = 1
 
 [node name="SandDustEffectOne7" parent="YSort" instance=ExtResource( 8 )]
 position = Vector2( 99, 66 )
-frame = 1
 
 [node name="MapClouds" parent="YSort" instance=ExtResource( 9 )]
 position = Vector2( 173, 150 )
-frame = 1
+frame = 2
 
 [node name="MapClouds2" parent="YSort" instance=ExtResource( 9 )]
 position = Vector2( 171, 151 )
-frame = 2
 
 [node name="MapClouds4" parent="YSort" instance=ExtResource( 9 )]
 position = Vector2( 160, 121 )
-frame = 1
+frame = 2
 
 [node name="MapClouds5" parent="YSort" instance=ExtResource( 9 )]
 position = Vector2( 169, 116 )
-frame = 1
+frame = 2
 
 [node name="MapClouds3" parent="YSort" instance=ExtResource( 9 )]
 position = Vector2( 169, 156 )
-frame = 2
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
 margin_left = 76.0
