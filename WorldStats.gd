@@ -7,6 +7,7 @@ var freed = max_freed setget set_freed
 signal fade_music_in
 signal fade_music_out
 signal lowest_volume
+signal open_fence
 
 func set_max_freed(value):
 	max_freed = value
