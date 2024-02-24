@@ -53,9 +53,9 @@ script = ExtResource( 3 )
 texture = ExtResource( 2 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-scale = Vector2( 0.45, 0.45 )
+scale = Vector2( 0.35, 0.4 )
 frames = SubResource( 7 )
-frame = 3
+frame = 2
 playing = true
 
 [node name="Area2D" type="Area2D" parent="."]
@@ -83,8 +83,13 @@ margin_right = 258.0
 margin_bottom = 74.0
 custom_fonts/normal_font = SubResource( 9 )
 bbcode_text = "One of the 6 ancient runes...
-This should be up in the mountain temple"
+This should be in the mountain temple"
 text = "One of the 6 ancient runes...
-This should be up in the mountain temple"
+This should be in the mountain temple"
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_Area2D_area_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
