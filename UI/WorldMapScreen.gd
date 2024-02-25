@@ -3,6 +3,10 @@ extends ColorRect
 onready var wolfIcon = $WhiteWolf
 onready var forestButton = $ForestButton
 onready var caveButton = $CaveButton
+onready var marshButton = $MarshButton
+onready var cityButton = $CityButton
+onready var desertButton = $DesertButton
+onready var blizzardButton = $BlizzardButton
 onready var levelText = $RichTextLabel
 onready var selectSound = $SelectSound
 
@@ -27,6 +31,22 @@ func _process(delta):
 		wolfIcon.position.x = 171
 		wolfIcon.position.y = 142
 		levelText.text = "Wylde \n Caverns"
+	if marshButton.has_focus():
+		wolfIcon.position.x = 183
+		wolfIcon.position.y = 112
+		levelText.text = "Toad \n Marsh"
+	if cityButton.has_focus():
+		wolfIcon.position.x = 174
+		wolfIcon.position.y = 66
+		levelText.text = "Arcade \n Heights"
+	if desertButton.has_focus():
+		wolfIcon.position.x = 128
+		wolfIcon.position.y = 85
+		levelText.text = "The \n Desert"
+	if blizzardButton.has_focus():
+		wolfIcon.position.x = 157
+		wolfIcon.position.y = 31
+		levelText.text = "Blizzard \n Pass"
 		
 		
 

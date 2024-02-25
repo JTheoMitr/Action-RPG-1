@@ -27,7 +27,7 @@ scale = Vector2( 0.4, 0.4 )
 texture = ExtResource( 1 )
 
 [node name="WhiteWolf" type="Sprite" parent="."]
-position = Vector2( 191, 159 )
+position = Vector2( 183, 112 )
 scale = Vector2( 0.6, 0.6 )
 texture = ExtResource( 4 )
 
@@ -50,6 +50,46 @@ margin_left = 161.0
 margin_top = 140.0
 margin_right = 201.0
 margin_bottom = 172.0
+rect_scale = Vector2( 0.2, 0.2 )
+texture_normal = ExtResource( 2 )
+texture_pressed = ExtResource( 3 )
+texture_focused = ExtResource( 3 )
+
+[node name="MarshButton" type="TextureButton" parent="."]
+margin_left = 187.0
+margin_top = 102.0
+margin_right = 227.0
+margin_bottom = 134.0
+rect_scale = Vector2( 0.2, 0.2 )
+texture_normal = ExtResource( 2 )
+texture_pressed = ExtResource( 3 )
+texture_focused = ExtResource( 3 )
+
+[node name="CityButton" type="TextureButton" parent="."]
+margin_left = 165.0
+margin_top = 65.0
+margin_right = 205.0
+margin_bottom = 97.0
+rect_scale = Vector2( 0.2, 0.2 )
+texture_normal = ExtResource( 2 )
+texture_pressed = ExtResource( 3 )
+texture_focused = ExtResource( 3 )
+
+[node name="DesertButton" type="TextureButton" parent="."]
+margin_left = 118.0
+margin_top = 83.0
+margin_right = 158.0
+margin_bottom = 115.0
+rect_scale = Vector2( 0.2, 0.2 )
+texture_normal = ExtResource( 2 )
+texture_pressed = ExtResource( 3 )
+texture_focused = ExtResource( 3 )
+
+[node name="BlizzardButton" type="TextureButton" parent="."]
+margin_left = 147.0
+margin_top = 29.0
+margin_right = 187.0
+margin_bottom = 61.0
 rect_scale = Vector2( 0.2, 0.2 )
 texture_normal = ExtResource( 2 )
 texture_pressed = ExtResource( 3 )
@@ -110,62 +150,64 @@ position = Vector2( 154, 63.1476 )
 rotation = 1.5708
 scale = Vector2( 0.105515, 0.162135 )
 z_index = 1
-frame = 0
 
 [node name="SmokeStackEffectOne2" parent="YSort" instance=ExtResource( 7 )]
 position = Vector2( 160.708, 62.6218 )
 rotation = 1.5708
 scale = Vector2( 0.0979507, 0.0814104 )
 z_index = 1
-frame = 2
+frame = 0
 
 [node name="SandDustEffectOne" parent="YSort" instance=ExtResource( 8 )]
 position = Vector2( 122, 85 )
-frame = 0
 
 [node name="SandDustEffectOne3" parent="YSort" instance=ExtResource( 8 )]
 position = Vector2( 124, 85 )
-frame = 0
 
 [node name="SandDustEffectOne4" parent="YSort" instance=ExtResource( 8 )]
 position = Vector2( 129, 100 )
-frame = 3
+frame = 1
 
 [node name="SandDustEffectOne5" parent="YSort" instance=ExtResource( 8 )]
 position = Vector2( 130, 101 )
+frame = 0
 
 [node name="SandDustEffectOne6" parent="YSort" instance=ExtResource( 8 )]
 position = Vector2( 127, 99 )
+frame = 0
 
 [node name="SandDustEffectOne2" parent="YSort" instance=ExtResource( 8 )]
 position = Vector2( 101, 68 )
-frame = 3
+frame = 1
 
 [node name="SandDustEffectOne7" parent="YSort" instance=ExtResource( 8 )]
 position = Vector2( 99, 66 )
-frame = 3
+frame = 1
 
 [node name="MapClouds" parent="YSort" instance=ExtResource( 9 )]
 position = Vector2( 173, 150 )
+frame = 1
 
 [node name="MapClouds2" parent="YSort" instance=ExtResource( 9 )]
 position = Vector2( 171, 151 )
-frame = 1
+frame = 2
 
 [node name="MapClouds4" parent="YSort" instance=ExtResource( 9 )]
 position = Vector2( 160, 121 )
+frame = 1
 
 [node name="MapClouds5" parent="YSort" instance=ExtResource( 9 )]
 position = Vector2( 169, 116 )
+frame = 1
 
 [node name="MapClouds3" parent="YSort" instance=ExtResource( 9 )]
 position = Vector2( 169, 156 )
-frame = 1
+frame = 2
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
 margin_left = 76.0
 margin_top = 130.0
-margin_right = 176.0
+margin_right = 179.0
 margin_bottom = 183.0
 custom_fonts/normal_font = SubResource( 1 )
 text = "The
@@ -178,3 +220,7 @@ pitch_scale = 0.84
 
 [connection signal="focus_entered" from="ForestButton" to="." method="_on_ForestButton_focus_entered"]
 [connection signal="focus_entered" from="CaveButton" to="." method="_on_CaveButton_focus_entered"]
+[connection signal="focus_entered" from="MarshButton" to="." method="_on_CaveButton_focus_entered"]
+[connection signal="focus_entered" from="CityButton" to="." method="_on_CaveButton_focus_entered"]
+[connection signal="focus_entered" from="DesertButton" to="." method="_on_CaveButton_focus_entered"]
+[connection signal="focus_entered" from="BlizzardButton" to="." method="_on_CaveButton_focus_entered"]
