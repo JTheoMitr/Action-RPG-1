@@ -49,9 +49,9 @@ func _process(delta):
 		wolfIcon.position.y = 85
 		levelText.text = "The \n Desert"
 	if blizzardButton.has_focus():
-		wolfIcon.position.x = 157
-		wolfIcon.position.y = 31
-		levelText.text = "Blizzard \n Pass"
+		wolfIcon.position.x = 152
+		wolfIcon.position.y = 34
+		levelText.text = "Bliz \n Canyon"
 		
 		
 
@@ -66,7 +66,7 @@ func _on_CaveButton_focus_entered():
 
 
 func _on_Timer_timeout():
-	selectSound.volume_db = -6
+	selectSound.volume_db = -7
 
 
 func _on_MarshButton_focus_entered():
