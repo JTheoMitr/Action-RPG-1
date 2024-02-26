@@ -9,6 +9,8 @@ onready var desertButton = $DesertButton
 onready var blizzardButton = $BlizzardButton
 onready var levelText = $RichTextLabel
 onready var selectSound = $SelectSound
+onready var mapMusic = $MapMusic
+onready var timer = $Timer
 
 
 # Declare member variables here. Examples:
@@ -19,6 +21,9 @@ onready var selectSound = $SelectSound
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	forestButton.grab_focus()
+	mapMusic.play(0.0)
+	selectSound.volume_db = -60
+	timer.start(0.0)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -57,4 +62,24 @@ func _on_ForestButton_focus_entered():
 
 
 func _on_CaveButton_focus_entered():
+	selectSound.play(0.0)
+
+
+func _on_Timer_timeout():
+	selectSound.volume_db = -6
+
+
+func _on_MarshButton_focus_entered():
+	selectSound.play(0.0)
+
+
+func _on_CityButton_focus_entered():
+	selectSound.play(0.0)
+
+
+func _on_DesertButton_focus_entered():
+	selectSound.play(0.0)
+
+
+func _on_BlizzardButton_focus_entered():
 	selectSound.play(0.0)

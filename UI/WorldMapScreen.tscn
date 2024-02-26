@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://UI/MapFinal1.png" type="Texture" id=1]
 [ext_resource path="res://UI/EquipmentIconsC330.png" type="Texture" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://Effects/MapClouds.tscn" type="PackedScene" id=9]
 [ext_resource path="res://fonts/PixelTandysoft-0rJG.ttf" type="DynamicFontData" id=10]
 [ext_resource path="res://Music and Sounds/ESM_Kitchen_Light_Metal_Hit_8_Clang_Ring_Bright_Chime.wav" type="AudioStream" id=11]
+[ext_resource path="res://Music and Sounds/KOTWB_SUSIDEA1.wav" type="AudioStream" id=12]
 
 [sub_resource type="DynamicFont" id=1]
 font_data = ExtResource( 10 )
@@ -215,12 +216,23 @@ Forest"
 
 [node name="SelectSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 11 )
-volume_db = -5.0
+volume_db = -6.0
 pitch_scale = 0.84
+
+[node name="MapMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 12 )
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
 
 [connection signal="focus_entered" from="ForestButton" to="." method="_on_ForestButton_focus_entered"]
 [connection signal="focus_entered" from="CaveButton" to="." method="_on_CaveButton_focus_entered"]
 [connection signal="focus_entered" from="MarshButton" to="." method="_on_CaveButton_focus_entered"]
+[connection signal="focus_entered" from="MarshButton" to="." method="_on_MarshButton_focus_entered"]
 [connection signal="focus_entered" from="CityButton" to="." method="_on_CaveButton_focus_entered"]
+[connection signal="focus_entered" from="CityButton" to="." method="_on_CityButton_focus_entered"]
 [connection signal="focus_entered" from="DesertButton" to="." method="_on_CaveButton_focus_entered"]
+[connection signal="focus_entered" from="DesertButton" to="." method="_on_DesertButton_focus_entered"]
 [connection signal="focus_entered" from="BlizzardButton" to="." method="_on_CaveButton_focus_entered"]
+[connection signal="focus_entered" from="BlizzardButton" to="." method="_on_BlizzardButton_focus_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
