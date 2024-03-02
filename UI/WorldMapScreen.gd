@@ -13,11 +13,18 @@ onready var selectSound = $SelectSound
 onready var pressSound = $PressSound
 onready var mapMusic = $MapMusic
 onready var timer = $Timer
+onready var tween_out = $Tween
+export var transition_duration = 2.00
+export var transition_type = 1 # TRANS_SINE
 
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
+
+
+func fade_out(stream_player):
+	# tween music volume down to 0
+	tween_out.interpolate_property(stream_player, "volume_db", -5, -80, transition_duration, transition_type, Tween.EASE_IN, 0)
+	tween_out.start()
+	# when the tween ends, the music will be stopped
 
 
 # Called when the node enters the scene tree for the first time.
@@ -96,8 +103,12 @@ func _on_BlizzardButton_focus_entered():
 func _on_ForestButton_pressed():
 	SceneTransitionLong.change_scene("res://World.tscn")
 	pressSound.play(0.0)
+	fade_out(mapMusic)
 
 
 func _on_CaveButton_pressed():
 	SceneTransitionLong.change_scene("res://World2.tscn")
 	pressSound.play(0.0)
+	fade_out(mapMusic)
+
+# add a tween node and use introTitle fade out method

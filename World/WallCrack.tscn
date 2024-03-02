@@ -1,10 +1,15 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://World/wall_crack_32x32.png" type="Texture" id=1]
 [ext_resource path="res://World/WallCrack.gd" type="Script" id=2]
+[ext_resource path="res://fonts/PixelTandysoft-0rJG.ttf" type="DynamicFontData" id=3]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0, 0, 0, 0.615686 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 10
+font_data = ExtResource( 3 )
 
 [sub_resource type="CircleShape2D" id=2]
 radius = 28.0713
@@ -27,6 +32,7 @@ margin_top = 6.31579
 margin_right = 224.842
 margin_bottom = 74.3158
 rect_scale = Vector2( 0.85, 0.85 )
+custom_fonts/normal_font = SubResource( 3 )
 bbcode_enabled = true
 bbcode_text = "[center]  The crack in this wall is sizeable; it could be blown open if you had a bomb... [/center]"
 text = "  The crack in this wall is sizeable; it could be blown open if you had a bomb... "

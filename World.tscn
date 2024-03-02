@@ -1102,6 +1102,32 @@ scale = Vector2( 1, 1 )
 position = Vector2( 108, 980 )
 scale = Vector2( 1, 1 )
 
+[node name="FlowersSpreadOne11" parent="FlowersSpreadOne" instance=ExtResource( 35 )]
+position = Vector2( -1170, 1036 )
+scale = Vector2( 1, 1 )
+
+[node name="FlowersSpreadOne15" parent="FlowersSpreadOne" instance=ExtResource( 35 )]
+position = Vector2( -1504, 366 )
+scale = Vector2( 1, 1 )
+
+[node name="FlowersSpreadOne16" parent="FlowersSpreadOne" instance=ExtResource( 35 )]
+position = Vector2( -1504, 428 )
+rotation = 3.14159
+scale = Vector2( 1, 1 )
+
+[node name="FlowersSpreadOne12" parent="FlowersSpreadOne" instance=ExtResource( 35 )]
+position = Vector2( -578, 1342 )
+scale = Vector2( 1, 1 )
+
+[node name="FlowersSpreadOne13" parent="FlowersSpreadOne" instance=ExtResource( 35 )]
+position = Vector2( -222, 868 )
+scale = Vector2( 1, 1 )
+
+[node name="FlowersSpreadOne14" parent="FlowersSpreadOne" instance=ExtResource( 35 )]
+position = Vector2( -220, 806 )
+rotation = 1.5708
+scale = Vector2( 1, 1 )
+
 [node name="FlowersSpreadOne5" parent="FlowersSpreadOne" instance=ExtResource( 35 )]
 position = Vector2( -1236, -160 )
 scale = Vector2( 1, 1 )
@@ -3066,98 +3092,42 @@ frame = 4
 [node name="YellowFlowers" type="YSort" parent="YSort"]
 
 [node name="FlowersYellowOne" parent="YSort/YellowFlowers" instance=ExtResource( 66 )]
-position = Vector2( 40, 253 )
+position = Vector2( 42, 250 )
+scale = Vector2( 0.4, 0.41129 )
 
 [node name="FlowersYellowOne2" parent="YSort/YellowFlowers" instance=ExtResource( 66 )]
-position = Vector2( -40, 444 )
-
-[node name="FlowersYellowOne9" parent="YSort/YellowFlowers" instance=ExtResource( 66 )]
-position = Vector2( -37, 440 )
-scale = Vector2( 0.375, 0.3125 )
-
-[node name="FlowersYellowOne10" parent="YSort/YellowFlowers" instance=ExtResource( 66 )]
-position = Vector2( -39, 443 )
-rotation = 0.174533
-scale = Vector2( 0.375, 0.3125 )
-
-[node name="FlowersYellowOne20" parent="YSort/YellowFlowers" instance=ExtResource( 66 )]
-position = Vector2( 458, 442 )
-rotation = 0.349066
-scale = Vector2( 0.4, 0.4 )
+position = Vector2( -37.5, 440.875 )
+scale = Vector2( 0.45, 0.443548 )
 
 [node name="FlowersYellowOne21" parent="YSort/YellowFlowers" instance=ExtResource( 66 )]
-position = Vector2( 457, 443 )
-scale = Vector2( 0.6, 0.6 )
-
-[node name="FlowersYellowOne22" parent="YSort/YellowFlowers" instance=ExtResource( 66 )]
-position = Vector2( 453, 439 )
-rotation = 5.06145
-scale = Vector2( 0.3, 0.3 )
-
-[node name="FlowersYellowOne23" parent="YSort/YellowFlowers" instance=ExtResource( 66 )]
-position = Vector2( 456, 438 )
-rotation = 0.174533
-
-[node name="FlowersYellowOne11" parent="YSort/YellowFlowers" instance=ExtResource( 66 )]
-position = Vector2( -43, 440 )
-rotation = 5.93412
-scale = Vector2( 0.375, 0.3125 )
+position = Vector2( 460, 442 )
+scale = Vector2( 0.45, 0.429033 )
 
 [node name="FlowersYellowOne12" parent="YSort/YellowFlowers" instance=ExtResource( 66 )]
-position = Vector2( -115, -259 )
+position = Vector2( -114, -262 )
 scale = Vector2( 0.4, 0.4 )
-
-[node name="FlowersYellowOne13" parent="YSort/YellowFlowers" instance=ExtResource( 66 )]
-position = Vector2( -118, -260 )
-rotation = 4.88692
-scale = Vector2( 0.3, 0.3 )
-
-[node name="FlowersYellowOne14" parent="YSort/YellowFlowers" instance=ExtResource( 66 )]
-position = Vector2( -112, -261 )
-rotation = 0.523599
-scale = Vector2( 0.3, 0.3 )
-
-[node name="FlowersYellowOne15" parent="YSort/YellowFlowers" instance=ExtResource( 66 )]
-position = Vector2( -115, -260 )
-rotation = 0.523599
-scale = Vector2( 0.3, 0.3 )
-
-[node name="FlowersYellowOne16" parent="YSort/YellowFlowers" instance=ExtResource( 66 )]
-position = Vector2( -115, -262 )
-scale = Vector2( 0.3, 0.3 )
 
 [node name="FlowersYellowOne3" parent="YSort/YellowFlowers" instance=ExtResource( 66 )]
-position = Vector2( -280, 284 )
+position = Vector2( -231, 281.875 )
+scale = Vector2( 0.4, 0.379032 )
 
 [node name="FlowersYellowOne4" parent="YSort/YellowFlowers" instance=ExtResource( 66 )]
-position = Vector2( 89, 30 )
-
-[node name="FlowersYellowOne8" parent="YSort/YellowFlowers" instance=ExtResource( 66 )]
-position = Vector2( -592, -259 )
-
-[node name="FlowersYellowOne5" parent="YSort/YellowFlowers" instance=ExtResource( 66 )]
-position = Vector2( 461, -65 )
-
-[node name="FlowersYellowOne6" parent="YSort/YellowFlowers" instance=ExtResource( 66 )]
-position = Vector2( 682, -259 )
-
-[node name="FlowersYellowOne17" parent="YSort/YellowFlowers" instance=ExtResource( 66 )]
-position = Vector2( 678, -262 )
-rotation = 5.41052
+position = Vector2( 89, 28 )
 scale = Vector2( 0.3, 0.3 )
 
-[node name="FlowersYellowOne18" parent="YSort/YellowFlowers" instance=ExtResource( 66 )]
-position = Vector2( 682, -262 )
-rotation = 0.872665
-scale = Vector2( 0.4, 0.4 )
+[node name="FlowersYellowOne8" parent="YSort/YellowFlowers" instance=ExtResource( 66 )]
+position = Vector2( -584, -264 )
 
-[node name="FlowersYellowOne19" parent="YSort/YellowFlowers" instance=ExtResource( 66 )]
-position = Vector2( 685, -262 )
-rotation = 0.349066
-scale = Vector2( 0.4, 0.4 )
+[node name="FlowersYellowOne5" parent="YSort/YellowFlowers" instance=ExtResource( 66 )]
+position = Vector2( 460, -71 )
+
+[node name="FlowersYellowOne6" parent="YSort/YellowFlowers" instance=ExtResource( 66 )]
+position = Vector2( 678, -262.125 )
+scale = Vector2( 0.4, 0.379032 )
 
 [node name="FlowersYellowOne7" parent="YSort/YellowFlowers" instance=ExtResource( 66 )]
-position = Vector2( 871, -163 )
+position = Vector2( 879, -166 )
+scale = Vector2( 0.4, 0.379032 )
 
 [node name="Vines" type="YSort" parent="YSort"]
 
@@ -3231,7 +3201,7 @@ position = Vector2( -745, -265 )
 scale = Vector2( 0.55, 0.55 )
 
 [node name="VinesOne19" parent="YSort/Vines" instance=ExtResource( 67 )]
-position = Vector2( 386, 407 )
+position = Vector2( 373, 407 )
 scale = Vector2( 0.6, 0.6 )
 
 [node name="WallCracks" type="YSort" parent="YSort"]
@@ -3272,8 +3242,12 @@ position = Vector2( -305, 346 )
 [node name="Fires" type="YSort" parent="YSort"]
 
 [node name="Bonfire" parent="YSort/Fires" instance=ExtResource( 82 )]
-position = Vector2( 977, -238 )
+position = Vector2( 976, -240 )
 frame = 3
+
+[node name="Bonfire2" parent="YSort/Fires" instance=ExtResource( 82 )]
+position = Vector2( 976, -208 )
+frame = 2
 
 [node name="Runes" type="YSort" parent="YSort"]
 
