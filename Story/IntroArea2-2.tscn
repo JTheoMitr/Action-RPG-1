@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Story/IntroArea2-2.gd" type="Script" id=1]
 [ext_resource path="res://Dialogue Headshots/main_player_face_still.png" type="Texture" id=2]
 [ext_resource path="res://UI/panel_Intro.png" type="Texture" id=3]
 [ext_resource path="res://World/gdb-playstation-2 cross flat.png" type="Texture" id=4]
+[ext_resource path="res://fonts/PixelTandysoft-0rJG.ttf" type="DynamicFontData" id=5]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 36.0555
@@ -13,6 +14,14 @@ bg_color = Color( 0.101961, 0.0784314, 0.0784314, 0 )
 
 [sub_resource type="StyleBoxFlat" id=3]
 bg_color = Color( 0.647059, 0.560784, 0.788235, 0.270588 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 12
+font_data = ExtResource( 5 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 15
+font_data = ExtResource( 5 )
 
 [node name="IntroArea2-2" type="Area2D"]
 collision_layer = 0
@@ -47,15 +56,15 @@ scale = Vector2( 2.5, 2.5 )
 texture = ExtResource( 2 )
 
 [node name="RichTextLabel" type="RichTextLabel" parent="IntroDialog2"]
-margin_left = 51.25
-margin_top = 5.0
-margin_right = 171.25
-margin_bottom = 66.0
+margin_left = 53.75
+margin_top = 13.75
+margin_right = 209.75
+margin_bottom = 63.75
 rect_scale = Vector2( 0.7, 0.7 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_fonts/normal_font = SubResource( 4 )
 bbcode_enabled = true
-text = "
-Let's find that strange robot..."
+text = "Let's find that strange robot..."
 
 [node name="ButtonSprite" type="Sprite" parent="IntroDialog2"]
 position = Vector2( 111.75, 49 )
@@ -63,12 +72,13 @@ scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 4 )
 
 [node name="Continue" type="RichTextLabel" parent="IntroDialog2"]
-margin_left = 115.75
-margin_top = 46.0
-margin_right = 250.75
-margin_bottom = 78.0003
+margin_left = 116.0
+margin_top = 43.0
+margin_right = 286.0
+margin_bottom = 97.0
 rect_scale = Vector2( 0.5, 0.5 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_fonts/normal_font = SubResource( 5 )
 text = "Continue
 "
 

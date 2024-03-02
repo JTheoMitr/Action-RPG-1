@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Story/IntroArea2-1.gd" type="Script" id=1]
 [ext_resource path="res://Dialogue Headshots/main_player_face_still.png" type="Texture" id=2]
 [ext_resource path="res://UI/panel_Intro.png" type="Texture" id=3]
 [ext_resource path="res://World/gdb-playstation-2 cross flat.png" type="Texture" id=4]
+[ext_resource path="res://fonts/PixelTandysoft-0rJG.ttf" type="DynamicFontData" id=5]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 33.0151
@@ -12,6 +13,14 @@ radius = 33.0151
 
 [sub_resource type="StyleBoxFlat" id=3]
 bg_color = Color( 0.647059, 0.560784, 0.788235, 0.270588 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 13
+font_data = ExtResource( 5 )
+
+[sub_resource type="DynamicFont" id=6]
+size = 15
+font_data = ExtResource( 5 )
 
 [node name="IntroArea2-1" type="Area2D"]
 collision_layer = 0
@@ -46,14 +55,14 @@ scale = Vector2( 2.5, 2.5 )
 texture = ExtResource( 2 )
 
 [node name="RichTextLabel" type="RichTextLabel" parent="IntroDialog1"]
-margin_left = 51.0
-margin_top = 3.0
-margin_right = 171.0
-margin_bottom = 64.0
+margin_left = 51.25
+margin_top = 15.0
+margin_right = 178.25
+margin_bottom = 54.0
 rect_scale = Vector2( 0.7, 0.7 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
-text = "
-Made it to the caverns..."
+custom_fonts/normal_font = SubResource( 5 )
+text = "Made it to the caverns..."
 
 [node name="ButtonSprite" type="Sprite" parent="IntroDialog1"]
 position = Vector2( 107, 49 )
@@ -62,11 +71,12 @@ texture = ExtResource( 4 )
 
 [node name="Continue" type="RichTextLabel" parent="IntroDialog1"]
 margin_left = 113.0
-margin_top = 46.0
-margin_right = 248.0
-margin_bottom = 78.0003
+margin_top = 43.0
+margin_right = 268.0
+margin_bottom = 93.0
 rect_scale = Vector2( 0.5, 0.5 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_fonts/normal_font = SubResource( 6 )
 text = "Continue
 "
 
