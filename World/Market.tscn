@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://Animals/cute_penguin_idle.png" type="Texture" id=1]
 [ext_resource path="res://World/ice_cream_truck_1.png" type="Texture" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://Animals/cute_penguin_closeup.png" type="Texture" id=6]
 [ext_resource path="res://World/gdb-playstation-2 cross flat.png" type="Texture" id=7]
 [ext_resource path="res://Music and Sounds/KOTWB_BOSSANOVA_1.wav" type="AudioStream" id=8]
+[ext_resource path="res://fonts/PixelTandysoft-0rJG.ttf" type="DynamicFontData" id=9]
 
 [sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 1 )
@@ -28,8 +29,16 @@ animations = [ {
 [sub_resource type="StyleBoxFlat" id=6]
 bg_color = Color( 0.6, 0.6, 0.6, 0 )
 
+[sub_resource type="DynamicFont" id=8]
+size = 11
+font_data = ExtResource( 9 )
+
 [sub_resource type="StyleBoxFlat" id=7]
 bg_color = Color( 0.619608, 0.423529, 0.596078, 1 )
+
+[sub_resource type="DynamicFont" id=9]
+size = 14
+font_data = ExtResource( 9 )
 
 [sub_resource type="CircleShape2D" id=4]
 radius = 119.206
@@ -55,7 +64,6 @@ position = Vector2( -31.25, 27.0833 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 3 )
 animation = "chill"
-frame = 1
 playing = true
 
 [node name="PopupDialog" type="PopupDialog" parent="."]
@@ -72,15 +80,16 @@ scale = Vector2( 0.4, 0.5 )
 texture = ExtResource( 5 )
 
 [node name="RichTextLabel" type="RichTextLabel" parent="PopupDialog"]
-margin_left = 0.833336
+margin_left = 11.25
 margin_top = 2.5
-margin_right = 254.833
+margin_right = 265.25
 margin_bottom = 48.5
 rect_scale = Vector2( 0.5, 0.5 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_fonts/normal_font = SubResource( 8 )
 bbcode_enabled = true
-bbcode_text = "[center] Hey, my dude... you lookin' to get down on some dairy? [/center]"
-text = " Hey, my dude... you lookin' to get down on some dairy? "
+text = "Hey, my dude... you lookin' to get 
+down on some dairy? "
 fit_content_height = true
 scroll_active = false
 
@@ -104,11 +113,12 @@ texture = ExtResource( 7 )
 
 [node name="Label" type="Label" parent="PopupDialog"]
 margin_left = 96.6667
-margin_top = 23.3333
+margin_top = 21.25
 margin_right = 153.667
-margin_bottom = 37.3333
+margin_bottom = 38.25
 rect_scale = Vector2( 0.4, 0.4 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 9 )
 text = "Continue"
 
 [node name="Area2D" type="Area2D" parent="."]

@@ -3273,6 +3273,7 @@ position = Vector2( -305, 346 )
 
 [node name="Bonfire" parent="YSort/Fires" instance=ExtResource( 82 )]
 position = Vector2( 977, -238 )
+frame = 3
 
 [node name="Runes" type="YSort" parent="YSort"]
 

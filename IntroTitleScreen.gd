@@ -43,8 +43,8 @@ func _on_Button_pressed():
 	chimeOne.play()
 	#SceneTransitionLong.change_scene("res://World2.tscn")
 	#SceneTransitionLong.change_scene("res://IntroStory.tscn")
-	SceneTransitionLong.change_scene("res://World.tscn")
-	#SceneTransitionLong.change_scene("res://UI/WorldMapScreen.tscn")
+	#SceneTransitionLong.change_scene("res://World.tscn")
+	SceneTransitionLong.change_scene("res://UI/WorldMapScreen.tscn")
 	
 
 

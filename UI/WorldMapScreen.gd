@@ -10,6 +10,7 @@ onready var blizzardButton = $BlizzardButton
 onready var levelText = $RichTextLabel
 onready var levelPreText = $RichTextLabel2
 onready var selectSound = $SelectSound
+onready var pressSound = $PressSound
 onready var mapMusic = $MapMusic
 onready var timer = $Timer
 
@@ -90,3 +91,13 @@ func _on_DesertButton_focus_entered():
 
 func _on_BlizzardButton_focus_entered():
 	selectSound.play(0.0)
+
+
+func _on_ForestButton_pressed():
+	SceneTransitionLong.change_scene("res://World.tscn")
+	pressSound.play(0.0)
+
+
+func _on_CaveButton_pressed():
+	SceneTransitionLong.change_scene("res://World2.tscn")
+	pressSound.play(0.0)
