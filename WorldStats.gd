@@ -8,6 +8,8 @@ signal fade_music_in
 signal fade_music_out
 signal lowest_volume
 signal open_fence
+signal in_the_tall_grass
+signal out_of_the_tall_grass
 
 func set_max_freed(value):
 	max_freed = value

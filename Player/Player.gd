@@ -48,6 +48,7 @@ var state = MOVE
 var velocity = Vector2.ZERO
 var roll_vector = Vector2.DOWN
 var stats = PlayerStats
+var worldStats = WorldStats
 
 # for sprite control
 var laserTop = false
@@ -74,6 +75,8 @@ func _ready():
 	stats.connect("player_paused", self, "stop_moving")
 	stats.connect("player_resumed", self, "start_moving")
 	stats.connect("give_movement", self, "full_movement")
+	worldStats.connect("in_the_tall_grass", self, "_stealth_mode")
+	worldStats.connect("out_of_the_tall_grass", self, "_visible_again")
 	stats._ready()
 	
 	# starting position
@@ -304,3 +307,11 @@ func _on_LaserTimer_timeout():
 
 func _on_LaserSpeed_timeout():
 	laserboi = true
+	
+func _stealth_mode():
+	playerCollision.set_deferred("disabled", true)
+	print("stealth")
+	
+func _visible_again():
+	playerCollision.set_deferred("disabled", false)
+	print("visible")

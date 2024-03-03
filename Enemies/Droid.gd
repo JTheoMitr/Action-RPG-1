@@ -31,8 +31,13 @@ onready var softCollision = $SoftCollision
 onready var wanderController = $WanderController
 onready var timer = $Timer
 
+var worldStats = WorldStats
+
+
+
 func _ready():
 	state = pick_random_state([IDLE, WANDER])
+	worldStats.connect("in_the_tall_grass", self, "cant_find_player")
 
 func _physics_process(delta):
 	knockback = knockback.move_toward(Vector2.ZERO, FRICTION * delta)
@@ -42,7 +47,7 @@ func _physics_process(delta):
 		IDLE:
 			
 			velocity = velocity.move_toward(Vector2.ZERO, FRICTION * delta)
-			seek_player()
+			# seek_player()
 			if wanderController.get_time_left() == 0:
 				update_wander_state()
 				
@@ -86,6 +91,9 @@ func seek_player():
 			# get_parent().call_deferred("add_child", laser)
 			# laserEngaged = true
 		state = CHASE
+		
+func cant_find_player():
+	state = IDLE
 		
 
 func update_wander_state():

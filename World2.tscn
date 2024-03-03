@@ -2001,7 +2001,7 @@ position = Vector2( -16, -272 )
 [node name="ScreenCrackleOne" parent="YSort/OilCoDoors" instance=ExtResource( 57 )]
 position = Vector2( -17, -270.5 )
 scale = Vector2( 0.094, 0.0833333 )
-frame = 2
+frame = 4
 
 [node name="YellowFlowers" type="YSort" parent="YSort"]
 visible = false
@@ -2236,71 +2236,71 @@ remote_path = NodePath("../../../Camera2D")
 
 [node name="Torch" parent="YSort/Torches" instance=ExtResource( 5 )]
 position = Vector2( 3, 58 )
-frame = 9
+frame = 2
 
 [node name="Torch2" parent="YSort/Torches" instance=ExtResource( 5 )]
 position = Vector2( -48, -72 )
-frame = 9
+frame = 2
 
 [node name="Torch6" parent="YSort/Torches" instance=ExtResource( 5 )]
 position = Vector2( -272, -104 )
-frame = 9
+frame = 2
 
 [node name="Torch7" parent="YSort/Torches" instance=ExtResource( 5 )]
 position = Vector2( -400, -264 )
-frame = 7
+frame = 0
 
 [node name="Torch10" parent="YSort/Torches" instance=ExtResource( 5 )]
 position = Vector2( -288, -264 )
-frame = 7
+frame = 0
 
 [node name="Torch11" parent="YSort/Torches" instance=ExtResource( 5 )]
 position = Vector2( -384, -488 )
-frame = 6
+frame = 9
 
 [node name="Torch16" parent="YSort/Torches" instance=ExtResource( 5 )]
 position = Vector2( -16, -488 )
-frame = 6
+frame = 9
 
 [node name="Torch12" parent="YSort/Torches" instance=ExtResource( 5 )]
 position = Vector2( -72, -200 )
-frame = 5
+frame = 8
 
 [node name="Torch9" parent="YSort/Torches" instance=ExtResource( 5 )]
 position = Vector2( -576, -264 )
-frame = 6
+frame = 9
 
 [node name="Torch8" parent="YSort/Torches" instance=ExtResource( 5 )]
 position = Vector2( -448, -72 )
-frame = 6
+frame = 9
 
 [node name="Torch13" parent="YSort/Torches" instance=ExtResource( 5 )]
 position = Vector2( -400, 120 )
-frame = 6
+frame = 9
 
 [node name="Torch15" parent="YSort/Torches" instance=ExtResource( 5 )]
 position = Vector2( -240, 184 )
-frame = 5
+frame = 8
 
 [node name="Torch14" parent="YSort/Torches" instance=ExtResource( 5 )]
 position = Vector2( -528, 216 )
-frame = 5
+frame = 8
 
 [node name="Torch17" parent="YSort/Torches" instance=ExtResource( 5 )]
 position = Vector2( -512, 472 )
-frame = 4
+frame = 7
 
 [node name="Torch3" parent="YSort/Torches" instance=ExtResource( 5 )]
 position = Vector2( 64, -72 )
-frame = 9
+frame = 2
 
 [node name="Torch4" parent="YSort/Torches" instance=ExtResource( 5 )]
 position = Vector2( 104, -264 )
-frame = 9
+frame = 2
 
 [node name="Torch5" parent="YSort/Torches" instance=ExtResource( 5 )]
 position = Vector2( 290, -199 )
-frame = 9
+frame = 2
 
 [node name="Dwellers" type="YSort" parent="YSort"]
 
