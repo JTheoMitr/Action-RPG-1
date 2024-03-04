@@ -86,6 +86,8 @@ func seek_player():
 			get_parent().call_deferred("add_child", laser)
 			laserEngaged = true
 		state = CHASE
+	else:
+		timer.stop()
 		
 
 func update_wander_state():

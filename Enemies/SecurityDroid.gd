@@ -32,8 +32,11 @@ onready var timer = $Timer
 var droidSound = SecDroidSound.instance()
 var laserEngaged = false
 
+var worldStats = WorldStats
+
 func _ready():
 	state = pick_random_state([IDLE, WANDER])
+	worldStats.connect("in_the_tall_grass", self, "cant_find_player")
 
 func _physics_process(delta):
 	knockback = knockback.move_toward(Vector2.ZERO, FRICTION * delta)
@@ -90,6 +93,9 @@ func seek_player():
 		state = CHASE
 	else:
 		timer.stop()
+		
+func cant_find_player():
+	state = IDLE
 		
 
 func update_wander_state():

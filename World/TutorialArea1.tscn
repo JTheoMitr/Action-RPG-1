@@ -11,7 +11,7 @@ radius = 66.1211
 bg_color = Color( 0.184314, 0.152941, 0.152941, 0.682353 )
 
 [sub_resource type="DynamicFont" id=8]
-size = 13
+size = 10
 font_data = ExtResource( 3 )
 
 [sub_resource type="AtlasTexture" id=3]
@@ -54,15 +54,16 @@ rect_scale = Vector2( 0.8, 0.8 )
 custom_styles/panel = SubResource( 2 )
 
 [node name="RichTextLabel" type="RichTextLabel" parent="PopupDialog"]
-margin_left = 29.0
-margin_top = -10.0
-margin_right = 78.0
-margin_bottom = 51.0
+margin_left = 27.5
+margin_top = 7.5
+margin_right = 76.5
+margin_bottom = 68.5
+rect_scale = Vector2( 1.3, 1.3 )
 custom_fonts/normal_font = SubResource( 8 )
-text = " attack"
+text = "attack"
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="PopupDialog"]
-position = Vector2( 17.5, 17.5 )
+position = Vector2( 13.75, 17.5 )
 frames = SubResource( 7 )
 animation = "Animate"
 frame = 2

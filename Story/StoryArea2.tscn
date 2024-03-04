@@ -18,6 +18,7 @@ radius = 85.0529
 bg_color = Color( 0.184314, 0.266667, 0.25098, 0.427451 )
 
 [sub_resource type="DynamicFont" id=6]
+size = 10
 font_data = ExtResource( 3 )
 
 [sub_resource type="DynamicFont" id=7]
@@ -84,10 +85,11 @@ margin_bottom = 75.0
 custom_styles/panel = SubResource( 3 )
 
 [node name="RichTextLabel" type="RichTextLabel" parent="StoryDialog2"]
-margin_left = 63.3333
-margin_top = -3.33333
-margin_right = 232.333
-margin_bottom = 106.667
+margin_left = 48.3333
+margin_top = -5.0
+margin_right = 217.333
+margin_bottom = 105.0
+rect_scale = Vector2( 1.2, 1.2 )
 rect_clip_content = false
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_fonts/normal_font = SubResource( 6 )
@@ -175,7 +177,6 @@ one_shot = true
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="SkillPopUp" type="PopupDialog" parent="CanvasLayer"]
-visible = true
 margin_left = 40.0
 margin_top = 19.0
 margin_right = 373.0

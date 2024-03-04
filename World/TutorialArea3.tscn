@@ -11,7 +11,7 @@ radius = 66.0
 bg_color = Color( 0.184314, 0.152941, 0.152941, 0.682353 )
 
 [sub_resource type="DynamicFont" id=8]
-size = 13
+size = 10
 font_data = ExtResource( 3 )
 
 [sub_resource type="AtlasTexture" id=9]
@@ -59,12 +59,13 @@ margin_left = 31.25
 margin_top = 6.25
 margin_right = 160.25
 margin_bottom = 57.25
+rect_scale = Vector2( 1.3, 1.3 )
 custom_fonts/normal_font = SubResource( 8 )
 bbcode_enabled = true
 text = "LASER EYE"
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="PopupDialog"]
-position = Vector2( 18.75, 15 )
+position = Vector2( 15, 15 )
 frames = SubResource( 7 )
 animation = "Animate"
 frame = 1
