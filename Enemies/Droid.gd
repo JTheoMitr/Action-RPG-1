@@ -47,7 +47,7 @@ func _physics_process(delta):
 		IDLE:
 			
 			velocity = velocity.move_toward(Vector2.ZERO, FRICTION * delta)
-			# seek_player()
+			seek_player()
 			if wanderController.get_time_left() == 0:
 				update_wander_state()
 				

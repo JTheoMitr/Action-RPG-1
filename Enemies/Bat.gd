@@ -25,8 +25,11 @@ onready var hurtbox = $Hurtbox
 onready var softCollision = $SoftCollision
 onready var wanderController = $WanderController
 
+var worldStats = WorldStats
+
 func _ready():
 	state = pick_random_state([IDLE, WANDER])
+	worldStats.connect("in_the_tall_grass", self, "cant_find_player")
 
 func _physics_process(delta):
 	knockback = knockback.move_toward(Vector2.ZERO, FRICTION * delta)
@@ -67,6 +70,9 @@ func accelerate_towards_point(point, delta):
 func seek_player():
 	if playerDetectionZone.can_see_player():
 		state = CHASE
+		
+func cant_find_player():
+	state = IDLE
 
 func update_wander_state():
 	state = pick_random_state([IDLE, WANDER])
