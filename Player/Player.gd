@@ -310,8 +310,10 @@ func _on_LaserSpeed_timeout():
 	
 func _stealth_mode():
 	playerCollision.set_deferred("disabled", true)
-	print("stealth")
+
+	print(self.collision_layer)
 	
 func _visible_again():
 	playerCollision.set_deferred("disabled", false)
-	print("visible")
+	
+	print(self.collision_layer)

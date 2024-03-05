@@ -6,6 +6,7 @@ onready var musicPlayer = $AudioStreamPlayer
 onready var musicTimer = $MusicTimer
 onready var tween_out = $Tween
 onready var blastAnim = $CanvasLayer/AmmoUI/BlastAnim
+onready var stealthUI = $CanvasLayer/StealthUI
 
 export var transition_duration = 3.00
 export var transition_type = 1 # TRANS_SINE
@@ -19,6 +20,8 @@ func _ready():
 	worldStats.connect("fade_music_in", self, "raise_music_volume")
 	worldStats.connect("fade_music_out", self, "lower_music_volume")
 	worldStats.connect("lowest_volume", self, "lower_music_volume")
+	worldStats.connect("in_the_tall_grass", self, "stealth_ui_on")
+	worldStats.connect("out_of_the_tall_grass", self, "stealth_ui_off")
 	generate_laser_effect(Vector2(-1248, 459.451538))
 	#$CanvasLayer/BatteryUI.hide()
 
@@ -55,3 +58,9 @@ func _on_Player_fired_shot(hit_position: Vector2):
 	blastAnim.frame = 0
 	blastAnim.play("fire")
 	print(hit_position)
+
+func stealth_ui_on():
+	stealthUI.show()
+	
+func stealth_ui_off():
+	stealthUI.hide()

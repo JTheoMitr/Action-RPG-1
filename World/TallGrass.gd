@@ -1,6 +1,6 @@
 extends Area2D
 
-
+onready var rustle = $Rustle
 # Declare member variables here. Examples:
 # var a = 2
 var worldStats = WorldStats
@@ -18,6 +18,7 @@ func _ready():
 
 func _on_TallGrass_area_entered(area):
 	worldStats.emit_signal("in_the_tall_grass")
+	rustle.play(0.0)
 	
 	
 
