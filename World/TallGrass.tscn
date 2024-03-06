@@ -2,7 +2,7 @@
 
 [ext_resource path="res://World/Flower 13 - PURPLE.png" type="Texture" id=1]
 [ext_resource path="res://World/TallGrass.gd" type="Script" id=2]
-[ext_resource path="res://Music and Sounds/CeleryTwist_4yjqC_06.wav" type="AudioStream" id=3]
+[ext_resource path="res://Music and Sounds/leaves_rustlin_one.wav" type="AudioStream" id=3]
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 8.0
