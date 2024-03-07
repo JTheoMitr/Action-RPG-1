@@ -82,7 +82,7 @@ func accelerate_towards_point(point, delta):
 
 func seek_player():
 	if playerDetectionZone.can_see_player():
-		get_parent().add_child(droidSound)
+		get_parent().call_deferred("add_child", droidSound)
 		droidSound.play(0.0)
 		if laserEngaged == false:
 			var laser = Laser.instance()

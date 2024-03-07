@@ -3102,7 +3102,7 @@ position = Vector2( -16, -272 )
 [node name="ScreenCrackleOne" parent="YSort/OilCoDoors" instance=ExtResource( 57 )]
 position = Vector2( -17, -270.5 )
 scale = Vector2( 0.094, 0.0833333 )
-frame = 5
+frame = 3
 
 [node name="Flowers" type="YSort" parent="YSort"]
 
@@ -3298,11 +3298,11 @@ position = Vector2( -305, 346 )
 
 [node name="Bonfire" parent="YSort/Fires" instance=ExtResource( 82 )]
 position = Vector2( 976, -240 )
-frame = 2
+frame = 3
 
 [node name="Bonfire2" parent="YSort/Fires" instance=ExtResource( 82 )]
 position = Vector2( 976, -208 )
-frame = 2
+frame = 3
 
 [node name="Runes" type="YSort" parent="YSort"]
 

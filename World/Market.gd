@@ -12,6 +12,7 @@ var textOptions = ["[center] Hey, my dude... you lookin' to get down on some dai
 
 func _ready():
 	textLabel.bbcode_enabled = true
+	textLabel.bbcode_text = textOptions[0]
 
 func _process(delta):
 	if (inArea == true) && (textLabel.bbcode_text == textOptions[0]):
