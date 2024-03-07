@@ -81,16 +81,18 @@ scale = Vector2( 0.4, 0.5 )
 texture = ExtResource( 5 )
 
 [node name="RichTextLabel" type="RichTextLabel" parent="PopupDialog"]
-margin_left = 11.25
+margin_left = -1.25
 margin_top = 2.5
-margin_right = 265.25
+margin_right = 252.75
 margin_bottom = 48.5
 rect_scale = Vector2( 0.5, 0.5 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_fonts/normal_font = SubResource( 8 )
 bbcode_enabled = true
-text = "Hey, my dude... you lookin' to get 
-down on some dairy? "
+bbcode_text = "[center] Hey, my dude... you lookin' to
+ get down on some dairy? [/center]"
+text = " Hey, my dude... you lookin' to
+ get down on some dairy? "
 fit_content_height = true
 scroll_active = false
 
