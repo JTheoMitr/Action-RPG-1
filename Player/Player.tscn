@@ -1,4 +1,4 @@
-[gd_scene load_steps=66 format=2]
+[gd_scene load_steps=67 format=2]
 
 [ext_resource path="res://Player/Player.gd" type="Script" id=1]
 [ext_resource path="res://Player/Main Player One Ranger.png" type="Texture" id=2]
@@ -13,6 +13,7 @@
 [ext_resource path="res://Inventory/PlayerInventory.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Music and Sounds/NinjaRobeSwishClothFlapsVariousVersions_YLdX9_19.wav" type="AudioStream" id=12]
 [ext_resource path="res://Player/LaserZone.gd" type="Script" id=13]
+[ext_resource path="res://UI/crosshair048.png" type="Texture" id=14]
 
 [sub_resource type="CircleShape2D" id=52]
 radius = 49.6488
@@ -871,6 +872,11 @@ wait_time = 0.1
 
 [node name="LaserSpeed" type="Timer" parent="Pointer"]
 wait_time = 0.7
+
+[node name="crosshair" type="Sprite" parent="Pointer"]
+position = Vector2( 30, 0 )
+scale = Vector2( 0.1, 0.1 )
+texture = ExtResource( 14 )
 
 [node name="PlayerSprite" type="Sprite" parent="."]
 position = Vector2( 0, -9 )

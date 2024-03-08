@@ -32,6 +32,7 @@ onready var button = $PlayerInventory/Control/CenterContainer/HBoxContainer/VBox
 onready var pointer = $Pointer
 onready var ray = $Pointer/RayCast2D
 onready var laserSprite = $Pointer/Sprite
+onready var crosshair = $Pointer/crosshair
 onready var laserTwo = $Pointer/Sprite2
 onready var laserTimer = $Pointer/LaserTimer
 onready var laserSpeed = $Pointer/LaserSpeed
@@ -78,6 +79,7 @@ func _ready():
 	worldStats.connect("in_the_tall_grass", self, "_stealth_mode")
 	worldStats.connect("out_of_the_tall_grass", self, "_visible_again")
 	stats._ready()
+	crosshair.hide()
 	
 	# starting position
 	global_position.x = -463
@@ -155,7 +157,8 @@ func move_state(delta):
 			state = ATTACK
 			
 			#laser logic for Ray2D
-		if Input.is_action_just_pressed("laser"):
+		if Input.is_action_just_released("laser"):
+			crosshair.hide()
 			if stats.ammo > 0 && laserboi == true:
 				stats.ammo -= 1
 				laserSprite.show()
@@ -171,6 +174,9 @@ func move_state(delta):
 					laserTwo.show()
 			else:
 				pass
+				
+		if Input.is_action_just_pressed("laser"):
+			crosshair.show()
 			
 		
 		if Input.is_action_just_pressed("special_one"):

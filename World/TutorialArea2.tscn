@@ -68,6 +68,7 @@ text = "roll / dodge"
 position = Vector2( 15, 15 )
 frames = SubResource( 7 )
 animation = "Animate"
+frame = 2
 playing = true
 
 [connection signal="area_entered" from="." to="." method="_on_TutorialArea2_area_entered"]

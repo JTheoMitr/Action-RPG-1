@@ -1,4 +1,4 @@
-[gd_scene load_steps=188 format=2]
+[gd_scene load_steps=189 format=2]
 
 [ext_resource path="res://World/Bush.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=2]
@@ -87,6 +87,7 @@
 [ext_resource path="res://World/TutorialArea5.tscn" type="PackedScene" id=85]
 [ext_resource path="res://UI/StealthUI.tscn" type="PackedScene" id=86]
 [ext_resource path="res://World/FlowersBlueOne.tscn" type="PackedScene" id=87]
+[ext_resource path="res://World/FlowersYellowOne.tscn" type="PackedScene" id=88]
 
 [sub_resource type="ConvexPolygonShape2D" id=53]
 points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
@@ -1064,11 +1065,11 @@ script = ExtResource( 33 )
 laser_effect = ExtResource( 73 )
 
 [node name="SpriteBackground2" type="Sprite" parent="."]
-position = Vector2( 220, 180 )
-scale = Vector2( 3.11091, 3.13636 )
+position = Vector2( 186.5, 163.625 )
+scale = Vector2( 1.94405, 2.18979 )
 texture = ExtResource( 3 )
 region_enabled = true
-region_rect = Rect2( 0, 0, 816, 528 )
+region_rect = Rect2( 0, 0, 3909.17, 2121.3 )
 
 [node name="FlowersSpreadOne" parent="." instance=ExtResource( 35 )]
 position = Vector2( 368, -160 )
@@ -1141,58 +1142,55 @@ z_index = 1
 
 [node name="SwarmOne" parent="Swarms" instance=ExtResource( 68 )]
 position = Vector2( -37, 442 )
-frame = 7
+frame = 0
 
 [node name="SwarmOne7" parent="Swarms" instance=ExtResource( 68 )]
 position = Vector2( -40, 444 )
 scale = Vector2( 0.475, 0.506251 )
-frame = 1
 
 [node name="SwarmOne11" parent="Swarms" instance=ExtResource( 68 )]
 position = Vector2( 455, 440 )
 scale = Vector2( 0.475, 0.506251 )
-frame = 1
 
 [node name="SwarmOne12" parent="Swarms" instance=ExtResource( 68 )]
 position = Vector2( 459, 441 )
 rotation = 1.309
 scale = Vector2( 0.3, 0.3 )
-frame = 0
+frame = 1
 
 [node name="SwarmOne3" parent="Swarms" instance=ExtResource( 68 )]
 position = Vector2( -23, 30 )
-frame = 4
+frame = 5
 
 [node name="SwarmOne8" parent="Swarms" instance=ExtResource( 68 )]
 position = Vector2( -113, -264 )
-frame = 3
+frame = 4
 
 [node name="SwarmOne9" parent="Swarms" instance=ExtResource( 68 )]
 position = Vector2( -115, -263 )
 scale = Vector2( 0.5, 0.4 )
-frame = 3
+frame = 4
 
 [node name="SwarmOne4" parent="Swarms" instance=ExtResource( 68 )]
 position = Vector2( 465, -145 )
-frame = 3
+frame = 4
 
 [node name="SwarmOne5" parent="Swarms" instance=ExtResource( 68 )]
 position = Vector2( 561, -1.00001 )
-frame = 3
+frame = 4
 
 [node name="SwarmOne6" parent="Swarms" instance=ExtResource( 68 )]
 position = Vector2( 684, -261 )
-frame = 3
+frame = 4
 
 [node name="SwarmOne10" parent="Swarms" instance=ExtResource( 68 )]
 position = Vector2( 682, -260 )
 rotation = 1.0472
 scale = Vector2( 0.5, 0.5 )
-frame = 1
 
 [node name="SwarmOne2" parent="Swarms" instance=ExtResource( 68 )]
 position = Vector2( -78, 221 )
-frame = 7
+frame = 0
 
 [node name="WaterTileMap" type="TileMap" parent="."]
 tile_set = SubResource( 52 )
@@ -2001,11 +1999,20 @@ position = Vector2( 304, 96 )
 [node name="Tree2" parent="YSort/Trees" instance=ExtResource( 9 )]
 position = Vector2( 240, 48 )
 
+[node name="Tree43" parent="YSort/Trees" instance=ExtResource( 9 )]
+position = Vector2( 422, -225 )
+
+[node name="Tree44" parent="YSort/Trees" instance=ExtResource( 9 )]
+position = Vector2( -40, -242 )
+
 [node name="Tree3" parent="YSort/Trees" instance=ExtResource( 9 )]
 position = Vector2( 400, 8 )
 
 [node name="Tree4" parent="YSort/Trees" instance=ExtResource( 9 )]
 position = Vector2( 496, 140 )
+
+[node name="Tree47" parent="YSort/Trees" instance=ExtResource( 9 )]
+position = Vector2( 385, 244 )
 
 [node name="Tree5" parent="YSort/Trees" instance=ExtResource( 9 )]
 position = Vector2( 572, 351 )
@@ -2018,6 +2025,12 @@ position = Vector2( 176, -112 )
 
 [node name="Tree8" parent="YSort/Trees" instance=ExtResource( 9 )]
 position = Vector2( -16, -120 )
+
+[node name="Tree45" parent="YSort/Trees" instance=ExtResource( 9 )]
+position = Vector2( -13, -170 )
+
+[node name="Tree46" parent="YSort/Trees" instance=ExtResource( 9 )]
+position = Vector2( 137, -172 )
 
 [node name="Tree9" parent="YSort/Trees" instance=ExtResource( 9 )]
 position = Vector2( -112, 24 )
@@ -2163,6 +2176,15 @@ position = Vector2( 1071, -311 )
 [node name="TreeTwo7" parent="YSort/Trees" instance=ExtResource( 19 )]
 position = Vector2( 69, -256 )
 
+[node name="TreeTwo21" parent="YSort/Trees" instance=ExtResource( 19 )]
+position = Vector2( -46, -179 )
+
+[node name="TreeTwo22" parent="YSort/Trees" instance=ExtResource( 19 )]
+position = Vector2( 53, -73 )
+
+[node name="TreeTwo23" parent="YSort/Trees" instance=ExtResource( 19 )]
+position = Vector2( -136, -273 )
+
 [node name="TreeTwo14" parent="YSort/Trees" instance=ExtResource( 19 )]
 position = Vector2( -656, -336 )
 
@@ -2186,6 +2208,15 @@ position = Vector2( 172, -58 )
 
 [node name="TreeThree6" parent="YSort/Trees" instance=ExtResource( 20 )]
 position = Vector2( 131, 187 )
+
+[node name="TreeThree16" parent="YSort/Trees" instance=ExtResource( 20 )]
+position = Vector2( -288, 122 )
+
+[node name="TreeThree17" parent="YSort/Trees" instance=ExtResource( 20 )]
+position = Vector2( -268, 128 )
+
+[node name="TreeThree18" parent="YSort/Trees" instance=ExtResource( 20 )]
+position = Vector2( 12, -206 )
 
 [node name="TreeThree15" parent="YSort/Trees" instance=ExtResource( 20 )]
 position = Vector2( 974, -285 )
@@ -2875,7 +2906,7 @@ position = Vector2( -90, 479 )
 position = Vector2( -90, 192 )
 
 [node name="TutorialArea5" parent="YSort/Tutorials" instance=ExtResource( 85 )]
-position = Vector2( -48, 36 )
+position = Vector2( -47, 36 )
 
 [node name="Story" type="YSort" parent="YSort"]
 
@@ -3102,7 +3133,7 @@ position = Vector2( -16, -272 )
 [node name="ScreenCrackleOne" parent="YSort/OilCoDoors" instance=ExtResource( 57 )]
 position = Vector2( -17, -270.5 )
 scale = Vector2( 0.094, 0.0833333 )
-frame = 3
+frame = 2
 
 [node name="Flowers" type="YSort" parent="YSort"]
 
@@ -3187,6 +3218,18 @@ position = Vector2( 299, 93 )
 [node name="FlowersBlueOne2" parent="YSort/Flowers" instance=ExtResource( 87 )]
 position = Vector2( -205.688, 188 )
 scale = Vector2( 0.389706, 0.383333 )
+
+[node name="FlowersYellowOne9" parent="YSort/Flowers" instance=ExtResource( 88 )]
+position = Vector2( 441, -4 )
+
+[node name="FlowersYellowOne10" parent="YSort/Flowers" instance=ExtResource( 88 )]
+position = Vector2( 602, -4 )
+
+[node name="FlowersYellowOne11" parent="YSort/Flowers" instance=ExtResource( 88 )]
+position = Vector2( 499, -196 )
+
+[node name="FlowersYellowOne13" parent="YSort/Flowers" instance=ExtResource( 88 )]
+position = Vector2( 791, -227 )
 
 [node name="Vines" type="YSort" parent="YSort"]
 
@@ -3298,11 +3341,11 @@ position = Vector2( -305, 346 )
 
 [node name="Bonfire" parent="YSort/Fires" instance=ExtResource( 82 )]
 position = Vector2( 976, -240 )
-frame = 3
+frame = 2
 
 [node name="Bonfire2" parent="YSort/Fires" instance=ExtResource( 82 )]
 position = Vector2( 976, -208 )
-frame = 3
+frame = 2
 
 [node name="Runes" type="YSort" parent="YSort"]
 

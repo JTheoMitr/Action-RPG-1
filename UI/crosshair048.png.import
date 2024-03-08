@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/DirtTileset.png-4e52e2a032d2a3147ded644a2054b3ec.stex"
+path="res://.import/crosshair048.png-e00d1776149fc5cb75ed2e8ff6198682.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://World/DirtTileset.png"
-dest_files=[ "res://.import/DirtTileset.png-4e52e2a032d2a3147ded644a2054b3ec.stex" ]
+source_file="res://UI/crosshair048.png"
+dest_files=[ "res://.import/crosshair048.png-e00d1776149fc5cb75ed2e8ff6198682.stex" ]
 
 [params]
 
