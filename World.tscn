@@ -1,4 +1,4 @@
-[gd_scene load_steps=189 format=2]
+[gd_scene load_steps=190 format=2]
 
 [ext_resource path="res://World/Bush.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=2]
@@ -88,6 +88,7 @@
 [ext_resource path="res://UI/StealthUI.tscn" type="PackedScene" id=86]
 [ext_resource path="res://World/FlowersBlueOne.tscn" type="PackedScene" id=87]
 [ext_resource path="res://World/FlowersYellowOne.tscn" type="PackedScene" id=88]
+[ext_resource path="res://World/PopSign.tscn" type="PackedScene" id=89]
 
 [sub_resource type="ConvexPolygonShape2D" id=53]
 points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
@@ -1142,55 +1143,57 @@ z_index = 1
 
 [node name="SwarmOne" parent="Swarms" instance=ExtResource( 68 )]
 position = Vector2( -37, 442 )
-frame = 0
+frame = 5
 
 [node name="SwarmOne7" parent="Swarms" instance=ExtResource( 68 )]
 position = Vector2( -40, 444 )
 scale = Vector2( 0.475, 0.506251 )
+frame = 7
 
 [node name="SwarmOne11" parent="Swarms" instance=ExtResource( 68 )]
 position = Vector2( 455, 440 )
 scale = Vector2( 0.475, 0.506251 )
+frame = 7
 
 [node name="SwarmOne12" parent="Swarms" instance=ExtResource( 68 )]
 position = Vector2( 459, 441 )
 rotation = 1.309
 scale = Vector2( 0.3, 0.3 )
-frame = 1
+frame = 6
 
 [node name="SwarmOne3" parent="Swarms" instance=ExtResource( 68 )]
 position = Vector2( -23, 30 )
-frame = 5
 
 [node name="SwarmOne8" parent="Swarms" instance=ExtResource( 68 )]
 position = Vector2( -113, -264 )
-frame = 4
+frame = 1
 
 [node name="SwarmOne9" parent="Swarms" instance=ExtResource( 68 )]
 position = Vector2( -115, -263 )
 scale = Vector2( 0.5, 0.4 )
-frame = 4
+frame = 1
 
 [node name="SwarmOne4" parent="Swarms" instance=ExtResource( 68 )]
 position = Vector2( 465, -145 )
-frame = 4
+frame = 1
 
 [node name="SwarmOne5" parent="Swarms" instance=ExtResource( 68 )]
 position = Vector2( 561, -1.00001 )
-frame = 4
+frame = 1
 
 [node name="SwarmOne6" parent="Swarms" instance=ExtResource( 68 )]
 position = Vector2( 684, -261 )
-frame = 4
+frame = 1
 
 [node name="SwarmOne10" parent="Swarms" instance=ExtResource( 68 )]
 position = Vector2( 682, -260 )
 rotation = 1.0472
 scale = Vector2( 0.5, 0.5 )
+frame = 7
 
 [node name="SwarmOne2" parent="Swarms" instance=ExtResource( 68 )]
 position = Vector2( -78, 221 )
-frame = 0
+frame = 5
 
 [node name="WaterTileMap" type="TileMap" parent="."]
 tile_set = SubResource( 52 )
@@ -1694,6 +1697,9 @@ position = Vector2( -112, 320 )
 [node name="Grass137" parent="YSort/Grass" instance=ExtResource( 6 )]
 position = Vector2( -544, 512 )
 
+[node name="Grass156" parent="YSort/Grass" instance=ExtResource( 6 )]
+position = Vector2( -444, 416 )
+
 [node name="Grass139" parent="YSort/Grass" instance=ExtResource( 6 )]
 position = Vector2( -544, 528 )
 
@@ -2068,6 +2074,18 @@ position = Vector2( -344, 277 )
 [node name="Tree13" parent="YSort/Trees" instance=ExtResource( 9 )]
 position = Vector2( -368, 136 )
 
+[node name="Tree48" parent="YSort/Trees" instance=ExtResource( 9 )]
+position = Vector2( -227, 164 )
+
+[node name="Tree49" parent="YSort/Trees" instance=ExtResource( 9 )]
+position = Vector2( -201, 66 )
+
+[node name="Tree52" parent="YSort/Trees" instance=ExtResource( 9 )]
+position = Vector2( 168, 264 )
+
+[node name="Tree50" parent="YSort/Trees" instance=ExtResource( 9 )]
+position = Vector2( -190, 13 )
+
 [node name="Tree14" parent="YSort/Trees" instance=ExtResource( 9 )]
 position = Vector2( -392, 136 )
 
@@ -2097,6 +2115,9 @@ position = Vector2( -464, 277 )
 
 [node name="Tree23" parent="YSort/Trees" instance=ExtResource( 9 )]
 position = Vector2( -88, -136 )
+
+[node name="Tree51" parent="YSort/Trees" instance=ExtResource( 9 )]
+position = Vector2( -368, -208 )
 
 [node name="Tree41" parent="YSort/Trees" instance=ExtResource( 9 )]
 position = Vector2( -436, -435 )
@@ -2188,8 +2209,17 @@ position = Vector2( -136, -273 )
 [node name="TreeTwo14" parent="YSort/Trees" instance=ExtResource( 19 )]
 position = Vector2( -656, -336 )
 
+[node name="TreeTwo26" parent="YSort/Trees" instance=ExtResource( 19 )]
+position = Vector2( -496, -464 )
+
 [node name="TreeTwo4" parent="YSort/Trees" instance=ExtResource( 19 )]
 position = Vector2( -81, 146 )
+
+[node name="TreeTwo24" parent="YSort/Trees" instance=ExtResource( 19 )]
+position = Vector2( 18, 201 )
+
+[node name="TreeTwo25" parent="YSort/Trees" instance=ExtResource( 19 )]
+position = Vector2( 165, 305 )
 
 [node name="TreeTwo2" parent="YSort/Trees" instance=ExtResource( 19 )]
 position = Vector2( 457, 237 )
@@ -2207,7 +2237,7 @@ position = Vector2( 608, 45 )
 position = Vector2( 172, -58 )
 
 [node name="TreeThree6" parent="YSort/Trees" instance=ExtResource( 20 )]
-position = Vector2( 131, 187 )
+position = Vector2( 144, 144 )
 
 [node name="TreeThree16" parent="YSort/Trees" instance=ExtResource( 20 )]
 position = Vector2( -288, 122 )
@@ -3133,7 +3163,7 @@ position = Vector2( -16, -272 )
 [node name="ScreenCrackleOne" parent="YSort/OilCoDoors" instance=ExtResource( 57 )]
 position = Vector2( -17, -270.5 )
 scale = Vector2( 0.094, 0.0833333 )
-frame = 2
+frame = 3
 
 [node name="Flowers" type="YSort" parent="YSort"]
 
@@ -3183,6 +3213,9 @@ position = Vector2( 16, 36 )
 
 [node name="TallGrass2" parent="YSort/Flowers" instance=ExtResource( 84 )]
 position = Vector2( 149, -94 )
+
+[node name="TallGrass5" parent="YSort/Flowers" instance=ExtResource( 84 )]
+position = Vector2( 792, -184 )
 
 [node name="TallGrass3" parent="YSort/Flowers" instance=ExtResource( 84 )]
 position = Vector2( -79, -248 )
@@ -3341,16 +3374,26 @@ position = Vector2( -305, 346 )
 
 [node name="Bonfire" parent="YSort/Fires" instance=ExtResource( 82 )]
 position = Vector2( 976, -240 )
-frame = 2
+frame = 3
 
 [node name="Bonfire2" parent="YSort/Fires" instance=ExtResource( 82 )]
 position = Vector2( 976, -208 )
-frame = 2
+frame = 3
 
 [node name="Runes" type="YSort" parent="YSort"]
 
 [node name="AncientRuneOne" parent="YSort/Runes" instance=ExtResource( 83 )]
 position = Vector2( 1000, 262 )
+
+[node name="Signs" type="YSort" parent="YSort"]
+
+[node name="PopSign" parent="YSort/Signs" instance=ExtResource( 89 )]
+self_modulate = Color( 1, 1, 1, 0.490196 )
+position = Vector2( 584, -8 )
+
+[node name="PopSign2" parent="YSort/Signs" instance=ExtResource( 89 )]
+self_modulate = Color( 1, 1, 1, 0.611765 )
+position = Vector2( 568, -8 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
