@@ -3,7 +3,7 @@ extends KinematicBody2D
 const EnemyDeathEffect = preload("res://Effects/EnemyDeathEffect.tscn")
 const Battery = preload("res://World/Battery.tscn")
 const Ammo = preload("res://World/Ammo.tscn")
-const DroidSound = preload("res://Music and Sounds/DroidSound.tscn")
+const SoldierSound = preload("res://Music and Sounds/SoldierSound.tscn")
 const Laser = preload("res://Enemies/DroidLaser.tscn")
 
 export var ACCELERATION = 280
@@ -49,7 +49,7 @@ func _physics_process(delta):
 			
 			velocity = velocity.move_toward(Vector2.ZERO, FRICTION * delta)
 			seek_player()
-			sprite.play("walk")
+			sprite.play("idle")
 			if wanderController.get_time_left() == 0:
 				update_wander_state()
 				
@@ -91,9 +91,9 @@ func accelerate_towards_point(point, delta):
 func seek_player():
 	sprite.play("walk")
 	if playerDetectionZone.can_see_player():
-		var droidSound = DroidSound.instance()
-		get_parent().add_child(droidSound)
-		droidSound.play(0.0)
+		var soldierSound = SoldierSound.instance()
+		get_parent().add_child(soldierSound)
+		soldierSound.play(0.0)
 		timer.start(0.0)
 		# if laserEngaged == false:
 			# var laser = Laser.instance()

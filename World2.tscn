@@ -9,7 +9,7 @@
 [ext_resource path="res://Enemies/Bat.tscn" type="PackedScene" id=7]
 [ext_resource path="res://UI/HealthUI.tscn" type="PackedScene" id=8]
 [ext_resource path="res://World/Water Tileset Cave.png" type="Texture" id=9]
-[ext_resource path="res://Enemies/Droid.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Enemies/Soldier.tscn" type="PackedScene" id=10]
 [ext_resource path="res://World/Barrel.tscn" type="PackedScene" id=11]
 [ext_resource path="res://World/Apple.tscn" type="PackedScene" id=12]
 [ext_resource path="res://World/CellDoor.tscn" type="PackedScene" id=13]
