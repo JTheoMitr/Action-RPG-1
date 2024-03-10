@@ -70,7 +70,6 @@
 [ext_resource path="res://World/SwarmOne.tscn" type="PackedScene" id=68]
 [ext_resource path="res://World/WallCrack.tscn" type="PackedScene" id=69]
 [ext_resource path="res://UI/CoinUI.tscn" type="PackedScene" id=70]
-[ext_resource path="res://Player/main_player_face_still.png" type="Texture" id=71]
 [ext_resource path="res://World/OilBarrelsOne.tscn" type="PackedScene" id=72]
 [ext_resource path="res://Effects/LaserEffect.tscn" type="PackedScene" id=73]
 [ext_resource path="res://UI/AmmoUI.tscn" type="PackedScene" id=74]
@@ -90,6 +89,7 @@
 [ext_resource path="res://World/FlowersYellowOne.tscn" type="PackedScene" id=88]
 [ext_resource path="res://World/PopSign.tscn" type="PackedScene" id=89]
 [ext_resource path="res://World/ForestTier.tscn" type="PackedScene" id=90]
+[ext_resource path="res://World/Bird.tscn" type="PackedScene" id=91]
 
 [sub_resource type="ConvexPolygonShape2D" id=53]
 points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
@@ -1144,57 +1144,53 @@ z_index = 1
 
 [node name="SwarmOne" parent="Swarms" instance=ExtResource( 68 )]
 position = Vector2( -37, 442 )
-frame = 5
+frame = 6
 
 [node name="SwarmOne7" parent="Swarms" instance=ExtResource( 68 )]
 position = Vector2( -40, 444 )
 scale = Vector2( 0.475, 0.506251 )
-frame = 7
+frame = 0
 
 [node name="SwarmOne11" parent="Swarms" instance=ExtResource( 68 )]
 position = Vector2( 455, 440 )
 scale = Vector2( 0.475, 0.506251 )
-frame = 7
+frame = 0
 
 [node name="SwarmOne12" parent="Swarms" instance=ExtResource( 68 )]
 position = Vector2( 459, 441 )
 rotation = 1.309
 scale = Vector2( 0.3, 0.3 )
-frame = 6
+frame = 7
 
 [node name="SwarmOne3" parent="Swarms" instance=ExtResource( 68 )]
 position = Vector2( -23, 30 )
+frame = 3
 
 [node name="SwarmOne8" parent="Swarms" instance=ExtResource( 68 )]
 position = Vector2( -113, -264 )
-frame = 1
 
 [node name="SwarmOne9" parent="Swarms" instance=ExtResource( 68 )]
 position = Vector2( -115, -263 )
 scale = Vector2( 0.5, 0.4 )
-frame = 1
 
 [node name="SwarmOne4" parent="Swarms" instance=ExtResource( 68 )]
 position = Vector2( 465, -145 )
-frame = 1
 
 [node name="SwarmOne5" parent="Swarms" instance=ExtResource( 68 )]
 position = Vector2( 561, -1.00001 )
-frame = 1
 
 [node name="SwarmOne6" parent="Swarms" instance=ExtResource( 68 )]
 position = Vector2( 684, -261 )
-frame = 1
 
 [node name="SwarmOne10" parent="Swarms" instance=ExtResource( 68 )]
 position = Vector2( 682, -260 )
 rotation = 1.0472
 scale = Vector2( 0.5, 0.5 )
-frame = 7
+frame = 0
 
 [node name="SwarmOne2" parent="Swarms" instance=ExtResource( 68 )]
 position = Vector2( -78, 221 )
-frame = 5
+frame = 6
 
 [node name="WaterTileMap" type="TileMap" parent="."]
 tile_set = SubResource( 52 )
@@ -1239,9 +1235,11 @@ position = Vector2( 112, 32 )
 
 [node name="Bush3" parent="YSort/Bushes" instance=ExtResource( 1 )]
 position = Vector2( 176, 176 )
+z_index = 1
 
 [node name="Bush4" parent="YSort/Bushes" instance=ExtResource( 1 )]
 position = Vector2( 72, 168 )
+z_index = 1
 
 [node name="Bush5" parent="YSort/Bushes" instance=ExtResource( 1 )]
 position = Vector2( 280, 128 )
@@ -1254,6 +1252,7 @@ position = Vector2( 32, 34 )
 
 [node name="Bush8" parent="YSort/Bushes" instance=ExtResource( 1 )]
 position = Vector2( 56, 160 )
+z_index = 1
 
 [node name="Bush9" parent="YSort/Bushes" instance=ExtResource( 1 )]
 position = Vector2( 432, 72 )
@@ -1996,7 +1995,8 @@ position = Vector2( 656, 368 )
 position = Vector2( 672, 368 )
 
 [node name="ForestTier" parent="YSort/Grass" instance=ExtResource( 90 )]
-position = Vector2( -176, 240 )
+position = Vector2( -178, 240 )
+scale = Vector2( 0.875, 1 )
 
 [node name="ForestTier2" parent="YSort/Grass" instance=ExtResource( 90 )]
 position = Vector2( -208, 240 )
@@ -2005,53 +2005,67 @@ position = Vector2( -208, 240 )
 position = Vector2( -240, 240 )
 
 [node name="ForestTier4" parent="YSort/Grass" instance=ExtResource( 90 )]
-position = Vector2( -272, 240 )
+position = Vector2( -270, 240 )
+scale = Vector2( 0.875, 1 )
 
 [node name="ForestTier5" parent="YSort/Grass" instance=ExtResource( 90 )]
-position = Vector2( -272, 256 )
+position = Vector2( -269.5, 256 )
+scale = Vector2( 0.84375, 1 )
 
 [node name="ForestTier12" parent="YSort/Grass" instance=ExtResource( 90 )]
-position = Vector2( -304, 232 )
-scale = Vector2( 1, 0.5 )
+position = Vector2( -297, 233.5 )
+scale = Vector2( 1.25, 0.46875 )
 
 [node name="ForestTier6" parent="YSort/Grass" instance=ExtResource( 90 )]
 position = Vector2( -240, 256 )
+scale = Vector2( 1.5, 1 )
 
 [node name="ForestTier7" parent="YSort/Grass" instance=ExtResource( 90 )]
 position = Vector2( -208, 256 )
 
 [node name="ForestTier8" parent="YSort/Grass" instance=ExtResource( 90 )]
-position = Vector2( -176, 256 )
+position = Vector2( -178, 256 )
+scale = Vector2( 0.875, 1 )
 
 [node name="ForestTier9" parent="YSort/Grass" instance=ExtResource( 90 )]
-position = Vector2( -176, 280 )
+position = Vector2( -178.5, 280 )
+scale = Vector2( 0.84375, 1 )
 
 [node name="ForestTier10" parent="YSort/Grass" instance=ExtResource( 90 )]
-position = Vector2( -208, 280 )
+position = Vector2( -206, 280 )
+scale = Vector2( 0.875, 1 )
 
 [node name="ForestTier11" parent="YSort/Grass" instance=ExtResource( 90 )]
-position = Vector2( -208, 280 )
+position = Vector2( -206, 280 )
+scale = Vector2( 0.875, 1 )
 
 [node name="ForestTier13" parent="YSort/Grass" instance=ExtResource( 90 )]
-position = Vector2( -208, 304 )
+position = Vector2( -205.5, 304 )
+scale = Vector2( 0.84375, 1 )
 
 [node name="ForestTier14" parent="YSort/Grass" instance=ExtResource( 90 )]
-position = Vector2( -176, 304 )
+position = Vector2( -178, 304 )
+scale = Vector2( 0.875, 1 )
 
 [node name="ForestTier15" parent="YSort/Grass" instance=ExtResource( 90 )]
-position = Vector2( -176, 328 )
+position = Vector2( -179, 328 )
+scale = Vector2( 0.8125, 1 )
 
 [node name="ForestTier18" parent="YSort/Grass" instance=ExtResource( 90 )]
-position = Vector2( -176, 352 )
+position = Vector2( -176.5, 352 )
+scale = Vector2( 0.71875, 1 )
 
 [node name="ForestTier19" parent="YSort/Grass" instance=ExtResource( 90 )]
-position = Vector2( -176, 376 )
+position = Vector2( -174, 376 )
+scale = Vector2( 0.875, 1 )
 
 [node name="ForestTier20" parent="YSort/Grass" instance=ExtResource( 90 )]
-position = Vector2( -176, 392 )
+position = Vector2( -174, 392 )
+scale = Vector2( 0.875, 1 )
 
 [node name="ForestTier21" parent="YSort/Grass" instance=ExtResource( 90 )]
-position = Vector2( -176, 416 )
+position = Vector2( -174, 416 )
+scale = Vector2( 0.875, 1 )
 
 [node name="ForestTier22" parent="YSort/Grass" instance=ExtResource( 90 )]
 position = Vector2( -144, 416 )
@@ -2077,76 +2091,3269 @@ position = Vector2( -48, 392 )
 scale = Vector2( 1, 0.5 )
 
 [node name="ForestTier23" parent="YSort/Grass" instance=ExtResource( 90 )]
-position = Vector2( -112, 416 )
+position = Vector2( -113.5, 416 )
+scale = Vector2( 0.90625, 1 )
 
 [node name="ForestTier24" parent="YSort/Grass" instance=ExtResource( 90 )]
-position = Vector2( -48, 416 )
+position = Vector2( -46.5, 416 )
+scale = Vector2( 0.90625, 1 )
 
 [node name="ForestTier16" parent="YSort/Grass" instance=ExtResource( 90 )]
-position = Vector2( -208, 320 )
+position = Vector2( -204, 320 )
+scale = Vector2( 1.0625, 1 )
 
 [node name="ForestTier30" parent="YSort/Grass" instance=ExtResource( 90 )]
 position = Vector2( -272, 416 )
+scale = Vector2( 0.8125, 1 )
 
 [node name="ForestTier31" parent="YSort/Grass" instance=ExtResource( 90 )]
-position = Vector2( -336, 416 )
+position = Vector2( -338.5, 416 )
+scale = Vector2( 0.84375, 1 )
 
 [node name="ForestTier41" parent="YSort/Grass" instance=ExtResource( 90 )]
-position = Vector2( -336, 304 )
+position = Vector2( -337.5, 305 )
+scale = Vector2( 0.78125, 0.9375 )
 
 [node name="ForestTier42" parent="YSort/Grass" instance=ExtResource( 90 )]
-position = Vector2( -368, 296 )
-scale = Vector2( 1, 0.5 )
+position = Vector2( -363.5, 297 )
+scale = Vector2( 1.28125, 0.4375 )
 
 [node name="ForestTier43" parent="YSort/Grass" instance=ExtResource( 90 )]
-position = Vector2( -400, 296 )
-scale = Vector2( 1, 0.5 )
+position = Vector2( -396.5, 297.5 )
+scale = Vector2( 1.21875, 0.40625 )
 
 [node name="ForestTier44" parent="YSort/Grass" instance=ExtResource( 90 )]
-position = Vector2( -432, 296 )
-scale = Vector2( 1, 0.5 )
+position = Vector2( -429, 297 )
+scale = Vector2( 1.1875, 0.4375 )
 
 [node name="ForestTier45" parent="YSort/Grass" instance=ExtResource( 90 )]
-position = Vector2( -464, 296 )
-scale = Vector2( 1, 0.5 )
+position = Vector2( -464, 297.5 )
+scale = Vector2( 1, 0.40625 )
+
+[node name="ForestTier47" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -493, 297.5 )
+scale = Vector2( 1, 0.46875 )
+
+[node name="ForestTier48" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -530.5, 298 )
+scale = Vector2( 1.34375, 0.5 )
 
 [node name="ForestTier40" parent="YSort/Grass" instance=ExtResource( 90 )]
-position = Vector2( -336, 320 )
+position = Vector2( -336.5, 320 )
+scale = Vector2( 0.78125, 1 )
+
+[node name="ForestTier49" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -495.5, 316 )
+scale = Vector2( 0.843751, 1 )
+
+[node name="ForestTier50" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -495.75, 340 )
+scale = Vector2( 0.859376, 1 )
+
+[node name="ForestTier51" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -495.75, 352 )
+scale = Vector2( 0.859374, 1 )
 
 [node name="ForestTier32" parent="YSort/Grass" instance=ExtResource( 90 )]
-position = Vector2( -368, 416 )
+position = Vector2( -366.5, 416 )
+scale = Vector2( 0.90625, 1 )
+
+[node name="ForestTier46" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -561, 398 )
+scale = Vector2( 0.734375, 1 )
+
+[node name="ForestTier57" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -560, 368 )
+scale = Vector2( 0.90625, 1 )
+
+[node name="ForestTier58" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -560, 336 )
+scale = Vector2( 0.90625, 1 )
+
+[node name="ForestTier59" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -560, 304 )
+scale = Vector2( 0.90625, 1 )
+
+[node name="ForestTier60" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -560, 272 )
+scale = Vector2( 0.648439, 1 )
+
+[node name="ForestTier61" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -561, 242 )
+scale = Vector2( 0.765625, 1 )
+
+[node name="ForestTier62" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -560, 210 )
+scale = Vector2( 0.90625, 1 )
+
+[node name="ForestTier63" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -560, 177 )
+scale = Vector2( 0.90625, 1.0625 )
+
+[node name="ForestTier64" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -560, 144 )
+scale = Vector2( 0.90625, 1 )
+
+[node name="ForestTier65" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -560, 120 )
+scale = Vector2( 0.90625, 1 )
+
+[node name="ForestTier66" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -560, 88 )
+scale = Vector2( 0.90625, 1 )
+
+[node name="ForestTier67" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -560, 64 )
+scale = Vector2( 0.90625, 1 )
+
+[node name="ForestTier68" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -560, 40 )
+scale = Vector2( 0.90625, 1 )
+
+[node name="ForestTier69" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -560, 16 )
+scale = Vector2( 0.90625, 1 )
+
+[node name="ForestTier117" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -535, 9 )
+scale = Vector2( 1.125, 0.4375 )
+
+[node name="ForestTier70" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -560, -15 )
+scale = Vector2( 0.90625, 1.0625 )
+
+[node name="ForestTier71" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -560, -48 )
+scale = Vector2( 0.90625, 1 )
+
+[node name="ForestTier77" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -496, -96 )
+scale = Vector2( 0.90625, 1 )
+
+[node name="ForestTier78" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -472, -96 )
+scale = Vector2( 0.90625, 1 )
+
+[node name="ForestTier79" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -448, -96 )
+scale = Vector2( 0.90625, 1 )
+
+[node name="ForestTier80" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -424, -96 )
+scale = Vector2( 0.90625, 1 )
+
+[node name="ForestTier205" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -431, 19 )
+scale = Vector2( 0.812499, 1 )
+
+[node name="ForestTier206" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -432, 42 )
+scale = Vector2( 0.812499, 1 )
+
+[node name="ForestTier207" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -462, 52 )
+scale = Vector2( 0.812499, 1 )
+
+[node name="ForestTier208" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -446, 51 )
+scale = Vector2( 0.812499, 1 )
+
+[node name="ForestTier226" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -175, 50 )
+scale = Vector2( 0.812499, 1 )
+
+[node name="ForestTier227" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -205, 60 )
+scale = Vector2( 0.812499, 1 )
+
+[node name="ForestTier228" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -189, 59 )
+scale = Vector2( 0.812499, 1 )
+
+[node name="ForestTier229" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -176, 74 )
+scale = Vector2( 0.812499, 1 )
+
+[node name="ForestTier252" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -154, 63 )
+scale = Vector2( 0.812499, 1 )
+
+[node name="ForestTier253" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -154, 63 )
+scale = Vector2( 0.812499, 1 )
+
+[node name="ForestTier254" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -144, 63 )
+scale = Vector2( 0.812499, 1 )
+
+[node name="ForestTier255" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -147, 40 )
+scale = Vector2( 0.812499, 1 )
+
+[node name="ForestTier256" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -146, 20 )
+scale = Vector2( 0.812499, 1 )
+
+[node name="ForestTier257" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -170, 34 )
+scale = Vector2( 0.812499, 1 )
+
+[node name="ForestTier258" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -170, 16 )
+scale = Vector2( 0.812499, 1 )
+
+[node name="ForestTier259" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -206, 15 )
+scale = Vector2( 0.812499, 1 )
+
+[node name="ForestTier260" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -186, -3 )
+scale = Vector2( 0.812499, 1 )
+
+[node name="ForestTier261" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -178, -11 )
+scale = Vector2( 0.812499, 1 )
+
+[node name="ForestTier262" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -179, -32 )
+scale = Vector2( 0.812499, 1 )
+
+[node name="ForestTier263" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -178, -44 )
+scale = Vector2( 0.812499, 1 )
+
+[node name="ForestTier264" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -199, -44 )
+scale = Vector2( 0.812499, 1 )
+
+[node name="ForestTier265" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -206, -8 )
+scale = Vector2( 0.812499, 1 )
+
+[node name="ForestTier266" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -200, -20 )
+scale = Vector2( 0.812499, 1 )
+
+[node name="ForestTier267" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -206, -38 )
+scale = Vector2( 0.812499, 1.25 )
+
+[node name="ForestTier230" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -176, 98 )
+scale = Vector2( 0.812499, 1 )
+
+[node name="ForestTier231" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -176, 125 )
+scale = Vector2( 0.812499, 1 )
+
+[node name="ForestTier232" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -176, 149 )
+scale = Vector2( 0.812499, 1 )
+
+[node name="ForestTier233" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -196, 148 )
+scale = Vector2( 0.812499, 1 )
+
+[node name="ForestTier234" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -217, 149 )
+scale = Vector2( 0.812499, 1 )
+
+[node name="ForestTier235" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -237, 149 )
+scale = Vector2( 0.812499, 1 )
+
+[node name="ForestTier238" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -302, 147 )
+scale = Vector2( 0.812499, 1 )
+
+[node name="ForestTier239" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -303, 160 )
+scale = Vector2( 0.812499, 1 )
+
+[node name="ForestTier240" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -285, 168 )
+scale = Vector2( 0.812499, 0.53125 )
+
+[node name="ForestTier241" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -265, 168 )
+scale = Vector2( 0.812499, 0.53125 )
+
+[node name="ForestTier242" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -249, 168 )
+scale = Vector2( 0.812499, 0.53125 )
+
+[node name="ForestTier243" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -231, 168 )
+scale = Vector2( 0.812499, 0.53125 )
+
+[node name="ForestTier244" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -231, 168 )
+scale = Vector2( 0.812499, 0.53125 )
+
+[node name="ForestTier245" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -211, 169 )
+scale = Vector2( 0.812499, 0.53125 )
+
+[node name="ForestTier246" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -202, 165 )
+scale = Vector2( 0.812499, 0.53125 )
+
+[node name="ForestTier237" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -283, 149 )
+scale = Vector2( 0.812499, 1 )
+
+[node name="ForestTier236" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -262, 151 )
+scale = Vector2( 0.812499, 1 )
+
+[node name="ForestTier210" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -447, 65 )
+scale = Vector2( 0.812499, 1 )
+
+[node name="ForestTier211" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -464, 69 )
+scale = Vector2( 0.812499, 1 )
+
+[node name="ForestTier212" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -483, 74 )
+scale = Vector2( 0.812499, 0.46875 )
+
+[node name="ForestTier215" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -409, 74 )
+scale = Vector2( 0.812499, 0.46875 )
+
+[node name="ForestTier216" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -388, 74 )
+scale = Vector2( 0.812499, 0.46875 )
+
+[node name="ForestTier217" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -363, 75 )
+scale = Vector2( 0.812499, 0.46875 )
+
+[node name="ForestTier218" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -344, 74 )
+scale = Vector2( 0.812499, 0.46875 )
+
+[node name="ForestTier219" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -325, 74 )
+scale = Vector2( 0.812499, 0.46875 )
+
+[node name="ForestTier220" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -306, 74 )
+scale = Vector2( 0.812499, 0.46875 )
+
+[node name="ForestTier221" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -289, 74 )
+scale = Vector2( 0.812499, 0.46875 )
+
+[node name="ForestTier250" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -220, 73 )
+scale = Vector2( 0.812499, 0.46875 )
+
+[node name="ForestTier251" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -197, 73 )
+scale = Vector2( 0.812499, 0.46875 )
+
+[node name="ForestTier213" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -506, 74 )
+scale = Vector2( 0.812499, 0.46875 )
+
+[node name="ForestTier214" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -532, 73.25 )
+scale = Vector2( 1.1875, 0.421875 )
+
+[node name="ForestTier209" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -433, 65 )
+scale = Vector2( 0.812499, 1 )
+
+[node name="ForestTier222" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -272, 83 )
+scale = Vector2( 0.812499, 1 )
+
+[node name="ForestTier247" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -272, 113 )
+scale = Vector2( 0.812499, 1 )
+
+[node name="ForestTier223" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -251, 83 )
+scale = Vector2( 0.812499, 1 )
+
+[node name="ForestTier225" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -252, 111 )
+scale = Vector2( 0.812499, 1 )
+
+[node name="ForestTier248" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -237, 126 )
+scale = Vector2( 0.812499, 1 )
+
+[node name="ForestTier249" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -241, 96 )
+scale = Vector2( 0.812499, 1 )
+
+[node name="ForestTier224" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -236, 83 )
+scale = Vector2( 0.562499, 1 )
+
+[node name="ForestTier81" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -401.75, -96 )
+scale = Vector2( 0.796876, 1 )
+
+[node name="ForestTier82" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -401.25, -128 )
+scale = Vector2( 0.828123, 1 )
+
+[node name="ForestTier200" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -427, -112.5 )
+scale = Vector2( 0.90625, 0.71875 )
+
+[node name="ForestTier201" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -448, -112 )
+scale = Vector2( 0.90625, 0.71875 )
+
+[node name="ForestTier202" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -468, -111 )
+scale = Vector2( 0.90625, 0.71875 )
+
+[node name="ForestTier203" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -490.75, -112 )
+scale = Vector2( 0.984375, 0.71875 )
+
+[node name="ForestTier83" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -400, -160 )
+scale = Vector2( 0.90625, 1 )
+
+[node name="ForestTier103" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -432, -192 )
+scale = Vector2( 0.687502, 1 )
+
+[node name="ForestTier104" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -432, -221 )
+scale = Vector2( 0.6875, 1 )
+
+[node name="ForestTier105" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -432.5, -250 )
+scale = Vector2( 0.656249, 1 )
+
+[node name="ForestTier106" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -431.5, -273 )
+scale = Vector2( 0.71875, 1 )
+
+[node name="ForestTier109" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -406, -288 )
+scale = Vector2( 0.90625, 1 )
+
+[node name="ForestTier110" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -386, -289 )
+scale = Vector2( 0.90625, 1 )
+
+[node name="ForestTier111" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -370.75, -289 )
+scale = Vector2( 0.859374, 1 )
+
+[node name="ForestTier112" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -370.75, -301 )
+scale = Vector2( 0.859376, 0.9375 )
+
+[node name="ForestTier197" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -333, -513.5 )
+scale = Vector2( 0.90625, 1.03125 )
+
+[node name="ForestTier198" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -316, -514 )
+scale = Vector2( 0.90625, 1.03125 )
+
+[node name="ForestTier199" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -305, -514 )
+scale = Vector2( 0.90625, 1.03125 )
+
+[node name="ForestTier113" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -394, -301 )
+scale = Vector2( 0.90625, 0.9375 )
+
+[node name="ForestTier114" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -414, -301 )
+scale = Vector2( 0.90625, 0.9375 )
+
+[node name="ForestTier107" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -429.75, -299 )
+scale = Vector2( 0.828127, 1 )
+
+[node name="ForestTier108" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -430.25, -324 )
+scale = Vector2( 0.796877, 1 )
+
+[node name="ForestTier115" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -430.75, -333 )
+scale = Vector2( 0.828124, 1 )
+
+[node name="ForestTier116" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -450.062, -341.75 )
+scale = Vector2( 1.12109, 0.359375 )
+flip_h = true
+
+[node name="ForestTier84" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -376, -160 )
+scale = Vector2( 0.90625, 1 )
+
+[node name="ForestTier85" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -352, -160 )
+scale = Vector2( 0.90625, 1 )
+
+[node name="ForestTier86" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -328, -160 )
+scale = Vector2( 0.90625, 1 )
+
+[node name="ForestTier87" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -312, -160 )
+scale = Vector2( 0.90625, 1 )
+
+[node name="ForestTier97" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -296, -182 )
+scale = Vector2( 0.90625, 0.375 )
+
+[node name="ForestTier99" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -323, -181 )
+scale = Vector2( 0.90625, 0.375 )
+
+[node name="ForestTier100" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -347, -180 )
+scale = Vector2( 0.90625, 0.4375 )
+
+[node name="ForestTier101" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -375, -180 )
+scale = Vector2( 0.90625, 0.5 )
+
+[node name="ForestTier204" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -374.625, -87 )
+scale = Vector2( 1.16406, 0.5 )
+
+[node name="ForestTier102" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -405.75, -181.5 )
+scale = Vector2( 1.14062, 0.40625 )
+
+[node name="ForestTier98" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -272, -182 )
+scale = Vector2( 0.90625, 0.375 )
+
+[node name="ForestTier88" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -302.25, -136 )
+scale = Vector2( 0.796875, 1 )
+
+[node name="ForestTier89" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -280, -136 )
+scale = Vector2( 0.90625, 1 )
+
+[node name="ForestTier90" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -280, -136 )
+scale = Vector2( 0.90625, 1 )
+
+[node name="ForestTier91" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -288, -160 )
+scale = Vector2( 0.90625, 1 )
+
+[node name="ForestTier92" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -272, -160 )
+scale = Vector2( 0.90625, 1 )
+
+[node name="ForestTier93" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -272, -128 )
+scale = Vector2( 0.90625, 1 )
+
+[node name="ForestTier94" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -303.5, -112 )
+scale = Vector2( 0.71875, 1 )
+
+[node name="ForestTier95" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -304, -88 )
+scale = Vector2( 0.687501, 1 )
+
+[node name="ForestTier96" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -304, -64 )
+scale = Vector2( 0.90625, 1 )
+
+[node name="ForestTier75" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -560, -72 )
+scale = Vector2( 0.90625, 1 )
+
+[node name="ForestTier76" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -560, -106 )
+scale = Vector2( 0.90625, 1.125 )
+
+[node name="ForestTier72" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -584, -48 )
+scale = Vector2( 0.90625, 1 )
+
+[node name="ForestTier118" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -590, -45 )
+scale = Vector2( 0.90625, 1 )
+
+[node name="ForestTier119" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -590, -32 )
+scale = Vector2( 0.90625, 1 )
+
+[node name="ForestTier120" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -590, -32 )
+scale = Vector2( 0.90625, 1 )
+
+[node name="ForestTier73" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -584, -32 )
+scale = Vector2( 0.90625, 1 )
+
+[node name="ForestTier122" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -656.25, -37 )
+scale = Vector2( 0.765625, 1 )
+
+[node name="ForestTier123" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -656, -55 )
+scale = Vector2( 0.765625, 1 )
+
+[node name="ForestTier124" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -656, -74 )
+scale = Vector2( 0.765625, 1 )
+
+[node name="ForestTier125" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -656, -95 )
+scale = Vector2( 0.765625, 1 )
+
+[node name="ForestTier126" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -655, -110 )
+scale = Vector2( 0.765625, 1 )
+
+[node name="ForestTier130" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -751, -38 )
+scale = Vector2( 0.765625, 1 )
+
+[node name="ForestTier131" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -751, -16 )
+scale = Vector2( 0.765625, 1 )
+
+[node name="ForestTier132" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -752, -1 )
+scale = Vector2( 0.765625, 1 )
+
+[node name="ForestTier136" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -847, -1.19209e-07 )
+scale = Vector2( 0.765625, 1 )
+
+[node name="ForestTier137" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -848, -23 )
+scale = Vector2( 0.765625, 1 )
+
+[node name="ForestTier138" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -848, -44 )
+scale = Vector2( 0.765625, 1 )
+
+[node name="ForestTier139" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -815, -64 )
+scale = Vector2( 0.765625, 1 )
+
+[node name="ForestTier141" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -815, -86 )
+scale = Vector2( 0.765625, 1 )
+
+[node name="ForestTier142" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -815, -104 )
+scale = Vector2( 0.765625, 1 )
+
+[node name="ForestTier143" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -816, -123 )
+scale = Vector2( 0.765625, 1 )
+
+[node name="ForestTier144" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -817, -144 )
+scale = Vector2( 0.765625, 1 )
+
+[node name="ForestTier145" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -816, -165 )
+scale = Vector2( 0.765625, 1 )
+
+[node name="ForestTier146" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -816, -189 )
+scale = Vector2( 0.765625, 1 )
+
+[node name="ForestTier147" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -816, -213 )
+scale = Vector2( 0.765625, 1 )
+
+[node name="ForestTier347" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -688, -288 )
+scale = Vector2( 0.765625, 1 )
+
+[node name="ForestTier348" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -688, -308 )
+scale = Vector2( 0.765625, 1 )
+
+[node name="ForestTier349" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -688, -332 )
+scale = Vector2( 0.765625, 1 )
+
+[node name="ForestTier350" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -624, -288 )
+scale = Vector2( 0.765625, 1 )
+
+[node name="ForestTier351" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -624, -312 )
+scale = Vector2( 0.765625, 1 )
+
+[node name="ForestTier352" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -624, -334 )
+scale = Vector2( 0.765625, 1 )
+
+[node name="ForestTier358" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -656, -356 )
+scale = Vector2( 0.765625, 1 )
+
+[node name="ForestTier359" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -656, -378 )
+scale = Vector2( 0.765625, 1 )
+
+[node name="ForestTier360" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -656, -402 )
+scale = Vector2( 0.765625, 1 )
+
+[node name="ForestTier361" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -656, -425 )
+scale = Vector2( 0.765625, 1 )
+
+[node name="ForestTier369" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -528, -460 )
+scale = Vector2( 0.765625, 1 )
+
+[node name="ForestTier370" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -528, -437 )
+scale = Vector2( 0.765625, 1 )
+
+[node name="ForestTier378" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -400, -461 )
+scale = Vector2( 0.765625, 1 )
+
+[node name="ForestTier379" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -400, -436 )
+scale = Vector2( 0.765625, 1 )
+
+[node name="ForestTier380" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -399, -416 )
+scale = Vector2( 0.765625, 1 )
+
+[node name="ForestTier384" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -304, -396 )
+scale = Vector2( 0.765625, 1 )
+
+[node name="ForestTier385" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -303.625, -371 )
+scale = Vector2( 0.726561, 1 )
+
+[node name="ForestTier386" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -304.125, -345 )
+scale = Vector2( 0.695313, 1 )
+
+[node name="ForestTier387" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -304.125, -322 )
+scale = Vector2( 0.695314, 1 )
+
+[node name="ForestTier388" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -304, -299 )
+scale = Vector2( 0.695314, 1 )
+
+[node name="ForestTier389" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -304, -289 )
+scale = Vector2( 0.695314, 1 )
+
+[node name="ForestTier397" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -111, -287 )
+scale = Vector2( 0.695314, 1 )
+
+[node name="ForestTier398" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -112, -300 )
+scale = Vector2( 0.695314, 1 )
+
+[node name="ForestTier410" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -176, -384 )
+scale = Vector2( 0.695314, 1 )
+
+[node name="ForestTier411" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -176, -396 )
+scale = Vector2( 0.695314, 1 )
+
+[node name="ForestTier413" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -208, -416 )
+scale = Vector2( 0.695314, 1 )
+
+[node name="ForestTier414" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -208, -438 )
+scale = Vector2( 0.695314, 1 )
+
+[node name="ForestTier415" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -208, -459 )
+scale = Vector2( 0.695314, 1 )
+
+[node name="ForestTier478" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -80, -512 )
+scale = Vector2( 0.695314, 1 )
+
+[node name="ForestTier479" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -80, -524 )
+scale = Vector2( 0.695314, 1 )
+
+[node name="ForestTier480" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -61, -524 )
+scale = Vector2( 0.695314, 1 )
+
+[node name="ForestTier481" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -62, -513 )
+scale = Vector2( 0.695314, 1 )
+
+[node name="ForestTier482" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -44, -512 )
+scale = Vector2( 0.695314, 1 )
+
+[node name="ForestTier483" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -42, -523 )
+scale = Vector2( 0.695314, 1 )
+
+[node name="ForestTier484" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -29, -514 )
+scale = Vector2( 0.695314, 1 )
+
+[node name="ForestTier485" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -21, -523 )
+scale = Vector2( 0.695314, 1 )
+
+[node name="ForestTier486" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -16, -513 )
+scale = Vector2( 0.695314, 1 )
+
+[node name="ForestTier492" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 144, -524 )
+scale = Vector2( 0.695314, 1 )
+
+[node name="ForestTier493" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 144, -500 )
+scale = Vector2( 0.695314, 1 )
+
+[node name="ForestTier494" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 144, -477 )
+scale = Vector2( 0.695314, 1 )
+
+[node name="ForestTier495" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 144, -450 )
+scale = Vector2( 0.695314, 1 )
+
+[node name="ForestTier496" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 144, -426 )
+scale = Vector2( 0.695314, 1 )
+
+[node name="ForestTier497" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 144, -402 )
+scale = Vector2( 0.695314, 1 )
+
+[node name="ForestTier498" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 144, -383 )
+scale = Vector2( 0.695314, 1 )
+
+[node name="ForestTier619" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 496, -266 )
+scale = Vector2( 0.695314, 1.0625 )
+
+[node name="ForestTier620" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 496, -240 )
+scale = Vector2( 0.695314, 1.0625 )
+
+[node name="ForestTier621" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 496, -225 )
+scale = Vector2( 0.695314, 1.0625 )
+
+[node name="ForestTier623" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 528, -194 )
+scale = Vector2( 0.695314, 1.0625 )
+
+[node name="ForestTier624" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 529, -161 )
+scale = Vector2( 0.695314, 1.0625 )
+
+[node name="ForestTier625" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 548, -166.5 )
+scale = Vector2( 0.695314, 1.28125 )
+
+[node name="ForestTier626" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 566, -170 )
+scale = Vector2( 0.695314, 1.0625 )
+
+[node name="ForestTier627" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 583, -170 )
+scale = Vector2( 0.695314, 1.0625 )
+
+[node name="ForestTier628" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 592, -170 )
+scale = Vector2( 0.695314, 1.0625 )
+
+[node name="ForestTier629" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 592, -145 )
+scale = Vector2( 0.695314, 1.0625 )
+
+[node name="ForestTier634" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 591, -114 )
+scale = Vector2( 0.695314, 1.0625 )
+
+[node name="ForestTier635" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 590.438, -98 )
+scale = Vector2( 0.722657, 1.0625 )
+
+[node name="ForestTier672" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 655.719, -106 )
+scale = Vector2( 0.642578, 1.0625 )
+
+[node name="ForestTier688" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 656, -260 )
+scale = Vector2( 0.642578, 1.0625 )
+
+[node name="ForestTier692" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 752, -194 )
+scale = Vector2( 0.642578, 1.0625 )
+
+[node name="ForestTier695" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 752, -267 )
+scale = Vector2( 0.642578, 1.0625 )
+
+[node name="ForestTier696" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 770, -258 )
+scale = Vector2( 0.642578, 1.0625 )
+
+[node name="ForestTier697" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 786, -259 )
+scale = Vector2( 0.642578, 1.0625 )
+
+[node name="ForestTier698" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 799, -259 )
+scale = Vector2( 0.642578, 1.0625 )
+
+[node name="ForestTier699" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 815, -259 )
+scale = Vector2( 0.642578, 1.0625 )
+
+[node name="ForestTier700" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 799, -266 )
+scale = Vector2( 0.642578, 1.0625 )
+
+[node name="ForestTier701" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 815, -266 )
+scale = Vector2( 0.642578, 1.0625 )
+
+[node name="ForestTier693" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 752, -222 )
+scale = Vector2( 0.642578, 1.0625 )
+
+[node name="ForestTier694" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 752, -245 )
+scale = Vector2( 0.642578, 1.0625 )
+
+[node name="ForestTier691" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 656, -195 )
+scale = Vector2( 0.642578, 1.0625 )
+
+[node name="ForestTier689" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 656, -238 )
+scale = Vector2( 0.642578, 1.0625 )
+
+[node name="ForestTier690" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 656, -212 )
+scale = Vector2( 0.642578, 1.0625 )
+
+[node name="ForestTier673" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 669, -73 )
+scale = Vector2( 0.722657, 1.0625 )
+
+[node name="ForestTier675" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 657, -77 )
+scale = Vector2( 0.722657, 1.0625 )
+
+[node name="ForestTier676" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 657, -57 )
+scale = Vector2( 0.722657, 1.0625 )
+
+[node name="ForestTier678" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 686, -34 )
+scale = Vector2( 0.722657, 1.0625 )
+
+[node name="ForestTier706" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 688, 55 )
+scale = Vector2( 0.722657, 1.0625 )
+
+[node name="ForestTier707" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 688, 77 )
+scale = Vector2( 0.722657, 1.0625 )
+
+[node name="ForestTier716" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 670, 118 )
+scale = Vector2( 0.722657, 1.0625 )
+
+[node name="ForestTier708" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 687, 107 )
+scale = Vector2( 0.722657, 1.0625 )
+
+[node name="ForestTier709" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 686, 130 )
+scale = Vector2( 0.722657, 1.0625 )
+
+[node name="ForestTier710" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 686, 155 )
+scale = Vector2( 0.722657, 1.0625 )
+
+[node name="ForestTier711" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 686, 179 )
+scale = Vector2( 0.722657, 1.0625 )
+
+[node name="ForestTier715" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 670, 133 )
+scale = Vector2( 0.722657, 1.0625 )
+
+[node name="ForestTier712" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 686, 191 )
+scale = Vector2( 0.722657, 1.0625 )
+
+[node name="ForestTier727" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 718, 213 )
+scale = Vector2( 0.722657, 1.0625 )
+
+[node name="ForestTier728" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 720, 224 )
+scale = Vector2( 0.722657, 1.0625 )
+
+[node name="ForestTier729" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 739, 224 )
+scale = Vector2( 0.722657, 1.0625 )
+
+[node name="ForestTier730" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 739, 214 )
+scale = Vector2( 0.722657, 1.0625 )
+
+[node name="ForestTier731" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 752, 209 )
+scale = Vector2( 0.722657, 1.0625 )
+
+[node name="ForestTier734" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 752, 267 )
+scale = Vector2( 0.722657, 1.0625 )
+
+[node name="ForestTier735" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 752, 287 )
+scale = Vector2( 0.722657, 1.0625 )
+
+[node name="ForestTier786" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 1040, 543 )
+scale = Vector2( 0.722657, 1.0625 )
+
+[node name="ForestTier787" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 1040, 516 )
+scale = Vector2( 0.722657, 1.0625 )
+
+[node name="ForestTier788" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 1040, 487 )
+scale = Vector2( 0.722657, 1.0625 )
+
+[node name="ForestTier789" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 1040, 458 )
+scale = Vector2( 0.722657, 1.0625 )
+
+[node name="ForestTier790" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 1040, 428 )
+scale = Vector2( 0.722657, 1.0625 )
+
+[node name="ForestTier791" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 1040, 400 )
+scale = Vector2( 0.722657, 1.0625 )
+
+[node name="ForestTier792" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 1040, 371 )
+scale = Vector2( 0.722657, 1.0625 )
+
+[node name="ForestTier793" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 1040, 341.5 )
+scale = Vector2( 0.722657, 1.09375 )
+
+[node name="ForestTier794" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 1040, 311.5 )
+scale = Vector2( 0.722657, 1.21875 )
+
+[node name="ForestTier795" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 976, 309 )
+scale = Vector2( 0.722657, 1.0625 )
+
+[node name="ForestTier796" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 976, 337 )
+scale = Vector2( 0.722657, 1.0625 )
+
+[node name="ForestTier797" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 977, 366 )
+scale = Vector2( 0.722657, 1.0625 )
+
+[node name="ForestTier798" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 977, 394 )
+scale = Vector2( 0.722657, 1.0625 )
+
+[node name="ForestTier799" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 977, 423 )
+scale = Vector2( 0.722657, 1.0625 )
+
+[node name="ForestTier800" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 976, 445 )
+scale = Vector2( 0.722657, 1.0625 )
+
+[node name="ForestTier802" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 912, 479 )
+scale = Vector2( 0.722657, 1.0625 )
+
+[node name="ForestTier803" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 912, 449 )
+scale = Vector2( 0.722657, 1.0625 )
+
+[node name="ForestTier804" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 912, 420 )
+scale = Vector2( 0.722657, 1.0625 )
+
+[node name="ForestTier805" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 912, 390 )
+scale = Vector2( 0.722657, 1.0625 )
+
+[node name="ForestTier806" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 912, 360 )
+scale = Vector2( 0.722657, 1.0625 )
+
+[node name="ForestTier807" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 912, 343 )
+scale = Vector2( 0.722657, 1.0625 )
+
+[node name="ForestTier808" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 893, 344 )
+scale = Vector2( 0.722657, 1.0625 )
+
+[node name="ForestTier809" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 881, 343 )
+scale = Vector2( 0.722657, 1.0625 )
+
+[node name="ForestTier810" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 913, 315 )
+scale = Vector2( 0.722657, 1.0625 )
+
+[node name="ForestTier811" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 913, 287 )
+scale = Vector2( 0.722657, 1.0625 )
+
+[node name="ForestTier812" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 913, 259 )
+scale = Vector2( 0.722657, 1.0625 )
+
+[node name="ForestTier813" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 913, 245 )
+scale = Vector2( 0.722657, 1.0625 )
+
+[node name="ForestTier814" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 935, 234 )
+scale = Vector2( 0.722657, 0.375 )
+
+[node name="ForestTier815" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 957, 234 )
+scale = Vector2( 0.722657, 0.375 )
+
+[node name="ForestTier816" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 976, 224.5 )
+scale = Vector2( 0.722657, 1.03125 )
+
+[node name="ForestTier817" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 977, 197 )
+scale = Vector2( 0.722657, 1.03125 )
+
+[node name="ForestTier818" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 977, 181 )
+scale = Vector2( 0.722657, 1.03125 )
+
+[node name="ForestTier819" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 998, 182 )
+scale = Vector2( 0.722657, 1.03125 )
+
+[node name="ForestTier820" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 998, 191 )
+scale = Vector2( 0.722657, 1.03125 )
+
+[node name="ForestTier821" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 1013, 190 )
+scale = Vector2( 0.722657, 1.03125 )
+
+[node name="ForestTier822" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 1010, 156 )
+scale = Vector2( 0.722657, 1.03125 )
+
+[node name="ForestTier823" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 1040, 214 )
+scale = Vector2( 0.722657, 1.03125 )
+
+[node name="ForestTier824" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 1025, 190 )
+scale = Vector2( 0.722657, 1.03125 )
+
+[node name="ForestTier825" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 1038, 187 )
+scale = Vector2( 0.722657, 1.03125 )
+
+[node name="ForestTier826" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 1038, 161 )
+scale = Vector2( 0.722657, 1.03125 )
+
+[node name="ForestTier827" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 1020, 159 )
+scale = Vector2( 0.722657, 1.03125 )
+
+[node name="ForestTier828" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 1038, 140 )
+scale = Vector2( 0.722657, 1.03125 )
+
+[node name="ForestTier829" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 1010, 129 )
+scale = Vector2( 0.722657, 1.03125 )
+
+[node name="ForestTier830" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 1037, 120 )
+scale = Vector2( 0.722657, 1.03125 )
+
+[node name="ForestTier831" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 1024, 129 )
+scale = Vector2( 0.722657, 1.03125 )
+
+[node name="ForestTier832" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 1010, 102 )
+scale = Vector2( 0.722657, 1.03125 )
+
+[node name="ForestTier833" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 1037, 92 )
+scale = Vector2( 0.722657, 1.03125 )
+
+[node name="ForestTier834" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 1028, 99 )
+scale = Vector2( 0.722657, 1.03125 )
+
+[node name="ForestTier835" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 1010, 75 )
+scale = Vector2( 0.722657, 1.03125 )
+
+[node name="ForestTier836" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 1026, 67 )
+scale = Vector2( 0.722657, 1.03125 )
+
+[node name="ForestTier837" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 1036, 59 )
+scale = Vector2( 0.722657, 1.03125 )
+
+[node name="ForestTier838" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 1010, 50 )
+scale = Vector2( 0.722657, 1.03125 )
+
+[node name="ForestTier840" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 1010, 22 )
+scale = Vector2( 0.722657, 1.03125 )
+
+[node name="ForestTier841" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 1028, 36 )
+scale = Vector2( 0.722657, 1.03125 )
+
+[node name="ForestTier839" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 1036, 38 )
+scale = Vector2( 0.722657, 1.03125 )
+
+[node name="ForestTier801" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 976, 476.5 )
+scale = Vector2( 0.722657, 1.21875 )
+
+[node name="ForestTier739" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 656, 278 )
+scale = Vector2( 0.722657, 1.0625 )
+
+[node name="ForestTier740" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 655, 286 )
+scale = Vector2( 0.722657, 1.0625 )
+
+[node name="ForestTier742" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 625, 310 )
+scale = Vector2( 0.722657, 1.0625 )
+
+[node name="ForestTier743" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 624, 336 )
+scale = Vector2( 0.722657, 1.0625 )
+
+[node name="ForestTier744" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 624, 364 )
+scale = Vector2( 0.722657, 1.0625 )
+
+[node name="ForestTier745" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 624, 385 )
+scale = Vector2( 0.722657, 1.0625 )
+
+[node name="ForestTier733" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 752, 240 )
+scale = Vector2( 0.722657, 1.0625 )
+
+[node name="ForestTier732" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 752, 181 )
+scale = Vector2( 0.722657, 1.0625 )
+
+[node name="ForestTier748" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 784, 148 )
+scale = Vector2( 0.722657, 1.0625 )
+
+[node name="ForestTier749" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 784, 159 )
+scale = Vector2( 0.722657, 1.0625 )
+
+[node name="ForestTier713" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 668, 190 )
+scale = Vector2( 0.722657, 1.0625 )
+
+[node name="ForestTier714" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 670, 162 )
+scale = Vector2( 0.722657, 1.0625 )
+
+[node name="ForestTier717" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 657, 119 )
+scale = Vector2( 0.722657, 1.0625 )
+
+[node name="ForestTier718" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 638, 119 )
+scale = Vector2( 0.722657, 1.0625 )
+
+[node name="ForestTier719" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 626, 119 )
+scale = Vector2( 0.722657, 1.0625 )
+
+[node name="ForestTier720" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 626, 146 )
+scale = Vector2( 0.722657, 1.0625 )
+
+[node name="ForestTier721" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 626, 174 )
+scale = Vector2( 0.722657, 1.0625 )
+
+[node name="ForestTier722" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 626, 190 )
+scale = Vector2( 0.722657, 1.0625 )
+
+[node name="ForestTier723" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 647, 190 )
+scale = Vector2( 0.722657, 1.0625 )
+
+[node name="ForestTier724" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 653, 166 )
+scale = Vector2( 0.722657, 1.0625 )
+
+[node name="ForestTier679" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 673, -43 )
+scale = Vector2( 0.722657, 1.0625 )
+
+[node name="ForestTier680" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 658, -34 )
+scale = Vector2( 0.722657, 1.0625 )
+
+[node name="ForestTier681" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 671, -34 )
+scale = Vector2( 0.722657, 1.0625 )
+
+[node name="ForestTier682" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 655.719, -6 )
+scale = Vector2( 0.580078, 1.0625 )
+
+[node name="ForestTier677" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 686, -53 )
+scale = Vector2( 0.722657, 1.0625 )
+
+[node name="ForestTier674" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 686, -74 )
+scale = Vector2( 0.722657, 1.0625 )
+
+[node name="ForestTier636" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 569, -97 )
+scale = Vector2( 0.695314, 1.0625 )
+
+[node name="ForestTier637" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 561, -84 )
+scale = Vector2( 0.695314, 1.0625 )
+
+[node name="ForestTier638" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 560, -55 )
+scale = Vector2( 0.695314, 1.0625 )
+
+[node name="ForestTier662" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 496, -74 )
+scale = Vector2( 0.695314, 1.0625 )
+
+[node name="ForestTier663" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 496, -45 )
+scale = Vector2( 0.695314, 1.0625 )
+
+[node name="ForestTier664" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 496, -16 )
+scale = Vector2( 0.695314, 1.0625 )
+
+[node name="ForestTier665" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 496, 14 )
+scale = Vector2( 0.695314, 1.0625 )
+
+[node name="ForestTier666" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 496, 43 )
+scale = Vector2( 0.695314, 1.0625 )
+
+[node name="ForestTier669" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 477, 42 )
+scale = Vector2( 0.695314, 0.34375 )
+
+[node name="ForestTier670" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 455, 42 )
+scale = Vector2( 0.695314, 0.34375 )
+
+[node name="ForestTier671" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 435, 42 )
+scale = Vector2( 0.812499, 0.34375 )
+
+[node name="ForestTier667" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 496, 71 )
+scale = Vector2( 0.695314, 1.0625 )
+
+[node name="ForestTier668" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 496, 87 )
+scale = Vector2( 0.695314, 1.0625 )
+
+[node name="ForestTier639" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 560, -33 )
+scale = Vector2( 0.695314, 1.0625 )
+
+[node name="ForestTier655" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 433, -170 )
+scale = Vector2( 0.695314, 1.0625 )
+
+[node name="ForestTier656" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 433, -161 )
+scale = Vector2( 0.695314, 1.0625 )
+
+[node name="ForestTier630" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 571, -142 )
+scale = Vector2( 0.695314, 1.0625 )
+
+[node name="ForestTier633" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 580, -116 )
+scale = Vector2( 0.695314, 1.0625 )
+
+[node name="ForestTier631" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 560, -144 )
+scale = Vector2( 0.695314, 1.0625 )
+
+[node name="ForestTier632" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 561, -116 )
+scale = Vector2( 0.695314, 1.0625 )
+
+[node name="ForestTier501" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 80, -363 )
+scale = Vector2( 0.695314, 1 )
+
+[node name="ForestTier502" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 80, -352 )
+scale = Vector2( 0.695314, 1 )
+
+[node name="ForestTier503" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 16, -293 )
+scale = Vector2( 0.695314, 1 )
+
+[node name="ForestTier508" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 16, -287 )
+scale = Vector2( 0.695314, 1 )
+
+[node name="ForestTier504" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 16, -315 )
+scale = Vector2( 0.695314, 1 )
+
+[node name="ForestTier505" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 16, -332 )
+scale = Vector2( 0.695314, 1 )
+
+[node name="ForestTier399" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -80, -320.5 )
+scale = Vector2( 0.695314, 1.03125 )
+
+[node name="ForestTier402" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -62, -321 )
+scale = Vector2( 0.695314, 1.0625 )
+
+[node name="ForestTier403" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -47, -333 )
+scale = Vector2( 0.695314, 1 )
+
+[node name="ForestTier404" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -63, -333 )
+scale = Vector2( 0.695314, 1 )
+
+[node name="ForestTier405" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -48, -311 )
+scale = Vector2( 0.695314, 1 )
+
+[node name="ForestTier400" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -81, -345 )
+scale = Vector2( 0.695314, 1 )
+
+[node name="ForestTier401" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -80, -363 )
+scale = Vector2( 0.695314, 1.0625 )
+
+[node name="ForestTier371" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -528, -416 )
+scale = Vector2( 0.765625, 1 )
+
+[node name="ForestTier362" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -656, -448 )
+scale = Vector2( 0.765625, 1 )
+
+[node name="ForestTier363" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -656, -460 )
+scale = Vector2( 0.765625, 1 )
+
+[node name="ForestTier148" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -816, -238 )
+scale = Vector2( 0.765625, 1 )
+
+[node name="ForestTier149" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -816, -262 )
+scale = Vector2( 0.765625, 1 )
+
+[node name="ForestTier156" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -911, -320 )
+scale = Vector2( 0.765625, 1 )
+
+[node name="ForestTier157" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -911, -341 )
+scale = Vector2( 0.765625, 1 )
+
+[node name="ForestTier158" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -911, -362 )
+scale = Vector2( 0.765625, 1 )
+
+[node name="ForestTier159" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -911, -385 )
+scale = Vector2( 0.765625, 1 )
+
+[node name="ForestTier162" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -944, -416 )
+scale = Vector2( 0.765625, 1 )
+
+[node name="ForestTier163" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -944, -439 )
+scale = Vector2( 0.765625, 1 )
+
+[node name="ForestTier164" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -943, -460 )
+scale = Vector2( 0.765625, 1 )
+
+[node name="ForestTier166" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -912, -480 )
+scale = Vector2( 0.765625, 1 )
+
+[node name="ForestTier167" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -912, -500 )
+scale = Vector2( 0.765625, 1 )
+
+[node name="ForestTier168" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -911, -524 )
+scale = Vector2( 0.765625, 1 )
+
+[node name="ForestTier150" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -847, -288 )
+scale = Vector2( 0.765625, 1 )
+
+[node name="ForestTier151" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -825.625, -278.75 )
+scale = Vector2( 1.16407, 0.421876 )
+
+[node name="ForestTier153" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -792, -278 )
+scale = Vector2( 1.16407, 0.421876 )
+
+[node name="ForestTier344" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -765, -278 )
+scale = Vector2( 1.16407, 0.421876 )
+
+[node name="ForestTier345" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -733, -278 )
+scale = Vector2( 1.16407, 0.421876 )
+
+[node name="ForestTier354" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -601, -279 )
+scale = Vector2( 1.16407, 0.421876 )
+
+[node name="ForestTier355" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -598, -342 )
+scale = Vector2( 1.16407, 0.421876 )
+
+[node name="ForestTier364" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -632, -470 )
+scale = Vector2( 1.16407, 0.421876 )
+
+[node name="ForestTier365" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -602, -470 )
+scale = Vector2( 1.16407, 0.421876 )
+
+[node name="ForestTier366" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -573, -470 )
+scale = Vector2( 1.16407, 0.421876 )
+
+[node name="ForestTier367" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -549, -470 )
+scale = Vector2( 1.16407, 0.421876 )
+
+[node name="ForestTier372" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -585, -406 )
+scale = Vector2( 1.16407, 0.421876 )
+
+[node name="ForestTier375" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -485, -470 )
+scale = Vector2( 1.16407, 0.421876 )
+
+[node name="ForestTier376" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -455, -471 )
+scale = Vector2( 1.16407, 0.421876 )
+
+[node name="ForestTier377" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -419, -471 )
+scale = Vector2( 1.16407, 0.421876 )
+
+[node name="ForestTier373" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -555, -406 )
+scale = Vector2( 1.16407, 0.421876 )
+
+[node name="ForestTier374" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -505.813, -406 )
+scale = Vector2( 1.30078, 0.421876 )
+
+[node name="ForestTier381" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -373.094, -406 )
+scale = Vector2( 1.05664, 0.421876 )
+
+[node name="ForestTier382" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -348, -406 )
+scale = Vector2( 1.05664, 0.421876 )
+
+[node name="ForestTier390" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -278, -278 )
+scale = Vector2( 1.05664, 0.421876 )
+
+[node name="ForestTier391" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -249, -278 )
+scale = Vector2( 1.05664, 0.421876 )
+
+[node name="ForestTier392" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -220, -278 )
+scale = Vector2( 1.05664, 0.421876 )
+
+[node name="ForestTier393" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -192, -278 )
+scale = Vector2( 1.05664, 0.421876 )
+
+[node name="ForestTier507" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 42, -277 )
+scale = Vector2( 1.05664, 0.421876 )
+
+[node name="ForestTier509" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 71, -277 )
+scale = Vector2( 1.05664, 0.421876 )
+
+[node name="ForestTier510" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 97, -277 )
+scale = Vector2( 1.05664, 0.421876 )
+
+[node name="ForestTier511" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 126, -277 )
+scale = Vector2( 1.05664, 0.421876 )
+
+[node name="ForestTier512" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 154, -277 )
+scale = Vector2( 1.05664, 0.421876 )
+
+[node name="ForestTier513" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 181, -277 )
+scale = Vector2( 1.05664, 0.421876 )
+
+[node name="ForestTier605" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 207, -277 )
+scale = Vector2( 1.05664, 0.421876 )
+
+[node name="ForestTier606" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 232, -277 )
+scale = Vector2( 1.05664, 0.421876 )
+
+[node name="ForestTier607" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 258, -278 )
+scale = Vector2( 1.05664, 0.421876 )
+
+[node name="ForestTier608" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 286, -278 )
+scale = Vector2( 1.05664, 0.421876 )
+
+[node name="ForestTier609" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 313, -278 )
+scale = Vector2( 1.05664, 0.421876 )
+
+[node name="ForestTier610" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 340, -278 )
+scale = Vector2( 1.05664, 0.421876 )
+
+[node name="ForestTier611" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 366, -278 )
+scale = Vector2( 1.05664, 0.421876 )
+
+[node name="ForestTier612" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 393, -278 )
+scale = Vector2( 1.05664, 0.421876 )
+
+[node name="ForestTier613" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 466.547, -278 )
+scale = Vector2( 1.21582, 0.421876 )
+
+[node name="ForestTier614" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 525.453, -278 )
+scale = Vector2( 1.27832, 0.421876 )
+
+[node name="ForestTier622" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 521.727, -214 )
+scale = Vector2( 1.04541, 0.367188 )
+
+[node name="ForestTier640" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 585, -22 )
+scale = Vector2( 1.04541, 0.367188 )
+
+[node name="ForestTier704" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 600, 42 )
+scale = Vector2( 1.04541, 0.367188 )
+
+[node name="ForestTier726" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 701.068, 202 )
+scale = Vector2( 0.558227, 0.367188 )
+
+[node name="ForestTier747" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 752.017, 106.469 )
+scale = Vector2( 0.748933, 0.341797 )
+
+[node name="ForestTier750" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 767, 170 )
+scale = Vector2( 0.748933, 0.341797 )
+
+[node name="ForestTier736" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 727, 298 )
+scale = Vector2( 1.06036, 0.367188 )
+
+[node name="ForestTier737" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 698, 298 )
+scale = Vector2( 1.06036, 0.367188 )
+
+[node name="ForestTier738" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 671, 298 )
+scale = Vector2( 1.125, 0.367188 )
+
+[node name="ForestTier746" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 658, 394 )
+scale = Vector2( 1.125, 0.367188 )
+
+[node name="ForestTier741" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 635, 298 )
+scale = Vector2( 0.75, 0.367188 )
+
+[node name="ForestTier705" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 641, 43 )
+scale = Vector2( 1.04541, 0.367188 )
+
+[node name="ForestTier725" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 663.137, 43 )
+scale = Vector2( 0.803959, 0.367188 )
+
+[node name="ForestTier615" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 560, -278 )
+scale = Vector2( 1.05664, 0.421876 )
+
+[node name="ForestTier616" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 590, -278 )
+scale = Vector2( 1.05664, 0.421876 )
+
+[node name="ForestTier617" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 619, -278 )
+scale = Vector2( 1.05664, 0.421876 )
+
+[node name="ForestTier618" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 642, -278 )
+scale = Vector2( 1.05664, 0.421876 )
+
+[node name="ForestTier683" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 663, -277 )
+scale = Vector2( 1.05664, 0.421876 )
+
+[node name="ForestTier684" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 691, -277 )
+scale = Vector2( 1.05664, 0.421876 )
+
+[node name="ForestTier685" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 717, -277 )
+scale = Vector2( 1.05664, 0.421876 )
+
+[node name="ForestTier686" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 738, -277 )
+scale = Vector2( 1.05664, 0.421876 )
+
+[node name="ForestTier687" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 773, -277 )
+scale = Vector2( 1.05664, 0.421876 )
+
+[node name="ForestTier702" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 833, -277 )
+scale = Vector2( 1.05664, 0.421876 )
+
+[node name="ForestTier703" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 861, -277 )
+scale = Vector2( 1.05664, 0.421876 )
+
+[node name="ForestTier406" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -94, -310 )
+scale = Vector2( 1.05664, 0.421876 )
+
+[node name="ForestTier396" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -127.453, -279 )
+scale = Vector2( 0.465822, 0.421876 )
+
+[node name="ForestTier394" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -165, -278 )
+scale = Vector2( 1.05664, 0.421876 )
+
+[node name="ForestTier407" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -105.953, -374 )
+scale = Vector2( 1.12207, 0.421876 )
+
+[node name="ForestTier408" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -133, -374 )
+scale = Vector2( 1.05664, 0.421876 )
+
+[node name="ForestTier409" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -161, -374 )
+scale = Vector2( 1.05664, 0.421876 )
+
+[node name="ForestTier412" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -189.547, -406 )
+scale = Vector2( 0.653322, 0.421876 )
+
+[node name="ForestTier395" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -134, -279 )
+scale = Vector2( 1.05664, 0.421876 )
+
+[node name="ForestTier383" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -326, -406 )
+scale = Vector2( 1.05664, 0.421876 )
+
+[node name="ForestTier368" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -502, -470 )
+scale = Vector2( 1.16407, 0.421876 )
+
+[node name="ForestTier356" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -567, -342 )
+scale = Vector2( 1.16407, 0.421876 )
+
+[node name="ForestTier357" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -542, -342 )
+scale = Vector2( 1.16407, 0.421876 )
+
+[node name="ForestTier346" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -703, -279 )
+scale = Vector2( 1.16407, 0.421876 )
+
+[node name="ForestTier353" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -656.188, -343 )
+scale = Vector2( 1.36328, 0.421876 )
+
+[node name="ForestTier154" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -872, -310 )
+scale = Vector2( 1.16407, 0.421876 )
+
+[node name="ForestTier160" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -918.313, -405.875 )
+scale = Vector2( 1.20703, 0.429688 )
+
+[node name="ForestTier161" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -936, -406 )
+scale = Vector2( 1.20703, 0.429688 )
+
+[node name="ForestTier165" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -921, -471 )
+scale = Vector2( 1.20703, 0.429688 )
+
+[node name="ForestTier169" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -889, -534 )
+scale = Vector2( 1.20703, 0.429688 )
+
+[node name="ForestTier170" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -859, -534 )
+scale = Vector2( 1.20703, 0.429688 )
+
+[node name="ForestTier171" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -831, -534 )
+scale = Vector2( 1.20703, 0.429688 )
+
+[node name="ForestTier172" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -799, -534 )
+scale = Vector2( 1.20703, 0.429688 )
+
+[node name="ForestTier173" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -771, -534 )
+scale = Vector2( 1.20703, 0.429688 )
+
+[node name="ForestTier174" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -744, -534 )
+scale = Vector2( 1.20703, 0.429688 )
+
+[node name="ForestTier175" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -719, -534 )
+scale = Vector2( 1.20703, 0.429688 )
+
+[node name="ForestTier176" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -688, -534 )
+scale = Vector2( 1.20703, 0.429688 )
+
+[node name="ForestTier177" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -657, -534 )
+scale = Vector2( 1.20703, 0.429688 )
+
+[node name="ForestTier178" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -626, -534 )
+scale = Vector2( 1.20703, 0.429688 )
+
+[node name="ForestTier179" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -598, -534 )
+scale = Vector2( 1.20703, 0.429688 )
+
+[node name="ForestTier180" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -570, -533 )
+scale = Vector2( 1.20703, 0.429688 )
+
+[node name="ForestTier181" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -543, -533 )
+scale = Vector2( 1.20703, 0.429688 )
+
+[node name="ForestTier182" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -516, -533 )
+scale = Vector2( 1.20703, 0.429688 )
+
+[node name="ForestTier183" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -487, -534 )
+scale = Vector2( 1.20703, 0.429688 )
+
+[node name="ForestTier184" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -460, -534 )
+scale = Vector2( 1.20703, 0.429688 )
+
+[node name="ForestTier185" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -428, -534 )
+scale = Vector2( 1.20703, 0.429688 )
+
+[node name="ForestTier186" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -399, -534 )
+scale = Vector2( 1.20703, 0.429688 )
+
+[node name="ForestTier187" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -371, -534 )
+scale = Vector2( 1.20703, 0.429688 )
+
+[node name="ForestTier188" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -345, -533 )
+scale = Vector2( 1.20703, 0.429688 )
+
+[node name="ForestTier189" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -318, -533 )
+scale = Vector2( 1.20703, 0.429688 )
+
+[node name="ForestTier190" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -294, -533 )
+scale = Vector2( 1.20703, 0.429688 )
+
+[node name="ForestTier191" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -265, -533 )
+scale = Vector2( 1.20703, 0.429688 )
+
+[node name="ForestTier192" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -233, -533 )
+scale = Vector2( 1.20703, 0.429688 )
+
+[node name="ForestTier193" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -206, -533 )
+scale = Vector2( 1.20703, 0.429688 )
+
+[node name="ForestTier194" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -176, -533 )
+scale = Vector2( 1.20703, 0.429688 )
+
+[node name="ForestTier195" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -145, -533 )
+scale = Vector2( 1.20703, 0.429688 )
+
+[node name="ForestTier196" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -111.156, -533 )
+scale = Vector2( 1.50977, 0.429688 )
+
+[node name="ForestTier487" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -7.00001, -533 )
+scale = Vector2( 1.50977, 0.429688 )
+
+[node name="ForestTier488" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 37, -534 )
+scale = Vector2( 1.50977, 0.402339 )
+
+[node name="ForestTier489" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 61, -534 )
+scale = Vector2( 1.50977, 0.402339 )
+
+[node name="ForestTier490" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 98, -534 )
+scale = Vector2( 1.50977, 0.402339 )
+
+[node name="ForestTier491" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 125, -534 )
+scale = Vector2( 1.50977, 0.402339 )
+
+[node name="ForestTier499" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 115.922, -374 )
+scale = Vector2( 1.19238, 0.402339 )
+
+[node name="ForestTier500" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 101, -374 )
+scale = Vector2( 1.50977, 0.402339 )
+
+[node name="ForestTier506" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 48, -342 )
+scale = Vector2( 1.50977, 0.402339 )
+
+[node name="ForestTier155" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -901.688, -311 )
+scale = Vector2( 1.26953, 0.421876 )
+
+[node name="ForestTier152" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -849, -304.25 )
+scale = Vector2( 0.765625, 0.703125 )
+
+[node name="ForestTier74" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -615, -22.5 )
+scale = Vector2( 1.3125, 0.40625 )
+
+[node name="ForestTier121" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -647, -23 )
+scale = Vector2( 1.3125, 0.40625 )
+
+[node name="ForestTier127" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -685, -55 )
+scale = Vector2( 1.3125, 0.40625 )
+
+[node name="ForestTier128" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -720, -55 )
+scale = Vector2( 1.3125, 0.40625 )
+
+[node name="ForestTier133" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -777, 9 )
+scale = Vector2( 1.3125, 0.40625 )
+
+[node name="ForestTier134" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -811, 9 )
+scale = Vector2( 1.3125, 0.40625 )
+
+[node name="ForestTier135" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -838, 9 )
+scale = Vector2( 1.3125, 0.40625 )
+
+[node name="ForestTier140" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -831, -55 )
+scale = Vector2( 1.3125, 0.40625 )
+
+[node name="ForestTier129" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -742, -55 )
+scale = Vector2( 1.3125, 0.40625 )
+
+[node name="ForestTier52" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -560, 424 )
+scale = Vector2( 0.90625, 1 )
+
+[node name="ForestTier53" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -560, 456 )
+scale = Vector2( 0.90625, 1 )
+
+[node name="ForestTier54" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -560, 483 )
+scale = Vector2( 0.679688, 1 )
+
+[node name="ForestTier55" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -560, 512 )
+scale = Vector2( 0.679692, 1 )
+
+[node name="ForestTier56" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -560.125, 544 )
+scale = Vector2( 0.695313, 1 )
+
+[node name="ForestTier325" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -495.375, 568 )
+scale = Vector2( 0.789063, 1.1875 )
+
+[node name="ForestTier326" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -494.875, 594 )
+scale = Vector2( 0.757813, 1 )
+
+[node name="ForestTier327" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -494.875, 618 )
+scale = Vector2( 0.757813, 1 )
+
+[node name="ForestTier328" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -495, 639 )
+scale = Vector2( 0.757813, 1 )
+
+[node name="ForestTier329" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -496, 662 )
+scale = Vector2( 0.757813, 1 )
+
+[node name="ForestTier330" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -496, 684 )
+scale = Vector2( 0.757813, 1 )
+
+[node name="ForestTier416" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -496, 708 )
+scale = Vector2( 0.757813, 1 )
+
+[node name="ForestTier418" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -496, 733 )
+scale = Vector2( 0.757813, 1 )
+
+[node name="ForestTier422" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -496, 756 )
+scale = Vector2( 0.757813, 1 )
+
+[node name="ForestTier423" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -496, 776 )
+scale = Vector2( 0.757813, 1 )
+
+[node name="ForestTier424" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -496, 797 )
+scale = Vector2( 0.757813, 1 )
+
+[node name="ForestTier425" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -404.984, 777 )
+scale = Vector2( 1.25098, 0.4375 )
+
+[node name="ForestTier426" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -374, 778 )
+scale = Vector2( 1.03516, 0.4375 )
+
+[node name="ForestTier417" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -432, 705 )
+scale = Vector2( 0.757813, 1 )
+
+[node name="ForestTier419" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -432, 731 )
+scale = Vector2( 0.757813, 1 )
+
+[node name="ForestTier420" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -432, 757 )
+scale = Vector2( 0.757813, 1 )
+
+[node name="ForestTier421" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -432, 771 )
+scale = Vector2( 0.757813, 1 )
+
+[node name="ForestTier331" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -431, 683 )
+scale = Vector2( 0.757813, 1 )
+
+[node name="ForestTier332" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -431, 659 )
+scale = Vector2( 0.757813, 1 )
+
+[node name="ForestTier333" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -431, 634 )
+scale = Vector2( 0.757813, 1 )
+
+[node name="ForestTier334" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -432, 610 )
+scale = Vector2( 0.757813, 1 )
+
+[node name="ForestTier335" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -432, 586 )
+scale = Vector2( 0.757813, 1 )
+
+[node name="ForestTier336" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -431, 564 )
+scale = Vector2( 0.757813, 1 )
+
+[node name="ForestTier323" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -539.75, 554 )
+scale = Vector2( 0.890624, 0.4375 )
+
+[node name="ForestTier337" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -412, 553 )
+scale = Vector2( 0.90625, 0.4375 )
+
+[node name="ForestTier338" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -392, 553 )
+scale = Vector2( 0.90625, 0.4375 )
+
+[node name="ForestTier339" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -371, 553 )
+scale = Vector2( 0.90625, 0.4375 )
+
+[node name="ForestTier340" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -351, 554 )
+scale = Vector2( 0.90625, 0.4375 )
+
+[node name="ForestTier341" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -330, 554 )
+scale = Vector2( 0.90625, 0.4375 )
+
+[node name="ForestTier342" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -311, 553 )
+scale = Vector2( 0.90625, 0.4375 )
+
+[node name="ForestTier343" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -294.75, 553 )
+scale = Vector2( 0.796875, 0.4375 )
+
+[node name="ForestTier324" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -519, 554 )
+scale = Vector2( 0.90625, 0.4375 )
+
+[node name="ForestTier268" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -269, 532 )
+scale = Vector2( 0.90625, 1 )
+
+[node name="ForestTier269" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -246, 531 )
+scale = Vector2( 0.90625, 1 )
+
+[node name="ForestTier270" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -224, 532 )
+scale = Vector2( 0.90625, 1 )
+
+[node name="ForestTier271" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -205, 513 )
+scale = Vector2( 0.90625, 1 )
+
+[node name="ForestTier272" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -206, 500 )
+scale = Vector2( 0.859375, 1 )
+
+[node name="ForestTier273" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -187, 500 )
+scale = Vector2( 0.859375, 1 )
+
+[node name="ForestTier274" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -178, 500 )
+scale = Vector2( 0.859375, 1 )
+
+[node name="ForestTier275" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -175, 523 )
+scale = Vector2( 0.859375, 1 )
+
+[node name="ForestTier276" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -195, 528 )
+scale = Vector2( 0.859375, 1 )
+
+[node name="ForestTier277" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -270, 545 )
+scale = Vector2( 0.859375, 1 )
+
+[node name="ForestTier278" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -250, 544 )
+scale = Vector2( 0.859375, 1 )
+
+[node name="ForestTier279" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -229, 544 )
+scale = Vector2( 0.859375, 1 )
+
+[node name="ForestTier280" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -208, 544 )
+scale = Vector2( 0.859375, 1 )
+
+[node name="ForestTier281" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -189, 544 )
+scale = Vector2( 0.859375, 1 )
+
+[node name="ForestTier282" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -169, 544 )
+scale = Vector2( 0.859375, 1 )
+
+[node name="ForestTier283" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -152, 531 )
+scale = Vector2( 0.859375, 1 )
+
+[node name="ForestTier284" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -148, 545 )
+scale = Vector2( 0.859375, 1 )
+
+[node name="ForestTier285" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -125, 545 )
+scale = Vector2( 0.859375, 1 )
+
+[node name="ForestTier286" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -103, 545 )
+scale = Vector2( 0.859375, 1 )
+
+[node name="ForestTier290" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -100.875, 532 )
+scale = Vector2( 0.992187, 1 )
+
+[node name="ForestTier291" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -125, 532 )
+scale = Vector2( 0.992187, 1 )
+
+[node name="ForestTier287" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -82.875, 545 )
+scale = Vector2( 0.992187, 1 )
+
+[node name="ForestTier292" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -59, 555 )
+scale = Vector2( 0.992187, 0.4375 )
+
+[node name="ForestTier293" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -36, 555 )
+scale = Vector2( 0.992187, 0.4375 )
+
+[node name="ForestTier294" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -13, 555 )
+scale = Vector2( 0.992187, 0.4375 )
+
+[node name="ForestTier295" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 13, 555 )
+scale = Vector2( 0.992187, 0.4375 )
+
+[node name="ForestTier301" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 39, 555 )
+scale = Vector2( 0.992187, 0.4375 )
+
+[node name="ForestTier313" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 64, 555 )
+scale = Vector2( 0.992187, 0.4375 )
+
+[node name="ForestTier314" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 88, 554 )
+scale = Vector2( 0.992187, 0.4375 )
+
+[node name="ForestTier315" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 116, 554 )
+scale = Vector2( 0.992187, 0.4375 )
+
+[node name="ForestTier316" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 142, 554 )
+scale = Vector2( 0.992187, 0.4375 )
+
+[node name="ForestTier751" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 168, 554 )
+scale = Vector2( 0.992187, 0.4375 )
+
+[node name="ForestTier752" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 193, 554 )
+scale = Vector2( 0.992187, 0.4375 )
+
+[node name="ForestTier753" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 215, 554 )
+scale = Vector2( 0.992187, 0.4375 )
+
+[node name="ForestTier754" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 241, 554 )
+scale = Vector2( 0.992187, 0.4375 )
+
+[node name="ForestTier755" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 266, 554 )
+scale = Vector2( 0.992187, 0.4375 )
+
+[node name="ForestTier756" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 296, 554 )
+scale = Vector2( 0.992187, 0.4375 )
+
+[node name="ForestTier757" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 324, 554 )
+scale = Vector2( 0.992187, 0.4375 )
+
+[node name="ForestTier758" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 350, 554 )
+scale = Vector2( 0.992187, 0.4375 )
+
+[node name="ForestTier759" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 381, 554 )
+scale = Vector2( 0.992187, 0.4375 )
+
+[node name="ForestTier760" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 411, 554 )
+scale = Vector2( 0.992187, 0.4375 )
+
+[node name="ForestTier761" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 440, 554 )
+scale = Vector2( 0.992187, 0.4375 )
+
+[node name="ForestTier762" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 466, 554 )
+scale = Vector2( 0.992187, 0.4375 )
+
+[node name="ForestTier763" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 493, 554 )
+scale = Vector2( 0.992187, 0.4375 )
+
+[node name="ForestTier764" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 523, 554 )
+scale = Vector2( 0.992187, 0.4375 )
+
+[node name="ForestTier765" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 554, 554 )
+scale = Vector2( 0.992187, 0.4375 )
+
+[node name="ForestTier766" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 585, 554 )
+scale = Vector2( 0.992187, 0.4375 )
+
+[node name="ForestTier767" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 610, 554 )
+scale = Vector2( 0.992187, 0.4375 )
+
+[node name="ForestTier769" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 669, 554 )
+scale = Vector2( 0.992187, 0.4375 )
+
+[node name="ForestTier770" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 696, 554 )
+scale = Vector2( 0.992187, 0.4375 )
+
+[node name="ForestTier771" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 725, 554 )
+scale = Vector2( 0.992187, 0.4375 )
+
+[node name="ForestTier772" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 752, 554 )
+scale = Vector2( 0.992187, 0.4375 )
+
+[node name="ForestTier773" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 782, 554 )
+scale = Vector2( 0.992187, 0.4375 )
+
+[node name="ForestTier774" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 812, 554 )
+scale = Vector2( 0.992187, 0.4375 )
+
+[node name="ForestTier775" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 843, 554 )
+scale = Vector2( 0.992187, 0.4375 )
+
+[node name="ForestTier776" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 874, 554 )
+scale = Vector2( 0.992187, 0.4375 )
+
+[node name="ForestTier777" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 904, 554 )
+scale = Vector2( 0.992187, 0.4375 )
+
+[node name="ForestTier782" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 933, 554 )
+scale = Vector2( 0.992187, 0.4375 )
+
+[node name="ForestTier783" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 962, 554 )
+scale = Vector2( 0.992187, 0.4375 )
+
+[node name="ForestTier784" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 991.062, 554 )
+scale = Vector2( 1.18359, 0.4375 )
+
+[node name="ForestTier785" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 1018, 554 )
+scale = Vector2( 1.18359, 0.4375 )
+
+[node name="ForestTier778" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 853, 490 )
+scale = Vector2( 0.992187, 0.4375 )
+
+[node name="ForestTier779" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 883.562, 490 )
+scale = Vector2( 1.08984, 0.4375 )
+
+[node name="ForestTier780" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 853, 426 )
+scale = Vector2( 0.992187, 0.4375 )
+
+[node name="ForestTier781" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 884.062, 426 )
+scale = Vector2( 1.05859, 0.4375 )
+
+[node name="ForestTier768" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 639, 554 )
+scale = Vector2( 0.992187, 0.4375 )
+
+[node name="ForestTier296" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -58, 490 )
+scale = Vector2( 0.992187, 0.4375 )
+
+[node name="ForestTier297" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -34, 490 )
+scale = Vector2( 0.992187, 0.4375 )
+
+[node name="ForestTier298" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -9, 490 )
+scale = Vector2( 0.992187, 0.4375 )
+
+[node name="ForestTier299" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 16, 490 )
+scale = Vector2( 0.992187, 0.4375 )
+
+[node name="ForestTier322" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 124.062, 427 )
+scale = Vector2( 0.683594, 0.4375 )
+
+[node name="ForestTier427" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 195, 458 )
+scale = Vector2( 0.683594, 0.4375 )
+
+[node name="ForestTier428" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 213, 458 )
+scale = Vector2( 0.683594, 0.4375 )
+
+[node name="ForestTier433" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 258, 489 )
+scale = Vector2( 0.683594, 0.4375 )
+
+[node name="ForestTier434" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 274, 489 )
+scale = Vector2( 0.683594, 0.4375 )
+
+[node name="ForestTier435" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 292, 489 )
+scale = Vector2( 0.683594, 0.4375 )
+
+[node name="ForestTier436" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 308, 489 )
+scale = Vector2( 0.683594, 0.4375 )
+
+[node name="ForestTier437" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 320.031, 489 )
+scale = Vector2( 0.373046, 0.4375 )
+
+[node name="ForestTier429" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 230, 458 )
+scale = Vector2( 0.683594, 0.4375 )
+
+[node name="ForestTier430" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 241, 457 )
+scale = Vector2( 0.683594, 0.4375 )
+
+[node name="ForestTier300" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 40, 489 )
+scale = Vector2( 0.992187, 0.4375 )
+
+[node name="ForestTier288" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -79.125, 521 )
+scale = Vector2( 0.742187, 1 )
+
+[node name="ForestTier302" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 48, 480 )
+scale = Vector2( 0.742187, 1 )
+
+[node name="ForestTier303" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 48, 468 )
+scale = Vector2( 0.742187, 1 )
+
+[node name="ForestTier304" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 65, 468 )
+scale = Vector2( 0.742187, 1 )
+
+[node name="ForestTier305" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 65, 480 )
+scale = Vector2( 0.742187, 1 )
+
+[node name="ForestTier306" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 84, 480 )
+scale = Vector2( 0.742187, 1 )
+
+[node name="ForestTier307" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 84, 468 )
+scale = Vector2( 0.742187, 1 )
+
+[node name="ForestTier308" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 102, 468 )
+scale = Vector2( 0.742187, 1 )
+
+[node name="ForestTier309" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 103, 479 )
+scale = Vector2( 0.742187, 1 )
+
+[node name="ForestTier310" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 111, 480 )
+scale = Vector2( 0.742187, 1 )
+
+[node name="ForestTier317" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 177, 480 )
+scale = Vector2( 0.742187, 1 )
+
+[node name="ForestTier431" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 240, 472 )
+scale = Vector2( 0.742187, 1 )
+
+[node name="ForestTier432" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 240, 481 )
+scale = Vector2( 0.742187, 1 )
+
+[node name="ForestTier438" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 336.438, 479.5 )
+scale = Vector2( 0.777344, 1.03125 )
+
+[node name="ForestTier439" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 356, 480 )
+scale = Vector2( 0.777344, 1.03125 )
+
+[node name="ForestTier440" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 367, 480 )
+scale = Vector2( 0.777344, 1.03125 )
+
+[node name="ForestTier441" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 367, 468 )
+scale = Vector2( 0.777344, 1.03125 )
+
+[node name="ForestTier456" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 432, 445.25 )
+scale = Vector2( 0.777344, 1.20313 )
+
+[node name="ForestTier457" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 477, 417 )
+scale = Vector2( 0.777344, 1.03125 )
+
+[node name="ForestTier459" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 465, 415 )
+scale = Vector2( 0.777344, 1.03125 )
+
+[node name="ForestTier460" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 465, 390 )
+scale = Vector2( 0.777344, 1.03125 )
+
+[node name="ForestTier462" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 464, 367 )
+scale = Vector2( 0.777344, 1.03125 )
+
+[node name="ForestTier463" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 464, 343 )
+scale = Vector2( 0.777344, 1.03125 )
+
+[node name="ForestTier464" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 464, 319 )
+scale = Vector2( 0.777344, 1.03125 )
+
+[node name="ForestTier469" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 463, 307 )
+scale = Vector2( 0.777344, 1.03125 )
+
+[node name="ForestTier472" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 496, 286 )
+scale = Vector2( 0.777344, 1.03125 )
+
+[node name="ForestTier473" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 496, 265 )
+scale = Vector2( 0.777344, 1.03125 )
+
+[node name="ForestTier474" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 496, 242 )
+scale = Vector2( 0.777344, 1.03125 )
+
+[node name="ForestTier475" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 496, 215.75 )
+scale = Vector2( 0.777344, 1.17188 )
+
+[node name="ForestTier476" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 466, 213 )
+scale = Vector2( 0.777344, 1.03125 )
+
+[node name="ForestTier477" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 480, 217.75 )
+scale = Vector2( 0.777344, 1.35938 )
+
+[node name="ForestTier458" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 495, 416 )
+scale = Vector2( 0.777344, 1.03125 )
+
+[node name="ForestTier461" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 489.219, 405 )
+scale = Vector2( 1.13867, 1.03125 )
+
+[node name="ForestTier465" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 437.391, 425.125 )
+scale = Vector2( 1.03809, 0.367187 )
+
+[node name="ForestTier442" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 348, 468 )
+scale = Vector2( 0.777344, 1.03125 )
+
+[node name="ForestTier443" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 337, 454 )
+scale = Vector2( 0.777344, 1.03125 )
+
+[node name="ForestTier444" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 337, 429 )
+scale = Vector2( 0.777344, 1.03125 )
+
+[node name="ForestTier445" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 337, 405 )
+scale = Vector2( 0.777344, 1.03125 )
+
+[node name="ForestTier446" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 368, 383 )
+scale = Vector2( 0.777344, 1.03125 )
+
+[node name="ForestTier448" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 369, 356 )
+scale = Vector2( 0.777344, 1.03125 )
+
+[node name="ForestTier449" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 368, 328 )
+scale = Vector2( 0.777344, 1.03125 )
+
+[node name="ForestTier450" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 369, 301 )
+scale = Vector2( 0.777344, 1.03125 )
+
+[node name="ForestTier451" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 386, 277 )
+scale = Vector2( 0.777344, 1.03125 )
+
+[node name="ForestTier452" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 369, 277 )
+scale = Vector2( 0.777344, 1.03125 )
+
+[node name="ForestTier453" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 398, 278 )
+scale = Vector2( 0.777344, 1.03125 )
+
+[node name="ForestTier454" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 390, 288 )
+scale = Vector2( 0.777344, 1.03125 )
+
+[node name="ForestTier455" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 400, 288 )
+scale = Vector2( 0.777344, 1.03125 )
+
+[node name="ForestTier466" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 420, 298 )
+scale = Vector2( 0.777344, 0.421875 )
+
+[node name="ForestTier467" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 440, 298 )
+scale = Vector2( 0.777344, 0.421875 )
+
+[node name="ForestTier468" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 440, 298 )
+scale = Vector2( 0.777344, 0.421875 )
+
+[node name="ForestTier470" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 482, 298 )
+scale = Vector2( 0.777344, 0.421875 )
+
+[node name="ForestTier471" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 495, 298 )
+scale = Vector2( 0.777344, 0.421875 )
+
+[node name="ForestTier447" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 347.281, 394 )
+scale = Vector2( 0.607422, 0.390625 )
+
+[node name="ForestTier318" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 177, 455 )
+scale = Vector2( 0.742187, 1 )
+
+[node name="ForestTier319" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 176, 432 )
+scale = Vector2( 0.742187, 1 )
+
+[node name="ForestTier514" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 175, 408 )
+scale = Vector2( 0.742187, 1 )
+
+[node name="ForestTier515" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 175, 383 )
+scale = Vector2( 0.742187, 1 )
+
+[node name="ForestTier516" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 158, 388 )
+scale = Vector2( 0.742187, 1 )
+
+[node name="ForestTier517" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 145, 388 )
+scale = Vector2( 0.742187, 1 )
+
+[node name="ForestTier518" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 145, 361 )
+scale = Vector2( 0.742187, 1 )
+
+[node name="ForestTier520" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 153, 361 )
+scale = Vector2( 0.742187, 1 )
+
+[node name="ForestTier522" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 142, 335 )
+scale = Vector2( 0.742187, 1 )
+
+[node name="ForestTier525" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 127, 321 )
+scale = Vector2( 0.742187, 1 )
+
+[node name="ForestTier527" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 147, 311 )
+scale = Vector2( 0.742187, 1 )
+
+[node name="ForestTier528" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 127, 294 )
+scale = Vector2( 0.742187, 1 )
+
+[node name="ForestTier529" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 114, 308 )
+scale = Vector2( 0.742187, 1 )
+
+[node name="ForestTier530" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 97, 288 )
+scale = Vector2( 0.742187, 1 )
+
+[node name="ForestTier531" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 81, 287 )
+scale = Vector2( 0.742187, 1 )
+
+[node name="ForestTier532" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 81, 260 )
+scale = Vector2( 0.742187, 1 )
+
+[node name="ForestTier533" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 118, 276 )
+scale = Vector2( 0.742187, 1 )
+
+[node name="ForestTier534" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 99, 257 )
+scale = Vector2( 0.742187, 1 )
+
+[node name="ForestTier535" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 174, 297 )
+scale = Vector2( 0.742187, 1 )
+
+[node name="ForestTier536" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 147, 281 )
+scale = Vector2( 0.742187, 1 )
+
+[node name="ForestTier537" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 134, 260 )
+scale = Vector2( 0.742187, 1 )
+
+[node name="ForestTier541" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 115, 244 )
+scale = Vector2( 0.742187, 1 )
+
+[node name="ForestTier542" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 81, 231 )
+scale = Vector2( 0.742187, 1 )
+
+[node name="ForestTier543" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 60, 223 )
+scale = Vector2( 0.742187, 1 )
+
+[node name="ForestTier544" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 60, 223 )
+scale = Vector2( 0.742187, 1 )
+
+[node name="ForestTier548" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 56, 196 )
+scale = Vector2( 0.742187, 1 )
+
+[node name="ForestTier549" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 56, 196 )
+scale = Vector2( 0.742187, 1 )
+
+[node name="ForestTier556" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 99, 226 )
+scale = Vector2( 0.742187, 1 )
+
+[node name="ForestTier557" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 77, 200 )
+scale = Vector2( 0.742187, 1 )
+
+[node name="ForestTier559" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 92, 168 )
+scale = Vector2( 0.742187, 1 )
+
+[node name="ForestTier563" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 96, 150 )
+scale = Vector2( 0.742187, 1 )
+
+[node name="ForestTier564" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 96, 197 )
+scale = Vector2( 0.742187, 1 )
+
+[node name="ForestTier565" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 115, 151 )
+scale = Vector2( 0.742187, 1 )
+
+[node name="ForestTier570" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 151, 225 )
+scale = Vector2( 0.742187, 1 )
+
+[node name="ForestTier571" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 130, 177 )
+scale = Vector2( 0.742187, 1 )
+
+[node name="ForestTier566" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 131, 206 )
+scale = Vector2( 0.742187, 1 )
+
+[node name="ForestTier567" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 132, 230 )
+scale = Vector2( 0.742187, 1 )
+
+[node name="ForestTier568" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 116, 211 )
+scale = Vector2( 0.742187, 1 )
+
+[node name="ForestTier572" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 146, 200 )
+scale = Vector2( 0.742187, 1 )
+
+[node name="ForestTier573" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 146, 174 )
+scale = Vector2( 0.742187, 1 )
+
+[node name="ForestTier574" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 136, 150 )
+scale = Vector2( 0.742187, 1 )
+
+[node name="ForestTier575" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 154, 150 )
+scale = Vector2( 0.742187, 1 )
+
+[node name="ForestTier577" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 165, 158 )
+scale = Vector2( 0.742187, 1 )
+
+[node name="ForestTier579" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 174, 150 )
+scale = Vector2( 0.742187, 1 )
+
+[node name="ForestTier578" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 173, 204 )
+scale = Vector2( 0.742187, 1 )
+
+[node name="ForestTier576" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 168, 183 )
+scale = Vector2( 0.742187, 1 )
+
+[node name="ForestTier569" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 109, 181 )
+scale = Vector2( 0.742187, 1 )
+
+[node name="ForestTier560" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 77, 150 )
+scale = Vector2( 0.742187, 1 )
+
+[node name="ForestTier561" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 58, 150 )
+scale = Vector2( 0.742187, 1 )
+
+[node name="ForestTier562" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 41, 150 )
+scale = Vector2( 0.742187, 1 )
+
+[node name="ForestTier558" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 76, 175 )
+scale = Vector2( 0.742187, 1 )
+
+[node name="ForestTier550" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 56, 167 )
+scale = Vector2( 0.742187, 1 )
+
+[node name="ForestTier551" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 40, 163 )
+scale = Vector2( 0.742187, 1 )
+
+[node name="ForestTier554" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 18, 168 )
+scale = Vector2( 0.742187, 1 )
+
+[node name="ForestTier555" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 19, 150 )
+scale = Vector2( 0.742187, 1 )
+
+[node name="ForestTier585" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 110, 0 )
+scale = Vector2( 0.742187, 1 )
+
+[node name="ForestTier587" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 91, 0 )
+scale = Vector2( 0.742187, 1 )
+
+[node name="ForestTier588" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 90, -10 )
+scale = Vector2( 0.742187, 1 )
+
+[node name="ForestTier589" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 71, -10 )
+scale = Vector2( 0.742187, 1 )
+
+[node name="ForestTier590" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 71, 0 )
+scale = Vector2( 0.742187, 1 )
+
+[node name="ForestTier591" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 50, -10 )
+scale = Vector2( 0.742187, 1 )
+
+[node name="ForestTier595" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 50, 0 )
+scale = Vector2( 0.742187, 1 )
+
+[node name="ForestTier596" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -15.2187, -26 )
+scale = Vector2( 0.638672, 1 )
+
+[node name="ForestTier597" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -16, -52 )
+scale = Vector2( 0.623047, 1 )
+
+[node name="ForestTier598" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -16, -77 )
+scale = Vector2( 0.623047, 1 )
+
+[node name="ForestTier599" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -16, -103 )
+scale = Vector2( 0.623047, 1 )
+
+[node name="ForestTier601" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 12.9844, -130 )
+scale = Vector2( 0.749023, 1 )
+
+[node name="ForestTier603" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 15, -138 )
+scale = Vector2( 0.749023, 1 )
+
+[node name="ForestTier604" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -7, -135 )
+scale = Vector2( 0.749023, 1 )
+
+[node name="ForestTier602" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -1, -130 )
+scale = Vector2( 0.749023, 1 )
+
+[node name="ForestTier600" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -16, -126 )
+scale = Vector2( 0.623047, 1 )
+
+[node name="ForestTier594" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -15.4375, 0 )
+scale = Vector2( 0.714844, 1 )
+
+[node name="ForestTier592" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 28.0625, -21.5 )
+scale = Vector2( 0.621094, 0.28125 )
+
+[node name="ForestTier593" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 7.46875, -21 )
+scale = Vector2( 0.779297, 0.28125 )
+
+[node name="ForestTier586" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 110, -12 )
+scale = Vector2( 0.742187, 1 )
+
+[node name="ForestTier641" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 271, 32 )
+scale = Vector2( 0.742187, 1 )
+
+[node name="ForestTier642" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 271, 8 )
+scale = Vector2( 0.742187, 1 )
+
+[node name="ForestTier643" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 271, -11 )
+scale = Vector2( 0.742187, 1 )
+
+[node name="ForestTier657" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 112, -129 )
+scale = Vector2( 0.742187, 1 )
+
+[node name="ForestTier658" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 113, -149 )
+scale = Vector2( 0.742187, 0.375 )
+
+[node name="ForestTier659" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 132, -149 )
+scale = Vector2( 0.742187, 0.375 )
+
+[node name="ForestTier660" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 151, -150 )
+scale = Vector2( 0.742187, 0.375 )
+
+[node name="ForestTier661" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 188, -150 )
+scale = Vector2( 0.742187, 0.375 )
+
+[node name="ForestTier644" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 250, -11 )
+scale = Vector2( 0.742187, 1 )
+
+[node name="ForestTier647" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 209, 1 )
+scale = Vector2( 0.742187, 1 )
+
+[node name="ForestTier648" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 207.562, -21 )
+scale = Vector2( 0.652344, 1 )
+
+[node name="ForestTier650" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 207.562, -44 )
+scale = Vector2( 0.652344, 1 )
+
+[node name="ForestTier651" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 208, -67 )
+scale = Vector2( 0.652344, 1 )
+
+[node name="ForestTier652" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 208, -94 )
+scale = Vector2( 0.652344, 1 )
+
+[node name="ForestTier653" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 208, -118 )
+scale = Vector2( 0.652344, 1 )
+
+[node name="ForestTier654" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 208, -138 )
+scale = Vector2( 0.652344, 1 )
+
+[node name="ForestTier649" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 231, -11 )
+scale = Vector2( 0.742187, 1 )
+
+[node name="ForestTier645" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 249, -1 )
+scale = Vector2( 0.742187, 1 )
+
+[node name="ForestTier646" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 249, -1 )
+scale = Vector2( 0.742187, 1 )
+
+[node name="ForestTier552" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 35, 191 )
+scale = Vector2( 0.742187, 1 )
+
+[node name="ForestTier553" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 18, 201 )
+scale = Vector2( 0.742187, 1 )
+
+[node name="ForestTier545" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 40, 223 )
+scale = Vector2( 0.742187, 1 )
+
+[node name="ForestTier580" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -27, 202 )
+scale = Vector2( 0.742187, 0.34375 )
+
+[node name="ForestTier582" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -49, 202 )
+scale = Vector2( 0.742187, 0.34375 )
+
+[node name="ForestTier583" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -70, 202 )
+scale = Vector2( 0.742187, 0.34375 )
+
+[node name="ForestTier584" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -78, 202 )
+scale = Vector2( 0.742187, 0.34375 )
+
+[node name="ForestTier581" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -7, 202 )
+scale = Vector2( 0.742187, 0.34375 )
+
+[node name="ForestTier546" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 16, 256 )
+scale = Vector2( 0.742187, 1 )
+
+[node name="ForestTier547" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 16, 232 )
+scale = Vector2( 0.742187, 1 )
+
+[node name="ForestTier539" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 156, 253 )
+scale = Vector2( 0.742187, 1 )
+
+[node name="ForestTier540" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 174, 247 )
+scale = Vector2( 0.742187, 1 )
+
+[node name="ForestTier538" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 174, 274 )
+scale = Vector2( 0.742187, 1 )
+
+[node name="ForestTier526" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 174, 318 )
+scale = Vector2( 0.742187, 1 )
+
+[node name="ForestTier523" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 123, 350 )
+scale = Vector2( 0.742187, 1 )
+
+[node name="ForestTier524" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 113, 337 )
+scale = Vector2( 0.742187, 1 )
+
+[node name="ForestTier519" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 174, 352 )
+scale = Vector2( 0.742187, 1 )
+
+[node name="ForestTier521" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 162, 332 )
+scale = Vector2( 0.742187, 1 )
+
+[node name="ForestTier320" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 161, 416 )
+scale = Vector2( 0.742187, 1 )
+
+[node name="ForestTier321" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 145, 418 )
+scale = Vector2( 0.742187, 1 )
+
+[node name="ForestTier311" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 112, 457 )
+scale = Vector2( 0.742187, 1 )
+
+[node name="ForestTier312" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( 113, 436 )
+scale = Vector2( 0.742187, 1 )
+
+[node name="ForestTier289" parent="YSort/Grass" instance=ExtResource( 90 )]
+position = Vector2( -80.375, 499 )
+scale = Vector2( 0.773437, 1 )
 
 [node name="ForestTier33" parent="YSort/Grass" instance=ExtResource( 90 )]
-position = Vector2( -400, 424 )
-scale = Vector2( 1, 0.5 )
+position = Vector2( -398.5, 424 )
+scale = Vector2( 1.09375, 0.5 )
 
 [node name="ForestTier34" parent="YSort/Grass" instance=ExtResource( 90 )]
 position = Vector2( -432, 424 )
 scale = Vector2( 1, 0.5 )
 
 [node name="ForestTier35" parent="YSort/Grass" instance=ExtResource( 90 )]
-position = Vector2( -368, 396 )
-scale = Vector2( 1, 0.75 )
+position = Vector2( -366.5, 396 )
+scale = Vector2( 0.90625, 0.75 )
 
 [node name="ForestTier36" parent="YSort/Grass" instance=ExtResource( 90 )]
-position = Vector2( -336, 396 )
-scale = Vector2( 1, 0.75 )
+position = Vector2( -336, 398.5 )
+scale = Vector2( 1, 0.59375 )
 
 [node name="ForestTier37" parent="YSort/Grass" instance=ExtResource( 90 )]
-position = Vector2( -304, 392 )
-scale = Vector2( 1, 0.5 )
+position = Vector2( -307, 393.5 )
+scale = Vector2( 1.1875, 0.40625 )
 
 [node name="ForestTier38" parent="YSort/Grass" instance=ExtResource( 90 )]
-position = Vector2( -272, 396 )
-scale = Vector2( 1, 0.75 )
+position = Vector2( -272, 398 )
+scale = Vector2( 1, 0.624999 )
 
 [node name="ForestTier39" parent="YSort/Grass" instance=ExtResource( 90 )]
-position = Vector2( -240, 392 )
-scale = Vector2( 1, 0.5 )
+position = Vector2( -240, 393.5 )
+scale = Vector2( 1, 0.40625 )
 
 [node name="ForestTier17" parent="YSort/Grass" instance=ExtResource( 90 )]
-position = Vector2( -240, 328 )
-scale = Vector2( 1, 0.5 )
+position = Vector2( -239, 330.5 )
+scale = Vector2( 1.78125, 0.40625 )
 
 [node name="Trees" type="YSort" parent="YSort"]
 
@@ -2154,7 +5361,7 @@ scale = Vector2( 1, 0.5 )
 position = Vector2( 304, 96 )
 
 [node name="Tree2" parent="YSort/Trees" instance=ExtResource( 9 )]
-position = Vector2( 240, 48 )
+position = Vector2( 238, 48 )
 
 [node name="Tree43" parent="YSort/Trees" instance=ExtResource( 9 )]
 position = Vector2( 422, -225 )
@@ -2182,6 +5389,7 @@ position = Vector2( 176, -112 )
 
 [node name="Tree8" parent="YSort/Trees" instance=ExtResource( 9 )]
 position = Vector2( -16, -120 )
+z_index = 1
 
 [node name="Tree45" parent="YSort/Trees" instance=ExtResource( 9 )]
 position = Vector2( -13, -170 )
@@ -2226,16 +5434,19 @@ position = Vector2( -344, 277 )
 position = Vector2( -368, 136 )
 
 [node name="Tree48" parent="YSort/Trees" instance=ExtResource( 9 )]
-position = Vector2( -227, 164 )
+position = Vector2( -215, 163 )
+z_index = 1
 
 [node name="Tree49" parent="YSort/Trees" instance=ExtResource( 9 )]
 position = Vector2( -201, 66 )
+z_index = 1
 
 [node name="Tree52" parent="YSort/Trees" instance=ExtResource( 9 )]
 position = Vector2( 168, 264 )
+z_index = 1
 
 [node name="Tree50" parent="YSort/Trees" instance=ExtResource( 9 )]
-position = Vector2( -190, 13 )
+position = Vector2( -146, 65 )
 
 [node name="Tree14" parent="YSort/Trees" instance=ExtResource( 9 )]
 position = Vector2( -392, 136 )
@@ -2278,6 +5489,7 @@ position = Vector2( 592, 240 )
 
 [node name="Tree28" parent="YSort/Trees" instance=ExtResource( 9 )]
 position = Vector2( 672, 144 )
+z_index = 1
 
 [node name="Tree29" parent="YSort/Trees" instance=ExtResource( 9 )]
 position = Vector2( 912, -24 )
@@ -2302,9 +5514,13 @@ position = Vector2( -88, 312 )
 
 [node name="Tree53" parent="YSort/Trees" instance=ExtResource( 9 )]
 position = Vector2( -192, 288 )
+z_index = 1
 
 [node name="Tree54" parent="YSort/Trees" instance=ExtResource( 9 )]
 position = Vector2( -264, 256 )
+
+[node name="Tree55" parent="YSort/Trees" instance=ExtResource( 9 )]
+position = Vector2( -366, 424 )
 
 [node name="Tree27" parent="YSort/Trees" instance=ExtResource( 9 )]
 position = Vector2( -304, -24 )
@@ -2317,6 +5533,7 @@ position = Vector2( 357, 202 )
 
 [node name="TreeTwo8" parent="YSort/Trees" instance=ExtResource( 19 )]
 position = Vector2( -277, 329 )
+z_index = 1
 
 [node name="TreeTwo27" parent="YSort/Trees" instance=ExtResource( 19 )]
 position = Vector2( -152, 376 )
@@ -2343,6 +5560,7 @@ position = Vector2( -468, 760 )
 
 [node name="TreeTwo5" parent="YSort/Trees" instance=ExtResource( 19 )]
 position = Vector2( 640, 158 )
+z_index = 1
 
 [node name="TreeTwo19" parent="YSort/Trees" instance=ExtResource( 19 )]
 position = Vector2( 1030, -89 )
@@ -2382,9 +5600,11 @@ position = Vector2( -81, 146 )
 
 [node name="TreeTwo24" parent="YSort/Trees" instance=ExtResource( 19 )]
 position = Vector2( 18, 201 )
+z_index = 1
 
 [node name="TreeTwo25" parent="YSort/Trees" instance=ExtResource( 19 )]
 position = Vector2( 165, 305 )
+z_index = 1
 
 [node name="TreeTwo2" parent="YSort/Trees" instance=ExtResource( 19 )]
 position = Vector2( 457, 237 )
@@ -2402,16 +5622,23 @@ position = Vector2( 608, 45 )
 position = Vector2( 172, -58 )
 
 [node name="TreeThree6" parent="YSort/Trees" instance=ExtResource( 20 )]
-position = Vector2( 144, 144 )
+position = Vector2( 110, 172 )
+z_index = 1
 
 [node name="TreeThree16" parent="YSort/Trees" instance=ExtResource( 20 )]
 position = Vector2( -288, 122 )
+z_index = 1
 
 [node name="TreeThree17" parent="YSort/Trees" instance=ExtResource( 20 )]
-position = Vector2( -268, 128 )
+position = Vector2( -267, 129 )
+z_index = 1
 
 [node name="TreeThree18" parent="YSort/Trees" instance=ExtResource( 20 )]
 position = Vector2( 12, -206 )
+
+[node name="TreeThree19" parent="YSort/Trees" instance=ExtResource( 20 )]
+position = Vector2( -72, -354 )
+z_index = 1
 
 [node name="TreeThree15" parent="YSort/Trees" instance=ExtResource( 20 )]
 position = Vector2( 974, -285 )
@@ -2423,7 +5650,8 @@ position = Vector2( 375, -77 )
 position = Vector2( -50, -132 )
 
 [node name="TreeThree7" parent="YSort/Trees" instance=ExtResource( 20 )]
-position = Vector2( -164, 25 )
+position = Vector2( -202, -45 )
+z_index = 1
 
 [node name="TreeThree11" parent="YSort/Trees" instance=ExtResource( 20 )]
 position = Vector2( -523, 88 )
@@ -2447,7 +5675,8 @@ position = Vector2( 112, 352 )
 position = Vector2( -455, 300 )
 
 [node name="TreeThree4" parent="YSort/Trees" instance=ExtResource( 20 )]
-position = Vector2( -286, -164 )
+position = Vector2( -272, -168 )
+z_index = 1
 
 [node name="TreeThree5" parent="YSort/Trees" instance=ExtResource( 20 )]
 position = Vector2( 44, -275 )
@@ -2774,7 +6003,7 @@ position = Vector2( -208, 408 )
 position = Vector2( 312, 312 )
 
 [node name="Droid8" parent="YSort/Droids" instance=ExtResource( 10 )]
-position = Vector2( 728, 328 )
+position = Vector2( 702, 353 )
 
 [node name="Droid9" parent="YSort/Droids" instance=ExtResource( 10 )]
 position = Vector2( 824, 408 )
@@ -2783,12 +6012,13 @@ position = Vector2( 824, 408 )
 position = Vector2( 1008, 408 )
 
 [node name="Droid10" parent="YSort/Droids" instance=ExtResource( 10 )]
-position = Vector2( 752, 144 )
+position = Vector2( 750, 150 )
 
 [node name="Droid12" parent="YSort/Droids" instance=ExtResource( 10 )]
 position = Vector2( 976, 48 )
 
 [node name="DroidGrey" parent="YSort/Droids" instance=ExtResource( 31 )]
+visible = false
 position = Vector2( -707, -98 )
 MAX_SPEED = 75
 
@@ -2829,6 +6059,7 @@ position = Vector2( 472, 256 )
 
 [node name="GreyStone4" parent="YSort/Stones" instance=ExtResource( 26 )]
 position = Vector2( 112, -24 )
+z_index = 1
 
 [node name="GreyStone15" parent="YSort/Stones" instance=ExtResource( 26 )]
 position = Vector2( -416, -64 )
@@ -3089,19 +6320,22 @@ position = Vector2( -471, -451 )
 [node name="Tutorials" type="YSort" parent="YSort"]
 
 [node name="TutorialArea1" parent="YSort/Tutorials" instance=ExtResource( 37 )]
+visible = false
 position = Vector2( -225, 481 )
 
 [node name="TutorialArea2" parent="YSort/Tutorials" instance=ExtResource( 40 )]
 position = Vector2( -48, 336 )
 
 [node name="TutorialArea3" parent="YSort/Tutorials" instance=ExtResource( 75 )]
+visible = false
 position = Vector2( -90, 479 )
 
 [node name="TutorialArea4" parent="YSort/Tutorials" instance=ExtResource( 77 )]
+visible = false
 position = Vector2( -90, 192 )
 
 [node name="TutorialArea5" parent="YSort/Tutorials" instance=ExtResource( 85 )]
-position = Vector2( -47, 36 )
+position = Vector2( -48, 37 )
 
 [node name="Story" type="YSort" parent="YSort"]
 
@@ -3112,6 +6346,7 @@ position = Vector2( -520, 400 )
 position = Vector2( -464, 159 )
 
 [node name="IntroArea" parent="YSort/Story" instance=ExtResource( 42 )]
+visible = false
 position = Vector2( -464, 520 )
 
 [node name="IntroArea2" parent="YSort/Story" instance=ExtResource( 43 )]
@@ -3328,7 +6563,7 @@ position = Vector2( -16, -272 )
 [node name="ScreenCrackleOne" parent="YSort/OilCoDoors" instance=ExtResource( 57 )]
 position = Vector2( -17, -270.5 )
 scale = Vector2( 0.094, 0.0833333 )
-frame = 1
+frame = 4
 
 [node name="Flowers" type="YSort" parent="YSort"]
 
@@ -3539,11 +6774,11 @@ position = Vector2( -305, 346 )
 
 [node name="Bonfire" parent="YSort/Fires" instance=ExtResource( 82 )]
 position = Vector2( 976, -240 )
-frame = 3
+frame = 2
 
 [node name="Bonfire2" parent="YSort/Fires" instance=ExtResource( 82 )]
 position = Vector2( 976, -208 )
-frame = 3
+frame = 2
 
 [node name="Runes" type="YSort" parent="YSort"]
 
@@ -3559,6 +6794,29 @@ position = Vector2( 584, -8 )
 [node name="PopSign2" parent="YSort/Signs" instance=ExtResource( 89 )]
 self_modulate = Color( 1, 1, 1, 0.611765 )
 position = Vector2( 568, -8 )
+
+[node name="Birds" type="YSort" parent="YSort"]
+
+[node name="Bird" parent="YSort/Birds" instance=ExtResource( 91 )]
+position = Vector2( 6, 252 )
+z_index = 1
+
+[node name="Bird3" parent="YSort/Birds" instance=ExtResource( 91 )]
+position = Vector2( -263, -31 )
+animation = "eat"
+frame = 3
+flip_h = true
+
+[node name="Bird2" parent="YSort/Birds" instance=ExtResource( 91 )]
+position = Vector2( -355, 384 )
+z_index = 1
+frame = 1
+flip_h = true
+
+[node name="Bird4" parent="YSort/Birds" instance=ExtResource( 91 )]
+position = Vector2( -515, 66 )
+z_index = 1
+flip_h = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -3588,11 +6846,6 @@ margin_right = 335.0
 margin_bottom = 187.0
 rect_scale = Vector2( 0.5, 0.5 )
 
-[node name="Sprite" type="Sprite" parent="CanvasLayer"]
-visible = false
-position = Vector2( 9, 13 )
-texture = ExtResource( 71 )
-
 [node name="AmmoUI" parent="CanvasLayer" instance=ExtResource( 74 )]
 margin_left = 35.0
 margin_top = 13.0
@@ -3600,6 +6853,7 @@ margin_right = 75.0
 margin_bottom = 53.0
 
 [node name="StealthUI" parent="CanvasLayer" instance=ExtResource( 86 )]
+visible = false
 
 [node name="AlertCanvas" type="CanvasLayer" parent="."]
 
