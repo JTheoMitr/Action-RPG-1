@@ -38,4 +38,5 @@ animations = [ {
 [node name="Bird" type="AnimatedSprite"]
 frames = SubResource( 3 )
 animation = "chill"
+frame = 1
 playing = true

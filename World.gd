@@ -22,6 +22,7 @@ func _ready():
 	worldStats.connect("lowest_volume", self, "lower_music_volume")
 	worldStats.connect("in_the_tall_grass", self, "stealth_ui_on")
 	worldStats.connect("out_of_the_tall_grass", self, "stealth_ui_off")
+	worldStats.connect("play_blast_anim", self, "blast_animation")
 	generate_laser_effect(Vector2(-1248, 459.451538))
 	#$CanvasLayer/BatteryUI.hide()
 
@@ -55,9 +56,11 @@ func _on_MusicTimer_timeout():
 
 func _on_Player_fired_shot(hit_position: Vector2):
 	generate_laser_effect(hit_position)
+	print(hit_position)
+	
+func blast_animation():
 	blastAnim.frame = 0
 	blastAnim.play("fire")
-	print(hit_position)
 
 func stealth_ui_on():
 	stealthUI.show()

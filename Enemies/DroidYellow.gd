@@ -31,7 +31,7 @@ onready var playerDetectionZone = $PlayerDetectionZone
 onready var hurtbox = $Hurtbox
 onready var softCollision = $SoftCollision
 onready var wanderController = $WanderController
-onready var timer = $Timer
+
 
 func _ready():
 	state = pick_random_state([IDLE, WANDER])
@@ -82,16 +82,15 @@ func seek_player():
 		var droidSound = DroidSound.instance()
 		get_parent().add_child(droidSound)
 		droidSound.play(0.0)
-		timer.start(0.0)
+
 		print_debug("timer_start")
-		# if laserEngaged == false:
-			# var laser = Laser.instance()
-			# laser.global_position = global_position
-			# get_parent().call_deferred("add_child", laser)
-			# laserEngaged = true
+		if laserEngaged == false:
+			var laser = Laser.instance()
+			laser.global_position = global_position
+			get_parent().call_deferred("add_child", laser)
+
 		state = CHASE
-	else:
-		timer.stop()
+
 		
 func cant_find_player():
 	state = IDLE
@@ -133,7 +132,4 @@ func _on_Stats_no_health():
 		ammo.global_position = global_position
 
 
-func _on_Timer_timeout():
-	var laser = Laser.instance()
-	laser.global_position = global_position
-	get_parent().call_deferred("add_child", laser)
+

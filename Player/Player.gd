@@ -165,6 +165,7 @@ func move_state(delta):
 				laserboi = false
 				laserSpeed.start()
 				laserZone.disabled = false
+				worldStats.emit_signal("play_blast_anim")
 				var laserSound = LaserSound.instance()
 				get_tree().current_scene.add_child(laserSound)
 				laserTimer.start(0.0)
