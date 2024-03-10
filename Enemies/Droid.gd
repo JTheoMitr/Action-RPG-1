@@ -30,6 +30,7 @@ onready var hurtbox = $Hurtbox
 onready var softCollision = $SoftCollision
 onready var wanderController = $WanderController
 onready var timer = $Timer
+onready var hitbox = $Hitbox/CollisionShape2D
 
 var worldStats = WorldStats
 
@@ -48,11 +49,13 @@ func _physics_process(delta):
 			
 			velocity = velocity.move_toward(Vector2.ZERO, FRICTION * delta)
 			seek_player()
+			sprite.play("walk")
 			if wanderController.get_time_left() == 0:
 				update_wander_state()
 				
 		WANDER:
 			seek_player()
+			sprite.play("walk")
 			if wanderController.get_time_left() == 0:
 				update_wander_state()
 			accelerate_towards_point(wanderController.target_position, delta)
@@ -63,8 +66,10 @@ func _physics_process(delta):
 			var player = playerDetectionZone.player
 			if player != null:
 				accelerate_towards_point(player.global_position, delta)
+				sprite.play("shoot")
 			else:
 				state = IDLE
+				sprite.play("walk")
 
 	if softCollision.is_colliding():
 		velocity += softCollision.get_push_vector() * delta * 400
@@ -74,6 +79,11 @@ func accelerate_towards_point(point, delta):
 	var direction = global_position.direction_to(point)
 	velocity = velocity.move_toward(direction * MAX_SPEED, ACCELERATION * delta)
 	sprite.flip_h = velocity.x < 0
+	if velocity.x < 0:
+		# print(shadow.position.x)
+		hitbox.position.x = -7
+	if velocity.x >= 0:
+		hitbox.position.x = 7
 	
 
 	
@@ -87,10 +97,14 @@ func seek_player():
 		timer.start(0.0)
 		# if laserEngaged == false:
 			# var laser = Laser.instance()
-			# laser.global_position = global_position
 			# get_parent().call_deferred("add_child", laser)
+			# laser.global_position.y = global_position.y
+			# laser.global_position.x = (global_position.x - 15.0)
 			# laserEngaged = true
 		state = CHASE
+	else:
+		timer.stop()
+		
 		
 func cant_find_player():
 	state = IDLE
@@ -133,7 +147,7 @@ func _on_Stats_no_health():
 
 
 func _on_Timer_timeout():
-	pass
-	# var laser = Laser.instance()
-	# laser.global_position = global_position
-	# get_parent().call_deferred("add_child", laser)
+	var laser = Laser.instance()
+	get_parent().call_deferred("add_child", laser)
+	laser.global_position = hitbox.global_position
+

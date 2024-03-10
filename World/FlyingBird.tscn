@@ -44,11 +44,12 @@ animations = [ {
 } ]
 
 [node name="FlyingBird" type="AnimatedSprite"]
+z_index = 2
 frames = SubResource( 9 )
-frame = 2
+frame = 3
 playing = true
 script = ExtResource( 2 )
 MAX_SPEED = 25
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 30.0
+wait_time = 60.0

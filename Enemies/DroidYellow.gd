@@ -20,6 +20,8 @@ enum {
 var velocity = Vector2.ZERO
 var knockback = Vector2.ZERO
 
+var worldStats = WorldStats
+
 var state = CHASE
 var laserEngaged = false
 
@@ -33,6 +35,7 @@ onready var timer = $Timer
 
 func _ready():
 	state = pick_random_state([IDLE, WANDER])
+	worldStats.connect("in_the_tall_grass", self, "cant_find_player")
 
 func _physics_process(delta):
 	knockback = knockback.move_toward(Vector2.ZERO, FRICTION * delta)
@@ -80,14 +83,18 @@ func seek_player():
 		get_parent().add_child(droidSound)
 		droidSound.play(0.0)
 		timer.start(0.0)
-		if laserEngaged == false:
-			var laser = Laser.instance()
-			laser.global_position = global_position
-			get_parent().call_deferred("add_child", laser)
-			laserEngaged = true
+		print_debug("timer_start")
+		# if laserEngaged == false:
+			# var laser = Laser.instance()
+			# laser.global_position = global_position
+			# get_parent().call_deferred("add_child", laser)
+			# laserEngaged = true
 		state = CHASE
 	else:
 		timer.stop()
+		
+func cant_find_player():
+	state = IDLE
 		
 
 func update_wander_state():
