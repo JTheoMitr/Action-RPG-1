@@ -1,4 +1,4 @@
-[gd_scene load_steps=191 format=2]
+[gd_scene load_steps=192 format=2]
 
 [ext_resource path="res://World/Bush.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=2]
@@ -70,6 +70,7 @@
 [ext_resource path="res://World/SwarmOne.tscn" type="PackedScene" id=68]
 [ext_resource path="res://World/WallCrack.tscn" type="PackedScene" id=69]
 [ext_resource path="res://UI/CoinUI.tscn" type="PackedScene" id=70]
+[ext_resource path="res://World/FlyingBird.tscn" type="PackedScene" id=71]
 [ext_resource path="res://World/OilBarrelsOne.tscn" type="PackedScene" id=72]
 [ext_resource path="res://Effects/LaserEffect.tscn" type="PackedScene" id=73]
 [ext_resource path="res://UI/AmmoUI.tscn" type="PackedScene" id=74]
@@ -2172,12 +2173,12 @@ position = Vector2( -366.5, 416 )
 scale = Vector2( 0.90625, 1 )
 
 [node name="ForestTier46" parent="YSort/Grass" instance=ExtResource( 90 )]
-position = Vector2( -561, 398 )
-scale = Vector2( 0.734375, 1 )
+position = Vector2( -560.125, 398 )
+scale = Vector2( 0.679686, 1 )
 
 [node name="ForestTier57" parent="YSort/Grass" instance=ExtResource( 90 )]
-position = Vector2( -560, 368 )
-scale = Vector2( 0.90625, 1 )
+position = Vector2( -558.25, 368 )
+scale = Vector2( 0.796874, 1 )
 
 [node name="ForestTier58" parent="YSort/Grass" instance=ExtResource( 90 )]
 position = Vector2( -560, 336 )
@@ -2192,40 +2193,40 @@ position = Vector2( -560, 272 )
 scale = Vector2( 0.648439, 1 )
 
 [node name="ForestTier61" parent="YSort/Grass" instance=ExtResource( 90 )]
-position = Vector2( -561, 242 )
-scale = Vector2( 0.765625, 1 )
+position = Vector2( -559.875, 242 )
+scale = Vector2( 0.695308, 1 )
 
 [node name="ForestTier62" parent="YSort/Grass" instance=ExtResource( 90 )]
 position = Vector2( -560, 210 )
-scale = Vector2( 0.90625, 1 )
+scale = Vector2( 0.687499, 1 )
 
 [node name="ForestTier63" parent="YSort/Grass" instance=ExtResource( 90 )]
 position = Vector2( -560, 177 )
-scale = Vector2( 0.90625, 1.0625 )
+scale = Vector2( 0.687499, 1.0625 )
 
 [node name="ForestTier64" parent="YSort/Grass" instance=ExtResource( 90 )]
-position = Vector2( -560, 144 )
-scale = Vector2( 0.90625, 1 )
+position = Vector2( -560.5, 144 )
+scale = Vector2( 0.65625, 1 )
 
 [node name="ForestTier65" parent="YSort/Grass" instance=ExtResource( 90 )]
 position = Vector2( -560, 120 )
-scale = Vector2( 0.90625, 1 )
+scale = Vector2( 0.624999, 1 )
 
 [node name="ForestTier66" parent="YSort/Grass" instance=ExtResource( 90 )]
 position = Vector2( -560, 88 )
-scale = Vector2( 0.90625, 1 )
+scale = Vector2( 0.687499, 1 )
 
 [node name="ForestTier67" parent="YSort/Grass" instance=ExtResource( 90 )]
-position = Vector2( -560, 64 )
-scale = Vector2( 0.90625, 1 )
+position = Vector2( -558.25, 64 )
+scale = Vector2( 0.796874, 1 )
 
 [node name="ForestTier68" parent="YSort/Grass" instance=ExtResource( 90 )]
-position = Vector2( -560, 40 )
-scale = Vector2( 0.90625, 1 )
+position = Vector2( -557.75, 40 )
+scale = Vector2( 0.765624, 1 )
 
 [node name="ForestTier69" parent="YSort/Grass" instance=ExtResource( 90 )]
-position = Vector2( -560, 16 )
-scale = Vector2( 0.90625, 1 )
+position = Vector2( -558.25, 16 )
+scale = Vector2( 0.796874, 1 )
 
 [node name="ForestTier117" parent="YSort/Grass" instance=ExtResource( 90 )]
 position = Vector2( -535, 9 )
@@ -4441,12 +4442,12 @@ position = Vector2( -742, -55 )
 scale = Vector2( 1.3125, 0.40625 )
 
 [node name="ForestTier52" parent="YSort/Grass" instance=ExtResource( 90 )]
-position = Vector2( -560, 424 )
-scale = Vector2( 0.90625, 1 )
+position = Vector2( -560.5, 424 )
+scale = Vector2( 0.656249, 1 )
 
 [node name="ForestTier53" parent="YSort/Grass" instance=ExtResource( 90 )]
 position = Vector2( -560, 456 )
-scale = Vector2( 0.90625, 1 )
+scale = Vector2( 0.687501, 1 )
 
 [node name="ForestTier54" parent="YSort/Grass" instance=ExtResource( 90 )]
 position = Vector2( -560, 483 )
@@ -5609,12 +5610,12 @@ position = Vector2( -80.375, 499 )
 scale = Vector2( 0.773437, 1 )
 
 [node name="ForestTier33" parent="YSort/Grass" instance=ExtResource( 90 )]
-position = Vector2( -398.5, 424 )
-scale = Vector2( 1.09375, 0.5 )
+position = Vector2( -397, 427 )
+scale = Vector2( 1.375, 0.34375 )
 
 [node name="ForestTier34" parent="YSort/Grass" instance=ExtResource( 90 )]
-position = Vector2( -432, 424 )
-scale = Vector2( 1, 0.5 )
+position = Vector2( -427, 426.5 )
+scale = Vector2( 1, 0.34375 )
 
 [node name="ForestTier35" parent="YSort/Grass" instance=ExtResource( 90 )]
 position = Vector2( -366.5, 396 )
@@ -5633,8 +5634,8 @@ position = Vector2( -272, 398 )
 scale = Vector2( 1, 0.624999 )
 
 [node name="ForestTier39" parent="YSort/Grass" instance=ExtResource( 90 )]
-position = Vector2( -240, 393.5 )
-scale = Vector2( 1, 0.40625 )
+position = Vector2( -245, 394.5 )
+scale = Vector2( 0.9375, 0.34375 )
 
 [node name="ForestTier17" parent="YSort/Grass" instance=ExtResource( 90 )]
 position = Vector2( -239, 330.5 )
@@ -5806,6 +5807,11 @@ position = Vector2( -264, 256 )
 
 [node name="Tree55" parent="YSort/Trees" instance=ExtResource( 9 )]
 position = Vector2( -366, 424 )
+z_index = 1
+
+[node name="Tree56" parent="YSort/Trees" instance=ExtResource( 9 )]
+position = Vector2( -212, 543 )
+z_index = 1
 
 [node name="Tree27" parent="YSort/Trees" instance=ExtResource( 9 )]
 position = Vector2( -304, -24 )
@@ -6861,6 +6867,7 @@ position = Vector2( -16, -272 )
 [node name="ScreenCrackleOne" parent="YSort/OilCoDoors" instance=ExtResource( 57 )]
 position = Vector2( -17, -270.5 )
 scale = Vector2( 0.094, 0.0833333 )
+frame = 2
 
 [node name="Flowers" type="YSort" parent="YSort"]
 
@@ -7075,11 +7082,9 @@ position = Vector2( -305, 346 )
 
 [node name="Bonfire" parent="YSort/Fires" instance=ExtResource( 82 )]
 position = Vector2( 976, -240 )
-frame = 3
 
 [node name="Bonfire2" parent="YSort/Fires" instance=ExtResource( 82 )]
 position = Vector2( 976, -208 )
-frame = 3
 
 [node name="Runes" type="YSort" parent="YSort"]
 
@@ -7101,29 +7106,33 @@ position = Vector2( 568, -8 )
 [node name="Bird" parent="YSort/Birds" instance=ExtResource( 91 )]
 position = Vector2( 6, 252 )
 z_index = 1
-frame = 1
 
 [node name="Bird3" parent="YSort/Birds" instance=ExtResource( 91 )]
 position = Vector2( -263, -31 )
 animation = "eat"
-frame = 1
+frame = 4
 flip_h = true
 
 [node name="Bird2" parent="YSort/Birds" instance=ExtResource( 91 )]
 position = Vector2( -355, 384 )
-z_index = 1
+z_index = 2
+frame = 1
 flip_h = true
 
 [node name="Bird5" parent="YSort/Birds" instance=ExtResource( 91 )]
 position = Vector2( 284, -36 )
 z_index = 1
+frame = 1
 flip_h = true
 
 [node name="Bird4" parent="YSort/Birds" instance=ExtResource( 91 )]
 position = Vector2( -515, 66 )
 z_index = 1
-frame = 1
 flip_h = true
+
+[node name="FlyingBird" parent="YSort/Birds" instance=ExtResource( 71 )]
+position = Vector2( -299, 480 )
+frame = 7
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
