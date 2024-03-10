@@ -9,14 +9,14 @@
 [ext_resource path="res://Inventory/ItemDescription.gd" type="Script" id=7]
 [ext_resource path="res://UI/panel_Example2.png" type="Texture" id=8]
 [ext_resource path="res://UI/e8ba734de1b8121.png" type="Texture" id=9]
-[ext_resource path="res://World/gdb-playstation-2 circle flat.png" type="Texture" id=10]
+[ext_resource path="res://World/gdb-playstation-2 cross flat.png" type="Texture" id=10]
 [ext_resource path="res://UI/ps4_gamepad isolated.png" type="Texture" id=11]
 [ext_resource path="res://World/gdb-playstation-2 triangle flat.png" type="Texture" id=12]
 
 [node name="PlayerInventory" type="Node2D"]
 pause_mode = 2
 scale = Vector2( 0.7, 0.7 )
-z_index = 1
+z_index = 2
 script = ExtResource( 4 )
 
 [node name="Sprite" type="Sprite" parent="."]

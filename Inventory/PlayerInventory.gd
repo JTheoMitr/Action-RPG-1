@@ -30,7 +30,7 @@ func _ready():
 	controlsPanel.hide()
 	
 func _process(_delta):
-	if Input.is_action_just_pressed("laser"):
+	if Input.is_action_just_pressed("interact"):
 		hide()
 		controlsPanel.hide()
 		get_tree().paused = false
