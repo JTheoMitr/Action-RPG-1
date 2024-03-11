@@ -47,7 +47,7 @@ func _physics_process(delta):
 	
 	match state:
 		IDLE:
-			
+			timer.stop()
 			velocity = velocity.move_toward(Vector2.ZERO, FRICTION * delta)
 			seek_player()
 			sprite.play("idle")
@@ -82,9 +82,9 @@ func accelerate_towards_point(point, delta):
 	sprite.flip_h = velocity.x < 0
 	if velocity.x < 0:
 		# print(shadow.position.x)
-		hitbox.position.x = -7
+		hitbox.position.x = -10
 	if velocity.x >= 0:
-		hitbox.position.x = 7
+		hitbox.position.x = 10
 	
 
 	

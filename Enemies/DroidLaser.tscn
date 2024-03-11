@@ -52,7 +52,6 @@ radius = 4.0
 height = 6.0
 
 [node name="DroidLaser" type="KinematicBody2D"]
-scale = Vector2( 1.5, 1.5 )
 script = ExtResource( 10 )
 ACCELERATION = 350
 MAX_SPEED = 70
@@ -68,7 +67,7 @@ position = Vector2( 1.66282, 3.26625 )
 scale = Vector2( 0.444677, 0.455625 )
 frames = SubResource( 7 )
 animation = "walk"
-frame = 2
+frame = 3
 playing = true
 offset = Vector2( 1, -10 )
 
@@ -110,6 +109,7 @@ visible = false
 
 [connection signal="area_entered" from="Hurtbox" to="." method="_on_Hurtbox_area_entered"]
 [connection signal="no_health" from="Stats" to="." method="_on_Stats_no_health"]
+[connection signal="area_entered" from="Hitbox" to="." method="_on_Hitbox_area_entered"]
 
 [editable path="Hurtbox"]
 [editable path="PlayerDetectionZone"]

@@ -97,3 +97,7 @@ func _on_Stats_no_health():
 	get_parent().add_child(enemyDeathEffect)
 	enemyDeathEffect.global_position = global_position
 
+
+
+func _on_Hitbox_area_entered(area):
+	self.call_deferred("queue_free")

@@ -96,12 +96,12 @@ height = 2.0
 radius = 55.0364
 
 [sub_resource type="CapsuleShape2D" id=11]
-radius = 6.0
+radius = 3.52941
 height = 0.0
 
 [sub_resource type="CapsuleShape2D" id=12]
 radius = 6.0
-height = 6.0
+height = 0.0
 
 [node name="Soldier" type="KinematicBody2D"]
 scale = Vector2( 1.7, 1.7 )
@@ -116,12 +116,11 @@ offset = Vector2( 0, 1 )
 position = Vector2( -1, 47 )
 frames = SubResource( 7 )
 animation = "idle"
-frame = 1
 playing = true
 offset = Vector2( 1, -60 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 0, -7 )
+position = Vector2( 0, -0.588235 )
 scale = Vector2( 1, 1.2 )
 shape = SubResource( 8 )
 
@@ -145,13 +144,13 @@ shape = SubResource( 10 )
 collision_mask = 4
 
 [node name="CollisionShape2D" parent="Hitbox" index="0"]
-position = Vector2( 7, -6 )
+position = Vector2( 10, -6 )
 shape = SubResource( 11 )
 
 [node name="SoftCollision" parent="." instance=ExtResource( 7 )]
 
 [node name="CollisionShape2D" parent="SoftCollision" index="0"]
-position = Vector2( 0, -6 )
+position = Vector2( 0, -0.588235 )
 shape = SubResource( 12 )
 
 [node name="WanderController" parent="." instance=ExtResource( 9 )]
