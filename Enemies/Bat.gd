@@ -1,6 +1,7 @@
 extends KinematicBody2D
 
 const EnemyDeathEffect = preload("res://Effects/EnemyDeathEffect.tscn")
+const FlutterSound = preload("res://Music and Sounds/FlutterSound.tscn")
 
 export var ACCELERATION = 300
 export var MAX_SPEED = 50
@@ -39,11 +40,13 @@ func _physics_process(delta):
 		IDLE:
 			velocity = velocity.move_toward(Vector2.ZERO, FRICTION * delta)
 			seek_player()
+			sprite.play("idle")
 			if wanderController.get_time_left() == 0:
 				update_wander_state()
 				
 		WANDER:
 			seek_player()
+			sprite.play("fly")
 			if wanderController.get_time_left() == 0:
 				update_wander_state()
 			accelerate_towards_point(wanderController.target_position, delta)
@@ -51,6 +54,7 @@ func _physics_process(delta):
 				update_wander_state()
 				
 		CHASE:
+			sprite.play("fly")
 			var player = playerDetectionZone.player
 			if player != null:
 				accelerate_towards_point(player.global_position, delta)
@@ -69,6 +73,9 @@ func accelerate_towards_point(point, delta):
 
 func seek_player():
 	if playerDetectionZone.can_see_player():
+		var flutterSound = FlutterSound.instance()
+		get_parent().add_child(flutterSound)
+		flutterSound.play(0.0)
 		state = CHASE
 		
 func cant_find_player():

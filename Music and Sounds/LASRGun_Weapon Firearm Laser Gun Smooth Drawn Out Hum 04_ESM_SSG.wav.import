@@ -1,0 +1,23 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/LASRGun_Weapon Firearm Laser Gun Smooth Drawn Out Hum 04_ESM_SSG.wav-39679f92149b6664141b9cbe983c4158.sample"
+
+[deps]
+
+source_file="res://Music and Sounds/LASRGun_Weapon Firearm Laser Gun Smooth Drawn Out Hum 04_ESM_SSG.wav"
+dest_files=[ "res://.import/LASRGun_Weapon Firearm Laser Gun Smooth Drawn Out Hum 04_ESM_SSG.wav-39679f92149b6664141b9cbe983c4158.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

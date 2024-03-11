@@ -5,6 +5,7 @@ const Battery = preload("res://World/Battery.tscn")
 const Ammo = preload("res://World/Ammo.tscn")
 const SoldierSound = preload("res://Music and Sounds/SoldierSound.tscn")
 const Laser = preload("res://Enemies/DroidLaser.tscn")
+const LaserSound = preload("res://Music and Sounds/LaserRifleSound.tscn")
 
 export var ACCELERATION = 280
 export var MAX_SPEED = 40
@@ -150,4 +151,9 @@ func _on_Timer_timeout():
 	var laser = Laser.instance()
 	get_parent().call_deferred("add_child", laser)
 	laser.global_position = hitbox.global_position
+	var laserSound = LaserSound.instance()
+	get_parent().add_child(laserSound)
+	laserSound.play(0.0)
+	#add laser sound and determine if you need to trigger from animation
+	#duplicate bat after you finish and make a basic wandering droid
 

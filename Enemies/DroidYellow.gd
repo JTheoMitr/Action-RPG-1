@@ -83,12 +83,6 @@ func seek_player():
 		get_parent().add_child(droidSound)
 		droidSound.play(0.0)
 
-		print_debug("timer_start")
-		if laserEngaged == false:
-			var laser = Laser.instance()
-			laser.global_position = global_position
-			get_parent().call_deferred("add_child", laser)
-
 		state = CHASE
 
 		
