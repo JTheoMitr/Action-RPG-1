@@ -1,11 +1,13 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://Music and Sounds/LASRGun_Weapon Firearm Laser Gun Smooth Drawn Out Hum 04_ESM_SSG.wav" type="AudioStream" id=1]
+[ext_resource path="res://Music and Sounds/SFX_Sound Effect_Droid_Robot-06.wav" type="AudioStream" id=1]
 [ext_resource path="res://Music and Sounds/LaserRifleSound.gd" type="Script" id=2]
 
-[node name="LaserRifleSound" type="AudioStreamPlayer"]
+[node name="SoldierExplodeSound" type="AudioStreamPlayer"]
 stream = ExtResource( 1 )
-volume_db = -3.0
+volume_db = -6.0
+pitch_scale = 0.5
+autoplay = true
 script = ExtResource( 2 )
 
 [connection signal="finished" from="." to="." method="_on_LaserRifleSound_finished"]

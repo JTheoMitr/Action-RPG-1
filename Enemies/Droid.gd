@@ -4,6 +4,7 @@ const EnemyDeathEffect = preload("res://Effects/EnemyDeathEffect.tscn")
 const Battery = preload("res://World/Battery.tscn")
 const Ammo = preload("res://World/Ammo.tscn")
 const SoldierSound = preload("res://Music and Sounds/SoldierSound.tscn")
+const SoldierExplodeSound = preload("res://Music and Sounds/SoldierExplodeSound.tscn")
 const Laser = preload("res://Enemies/DroidLaser.tscn")
 const LaserSound = preload("res://Music and Sounds/LaserRifleSound.tscn")
 
@@ -34,6 +35,7 @@ onready var timer = $Timer
 onready var hitbox = $Hitbox/CollisionShape2D
 
 var worldStats = WorldStats
+var looking = true
 
 
 
@@ -47,30 +49,33 @@ func _physics_process(delta):
 	
 	match state:
 		IDLE:
-			timer.stop()
-			velocity = velocity.move_toward(Vector2.ZERO, FRICTION * delta)
-			seek_player()
-			sprite.play("idle")
-			if wanderController.get_time_left() == 0:
-				update_wander_state()
+			if looking:
+				timer.stop()
+				velocity = velocity.move_toward(Vector2.ZERO, FRICTION * delta)
+				seek_player()
+				sprite.play("idle")
+				if wanderController.get_time_left() == 0:
+					update_wander_state()
 				
 		WANDER:
-			seek_player()
-			sprite.play("walk")
-			if wanderController.get_time_left() == 0:
-				update_wander_state()
-			accelerate_towards_point(wanderController.target_position, delta)
-			if global_position.distance_to(wanderController.target_position) <= WANDER_TARGET_RANGE:
-				update_wander_state()
+			if looking:
+				seek_player()
+				sprite.play("walk")
+				if wanderController.get_time_left() == 0:
+					update_wander_state()
+				accelerate_towards_point(wanderController.target_position, delta)
+				if global_position.distance_to(wanderController.target_position) <= WANDER_TARGET_RANGE:
+					update_wander_state()
 				
 		CHASE:
-			var player = playerDetectionZone.player
-			if player != null:
-				accelerate_towards_point(player.global_position, delta)
-				sprite.play("shoot")
-			else:
-				state = IDLE
-				sprite.play("walk")
+			if looking:
+				var player = playerDetectionZone.player
+				if player != null:
+					accelerate_towards_point(player.global_position, delta)
+					sprite.play("shoot")
+				else:
+					state = IDLE
+					sprite.play("walk")
 
 	if softCollision.is_colliding():
 		velocity += softCollision.get_push_vector() * delta * 400
@@ -91,20 +96,15 @@ func accelerate_towards_point(point, delta):
 
 func seek_player():
 	sprite.play("walk")
-	if playerDetectionZone.can_see_player():
+	if playerDetectionZone.can_see_player() && looking:
 		var soldierSound = SoldierSound.instance()
 		get_parent().add_child(soldierSound)
 		soldierSound.play(0.0)
 		timer.start(0.0)
-		# if laserEngaged == false:
-			# var laser = Laser.instance()
-			# get_parent().call_deferred("add_child", laser)
-			# laser.global_position.y = global_position.y
-			# laser.global_position.x = (global_position.x - 15.0)
-			# laserEngaged = true
 		state = CHASE
 	else:
 		timer.stop()
+		
 		
 		
 func cant_find_player():
@@ -132,6 +132,27 @@ func _on_Hurtbox_area_entered(area):
 
 
 func _on_Stats_no_health():
+	looking = false
+	timer.stop()
+	sprite.play("death")
+	var soldierExplode = SoldierExplodeSound.instance()
+	get_parent().add_child(soldierExplode)
+	$Timer2.start()
+
+
+func _on_Timer_timeout():
+	var laser = Laser.instance()
+	get_parent().call_deferred("add_child", laser)
+	laser.global_position = hitbox.global_position
+	var laserSound = LaserSound.instance()
+	get_parent().add_child(laserSound)
+	laserSound.play(0.0)
+	#add laser sound and determine if you need to trigger from animation
+	#duplicate bat after you finish and make a basic wandering droid
+
+
+
+func _on_Timer2_timeout():
 	call_deferred("queue_free")
 	var enemyDeathEffect = EnemyDeathEffect.instance()
 	get_parent().add_child(enemyDeathEffect)
@@ -145,15 +166,3 @@ func _on_Stats_no_health():
 		var ammo = Ammo.instance()
 		get_parent().call_deferred("add_child", ammo)
 		ammo.global_position = global_position
-
-
-func _on_Timer_timeout():
-	var laser = Laser.instance()
-	get_parent().call_deferred("add_child", laser)
-	laser.global_position = hitbox.global_position
-	var laserSound = LaserSound.instance()
-	get_parent().add_child(laserSound)
-	laserSound.play(0.0)
-	#add laser sound and determine if you need to trigger from animation
-	#duplicate bat after you finish and make a basic wandering droid
-

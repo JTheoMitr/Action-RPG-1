@@ -66,7 +66,6 @@ text = "attack"
 position = Vector2( 13.75, 17.5 )
 frames = SubResource( 7 )
 animation = "Animate"
-frame = 2
 playing = true
 
 [connection signal="area_entered" from="." to="." method="_on_TutorialArea1_area_entered"]
