@@ -6285,14 +6285,11 @@ position = Vector2( 576, 82 )
 [node name="Droid2" parent="YSort/Droids" instance=ExtResource( 10 )]
 position = Vector2( 80, -72 )
 
-[node name="Droid3" parent="YSort/Droids" instance=ExtResource( 10 )]
-position = Vector2( 304, 8 )
-
 [node name="Droid4" parent="YSort/Droids" instance=ExtResource( 10 )]
 position = Vector2( 360, -178 )
 
 [node name="Droid5" parent="YSort/Droids" instance=ExtResource( 10 )]
-position = Vector2( 310, 239 )
+position = Vector2( 264, 421 )
 
 [node name="Droid15" parent="YSort/Droids" instance=ExtResource( 10 )]
 position = Vector2( -496, -16 )
@@ -6307,19 +6304,16 @@ position = Vector2( -145, -161 )
 position = Vector2( 8, 469 )
 
 [node name="Droid7" parent="YSort/Droids" instance=ExtResource( 10 )]
-position = Vector2( 312, 312 )
+position = Vector2( 408, 394 )
 
 [node name="Droid8" parent="YSort/Droids" instance=ExtResource( 10 )]
 position = Vector2( 702, 353 )
 
 [node name="Droid9" parent="YSort/Droids" instance=ExtResource( 10 )]
-position = Vector2( 824, 408 )
-
-[node name="Droid14" parent="YSort/Droids" instance=ExtResource( 10 )]
-position = Vector2( 1008, 408 )
+position = Vector2( 854, 530 )
 
 [node name="Droid10" parent="YSort/Droids" instance=ExtResource( 10 )]
-position = Vector2( 750, 150 )
+position = Vector2( 942, 327 )
 
 [node name="Droid12" parent="YSort/Droids" instance=ExtResource( 10 )]
 position = Vector2( 976, 48 )
@@ -6348,6 +6342,12 @@ position = Vector2( -67, -64 )
 
 [node name="SimpleDroid" parent="YSort/Droids" instance=ExtResource( 92 )]
 position = Vector2( -208, 409 )
+
+[node name="SimpleDroid3" parent="YSort/Droids" instance=ExtResource( 92 )]
+position = Vector2( 742, -97 )
+
+[node name="SimpleDroid4" parent="YSort/Droids" instance=ExtResource( 92 )]
+position = Vector2( 823, 296 )
 
 [node name="SimpleDroid2" parent="YSort/Droids" instance=ExtResource( 92 )]
 position = Vector2( -131, 240 )
@@ -6878,7 +6878,6 @@ position = Vector2( -16, -272 )
 [node name="ScreenCrackleOne" parent="YSort/OilCoDoors" instance=ExtResource( 57 )]
 position = Vector2( -17, -270.5 )
 scale = Vector2( 0.094, 0.0833333 )
-frame = 4
 
 [node name="Flowers" type="YSort" parent="YSort"]
 
@@ -7124,7 +7123,7 @@ frame = 0
 [node name="Bird3" parent="YSort/Birds" instance=ExtResource( 91 )]
 position = Vector2( -263, -31 )
 animation = "eat"
-frame = 4
+frame = 2
 flip_h = true
 
 [node name="Bird2" parent="YSort/Birds" instance=ExtResource( 91 )]
@@ -7146,16 +7145,13 @@ frame = 0
 flip_h = true
 
 [node name="FlyingBird" parent="YSort/Birds" instance=ExtResource( 71 )]
-position = Vector2( -295, 585 )
-frame = 7
+position = Vector2( 2082, -511 )
 
 [node name="FlyingBird2" parent="YSort/Birds" instance=ExtResource( 71 )]
-position = Vector2( -669, 317 )
-frame = 7
+position = Vector2( 861, -538 )
 
 [node name="FlyingBird3" parent="YSort/Birds" instance=ExtResource( 71 )]
 position = Vector2( 1611, -569 )
-frame = 7
 
 [node name="Bird6" parent="YSort/Birds" instance=ExtResource( 93 )]
 position = Vector2( -130, 69 )
@@ -7175,41 +7171,41 @@ frame = 1
 [node name="Bird8" parent="YSort/Birds" instance=ExtResource( 93 )]
 position = Vector2( 171, -277 )
 animation = "eat"
-frame = 6
+frame = 3
 flip_h = true
 
 [node name="Bird9" parent="YSort/Birds" instance=ExtResource( 93 )]
 position = Vector2( 746, -216 )
 animation = "eat"
-frame = 6
+frame = 3
 
 [node name="FlyingBirdOrange" parent="YSort/Birds" instance=ExtResource( 94 )]
-position = Vector2( 794, -370 )
-frame = 3
+position = Vector2( 928, -434 )
+frame = 7
 
 [node name="FlyingBirdOrange2" parent="YSort/Birds" instance=ExtResource( 94 )]
 position = Vector2( 854, -787 )
-frame = 3
+frame = 7
 
 [node name="FlyingBirdStraight" parent="YSort/Birds" instance=ExtResource( 96 )]
 position = Vector2( 1539, -251 )
-frame = 4
+frame = 0
 
 [node name="FlyingBirdStraight2" parent="YSort/Birds" instance=ExtResource( 96 )]
 position = Vector2( 1294, 411 )
-frame = 4
+frame = 0
 
 [node name="FlyingBirdStraight3" parent="YSort/Birds" instance=ExtResource( 96 )]
 position = Vector2( 1431, 204 )
-frame = 4
+frame = 0
 
 [node name="FlyingBirdStraightOrange" parent="YSort/Birds" instance=ExtResource( 95 )]
-position = Vector2( 1223, 72 )
-frame = 7
+position = Vector2( 2351, 52 )
+frame = 3
 
 [node name="FlyingBirdStraightOrange2" parent="YSort/Birds" instance=ExtResource( 95 )]
 position = Vector2( 1662, 334 )
-frame = 7
+frame = 3
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

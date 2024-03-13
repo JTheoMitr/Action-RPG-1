@@ -6,6 +6,8 @@ const Battery = preload("res://World/Battery.tscn")
 const RobotCorpse = preload("res://Enemies/DeadDroidBoss.tscn")
 const Laser = preload("res://Enemies/BossLaserBottomLeftStraight.tscn")
 const LaserTwo = preload("res://Enemies/BossLaserTopRightStraight.tscn")
+const LaserThree = preload("res://Enemies/BossLaserBottomRightStraight.tscn")
+const LaserFour = preload("res://Enemies/BossLaserTopLeftStraight.tscn")
 
 export var ACCELERATION = 280
 export var MAX_SPEED = 40
@@ -36,6 +38,7 @@ onready var wanderController = $WanderController
 onready var timer = $Timer
 onready var stagSound = $StaggerSound
 onready var laserTimer = $Timer3
+onready var hitbox = $Hitbox/CollisionShape2D
 
 func _ready():
 	state = pick_random_state([IDLE, WANDER])
@@ -47,7 +50,7 @@ func _physics_process(delta):
 	if frozen == true:
 		velocity = Vector2.ZERO
 		sprite.play("stagger")
-		laserTimer.start(0.0)
+		
 	
 	
 	match state:
@@ -155,12 +158,14 @@ func _on_Timer2_timeout():
 	if frozen == false:
 		frozen = true
 		stagSound.play()
+		laserTimer.start(0.0)
 		atkHitbox.monitorable = false
 
 	elif frozen == true:
 		frozen = false
 		atkHitbox.monitorable = true
 		sprite.play("attack")
+		laserTimer.stop()
 	
 
 
@@ -171,8 +176,16 @@ func _on_SoundTrigger_area_exited(area):
 func _on_Timer3_timeout():
 	var laser = Laser.instance()
 	get_parent().call_deferred("add_child", laser)
-	laser.global_position = global_position
+	laser.global_position = hitbox.global_position
 	
 	var laserTwo = LaserTwo.instance()
 	get_parent().call_deferred("add_child", laserTwo)
-	laserTwo.global_position = global_position
+	laserTwo.global_position = hitbox.global_position
+	
+	var laserThree = LaserThree.instance()
+	get_parent().call_deferred("add_child", laserThree)
+	laserThree.global_position = hitbox.global_position
+	
+	var laserFour = LaserFour.instance()
+	get_parent().call_deferred("add_child", laserFour)
+	laserFour.global_position = hitbox.global_position
