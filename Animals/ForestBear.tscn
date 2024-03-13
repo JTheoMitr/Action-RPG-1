@@ -42,6 +42,7 @@ script = ExtResource( 1 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 5 )
 animation = "walk"
+frame = 1
 playing = true
 
 [node name="ShadowSprite" type="Sprite" parent="."]
@@ -92,13 +93,14 @@ text = " Thank you!
 fit_content_height = true
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 6.0
+wait_time = 5.0
+one_shot = true
 
 [node name="FreedPopup" parent="." instance=ExtResource( 5 )]
 visible = false
 
 [node name="Timer2" type="Timer" parent="."]
-wait_time = 3.0
+wait_time = 2.0
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_Area2D_area_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

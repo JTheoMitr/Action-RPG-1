@@ -22,7 +22,7 @@ func _process(delta):
 func _on_Area2D_area_entered(area):
 	popup.popup()
 	$Timer.start()
-	worldStats.freed += 1
+	
 	
 
 
@@ -34,6 +34,7 @@ func _on_Timer_timeout():
 	popup.hide()
 	deer.hide()
 	shadow.hide()
+	worldStats.freed += 1
 	$Timer2.start()
 
 func _on_Timer2_timeout():

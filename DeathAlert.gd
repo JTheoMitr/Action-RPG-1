@@ -25,7 +25,7 @@ func _reset_stats():
 	stats.overcharge = false
 	stats.batteries = 2
 	stats.coins = 0
-	stats.keys = 0
+	# stats.keys = 0
 	stats.boss_keys = 0
 	worldStats.freed = 0
 	

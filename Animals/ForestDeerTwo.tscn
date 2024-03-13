@@ -84,12 +84,13 @@ custom_fonts/normal_font = SubResource( 7 )
 text = " Thank you!  I need to get home to my mama. I will tell tales of your bravery."
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 6.0
+wait_time = 5.0
+one_shot = true
 
 [node name="FreedPopup" parent="." instance=ExtResource( 4 )]
 
 [node name="Timer2" type="Timer" parent="."]
-wait_time = 3.0
+wait_time = 2.0
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_Area2D_area_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

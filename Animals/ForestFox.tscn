@@ -50,7 +50,7 @@ script = ExtResource( 2 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 4 )
 animation = "chill"
-frame = 1
+frame = 2
 playing = true
 offset = Vector2( 0, -10 )
 
@@ -91,13 +91,14 @@ bbcode_text = "[center]  I can't believe it! I thought nobody would ever come. H
 text = "  I can't believe it! I thought nobody would ever come. Have you seen my friend, Luka? He should be somewhere nearby..."
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 6.0
+wait_time = 5.0
+one_shot = true
 
 [node name="FreedPopup" parent="." instance=ExtResource( 4 )]
 visible = false
 
 [node name="Timer2" type="Timer" parent="."]
-wait_time = 3.0
+wait_time = 2.0
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_Area2D_area_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
