@@ -24,6 +24,7 @@ var knockback = Vector2.ZERO
 
 var state = CHASE
 var laserEngaged = false
+var hurtable = true
 
 onready var sprite = $AnimatedSprite
 onready var stats = $Stats
@@ -124,15 +125,18 @@ func random_drop_generator(drop_list):
 	return drop_list.pop_front()
 
 func _on_Hurtbox_area_entered(area):
-	stats.health -= area.damage
-	knockback = area.knockback_vector * 130
-	hurtbox.create_hit_effect()
-	playerDetectionZone.scale.x = (playerDetectionZone.scale.x * 3)
-	playerDetectionZone.scale.y = (playerDetectionZone.scale.y * 3)
+	if hurtable:
+		stats.health -= area.damage
+		knockback = area.knockback_vector * 130
+		hurtbox.create_hit_effect()
+		playerDetectionZone.scale.x = (playerDetectionZone.scale.x * 3)
+		playerDetectionZone.scale.y = (playerDetectionZone.scale.y * 3)
 
 
 func _on_Stats_no_health():
 	looking = false
+	hurtable = false
+	hitbox.call_deferred("queue_free")
 	timer.stop()
 	sprite.play("death")
 	var soldierExplode = SoldierExplodeSound.instance()

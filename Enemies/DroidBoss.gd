@@ -4,6 +4,8 @@ const EnemyDeathEffect = preload("res://Effects/EnemyDeathEffect.tscn")
 const DroidBossDeathEffect = preload("res://Effects/DroidBossDeathAnim.tscn")
 const Battery = preload("res://World/Battery.tscn")
 const RobotCorpse = preload("res://Enemies/DeadDroidBoss.tscn")
+const Laser = preload("res://Enemies/BossLaserBottomLeftStraight.tscn")
+const LaserTwo = preload("res://Enemies/BossLaserTopRightStraight.tscn")
 
 export var ACCELERATION = 280
 export var MAX_SPEED = 40
@@ -33,6 +35,7 @@ onready var softCollision = $SoftCollision
 onready var wanderController = $WanderController
 onready var timer = $Timer
 onready var stagSound = $StaggerSound
+onready var laserTimer = $Timer3
 
 func _ready():
 	state = pick_random_state([IDLE, WANDER])
@@ -44,6 +47,7 @@ func _physics_process(delta):
 	if frozen == true:
 		velocity = Vector2.ZERO
 		sprite.play("stagger")
+		laserTimer.start(0.0)
 	
 	
 	match state:
@@ -162,3 +166,13 @@ func _on_Timer2_timeout():
 
 func _on_SoundTrigger_area_exited(area):
 	worldStats.emit_signal("fade_music_in")
+
+
+func _on_Timer3_timeout():
+	var laser = Laser.instance()
+	get_parent().call_deferred("add_child", laser)
+	laser.global_position = global_position
+	
+	var laserTwo = LaserTwo.instance()
+	get_parent().call_deferred("add_child", laserTwo)
+	laserTwo.global_position = global_position
