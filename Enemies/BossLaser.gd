@@ -21,11 +21,5 @@ func _process(delta):
 	self.global_position.y += 1
 
 
-
-
-
-
-
-
 func _on_Timer_timeout():
 	queue_free()

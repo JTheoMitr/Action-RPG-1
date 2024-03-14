@@ -56,6 +56,7 @@ position = Vector2( 1.66282, 3.26625 )
 scale = Vector2( 0.444677, 0.455625 )
 frames = SubResource( 7 )
 animation = "walk"
+frame = 3
 playing = true
 offset = Vector2( 1, -10 )
 
@@ -86,7 +87,6 @@ visible = false
 wait_time = 5.0
 
 [connection signal="no_health" from="Stats" to="." method="_on_Stats_no_health"]
-[connection signal="area_entered" from="Hitbox" to="." method="_on_Hitbox_area_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 
 [editable path="Hurtbox"]

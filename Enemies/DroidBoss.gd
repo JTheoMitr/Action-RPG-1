@@ -8,6 +8,9 @@ const Laser = preload("res://Enemies/BossLaserBottomLeftStraight.tscn")
 const LaserTwo = preload("res://Enemies/BossLaserTopRightStraight.tscn")
 const LaserThree = preload("res://Enemies/BossLaserBottomRightStraight.tscn")
 const LaserFour = preload("res://Enemies/BossLaserTopLeftStraight.tscn")
+const LaserFive = preload("res://Enemies/BossLaserRightStraight.tscn")
+const LaserSix = preload("res://Enemies/BossLaserLeftStraight.tscn")
+
 
 export var ACCELERATION = 280
 export var MAX_SPEED = 40
@@ -38,6 +41,7 @@ onready var wanderController = $WanderController
 onready var timer = $Timer
 onready var stagSound = $StaggerSound
 onready var laserTimer = $Timer3
+onready var laserTimerTwo = $Timer4
 onready var hitbox = $Hitbox/CollisionShape2D
 
 func _ready():
@@ -50,7 +54,7 @@ func _physics_process(delta):
 	if frozen == true:
 		velocity = Vector2.ZERO
 		sprite.play("stagger")
-		
+		laserTimerTwo.start(0.0)
 	
 	
 	match state:
@@ -189,3 +193,13 @@ func _on_Timer3_timeout():
 	var laserFour = LaserFour.instance()
 	get_parent().call_deferred("add_child", laserFour)
 	laserFour.global_position = hitbox.global_position
+
+
+func _on_Timer4_timeout():
+	var laserFive = LaserFive.instance()
+	get_parent().call_deferred("add_child", laserFive)
+	laserFive.global_position = hitbox.global_position
+	
+	var laserSix = LaserSix.instance()
+	get_parent().call_deferred("add_child", laserSix)
+	laserSix.global_position = hitbox.global_position

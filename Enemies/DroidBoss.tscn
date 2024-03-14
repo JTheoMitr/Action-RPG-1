@@ -135,7 +135,7 @@ position = Vector2( -70, -31.6667 )
 scale = Vector2( 1.2, 1.2 )
 frames = SubResource( 7 )
 animation = "attack"
-frame = 8
+frame = 6
 playing = true
 centered = false
 offset = Vector2( 1, -60 )
@@ -213,6 +213,9 @@ volume_db = -5.0
 [node name="Timer3" type="Timer" parent="."]
 wait_time = 0.2
 
+[node name="Timer4" type="Timer" parent="."]
+wait_time = 0.2
+
 [connection signal="area_entered" from="Hurtbox" to="." method="_on_Hurtbox_area_entered"]
 [connection signal="no_health" from="Stats" to="." method="_on_Stats_no_health"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
@@ -220,6 +223,7 @@ wait_time = 0.2
 [connection signal="area_exited" from="SoundTrigger" to="." method="_on_SoundTrigger_area_exited"]
 [connection signal="timeout" from="Timer2" to="." method="_on_Timer2_timeout"]
 [connection signal="timeout" from="Timer3" to="." method="_on_Timer3_timeout"]
+[connection signal="timeout" from="Timer4" to="." method="_on_Timer4_timeout"]
 
 [editable path="Hurtbox"]
 [editable path="PlayerDetectionZone"]
