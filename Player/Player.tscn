@@ -6,7 +6,7 @@
 [ext_resource path="res://Player/SwordHitbox.gd" type="Script" id=4]
 [ext_resource path="res://Hitboxes and Hurtboxes/Hurtbox.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Shadows/MediumShadow.png" type="Texture" id=6]
-[ext_resource path="res://Music and Sounds/Swipe.wav" type="AudioStream" id=7]
+[ext_resource path="res://Music and Sounds/saber_swipe.wav" type="AudioStream" id=7]
 [ext_resource path="res://Effects/eye_laser_1.png" type="Texture" id=8]
 [ext_resource path="res://Player/Player SpecialOne.png" type="Texture" id=9]
 [ext_resource path="res://Player/SpecialAttackArea.gd" type="Script" id=10]
@@ -940,7 +940,8 @@ shape = SubResource( 49 )
 
 [node name="SwordSwiper" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 7 )
-volume_db = -10.0
+volume_db = -15.0
+pitch_scale = 0.9
 
 [node name="PickupBox" type="Area2D" parent="."]
 collision_layer = 2
