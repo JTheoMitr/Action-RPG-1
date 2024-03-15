@@ -4,5 +4,5 @@
 
 [node name="FlutterSound" type="AudioStreamPlayer"]
 stream = ExtResource( 1 )
-volume_db = 0.65
+volume_db = -3.0
 pitch_scale = 1.5

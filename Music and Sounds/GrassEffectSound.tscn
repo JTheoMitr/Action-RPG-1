@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Music and Sounds/SFX_Foley_Stick_Stone_Leaves_Scratch.wav" type="AudioStream" id=1]
+
+[node name="GrassEffectSound" type="AudioStreamPlayer"]
+stream = ExtResource( 1 )
+volume_db = -14.238
+pitch_scale = 0.79
