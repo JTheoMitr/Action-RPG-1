@@ -1,7 +1,9 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://KeyAlert.gd" type="Script" id=1]
 [ext_resource path="res://fonts/PixelTandysoft-0rJG.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://UI/Pixel GUI Buttons Flat Lavender.png" type="Texture" id=3]
+[ext_resource path="res://World/cage_key_1.png" type="Texture" id=4]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.184314, 0.152941, 0.152941, 0.682353 )
@@ -11,12 +13,24 @@ size = 15
 font_data = ExtResource( 2 )
 
 [node name="KeyAlert" type="PopupDialog"]
+visible = true
 margin_left = 136.0
 margin_top = 104.0
-margin_right = 192.0
-margin_bottom = 112.0
+margin_right = 136.0
+margin_bottom = 104.0
 custom_styles/panel = SubResource( 1 )
 script = ExtResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+self_modulate = Color( 1, 1, 1, 0.807843 )
+position = Vector2( 28, 9 )
+texture = ExtResource( 3 )
+
+[node name="Sprite2" type="Sprite" parent="."]
+position = Vector2( 28, 10.0001 )
+rotation = 1.5708
+scale = Vector2( 0.06, 0.06 )
+texture = ExtResource( 4 )
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
 margin_left = 2.0

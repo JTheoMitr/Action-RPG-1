@@ -145,16 +145,17 @@ func move_state(delta):
 		input_vector.x = Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left")
 		input_vector.y = Input.get_action_strength("ui_down") - Input.get_action_strength("ui_up")
 		
-		if input_vector.y == 1:
-			laserTop = true
-		elif input_vector.y == -1:
+
+		if input_vector.x == 1:
 			laserTop = false
-			
-		if input_vector.y == 0:
-			if input_vector.x == 1:
-				laserTop = false
-			elif input_vector.x == -1:
+		elif input_vector.x == -1:
+			laserTop = true
+		elif input_vector.x == 0:
+			if input_vector.y == 1:
 				laserTop = true
+			elif input_vector.y == -1:
+				laserTop = false
+
 		
 		if Input.is_action_just_pressed("ui_up"):
 			show = false
