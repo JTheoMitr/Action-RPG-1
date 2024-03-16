@@ -53,6 +53,7 @@ var worldStats = WorldStats
 
 # for sprite control
 var laserTop = false
+var show = false
 
 # for laser fire rate
 var laserboi = true
@@ -144,11 +145,34 @@ func move_state(delta):
 		input_vector.x = Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left")
 		input_vector.y = Input.get_action_strength("ui_down") - Input.get_action_strength("ui_up")
 		
-		if Input.is_action_just_pressed("ui_up"):
+		if input_vector.y == 1:
+			laserTop = true
+		elif input_vector.y == -1:
 			laserTop = false
 			
+		if input_vector.y == 0:
+			if input_vector.x == 1:
+				laserTop = false
+			elif input_vector.x == -1:
+				laserTop = true
+		
+		if Input.is_action_just_pressed("ui_up"):
+			show = false
+				
 		if Input.is_action_just_pressed("ui_down"):
-			laserTop = true
+			show = true
+				
+		if Input.is_action_just_pressed("ui_right"):
+			show = false
+				
+		if Input.is_action_just_pressed("ui_left"):
+			show = true
+		
+		if input_vector.x == 0 && input_vector.y == 0:
+			if show == false:
+				laserTop =false
+			elif show == true:
+				laserTop = true
 		
 		if Input.is_action_just_pressed("roll"):
 			state = ROLL

@@ -1,0 +1,23 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/LASRGun_Weapon Firearm Laser Blaster Neutral Generic Bright Shot 05_ESM_SSG.wav-442130a68d4a8f0356c5361ab04ca49f.sample"
+
+[deps]
+
+source_file="res://Music and Sounds/LASRGun_Weapon Firearm Laser Blaster Neutral Generic Bright Shot 05_ESM_SSG.wav"
+dest_files=[ "res://.import/LASRGun_Weapon Firearm Laser Blaster Neutral Generic Bright Shot 05_ESM_SSG.wav-442130a68d4a8f0356c5361ab04ca49f.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

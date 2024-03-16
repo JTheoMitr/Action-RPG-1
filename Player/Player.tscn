@@ -838,10 +838,11 @@ damage = 2
 shape = SubResource( 52 )
 
 [node name="Pointer" type="Node2D" parent="."]
-position = Vector2( 0, -12 )
+position = Vector2( 0, -13.5 )
 
 [node name="Sprite" type="Sprite" parent="Pointer"]
-position = Vector2( 14, 0 )
+position = Vector2( 10, 0 )
+scale = Vector2( 0.45, 0.45 )
 texture = ExtResource( 8 )
 
 [node name="LaserZone" type="Area2D" parent="Pointer/Sprite"]
@@ -856,7 +857,8 @@ rotation = 1.5708
 shape = SubResource( 53 )
 
 [node name="Sprite2" type="Sprite" parent="Pointer"]
-position = Vector2( 11, -1 )
+position = Vector2( 7, -1 )
+scale = Vector2( 0.45, 0.45 )
 z_index = 1
 texture = ExtResource( 8 )
 

@@ -1,10 +1,11 @@
 [gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://LaserSound.gd" type="Script" id=1]
-[ext_resource path="res://Music and Sounds/Sci-FiWeapon_Ym6rA_04.wav" type="AudioStream" id=2]
+[ext_resource path="res://Music and Sounds/LASRGun_Weapon Firearm Laser Blaster Neutral Generic Bright Shot 05_ESM_SSG.wav" type="AudioStream" id=2]
 
 [node name="LaserSound" type="AudioStreamPlayer"]
 stream = ExtResource( 2 )
-volume_db = -3.0
+volume_db = -8.0
+pitch_scale = 0.7
 autoplay = true
 script = ExtResource( 1 )
