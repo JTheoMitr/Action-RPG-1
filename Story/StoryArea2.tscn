@@ -194,6 +194,9 @@ text = "NO"
 
 [node name="Response" type="PopupDialog" parent="."]
 visible = true
+self_modulate = Color( 1, 1, 1, 0.478431 )
+margin_right = 150.0
+margin_bottom = 26.0
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Response"]
 margin_left = -18.0

@@ -73,16 +73,17 @@ scale = Vector2( 0.128269, 0.700245 )
 texture = ExtResource( 4 )
 
 [node name="RichTextLabel" type="RichTextLabel" parent="RescuePopUp"]
-margin_left = 6.33334
-margin_right = 301.334
-margin_bottom = 71.0001
+margin_left = 6.0
+margin_top = 3.33333
+margin_right = 301.001
+margin_bottom = 74.3334
 rect_scale = Vector2( 0.15, 0.75 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_fonts/normal_font = SubResource( 6 )
 bbcode_enabled = true
-bbcode_text = "[center]I can't thank you enough for getting me out of here.  Please be sure to help the rest of my friends locked up in the area."
+bbcode_text = "[center]I can't thank you enough for getting me out of here.  Please help the rest of my friends locked up in the area!!"
 tab_size = 3
-text = "I can't thank you enough for getting me out of here.  Please be sure to help the rest of my friends locked up in the area."
+text = "I can't thank you enough for getting me out of here.  Please help the rest of my friends locked up in the area!!"
 fit_content_height = true
 
 [node name="Timer" type="Timer" parent="."]
