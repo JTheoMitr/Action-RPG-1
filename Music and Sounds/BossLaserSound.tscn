@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Music and Sounds/laser_bop.wav" type="AudioStream" id=1]
+[ext_resource path="res://Music and Sounds/BossLaserSound.gd" type="Script" id=2]
+
+[node name="BossLaserSound" type="AudioStreamPlayer"]
+stream = ExtResource( 1 )
+volume_db = -13.0
+autoplay = true
+script = ExtResource( 2 )
+
+[connection signal="finished" from="." to="." method="_on_BossLaserSound_finished"]

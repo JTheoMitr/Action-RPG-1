@@ -11,6 +11,8 @@ const LaserFour = preload("res://Enemies/BossLaserTopLeftStraight.tscn")
 const LaserFive = preload("res://Enemies/BossLaserRightStraight.tscn")
 const LaserSix = preload("res://Enemies/BossLaserLeftStraight.tscn")
 
+onready var BossLaserSound = preload("res://Music and Sounds/BossLaserSound.tscn")
+
 
 export var ACCELERATION = 280
 export var MAX_SPEED = 40
@@ -178,6 +180,10 @@ func _on_SoundTrigger_area_exited(area):
 
 
 func _on_Timer3_timeout():
+	
+	var laserSound = BossLaserSound.instance()
+	get_parent().call_deferred("add_child", laserSound)
+	
 	var laser = Laser.instance()
 	get_parent().call_deferred("add_child", laser)
 	laser.global_position = hitbox.global_position
