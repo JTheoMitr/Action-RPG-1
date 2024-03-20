@@ -10,6 +10,8 @@ onready var dust1 = $DustAnimation
 onready var dust2 = $DustAnimation2
 onready var dust3 = $DustAnimation3
 onready var dust4 = $DustAnimation4
+onready var explosionSound = $AudioStreamPlayer
+onready var alarmSound = $AlarmSound
 
 
 
@@ -35,10 +37,13 @@ func _on_Timer_timeout():
 	self.show()
 	popupD.show()
 	destructTimer.start()
+	alarmSound.play(0.0)
+	
 	
 
 
 func _on_DestructTimer_timeout():
+	explosionSound.play(0.0)
 	explosionAnim.show()
 	dust1.hide()
 	dust2.hide()

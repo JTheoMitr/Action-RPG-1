@@ -62,7 +62,7 @@ func _ready():
 func _physics_process(delta):
 	knockback = knockback.move_toward(Vector2.ZERO, FRICTION * delta)
 	knockback = move_and_slide(knockback)
-	bossHealthUI.rect_global_position.x = self.global_position.x - 5
+	bossHealthUI.rect_global_position.x = self.global_position.x + 3
 	bossHealthUI.rect_global_position.y = self.global_position.y - 55
 	
 	
@@ -178,7 +178,8 @@ func _on_Stats_no_health():
 	#get_parent().add_child(robotCorpse)
 	get_parent().call_deferred("add_child", robotCorpse)
 	
-	robotCorpse.global_position = global_position
+	robotCorpse.global_position.x = global_position.x
+	robotCorpse.global_position.y = global_position.y + 2
 	enemyDeathEffect.global_position = global_position
 	droidBossDeath.global_position = global_position
 	
