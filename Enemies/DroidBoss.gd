@@ -45,6 +45,16 @@ onready var stagSound = $StaggerSound
 onready var laserTimer = $Timer3
 onready var laserTimerTwo = $Timer4
 onready var hitbox = $Hitbox/CollisionShape2D
+onready var bossHealthUI = $DroidBossHealthUI
+onready var armor1 = $DroidBossHealthUI/HBoxContainer/Armor_One
+onready var armor2 = $DroidBossHealthUI/HBoxContainer/Armor_Two
+onready var armor3 = $DroidBossHealthUI/HBoxContainer/Armor_Three
+onready var armor4 = $DroidBossHealthUI/HBoxContainer/Armor_Four
+onready var health1 = $DroidBossHealthUI/HBoxContainer/Health_One
+onready var health2 = $DroidBossHealthUI/HBoxContainer/Health_Two
+onready var health3 = $DroidBossHealthUI/HBoxContainer/Health_Three
+onready var health4 = $DroidBossHealthUI/HBoxContainer/Health_Four
+
 
 func _ready():
 	state = pick_random_state([IDLE, WANDER])
@@ -52,12 +62,41 @@ func _ready():
 func _physics_process(delta):
 	knockback = knockback.move_toward(Vector2.ZERO, FRICTION * delta)
 	knockback = move_and_slide(knockback)
+	bossHealthUI.rect_global_position.x = self.global_position.x - 5
+	bossHealthUI.rect_global_position.y = self.global_position.y - 55
+	
 	
 	if frozen == true:
 		velocity = Vector2.ZERO
 		sprite.play("stagger")
 		laserTimerTwo.start(0.0)
 	
+	match self.stats.health:
+		8:
+			health1.show()
+			health2.show()
+			health3.show()
+			health4.show()
+			armor1.show()
+			armor2.show()
+			armor3.show()
+			armor4.show()
+		7:
+			armor4.hide()
+		6:
+			armor3.hide()
+		5:
+			armor2.hide()
+		4:
+			armor1.hide()
+		3:
+			health4.hide()
+		2:
+			health3.hide()
+		1:
+			health2.hide()
+		0:
+			health1.hide()
 	
 	match state:
 		IDLE:
