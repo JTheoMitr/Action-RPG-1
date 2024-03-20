@@ -13,7 +13,6 @@ size = 15
 font_data = ExtResource( 2 )
 
 [node name="KeyAlert" type="PopupDialog"]
-visible = true
 margin_left = 136.0
 margin_top = 104.0
 margin_right = 136.0
@@ -33,11 +32,13 @@ scale = Vector2( 0.06, 0.06 )
 texture = ExtResource( 4 )
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
-margin_left = 2.0
-margin_right = 282.0
+margin_left = -2.0
+margin_right = 198.0
 margin_bottom = 40.0
 rect_scale = Vector2( 0.3, 0.3 )
 custom_fonts/normal_font = SubResource( 2 )
+bbcode_enabled = true
+bbcode_text = "[center]You've obtained a key"
 text = "You've obtained a key"
 
 [node name="Timer" type="Timer" parent="."]

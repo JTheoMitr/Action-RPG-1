@@ -15,9 +15,9 @@ func _ready():
 
 func _process(delta):
 	if (stats.keyLost == true):
-		text.text = "You've used a key"
+		text.bbcode_text = "[center]You've used a key[/center]"
 	else:
-		text.text = "You've obtained a key"
+		text.bbcode_text = "[center]You've obtained a key[/center]"
 
 
 func _on_Timer_timeout():

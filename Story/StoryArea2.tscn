@@ -40,9 +40,10 @@ font_data = ExtResource( 3 )
 texture = ExtResource( 10 )
 region_rect = Rect2( 0, 0, 64, 32 )
 
-[sub_resource type="StyleBoxTexture" id=20]
+[sub_resource type="StyleBoxTexture" id=22]
 texture = ExtResource( 11 )
 region_rect = Rect2( 0, 0, 62, 32 )
+modulate_color = Color( 1, 1, 1, 0.666667 )
 
 [sub_resource type="StyleBoxTexture" id=19]
 texture = ExtResource( 9 )
@@ -60,6 +61,7 @@ region_rect = Rect2( 0, 0, 64, 32 )
 [sub_resource type="StyleBoxTexture" id=21]
 texture = ExtResource( 11 )
 region_rect = Rect2( 0, 0, 62, 32 )
+modulate_color = Color( 1, 1, 1, 0.666667 )
 
 [sub_resource type="StyleBoxTexture" id=18]
 texture = ExtResource( 9 )
@@ -177,7 +179,7 @@ margin_bottom = 20.0
 rect_min_size = Vector2( 35, 20 )
 custom_fonts/font = SubResource( 9 )
 custom_styles/pressed = SubResource( 15 )
-custom_styles/focus = SubResource( 20 )
+custom_styles/focus = SubResource( 22 )
 custom_styles/normal = SubResource( 19 )
 text = "YES"
 

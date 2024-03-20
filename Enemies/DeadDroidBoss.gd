@@ -12,7 +12,7 @@ func _process(delta):
 	popupD.rect_global_position = self.global_position
 	explosionAnim.global_position.x = self.global_position.x + 41
 	explosionAnim.global_position.y = self.global_position.y
-	destructMsg.text = "Self Destruct in: " + str((destructTimer.time_left).split(".")[0])
+	destructMsg.text = "Self Destruct in: " + str(destructTimer.time_left).split(".")[0]
 
 func _ready():
 	self.hide()

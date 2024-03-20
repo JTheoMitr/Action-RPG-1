@@ -1,9 +1,10 @@
-[gd_scene load_steps=80 format=2]
+[gd_scene load_steps=87 format=2]
 
 [ext_resource path="res://Enemies/military_incursion_bot_dead_still.png" type="Texture" id=1]
 [ext_resource path="res://Enemies/DeadDroidBoss.gd" type="Script" id=2]
 [ext_resource path="res://Effects/xplosion_spritesheet.png" type="Texture" id=3]
 [ext_resource path="res://fonts/PixelTandysoft-0rJG.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://Effects/SlideDust.png" type="Texture" id=5]
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 3.99999
@@ -309,6 +310,34 @@ animations = [ {
 "speed": 18.0
 } ]
 
+[sub_resource type="AtlasTexture" id=76]
+atlas = ExtResource( 5 )
+region = Rect2( 0, 0, 25, 32 )
+
+[sub_resource type="AtlasTexture" id=77]
+atlas = ExtResource( 5 )
+region = Rect2( 25, 0, 25, 32 )
+
+[sub_resource type="AtlasTexture" id=78]
+atlas = ExtResource( 5 )
+region = Rect2( 50, 0, 25, 32 )
+
+[sub_resource type="AtlasTexture" id=79]
+atlas = ExtResource( 5 )
+region = Rect2( 75, 0, 25, 32 )
+
+[sub_resource type="AtlasTexture" id=80]
+atlas = ExtResource( 5 )
+region = Rect2( 100, 0, 25, 32 )
+
+[sub_resource type="SpriteFrames" id=81]
+animations = [ {
+"frames": [ SubResource( 76 ), SubResource( 77 ), SubResource( 78 ), SubResource( 79 ), SubResource( 80 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
 [node name="DeadDroidBoss" type="StaticBody2D"]
 script = ExtResource( 2 )
 
@@ -327,10 +356,11 @@ one_shot = true
 
 [node name="PopupDestruct" type="PopupDialog" parent="."]
 visible = true
-self_modulate = Color( 1, 1, 1, 0.639216 )
-margin_top = -70.0
+self_modulate = Color( 1, 1, 1, 0.576471 )
+margin_top = -50.0
 margin_right = 149.0
-margin_bottom = -44.0
+margin_bottom = -24.0
+rect_scale = Vector2( 0.5, 0.5 )
 
 [node name="RichTextLabel" type="RichTextLabel" parent="PopupDestruct"]
 margin_left = 19.0
@@ -346,8 +376,39 @@ one_shot = true
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( 41, -11 )
+scale = Vector2( 2, 2 )
 frames = SubResource( 75 )
 animation = "explode"
+
+[node name="DustAnimation" type="AnimatedSprite" parent="."]
+position = Vector2( 27, -10 )
+scale = Vector2( 1.5, 1.5 )
+frames = SubResource( 81 )
+frame = 4
+playing = true
+
+[node name="DustAnimation2" type="AnimatedSprite" parent="."]
+position = Vector2( 59, -6 )
+scale = Vector2( 1.3, 1.3 )
+frames = SubResource( 81 )
+frame = 4
+playing = true
+flip_h = true
+
+[node name="DustAnimation4" type="AnimatedSprite" parent="."]
+position = Vector2( 30, -17 )
+scale = Vector2( 1.3, 1.3 )
+frames = SubResource( 81 )
+frame = 3
+playing = true
+flip_h = true
+
+[node name="DustAnimation3" type="AnimatedSprite" parent="."]
+position = Vector2( 56, -6 )
+scale = Vector2( 1.3, 1.3 )
+frames = SubResource( 81 )
+frame = 4
+playing = true
 
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 [connection signal="timeout" from="DestructTimer" to="." method="_on_DestructTimer_timeout"]

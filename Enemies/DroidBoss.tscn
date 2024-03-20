@@ -135,7 +135,7 @@ position = Vector2( -70, -31.6667 )
 scale = Vector2( 1.2, 1.2 )
 frames = SubResource( 7 )
 animation = "attack"
-frame = 2
+frame = 7
 playing = true
 centered = false
 offset = Vector2( 1, -60 )
@@ -154,7 +154,7 @@ position = Vector2( 15, -28.3333 )
 shape = SubResource( 9 )
 
 [node name="Stats" parent="." instance=ExtResource( 5 )]
-max_health = 6
+max_health = 8
 
 [node name="PlayerDetectionZone" parent="." instance=ExtResource( 6 )]
 
