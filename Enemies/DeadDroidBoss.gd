@@ -12,6 +12,7 @@ onready var dust3 = $DustAnimation3
 onready var dust4 = $DustAnimation4
 onready var explosionSound = $AudioStreamPlayer
 onready var alarmSound = $AlarmSound
+onready var hitBox = $Hitbox/CollisionShape2D
 
 
 
@@ -19,18 +20,22 @@ onready var alarmSound = $AlarmSound
 # Called when the node enters the scene tree for the first time.
 
 func _process(delta):
+	
 	popupD.rect_global_position = self.global_position
 	explosionAnim.global_position.x = self.global_position.x + 41
 	explosionAnim.global_position.y = self.global_position.y
 	popupD.rect_global_position.x = self.global_position.x
 	popupD.rect_global_position.y = self.global_position.y - 55
 	destructMsg.text = "Self Destruct in: " + str(destructTimer.time_left).split(".")[0]
+	if explosionAnim.frame >= 20:
+		hitBox.disabled = true
 
 func _ready():
 	self.hide()
 	timer.start()
 	explosionAnim.hide()
 	explosionAnim.frame = 71
+	hitBox.disabled = true
 
 
 func _on_Timer_timeout():
@@ -43,6 +48,7 @@ func _on_Timer_timeout():
 
 
 func _on_DestructTimer_timeout():
+	hitBox.disabled = false
 	explosionSound.play(0.0)
 	explosionAnim.show()
 	dust1.hide()

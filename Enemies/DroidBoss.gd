@@ -176,7 +176,7 @@ func _on_Stats_no_health():
 	get_parent().add_child(enemyDeathEffect)
 	get_parent().add_child(droidBossDeath)
 	#get_parent().add_child(robotCorpse)
-	get_parent().call_deferred("add_child", robotCorpse)
+	get_parent().add_child(robotCorpse)
 	
 	robotCorpse.global_position.x = global_position.x
 	robotCorpse.global_position.y = global_position.y + 2
