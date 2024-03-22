@@ -345,6 +345,7 @@ animations = [ {
 radius = 50.01
 
 [node name="DeadDroidBoss" type="StaticBody2D"]
+position = Vector2( -1, 2 )
 script = ExtResource( 2 )
 
 [node name="DeadBotSprite" type="Sprite" parent="."]
@@ -391,14 +392,14 @@ frame = 20
 position = Vector2( 27, -10 )
 scale = Vector2( 1.5, 1.5 )
 frames = SubResource( 81 )
-frame = 4
+frame = 3
 playing = true
 
 [node name="DustAnimation2" type="AnimatedSprite" parent="."]
 position = Vector2( 59, -6 )
 scale = Vector2( 1.3, 1.3 )
 frames = SubResource( 81 )
-frame = 4
+frame = 3
 playing = true
 flip_h = true
 
@@ -406,7 +407,7 @@ flip_h = true
 position = Vector2( 30, -17 )
 scale = Vector2( 1.3, 1.3 )
 frames = SubResource( 81 )
-frame = 3
+frame = 2
 playing = true
 flip_h = true
 
@@ -414,7 +415,7 @@ flip_h = true
 position = Vector2( 56, -6 )
 scale = Vector2( 1.3, 1.3 )
 frames = SubResource( 81 )
-frame = 4
+frame = 3
 playing = true
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]

@@ -106,7 +106,7 @@ radius = 21.6667
 height = 22.0
 
 [sub_resource type="CircleShape2D" id=10]
-radius = 183.341
+radius = 205.0
 
 [sub_resource type="CapsuleShape2D" id=11]
 radius = 25.0
@@ -136,7 +136,7 @@ position = Vector2( -70, -31.6667 )
 scale = Vector2( 1.2, 1.2 )
 frames = SubResource( 7 )
 animation = "attack"
-frame = 9
+frame = 6
 playing = true
 centered = false
 offset = Vector2( 1, -60 )
@@ -217,8 +217,44 @@ wait_time = 0.2
 [node name="Timer4" type="Timer" parent="."]
 wait_time = 0.2
 
-[node name="DroidBossHealthUI" parent="." instance=ExtResource( 15 )]
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="DroidBossHealthUI" parent="CanvasLayer" instance=ExtResource( 15 )]
+margin_right = 186.0
+margin_bottom = 56.0
 rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="HBoxContainer" parent="CanvasLayer/DroidBossHealthUI" index="0"]
+margin_left = 264.0
+margin_top = 6.0
+margin_right = 428.0
+
+[node name="Health_One" parent="CanvasLayer/DroidBossHealthUI/HBoxContainer" index="0"]
+position = Vector2( 20, 18 )
+
+[node name="Health_Two" parent="CanvasLayer/DroidBossHealthUI/HBoxContainer" index="1"]
+position = Vector2( 60, 18 )
+
+[node name="Health_Three" parent="CanvasLayer/DroidBossHealthUI/HBoxContainer" index="2"]
+position = Vector2( 100, 18 )
+
+[node name="Health_Four" parent="CanvasLayer/DroidBossHealthUI/HBoxContainer" index="3"]
+position = Vector2( 140, 18 )
+
+[node name="Armor_One" parent="CanvasLayer/DroidBossHealthUI/HBoxContainer" index="4"]
+position = Vector2( 20, 18 )
+
+[node name="Armor_Two" parent="CanvasLayer/DroidBossHealthUI/HBoxContainer" index="5"]
+position = Vector2( 60, 18 )
+
+[node name="Armor_Three" parent="CanvasLayer/DroidBossHealthUI/HBoxContainer" index="6"]
+position = Vector2( 100, 18 )
+
+[node name="Armor_Four" parent="CanvasLayer/DroidBossHealthUI/HBoxContainer" index="7"]
+position = Vector2( 140, 18 )
+
+[node name="Icon" parent="CanvasLayer/DroidBossHealthUI/HBoxContainer" index="8"]
+position = Vector2( -28, 16 )
 
 [connection signal="area_entered" from="Hurtbox" to="." method="_on_Hurtbox_area_entered"]
 [connection signal="no_health" from="Stats" to="." method="_on_Stats_no_health"]
@@ -234,4 +270,4 @@ rect_scale = Vector2( 0.5, 0.5 )
 [editable path="Hitbox"]
 [editable path="SoftCollision"]
 [editable path="Hitbox2"]
-[editable path="DroidBossHealthUI"]
+[editable path="CanvasLayer/DroidBossHealthUI"]

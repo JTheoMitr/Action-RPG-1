@@ -45,25 +45,26 @@ onready var stagSound = $StaggerSound
 onready var laserTimer = $Timer3
 onready var laserTimerTwo = $Timer4
 onready var hitbox = $Hitbox/CollisionShape2D
-onready var bossHealthUI = $DroidBossHealthUI
-onready var armor1 = $DroidBossHealthUI/HBoxContainer/Armor_One
-onready var armor2 = $DroidBossHealthUI/HBoxContainer/Armor_Two
-onready var armor3 = $DroidBossHealthUI/HBoxContainer/Armor_Three
-onready var armor4 = $DroidBossHealthUI/HBoxContainer/Armor_Four
-onready var health1 = $DroidBossHealthUI/HBoxContainer/Health_One
-onready var health2 = $DroidBossHealthUI/HBoxContainer/Health_Two
-onready var health3 = $DroidBossHealthUI/HBoxContainer/Health_Three
-onready var health4 = $DroidBossHealthUI/HBoxContainer/Health_Four
+onready var bossHealthUI = $CanvasLayer/DroidBossHealthUI
+onready var armor1 = $CanvasLayer/DroidBossHealthUI/HBoxContainer/Armor_One
+onready var armor2 = $CanvasLayer/DroidBossHealthUI/HBoxContainer/Armor_Two
+onready var armor3 = $CanvasLayer/DroidBossHealthUI/HBoxContainer/Armor_Three
+onready var armor4 = $CanvasLayer/DroidBossHealthUI/HBoxContainer/Armor_Four
+onready var health1 = $CanvasLayer/DroidBossHealthUI/HBoxContainer/Health_One
+onready var health2 = $CanvasLayer/DroidBossHealthUI/HBoxContainer/Health_Two
+onready var health3 = $CanvasLayer/DroidBossHealthUI/HBoxContainer/Health_Three
+onready var health4 = $CanvasLayer/DroidBossHealthUI/HBoxContainer/Health_Four
 
 
 func _ready():
 	state = pick_random_state([IDLE, WANDER])
+	bossHealthUI.hide()
 
 func _physics_process(delta):
 	knockback = knockback.move_toward(Vector2.ZERO, FRICTION * delta)
 	knockback = move_and_slide(knockback)
-	bossHealthUI.rect_global_position.x = self.global_position.x + 3
-	bossHealthUI.rect_global_position.y = self.global_position.y - 55
+	#bossHealthUI.rect_global_position.x = self.global_position.x - 10
+	#bossHealthUI.rect_global_position.y = self.global_position.y - 55
 	
 	
 	if frozen == true:
@@ -142,6 +143,7 @@ func seek_player():
 		state = CHASE
 		timer.start()
 		$Timer2.start()
+		bossHealthUI.show()
 
 func update_wander_state():
 	state = pick_random_state([IDLE, WANDER])
@@ -167,8 +169,6 @@ func _on_Hurtbox_area_entered(area):
 
 func _on_Stats_no_health():
 	
-	call_deferred("queue_free")
-	
 	var enemyDeathEffect = EnemyDeathEffect.instance()
 	var droidBossDeath = DroidBossDeathEffect.instance()
 	var robotCorpse = RobotCorpse.instance()
@@ -176,13 +176,14 @@ func _on_Stats_no_health():
 	get_parent().add_child(enemyDeathEffect)
 	get_parent().add_child(droidBossDeath)
 	#get_parent().add_child(robotCorpse)
-	get_parent().add_child(robotCorpse)
+	get_parent().call_deferred("add_child", robotCorpse)
 	
-	robotCorpse.global_position.x = global_position.x
-	robotCorpse.global_position.y = global_position.y + 2
+	#robotCorpse.global_position.x = global_position.x
+	#robotCorpse.global_position.y = global_position.y + 2
+	robotCorpse.global_position = global_position
 	enemyDeathEffect.global_position = global_position
 	droidBossDeath.global_position = global_position
-	
+	call_deferred("queue_free")
 	var randomDrop = random_drop_generator(["drop", "none"])
 	if (randomDrop == "drop"):
 		var battery = Battery.instance()
