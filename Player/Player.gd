@@ -177,6 +177,7 @@ func move_state(delta):
 		
 		if Input.is_action_just_pressed("roll"):
 			state = ROLL
+			crosshair.hide()
 	
 		if Input.is_action_just_pressed("attack"):
 			state = ATTACK

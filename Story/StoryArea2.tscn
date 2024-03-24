@@ -203,7 +203,6 @@ margin_right = 150.0
 margin_bottom = 26.0
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Response"]
-visible = false
 margin_left = -18.0
 margin_right = 175.0
 margin_bottom = 24.0

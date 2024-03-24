@@ -32,6 +32,7 @@ func _process(delta):
 
 func _ready():
 	self.hide()
+	self.global_position.y += 3
 	timer.start()
 	explosionAnim.hide()
 	explosionAnim.frame = 71
