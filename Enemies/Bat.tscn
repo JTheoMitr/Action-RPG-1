@@ -110,7 +110,6 @@ shape = SubResource( 8 )
 wait_time = 0.6
 
 [node name="Stats" parent="." instance=ExtResource( 5 )]
-max_health = 2
 
 [node name="PlayerDetectionZone" parent="." instance=ExtResource( 6 )]
 visible = false
