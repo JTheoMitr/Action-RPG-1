@@ -1,0 +1,23 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/bat_drone.wav-209fb1c01bd5176759e5271f6b4f4e79.sample"
+
+[deps]
+
+source_file="res://Music and Sounds/bat_drone.wav"
+dest_files=[ "res://.import/bat_drone.wav-209fb1c01bd5176759e5271f6b4f4e79.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

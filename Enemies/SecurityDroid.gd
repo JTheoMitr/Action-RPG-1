@@ -3,7 +3,12 @@ extends KinematicBody2D
 const EnemyDeathEffect = preload("res://Effects/EnemyDeathEffect.tscn")
 const Battery = preload("res://World/Battery.tscn")
 const SecDroidSound = preload("res://Music and Sounds/SecurityDroidSound.tscn")
-const Laser = preload("res://Enemies/DroidLaser.tscn")
+const Laser = preload("res://Enemies/BossLaserBottomLeftStraight.tscn")
+const LaserTwo = preload("res://Enemies/BossLaserTopRightStraight.tscn")
+const LaserThree = preload("res://Enemies/BossLaserBottomRightStraight.tscn")
+const LaserFour = preload("res://Enemies/BossLaserTopLeftStraight.tscn")
+
+const BossLaserSound = preload("res://Music and Sounds/BossLaserSound.tscn")
 
 export var ACCELERATION = 280
 export var MAX_SPEED = 40
@@ -82,13 +87,8 @@ func accelerate_towards_point(point, delta):
 
 func seek_player():
 	if playerDetectionZone.can_see_player():
-		get_parent().call_deferred("add_child", droidSound)
 		droidSound.play(0.0)
-		if laserEngaged == false:
-			var laser = Laser.instance()
-			laser.global_position = global_position
-			get_parent().call_deferred("add_child", laser)
-			timer.start(0.0)
+		timer.start(0.0)
 			# laserEngaged = true
 		state = CHASE
 	else:
@@ -133,6 +133,22 @@ func _on_Stats_no_health():
 
 
 func _on_Timer_timeout():
+	
+	var laserSound = BossLaserSound.instance()
+	get_parent().call_deferred("add_child", laserSound)
+	
 	var laser = Laser.instance()
-	laser.global_position = global_position
 	get_parent().call_deferred("add_child", laser)
+	laser.global_position = global_position
+	
+	var laserTwo = LaserTwo.instance()
+	get_parent().call_deferred("add_child", laserTwo)
+	laserTwo.global_position = global_position
+	
+	var laserThree = LaserThree.instance()
+	get_parent().call_deferred("add_child", laserThree)
+	laserThree.global_position = global_position
+	
+	var laserFour = LaserFour.instance()
+	get_parent().call_deferred("add_child", laserFour)
+	laserFour.global_position = global_position

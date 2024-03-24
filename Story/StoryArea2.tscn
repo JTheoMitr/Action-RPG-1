@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=2]
+[gd_scene load_steps=32 format=2]
 
 [ext_resource path="res://StoryArea2.gd" type="Script" id=1]
 [ext_resource path="res://Dialogue Headshots/robot_guide_face_still.png" type="Texture" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://UI/Pixel GUI Button Black Wide Unpressed.png" type="Texture" id=9]
 [ext_resource path="res://UI/Pixel GUI Buttons Black Wide Pressed.png" type="Texture" id=10]
 [ext_resource path="res://UI/Pixel GUI Buttons Black Wide Focused.png" type="Texture" id=11]
+[ext_resource path="res://UI/Pixel GUI Buttons pack black platform.png" type="Texture" id=12]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 85.0529
@@ -153,9 +154,10 @@ text = "Continue"
 visible = true
 
 [node name="Sprite" type="Sprite" parent="QuestionPopUp"]
-position = Vector2( 62.5, 25 )
-scale = Vector2( 0.477778, 0.643333 )
-texture = ExtResource( 6 )
+self_modulate = Color( 1, 1, 1, 0.898039 )
+position = Vector2( 62, 36 )
+scale = Vector2( 2.625, 2.06452 )
+texture = ExtResource( 12 )
 
 [node name="RichTextLabel" type="RichTextLabel" parent="QuestionPopUp"]
 margin_left = -3.0
@@ -201,6 +203,7 @@ margin_right = 150.0
 margin_bottom = 26.0
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Response"]
+visible = false
 margin_left = -18.0
 margin_right = 175.0
 margin_bottom = 24.0

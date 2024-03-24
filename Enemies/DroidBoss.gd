@@ -11,7 +11,7 @@ const LaserFour = preload("res://Enemies/BossLaserTopLeftStraight.tscn")
 const LaserFive = preload("res://Enemies/BossLaserRightStraight.tscn")
 const LaserSix = preload("res://Enemies/BossLaserLeftStraight.tscn")
 
-onready var BossLaserSound = preload("res://Music and Sounds/BossLaserSound.tscn")
+const BossLaserSound = preload("res://Music and Sounds/BossLaserSound.tscn")
 
 
 export var ACCELERATION = 280
