@@ -124,6 +124,7 @@ height = 0.0
 scale = Vector2( 1.7, 1.7 )
 collision_layer = 17
 script = ExtResource( 8 )
+MAX_SPEED = 25
 
 [node name="ShadowSprite" type="Sprite" parent="."]
 texture = ExtResource( 3 )
@@ -134,7 +135,7 @@ position = Vector2( -0.588235, 7.05882 )
 scale = Vector2( 0.3, 0.3 )
 frames = SubResource( 7 )
 animation = "walk"
-frame = 3
+frame = 1
 playing = true
 offset = Vector2( 1, -60 )
 

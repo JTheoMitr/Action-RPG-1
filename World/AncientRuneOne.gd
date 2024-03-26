@@ -9,6 +9,8 @@ onready var timer = $Timer
 onready var rune = $Sprite
 onready var magic = $AnimatedSprite
 
+var playerStats = PlayerStats
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -25,6 +27,9 @@ func _on_Area2D_area_entered(area):
 	timer.start()
 	magic.hide()
 	rune.hide()
+	playerStats.set_max_health(5)
+	PlayerStats.health += 5
+	
 	
 
 
