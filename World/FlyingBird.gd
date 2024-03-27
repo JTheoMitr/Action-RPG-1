@@ -19,13 +19,13 @@ func _ready():
 func _process(delta):
 	if timer.time_left >= 40.0:
 		self.flip_h = false
-		self.global_position.x -= 1
-		self.global_position.y += 1
+		self.global_position.x -= 1.5
+		self.global_position.y += 0.8
 
 	elif timer.time_left <= 40.1:
 		self.flip_h = true
-		self.global_position.x += 1
-		self.global_position.y -= 1
+		self.global_position.x += 1.5
+		self.global_position.y -= 0.8
 
 
 func accelerate_towards_point(point, delta):

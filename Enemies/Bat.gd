@@ -26,6 +26,8 @@ onready var hurtbox = $Hurtbox
 onready var softCollision = $SoftCollision
 onready var wanderController = $WanderController
 
+onready var flutterSound = FlutterSound.instance()
+
 var worldStats = WorldStats
 
 func _ready():
@@ -73,7 +75,7 @@ func accelerate_towards_point(point, delta):
 
 func seek_player():
 	if playerDetectionZone.can_see_player():
-		var flutterSound = FlutterSound.instance()
+		
 		get_parent().add_child(flutterSound)
 		flutterSound.play(0.0)
 		state = CHASE
@@ -100,7 +102,9 @@ func _on_Hurtbox_area_entered(area):
 
 
 func _on_Stats_no_health():
+	
 	queue_free()
+	flutterSound.stop()
 	var enemyDeathEffect = EnemyDeathEffect.instance()
 	get_parent().add_child(enemyDeathEffect)
 	enemyDeathEffect.global_position = global_position
