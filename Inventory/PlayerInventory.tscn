@@ -282,9 +282,14 @@ margin_bottom = 57.0
 rect_scale = Vector2( 0.4, 0.4 )
 text = "Sword ----"
 
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.3
+one_shot = true
+
 [connection signal="focus_entered" from="Control/CenterContainer/HBoxContainer/VBoxContainer/Button" to="." method="_on_Button_focus_entered"]
 [connection signal="pressed" from="Control/CenterContainer/HBoxContainer/VBoxContainer/Button" to="." method="_on_Button_pressed"]
 [connection signal="focus_entered" from="Control/CenterContainer/HBoxContainer/VBoxContainer/Button2" to="." method="_on_Button2_focus_entered"]
 [connection signal="pressed" from="Control/CenterContainer/HBoxContainer/VBoxContainer/Button2" to="." method="_on_Button2_pressed"]
 [connection signal="focus_entered" from="Control/CenterContainer/HBoxContainer/VBoxContainer/Button3" to="." method="_on_Button3_focus_entered"]
 [connection signal="pressed" from="Control/CenterContainer/HBoxContainer/VBoxContainer/Button3" to="." method="_on_Button3_pressed"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

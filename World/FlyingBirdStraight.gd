@@ -17,12 +17,12 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if timer.time_left <= 30.0:
+	if timer.time_left >= 40.0:
 		self.flip_h = false
 		self.global_position.x -= 1
 		
 
-	elif timer.time_left >= 30.1:
+	elif timer.time_left <= 40.1:
 		self.flip_h = true
 		self.global_position.x += 1
 	

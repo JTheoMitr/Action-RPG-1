@@ -15,6 +15,7 @@ onready var switchText = $RichTextLabel2
 onready var stats = PlayerStats
 onready var worldStats = WorldStats
 onready var controlsPanel = $ControlsPanel
+onready var timer = $Timer
 
 const ItemFocusSound = preload("res://Music and Sounds/ItemFocusSound.tscn")
 const ItemSelectSound = preload("res://Music and Sounds/MenuSelectSound.tscn")
@@ -30,10 +31,11 @@ func _ready():
 	controlsPanel.hide()
 	
 func _process(_delta):
-	if Input.is_action_just_pressed("interact"):
+	if Input.is_action_just_pressed("laser"):
 		hide()
 		controlsPanel.hide()
-		get_tree().paused = false
+		timer.start()
+		#get_tree().paused = false
 		menuOn = false
 	if (Input.is_action_just_pressed("special_one")) && self.visible:
 		if controlsOn:
@@ -111,3 +113,7 @@ func _on_Button2_pressed(): #bluepop
 
 func _on_Button3_pressed():
 	pass # Replace with function body.
+
+
+func _on_Timer_timeout():
+	get_tree().paused = false
