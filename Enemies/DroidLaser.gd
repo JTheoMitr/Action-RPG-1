@@ -96,11 +96,14 @@ func pick_random_state(state_list):
 func _on_Hurtbox_area_entered(area):
 	# stats.health -= area.damage
 	timer2.start(0.0)
-	reversePath = input_vector * 135
+	reversePath = input_vector * 150
 	print_debug(hitbox.collision_mask)
 	knockback = reversePath
 	velocity = reversePath
 	hurtbox.create_hit_effect()
+	if input_vector.x == 0 && input_vector.y == 0:
+		call_deferred("queue_free")
+		
 
 
 
@@ -125,7 +128,7 @@ func _on_Timer_timeout():
 
 
 func _on_Timer2_timeout():
-	hitbox.set_collision_mask_bit(3, true)
+	hitbox.set_collision_mask_bit(6, true)
 	hitbox.set_collision_mask_bit(2, false)
 	print_debug(hitbox.collision_mask)
 	

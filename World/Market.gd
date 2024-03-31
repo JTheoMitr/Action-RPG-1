@@ -8,7 +8,7 @@ onready var textLabel = $PopupDialog/RichTextLabel
 
 
 var inArea = false
-var textOptions = ["[center] Hey, my dude... you lookin' to get down on some dairy? [/center]", "[center] My frozen treats are sure to \n get you into fighting form! [/center]"]
+var textOptions = ["[center] Hey, my dude... you lookin' to \n get down on some dairy? [/center]", "[center] My frozen treats are sure to \n get you into fighting form! [/center]"]
 
 func _ready():
 	textLabel.bbcode_enabled = true
