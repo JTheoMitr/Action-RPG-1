@@ -8,8 +8,8 @@ const SoldierExplodeSound = preload("res://Music and Sounds/SoldierExplodeSound.
 const Laser = preload("res://Enemies/DroidLaser.tscn")
 const LaserSound = preload("res://Music and Sounds/LaserRifleSound.tscn")
 
-export var ACCELERATION = 280
-export var MAX_SPEED = 40
+export var ACCELERATION = 215
+export var MAX_SPEED = 35
 export var FRICTION = 200
 export var WANDER_TARGET_RANGE = 4
 
@@ -34,9 +34,13 @@ onready var softCollision = $SoftCollision
 onready var wanderController = $WanderController
 onready var timer = $Timer
 onready var hitbox = $Hitbox/CollisionShape2D
+onready var bulletZone2D = $BulletZone2D/CollisionShape2D
+onready var shootTimer = $ShootTimer
 
 var worldStats = WorldStats
 var looking = true
+var shooting = false
+var dead = false
 
 
 
@@ -73,10 +77,11 @@ func _physics_process(delta):
 				var player = playerDetectionZone.player
 				if player != null:
 					accelerate_towards_point(player.global_position, delta)
-					sprite.play("shoot")
+					if shooting == false:
+						sprite.play("walk")
 				else:
 					state = IDLE
-					sprite.play("walk")
+					sprite.play("idle")
 
 	if softCollision.is_colliding():
 		velocity += softCollision.get_push_vector() * delta * 400
@@ -88,9 +93,9 @@ func accelerate_towards_point(point, delta):
 	sprite.flip_h = velocity.x < 0
 	if velocity.x < 0:
 		# print(shadow.position.x)
-		hitbox.position.x = -10
+		bulletZone2D.position.x = -13
 	if velocity.x >= 0:
-		hitbox.position.x = 10
+		bulletZone2D.position.x = 13
 	
 
 	
@@ -101,7 +106,6 @@ func seek_player():
 		var soldierSound = SoldierSound.instance()
 		get_parent().add_child(soldierSound)
 		soldierSound.play(0.0)
-		timer.start(0.0)
 		state = CHASE
 	else:
 		timer.stop()
@@ -127,7 +131,8 @@ func random_drop_generator(drop_list):
 func _on_Hurtbox_area_entered(area):
 	if hurtable:
 		stats.health -= area.damage
-		knockback = area.knockback_vector * 130
+		print_debug("hit")
+		# knockback = area.knockback_vector * 130
 		hurtbox.create_hit_effect()
 		playerDetectionZone.scale.x = (playerDetectionZone.scale.x * 3)
 		playerDetectionZone.scale.y = (playerDetectionZone.scale.y * 3)
@@ -136,6 +141,9 @@ func _on_Hurtbox_area_entered(area):
 func _on_Stats_no_health():
 	looking = false
 	hurtable = false
+	dead = true
+	velocity.x = 0
+	velocity.y = 0
 	hitbox.call_deferred("queue_free")
 	timer.stop()
 	sprite.play("death")
@@ -147,7 +155,7 @@ func _on_Stats_no_health():
 func _on_Timer_timeout():
 	var laser = Laser.instance()
 	get_parent().call_deferred("add_child", laser)
-	laser.global_position = hitbox.global_position
+	laser.global_position = bulletZone2D.global_position
 	var laserSound = LaserSound.instance()
 	get_parent().add_child(laserSound)
 	laserSound.play(0.0)
@@ -170,3 +178,22 @@ func _on_Timer2_timeout():
 		var ammo = Ammo.instance()
 		get_parent().call_deferred("add_child", ammo)
 		ammo.global_position = global_position
+
+
+func _on_ShootTimer_timeout():
+	pass # sprite.play("shoot")
+
+
+func _on_Area2D_area_entered(area):
+	if dead == false:
+		sprite.play("shoot")
+		shooting = true
+		timer.start(0.0)
+		velocity.x = 0
+		velocity.y = 0
+
+
+func _on_Area2D_area_exited(area):
+	state = CHASE
+	shooting = false
+	timer.stop()

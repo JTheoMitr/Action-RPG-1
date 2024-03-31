@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Music and Sounds/HN_02_130bpm_Bells_F#m.wav" type="AudioStream" id=1]
+
+[node name="SpookyBells" type="AudioStreamPlayer"]
+stream = ExtResource( 1 )
+volume_db = -5.0

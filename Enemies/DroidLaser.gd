@@ -17,6 +17,8 @@ enum {
 
 var velocity = Vector2.ZERO
 var knockback = Vector2.ZERO
+var reversePath = Vector2.ZERO
+var input_vector = Vector2.ZERO
 
 var state = CHASE
 
@@ -26,13 +28,20 @@ onready var playerDetectionZone = $PlayerDetectionZone
 onready var hurtbox = $Hurtbox
 onready var softCollision = $SoftCollision
 onready var wanderController = $WanderController
+onready var timer = $Timer
+onready var hitbox = $Hitbox
+onready var timer2 = $Timer2
 
 func _ready():
 	state = pick_random_state([IDLE, WANDER])
+	timer.start(0.0)
+
 
 func _physics_process(delta):
 	knockback = knockback.move_toward(Vector2.ZERO, FRICTION * delta)
 	knockback = move_and_slide(knockback)
+	input_vector.x = Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left")
+	input_vector.y = Input.get_action_strength("ui_down") - Input.get_action_strength("ui_up")
 	
 	match state:
 		IDLE:
@@ -85,8 +94,12 @@ func pick_random_state(state_list):
 	return state_list.pop_front()
 
 func _on_Hurtbox_area_entered(area):
-	stats.health -= area.damage
-	knockback = area.knockback_vector * 130
+	# stats.health -= area.damage
+	timer2.start(0.0)
+	reversePath = input_vector * 135
+	print_debug(hitbox.collision_mask)
+	knockback = reversePath
+	velocity = reversePath
 	hurtbox.create_hit_effect()
 
 
@@ -101,3 +114,18 @@ func _on_Stats_no_health():
 
 func _on_Hitbox_area_entered(area):
 	self.call_deferred("queue_free")
+	
+
+
+func _on_Timer_timeout():
+	call_deferred("queue_free")
+	var enemyDeathEffect = EnemyDeathEffect.instance()
+	get_parent().add_child(enemyDeathEffect)
+	enemyDeathEffect.global_position = global_position
+
+
+func _on_Timer2_timeout():
+	hitbox.set_collision_mask_bit(3, true)
+	hitbox.set_collision_mask_bit(2, false)
+	print_debug(hitbox.collision_mask)
+	

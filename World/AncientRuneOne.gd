@@ -18,8 +18,8 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+func _process(delta):
+	popup.rect_global_position = self.global_position
 
 
 func _on_Area2D_area_entered(area):
