@@ -189,6 +189,7 @@ func move_state(delta):
 				stats.ammo -= 1
 				laserSprite.show()
 				laserboi = false
+				
 				laserSpeed.start()
 				laserZone.disabled = false
 				worldStats.emit_signal("play_blast_anim")

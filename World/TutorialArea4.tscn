@@ -5,7 +5,7 @@
 [ext_resource path="res://fonts/PixelTandysoft-0rJG.ttf" type="DynamicFontData" id=3]
 
 [sub_resource type="CircleShape2D" id=1]
-radius = 66.0
+radius = 34.0147
 
 [sub_resource type="StyleBoxFlat" id=2]
 bg_color = Color( 0.184314, 0.152941, 0.152941, 0.682353 )
@@ -68,6 +68,7 @@ text = "pause menu"
 position = Vector2( 13.75, 15 )
 frames = SubResource( 7 )
 animation = "Animate"
+frame = 1
 playing = true
 
 [connection signal="area_entered" from="." to="." method="_on_TutorialArea2_area_entered"]

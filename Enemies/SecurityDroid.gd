@@ -34,14 +34,15 @@ onready var softCollision = $SoftCollision
 onready var wanderController = $WanderController
 onready var hitbox2 = $Hitbox2
 onready var timer = $Timer
-var droidSound = SecDroidSound.instance()
-var laserEngaged = false
 
+var laserEngaged = false
+var droidSound = SecDroidSound.instance()
 var worldStats = WorldStats
 
 func _ready():
 	state = pick_random_state([IDLE, WANDER])
 	worldStats.connect("in_the_tall_grass", self, "cant_find_player")
+	get_parent().call_deferred("add_child", droidSound)
 
 func _physics_process(delta):
 	knockback = knockback.move_toward(Vector2.ZERO, FRICTION * delta)
@@ -87,7 +88,7 @@ func accelerate_towards_point(point, delta):
 
 func seek_player():
 	if playerDetectionZone.can_see_player():
-		get_parent().add_child(droidSound)
+		
 		droidSound.play(0.0)
 		timer.start(0.0)
 			# laserEngaged = true
@@ -121,7 +122,7 @@ func _on_Hurtbox_area_entered(area):
 
 
 func _on_Stats_no_health():
-	droidSound.call_deferred("queue_free")
+	droidSound.stop()
 	self.call_deferred("queue_free")
 	var enemyDeathEffect = EnemyDeathEffect.instance()
 	get_parent().add_child(enemyDeathEffect)

@@ -76,9 +76,9 @@ func _physics_process(delta):
 			if looking:
 				var player = playerDetectionZone.player
 				if player != null:
-					accelerate_towards_point(player.global_position, delta)
 					if shooting == false:
 						sprite.play("walk")
+						accelerate_towards_point(player.global_position, delta)
 				else:
 					state = IDLE
 					sprite.play("idle")

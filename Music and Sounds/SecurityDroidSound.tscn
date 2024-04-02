@@ -21,4 +21,5 @@ script = ExtResource( 4 )
 [node name="Timer" type="Timer" parent="DroneSound"]
 wait_time = 7.0
 
+[connection signal="finished" from="." to="." method="_on_SecurityDroidSound_finished"]
 [connection signal="timeout" from="DroneSound/Timer" to="DroneSound" method="_on_Timer_timeout"]

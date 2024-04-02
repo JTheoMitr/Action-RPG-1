@@ -26,13 +26,16 @@ onready var hurtbox = $Hurtbox
 onready var softCollision = $SoftCollision
 onready var wanderController = $WanderController
 
-onready var flutterSound = FlutterSound.instance()
+var flutterSound = FlutterSound.instance()
+
+
 
 var worldStats = WorldStats
 
 func _ready():
 	state = pick_random_state([IDLE, WANDER])
 	worldStats.connect("in_the_tall_grass", self, "cant_find_player")
+	get_parent().call_deferred("add_child", flutterSound)
 
 func _physics_process(delta):
 	knockback = knockback.move_toward(Vector2.ZERO, FRICTION * delta)
@@ -75,8 +78,6 @@ func accelerate_towards_point(point, delta):
 
 func seek_player():
 	if playerDetectionZone.can_see_player():
-		
-		get_parent().add_child(flutterSound)
 		flutterSound.play(0.0)
 		state = CHASE
 		

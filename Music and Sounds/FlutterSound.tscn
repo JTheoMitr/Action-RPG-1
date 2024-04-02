@@ -1,8 +1,12 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Music and Sounds/bat_drone.wav" type="AudioStream" id=1]
+[ext_resource path="res://Music and Sounds/FlutterSound.gd" type="Script" id=2]
 
 [node name="FlutterSound" type="AudioStreamPlayer"]
 stream = ExtResource( 1 )
 volume_db = -12.0
 pitch_scale = 1.3
+script = ExtResource( 2 )
+
+[connection signal="finished" from="." to="." method="_on_FlutterSound_finished"]
