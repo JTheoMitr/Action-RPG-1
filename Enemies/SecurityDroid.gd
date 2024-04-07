@@ -42,7 +42,8 @@ var worldStats = WorldStats
 func _ready():
 	state = pick_random_state([IDLE, WANDER])
 	worldStats.connect("in_the_tall_grass", self, "cant_find_player")
-	get_parent().call_deferred("add_child", droidSound)
+	
+	
 
 func _physics_process(delta):
 	knockback = knockback.move_toward(Vector2.ZERO, FRICTION * delta)
@@ -88,7 +89,7 @@ func accelerate_towards_point(point, delta):
 
 func seek_player():
 	if playerDetectionZone.can_see_player():
-		
+		get_parent().call_deferred("add_child", droidSound)
 		droidSound.play(0.0)
 		timer.start(0.0)
 			# laserEngaged = true
@@ -98,6 +99,7 @@ func seek_player():
 		
 func cant_find_player():
 	state = IDLE
+	droidSound.call_deferred("queue_free")
 		
 
 func update_wander_state():

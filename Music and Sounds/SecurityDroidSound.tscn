@@ -7,14 +7,14 @@
 
 [node name="SecurityDroidSound" type="AudioStreamPlayer"]
 stream = ExtResource( 1 )
-volume_db = -3.5
+volume_db = -5.0
 pitch_scale = 0.38
 mix_target = 2
 script = ExtResource( 3 )
 
 [node name="DroneSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 2 )
-volume_db = -11.095
+volume_db = -15.0
 pitch_scale = 0.7
 script = ExtResource( 4 )
 
