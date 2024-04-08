@@ -2,6 +2,7 @@ extends KinematicBody2D
 
 const EnemyDeathEffect = preload("res://Effects/EnemyDeathEffect.tscn")
 const HopSound = preload("res://Music and Sounds/SpiderHopLow.tscn")
+const SlimeLaser = preload("res://Enemies/SlimeLaserRightStraight.tscn")
 
 export var ACCELERATION = 355
 export var MAX_SPEED = 70
@@ -26,6 +27,7 @@ onready var playerDetectionZone = $PlayerDetectionZone
 onready var hurtbox = $Hurtbox
 onready var softCollision = $SoftCollision
 onready var wanderController = $WanderController
+onready var timer = $Timer
 
 func _ready():
 	state = IDLE
@@ -56,10 +58,12 @@ func _physics_process(delta):
 			var player = playerDetectionZone.player
 			if player != null:
 				accelerate_towards_point(player.global_position, delta)
+				timer.start()
 				
 				
 			else:
 				state = IDLE
+				timer.stop()
 				
 
 	if softCollision.is_colliding():
@@ -102,3 +106,9 @@ func _on_Stats_no_health():
 	var enemyDeathEffect = EnemyDeathEffect.instance()
 	get_parent().add_child(enemyDeathEffect)
 	enemyDeathEffect.global_position = global_position
+
+
+func _on_Timer_timeout():
+	var laser = SlimeLaser.instance()
+	get_parent().call_deferred("add_child", laser)
+	laser.global_position = global_position
