@@ -6,6 +6,7 @@ export(int) var max_keys = 3 setget set_max_keys
 export(int) var max_keys_collected = 4 setget set_max_keys_collected
 export(int) var max_batteries = 3 setget set_max_batteries
 export(int) var max_coins = 99 setget set_max_coins
+export(int) var max_xp = 999999999 setget set_max_coins
 export(int) var max_redpops = 10 setget set_max_redpops
 export(int) var max_bluepops = 10 setget set_max_bluepops
 
@@ -18,6 +19,7 @@ var keys_collected = max_keys_collected setget set_keys_collected
 var health = max_health setget set_health
 var batteries = max_batteries setget set_batteries
 var coins = max_coins setget set_coins
+var xp = max_xp setget set_xp
 var redpops = max_redpops setget set_redpops
 var bluepops = max_bluepops setget set_bluepops
 var ammo = max_ammo setget set_ammo
@@ -64,6 +66,11 @@ signal max_ammo_changed(value)
 func set_max_health(value):
 	max_health = value
 	self.health = min(health, max_health)
+	emit_signal("max_health_changed", max_health)
+	
+func set_max_experience(value):
+	max_xp = value
+	self.xp = min(xp, max_xp)
 	emit_signal("max_health_changed", max_health)
 	
 func set_max_keys(value):
@@ -119,6 +126,9 @@ func set_keys(value):
 		
 func set_keys_collected(value):
 	keys_collected = value
+			
+func set_xp(value):
+	xp = value
 	
 func set_boss_keys(value):
 	boss_keys = value
@@ -160,6 +170,7 @@ func _ready():
 	self.keys_collected = 0
 	self.batteries = 2
 	self.coins = 0
+	self.xp = 0
 	self.redpops = 0
 	self.bluepops = 0
 	self.boss_keys = 0

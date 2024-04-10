@@ -1,17 +1,12 @@
 extends KinematicBody2D
 
 const EnemyDeathEffect = preload("res://Effects/EnemyDeathEffect.tscn")
-const Battery = preload("res://World/Battery.tscn")
-const SecDroidSound = preload("res://Music and Sounds/SecurityDroidSound.tscn")
-const Laser = preload("res://Enemies/BossLaserBottomLeftStraight.tscn")
-const LaserTwo = preload("res://Enemies/BossLaserTopRightStraight.tscn")
-const LaserThree = preload("res://Enemies/BossLaserBottomRightStraight.tscn")
-const LaserFour = preload("res://Enemies/BossLaserTopLeftStraight.tscn")
+const HopSound = preload("res://Music and Sounds/SpiderHopLow.tscn")
+const SlimeLaser = preload("res://Enemies/SlimeLaserRightStraight.tscn")
+const SlimeLaserTwo = preload("res://Enemies/SlimeLaserLeftStraight.tscn")
 
-const BossLaserSound = preload("res://Music and Sounds/BossLaserSound.tscn")
-
-export var ACCELERATION = 280
-export var MAX_SPEED = 40
+export var ACCELERATION = 355
+export var MAX_SPEED = 70
 export var FRICTION = 200
 export var WANDER_TARGET_RANGE = 4
 
@@ -26,37 +21,30 @@ var knockback = Vector2.ZERO
 
 var state = CHASE
 
+
 onready var sprite = $AnimatedSprite
 onready var stats = $Stats
 onready var playerDetectionZone = $PlayerDetectionZone
 onready var hurtbox = $Hurtbox
 onready var softCollision = $SoftCollision
 onready var wanderController = $WanderController
-onready var hitbox2 = $Hitbox2
 onready var timer = $Timer
 
-var laserEngaged = false
-var droidSound = SecDroidSound.instance()
-var worldStats = WorldStats
-
 func _ready():
-	state = pick_random_state([IDLE, WANDER])
-	worldStats.connect("in_the_tall_grass", self, "cant_find_player")
+	state = IDLE
 	
-	
+
 
 func _physics_process(delta):
 	knockback = knockback.move_toward(Vector2.ZERO, FRICTION * delta)
 	knockback = move_and_slide(knockback)
-	if (sprite.frame == 5 || sprite.frame == 6 || sprite.frame == 7):
-		hitbox2.monitorable = true
-	else:
-		hitbox2.monitorable = false
 	
 	match state:
 		IDLE:
+			sprite.play("idle")
 			velocity = velocity.move_toward(Vector2.ZERO, FRICTION * delta)
 			seek_player()
+			
 			if wanderController.get_time_left() == 0:
 				update_wander_state()
 				
@@ -73,8 +61,11 @@ func _physics_process(delta):
 			if player != null:
 				accelerate_towards_point(player.global_position, delta)
 				
+				
+				
 			else:
 				state = IDLE
+				
 				
 
 	if softCollision.is_colliding():
@@ -86,21 +77,16 @@ func accelerate_towards_point(point, delta):
 	velocity = velocity.move_toward(direction * MAX_SPEED, ACCELERATION * delta)
 	sprite.flip_h = velocity.x < 0
 	
-
 func seek_player():
 	if playerDetectionZone.can_see_player():
-		get_parent().call_deferred("add_child", droidSound)
-		droidSound.play(0.0)
+		var hopSound = HopSound.instance()
+		get_parent().add_child(hopSound)
+		hopSound.play(0.0)
+		print_debug("timer start")
 		timer.start(0.0)
-			# laserEngaged = true
 		state = CHASE
 	else:
 		timer.stop()
-		
-func cant_find_player():
-	state = IDLE
-	droidSound.call_deferred("queue_free")
-		
 
 func update_wander_state():
 	state = pick_random_state([IDLE, WANDER])
@@ -109,50 +95,31 @@ func update_wander_state():
 func pick_random_state(state_list):
 	state_list.shuffle()
 	return state_list.pop_front()
-	
-func random_drop_generator(drop_list):
-	drop_list.shuffle()
-	return drop_list.pop_front()
 
 func _on_Hurtbox_area_entered(area):
 	stats.health -= area.damage
 	# print(stats.health)
 	knockback = area.knockback_vector * 130
 	hurtbox.create_hit_effect()
+	sprite.play("attack")
 	playerDetectionZone.scale.x = (playerDetectionZone.scale.x * 3)
 	playerDetectionZone.scale.y = (playerDetectionZone.scale.y * 3)
+	# state = WANDER
 
-
+	
 func _on_Stats_no_health():
-	droidSound.call_deferred("queue_free")
-	self.call_deferred("queue_free")
+	queue_free()
 	var enemyDeathEffect = EnemyDeathEffect.instance()
 	get_parent().add_child(enemyDeathEffect)
-	enemyDeathEffect.global_position = global_position
-	var randomDrop = random_drop_generator(["drop", "none"])
-	if (randomDrop == "drop"):
-		var battery = Battery.instance()
-		get_parent().call_deferred("add_child", battery)
-		battery.global_position = global_position
+
+	
 
 
 func _on_Timer_timeout():
-	
-	var laserSound = BossLaserSound.instance()
-	get_parent().call_deferred("add_child", laserSound)
-	
-	var laser = Laser.instance()
+	print_debug("boom")
+	var laserTwo = SlimeLaserTwo.instance()
+	var laser = SlimeLaser.instance()
 	get_parent().call_deferred("add_child", laser)
 	laser.global_position = global_position
-	
-	var laserTwo = LaserTwo.instance()
 	get_parent().call_deferred("add_child", laserTwo)
 	laserTwo.global_position = global_position
-	
-	var laserThree = LaserThree.instance()
-	get_parent().call_deferred("add_child", laserThree)
-	laserThree.global_position = global_position
-	
-	var laserFour = LaserFour.instance()
-	get_parent().call_deferred("add_child", laserFour)
-	laserFour.global_position = global_position

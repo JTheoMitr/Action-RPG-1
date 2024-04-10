@@ -19,7 +19,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	self.global_position.x += 1
+	self.global_position.x -= 1
 
 
 func _on_Timer_timeout():

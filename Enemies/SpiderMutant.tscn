@@ -1,6 +1,6 @@
 [gd_scene load_steps=37 format=2]
 
-[ext_resource path="res://Enemies/Spider.gd" type="Script" id=1]
+[ext_resource path="res://Enemies/SpiderMutant.gd" type="Script" id=1]
 [ext_resource path="res://Hitboxes and Hurtboxes/Hurtbox.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Enemies/spider_mutant_attack.png" type="Texture" id=3]
 [ext_resource path="res://Stats.tscn" type="PackedScene" id=4]
@@ -129,14 +129,12 @@ height = 6.0
 [node name="SpiderMutant" type="KinematicBody2D"]
 collision_layer = 16
 script = ExtResource( 1 )
-ACCELERATION = 350
-MAX_SPEED = 65
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( 0, 10 )
 frames = SubResource( 7 )
 animation = "attack"
-frame = 15
+frame = 19
 playing = true
 offset = Vector2( 1, -15 )
 
@@ -183,7 +181,6 @@ shape = SubResource( 12 )
 visible = false
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 0.2
 
 [connection signal="area_entered" from="Hurtbox" to="." method="_on_Hurtbox_area_entered"]
 [connection signal="no_health" from="Stats" to="." method="_on_Stats_no_health"]
