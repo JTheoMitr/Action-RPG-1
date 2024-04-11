@@ -97,9 +97,10 @@ func seek_player():
 	else:
 		timer.stop()
 		
+		
 func cant_find_player():
 	state = IDLE
-	droidSound.call_deferred("queue_free")
+	
 		
 
 func update_wander_state():

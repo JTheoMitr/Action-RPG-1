@@ -56,6 +56,8 @@ signal batteries_changed(value)
 signal max_batteries_changed(value)
 signal coins_changed(value)
 signal max_coins_changed(value)
+signal xp_changed(value)
+signal max_xp_changed(value)
 signal redpops_changed(value)
 signal max_redpops_changed(value)
 signal bluepops_changed(value)
@@ -129,6 +131,7 @@ func set_keys_collected(value):
 			
 func set_xp(value):
 	xp = value
+	emit_signal("xp_changed", xp)
 	
 func set_boss_keys(value):
 	boss_keys = value

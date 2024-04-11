@@ -6,6 +6,7 @@ const Ammo = preload("res://World/Ammo.tscn")
 const SoldierSound = preload("res://Music and Sounds/SoldierSound.tscn")
 const SoldierExplodeSound = preload("res://Music and Sounds/SoldierExplodeSound.tscn")
 const Laser = preload("res://Enemies/DroidLaser.tscn")
+const XpOrb = preload("res://Enemies/XpOrb.tscn")
 const LaserSound = preload("res://Music and Sounds/LaserRifleSound.tscn")
 
 export var ACCELERATION = 215
@@ -169,6 +170,9 @@ func _on_Timer2_timeout():
 	var enemyDeathEffect = EnemyDeathEffect.instance()
 	get_parent().add_child(enemyDeathEffect)
 	enemyDeathEffect.global_position = global_position
+	var xpOrb = XpOrb.instance()
+	get_parent().call_deferred("add_child", xpOrb)
+	xpOrb.global_position = global_position
 	var randomDrop = random_drop_generator(["drop", "none", "ammo"])
 	if (randomDrop == "drop"):
 		var battery = Battery.instance()

@@ -1,6 +1,7 @@
 extends KinematicBody2D
 
 const EnemyDeathEffect = preload("res://Effects/EnemyDeathEffect.tscn")
+const ExpSound = preload("res://Music and Sounds/XpSound.tscn")
 
 
 
@@ -23,18 +24,15 @@ var input_vector = Vector2.ZERO
 var state = CHASE
 
 onready var sprite = $AnimatedSprite
-onready var stats = $Stats
+onready var stats = PlayerStats
 onready var playerDetectionZone = $PlayerDetectionZone
-onready var hurtbox = $Hurtbox
 onready var softCollision = $SoftCollision
 onready var wanderController = $WanderController
-onready var timer = $Timer
-onready var hitbox = $Hitbox
-onready var timer2 = $Timer2
+
 
 func _ready():
 	state = pick_random_state([IDLE, WANDER])
-	timer.start(0.0)
+
 
 
 func _physics_process(delta):
@@ -93,42 +91,12 @@ func pick_random_state(state_list):
 	state_list.shuffle()
 	return state_list.pop_front()
 
-func _on_Hurtbox_area_entered(area):
-	# stats.health -= area.damage
-	timer2.start(0.0)
-	reversePath = input_vector * 150
-	print_debug(hitbox.collision_mask)
-	knockback = reversePath
-	velocity = reversePath
-	hurtbox.create_hit_effect()
-	if input_vector.x == 0 && input_vector.y == 0:
-		call_deferred("queue_free")
-		
 
 
 
-func _on_Stats_no_health():
-	call_deferred("queue_free")
-	var enemyDeathEffect = EnemyDeathEffect.instance()
-	get_parent().add_child(enemyDeathEffect)
-	enemyDeathEffect.global_position = global_position
 
-
-
-func _on_Hitbox_area_entered(area):
-	self.call_deferred("queue_free")
-	
-
-
-func _on_Timer_timeout():
-	call_deferred("queue_free")
-	var enemyDeathEffect = EnemyDeathEffect.instance()
-	get_parent().add_child(enemyDeathEffect)
-	enemyDeathEffect.global_position = global_position
-
-
-func _on_Timer2_timeout():
-	hitbox.set_collision_mask_bit(6, true)
-	hitbox.set_collision_mask_bit(2, false)
-	print_debug(hitbox.collision_mask)
-	
+func _on_Area2D_area_entered(area):
+	stats.xp += 1
+	var ting = ExpSound.instance()
+	get_parent().add_child(ting)
+	self.call_deferred("queue_free")	
