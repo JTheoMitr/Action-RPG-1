@@ -60,7 +60,7 @@ texture = ExtResource( 2 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 scale = Vector2( 0.35, 0.4 )
 frames = SubResource( 7 )
-frame = 3
+frame = 8
 playing = true
 
 [node name="Area2D" type="Area2D" parent="."]
@@ -101,7 +101,7 @@ one_shot = true
 
 [node name="PopupDialog2" type="PopupDialog" parent="."]
 visible = true
-rect_scale = Vector2( 0.7, 0.7 )
+rect_scale = Vector2( 0.65, 0.65 )
 
 [node name="Sprite" type="Sprite" parent="PopupDialog2"]
 position = Vector2( 59, 12 )
@@ -115,7 +115,7 @@ custom_fonts/normal_font = SubResource( 10 )
 text = "Max Health Increased"
 
 [node name="Timer2" type="Timer" parent="."]
-wait_time = 3.0
+wait_time = 5.0
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_Area2D_area_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

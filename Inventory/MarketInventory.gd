@@ -20,9 +20,9 @@ func _on_Button_pressed(): #redpop
 	
 	print(stats.coins)
 	
-	if stats.coins >= 5:
+	if stats.coins >= 10:
 		stats.redpops += 1
-		stats.coins -= 5
+		stats.coins -= 10
 		var cashSound = CashSound.instance()
 		get_tree().current_scene.add_child(cashSound)
 	else:
@@ -32,9 +32,9 @@ func _on_Button_pressed(): #redpop
 
 func _on_Button2_pressed(): #bluepop
 	
-	if stats.coins >= 5:
+	if stats.coins >= 10:
 		stats.bluepops += 1
-		stats.coins -= 5
+		stats.coins -= 10
 		var cashSound = CashSound.instance()
 		get_tree().current_scene.add_child(cashSound)
 	else:

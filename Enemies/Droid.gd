@@ -173,6 +173,14 @@ func _on_Timer2_timeout():
 	var xpOrb = XpOrb.instance()
 	get_parent().call_deferred("add_child", xpOrb)
 	xpOrb.global_position = global_position
+	var xpOrb2 = XpOrb.instance()
+	get_parent().call_deferred("add_child", xpOrb2)
+	xpOrb2.global_position = global_position
+	xpOrb2.MAX_SPEED = 65
+	var xpOrb3 = XpOrb.instance()
+	get_parent().call_deferred("add_child", xpOrb3)
+	xpOrb3.global_position = global_position
+	xpOrb3.MAX_SPEED = 70
 	var randomDrop = random_drop_generator(["drop", "none", "ammo"])
 	if (randomDrop == "drop"):
 		var battery = Battery.instance()

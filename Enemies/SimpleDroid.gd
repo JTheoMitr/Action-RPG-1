@@ -108,3 +108,8 @@ func _on_Stats_no_health():
 	var xpOrb = ExpOrb.instance()
 	get_parent().call_deferred("add_child", xpOrb)
 	xpOrb.global_position = global_position
+	var xpOrb2 = ExpOrb.instance()
+	get_parent().call_deferred("add_child", xpOrb2)
+	xpOrb2.global_position = global_position
+	xpOrb2.MAX_SPEED = 65
+	

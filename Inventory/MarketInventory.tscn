@@ -246,7 +246,7 @@ margin_bottom = 35.0
 rect_scale = Vector2( 4, 4 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 16 )
-text = "5"
+text = "10"
 
 [node name="Sprite2" type="Sprite" parent="Control/CenterContainer/VBoxContainer/Button"]
 position = Vector2( 86.6667, 60.3333 )
@@ -297,7 +297,7 @@ margin_bottom = 35.0
 rect_scale = Vector2( 4, 4 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 19 )
-text = "5"
+text = "10"
 
 [node name="Sprite" type="Sprite" parent="Control/CenterContainer/VBoxContainer/Button2"]
 position = Vector2( 86.6666, 60.6667 )
