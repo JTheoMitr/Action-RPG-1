@@ -68,20 +68,19 @@ text = " plasma  blade "
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="PopupDialog"]
 margin_left = 1.25
-margin_top = 31.25
+margin_top = 33.75
 margin_right = 166.25
-margin_bottom = 148.25
+margin_bottom = 150.75
 rect_scale = Vector2( 0.5, 0.5 )
 custom_fonts/normal_font = SubResource( 8 )
 bbcode_enabled = true
-bbcode_text = "[center] Hold Direction to deflect enemy projectiles of the same color: Find new blade charges to deflect different energy types [/center]"
-text = " Hold Direction to deflect enemy projectiles of the same color: Find new blade charges to deflect different energy types "
+bbcode_text = "[center] Hold Direction to deflect enemy projectiles: Find new blade charges to deflect different energy types [/center]"
+text = " Hold Direction to deflect enemy projectiles: Find new blade charges to deflect different energy types "
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="PopupDialog"]
 position = Vector2( 13.75, 17.5 )
 frames = SubResource( 7 )
 animation = "Animate"
-frame = 3
 playing = true
 
 [node name="Sprite" type="Sprite" parent="PopupDialog"]

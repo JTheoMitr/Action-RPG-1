@@ -3,6 +3,7 @@ extends KinematicBody2D
 const EnemyDeathEffect = preload("res://Effects/EnemyDeathEffect.tscn")
 const Battery = preload("res://World/Battery.tscn")
 const SecDroidSound = preload("res://Music and Sounds/SecurityDroidSound.tscn")
+const DroneSound = preload("res://Music and Sounds/DroneSound.tscn")
 const Laser = preload("res://Enemies/BossLaserBottomLeftStraight.tscn")
 const LaserTwo = preload("res://Enemies/BossLaserTopRightStraight.tscn")
 const LaserThree = preload("res://Enemies/BossLaserBottomRightStraight.tscn")
@@ -36,7 +37,7 @@ onready var hitbox2 = $Hitbox2
 onready var timer = $Timer
 
 var laserEngaged = false
-var droidSound = SecDroidSound.instance()
+var droneSound = DroneSound.instance()
 var worldStats = WorldStats
 
 func _ready():
@@ -89,8 +90,11 @@ func accelerate_towards_point(point, delta):
 
 func seek_player():
 	if playerDetectionZone.can_see_player():
+		var droidSound = SecDroidSound.instance()
 		get_parent().call_deferred("add_child", droidSound)
 		droidSound.play(0.0)
+		get_parent().call_deferred("add_child", droneSound)
+		droneSound.play(0.0)
 		timer.start(0.0)
 			# laserEngaged = true
 		state = CHASE
@@ -125,7 +129,7 @@ func _on_Hurtbox_area_entered(area):
 
 
 func _on_Stats_no_health():
-	droidSound.call_deferred("queue_free")
+	droneSound.call_deferred("queue_free")
 	self.call_deferred("queue_free")
 	var enemyDeathEffect = EnemyDeathEffect.instance()
 	get_parent().add_child(enemyDeathEffect)

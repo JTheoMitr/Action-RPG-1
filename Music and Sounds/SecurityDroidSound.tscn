@@ -1,9 +1,7 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Music and Sounds/ESM_Complex_Robot_Movement_Sci_fi_Military_Robotic_Robot_Cyber_Futuristic_Transition.wav" type="AudioStream" id=1]
-[ext_resource path="res://Music and Sounds/ESM_Crusier_Hum_Loop_Ambience_Synth_Electronic_Steady_Tone.wav" type="AudioStream" id=2]
 [ext_resource path="res://Music and Sounds/SecurityDroidSound.gd" type="Script" id=3]
-[ext_resource path="res://Music and Sounds/DroneSound.gd" type="Script" id=4]
 
 [node name="SecurityDroidSound" type="AudioStreamPlayer"]
 stream = ExtResource( 1 )
@@ -12,14 +10,4 @@ pitch_scale = 0.38
 mix_target = 2
 script = ExtResource( 3 )
 
-[node name="DroneSound" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 2 )
-volume_db = -15.0
-pitch_scale = 0.7
-script = ExtResource( 4 )
-
-[node name="Timer" type="Timer" parent="DroneSound"]
-wait_time = 7.0
-
 [connection signal="finished" from="." to="." method="_on_SecurityDroidSound_finished"]
-[connection signal="timeout" from="DroneSound/Timer" to="DroneSound" method="_on_Timer_timeout"]
