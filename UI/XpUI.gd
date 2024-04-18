@@ -6,7 +6,7 @@ var max_xp = 3 setget set_max_experience
 
 func set_xp(value):
 	xp = clamp(value, 0, max_xp)
-	$RichTextLabel.text = "x " + str(self.xp)
+	$RichTextLabel.text = "xp " + str(self.xp)
 	
 func set_max_experience(value):
 	max_xp = max(value, 1)

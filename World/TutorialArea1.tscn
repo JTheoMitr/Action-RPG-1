@@ -51,15 +51,15 @@ shape = SubResource( 1 )
 
 [node name="PopupDialog" type="PopupDialog" parent="."]
 visible = true
-margin_right = 82.0
+margin_right = 95.0
 margin_bottom = 94.0
 rect_scale = Vector2( 0.8, 0.8 )
 custom_styles/panel = SubResource( 2 )
 
 [node name="RichTextLabel" type="RichTextLabel" parent="PopupDialog"]
-margin_left = 23.75
+margin_left = 28.75
 margin_top = 2.5
-margin_right = 78.75
+margin_right = 83.75
 margin_bottom = 63.5
 custom_fonts/normal_font = SubResource( 8 )
 bbcode_enabled = true
@@ -67,34 +67,34 @@ bbcode_text = "[center] plasma  blade [/center]"
 text = " plasma  blade "
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="PopupDialog"]
-margin_left = 1.25
-margin_top = 33.75
-margin_right = 166.25
-margin_bottom = 150.75
-rect_scale = Vector2( 0.5, 0.5 )
+margin_left = 1.0
+margin_top = 34.0
+margin_right = 170.0
+margin_bottom = 151.0
+rect_scale = Vector2( 0.55, 0.55 )
 custom_fonts/normal_font = SubResource( 8 )
 bbcode_enabled = true
-bbcode_text = "[center] Hold Direction to deflect enemy projectiles: Find new blade charges to deflect different energy types [/center]"
-text = " Hold Direction to deflect enemy projectiles: Find new blade charges to deflect different energy types "
+bbcode_text = "[center] Hold Direction to deflect enemy projectiles: Find new charges to deflect different energy types [/center]"
+text = " Hold Direction to deflect enemy projectiles: Find new charges to deflect different energy types "
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="PopupDialog"]
-position = Vector2( 13.75, 17.5 )
+position = Vector2( 17.5, 17.5 )
 frames = SubResource( 7 )
 animation = "Animate"
 playing = true
 
 [node name="Sprite" type="Sprite" parent="PopupDialog"]
-position = Vector2( 15.85, 79.6 )
+position = Vector2( 22.1, 79.6 )
 scale = Vector2( 0.6, 0.6 )
 texture = ExtResource( 4 )
 
 [node name="Sprite2" type="Sprite" parent="PopupDialog"]
-position = Vector2( 40.85, 79.6 )
+position = Vector2( 47.1, 79.6 )
 scale = Vector2( 0.6, 0.6 )
 texture = ExtResource( 5 )
 
 [node name="Sprite3" type="Sprite" parent="PopupDialog"]
-position = Vector2( 65.85, 79.6 )
+position = Vector2( 72.1, 79.6 )
 scale = Vector2( 0.6, 0.6 )
 texture = ExtResource( 6 )
 

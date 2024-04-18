@@ -172,6 +172,7 @@ position = Vector2( -0.588, 15 )
 scale = Vector2( 0.45, 0.45 )
 frames = SubResource( 7 )
 animation = "shoot"
+frame = 6
 playing = true
 offset = Vector2( 1, -60 )
 
@@ -211,6 +212,7 @@ shape = SubResource( 12 )
 [node name="WanderController" parent="." instance=ExtResource( 9 )]
 
 [node name="Timer" type="Timer" parent="."]
+wait_time = 0.9
 
 [node name="Timer2" type="Timer" parent="."]
 one_shot = true
