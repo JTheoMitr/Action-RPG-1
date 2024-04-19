@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Animals/MiniBunny chill.png" type="Texture" id=1]
 [ext_resource path="res://Shadows/SmallShadow.png" type="Texture" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://UI/panel_Intro.png" type="Texture" id=4]
 [ext_resource path="res://Animals/FreedPopup.tscn" type="PackedScene" id=5]
 [ext_resource path="res://fonts/PixelTandysoft-0rJG.ttf" type="DynamicFontData" id=6]
+[ext_resource path="res://Animals/MiniBunny chill single.png" type="Texture" id=7]
 
 [sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 1 )
@@ -45,7 +46,6 @@ offset = Vector2( -2, 6 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 3 )
 animation = "chill"
-frame = 1
 playing = true
 
 [node name="Area2D" type="Area2D" parent="."]
@@ -68,8 +68,8 @@ margin_bottom = 10.0
 rect_scale = Vector2( 3, 0.6 )
 
 [node name="Sprite" type="Sprite" parent="RescuePopUp"]
-position = Vector2( 28.1395, 24.1483 )
-scale = Vector2( 0.128269, 0.700245 )
+position = Vector2( 23.6667, 24.1483 )
+scale = Vector2( 0.148148, 0.700245 )
 texture = ExtResource( 4 )
 
 [node name="RichTextLabel" type="RichTextLabel" parent="RescuePopUp"]
@@ -85,6 +85,11 @@ bbcode_text = "[center]I can't thank you enough for getting me out of here.  Ple
 tab_size = 3
 text = "I can't thank you enough for getting me out of here.  Please help the rest of my friends locked up in the area!!"
 fit_content_height = true
+
+[node name="Sprite2" type="Sprite" parent="RescuePopUp"]
+position = Vector2( 0.333333, 25 )
+scale = Vector2( 0.617647, 3.21429 )
+texture = ExtResource( 7 )
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 5.0
