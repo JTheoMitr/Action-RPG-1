@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://UI/FrozencaScriptTypeface.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://IntroTitleScreen.gd" type="Script" id=2]
@@ -11,15 +11,25 @@
 [ext_resource path="res://Music and Sounds/KOTWB_1_LOADSCREEN_1.wav" type="AudioStream" id=9]
 [ext_resource path="res://Music and Sounds/KOTWB_CHIME_1.wav" type="AudioStream" id=10]
 [ext_resource path="res://Music and Sounds/KOTWB_CHIME_2.wav" type="AudioStream" id=11]
+[ext_resource path="res://fonts/PixelTandysoft-0rJG.ttf" type="DynamicFontData" id=12]
 
 [sub_resource type="DynamicFont" id=1]
+size = 27
 font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=6]
+size = 10
+font_data = ExtResource( 12 )
 
 [sub_resource type="StyleBoxFlat" id=2]
 bg_color = Color( 0.803922, 0.67451, 0.67451, 0.509804 )
 
 [sub_resource type="StyleBoxFlat" id=3]
 bg_color = Color( 0.117647, 0.109804, 0.109804, 0.52549 )
+
+[sub_resource type="DynamicFont" id=7]
+size = 10
+font_data = ExtResource( 12 )
 
 [sub_resource type="StyleBoxFlat" id=5]
 bg_color = Color( 0.803922, 0.67451, 0.67451, 0.509804 )
@@ -43,11 +53,10 @@ scale = Vector2( 0.7, 0.7 )
 texture = ExtResource( 7 )
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
-margin_left = 95.0
+margin_left = 70.0
 margin_top = 22.0
-margin_right = 195.0
+margin_right = 251.0
 margin_bottom = 90.0
-rect_scale = Vector2( 1.3, 1.3 )
 custom_fonts/normal_font = SubResource( 1 )
 bbcode_enabled = true
 bbcode_text = "[center] Keepers 
@@ -56,10 +65,10 @@ text = " Keepers
  "
 
 [node name="RichTextLabel3" type="RichTextLabel" parent="."]
-margin_left = 49.0
-margin_top = 45.0
-margin_right = 361.0
-margin_bottom = 113.0
+margin_left = 48.0
+margin_top = 47.0
+margin_right = 360.0
+margin_bottom = 115.0
 rect_scale = Vector2( 0.7, 0.7 )
 custom_fonts/normal_font = SubResource( 1 )
 bbcode_enabled = true
@@ -70,9 +79,9 @@ text = " of the
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="."]
 margin_left = 4.0
-margin_top = 38.0
+margin_top = 30.0
 margin_right = 316.0
-margin_bottom = 106.0
+margin_bottom = 98.0
 custom_fonts/normal_font = SubResource( 1 )
 bbcode_enabled = true
 bbcode_text = "[center] 
@@ -90,21 +99,21 @@ visible = false
 position = Vector2( 163, 83.75 )
 scale = Vector2( 0.585, 1.025 )
 animation = "New Anim"
-frame = 73
+frame = 23
 
 [node name="SnowFallOne2" parent="." instance=ExtResource( 5 )]
 modulate = Color( 1, 1, 1, 0.305882 )
 position = Vector2( 83, 89.5 )
 scale = Vector2( 1.6125, 1.81 )
 animation = "New Anim"
-frame = 73
+frame = 23
 
 [node name="SnowFallOne3" parent="." instance=ExtResource( 5 )]
 modulate = Color( 1, 1, 1, 0.305882 )
 position = Vector2( 241, 90 )
 scale = Vector2( 1.6125, 1.82 )
 animation = "New Anim"
-frame = 72
+frame = 22
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 margin_left = 133.0
@@ -115,15 +124,17 @@ rect_scale = Vector2( 0.5, 0.5 )
 
 [node name="Button" type="Button" parent="VBoxContainer"]
 margin_right = 114.0
-margin_bottom = 14.0
+margin_bottom = 13.0
+custom_fonts/font = SubResource( 6 )
 custom_styles/focus = SubResource( 2 )
 custom_styles/normal = SubResource( 3 )
 text = "Start"
 
 [node name="Button2" type="Button" parent="VBoxContainer"]
-margin_top = 18.0
+margin_top = 17.0
 margin_right = 114.0
-margin_bottom = 32.0
+margin_bottom = 30.0
+custom_fonts/font = SubResource( 7 )
 custom_styles/focus = SubResource( 5 )
 custom_styles/normal = SubResource( 4 )
 text = "Options"
