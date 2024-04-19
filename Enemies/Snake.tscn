@@ -1,79 +1,54 @@
-[gd_scene load_steps=30 format=2]
+[gd_scene load_steps=23 format=2]
 
-[ext_resource path="res://Enemies/Cobra Sprite Sheet RED idle.png" type="Texture" id=1]
+[ext_resource path="res://Enemies/Attack.png" type="Texture" id=1]
 [ext_resource path="res://Hitboxes and Hurtboxes/Hurtbox.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Enemies/Snake.gd" type="Script" id=3]
 [ext_resource path="res://Stats.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Hitboxes and Hurtboxes/Hitbox.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Enemies/PlayerDetectionZone.tscn" type="PackedScene" id=6]
 [ext_resource path="res://SoftCollision.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Enemies/Cobra Sprite Sheet RED attack.png" type="Texture" id=8]
 [ext_resource path="res://Enemies/WanderController.tscn" type="PackedScene" id=9]
-
-[sub_resource type="AtlasTexture" id=21]
-atlas = ExtResource( 8 )
-region = Rect2( 0, 0, 94, 79 )
-
-[sub_resource type="AtlasTexture" id=22]
-atlas = ExtResource( 8 )
-region = Rect2( 94, 0, 94, 79 )
-
-[sub_resource type="AtlasTexture" id=23]
-atlas = ExtResource( 8 )
-region = Rect2( 188, 0, 94, 79 )
-
-[sub_resource type="AtlasTexture" id=24]
-atlas = ExtResource( 8 )
-region = Rect2( 282, 0, 94, 79 )
-
-[sub_resource type="AtlasTexture" id=25]
-atlas = ExtResource( 8 )
-region = Rect2( 376, 0, 94, 79 )
-
-[sub_resource type="AtlasTexture" id=26]
-atlas = ExtResource( 8 )
-region = Rect2( 470, 0, 94, 79 )
 
 [sub_resource type="AtlasTexture" id=13]
 atlas = ExtResource( 1 )
-region = Rect2( 0, 0, 93, 67 )
+region = Rect2( 0, 22, 48, 26 )
 
 [sub_resource type="AtlasTexture" id=14]
 atlas = ExtResource( 1 )
-region = Rect2( 93, 0, 93, 67 )
+region = Rect2( 48, 22, 48, 26 )
 
 [sub_resource type="AtlasTexture" id=15]
 atlas = ExtResource( 1 )
-region = Rect2( 186, 0, 93, 67 )
+region = Rect2( 96, 22, 48, 26 )
 
 [sub_resource type="AtlasTexture" id=16]
 atlas = ExtResource( 1 )
-region = Rect2( 279, 0, 93, 67 )
+region = Rect2( 144, 22, 48, 26 )
 
 [sub_resource type="AtlasTexture" id=17]
 atlas = ExtResource( 1 )
-region = Rect2( 372, 0, 93, 67 )
+region = Rect2( 0, 22, 48, 26 )
 
 [sub_resource type="AtlasTexture" id=18]
 atlas = ExtResource( 1 )
-region = Rect2( 465, 0, 93, 67 )
+region = Rect2( 48, 22, 48, 26 )
 
 [sub_resource type="AtlasTexture" id=19]
 atlas = ExtResource( 1 )
-region = Rect2( 558, 0, 93, 67 )
+region = Rect2( 96, 22, 48, 26 )
 
 [sub_resource type="AtlasTexture" id=20]
 atlas = ExtResource( 1 )
-region = Rect2( 651, 0, 93, 67 )
+region = Rect2( 144, 22, 48, 26 )
 
 [sub_resource type="SpriteFrames" id=7]
 animations = [ {
-"frames": [ SubResource( 21 ), SubResource( 22 ), SubResource( 23 ), SubResource( 24 ), SubResource( 25 ), SubResource( 26 ) ],
+"frames": [ SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 16 ) ],
 "loop": true,
 "name": "attack",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 16 ), SubResource( 17 ), SubResource( 18 ), SubResource( 19 ), SubResource( 20 ), SubResource( 19 ), SubResource( 18 ), SubResource( 17 ), SubResource( 16 ), SubResource( 15 ), SubResource( 14 ) ],
+"frames": [ SubResource( 17 ), SubResource( 18 ), SubResource( 19 ), SubResource( 20 ) ],
 "loop": true,
 "name": "idle",
 "speed": 5.0
@@ -99,6 +74,7 @@ radius = 4.0
 height = 6.0
 
 [node name="Snake" type="KinematicBody2D"]
+scale = Vector2( 1.3, 1.3 )
 collision_layer = 16
 script = ExtResource( 3 )
 ACCELERATION = 380
@@ -108,7 +84,7 @@ MAX_SPEED = 90
 scale = Vector2( 0.33, 0.33 )
 frames = SubResource( 7 )
 animation = "idle"
-frame = 7
+frame = 3
 playing = true
 offset = Vector2( 1, -15 )
 
