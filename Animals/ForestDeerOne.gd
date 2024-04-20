@@ -35,6 +35,7 @@ func _on_Timer_timeout():
 	deer.hide()
 	shadow.hide()
 	worldStats.freed += 1
+	PlayerStats.xp += 15
 	$Timer2.start()
 
 func _on_Timer2_timeout():

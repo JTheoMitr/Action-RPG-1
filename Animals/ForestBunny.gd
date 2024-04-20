@@ -34,6 +34,7 @@ func _on_Timer_timeout():
 	bunny.hide()
 	shadow.hide()
 	worldStats.freed += 1
+	PlayerStats.xp += 15
 	$Timer2.start()
 	
 
