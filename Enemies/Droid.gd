@@ -203,10 +203,12 @@ func _on_Area2D_area_entered(area):
 		timer.start(0.0)
 		velocity.x = 0
 		velocity.y = 0
-		global_position = global_position
+		self.ACCELERATION = 0
+		
 
 
 func _on_Area2D_area_exited(area):
 	state = CHASE
 	shooting = false
 	timer.stop()
+	self.ACCELERATION = 215

@@ -39,13 +39,13 @@ script = ExtResource( 2 )
 position = Vector2( 20, 9 )
 scale = Vector2( 0.25, 0.25 )
 frames = SubResource( 5 )
-frame = 2
+frame = 1
 playing = true
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
-margin_left = 23.0
+margin_left = 25.0
 margin_top = 5.0
-margin_right = 293.0
+margin_right = 295.0
 margin_bottom = 52.0
 rect_scale = Vector2( 0.55, 0.55 )
 custom_fonts/normal_font = SubResource( 1 )

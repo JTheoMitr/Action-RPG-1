@@ -6,7 +6,8 @@ export(int) var max_keys = 3 setget set_max_keys
 export(int) var max_keys_collected = 4 setget set_max_keys_collected
 export(int) var max_batteries = 3 setget set_max_batteries
 export(int) var max_coins = 99 setget set_max_coins
-export(int) var max_xp = 999999999 setget set_max_coins
+export(int) var max_xp = 999999999 setget set_max_experience
+export(int) var max_level = 999 setget set_max_level
 export(int) var max_redpops = 10 setget set_max_redpops
 export(int) var max_bluepops = 10 setget set_max_bluepops
 
@@ -20,6 +21,7 @@ var health = max_health setget set_health
 var batteries = max_batteries setget set_batteries
 var coins = max_coins setget set_coins
 var xp = max_xp setget set_xp
+var level = max_level setget set_level
 var redpops = max_redpops setget set_redpops
 var bluepops = max_bluepops setget set_bluepops
 var ammo = max_ammo setget set_ammo
@@ -32,6 +34,9 @@ var keyLost = false
 
 var c4Acquired = false
 #determines whether or not the player has c4 equipped
+
+var xpCap = 100
+#starting point for leveling up
 
 # add sundaes
 
@@ -47,6 +52,7 @@ signal player_paused
 signal player_resumed
 signal give_movement
 signal boss_key_acquired
+signal level_two_acquired
 
 signal health_changed(value)
 signal max_health_changed(value)
@@ -58,6 +64,8 @@ signal coins_changed(value)
 signal max_coins_changed(value)
 signal xp_changed(value)
 signal max_xp_changed(value)
+signal level_changed(value)
+signal max_level_changed(value)
 signal redpops_changed(value)
 signal max_redpops_changed(value)
 signal bluepops_changed(value)
@@ -73,7 +81,14 @@ func set_max_health(value):
 func set_max_experience(value):
 	max_xp = value
 	self.xp = min(xp, max_xp)
-	emit_signal("max_health_changed", max_health)
+	emit_signal("max_xp_changed", max_xp)
+	
+func set_max_level(value):
+	max_level = value
+	self.level = min(level, max_level)
+	emit_signal("max_level_changed", max_level)
+	
+	
 	
 func set_max_keys(value):
 	max_keys = value
@@ -132,6 +147,14 @@ func set_keys_collected(value):
 func set_xp(value):
 	xp = value
 	emit_signal("xp_changed", xp)
+	if xp >= xpCap:
+		self.level += 1
+		xp = (xp - xpCap)
+		xpCap = xpCap * 1.5
+
+func set_level(value):
+	level = value
+	emit_signal("level_changed", level)
 	
 func set_boss_keys(value):
 	boss_keys = value
@@ -178,4 +201,5 @@ func _ready():
 	self.bluepops = 0
 	self.boss_keys = 0
 	self.ammo = 10
+	self.level = 1
 	self.overcharge = false

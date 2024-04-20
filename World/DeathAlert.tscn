@@ -24,7 +24,6 @@ texture = ExtResource( 3 )
 region_rect = Rect2( 0, 0, 64, 32 )
 
 [node name="DeathAlert" type="PopupDialog"]
-visible = true
 self_modulate = Color( 0, 0, 0, 0.45098 )
 margin_left = 80.0
 margin_top = 80.0
