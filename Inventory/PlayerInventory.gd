@@ -16,6 +16,7 @@ onready var stats = PlayerStats
 onready var worldStats = WorldStats
 onready var controlsPanel = $ControlsPanel
 onready var timer = $Timer
+onready var levelText = $Control/CenterContainer/HBoxContainer/Panel/LevelText
 
 const ItemFocusSound = preload("res://Music and Sounds/ItemFocusSound.tscn")
 const ItemSelectSound = preload("res://Music and Sounds/MenuSelectSound.tscn")
@@ -49,6 +50,8 @@ func _process(_delta):
 		
 	redPop.text = str(stats.redpops)
 	bluePop.text = str(stats.bluepops)
+	levelText.text = "Level " + str(stats.level)
+	
 	
 	if stats.keys_collected == 1:
 		cellKeyText.text = "- Find 3 Cell Keys (1/3)"
