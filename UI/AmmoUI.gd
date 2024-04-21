@@ -6,7 +6,7 @@ var max_ammo = 3 setget set_max_ammo
 
 func set_ammo(value):
 	ammo = clamp(value, 0, max_ammo)
-	$RichTextLabel.text = str(self.ammo)
+	$RichTextLabel.bbcode_text = "[center]%s[/center]" % self.ammo
 	
 func set_max_ammo(value):
 	max_ammo = max(value, 1)

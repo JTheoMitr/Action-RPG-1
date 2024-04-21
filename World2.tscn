@@ -1116,57 +1116,57 @@ z_index = 1
 
 [node name="SwarmOne" parent="Swarms" instance=ExtResource( 68 )]
 position = Vector2( -37, 442 )
-frame = 1
+frame = 5
 
 [node name="SwarmOne7" parent="Swarms" instance=ExtResource( 68 )]
 position = Vector2( -40, 444 )
 scale = Vector2( 0.475, 0.506251 )
-frame = 3
+frame = 7
 
 [node name="SwarmOne11" parent="Swarms" instance=ExtResource( 68 )]
 position = Vector2( 455, 440 )
 scale = Vector2( 0.475, 0.506251 )
-frame = 3
+frame = 7
 
 [node name="SwarmOne12" parent="Swarms" instance=ExtResource( 68 )]
 position = Vector2( 459, 441 )
 rotation = 1.309
 scale = Vector2( 0.3, 0.3 )
+frame = 6
 
 [node name="SwarmOne3" parent="Swarms" instance=ExtResource( 68 )]
 position = Vector2( -23, 30 )
-frame = 6
 
 [node name="SwarmOne8" parent="Swarms" instance=ExtResource( 68 )]
 position = Vector2( -113, -264 )
-frame = 5
+frame = 1
 
 [node name="SwarmOne9" parent="Swarms" instance=ExtResource( 68 )]
 position = Vector2( -115, -263 )
 scale = Vector2( 0.5, 0.4 )
-frame = 5
+frame = 1
 
 [node name="SwarmOne4" parent="Swarms" instance=ExtResource( 68 )]
 position = Vector2( 465, -145 )
-frame = 5
+frame = 1
 
 [node name="SwarmOne5" parent="Swarms" instance=ExtResource( 68 )]
 position = Vector2( 488, -88 )
-frame = 5
+frame = 1
 
 [node name="SwarmOne6" parent="Swarms" instance=ExtResource( 68 )]
 position = Vector2( 684, -261 )
-frame = 5
+frame = 1
 
 [node name="SwarmOne10" parent="Swarms" instance=ExtResource( 68 )]
 position = Vector2( 682, -260 )
 rotation = 1.0472
 scale = Vector2( 0.5, 0.5 )
-frame = 3
+frame = 7
 
 [node name="SwarmOne2" parent="Swarms" instance=ExtResource( 68 )]
 position = Vector2( -78, 221 )
-frame = 1
+frame = 5
 
 [node name="DirtPathTileMap" type="TileMap" parent="."]
 tile_set = SubResource( 1 )
@@ -2046,7 +2046,7 @@ position = Vector2( -16, -272 )
 [node name="ScreenCrackleOne" parent="YSort/OilCoDoors" instance=ExtResource( 57 )]
 position = Vector2( -17, -270.5 )
 scale = Vector2( 0.094, 0.0833333 )
-frame = 4
+frame = 2
 
 [node name="YellowFlowers" type="YSort" parent="YSort"]
 visible = false
@@ -2281,71 +2281,71 @@ remote_path = NodePath("../../../Camera2D")
 
 [node name="Torch" parent="YSort/Torches" instance=ExtResource( 5 )]
 position = Vector2( 3, 58 )
-frame = 2
+frame = 0
 
 [node name="Torch2" parent="YSort/Torches" instance=ExtResource( 5 )]
 position = Vector2( -48, -72 )
-frame = 2
+frame = 0
 
 [node name="Torch6" parent="YSort/Torches" instance=ExtResource( 5 )]
 position = Vector2( -272, -104 )
-frame = 2
+frame = 0
 
 [node name="Torch7" parent="YSort/Torches" instance=ExtResource( 5 )]
 position = Vector2( -400, -264 )
-frame = 0
+frame = 8
 
 [node name="Torch10" parent="YSort/Torches" instance=ExtResource( 5 )]
 position = Vector2( -288, -264 )
-frame = 0
+frame = 8
 
 [node name="Torch11" parent="YSort/Torches" instance=ExtResource( 5 )]
 position = Vector2( -384, -488 )
-frame = 9
+frame = 7
 
 [node name="Torch16" parent="YSort/Torches" instance=ExtResource( 5 )]
 position = Vector2( -16, -488 )
-frame = 9
+frame = 7
 
 [node name="Torch12" parent="YSort/Torches" instance=ExtResource( 5 )]
 position = Vector2( -72, -200 )
-frame = 8
+frame = 6
 
 [node name="Torch9" parent="YSort/Torches" instance=ExtResource( 5 )]
 position = Vector2( -576, -264 )
-frame = 9
+frame = 7
 
 [node name="Torch8" parent="YSort/Torches" instance=ExtResource( 5 )]
 position = Vector2( -448, -72 )
-frame = 9
+frame = 7
 
 [node name="Torch13" parent="YSort/Torches" instance=ExtResource( 5 )]
 position = Vector2( -400, 120 )
-frame = 9
+frame = 7
 
 [node name="Torch15" parent="YSort/Torches" instance=ExtResource( 5 )]
 position = Vector2( -240, 184 )
-frame = 8
+frame = 6
 
 [node name="Torch14" parent="YSort/Torches" instance=ExtResource( 5 )]
 position = Vector2( -528, 216 )
-frame = 8
+frame = 6
 
 [node name="Torch17" parent="YSort/Torches" instance=ExtResource( 5 )]
 position = Vector2( -512, 472 )
-frame = 7
+frame = 5
 
 [node name="Torch3" parent="YSort/Torches" instance=ExtResource( 5 )]
 position = Vector2( 64, -72 )
-frame = 2
+frame = 0
 
 [node name="Torch4" parent="YSort/Torches" instance=ExtResource( 5 )]
 position = Vector2( 104, -264 )
-frame = 2
+frame = 0
 
 [node name="Torch5" parent="YSort/Torches" instance=ExtResource( 5 )]
 position = Vector2( 290, -199 )
-frame = 2
+frame = 0
 
 [node name="Dwellers" type="YSort" parent="YSort"]
 
@@ -2547,60 +2547,61 @@ position = Vector2( 1452, -303 )
 
 [node name="CrystalPurple" parent="YSort/Crystals" instance=ExtResource( 79 )]
 position = Vector2( -536, 477 )
-frame = 2
+frame = 13
 
 [node name="CrystalPurple2" parent="YSort/Crystals" instance=ExtResource( 79 )]
 position = Vector2( -774, 412 )
-frame = 16
+frame = 10
 
 [node name="CrystalPurple4" parent="YSort/Crystals" instance=ExtResource( 79 )]
 position = Vector2( -977, 286 )
 scale = Vector2( 0.208823, 0.194118 )
-frame = 15
+frame = 9
 
 [node name="CrystalPurple13" parent="YSort/Crystals" instance=ExtResource( 79 )]
 position = Vector2( -1148, 191 )
 scale = Vector2( 0.148529, 0.12647 )
+frame = 8
 
 [node name="CrystalPurple5" parent="YSort/Crystals" instance=ExtResource( 79 )]
 position = Vector2( -371, 124 )
 scale = Vector2( 0.238235, 0.22353 )
-frame = 15
+frame = 9
 
 [node name="CrystalPurple9" parent="YSort/Crystals" instance=ExtResource( 79 )]
 position = Vector2( -1396.6, -162.9 )
 scale = Vector2( 0.252942, 0.238235 )
-frame = 15
+frame = 9
 
 [node name="CrystalPurple10" parent="YSort/Crystals" instance=ExtResource( 79 )]
 position = Vector2( -1170, -388 )
-frame = 16
+frame = 10
 
 [node name="CrystalPurple11" parent="YSort/Crystals" instance=ExtResource( 79 )]
 position = Vector2( -471.6, -417.9 )
 scale = Vector2( 0.252941, 0.238235 )
-frame = 16
+frame = 10
 
 [node name="CrystalPurple8" parent="YSort/Crystals" instance=ExtResource( 79 )]
 position = Vector2( -805, -35 )
-frame = 15
+frame = 9
 
 [node name="CrystalPurple6" parent="YSort/Crystals" instance=ExtResource( 79 )]
 position = Vector2( -34.1, 221.6 )
 scale = Vector2( 0.238235, 0.252941 )
-frame = 15
+frame = 9
 
 [node name="CrystalPurple7" parent="YSort/Crystals" instance=ExtResource( 79 )]
 position = Vector2( 250, 380 )
-frame = 16
+frame = 10
 
 [node name="CrystalPurple12" parent="YSort/Crystals" instance=ExtResource( 79 )]
 position = Vector2( 1154, -322 )
-frame = 16
+frame = 10
 
 [node name="CrystalPurple3" parent="YSort/Crystals" instance=ExtResource( 79 )]
 position = Vector2( -494, 315 )
-frame = 16
+frame = 10
 
 [node name="Crystal_Blue_One" parent="YSort/Crystals" instance=ExtResource( 86 )]
 position = Vector2( -122, 31 )
