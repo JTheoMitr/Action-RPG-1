@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=2]
+[gd_scene load_steps=34 format=2]
 
 [ext_resource path="res://StoryArea2.gd" type="Script" id=1]
 [ext_resource path="res://Dialogue Headshots/robot_guide_face_still.png" type="Texture" id=2]
@@ -12,6 +12,8 @@
 [ext_resource path="res://UI/Pixel GUI Buttons Black Wide Pressed.png" type="Texture" id=10]
 [ext_resource path="res://UI/Pixel GUI Buttons Black Wide Focused.png" type="Texture" id=11]
 [ext_resource path="res://UI/Pixel GUI Buttons pack black platform.png" type="Texture" id=12]
+[ext_resource path="res://Effects/lightning_line1a2.png" type="Texture" id=13]
+[ext_resource path="res://Effects/HitEffect copy.png" type="Texture" id=14]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 85.0529
@@ -198,9 +200,14 @@ text = "NO"
 
 [node name="Response" type="PopupDialog" parent="."]
 visible = true
-self_modulate = Color( 1, 1, 1, 0.701961 )
+self_modulate = Color( 0, 0, 0, 0.490196 )
 margin_right = 150.0
 margin_bottom = 26.0
+
+[node name="Sprite" type="Sprite" parent="Response"]
+position = Vector2( 75, 14 )
+scale = Vector2( 1.5, 1.5 )
+texture = ExtResource( 13 )
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Response"]
 margin_left = -18.0
@@ -209,10 +216,13 @@ margin_right = 175.0
 margin_bottom = 25.0
 custom_fonts/normal_font = SubResource( 11 )
 bbcode_enabled = true
-bbcode_text = "[center] Splendiferous! [/center]"
-text = " Splendiferous! "
+bbcode_text = "[center] OVERCHARGE [/center]"
+text = " OVERCHARGE "
 
-[node name="Sprite" type="Sprite" parent="Response"]
+[node name="Sprite2" type="Sprite" parent="Response"]
+position = Vector2( 140, 11 )
+scale = Vector2( 0.3, 0.3 )
+texture = ExtResource( 14 )
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 3.0

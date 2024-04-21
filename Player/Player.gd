@@ -206,6 +206,7 @@ func move_state(delta):
 		if Input.is_action_just_pressed("laser"):
 			crosshair.show()
 			
+			
 		
 		if Input.is_action_just_pressed("special_one"):
 			if stats.batteries > 0 && zapping == false && stats.overcharge:
