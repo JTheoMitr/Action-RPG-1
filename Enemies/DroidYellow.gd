@@ -5,6 +5,7 @@ const Battery = preload("res://World/Battery.tscn")
 const Ammo = preload("res://World/Ammo.tscn")
 const DroidSound = preload("res://Music and Sounds/DroidSound.tscn")
 const Laser = preload("res://Enemies/DroidLaser.tscn")
+const XpOrb = preload("res://Enemies/XpOrb.tscn")
 
 export var ACCELERATION = 280
 export var MAX_SPEED = 40
@@ -115,11 +116,14 @@ func _on_Stats_no_health():
 	var enemyDeathEffect = EnemyDeathEffect.instance()
 	get_parent().add_child(enemyDeathEffect)
 	enemyDeathEffect.global_position = global_position
-	var randomDrop = random_drop_generator(["drop", "none", "ammo"])
-	if (randomDrop == "drop"):
-		var battery = Battery.instance()
-		get_parent().call_deferred("add_child", battery)
-		battery.global_position = global_position
+	var xpOrb = XpOrb.instance()
+	get_parent().call_deferred("add_child", xpOrb)
+	xpOrb.global_position = global_position
+	var xpOrb2 = XpOrb.instance()
+	get_parent().call_deferred("add_child", xpOrb2)
+	xpOrb2.global_position = global_position
+	xpOrb2.MAX_SPEED = 65
+	var randomDrop = random_drop_generator(["ammo", "none", "ammo"])
 	if (randomDrop == "ammo"):
 		var ammo = Ammo.instance()
 		get_parent().call_deferred("add_child", ammo)

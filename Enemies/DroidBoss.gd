@@ -10,7 +10,7 @@ const LaserThree = preload("res://Enemies/BossLaserBottomRightStraight.tscn")
 const LaserFour = preload("res://Enemies/BossLaserTopLeftStraight.tscn")
 const LaserFive = preload("res://Enemies/BossLaserRightStraight.tscn")
 const LaserSix = preload("res://Enemies/BossLaserLeftStraight.tscn")
-
+const XpOrb = preload("res://Enemies/XpOrb.tscn")
 const BossLaserSound = preload("res://Music and Sounds/BossLaserSound.tscn")
 
 
@@ -85,18 +85,46 @@ func _physics_process(delta):
 		7:
 			armor4.hide()
 		6:
+			armor4.hide()
 			armor3.hide()
 		5:
+			armor4.hide()
+			armor3.hide()
 			armor2.hide()
 		4:
+			armor4.hide()
+			armor3.hide()
+			armor2.hide()
 			armor1.hide()
 		3:
+			armor4.hide()
+			armor3.hide()
+			armor2.hide()
+			armor1.hide()
 			health4.hide()
 		2:
+			armor4.hide()
+			armor3.hide()
+			armor2.hide()
+			armor1.hide()
+			health4.hide()
 			health3.hide()
 		1:
+			armor4.hide()
+			armor3.hide()
+			armor2.hide()
+			armor1.hide()
+			health4.hide()
+			health3.hide()
 			health2.hide()
 		0:
+			armor4.hide()
+			armor3.hide()
+			armor2.hide()
+			armor1.hide()
+			health4.hide()
+			health3.hide()
+			health2.hide()
 			health1.hide()
 	
 	match state:
@@ -177,7 +205,120 @@ func _on_Stats_no_health():
 	get_parent().add_child(droidBossDeath)
 	#get_parent().add_child(robotCorpse)
 	get_parent().call_deferred("add_child", robotCorpse)
-	
+	var xpOrb = XpOrb.instance()
+	get_parent().call_deferred("add_child", xpOrb)
+	xpOrb.global_position = global_position
+	var xpOrb2 = XpOrb.instance()
+	get_parent().call_deferred("add_child", xpOrb2)
+	xpOrb2.global_position = global_position
+	xpOrb2.MAX_SPEED = 65
+	var xpOrb3 = XpOrb.instance()
+	get_parent().call_deferred("add_child", xpOrb3)
+	xpOrb3.global_position = global_position
+	xpOrb3.MAX_SPEED = 70
+	var xpOrb4 = XpOrb.instance()
+	get_parent().call_deferred("add_child", xpOrb4)
+	xpOrb4.global_position = global_position
+	xpOrb4.MAX_SPEED = 63
+	var xpOrb5 = XpOrb.instance()
+	get_parent().call_deferred("add_child", xpOrb5)
+	xpOrb5.global_position = global_position
+	xpOrb5.MAX_SPEED = 60
+	var xpOrb6 = XpOrb.instance()
+	get_parent().call_deferred("add_child", xpOrb6)
+	xpOrb6.global_position = global_position
+	var xpOrb7 = XpOrb.instance()
+	get_parent().call_deferred("add_child", xpOrb7)
+	xpOrb7.global_position = global_position
+	xpOrb7.MAX_SPEED = 66
+	var xpOrb8 = XpOrb.instance()
+	get_parent().call_deferred("add_child", xpOrb8)
+	xpOrb8.global_position = global_position
+	xpOrb8.MAX_SPEED = 71
+	var xpOrb9 = XpOrb.instance()
+	get_parent().call_deferred("add_child", xpOrb9)
+	xpOrb9.global_position = global_position
+	xpOrb9.MAX_SPEED = 64
+	var xpOrb10 = XpOrb.instance()
+	get_parent().call_deferred("add_child", xpOrb10)
+	xpOrb10.global_position = global_position
+	xpOrb10.MAX_SPEED = 61
+	var xpOrb11 = XpOrb.instance()
+	get_parent().call_deferred("add_child", xpOrb11)
+	xpOrb11.global_position = global_position
+	var xpOrb12 = XpOrb.instance()
+	get_parent().call_deferred("add_child", xpOrb12)
+	xpOrb12.global_position = global_position
+	xpOrb12.MAX_SPEED = 62
+	var xpOrb13 = XpOrb.instance()
+	get_parent().call_deferred("add_child", xpOrb13)
+	xpOrb13.global_position = global_position
+	xpOrb13.MAX_SPEED = 65
+	var xpOrb14 = XpOrb.instance()
+	get_parent().call_deferred("add_child", xpOrb14)
+	xpOrb14.global_position = global_position
+	xpOrb14.MAX_SPEED = 58
+	var xpOrb15 = XpOrb.instance()
+	get_parent().call_deferred("add_child", xpOrb15)
+	xpOrb15.global_position = global_position
+	xpOrb15.MAX_SPEED = 73
+	var xpOrb16 = XpOrb.instance()
+	get_parent().call_deferred("add_child", xpOrb16)
+	xpOrb16.global_position = global_position
+	var xpOrb17 = XpOrb.instance()
+	get_parent().call_deferred("add_child", xpOrb17)
+	xpOrb17.global_position = global_position
+	xpOrb17.MAX_SPEED = 69
+	var xpOrb18 = XpOrb.instance()
+	get_parent().call_deferred("add_child", xpOrb18)
+	xpOrb18.global_position = global_position
+	xpOrb18.MAX_SPEED = 71
+	var xpOrb19 = XpOrb.instance()
+	get_parent().call_deferred("add_child", xpOrb19)
+	xpOrb19.global_position = global_position
+	xpOrb19.MAX_SPEED = 68
+	var xpOrb20 = XpOrb.instance()
+	get_parent().call_deferred("add_child", xpOrb20)
+	xpOrb20.global_position = global_position
+	xpOrb20.MAX_SPEED = 60
+	var xpOrb21 = XpOrb.instance()
+	get_parent().call_deferred("add_child", xpOrb21)
+	xpOrb21.global_position = global_position
+	var xpOrb22 = XpOrb.instance()
+	get_parent().call_deferred("add_child", xpOrb22)
+	xpOrb22.global_position = global_position
+	xpOrb22.MAX_SPEED = 65
+	var xpOrb23 = XpOrb.instance()
+	get_parent().call_deferred("add_child", xpOrb23)
+	xpOrb23.global_position = global_position
+	xpOrb23.MAX_SPEED = 74
+	var xpOrb24 = XpOrb.instance()
+	get_parent().call_deferred("add_child", xpOrb24)
+	xpOrb24.global_position = global_position
+	xpOrb24.MAX_SPEED = 63
+	var xpOrb25 = XpOrb.instance()
+	get_parent().call_deferred("add_child", xpOrb25)
+	xpOrb25.global_position = global_position
+	xpOrb25.MAX_SPEED = 60
+	var xpOrb26 = XpOrb.instance()
+	get_parent().call_deferred("add_child", xpOrb26)
+	xpOrb26.global_position = global_position
+	var xpOrb27 = XpOrb.instance()
+	get_parent().call_deferred("add_child", xpOrb27)
+	xpOrb27.global_position = global_position
+	xpOrb27.MAX_SPEED = 65
+	var xpOrb28 = XpOrb.instance()
+	get_parent().call_deferred("add_child", xpOrb28)
+	xpOrb28.global_position = global_position
+	xpOrb28.MAX_SPEED = 70
+	var xpOrb29 = XpOrb.instance()
+	get_parent().call_deferred("add_child", xpOrb29)
+	xpOrb29.global_position = global_position
+	xpOrb29.MAX_SPEED = 63
+	var xpOrb30 = XpOrb.instance()
+	get_parent().call_deferred("add_child", xpOrb30)
+	xpOrb30.global_position = global_position
+	xpOrb30.MAX_SPEED = 60
 	#robotCorpse.global_position.x = global_position.x
 	#robotCorpse.global_position.y = global_position.y + 2
 	robotCorpse.global_position = global_position

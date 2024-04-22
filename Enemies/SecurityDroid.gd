@@ -8,7 +8,7 @@ const Laser = preload("res://Enemies/BossLaserBottomLeftStraight.tscn")
 const LaserTwo = preload("res://Enemies/BossLaserTopRightStraight.tscn")
 const LaserThree = preload("res://Enemies/BossLaserBottomRightStraight.tscn")
 const LaserFour = preload("res://Enemies/BossLaserTopLeftStraight.tscn")
-
+const XpOrb = preload("res://Enemies/XpOrb.tscn")
 const BossLaserSound = preload("res://Music and Sounds/BossLaserSound.tscn")
 
 export var ACCELERATION = 280
@@ -134,6 +134,25 @@ func _on_Stats_no_health():
 	var enemyDeathEffect = EnemyDeathEffect.instance()
 	get_parent().add_child(enemyDeathEffect)
 	enemyDeathEffect.global_position = global_position
+	var xpOrb = XpOrb.instance()
+	get_parent().call_deferred("add_child", xpOrb)
+	xpOrb.global_position = global_position
+	var xpOrb2 = XpOrb.instance()
+	get_parent().call_deferred("add_child", xpOrb2)
+	xpOrb2.global_position = global_position
+	xpOrb2.MAX_SPEED = 65
+	var xpOrb3 = XpOrb.instance()
+	get_parent().call_deferred("add_child", xpOrb3)
+	xpOrb3.global_position = global_position
+	xpOrb3.MAX_SPEED = 70
+	var xpOrb4 = XpOrb.instance()
+	get_parent().call_deferred("add_child", xpOrb4)
+	xpOrb4.global_position = global_position
+	xpOrb4.MAX_SPEED = 63
+	var xpOrb5 = XpOrb.instance()
+	get_parent().call_deferred("add_child", xpOrb5)
+	xpOrb5.global_position = global_position
+	xpOrb5.MAX_SPEED = 60
 	var randomDrop = random_drop_generator(["drop", "none"])
 	if (randomDrop == "drop"):
 		var battery = Battery.instance()
