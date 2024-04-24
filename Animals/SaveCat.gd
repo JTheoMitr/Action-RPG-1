@@ -74,3 +74,12 @@ func _on_BellyRubArea_area_entered(area):
 	popup.popup()
 	yesButton.grab_focus()
 	stats.emit_signal("player_paused")
+
+
+func _on_NoButton_pressed():
+	saved = true
+	yesButton.queue_free()
+	noButton.queue_free()
+	cont.show()
+	btnsprite.show()
+	text.bbcode_text = "[center] Your game has not been saved, silly. [/center]"

@@ -159,5 +159,6 @@ shape = SubResource( 7 )
 [connection signal="area_entered" from="PurrTriggerArea2D" to="." method="_on_PurrTriggerArea2D_area_entered"]
 [connection signal="area_exited" from="PurrTriggerArea2D" to="." method="_on_PurrTriggerArea2D_area_exited"]
 [connection signal="pressed" from="SaveCatDialogue/HBoxContainer/YesButton" to="." method="_on_YesButton_pressed"]
+[connection signal="pressed" from="SaveCatDialogue/HBoxContainer/NoButton" to="." method="_on_NoButton_pressed"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 [connection signal="area_entered" from="BellyRubArea" to="." method="_on_BellyRubArea_area_entered"]
