@@ -181,15 +181,11 @@ func _on_Timer2_timeout():
 	get_parent().call_deferred("add_child", xpOrb3)
 	xpOrb3.global_position = global_position
 	xpOrb3.MAX_SPEED = 70
-	var randomDrop = random_drop_generator(["drop", "none", "ammo"])
+	var randomDrop = random_drop_generator(["drop", "none", "drop"])
 	if (randomDrop == "drop"):
 		var battery = Battery.instance()
 		get_parent().call_deferred("add_child", battery)
 		battery.global_position = global_position
-	if (randomDrop == "ammo"):
-		var ammo = Ammo.instance()
-		get_parent().call_deferred("add_child", ammo)
-		ammo.global_position = global_position
 
 
 func _on_ShootTimer_timeout():

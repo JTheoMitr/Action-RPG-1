@@ -27,6 +27,8 @@ var knockback = Vector2.ZERO
 
 var state = CHASE
 
+var dead = false
+
 onready var sprite = $AnimatedSprite
 onready var stats = $Stats
 onready var playerDetectionZone = $PlayerDetectionZone
@@ -102,6 +104,8 @@ func seek_player():
 		timer.stop()
 		
 		
+		
+		
 func cant_find_player():
 	state = IDLE
 	
@@ -129,6 +133,7 @@ func _on_Hurtbox_area_entered(area):
 
 
 func _on_Stats_no_health():
+	dead = true
 	droneSound.call_deferred("queue_free")
 	self.call_deferred("queue_free")
 	var enemyDeathEffect = EnemyDeathEffect.instance()
@@ -180,3 +185,9 @@ func _on_Timer_timeout():
 	var laserFour = LaserFour.instance()
 	get_parent().call_deferred("add_child", laserFour)
 	laserFour.global_position = global_position
+
+
+func _on_PlayerDetectionZone_area_exited(area):
+	timer.stop()
+	if dead == false:
+		droneSound.stop()

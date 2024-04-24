@@ -8,11 +8,11 @@ var worldStats = WorldStats
 
 func show_level_up_alert():
 	popup()
-	get_tree().paused = true
 	var lvlSound = LevelUpSound.instance()
-	get_tree().current_scene.add_child(lvlSound)
-	$Button.grab_focus()
+	get_tree().current_scene.call_deferred("add_child", lvlSound)
 	$RichTextLabel3.bbcode_text = "[center]You've reached Level %s[/center]" % stats.level
+	$Button.grab_focus()
+	get_tree().paused = true
 
 func _ready():
 	PlayerStats.connect("level_changed", self, "show_level_up_alert")

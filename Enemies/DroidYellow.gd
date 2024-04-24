@@ -26,6 +26,7 @@ var worldStats = WorldStats
 var state = CHASE
 var laserEngaged = false
 
+
 onready var sprite = $AnimatedSprite
 onready var stats = $Stats
 onready var playerDetectionZone = $PlayerDetectionZone
@@ -123,11 +124,14 @@ func _on_Stats_no_health():
 	get_parent().call_deferred("add_child", xpOrb2)
 	xpOrb2.global_position = global_position
 	xpOrb2.MAX_SPEED = 65
-	var randomDrop = random_drop_generator(["ammo", "none", "ammo"])
+	var randomDrop = random_drop_generator(["ammo", "ammo", "ammo"])
 	if (randomDrop == "ammo"):
 		var ammo = Ammo.instance()
 		get_parent().call_deferred("add_child", ammo)
 		ammo.global_position = global_position
+	
 
 
 
+func _on_Timer_timeout():
+	pass

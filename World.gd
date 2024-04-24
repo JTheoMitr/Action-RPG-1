@@ -13,6 +13,7 @@ export var transition_type = 1 # TRANS_SINE
 export var laser_effect: PackedScene
 
 var worldStats = WorldStats
+var stats = PlayerStats
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -23,6 +24,7 @@ func _ready():
 	worldStats.connect("in_the_tall_grass", self, "stealth_ui_on")
 	worldStats.connect("out_of_the_tall_grass", self, "stealth_ui_off")
 	worldStats.connect("play_blast_anim", self, "blast_animation")
+	stats.connect("level_changed", self, "leveled")
 	generate_laser_effect(Vector2(-1248, 459.451538))
 	#$CanvasLayer/BatteryUI.hide()
 
@@ -30,15 +32,19 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
+	
+func leveled():
+	if stats.level >= 2:
+		$Timer.start()
 
 func raise_music_volume():
 	print("fading_in")
-	tween_out.interpolate_property(musicPlayer, "volume_db", -45, -20, transition_duration, transition_type, Tween.EASE_IN, 0)
+	tween_out.interpolate_property(musicPlayer, "volume_db", -35, -3, transition_duration, transition_type, Tween.EASE_IN, 0)
 	tween_out.start()
 	
 func lower_music_volume():
 	print("fading_out")
-	tween_out.interpolate_property(musicPlayer, "volume_db", -20, -45, transition_duration, transition_type, Tween.EASE_IN, 0)
+	tween_out.interpolate_property(musicPlayer, "volume_db", -3, -35, transition_duration, transition_type, Tween.EASE_IN, 0)
 	tween_out.start()
 	
 func lowest_music_volume():
@@ -51,7 +57,8 @@ func generate_laser_effect(laser_position: Vector2)->void:
 
 
 func _on_MusicTimer_timeout():
-	musicPlayer.volume_db = -20
+	musicPlayer.volume_db = -3
+	
 
 
 func _on_Player_fired_shot(hit_position: Vector2):
@@ -67,3 +74,11 @@ func stealth_ui_on():
 	
 func stealth_ui_off():
 	stealthUI.hide()
+
+
+func _on_AudioStreamPlayer_finished():
+	musicPlayer.play(0.0)
+
+
+func _on_Timer_timeout():
+	pass

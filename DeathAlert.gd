@@ -27,6 +27,8 @@ func _reset_stats():
 	stats.coins = 0
 	# stats.keys = 0
 	stats.boss_keys = 0
+	stats.xp = 0
+	stats.level = 1
 	worldStats.freed = 0
 	
 

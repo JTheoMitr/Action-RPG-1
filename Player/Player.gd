@@ -77,6 +77,7 @@ func _ready():
 	stats.connect("player_paused", self, "stop_moving")
 	stats.connect("player_resumed", self, "start_moving")
 	stats.connect("give_movement", self, "full_movement")
+	
 	worldStats.connect("in_the_tall_grass", self, "_stealth_mode")
 	worldStats.connect("out_of_the_tall_grass", self, "_visible_again")
 	stats._ready()
@@ -311,6 +312,8 @@ func foot_step():
 	var foot3 = FootstepThree.instance()
 	var step = random_drop_generator([foot1, foot2, foot3])
 	get_tree().current_scene.add_child(step)
+	
+		
 	
 func start_moving():
 	state = MOVE

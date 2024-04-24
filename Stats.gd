@@ -35,7 +35,7 @@ var keyLost = false
 var c4Acquired = false
 #determines whether or not the player has c4 equipped
 
-var xpCap = 100
+var xpCap = 50
 #starting point for leveling up
 
 # add sundaes
@@ -52,7 +52,6 @@ signal player_paused
 signal player_resumed
 signal give_movement
 signal boss_key_acquired
-signal level_two_acquired
 
 signal health_changed(value)
 signal max_health_changed(value)
@@ -149,12 +148,13 @@ func set_xp(value):
 	emit_signal("xp_changed", xp)
 	if xp >= xpCap:
 		self.level += 1
+		# update attributes here?
 		xp = (xp - xpCap)
 		xpCap = xpCap * 1.5
 
 func set_level(value):
 	level = value
-	emit_signal("level_changed", level)
+	emit_signal("level_changed")
 	
 func set_boss_keys(value):
 	boss_keys = value
