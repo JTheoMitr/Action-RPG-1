@@ -160,7 +160,7 @@ radius = 70.5882
 
 [node name="Soldier" type="KinematicBody2D"]
 scale = Vector2( 1.7, 1.7 )
-collision_layer = 17
+collision_layer = 16
 script = ExtResource( 8 )
 
 [node name="ShadowSprite" type="Sprite" parent="."]
@@ -172,6 +172,7 @@ position = Vector2( -0.588, 15 )
 scale = Vector2( 0.45, 0.45 )
 frames = SubResource( 7 )
 animation = "shoot"
+frame = 5
 playing = true
 offset = Vector2( 1, -60 )
 

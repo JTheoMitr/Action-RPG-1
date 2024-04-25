@@ -132,7 +132,7 @@ func random_drop_generator(drop_list):
 func _on_Hurtbox_area_entered(area):
 	if hurtable:
 		stats.health -= area.damage
-		print_debug("hit")
+		# print_debug("hit")
 		# knockback = area.knockback_vector * 130
 		hurtbox.create_hit_effect()
 		playerDetectionZone.scale.x = (playerDetectionZone.scale.x * 3)

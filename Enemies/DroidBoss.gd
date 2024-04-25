@@ -29,6 +29,7 @@ var velocity = Vector2.ZERO
 var knockback = Vector2.ZERO
 var frozen = false
 var worldStats = WorldStats
+var songStarted = false
 
 var state = CHASE
 
@@ -338,8 +339,10 @@ func _on_Timer_timeout():
 
 
 func _on_SoundTrigger_area_entered(area):
-	$MechEngineSound.play()
-	worldStats.emit_signal("fade_music_out")
+	if songStarted == false:
+		$MechEngineSound.play()
+		worldStats.emit_signal("fade_music_out")
+		songStarted = true
 
 
 func _on_Timer2_timeout():
