@@ -4,6 +4,7 @@ const LevelUpSound = preload("res://Music and Sounds/LevelUp.tscn")
 
 var stats = PlayerStats
 var worldStats = WorldStats
+onready var timer = $Timer
 
 
 func show_level_up_alert():
@@ -13,6 +14,7 @@ func show_level_up_alert():
 		get_tree().current_scene.call_deferred("add_child", lvlSound)
 		$RichTextLabel3.bbcode_text = "[center]You've reached Level %s[/center]" % stats.level
 		$Button.grab_focus()
+		timer.start()
 		get_tree().paused = true
 
 func _ready():
@@ -21,4 +23,8 @@ func _ready():
 
 func _on_Button_pressed():
 	get_tree().paused = false
-	queue_free()
+	hide()
+
+
+func _on_Timer_timeout():
+	pass

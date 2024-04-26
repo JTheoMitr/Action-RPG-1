@@ -147,10 +147,14 @@ func set_xp(value):
 	xp = value
 	emit_signal("xp_changed", xp)
 	if xp >= xpCap:
+		print_debug("levelsup")
+		print_debug(xp)
+		print_debug(xpCap)
 		self.level += 1
-		# update attributes here?
 		xp = (xp - xpCap)
-		xpCap = xpCap * 1.5
+		xpCap = (xpCap * 2)
+		# update attributes here?
+		
 
 func set_level(value):
 	level = value
@@ -196,10 +200,11 @@ func _ready():
 	self.keys_collected = 0
 	self.batteries = 2
 	self.coins = 0
-	self.xp = 0
+	self.xp = 48
 	self.redpops = 0
 	self.bluepops = 0
 	self.boss_keys = 0
 	self.ammo = 10
 	self.level = 1
+	self.xpCap = 50
 	self.overcharge = false

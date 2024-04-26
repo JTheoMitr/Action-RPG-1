@@ -325,6 +325,8 @@ func rotate_pointer(point_direction: Vector2)->void:
 	# to update Ray2D position / angle
 	var temp = rad2deg(atan2(point_direction.y, point_direction.x))
 	pointer.rotation_degrees = temp
+	
+
 
 func _on_Hurtbox_area_entered(area):
 	stats.health -= area.damage
