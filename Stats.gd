@@ -200,7 +200,7 @@ func _ready():
 	self.keys_collected = 0
 	self.batteries = 2
 	self.coins = 0
-	self.xp = 48
+	self.xp = 0
 	self.redpops = 0
 	self.bluepops = 0
 	self.boss_keys = 0

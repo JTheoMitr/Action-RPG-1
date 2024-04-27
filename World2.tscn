@@ -1,4 +1,4 @@
-[gd_scene load_steps=188 format=2]
+[gd_scene load_steps=191 format=2]
 
 [ext_resource path="res://World/CliffTileset cave.png" type="Texture" id=1]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=2]
@@ -87,6 +87,9 @@
 [ext_resource path="res://World/Crystal_Red_One.tscn" type="PackedScene" id=85]
 [ext_resource path="res://World/Crystal_Blue_One.tscn" type="PackedScene" id=86]
 [ext_resource path="res://World/Crystal_Green_One.tscn" type="PackedScene" id=87]
+[ext_resource path="res://UI/ChargeUI.tscn" type="PackedScene" id=88]
+[ext_resource path="res://UI/XpUI.tscn" type="PackedScene" id=89]
+[ext_resource path="res://World/LevelUpAlert.tscn" type="PackedScene" id=90]
 
 [sub_resource type="TileSet" id=1]
 0/name = "DirtTileset.png 0"
@@ -2046,7 +2049,7 @@ position = Vector2( -16, -272 )
 [node name="ScreenCrackleOne" parent="YSort/OilCoDoors" instance=ExtResource( 57 )]
 position = Vector2( -17, -270.5 )
 scale = Vector2( 0.094, 0.0833333 )
-frame = 3
+frame = 1
 
 [node name="YellowFlowers" type="YSort" parent="YSort"]
 visible = false
@@ -2546,61 +2549,61 @@ position = Vector2( 1452, -303 )
 
 [node name="CrystalPurple" parent="YSort/Crystals" instance=ExtResource( 79 )]
 position = Vector2( -536, 477 )
-frame = 16
+frame = 15
 
 [node name="CrystalPurple2" parent="YSort/Crystals" instance=ExtResource( 79 )]
 position = Vector2( -774, 412 )
-frame = 13
+frame = 12
 
 [node name="CrystalPurple4" parent="YSort/Crystals" instance=ExtResource( 79 )]
 position = Vector2( -977, 286 )
 scale = Vector2( 0.208823, 0.194118 )
-frame = 12
+frame = 11
 
 [node name="CrystalPurple13" parent="YSort/Crystals" instance=ExtResource( 79 )]
 position = Vector2( -1148, 191 )
 scale = Vector2( 0.148529, 0.12647 )
-frame = 11
+frame = 10
 
 [node name="CrystalPurple5" parent="YSort/Crystals" instance=ExtResource( 79 )]
 position = Vector2( -371, 124 )
 scale = Vector2( 0.238235, 0.22353 )
-frame = 12
+frame = 11
 
 [node name="CrystalPurple9" parent="YSort/Crystals" instance=ExtResource( 79 )]
 position = Vector2( -1396.6, -162.9 )
 scale = Vector2( 0.252942, 0.238235 )
-frame = 12
+frame = 11
 
 [node name="CrystalPurple10" parent="YSort/Crystals" instance=ExtResource( 79 )]
 position = Vector2( -1170, -388 )
-frame = 13
+frame = 12
 
 [node name="CrystalPurple11" parent="YSort/Crystals" instance=ExtResource( 79 )]
 position = Vector2( -471.6, -417.9 )
 scale = Vector2( 0.252941, 0.238235 )
-frame = 13
+frame = 12
 
 [node name="CrystalPurple8" parent="YSort/Crystals" instance=ExtResource( 79 )]
 position = Vector2( -805, -35 )
-frame = 12
+frame = 11
 
 [node name="CrystalPurple6" parent="YSort/Crystals" instance=ExtResource( 79 )]
 position = Vector2( -34.1, 221.6 )
 scale = Vector2( 0.238235, 0.252941 )
-frame = 12
+frame = 11
 
 [node name="CrystalPurple7" parent="YSort/Crystals" instance=ExtResource( 79 )]
 position = Vector2( 250, 380 )
-frame = 13
+frame = 12
 
 [node name="CrystalPurple12" parent="YSort/Crystals" instance=ExtResource( 79 )]
 position = Vector2( 1154, -322 )
-frame = 13
+frame = 12
 
 [node name="CrystalPurple3" parent="YSort/Crystals" instance=ExtResource( 79 )]
 position = Vector2( -494, 315 )
-frame = 13
+frame = 12
 
 [node name="Crystal_Blue_One" parent="YSort/Crystals" instance=ExtResource( 86 )]
 position = Vector2( -122, 31 )
@@ -2795,9 +2798,9 @@ position = Vector2( -911, -571 )
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Panel" type="Panel" parent="CanvasLayer"]
-margin_left = 295.0
-margin_top = 166.0
-margin_right = 318.0
+margin_left = 269.0
+margin_top = 156.0
+margin_right = 312.0
 margin_bottom = 178.0
 custom_styles/panel = SubResource( 100 )
 
@@ -2814,9 +2817,9 @@ margin_right = 35.0
 margin_bottom = 26.0
 
 [node name="CoinUI" parent="CanvasLayer" instance=ExtResource( 70 )]
-margin_left = 298.0
+margin_left = 287.0
 margin_top = 168.0
-margin_right = 335.0
+margin_right = 324.0
 margin_bottom = 187.0
 rect_scale = Vector2( 0.5, 0.5 )
 
@@ -2828,6 +2831,16 @@ margin_bottom = 53.0
 
 [node name="StealthUI" parent="CanvasLayer" instance=ExtResource( 84 )]
 
+[node name="XpUI" parent="CanvasLayer" instance=ExtResource( 89 )]
+margin_left = 254.0
+margin_top = 152.0
+margin_right = 291.0
+margin_bottom = 171.0
+
+[node name="ChargeUI" parent="CanvasLayer" instance=ExtResource( 88 )]
+margin_left = -11.0
+margin_right = -11.0
+
 [node name="AlertCanvas" type="CanvasLayer" parent="."]
 
 [node name="KeyAlert" parent="AlertCanvas" instance=ExtResource( 17 )]
@@ -2836,6 +2849,8 @@ visible = true
 [node name="BossKeyAlert" parent="AlertCanvas" instance=ExtResource( 55 )]
 
 [node name="DeathAlert2" parent="AlertCanvas" instance=ExtResource( 21 )]
+
+[node name="LevelUpAlert" parent="AlertCanvas" instance=ExtResource( 90 )]
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 pause_mode = 2
