@@ -147,9 +147,9 @@ func set_xp(value):
 	xp = value
 	emit_signal("xp_changed", xp)
 	if xp >= xpCap:
-		print_debug("levelsup")
-		print_debug(xp)
-		print_debug(xpCap)
+		# print_debug("levelsup")
+		# print_debug(xp)
+		# print_debug(xpCap)
 		self.level += 1
 		xp = (xp - xpCap)
 		xpCap = (xpCap * 2)
