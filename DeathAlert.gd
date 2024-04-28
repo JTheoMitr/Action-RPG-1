@@ -42,4 +42,5 @@ func _on_Timer_timeout():
 func _on_Button_pressed():
 	#need to make a reset_stats method:
 	_reset_stats()
+	
 	SceneTransitionLong.change_scene("res://World.tscn")

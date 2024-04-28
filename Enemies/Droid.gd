@@ -53,6 +53,11 @@ func _physics_process(delta):
 	knockback = knockback.move_toward(Vector2.ZERO, FRICTION * delta)
 	knockback = move_and_slide(knockback)
 	
+	if shooting:
+		velocity.x = 0
+		velocity.y = 0
+		self.MAX_SPEED = 0
+	
 	match state:
 		IDLE:
 			if looking:
@@ -197,9 +202,7 @@ func _on_Area2D_area_entered(area):
 		sprite.play("shoot")
 		shooting = true
 		timer.start(0.0)
-		velocity.x = 0
-		velocity.y = 0
-		self.MAX_SPEED = 0
+		
 		
 
 
