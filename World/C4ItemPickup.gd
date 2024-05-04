@@ -15,9 +15,10 @@ func _on_Battery_area_entered(area):
 	popup.show()
 	var pickUpSound = PickUpSound.instance()
 	get_tree().current_scene.add_child(pickUpSound)
-	queue_free()
+	timer.start()
+	
 
 
 
 func _on_Timer_timeout():
-	popup.hide()
+	queue_free()

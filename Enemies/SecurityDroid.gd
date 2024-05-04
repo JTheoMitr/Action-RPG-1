@@ -42,9 +42,12 @@ var laserEngaged = false
 var droneSound = DroneSound.instance()
 var worldStats = WorldStats
 
+
 func _ready():
 	state = pick_random_state([IDLE, WANDER])
 	worldStats.connect("in_the_tall_grass", self, "cant_find_player")
+	get_parent().call_deferred("add_child", droneSound)
+	droneSound.stop()
 	
 	
 
@@ -95,7 +98,7 @@ func seek_player():
 		var droidSound = SecDroidSound.instance()
 		get_parent().call_deferred("add_child", droidSound)
 		droidSound.play(0.0)
-		get_parent().call_deferred("add_child", droneSound)
+		
 		droneSound.play(0.0)
 		timer.start(0.0)
 			# laserEngaged = true

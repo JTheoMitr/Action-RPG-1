@@ -35,9 +35,19 @@ onready var wanderController = $WanderController
 onready var timer = $Timer
 onready var stagSound = $StaggerSound
 onready var breakSound = $BreakingSound
+onready var bossHealthUI = $CanvasLayer/GolemBossHealthUI
+onready var armor1 = $CanvasLayer/GolemBossHealthUI/HBoxContainer/Armor_One
+onready var armor2 = $CanvasLayer/GolemBossHealthUI/HBoxContainer/Armor_Two
+onready var armor3 = $CanvasLayer/GolemBossHealthUI/HBoxContainer/Armor_Three
+onready var armor4 = $CanvasLayer/GolemBossHealthUI/HBoxContainer/Armor_Four
+onready var health1 = $CanvasLayer/GolemBossHealthUI/HBoxContainer/Health_One
+onready var health2 = $CanvasLayer/GolemBossHealthUI/HBoxContainer/Health_Two
+onready var health3 = $CanvasLayer/GolemBossHealthUI/HBoxContainer/Health_Three
+onready var health4 = $CanvasLayer/GolemBossHealthUI/HBoxContainer/Health_Four
 
 func _ready():
 	state = pick_random_state([IDLE, WANDER])
+	bossHealthUI.hide()
 
 func _physics_process(delta):
 	knockback = knockback.move_toward(Vector2.ZERO, FRICTION * delta)
@@ -46,6 +56,61 @@ func _physics_process(delta):
 	if frozen == true:
 		velocity = Vector2.ZERO
 		sprite.play("shield")
+	
+	match self.stats.health:
+		8:
+			health1.show()
+			health2.show()
+			health3.show()
+			health4.show()
+			armor1.show()
+			armor2.show()
+			armor3.show()
+			armor4.show()
+		7:
+			armor4.hide()
+		6:
+			armor4.hide()
+			armor3.hide()
+		5:
+			armor4.hide()
+			armor3.hide()
+			armor2.hide()
+		4:
+			armor4.hide()
+			armor3.hide()
+			armor2.hide()
+			armor1.hide()
+		3:
+			armor4.hide()
+			armor3.hide()
+			armor2.hide()
+			armor1.hide()
+			health4.hide()
+		2:
+			armor4.hide()
+			armor3.hide()
+			armor2.hide()
+			armor1.hide()
+			health4.hide()
+			health3.hide()
+		1:
+			armor4.hide()
+			armor3.hide()
+			armor2.hide()
+			armor1.hide()
+			health4.hide()
+			health3.hide()
+			health2.hide()
+		0:
+			armor4.hide()
+			armor3.hide()
+			armor2.hide()
+			armor1.hide()
+			health4.hide()
+			health3.hide()
+			health2.hide()
+			health1.hide()
 
 	
 	match state:
@@ -93,6 +158,7 @@ func seek_player():
 		state = CHASE
 		timer.start()
 		$Timer2.start()
+		bossHealthUI.show()
 
 func update_wander_state():
 	state = pick_random_state([IDLE, WANDER])

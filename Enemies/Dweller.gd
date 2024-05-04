@@ -99,7 +99,6 @@ func _on_Hurtbox_area_entered(area):
 	stats.health -= area.damage
 	knockback = area.knockback_vector * 130
 	hurtbox.create_hit_effect()
-	sprite.play("attack")
 	playerDetectionZone.scale.x = (playerDetectionZone.scale.x * 3)
 	playerDetectionZone.scale.y = (playerDetectionZone.scale.y * 3)
 
@@ -118,3 +117,12 @@ func _on_Stats_no_health():
 		var ammo = Ammo.instance()
 		get_parent().call_deferred("add_child", ammo)
 		ammo.global_position = global_position
+
+
+func _on_TorchArea_area_entered(area):
+	sprite.play("attack")
+	
+
+func _on_TorchArea_area_exited(area):
+	sprite.play("walk")
+	state = CHASE

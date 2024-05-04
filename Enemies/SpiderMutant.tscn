@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=2]
+[gd_scene load_steps=39 format=2]
 
 [ext_resource path="res://Enemies/SpiderMutant.gd" type="Script" id=1]
 [ext_resource path="res://Hitboxes and Hurtboxes/Hurtbox.tscn" type="PackedScene" id=2]
@@ -70,6 +70,14 @@ region = Rect2( 433, 0, 33, 30 )
 atlas = ExtResource( 3 )
 region = Rect2( 466, 0, 33, 30 )
 
+[sub_resource type="AtlasTexture" id=34]
+atlas = ExtResource( 3 )
+region = Rect2( 501, 0, 33, 30 )
+
+[sub_resource type="AtlasTexture" id=35]
+atlas = ExtResource( 3 )
+region = Rect2( 534, 0, 33, 30 )
+
 [sub_resource type="AtlasTexture" id=28]
 atlas = ExtResource( 8 )
 region = Rect2( 0, 0, 32, 30 )
@@ -96,7 +104,7 @@ region = Rect2( 160, 0, 32, 30 )
 
 [sub_resource type="SpriteFrames" id=7]
 animations = [ {
-"frames": [ SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 16 ), SubResource( 17 ), SubResource( 18 ), SubResource( 19 ), SubResource( 20 ), SubResource( 21 ), SubResource( 22 ), SubResource( 23 ), SubResource( 24 ), SubResource( 25 ), SubResource( 26 ), SubResource( 27 ), SubResource( 26 ), SubResource( 25 ), SubResource( 27 ), SubResource( 26 ), SubResource( 25 ), SubResource( 27 ), SubResource( 23 ), SubResource( 22 ), SubResource( 21 ), SubResource( 20 ), SubResource( 19 ), SubResource( 18 ), SubResource( 17 ), SubResource( 16 ), SubResource( 15 ), SubResource( 14 ) ],
+"frames": [ SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 16 ), SubResource( 17 ), SubResource( 18 ), SubResource( 19 ), SubResource( 20 ), SubResource( 21 ), SubResource( 22 ), SubResource( 23 ), SubResource( 24 ), SubResource( 25 ), SubResource( 26 ), SubResource( 27 ), SubResource( 26 ), SubResource( 25 ), SubResource( 27 ), SubResource( 26 ), SubResource( 25 ), SubResource( 27 ), SubResource( 34 ), SubResource( 35 ), SubResource( 23 ), SubResource( 22 ), SubResource( 21 ), SubResource( 20 ), SubResource( 19 ), SubResource( 18 ), SubResource( 17 ), SubResource( 16 ), SubResource( 15 ), SubResource( 14 ) ],
 "loop": true,
 "name": "attack",
 "speed": 5.0
@@ -134,7 +142,7 @@ script = ExtResource( 1 )
 position = Vector2( 0, 10 )
 frames = SubResource( 7 )
 animation = "attack"
-frame = 16
+frame = 8
 playing = true
 offset = Vector2( 1, -15 )
 

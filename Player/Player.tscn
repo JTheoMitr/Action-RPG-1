@@ -849,7 +849,7 @@ texture = ExtResource( 8 )
 position = Vector2( 45, -2 )
 scale = Vector2( 2.1, 1 )
 collision_layer = 0
-collision_mask = 8
+collision_mask = 9
 script = ExtResource( 13 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Pointer/Sprite/LaserZone"]

@@ -14,4 +14,5 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 
 func _on_DroneSound_finished():
-	self.call_deferred("queue_free")
+	pass
+	# self.call_deferred("queue_free")

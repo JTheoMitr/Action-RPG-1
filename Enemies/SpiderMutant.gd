@@ -4,6 +4,8 @@ const EnemyDeathEffect = preload("res://Effects/EnemyDeathEffect.tscn")
 const HopSound = preload("res://Music and Sounds/SpiderHopLow.tscn")
 const SlimeLaser = preload("res://Enemies/SlimeLaserRightStraight.tscn")
 const SlimeLaserTwo = preload("res://Enemies/SlimeLaserLeftStraight.tscn")
+const XpOrb = preload("res://Enemies/XpOrb.tscn")
+const Ammo = preload("res://World/Ammo.tscn")
 
 export var ACCELERATION = 355
 export var MAX_SPEED = 70
@@ -44,7 +46,6 @@ func _physics_process(delta):
 			sprite.play("idle")
 			velocity = velocity.move_toward(Vector2.ZERO, FRICTION * delta)
 			seek_player()
-			
 			if wanderController.get_time_left() == 0:
 				update_wander_state()
 				
@@ -83,14 +84,20 @@ func seek_player():
 		get_parent().add_child(hopSound)
 		hopSound.play(0.0)
 		print_debug("timer start")
+		sprite.play("attack")
 		timer.start(0.0)
 		state = CHASE
 	else:
 		timer.stop()
+		sprite.play("idle")
 
 func update_wander_state():
 	state = pick_random_state([IDLE, WANDER])
 	wanderController.start_wander_timer(rand_range(1, 3))
+	
+func random_drop_generator(drop_list):
+	drop_list.shuffle()
+	return drop_list.pop_front()
 
 func pick_random_state(state_list):
 	state_list.shuffle()
@@ -101,7 +108,7 @@ func _on_Hurtbox_area_entered(area):
 	# print(stats.health)
 	knockback = area.knockback_vector * 130
 	hurtbox.create_hit_effect()
-	sprite.play("attack")
+	
 	playerDetectionZone.scale.x = (playerDetectionZone.scale.x * 3)
 	playerDetectionZone.scale.y = (playerDetectionZone.scale.y * 3)
 	# state = WANDER
@@ -111,12 +118,28 @@ func _on_Stats_no_health():
 	queue_free()
 	var enemyDeathEffect = EnemyDeathEffect.instance()
 	get_parent().add_child(enemyDeathEffect)
+	var xpOrb = XpOrb.instance()
+	get_parent().call_deferred("add_child", xpOrb)
+	xpOrb.global_position = global_position
+	var xpOrb2 = XpOrb.instance()
+	get_parent().call_deferred("add_child", xpOrb2)
+	xpOrb2.global_position = global_position
+	xpOrb2.MAX_SPEED = 65
+	var xpOrb3 = XpOrb.instance()
+	get_parent().call_deferred("add_child", xpOrb3)
+	xpOrb3.global_position = global_position
+	xpOrb3.MAX_SPEED = 70
+	var randomDrop = random_drop_generator(["ammo", "drop", "ammo"])
+	if (randomDrop == "ammo"):
+		var ammo = Ammo.instance()
+		get_parent().call_deferred("add_child", ammo)
+		ammo.global_position = global_position
 
 	
 
 
 func _on_Timer_timeout():
-	print_debug("boom")
+	# print_debug("boom")
 	var laserTwo = SlimeLaserTwo.instance()
 	var laser = SlimeLaser.instance()
 	get_parent().call_deferred("add_child", laser)
