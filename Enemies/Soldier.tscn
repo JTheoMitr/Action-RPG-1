@@ -115,7 +115,7 @@ animations = [ {
 "frames": [ SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 16 ), SubResource( 17 ), SubResource( 18 ), SubResource( 19 ) ],
 "loop": true,
 "name": "death",
-"speed": 5.0
+"speed": 7.0
 }, {
 "frames": [ SubResource( 20 ), SubResource( 21 ), SubResource( 22 ), SubResource( 23 ), SubResource( 24 ) ],
 "loop": true,
@@ -171,8 +171,8 @@ offset = Vector2( 0, 1 )
 position = Vector2( -0.588, 15 )
 scale = Vector2( 0.45, 0.45 )
 frames = SubResource( 7 )
-animation = "shoot"
-frame = 2
+animation = "death"
+frame = 5
 playing = true
 offset = Vector2( 1, -60 )
 
