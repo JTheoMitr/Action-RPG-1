@@ -118,6 +118,7 @@ func _on_Stats_no_health():
 	queue_free()
 	var enemyDeathEffect = EnemyDeathEffect.instance()
 	get_parent().add_child(enemyDeathEffect)
+	enemyDeathEffect.global_position = global_position
 	var xpOrb = XpOrb.instance()
 	get_parent().call_deferred("add_child", xpOrb)
 	xpOrb.global_position = global_position

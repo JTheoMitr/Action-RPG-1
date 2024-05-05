@@ -1,6 +1,6 @@
 extends Node2D
 
-const ChestEffect = preload("res://Effects/ChestEffect.tscn")
+const ChestEffect = preload("res://Effects/WeaponCacheEffect.tscn")
 
 
 
