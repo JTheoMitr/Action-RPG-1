@@ -38,6 +38,7 @@ func _on_BreakableRocks1_area_entered(area):
 
 
 func _on_C4Zone_area_entered(area):
+	print_debug(PlayerStats.c4Acquired)
 	if playerStats.c4Acquired:
 		var c4 = C4.instance()
 		get_parent().add_child(c4)

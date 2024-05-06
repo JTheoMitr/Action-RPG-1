@@ -13,6 +13,8 @@ func _process(delta):
 
 func _on_Battery_area_entered(area):
 	popup.show()
+	stats.c4Acquired = true
+	self.hide()
 	var pickUpSound = PickUpSound.instance()
 	get_tree().current_scene.add_child(pickUpSound)
 	timer.start()
