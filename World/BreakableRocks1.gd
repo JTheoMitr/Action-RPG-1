@@ -41,5 +41,5 @@ func _on_C4Zone_area_entered(area):
 	print_debug(PlayerStats.c4Acquired)
 	if playerStats.c4Acquired:
 		var c4 = C4.instance()
-		get_parent().add_child(c4)
+		get_parent().call_deferred("add_child", c4)
 		c4.global_position = global_position

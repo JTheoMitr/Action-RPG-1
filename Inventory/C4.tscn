@@ -305,7 +305,7 @@ animations = [ {
 
 [node name="C4" type="Area2D"]
 collision_layer = 0
-collision_mask = 76
+collision_mask = 72
 script = ExtResource( 3 )
 
 [node name="C4Intact" type="Sprite" parent="."]
@@ -324,7 +324,6 @@ frame = 71
 [node name="Timer" type="Timer" parent="."]
 wait_time = 3.0
 one_shot = true
-autostart = true
 
 [connection signal="animation_finished" from="AnimatedSprite" to="." method="_on_AnimatedSprite_animation_finished"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

@@ -142,7 +142,7 @@ radius = 6.0
 height = 8.58824
 
 [sub_resource type="CircleShape2D" id=10]
-radius = 86.4706
+radius = 82.355
 
 [sub_resource type="CapsuleShape2D" id=11]
 radius = 2.94118
@@ -156,7 +156,7 @@ height = 0.0
 radius = 1.86016
 
 [sub_resource type="CircleShape2D" id=39]
-radius = 70.5882
+radius = 60.5997
 
 [node name="Soldier" type="KinematicBody2D"]
 scale = Vector2( 1.7, 1.7 )

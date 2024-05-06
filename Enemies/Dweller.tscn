@@ -189,8 +189,8 @@ offset = Vector2( 5, 1 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 scale = Vector2( 1.1, 1.5 )
 frames = SubResource( 7 )
-animation = "attack"
-frame = 5
+animation = "idle"
+frame = 1
 playing = true
 offset = Vector2( 7, -15 )
 
