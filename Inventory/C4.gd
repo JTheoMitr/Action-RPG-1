@@ -25,6 +25,7 @@ func _on_Timer_timeout():
 	xplode.frame = 0
 	xplode.play("explode")
 	c4.hide()
+	$AudioStreamPlayer.play()
 	dmg.disabled = false
 	
 

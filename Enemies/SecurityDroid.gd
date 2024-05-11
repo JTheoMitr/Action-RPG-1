@@ -98,13 +98,14 @@ func seek_player():
 		var droidSound = SecDroidSound.instance()
 		get_parent().call_deferred("add_child", droidSound)
 		droidSound.play(0.0)
-		
+		sprite.play("default")
 		droneSound.play(0.0)
 		timer.start(0.0)
 			# laserEngaged = true
 		state = CHASE
 	else:
 		timer.stop()
+		sprite.play("idle")
 		
 		
 		

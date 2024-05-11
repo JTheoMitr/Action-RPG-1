@@ -1,8 +1,9 @@
-[gd_scene load_steps=78 format=2]
+[gd_scene load_steps=79 format=2]
 
 [ext_resource path="res://Inventory/counter_strike_C4.png" type="Texture" id=1]
 [ext_resource path="res://Effects/xplosion_spritesheet.png" type="Texture" id=2]
 [ext_resource path="res://Inventory/C4.gd" type="Script" id=3]
+[ext_resource path="res://Music and Sounds/EXPLDsgn_Explosions Debris Dirt Cement Gravel Scatter Medium 02_ESM_SG.wav" type="AudioStream" id=4]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 23.0
@@ -324,6 +325,10 @@ frame = 71
 [node name="Timer" type="Timer" parent="."]
 wait_time = 3.0
 one_shot = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+volume_db = -5.0
 
 [connection signal="animation_finished" from="AnimatedSprite" to="." method="_on_AnimatedSprite_animation_finished"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

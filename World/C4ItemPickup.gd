@@ -12,12 +12,13 @@ func _process(delta):
 	popup.rect_global_position.x = self.global_position.x - 8
 
 func _on_Battery_area_entered(area):
-	popup.show()
-	stats.c4Acquired = true
-	self.hide()
-	var pickUpSound = PickUpSound.instance()
-	get_tree().current_scene.add_child(pickUpSound)
-	timer.start()
+	if stats.c4Acquired == false:
+		popup.show()
+		stats.c4Acquired = true
+		self.hide()
+		var pickUpSound = PickUpSound.instance()
+		get_tree().current_scene.add_child(pickUpSound)
+		timer.start()
 	
 
 

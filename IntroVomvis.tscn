@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://UI/white_vomvis_logo_black_bgnd.PNG" type="Texture" id=1]
+[ext_resource path="res://UI/IMG_0497.PNG" type="Texture" id=1]
 [ext_resource path="res://IntroVomvis.gd" type="Script" id=2]
 [ext_resource path="res://Music and Sounds/VOMVISCharge.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Music and Sounds/VomvisTTS.tscn" type="PackedScene" id=4]
@@ -17,7 +17,7 @@ anchor_bottom = 1.0
 color = Color( 0, 0, 0, 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 161, 94 )
+position = Vector2( 161, 93 )
 scale = Vector2( 0.1, 0.1 )
 texture = ExtResource( 1 )
 

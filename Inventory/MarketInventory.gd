@@ -11,6 +11,7 @@ var stats = PlayerStats
 
 func _ready():
 	grooves.play(0.0)
+	print_debug(get_parent())
 	
 func _process(delta):
 	coinLabel.text = "x " + str(stats.coins)

@@ -46,6 +46,7 @@ animations = [ {
 
 [node name="ChestEffect" type="AnimatedSprite"]
 position = Vector2( -1, 0 )
+z_index = 1
 frames = SubResource( 11 )
 animation = "Animate"
 script = ExtResource( 2 )
