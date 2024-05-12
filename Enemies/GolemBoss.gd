@@ -33,6 +33,7 @@ onready var atkHitbox = $Hitbox2
 onready var softCollision = $SoftCollision
 onready var wanderController = $WanderController
 onready var timer = $Timer
+onready var timer2 = $Timer2
 onready var stagSound = $StaggerSound
 onready var breakSound = $BreakingSound
 onready var bossHealthUI = $CanvasLayer/GolemBossHealthUI
@@ -48,6 +49,7 @@ onready var health4 = $CanvasLayer/GolemBossHealthUI/HBoxContainer/Health_Four
 func _ready():
 	state = pick_random_state([IDLE, WANDER])
 	bossHealthUI.hide()
+	hurtbox.monitoring = false
 
 func _physics_process(delta):
 	knockback = knockback.move_toward(Vector2.ZERO, FRICTION * delta)
@@ -157,7 +159,7 @@ func seek_player():
 	if playerDetectionZone.can_see_player():
 		state = CHASE
 		timer.start()
-		$Timer2.start()
+		timer2.start()
 		bossHealthUI.show()
 
 func update_wander_state():
@@ -230,9 +232,9 @@ func _on_Timer2_timeout():
 	else:
 		frozen = false
 		atkHitbox.monitorable = true
-		if stats.health > 4:
+		if stats.health > 3:
 			sprite.play("attack")
-		if stats.health <= 4:
+		if stats.health <= 3:
 			sprite.play("blinking")
 			breakSound.play(0.0)
 	
@@ -241,3 +243,12 @@ func _on_Timer2_timeout():
 
 func _on_SoundTrigger_area_exited(area):
 	worldStats.call_deferred("emit_signal", "fade_music_in")
+
+
+func _on_StaggerArea_area_entered(area):
+	velocity = Vector2.ZERO
+	sprite.play("shield")
+	timer.stop
+	timer2.stop
+	hurtbox.monitoring = true
+	

@@ -1,4 +1,4 @@
-[gd_scene load_steps=67 format=2]
+[gd_scene load_steps=68 format=2]
 
 [ext_resource path="res://Enemies/GolemBoss.gd" type="Script" id=1]
 [ext_resource path="res://Hitboxes and Hurtboxes/Hurtbox.tscn" type="PackedScene" id=2]
@@ -229,6 +229,10 @@ height = 14.3579
 [sub_resource type="CircleShape2D" id=42]
 radius = 240.023
 
+[sub_resource type="CapsuleShape2D" id=83]
+radius = 20.7143
+height = 24.2857
+
 [node name="GolemBoss" type="KinematicBody2D"]
 scale = Vector2( 1.4, 1.4 )
 script = ExtResource( 1 )
@@ -245,7 +249,7 @@ position = Vector2( -40, -10 )
 scale = Vector2( 1.2, 1.2 )
 frames = SubResource( 7 )
 animation = "walk"
-frame = 5
+frame = 6
 playing = true
 centered = false
 offset = Vector2( 1, -60 )
@@ -255,7 +259,6 @@ position = Vector2( 15, -5 )
 scale = Vector2( 1.3, 1 )
 frames = SubResource( 73 )
 animation = "dusting"
-frame = 1
 playing = true
 
 [node name="DustAnimation2" type="AnimatedSprite" parent="."]
@@ -263,6 +266,7 @@ position = Vector2( 25, -5 )
 scale = Vector2( 1.3, 1 )
 frames = SubResource( 73 )
 animation = "dusting"
+frame = 4
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -315,7 +319,7 @@ scale = Vector2( 0.819203, 1.01494 )
 shape = SubResource( 23 )
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 2.0
+wait_time = 3.0
 
 [node name="SoundTrigger" type="Area2D" parent="."]
 visible = false
@@ -353,12 +357,21 @@ margin_right = 149.0
 margin_bottom = 22.0
 rect_scale = Vector2( 0.5, 0.5 )
 
+[node name="StaggerArea" type="Area2D" parent="."]
+collision_layer = 64
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaggerArea"]
+position = Vector2( 20, -28.5714 )
+shape = SubResource( 83 )
+
 [connection signal="area_entered" from="Hurtbox" to="." method="_on_Hurtbox_area_entered"]
 [connection signal="no_health" from="Stats" to="." method="_on_Stats_no_health"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 [connection signal="area_entered" from="SoundTrigger" to="." method="_on_SoundTrigger_area_entered"]
 [connection signal="area_exited" from="SoundTrigger" to="." method="_on_SoundTrigger_area_exited"]
 [connection signal="timeout" from="Timer2" to="." method="_on_Timer2_timeout"]
+[connection signal="area_entered" from="StaggerArea" to="." method="_on_StaggerArea_area_entered"]
 
 [editable path="Hurtbox"]
 [editable path="PlayerDetectionZone"]

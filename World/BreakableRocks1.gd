@@ -11,6 +11,7 @@ onready var brock2 = $Broken2
 onready var brock3 = $Broken3
 
 var playerStats = PlayerStats
+var rubble = false
 
 
 # Called when the node enters the scene tree for the first time.
@@ -38,8 +39,10 @@ func _on_BreakableRocks1_area_entered(area):
 
 
 func _on_C4Zone_area_entered(area):
-	print_debug(PlayerStats.c4Acquired)
-	if playerStats.c4Acquired:
-		var c4 = C4.instance()
-		get_parent().call_deferred("add_child", c4)
-		c4.global_position = global_position
+	#print_debug(PlayerStats.c4Acquired)
+	if rubble == false:
+		if playerStats.c4Acquired:
+			var c4 = C4.instance()
+			get_parent().call_deferred("add_child", c4)
+			c4.global_position = global_position
+			rubble = true
