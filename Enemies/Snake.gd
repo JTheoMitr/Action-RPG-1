@@ -67,8 +67,8 @@ func _physics_process(delta):
 func accelerate_towards_point(point, delta):
 	var direction = global_position.direction_to(point)
 	velocity = velocity.move_toward(direction * MAX_SPEED, ACCELERATION * delta)
+	sprite.flip_h = velocity.x < 0
 	if velocity.x < 0:
-		sprite.flip_h
 		position.x -= .5
 	
 

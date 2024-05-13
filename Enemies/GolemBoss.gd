@@ -14,7 +14,8 @@ export var WANDER_TARGET_RANGE = 4
 enum {
 	IDLE,
 	WANDER,
-	CHASE
+	CHASE,
+	STUN
 }
 
 var velocity = Vector2.ZERO
@@ -34,6 +35,7 @@ onready var softCollision = $SoftCollision
 onready var wanderController = $WanderController
 onready var timer = $Timer
 onready var timer2 = $Timer2
+onready var timer3 = $Timer3
 onready var stagSound = $StaggerSound
 onready var breakSound = $BreakingSound
 onready var bossHealthUI = $CanvasLayer/GolemBossHealthUI
@@ -45,6 +47,8 @@ onready var health1 = $CanvasLayer/GolemBossHealthUI/HBoxContainer/Health_One
 onready var health2 = $CanvasLayer/GolemBossHealthUI/HBoxContainer/Health_Two
 onready var health3 = $CanvasLayer/GolemBossHealthUI/HBoxContainer/Health_Three
 onready var health4 = $CanvasLayer/GolemBossHealthUI/HBoxContainer/Health_Four
+onready var guitarBlast = $AudioStreamPlayer
+onready var casinoDing = $AudioStreamPlayer2
 
 func _ready():
 	state = pick_random_state([IDLE, WANDER])
@@ -139,6 +143,8 @@ func _physics_process(delta):
 				accelerate_towards_point(player.global_position, delta)
 			else:
 				state = IDLE
+		STUN:
+			sprite.play("stagger")
 
 	if softCollision.is_colliding():
 		velocity += softCollision.get_push_vector() * delta * 400
@@ -246,9 +252,24 @@ func _on_SoundTrigger_area_exited(area):
 
 
 func _on_StaggerArea_area_entered(area):
+	print_debug("Stagger")
 	velocity = Vector2.ZERO
-	sprite.play("shield")
-	timer.stop
-	timer2.stop
+	state = STUN
+	timer.stop()
+	timer2.stop()
 	hurtbox.monitoring = true
+	timer3.start()
+	guitarBlast.play(0.0)
+	casinoDing.play(0.0)
+	
+	
+
+
+func _on_Timer3_timeout():
+	state = CHASE
+	guitarBlast.stop()
+	casinoDing.stop()
+	timer.start()
+	timer2.start()
+	hurtbox.monitoring = false
 	

@@ -1,0 +1,23 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/guitar_malfunction.wav-91e94cfd50bdf6c12ff9d43441063a5a.sample"
+
+[deps]
+
+source_file="res://Music and Sounds/guitar_malfunction.wav"
+dest_files=[ "res://.import/guitar_malfunction.wav-91e94cfd50bdf6c12ff9d43441063a5a.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

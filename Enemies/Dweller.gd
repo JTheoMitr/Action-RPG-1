@@ -4,6 +4,7 @@ const EnemyDeathEffect = preload("res://Effects/EnemyDeathEffect.tscn")
 const Battery = preload("res://World/Battery.tscn")
 const Ammo = preload("res://World/Ammo.tscn")
 const DwellerSound = preload("res://Music and Sounds/DwellerSound.tscn")
+const XpOrb = preload("res://Enemies/XpOrb.tscn")
 
 export var ACCELERATION = 280
 export var MAX_SPEED = 75
@@ -108,15 +109,22 @@ func _on_Stats_no_health():
 	var enemyDeathEffect = EnemyDeathEffect.instance()
 	get_parent().add_child(enemyDeathEffect)
 	enemyDeathEffect.global_position = global_position
+	var xpOrb = XpOrb.instance()
+	get_parent().call_deferred("add_child", xpOrb)
+	xpOrb.global_position = global_position
+	var xpOrb2 = XpOrb.instance()
+	get_parent().call_deferred("add_child", xpOrb2)
+	xpOrb2.global_position = global_position
+	xpOrb2.MAX_SPEED = 65
+	var xpOrb3 = XpOrb.instance()
+	get_parent().call_deferred("add_child", xpOrb3)
+	xpOrb3.global_position = global_position
+	xpOrb3.MAX_SPEED = 70
 	var randomDrop = random_drop_generator(["drop", "none"])
 	if (randomDrop == "drop"):
 		var battery = Battery.instance()
 		get_parent().call_deferred("add_child", battery)
 		battery.global_position = global_position
-	if (randomDrop == "ammo"):
-		var ammo = Ammo.instance()
-		get_parent().call_deferred("add_child", ammo)
-		ammo.global_position = global_position
 
 
 func _on_TorchArea_area_entered(area):
