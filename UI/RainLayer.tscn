@@ -1,0 +1,47 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Effects/rain_and_snow_shader.gdshader" type="Shader" id=1]
+[ext_resource path="res://UI/RainLayer.gd" type="Script" id=2]
+
+[sub_resource type="ShaderMaterial" id=1]
+shader = ExtResource( 1 )
+shader_param/rain_amount = 100.0
+shader_param/near_rain_length = 0.2
+shader_param/far_rain_length = 0.1
+shader_param/near_rain_width = 1.0
+shader_param/far_rain_width = 0.5
+shader_param/near_rain_transparency = 0.8
+shader_param/far_rain_transparency = 0.5
+shader_param/rain_color = Color( 0.8, 0.8, 0.8, 1 )
+shader_param/base_rain_speed = 0.5
+shader_param/additional_rain_speed = 0.5
+shader_param/slant = 0.2
+
+[node name="RainLayer" type="Control"]
+margin_right = 40.0
+margin_bottom = 40.0
+script = ExtResource( 2 )
+
+[node name="DarkSkyLayer" type="ColorRect" parent="."]
+margin_right = 320.0
+margin_bottom = 180.0
+color = Color( 0, 0, 0, 0.0588235 )
+
+[node name="Rain" type="ColorRect" parent="."]
+material = SubResource( 1 )
+margin_right = 320.0
+margin_bottom = 180.0
+color = Color( 0.313726, 0.313726, 0.313726, 0 )
+
+[node name="Lightning" type="ColorRect" parent="."]
+visible = false
+margin_right = 320.0
+margin_bottom = 180.0
+
+[node name="RainTimer" type="Timer" parent="."]
+
+[node name="RainStopTimer" type="Timer" parent="."]
+
+[node name="Thunder" type="AudioStreamPlayer" parent="."]
+
+[node name="RainSound" type="AudioStreamPlayer" parent="."]

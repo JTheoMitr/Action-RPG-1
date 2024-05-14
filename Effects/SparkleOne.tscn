@@ -40,5 +40,5 @@ animations = [ {
 
 [node name="SparkleOne" type="AnimatedSprite"]
 frames = SubResource( 8 )
-frame = 6
+frame = 2
 playing = true
