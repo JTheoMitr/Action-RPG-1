@@ -1,7 +1,10 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Effects/rain_and_snow_shader.gdshader" type="Shader" id=1]
 [ext_resource path="res://UI/RainLayer.gd" type="Script" id=2]
+[ext_resource path="res://Music and Sounds/thunder1.wav" type="AudioStream" id=3]
+[ext_resource path="res://Music and Sounds/thunder2.wav" type="AudioStream" id=4]
+[ext_resource path="res://Music and Sounds/01 Rain Texture SFX 136BPM.wav" type="AudioStream" id=5]
 
 [sub_resource type="ShaderMaterial" id=1]
 shader = ExtResource( 1 )
@@ -25,7 +28,7 @@ script = ExtResource( 2 )
 [node name="DarkSkyLayer" type="ColorRect" parent="."]
 margin_right = 320.0
 margin_bottom = 180.0
-color = Color( 0, 0, 0, 0.0588235 )
+color = Color( 0, 0, 0, 0 )
 
 [node name="Rain" type="ColorRect" parent="."]
 material = SubResource( 1 )
@@ -37,11 +40,33 @@ color = Color( 0.313726, 0.313726, 0.313726, 0 )
 visible = false
 margin_right = 320.0
 margin_bottom = 180.0
+color = Color( 1, 1, 1, 0.796078 )
+
+[node name="Lightning2" type="ColorRect" parent="."]
+visible = false
+margin_right = 320.0
+margin_bottom = 180.0
+color = Color( 1, 1, 1, 0.388235 )
 
 [node name="RainTimer" type="Timer" parent="."]
 
 [node name="RainStopTimer" type="Timer" parent="."]
 
 [node name="Thunder" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+
+[node name="Thunder2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
 
 [node name="RainSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+volume_db = -5.0
+
+[node name="Tween" type="Tween" parent="."]
+
+[node name="ThunderTimer" type="Timer" parent="."]
+
+[node name="LightningTimer" type="Timer" parent="."]
+
+[connection signal="timeout" from="RainTimer" to="." method="_on_RainTimer_timeout"]
+[connection signal="finished" from="RainSound" to="." method="_on_RainSound_finished"]
