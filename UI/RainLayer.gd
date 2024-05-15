@@ -20,15 +20,15 @@ onready var hideTimer = $LightningHideTimer
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	rainTimer.wait_time = random_drop_generator([15, 20, 25])
+	rainTimer.wait_time = random_drop_generator([35, 40, 45])
 	rainTimer.start(0.0)
 	lightning.hide()
 	lightning2.hide()
 	rain.hide()
-	rain.color = Color(0,0,0,0)
+	rain.modulate.a = 0.0
 	darkSky.hide()
 	darkSky.color = Color(0,0,0,0)
-	print_debug(rain.color)
+	
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -40,7 +40,7 @@ func random_drop_generator(drop_list):
 	return drop_list.pop_front()
 
 func _on_RainTimer_timeout():
-	print_debug(rain.color)
+	
 	lightningTimer.wait_time = 2
 	thunderTimer.wait_time = lightningTimer.wait_time + 1
 	rainStopTimer.wait_time = random_drop_generator([15, 30, 45])
