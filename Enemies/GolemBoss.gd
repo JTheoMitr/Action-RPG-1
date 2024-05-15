@@ -49,11 +49,17 @@ onready var health3 = $CanvasLayer/GolemBossHealthUI/HBoxContainer/Health_Three
 onready var health4 = $CanvasLayer/GolemBossHealthUI/HBoxContainer/Health_Four
 onready var guitarBlast = $AudioStreamPlayer
 onready var casinoDing = $AudioStreamPlayer2
+onready var dust3 = $DustAnimation3
+onready var dust4 = $DustAnimation4
+onready var dust5 = $DustAnimation5
 
 func _ready():
 	state = pick_random_state([IDLE, WANDER])
 	bossHealthUI.hide()
 	hurtbox.monitoring = false
+	dust3.hide()
+	dust4.hide()
+	dust5.hide()
 
 func _physics_process(delta):
 	knockback = knockback.move_toward(Vector2.ZERO, FRICTION * delta)
@@ -121,6 +127,9 @@ func _physics_process(delta):
 	
 	match state:
 		IDLE:
+			dust3.hide()
+			dust4.hide()
+			dust5.hide()
 			atkHitbox.monitorable = false
 			sprite.play("walk")
 			velocity = velocity.move_toward(Vector2.ZERO, FRICTION * delta)
@@ -129,6 +138,9 @@ func _physics_process(delta):
 				update_wander_state()
 				
 		WANDER:
+			dust3.hide()
+			dust4.hide()
+			dust5.hide()
 			seek_player()
 			if wanderController.get_time_left() == 0:
 				update_wander_state()
@@ -137,6 +149,9 @@ func _physics_process(delta):
 				update_wander_state()
 				
 		CHASE:
+			dust3.hide()
+			dust4.hide()
+			dust5.hide()
 			var player = playerDetectionZone.player
 			#PlayerStats.overcharge = true
 			if player != null:
@@ -145,6 +160,9 @@ func _physics_process(delta):
 				state = IDLE
 		STUN:
 			sprite.play("stagger")
+			dust3.show()
+			dust4.show()
+			dust5.show()
 
 	if softCollision.is_colliding():
 		velocity += softCollision.get_push_vector() * delta * 400
