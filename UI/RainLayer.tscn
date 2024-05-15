@@ -49,14 +49,17 @@ margin_bottom = 180.0
 color = Color( 1, 1, 1, 0.388235 )
 
 [node name="RainTimer" type="Timer" parent="."]
+one_shot = true
 
 [node name="RainStopTimer" type="Timer" parent="."]
 
 [node name="Thunder" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 3 )
+volume_db = -5.0
 
 [node name="Thunder2" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 4 )
+volume_db = -5.0
 
 [node name="RainSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 5 )
@@ -65,8 +68,19 @@ volume_db = -5.0
 [node name="Tween" type="Tween" parent="."]
 
 [node name="ThunderTimer" type="Timer" parent="."]
+one_shot = true
 
 [node name="LightningTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="LightningHideTimer" type="Timer" parent="."]
+wait_time = 0.1
+one_shot = true
+
+[node name="Tween2" type="Tween" parent="."]
 
 [connection signal="timeout" from="RainTimer" to="." method="_on_RainTimer_timeout"]
 [connection signal="finished" from="RainSound" to="." method="_on_RainSound_finished"]
+[connection signal="timeout" from="ThunderTimer" to="." method="_on_ThunderTimer_timeout"]
+[connection signal="timeout" from="LightningTimer" to="." method="_on_LightningTimer_timeout"]
+[connection signal="timeout" from="LightningHideTimer" to="." method="_on_LightningHideTimer_timeout"]
