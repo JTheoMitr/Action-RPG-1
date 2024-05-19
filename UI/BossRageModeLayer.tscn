@@ -1,0 +1,126 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://Effects/boss_rage_shader.gdshader" type="Shader" id=1]
+[ext_resource path="res://UI/BossRageModeLayer.gd" type="Script" id=2]
+[ext_resource path="res://Music and Sounds/thunder1.wav" type="AudioStream" id=3]
+[ext_resource path="res://Music and Sounds/thunder2.wav" type="AudioStream" id=4]
+[ext_resource path="res://Effects/ScreenCrack.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Music and Sounds/GLASBrk_Destruction Glass Impact Riser Reverse Hit Shatter Debris 11_ESM_SG.wav" type="AudioStream" id=6]
+[ext_resource path="res://Music and Sounds/electricity_glitch_17.wav" type="AudioStream" id=7]
+[ext_resource path="res://Music and Sounds/GLASBrk_Destruction Glass Impact Riser Reverse Hit Shatter Debris 12_ESM_SG.wav" type="AudioStream" id=8]
+[ext_resource path="res://Music and Sounds/GLASBrk_Destruction Glass Impact Riser Reverse Hit Shatter Debris 03_ESM_SG.wav" type="AudioStream" id=9]
+
+[sub_resource type="ShaderMaterial" id=1]
+shader = ExtResource( 1 )
+shader_param/rain_amount = 100.0
+shader_param/near_rain_length = 0.9
+shader_param/far_rain_length = 0.7
+shader_param/near_rain_width = 0.8
+shader_param/far_rain_width = 0.7
+shader_param/near_rain_transparency = 0.5
+shader_param/far_rain_transparency = 0.3
+shader_param/rain_color = Color( 0, 0, 0, 53 )
+shader_param/base_rain_speed = 0.8
+shader_param/additional_rain_speed = 0.5
+shader_param/slant = 0.5
+
+[node name="BossRageModeLayer" type="Control"]
+margin_right = 40.0
+margin_bottom = 40.0
+script = ExtResource( 2 )
+
+[node name="Rage" type="ColorRect" parent="."]
+visible = false
+material = SubResource( 1 )
+margin_right = 320.0
+margin_bottom = 180.0
+color = Color( 0.313726, 0.313726, 0.313726, 0 )
+
+[node name="Lightning" type="ColorRect" parent="."]
+visible = false
+margin_right = 320.0
+margin_bottom = 180.0
+color = Color( 1, 1, 1, 0.796078 )
+
+[node name="Lightning2" type="ColorRect" parent="."]
+visible = false
+margin_right = 320.0
+margin_bottom = 180.0
+color = Color( 1, 1, 1, 0.388235 )
+
+[node name="RageTimer" type="Timer" parent="."]
+wait_time = 0.1
+one_shot = true
+
+[node name="RageStopTimer" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+
+[node name="Thunder" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+volume_db = -5.0
+
+[node name="Thunder2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+volume_db = -5.0
+
+[node name="Tween" type="Tween" parent="."]
+
+[node name="LightningTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="LightningHideTimer" type="Timer" parent="."]
+wait_time = 0.1
+one_shot = true
+
+[node name="RageHideTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="ScreenCrack" parent="." instance=ExtResource( 5 )]
+position = Vector2( 43, 137 )
+playing = false
+
+[node name="ScreenCrack2" parent="." instance=ExtResource( 5 )]
+position = Vector2( 79, 46 )
+playing = false
+
+[node name="ScreenCrack3" parent="." instance=ExtResource( 5 )]
+position = Vector2( 156, 113 )
+playing = false
+
+[node name="ScreenCrack4" parent="." instance=ExtResource( 5 )]
+position = Vector2( 192, 43 )
+playing = false
+
+[node name="ScreenCrack5" parent="." instance=ExtResource( 5 )]
+position = Vector2( 281, 91 )
+playing = false
+
+[node name="ScreenCrack6" parent="." instance=ExtResource( 5 )]
+position = Vector2( 248, 149 )
+playing = false
+
+[node name="GlassBreak" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 9 )
+volume_db = -2.0
+
+[node name="GlassBreak2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )
+
+[node name="GlassBreak3" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 8 )
+
+[node name="ScreenGlitch" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 7 )
+volume_db = -3.0
+pitch_scale = 0.8
+
+[connection signal="timeout" from="RageTimer" to="." method="_on_RageTimer_timeout"]
+[connection signal="timeout" from="RageStopTimer" to="." method="_on_RageStopTimer_timeout"]
+[connection signal="timeout" from="RageHideTimer" to="." method="_on_RageHideTimer_timeout"]
+[connection signal="animation_finished" from="ScreenCrack" to="." method="_on_ScreenCrack_animation_finished"]
+[connection signal="animation_finished" from="ScreenCrack2" to="." method="_on_ScreenCrack2_animation_finished"]
+[connection signal="animation_finished" from="ScreenCrack3" to="." method="_on_ScreenCrack3_animation_finished"]
+[connection signal="animation_finished" from="ScreenCrack4" to="." method="_on_ScreenCrack4_animation_finished"]
+[connection signal="animation_finished" from="ScreenCrack5" to="." method="_on_ScreenCrack5_animation_finished"]
+[connection signal="animation_finished" from="ScreenCrack6" to="." method="_on_ScreenCrack6_animation_finished"]

@@ -46,7 +46,6 @@ scale = Vector2( 1.5, 1.5 )
 collision_layer = 17
 script = ExtResource( 8 )
 ACCELERATION = 300
-MAX_SPEED = 60
 
 [node name="ShadowSprite" type="Sprite" parent="."]
 visible = false
@@ -99,7 +98,7 @@ shape = SubResource( 12 )
 visible = false
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 2.0
+wait_time = 3.0
 
 [node name="Timer2" type="Timer" parent="."]
 wait_time = 0.1

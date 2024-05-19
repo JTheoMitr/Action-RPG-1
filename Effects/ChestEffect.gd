@@ -12,3 +12,7 @@ func _ready():
 
 func _on_animation_finished():
 	queue_free()
+
+
+func _on_AudioStreamPlayer_finished():
+	queue_free()

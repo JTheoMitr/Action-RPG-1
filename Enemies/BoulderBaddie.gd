@@ -5,7 +5,7 @@ const EnemyDeathEffect = preload("res://Effects/EnemyDeathEffect.tscn")
 
 
 export var ACCELERATION = 280
-export var MAX_SPEED = 40
+export var MAX_SPEED = 70
 export var FRICTION = 200
 export var WANDER_TARGET_RANGE = 4
 

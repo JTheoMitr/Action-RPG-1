@@ -6,6 +6,7 @@ const Battery = preload("res://World/Battery.tscn")
 const GolemCorpse = preload("res://Enemies/DeadGolemBoss.tscn")
 const Boulder = preload("res://Enemies/BoulderBaddie.tscn")
 
+
 export var ACCELERATION = 280
 export var MAX_SPEED = 40
 export var FRICTION = 200
@@ -21,8 +22,9 @@ enum {
 var velocity = Vector2.ZERO
 var knockback = Vector2.ZERO
 var frozen = false
+var enraged = false
 var worldStats = WorldStats
-
+var playerStats = PlayerStats
 var state = CHASE
 
 onready var sprite = $AnimatedSprite
@@ -52,6 +54,7 @@ onready var casinoDing = $AudioStreamPlayer2
 onready var dust3 = $DustAnimation3
 onready var dust4 = $DustAnimation4
 onready var dust5 = $DustAnimation5
+onready var timer4 = $Timer4
 
 func _ready():
 	state = pick_random_state([IDLE, WANDER])
@@ -270,15 +273,25 @@ func _on_SoundTrigger_area_exited(area):
 
 
 func _on_StaggerArea_area_entered(area):
-	print_debug("Stagger")
-	velocity = Vector2.ZERO
-	state = STUN
-	timer.stop()
-	timer2.stop()
-	hurtbox.monitoring = true
-	timer3.start()
-	guitarBlast.play(0.0)
-	casinoDing.play(0.0)
+	#print_debug("Stagger")
+	if stats.health > 4:
+		velocity = Vector2.ZERO
+		state = STUN
+		timer.stop()
+		timer2.stop()
+		hurtbox.monitoring = true
+		timer3.start()
+		guitarBlast.play(0.0)
+		casinoDing.play(0.0)
+	else:
+		velocity = Vector2.ZERO
+		state = STUN
+		timer.stop()
+		timer2.stop()
+		hurtbox.monitoring = true
+		timer3.start()
+		guitarBlast.play(0.0)
+		casinoDing.play(0.0)
 	
 	
 
@@ -291,3 +304,21 @@ func _on_Timer3_timeout():
 	timer2.start()
 	hurtbox.monitoring = false
 	
+	if stats.health <= 4:
+		timer4.start()
+		if enraged == false:
+			timer.stop()
+			timer2.stop()
+			self.MAX_SPEED = 0
+			playerStats.emit_signal("player_paused")
+			$CanvasLayer/PopupDialog.show()
+	
+
+
+func _on_Timer4_timeout():
+	worldStats.emit_signal("rage_mode")
+	if enraged == false:
+		self.MAX_SPEED = 75
+		playerStats.emit_signal("player_resumed")
+		$CanvasLayer/PopupDialog.hide()
+		enraged = true

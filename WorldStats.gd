@@ -12,6 +12,7 @@ signal open_fence_two
 signal in_the_tall_grass
 signal out_of_the_tall_grass
 signal play_blast_anim
+signal rage_mode
 
 func set_max_freed(value):
 	max_freed = value

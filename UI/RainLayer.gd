@@ -45,6 +45,7 @@ func _on_RainTimer_timeout():
 	lightningTimer.wait_time = 2
 	thunderTimer.wait_time = lightningTimer.wait_time + 1
 	rainStopTimer.wait_time = random_drop_generator([30, 45, 90])
+	rainStopTimer.start()
 	$Tween.interpolate_property(darkSky, "color", Color(0, 0, 0, 0), Color(0, 0, 0, 0.3), 2, Tween.TRANS_LINEAR)
 	$Tween2.interpolate_property(rain, "modulate:a", 0.0, 1.0, 2, Tween.TRANS_LINEAR)
 	$Tween.start()

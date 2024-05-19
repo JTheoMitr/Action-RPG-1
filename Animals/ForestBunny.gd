@@ -22,6 +22,8 @@ func _process(delta):
 func _on_Area2D_area_entered(area):
 	popup.popup()
 	$Timer.start()
+	bunny.hide()
+	shadow.hide()
 	
 
 

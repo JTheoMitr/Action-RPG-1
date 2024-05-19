@@ -1,4 +1,4 @@
-[gd_scene load_steps=77 format=2]
+[gd_scene load_steps=81 format=2]
 
 [ext_resource path="res://Enemies/GolemBoss.gd" type="Script" id=1]
 [ext_resource path="res://Hitboxes and Hurtboxes/Hurtbox.tscn" type="PackedScene" id=2]
@@ -21,6 +21,9 @@
 [ext_resource path="res://Enemies/golem_stagger_one.png" type="Texture" id=19]
 [ext_resource path="res://Music and Sounds/guitar_malfunction.wav" type="AudioStream" id=20]
 [ext_resource path="res://Music and Sounds/ESM_casino_game_2correct_Sound_FX_Arcade_Kids_Mobile_App.wav" type="AudioStream" id=21]
+[ext_resource path="res://Enemies/golem_purple_attack headshot.png" type="Texture" id=22]
+[ext_resource path="res://UI/panel_Example2.png" type="Texture" id=23]
+[ext_resource path="res://fonts/PixelTandysoft-0rJG.ttf" type="DynamicFontData" id=24]
 
 [sub_resource type="AtlasTexture" id=43]
 atlas = ExtResource( 12 )
@@ -261,6 +264,10 @@ height = 14.3579
 [sub_resource type="CircleShape2D" id=42]
 radius = 240.023
 
+[sub_resource type="DynamicFont" id=90]
+size = 10
+font_data = ExtResource( 24 )
+
 [sub_resource type="CapsuleShape2D" id=83]
 radius = 30.7143
 height = 24.2857
@@ -269,7 +276,7 @@ height = 24.2857
 scale = Vector2( 1.4, 1.4 )
 script = ExtResource( 1 )
 ACCELERATION = 300
-MAX_SPEED = 70
+MAX_SPEED = 65
 
 [node name="ShadowSprite" type="Sprite" parent="."]
 position = Vector2( 15, 6.66667 )
@@ -281,7 +288,7 @@ position = Vector2( -40, -10 )
 scale = Vector2( 1.2, 1.2 )
 frames = SubResource( 7 )
 animation = "stagger"
-frame = 8
+frame = 6
 playing = true
 centered = false
 offset = Vector2( 1, -60 )
@@ -376,7 +383,7 @@ scale = Vector2( 0.819203, 1.01494 )
 shape = SubResource( 23 )
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 2.0
+wait_time = 1.5
 
 [node name="SoundTrigger" type="Area2D" parent="."]
 visible = false
@@ -408,11 +415,38 @@ pitch_scale = 0.52
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="GolemBossHealthUI" parent="CanvasLayer" instance=ExtResource( 18 )]
-margin_left = 149.0
+margin_left = 142.0
 margin_top = 22.0
-margin_right = 149.0
+margin_right = 142.0
 margin_bottom = 22.0
 rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="PopupDialog" type="PopupDialog" parent="CanvasLayer"]
+visible = true
+self_modulate = Color( 1, 1, 1, 0 )
+margin_left = 52.0
+margin_top = 21.0
+margin_right = 72.0
+margin_bottom = 75.0
+
+[node name="Sprite" type="Sprite" parent="CanvasLayer/PopupDialog"]
+position = Vector2( 112.143, 67.1429 )
+scale = Vector2( 0.368254, 0.466667 )
+texture = ExtResource( 23 )
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/PopupDialog"]
+margin_left = 77.0
+margin_top = 54.0
+margin_right = 181.0
+margin_bottom = 84.0
+custom_fonts/normal_font = SubResource( 90 )
+bbcode_enabled = true
+bbcode_text = "[center] Behold...My True Power! [/center]"
+text = " Behold...My True Power! "
+
+[node name="Sprite2" type="Sprite" parent="CanvasLayer/PopupDialog"]
+position = Vector2( 65, 65.7143 )
+texture = ExtResource( 22 )
 
 [node name="StaggerArea" type="Area2D" parent="."]
 collision_layer = 64
@@ -436,6 +470,10 @@ stream = ExtResource( 21 )
 volume_db = -3.0
 pitch_scale = 0.8
 
+[node name="Timer4" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
 [connection signal="area_entered" from="Hurtbox" to="." method="_on_Hurtbox_area_entered"]
 [connection signal="no_health" from="Stats" to="." method="_on_Stats_no_health"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
@@ -444,6 +482,7 @@ pitch_scale = 0.8
 [connection signal="timeout" from="Timer2" to="." method="_on_Timer2_timeout"]
 [connection signal="area_entered" from="StaggerArea" to="." method="_on_StaggerArea_area_entered"]
 [connection signal="timeout" from="Timer3" to="." method="_on_Timer3_timeout"]
+[connection signal="timeout" from="Timer4" to="." method="_on_Timer4_timeout"]
 
 [editable path="Hurtbox"]
 [editable path="PlayerDetectionZone"]

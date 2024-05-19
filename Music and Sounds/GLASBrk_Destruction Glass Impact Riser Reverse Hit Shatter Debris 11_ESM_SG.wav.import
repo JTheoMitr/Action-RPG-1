@@ -1,0 +1,23 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/GLASBrk_Destruction Glass Impact Riser Reverse Hit Shatter Debris 11_ESM_SG.wav-1940ea065f78c1c9e754f1ed02c7131c.sample"
+
+[deps]
+
+source_file="res://Music and Sounds/GLASBrk_Destruction Glass Impact Riser Reverse Hit Shatter Debris 11_ESM_SG.wav"
+dest_files=[ "res://.import/GLASBrk_Destruction Glass Impact Riser Reverse Hit Shatter Debris 11_ESM_SG.wav-1940ea065f78c1c9e754f1ed02c7131c.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
