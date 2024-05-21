@@ -10,7 +10,7 @@ const LaserThree = preload("res://Enemies/BossLaserBottomRightStraight.tscn")
 const LaserFour = preload("res://Enemies/BossLaserTopLeftStraight.tscn")
 const LaserFive = preload("res://Enemies/BossLaserRightStraight.tscn")
 const LaserSix = preload("res://Enemies/BossLaserLeftStraight.tscn")
-const XpOrb = preload("res://Enemies/XpOrb.tscn")
+const XpOrb = preload("res://Enemies/XpOrbLrg.tscn")
 const BossLaserSound = preload("res://Music and Sounds/BossLaserSound.tscn")
 
 
@@ -29,6 +29,7 @@ var velocity = Vector2.ZERO
 var knockback = Vector2.ZERO
 var frozen = false
 var worldStats = WorldStats
+var playerStats = PlayerStats
 var songStarted = false
 
 var state = CHASE
@@ -55,6 +56,9 @@ onready var health1 = $CanvasLayer/DroidBossHealthUI/HBoxContainer/Health_One
 onready var health2 = $CanvasLayer/DroidBossHealthUI/HBoxContainer/Health_Two
 onready var health3 = $CanvasLayer/DroidBossHealthUI/HBoxContainer/Health_Three
 onready var health4 = $CanvasLayer/DroidBossHealthUI/HBoxContainer/Health_Four
+onready var timer5 = $Timer5
+
+var introduced = false
 
 
 func _ready():
@@ -169,10 +173,18 @@ func accelerate_towards_point(point, delta):
 
 func seek_player():
 	if playerDetectionZone.can_see_player():
-		state = CHASE
-		timer.start()
-		$Timer2.start()
-		bossHealthUI.show()
+		if introduced == false:
+			bossHealthUI.show()
+			introduced = true
+			$CanvasLayer/PopupDialog.show()
+			playerStats.emit_signal("player_paused")
+			self.MAX_SPEED = 0
+			timer5.start()
+		elif introduced == true:
+			state = CHASE
+			timer.start()
+			$Timer2.start()
+		
 
 func update_wander_state():
 	state = pick_random_state([IDLE, WANDER])
@@ -217,114 +229,13 @@ func _on_Stats_no_health():
 	get_parent().call_deferred("add_child", xpOrb3)
 	xpOrb3.global_position = global_position
 	xpOrb3.MAX_SPEED = 70
-	var xpOrb4 = XpOrb.instance()
-	get_parent().call_deferred("add_child", xpOrb4)
-	xpOrb4.global_position = global_position
-	xpOrb4.MAX_SPEED = 63
-	var xpOrb5 = XpOrb.instance()
-	get_parent().call_deferred("add_child", xpOrb5)
-	xpOrb5.global_position = global_position
-	xpOrb5.MAX_SPEED = 60
-	var xpOrb6 = XpOrb.instance()
-	get_parent().call_deferred("add_child", xpOrb6)
-	xpOrb6.global_position = global_position
-	var xpOrb7 = XpOrb.instance()
-	get_parent().call_deferred("add_child", xpOrb7)
-	xpOrb7.global_position = global_position
-	xpOrb7.MAX_SPEED = 66
-	var xpOrb8 = XpOrb.instance()
-	get_parent().call_deferred("add_child", xpOrb8)
-	xpOrb8.global_position = global_position
-	xpOrb8.MAX_SPEED = 71
-	var xpOrb9 = XpOrb.instance()
-	get_parent().call_deferred("add_child", xpOrb9)
-	xpOrb9.global_position = global_position
-	xpOrb9.MAX_SPEED = 64
-	var xpOrb10 = XpOrb.instance()
-	get_parent().call_deferred("add_child", xpOrb10)
-	xpOrb10.global_position = global_position
-	xpOrb10.MAX_SPEED = 61
-	var xpOrb11 = XpOrb.instance()
-	get_parent().call_deferred("add_child", xpOrb11)
-	xpOrb11.global_position = global_position
-	var xpOrb12 = XpOrb.instance()
-	get_parent().call_deferred("add_child", xpOrb12)
-	xpOrb12.global_position = global_position
-	xpOrb12.MAX_SPEED = 62
-	var xpOrb13 = XpOrb.instance()
-	get_parent().call_deferred("add_child", xpOrb13)
-	xpOrb13.global_position = global_position
-	xpOrb13.MAX_SPEED = 65
-	var xpOrb14 = XpOrb.instance()
-	get_parent().call_deferred("add_child", xpOrb14)
-	xpOrb14.global_position = global_position
-	xpOrb14.MAX_SPEED = 58
-	var xpOrb15 = XpOrb.instance()
-	get_parent().call_deferred("add_child", xpOrb15)
-	xpOrb15.global_position = global_position
-	xpOrb15.MAX_SPEED = 73
-	var xpOrb16 = XpOrb.instance()
-	get_parent().call_deferred("add_child", xpOrb16)
-	xpOrb16.global_position = global_position
-	var xpOrb17 = XpOrb.instance()
-	get_parent().call_deferred("add_child", xpOrb17)
-	xpOrb17.global_position = global_position
-	xpOrb17.MAX_SPEED = 69
-	var xpOrb18 = XpOrb.instance()
-	get_parent().call_deferred("add_child", xpOrb18)
-	xpOrb18.global_position = global_position
-	xpOrb18.MAX_SPEED = 71
-	var xpOrb19 = XpOrb.instance()
-	get_parent().call_deferred("add_child", xpOrb19)
-	xpOrb19.global_position = global_position
-	xpOrb19.MAX_SPEED = 68
-	var xpOrb20 = XpOrb.instance()
-	get_parent().call_deferred("add_child", xpOrb20)
-	xpOrb20.global_position = global_position
-	xpOrb20.MAX_SPEED = 60
-	var xpOrb21 = XpOrb.instance()
-	get_parent().call_deferred("add_child", xpOrb21)
-	xpOrb21.global_position = global_position
-	var xpOrb22 = XpOrb.instance()
-	get_parent().call_deferred("add_child", xpOrb22)
-	xpOrb22.global_position = global_position
-	xpOrb22.MAX_SPEED = 65
-	var xpOrb23 = XpOrb.instance()
-	get_parent().call_deferred("add_child", xpOrb23)
-	xpOrb23.global_position = global_position
-	xpOrb23.MAX_SPEED = 74
-	var xpOrb24 = XpOrb.instance()
-	get_parent().call_deferred("add_child", xpOrb24)
-	xpOrb24.global_position = global_position
-	xpOrb24.MAX_SPEED = 63
-	var xpOrb25 = XpOrb.instance()
-	get_parent().call_deferred("add_child", xpOrb25)
-	xpOrb25.global_position = global_position
-	xpOrb25.MAX_SPEED = 60
-	var xpOrb26 = XpOrb.instance()
-	get_parent().call_deferred("add_child", xpOrb26)
-	xpOrb26.global_position = global_position
-	var xpOrb27 = XpOrb.instance()
-	get_parent().call_deferred("add_child", xpOrb27)
-	xpOrb27.global_position = global_position
-	xpOrb27.MAX_SPEED = 65
-	var xpOrb28 = XpOrb.instance()
-	get_parent().call_deferred("add_child", xpOrb28)
-	xpOrb28.global_position = global_position
-	xpOrb28.MAX_SPEED = 70
-	var xpOrb29 = XpOrb.instance()
-	get_parent().call_deferred("add_child", xpOrb29)
-	xpOrb29.global_position = global_position
-	xpOrb29.MAX_SPEED = 63
-	var xpOrb30 = XpOrb.instance()
-	get_parent().call_deferred("add_child", xpOrb30)
-	xpOrb30.global_position = global_position
-	xpOrb30.MAX_SPEED = 60
+	
 	#robotCorpse.global_position.x = global_position.x
 	#robotCorpse.global_position.y = global_position.y + 2
 	robotCorpse.global_position = global_position
 	enemyDeathEffect.global_position = global_position
 	droidBossDeath.global_position = global_position
+	worldStats.emit_signal("fade_music_in")
 	call_deferred("queue_free")
 	var randomDrop = random_drop_generator(["drop", "none"])
 	if (randomDrop == "drop"):
@@ -361,7 +272,8 @@ func _on_Timer2_timeout():
 
 
 func _on_SoundTrigger_area_exited(area):
-	worldStats.emit_signal("fade_music_in")
+	pass
+	#worldStats.emit_signal("fade_music_in")
 
 
 func _on_Timer3_timeout():
@@ -394,3 +306,12 @@ func _on_Timer4_timeout():
 	var laserSix = LaserSix.instance()
 	get_parent().call_deferred("add_child", laserSix)
 	laserSix.global_position = hitbox.global_position
+
+
+func _on_Timer5_timeout():
+	playerStats.emit_signal("player_resumed")
+	self.MAX_SPEED = 50
+	state = CHASE
+	timer.start()
+	$Timer2.start()
+	$CanvasLayer/PopupDialog.hide()

@@ -213,27 +213,12 @@ func _on_Hurtbox_area_entered(area):
 
 
 func _on_Stats_no_health():
+	$CanvasLayer/PopupDialog/RichTextLabel.bbcode_text = "[center]It...can't be[/center]"
+	$CanvasLayer/PopupDialog.show()
+	playerStats.emit_signal("player_paused")
+	$Timer5.start()
 	
-	call_deferred("queue_free")
 	
-	var enemyDeathEffect = EnemyDeathEffect.instance()
-	var golemBossDeath = GolemBossDeathEffect.instance()
-	var golemCorpse = GolemCorpse.instance()
-	
-	get_parent().call_deferred("add_child", enemyDeathEffect)
-	get_parent().call_deferred("add_child", golemBossDeath)
-	get_parent().call_deferred("add_child", golemCorpse)
-	
-	golemCorpse.global_position.x = global_position.x - 22
-	golemCorpse.global_position.y = global_position.y + 24
-	enemyDeathEffect.global_position = global_position
-	golemBossDeath.global_position = global_position
-	
-	var randomDrop = random_drop_generator(["drop", "none"])
-	if (randomDrop == "drop"):
-		var battery = Battery.instance()
-		get_parent().add_child(battery)
-		battery.global_position = global_position
 
 
 func _on_Timer_timeout():
@@ -311,6 +296,7 @@ func _on_Timer3_timeout():
 			timer2.stop()
 			self.MAX_SPEED = 0
 			playerStats.emit_signal("player_paused")
+			$CanvasLayer/PopupDialog/RichTextLabel.bbcode_text = "[center] Behold...My True Power! [/center]"
 			$CanvasLayer/PopupDialog.show()
 	
 
@@ -318,7 +304,33 @@ func _on_Timer3_timeout():
 func _on_Timer4_timeout():
 	worldStats.emit_signal("rage_mode")
 	if enraged == false:
-		self.MAX_SPEED = 75
+		self.MAX_SPEED = 95
 		playerStats.emit_signal("player_resumed")
 		$CanvasLayer/PopupDialog.hide()
+		timer.start()
+		timer2.start()
 		enraged = true
+
+
+func _on_Timer5_timeout():
+	call_deferred("queue_free")
+	$CanvasLayer/PopupDialog.hide()
+	playerStats.emit_signal("player_resumed")
+	var enemyDeathEffect = EnemyDeathEffect.instance()
+	var golemBossDeath = GolemBossDeathEffect.instance()
+	var golemCorpse = GolemCorpse.instance()
+	
+	get_parent().call_deferred("add_child", enemyDeathEffect)
+	get_parent().call_deferred("add_child", golemBossDeath)
+	get_parent().call_deferred("add_child", golemCorpse)
+	
+	golemCorpse.global_position.x = global_position.x - 22
+	golemCorpse.global_position.y = global_position.y + 24
+	enemyDeathEffect.global_position = global_position
+	golemBossDeath.global_position = global_position
+	
+	var randomDrop = random_drop_generator(["drop", "none"])
+	if (randomDrop == "drop"):
+		var battery = Battery.instance()
+		get_parent().add_child(battery)
+		battery.global_position = global_position

@@ -78,27 +78,21 @@ one_shot = true
 
 [node name="ScreenCrack" parent="." instance=ExtResource( 5 )]
 position = Vector2( 43, 137 )
-playing = false
 
 [node name="ScreenCrack2" parent="." instance=ExtResource( 5 )]
 position = Vector2( 79, 46 )
-playing = false
 
 [node name="ScreenCrack3" parent="." instance=ExtResource( 5 )]
 position = Vector2( 156, 113 )
-playing = false
 
 [node name="ScreenCrack4" parent="." instance=ExtResource( 5 )]
 position = Vector2( 192, 43 )
-playing = false
 
 [node name="ScreenCrack5" parent="." instance=ExtResource( 5 )]
 position = Vector2( 281, 91 )
-playing = false
 
 [node name="ScreenCrack6" parent="." instance=ExtResource( 5 )]
 position = Vector2( 248, 149 )
-playing = false
 
 [node name="GlassBreak" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 9 )

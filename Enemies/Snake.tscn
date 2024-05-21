@@ -9,21 +9,21 @@
 [ext_resource path="res://SoftCollision.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Enemies/WanderController.tscn" type="PackedScene" id=9]
 
-[sub_resource type="AtlasTexture" id=13]
+[sub_resource type="AtlasTexture" id=21]
 atlas = ExtResource( 1 )
-region = Rect2( 0, 22, 48, 26 )
+region = Rect2( 1, 0, 37, 48 )
 
-[sub_resource type="AtlasTexture" id=14]
+[sub_resource type="AtlasTexture" id=22]
 atlas = ExtResource( 1 )
-region = Rect2( 48, 22, 48, 26 )
+region = Rect2( 48, 0, 37, 48 )
 
-[sub_resource type="AtlasTexture" id=15]
+[sub_resource type="AtlasTexture" id=23]
 atlas = ExtResource( 1 )
-region = Rect2( 96, 22, 48, 26 )
+region = Rect2( 95, 0, 37, 48 )
 
-[sub_resource type="AtlasTexture" id=16]
+[sub_resource type="AtlasTexture" id=24]
 atlas = ExtResource( 1 )
-region = Rect2( 144, 22, 48, 26 )
+region = Rect2( 142, 0, 37, 48 )
 
 [sub_resource type="AtlasTexture" id=17]
 atlas = ExtResource( 1 )
@@ -43,7 +43,7 @@ region = Rect2( 144, 22, 48, 26 )
 
 [sub_resource type="SpriteFrames" id=7]
 animations = [ {
-"frames": [ SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 16 ) ],
+"frames": [ SubResource( 21 ), SubResource( 22 ), SubResource( 23 ), SubResource( 24 ) ],
 "loop": true,
 "name": "attack",
 "speed": 5.0
@@ -80,10 +80,10 @@ script = ExtResource( 3 )
 ACCELERATION = 325
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-position = Vector2( 2.5, 0 )
+position = Vector2( 0, -4 )
 scale = Vector2( 0.4, 0.4 )
 frames = SubResource( 7 )
-animation = "idle"
+animation = "attack"
 frame = 2
 playing = true
 offset = Vector2( 1, -15 )

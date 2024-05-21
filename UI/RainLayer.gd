@@ -18,6 +18,8 @@ onready var thunderTimer = $ThunderTimer
 onready var hideTimer = $LightningHideTimer
 onready var rainHideTimer = $RainHideTimer
 
+var raining = false
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -48,6 +50,7 @@ func _on_RainTimer_timeout():
 	rainStopTimer.start()
 	$Tween.interpolate_property(darkSky, "color", Color(0, 0, 0, 0), Color(0, 0, 0, 0.3), 2, Tween.TRANS_LINEAR)
 	$Tween2.interpolate_property(rain, "modulate:a", 0.0, 1.0, 2, Tween.TRANS_LINEAR)
+	$Tween.interpolate_property(rainSound, "volume_db", -30.0, -5.0, 2, Tween.TRANS_LINEAR)
 	$Tween.start()
 	$Tween2.start()
 	rainSound.play(0.0)
@@ -55,10 +58,12 @@ func _on_RainTimer_timeout():
 	lightningTimer.start()
 	darkSky.show()
 	rain.show()
+	raining = true
 
 
 func _on_RainSound_finished():
-	rainSound.play(0.0)
+	if raining:
+		rainSound.play(0.0)
 
 
 func _on_ThunderTimer_timeout():
@@ -87,12 +92,15 @@ func _on_RainStopTimer_timeout():
 	lightningTimer.stop()
 	$Tween.interpolate_property(darkSky, "color", Color(0, 0, 0, 0.3), Color(0, 0, 0, 0), 2, Tween.TRANS_LINEAR)
 	$Tween2.interpolate_property(rain, "modulate:a", 1.0, 0.0, 2, Tween.TRANS_LINEAR)
+	$Tween.interpolate_property(rainSound, "volume_db", -5.0, -30.0, 2, Tween.TRANS_LINEAR )
 	$Tween.start()
 	$Tween2.start()
 	rainHideTimer.start()
+	
 
 
 func _on_RainHideTimer_timeout():
 	rain.hide()
 	darkSky.hide()
+	raining = false
 	rainSound.stop()

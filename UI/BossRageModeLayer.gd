@@ -88,16 +88,22 @@ func _on_RageHideTimer_timeout():
 	rage.hide()
 	screenCrack.frame = 0
 	screenCrack.hide()
+	screenCrack.stop()
 	screenCrack2.frame = 0
 	screenCrack2.hide()
+	screenCrack2.stop()
 	screenCrack3.frame = 0
 	screenCrack3.hide()
+	screenCrack3.stop()
 	screenCrack4.frame = 0
 	screenCrack4.hide()
+	screenCrack4.stop()
 	screenCrack5.frame = 0
 	screenCrack5.hide()
+	screenCrack5.stop()
 	screenCrack6.frame = 0
 	screenCrack6.hide()
+	screenCrack6.stop()
 	enraged = false
 
 
@@ -146,4 +152,5 @@ func _on_ScreenCrack6_animation_finished():
 	screenCrack6.frame = 9
 	rageTimer.start()
 	rageStopTimer.start()
-	enraged = true
+	glitchOut.play()
+	enraged = true #dont think we need enraged in this scene?
