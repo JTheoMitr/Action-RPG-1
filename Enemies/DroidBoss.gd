@@ -175,12 +175,12 @@ func seek_player():
 	if playerDetectionZone.can_see_player():
 		if introduced == false:
 			bossHealthUI.show()
-			introduced = true
 			$CanvasLayer/PopupDialog.show()
 			playerStats.emit_signal("player_paused")
 			self.MAX_SPEED = 0
+			introduced = true
 			timer5.start()
-		elif introduced == true:
+		elif introduced == true && self.MAX_SPEED >= 50:
 			state = CHASE
 			timer.start()
 			$Timer2.start()
@@ -309,6 +309,11 @@ func _on_Timer4_timeout():
 
 
 func _on_Timer5_timeout():
+	$CanvasLayer/PopupDialog/RichTextLabel.bbcode_text = "[center]But I can Pencil you in for a quick clobberin' [/center]"
+	$Timer6.start()
+
+
+func _on_Timer6_timeout():
 	playerStats.emit_signal("player_resumed")
 	self.MAX_SPEED = 50
 	state = CHASE

@@ -4,16 +4,16 @@
 shader_type canvas_item;
 
 uniform float rain_amount = 140.0;
-uniform float near_rain_length : hint_range(0.01, 1.0) = 0.05;
-uniform float far_rain_length : hint_range(0.01, 1.0) = 0.03;
+uniform float near_rain_length : hint_range(0.01, 1.0) = 0.07;
+uniform float far_rain_length : hint_range(0.01, 1.0) = 0.05;
 uniform float near_rain_width : hint_range(0.1, 1.0) = 0.5;
 uniform float far_rain_width : hint_range(0.1, 1.0) = 0.2;
 uniform float near_rain_transparency : hint_range(0.1, 1.0) = 0.5;
 uniform float far_rain_transparency : hint_range(0.1, 1.0) = 0.3;
 // Replace the below reference to source_color with hint_color if you are using a version of Godot before 4.0.
 uniform vec4 rain_color : hint_color = vec4(0.8, 0.8, 0.8, 1.0);
-uniform float base_rain_speed : hint_range(0.1, 1.0) = 0.7;
-uniform float additional_rain_speed : hint_range(0.1, 1.0) = 0.5;
+uniform float base_rain_speed : hint_range(0.1, 1.0) = 0.8;
+uniform float additional_rain_speed : hint_range(0.1, 1.0) = 0.7;
 uniform float slant : hint_range(-1.0, 1.0) = 0.2;
 
 void fragment() {

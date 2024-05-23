@@ -53,7 +53,7 @@ wait_time = 0.1
 one_shot = true
 
 [node name="RageStopTimer" type="Timer" parent="."]
-wait_time = 5.0
+wait_time = 2.5
 one_shot = true
 
 [node name="Thunder" type="AudioStreamPlayer" parent="."]

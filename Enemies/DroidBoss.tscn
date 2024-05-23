@@ -143,7 +143,7 @@ position = Vector2( -70, -31.6667 )
 scale = Vector2( 1.2, 1.2 )
 frames = SubResource( 7 )
 animation = "attack"
-frame = 1
+frame = 3
 playing = true
 centered = false
 offset = Vector2( 1, -60 )
@@ -280,16 +280,20 @@ scale = Vector2( 1.5, 1.5 )
 texture = ExtResource( 16 )
 
 [node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/PopupDialog"]
-margin_left = -48.0
+margin_left = -44.0
 margin_top = -14.0
-margin_right = 91.0
+margin_right = 95.0
 margin_bottom = 21.0
 custom_fonts/normal_font = SubResource( 45 )
 bbcode_enabled = true
-bbcode_text = "[center]You've interrupted our drill party, pal [/center]"
-text = "You've interrupted our drill party, pal "
+bbcode_text = "[center]Drillin' for oil keeps me on a tight schedule [/center]"
+text = "Drillin' for oil keeps me on a tight schedule "
 
 [node name="Timer5" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[node name="Timer6" type="Timer" parent="."]
 wait_time = 2.0
 one_shot = true
 
@@ -302,6 +306,7 @@ one_shot = true
 [connection signal="timeout" from="Timer3" to="." method="_on_Timer3_timeout"]
 [connection signal="timeout" from="Timer4" to="." method="_on_Timer4_timeout"]
 [connection signal="timeout" from="Timer5" to="." method="_on_Timer5_timeout"]
+[connection signal="timeout" from="Timer6" to="." method="_on_Timer6_timeout"]
 
 [editable path="Hurtbox"]
 [editable path="PlayerDetectionZone"]
