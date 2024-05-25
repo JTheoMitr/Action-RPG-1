@@ -75,8 +75,8 @@ margin_bottom = 89.0
 custom_styles/panel = SubResource( 6 )
 
 [node name="BoxSprite" type="Sprite" parent="PopupDialog"]
-position = Vector2( 48.75, 12.9167 )
-scale = Vector2( 0.4, 0.5 )
+position = Vector2( 48.75, 11.875 )
+scale = Vector2( 0.4, 0.486111 )
 texture = ExtResource( 5 )
 
 [node name="RichTextLabel" type="RichTextLabel" parent="PopupDialog"]
