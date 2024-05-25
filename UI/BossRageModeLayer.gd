@@ -79,7 +79,7 @@ func _on_RageTimer_timeout():
 
 
 func _on_RageStopTimer_timeout():
-	$Tween.interpolate_property(rage, "modulate:a", 1.0, 0.0, 5, Tween.TRANS_LINEAR)
+	$Tween.interpolate_property(rage, "modulate:a", 1.0, 0.0, 2, Tween.TRANS_LINEAR)
 	$Tween.start()
 	rageHideTimer.start()
 

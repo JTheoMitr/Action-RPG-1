@@ -180,6 +180,7 @@ func seek_player():
 			self.MAX_SPEED = 0
 			introduced = true
 			timer5.start()
+			$ChatterSound.play(0.0)
 		elif introduced == true && self.MAX_SPEED >= 50:
 			state = CHASE
 			timer.start()

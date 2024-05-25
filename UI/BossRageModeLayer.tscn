@@ -20,7 +20,7 @@ shader_param/far_rain_width = 0.7
 shader_param/near_rain_transparency = 0.5
 shader_param/far_rain_transparency = 0.3
 shader_param/rain_color = Color( 0, 0, 0, 53 )
-shader_param/base_rain_speed = 0.8
+shader_param/base_rain_speed = 0.6
 shader_param/additional_rain_speed = 0.5
 shader_param/slant = 0.5
 
@@ -74,6 +74,7 @@ wait_time = 0.1
 one_shot = true
 
 [node name="RageHideTimer" type="Timer" parent="."]
+wait_time = 2.0
 one_shot = true
 
 [node name="ScreenCrack" parent="." instance=ExtResource( 5 )]

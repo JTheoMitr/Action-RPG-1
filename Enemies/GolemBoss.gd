@@ -6,6 +6,7 @@ const Battery = preload("res://World/Battery.tscn")
 const GolemCorpse = preload("res://Enemies/DeadGolemBoss.tscn")
 const Boulder = preload("res://Enemies/BoulderBaddie.tscn")
 const XpOrb = preload("res://Enemies/XpOrbLrg.tscn")
+const Explosion = preload("res://Inventory/Explosion.tscn")
 
 
 export var ACCELERATION = 280
@@ -24,6 +25,7 @@ var velocity = Vector2.ZERO
 var knockback = Vector2.ZERO
 var frozen = false
 var enraged = false
+var reunited = false
 var worldStats = WorldStats
 var playerStats = PlayerStats
 var state = CHASE
@@ -64,6 +66,8 @@ func _ready():
 	dust3.hide()
 	dust4.hide()
 	dust5.hide()
+	playerDetectionZone.monitoring = false
+	playerDetectionZone.monitorable = false
 
 func _physics_process(delta):
 	knockback = knockback.move_toward(Vector2.ZERO, FRICTION * delta)
@@ -164,6 +168,7 @@ func _physics_process(delta):
 				state = IDLE
 		STUN:
 			sprite.play("stagger")
+			atkHitbox.monitorable = false
 			dust3.show()
 			dust4.show()
 			dust5.show()
@@ -216,8 +221,12 @@ func _on_Hurtbox_area_entered(area):
 func _on_Stats_no_health():
 	$CanvasLayer/PopupDialog/RichTextLabel.bbcode_text = "[center]It...can't be[/center]"
 	$CanvasLayer/PopupDialog.show()
+	self.MAX_SPEED = 0
 	playerStats.emit_signal("player_paused")
 	$Timer5.start()
+	dust3.show()
+	dust4.show()
+	dust5.show()
 	
 	
 
@@ -232,8 +241,16 @@ func _on_Timer_timeout():
 
 
 func _on_SoundTrigger_area_entered(area):
-	$GolemBossMusic.play()
-	worldStats.call_deferred("emit_signal", "fade_music_out")
+	if reunited == false:
+		playerStats.emit_signal("player_paused")
+		$CanvasLayer/PopupDialog/RichTextLabel.bbcode_text = "[center] I'm impressed, old friend... [/center]"
+		$CanvasLayer/PopupDialog.show()
+		$GolemBossMusic.play()
+		worldStats.call_deferred("emit_signal", "fade_music_out")
+		$Timer6.start()
+		self.MAX_SPEED = 0
+		reunited = true
+	
 
 
 func _on_Timer2_timeout():
@@ -255,7 +272,8 @@ func _on_Timer2_timeout():
 
 
 func _on_SoundTrigger_area_exited(area):
-	worldStats.call_deferred("emit_signal", "fade_music_in")
+	pass
+	#worldStats.call_deferred("emit_signal", "fade_music_in")
 
 
 func _on_StaggerArea_area_entered(area):
@@ -303,7 +321,7 @@ func _on_Timer3_timeout():
 
 
 func _on_Timer4_timeout():
-	worldStats.emit_signal("rage_mode")
+	
 	if enraged == false:
 		self.MAX_SPEED = 95
 		playerStats.emit_signal("player_resumed")
@@ -311,22 +329,25 @@ func _on_Timer4_timeout():
 		timer.start()
 		timer2.start()
 		enraged = true
-
+		worldStats.emit_signal("rage_mode")
 
 func _on_Timer5_timeout():
 	call_deferred("queue_free")
 	$CanvasLayer/PopupDialog.hide()
 	playerStats.emit_signal("player_resumed")
+	worldStats.call_deferred("emit_signal", "fade_music_in")
 	var enemyDeathEffect = EnemyDeathEffect.instance()
 	var golemBossDeath = GolemBossDeathEffect.instance()
 	var golemCorpse = GolemCorpse.instance()
-	
+	var explosion = Explosion.instance()
+	get_parent().call_deferred("add_child", explosion)
+	explosion.global_position = global_position
+
 	get_parent().call_deferred("add_child", enemyDeathEffect)
 	get_parent().call_deferred("add_child", golemBossDeath)
 	get_parent().call_deferred("add_child", golemCorpse)
 	
-	golemCorpse.global_position.x = global_position.x - 22
-	golemCorpse.global_position.y = global_position.y + 24
+	golemCorpse.global_position = global_position
 	enemyDeathEffect.global_position = global_position
 	golemBossDeath.global_position = global_position
 	
@@ -346,3 +367,17 @@ func _on_Timer5_timeout():
 		var battery = Battery.instance()
 		get_parent().add_child(battery)
 		battery.global_position = global_position
+
+
+func _on_Timer6_timeout():
+	$Timer7.start()
+	$CanvasLayer/PopupDialog/RichTextLabel.bbcode_text = "[center] But you'll go no further. [/center]"
+	
+
+
+func _on_Timer7_timeout():
+	$CanvasLayer/PopupDialog.hide()
+	playerStats.emit_signal("player_resumed")
+	self.MAX_SPEED = 65
+	playerDetectionZone.monitoring = true
+	playerDetectionZone.monitorable = true

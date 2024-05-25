@@ -12,7 +12,7 @@ uniform float near_rain_transparency : hint_range(0.1, 1.0) = 0.5;
 uniform float far_rain_transparency : hint_range(0.1, 1.0) = 0.3;
 // Replace the below reference to source_color with hint_color if you are using a version of Godot before 4.0.
 uniform vec4 rain_color : hint_color = vec4(0.0, 0.0, 0.0, 53.0);
-uniform float base_rain_speed : hint_range(0.1, 1.0) = 0.8;
+uniform float base_rain_speed : hint_range(0.1, 1.0) = 0.6;
 uniform float additional_rain_speed : hint_range(0.1, 1.0) = 0.5;
 uniform float slant : hint_range(-1.0, 1.0) = 0.5;
 

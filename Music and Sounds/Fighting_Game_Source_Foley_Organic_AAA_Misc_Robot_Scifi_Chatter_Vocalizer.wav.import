@@ -1,0 +1,23 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Fighting_Game_Source_Foley_Organic_AAA_Misc_Robot_Scifi_Chatter_Vocalizer.wav-0d8ac29ff9cf49719ac5f1f28d1c26f4.sample"
+
+[deps]
+
+source_file="res://Music and Sounds/Fighting_Game_Source_Foley_Organic_AAA_Misc_Robot_Scifi_Chatter_Vocalizer.wav"
+dest_files=[ "res://.import/Fighting_Game_Source_Foley_Organic_AAA_Misc_Robot_Scifi_Chatter_Vocalizer.wav-0d8ac29ff9cf49719ac5f1f28d1c26f4.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

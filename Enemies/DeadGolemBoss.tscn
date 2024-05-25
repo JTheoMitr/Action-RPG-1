@@ -8,7 +8,7 @@ radius = 16.0
 height = 0.0
 
 [node name="DeadGolemBoss" type="StaticBody2D"]
-position = Vector2( -15, 10 )
+position = Vector2( -35, 35 )
 scale = Vector2( 2.3, 2.3 )
 script = ExtResource( 2 )
 __meta__ = {

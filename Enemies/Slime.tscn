@@ -1,7 +1,8 @@
-[gd_scene load_steps=41 format=2]
+[gd_scene load_steps=42 format=2]
 
 [ext_resource path="res://Enemies/Slime.gd" type="Script" id=1]
 [ext_resource path="res://Hitboxes and Hurtboxes/Hurtbox.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Music and Sounds/squish_1.wav" type="AudioStream" id=3]
 [ext_resource path="res://Stats.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Hitboxes and Hurtboxes/Hitbox.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Enemies/PlayerDetectionZone.tscn" type="PackedScene" id=6]
@@ -145,7 +146,7 @@ radius = 4.0
 height = 10.0
 
 [sub_resource type="CircleShape2D" id=10]
-radius = 55.0364
+radius = 80.0077
 
 [sub_resource type="CapsuleShape2D" id=11]
 radius = 3.66667
@@ -166,7 +167,7 @@ MAX_SPEED = 60
 scale = Vector2( 0.6, 0.6 )
 frames = SubResource( 7 )
 animation = "birth"
-frame = 4
+frame = 2
 playing = true
 offset = Vector2( 1, -15 )
 
@@ -187,7 +188,6 @@ shape = SubResource( 9 )
 [node name="Stats" parent="." instance=ExtResource( 4 )]
 
 [node name="PlayerDetectionZone" parent="." instance=ExtResource( 6 )]
-visible = false
 
 [node name="CollisionShape2D" parent="PlayerDetectionZone" index="0"]
 shape = SubResource( 10 )
@@ -212,6 +212,10 @@ visible = false
 
 [node name="Timer" type="Timer" parent="."]
 one_shot = true
+
+[node name="Squelch" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+pitch_scale = 0.3
 
 [connection signal="area_entered" from="Hurtbox" to="." method="_on_Hurtbox_area_entered"]
 [connection signal="no_health" from="Stats" to="." method="_on_Stats_no_health"]

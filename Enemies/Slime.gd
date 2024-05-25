@@ -44,6 +44,7 @@ func _physics_process(delta):
 			if begun == false:
 				sprite.play("birth")
 				$Timer.start()
+				$Squelch.play(0.0)
 				begun = true
 		IDLE:
 
