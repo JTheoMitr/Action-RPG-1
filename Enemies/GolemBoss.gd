@@ -5,6 +5,7 @@ const GolemBossDeathEffect = preload("res://Effects/GolemBossDeathAnim.tscn")
 const Battery = preload("res://World/Battery.tscn")
 const GolemCorpse = preload("res://Enemies/DeadGolemBoss.tscn")
 const Boulder = preload("res://Enemies/BoulderBaddie.tscn")
+const XpOrb = preload("res://Enemies/XpOrbLrg.tscn")
 
 
 export var ACCELERATION = 280
@@ -330,6 +331,17 @@ func _on_Timer5_timeout():
 	golemBossDeath.global_position = global_position
 	
 	var randomDrop = random_drop_generator(["drop", "none"])
+	var xpOrb = XpOrb.instance()
+	get_parent().call_deferred("add_child", xpOrb)
+	xpOrb.global_position = global_position
+	var xpOrb2 = XpOrb.instance()
+	get_parent().call_deferred("add_child", xpOrb2)
+	xpOrb2.global_position = global_position
+	xpOrb2.MAX_SPEED = 65
+	var xpOrb3 = XpOrb.instance()
+	get_parent().call_deferred("add_child", xpOrb3)
+	xpOrb3.global_position = global_position
+	xpOrb3.MAX_SPEED = 70
 	if (randomDrop == "drop"):
 		var battery = Battery.instance()
 		get_parent().add_child(battery)

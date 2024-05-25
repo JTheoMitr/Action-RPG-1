@@ -4,7 +4,7 @@
 [ext_resource path="res://World/ToxicPuddleOne.gd" type="Script" id=2]
 
 [sub_resource type="CircleShape2D" id=1]
-radius = 20.0
+radius = 29.0
 
 [node name="ToxicPuddleOne" type="Sprite"]
 position = Vector2( 0, -7 )
