@@ -8,6 +8,9 @@ const FootstepThree = preload("res://Music and Sounds/Footstep3.tscn")
 const PauseSound = preload("res://Music and Sounds/PauseSound.tscn")
 const LaserSound = preload("res://Music and Sounds/LaserSound.tscn")
 
+onready var playerSpritePurple = preload("res://Player/Main Player One Ranger Helmet GREEN three lighteroutline.png")
+onready var playerSpriteGreen = preload("res://Player/Main Player One Ranger Helmet GREEN three lighteroutline GREEN SWORD.png")
+onready var playerSpriteRed = preload("res://Player/Main Player One Ranger Helmet GREEN three lighteroutline RED SWORD.png")
 
 signal fired_shot
 
@@ -37,6 +40,7 @@ onready var laserTwo = $Pointer/Sprite2
 onready var laserTimer = $Pointer/LaserTimer
 onready var laserSpeed = $Pointer/LaserSpeed
 onready var laserZone = $Pointer/Sprite/LaserZone/CollisionShape2D
+onready var sprite = $PlayerSprite
 
 enum {
 	MOVE,
@@ -77,6 +81,9 @@ func _ready():
 	stats.connect("player_paused", self, "stop_moving")
 	stats.connect("player_resumed", self, "start_moving")
 	stats.connect("give_movement", self, "full_movement")
+	stats.connect("green_charged", self, "green_mode")
+	stats.connect("red_charged", self, "red_mode")
+	stats.connect("purple_charged", self, "purple_mode")
 	
 	worldStats.connect("in_the_tall_grass", self, "_stealth_mode")
 	worldStats.connect("out_of_the_tall_grass", self, "_visible_again")
@@ -357,3 +364,12 @@ func _visible_again():
 	playerCollision.set_deferred("disabled", false)
 	
 	print(self.collision_layer)
+	
+func purple_mode():
+	sprite.texture = playerSpritePurple
+
+func green_mode():
+	sprite.texture = playerSpriteGreen
+	
+func red_mode():
+	sprite.texture = playerSpriteRed

@@ -8,6 +8,7 @@ var velocity = Vector2.ZERO
 onready var timer = $Timer
 
 
+
 export var ACCELERATION = 300
 export var MAX_SPEED = 50
 

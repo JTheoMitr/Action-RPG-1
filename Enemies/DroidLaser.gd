@@ -32,6 +32,8 @@ onready var timer = $Timer
 onready var hitbox = $Hitbox
 onready var timer2 = $Timer2
 
+var playerStats = PlayerStats
+
 func _ready():
 	state = pick_random_state([IDLE, WANDER])
 	timer.start(0.0)
@@ -94,15 +96,16 @@ func pick_random_state(state_list):
 	return state_list.pop_front()
 
 func _on_Hurtbox_area_entered(area):
-	# stats.health -= area.damage
-	timer2.start(0.0)
-	reversePath = input_vector * 150
-	# print_debug(hitbox.collision_mask)
-	knockback = reversePath
-	velocity = reversePath
-	hurtbox.create_hit_effect()
-	if input_vector.x == 0 && input_vector.y == 0:
-		call_deferred("queue_free")
+	if playerStats.purpleCharge == true:
+		# stats.health -= area.damage
+		timer2.start(0.0)
+		reversePath = input_vector * 150
+		# print_debug(hitbox.collision_mask)
+		knockback = reversePath
+		velocity = reversePath
+		hurtbox.create_hit_effect()
+		if input_vector.x == 0 && input_vector.y == 0:
+			call_deferred("queue_free")
 		
 
 

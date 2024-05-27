@@ -106,7 +106,8 @@ func pick_random_state(state_list):
 func _on_Hurtbox_area_entered(area):
 	stats.health -= area.damage
 	# print(stats.health)
-	knockback = area.knockback_vector * 130
+	if area.knockback_vector != null:
+		knockback = area.knockback_vector * 130
 	hurtbox.create_hit_effect()
 	
 	playerDetectionZone.scale.x = (playerDetectionZone.scale.x * 3)

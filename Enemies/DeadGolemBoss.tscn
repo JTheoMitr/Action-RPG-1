@@ -8,21 +8,17 @@ radius = 16.0
 height = 0.0
 
 [node name="DeadGolemBoss" type="StaticBody2D"]
-position = Vector2( -35, 35 )
-scale = Vector2( 2.3, 2.3 )
+scale = Vector2( 2.35, 2.35 )
 script = ExtResource( 2 )
-__meta__ = {
-"_edit_group_": true
-}
 
 [node name="DeadGolemSprite" type="Sprite" parent="."]
-position = Vector2( -21.3333, -11.6667 )
+position = Vector2( -49.4574, 9.49361 )
 scale = Vector2( 0.7, 0.7 )
 texture = ExtResource( 1 )
 offset = Vector2( 55, -27 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 15.6522, -14.3478 )
+position = Vector2( -12.4719, 6.81251 )
 rotation = 1.5708
 shape = SubResource( 1 )
 

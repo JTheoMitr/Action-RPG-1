@@ -38,6 +38,15 @@ var c4Acquired = false
 var xpCap = 50
 #starting point for leveling up
 
+var purpleCharge = true
+#deflect ability on purple projectiles
+
+var greenCharge = false
+#deflect ability on green projectiles
+
+var redCharge = false
+#deflect ability on red projectiles
+
 # add sundaes
 
 signal no_health
@@ -52,6 +61,10 @@ signal player_paused
 signal player_resumed
 signal give_movement
 signal boss_key_acquired
+
+signal green_charged
+signal red_charged
+signal purple_charged
 
 signal health_changed(value)
 signal max_health_changed(value)
