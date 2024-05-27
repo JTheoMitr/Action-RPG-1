@@ -1,6 +1,6 @@
 [gd_scene load_steps=14 format=2]
 
-[ext_resource path="res://Enemies/SlimeLaserRightStraight.gd" type="Script" id=1]
+[ext_resource path="res://Enemies/SlimeLaserBottomStraight.gd" type="Script" id=1]
 [ext_resource path="res://Hitboxes and Hurtboxes/Hurtbox.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Shadows/SmallShadow.png" type="Texture" id=3]
 [ext_resource path="res://Stats.tscn" type="PackedScene" id=4]
@@ -52,6 +52,7 @@ position = Vector2( 1.66282, 3.26625 )
 scale = Vector2( 0.444677, 0.455625 )
 frames = SubResource( 7 )
 animation = "walk"
+frame = 3
 playing = true
 offset = Vector2( 1, -10 )
 

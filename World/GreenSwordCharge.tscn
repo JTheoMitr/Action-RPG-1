@@ -1,9 +1,11 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://UI/blade_charge_icon_green.png" type="Texture" id=1]
 [ext_resource path="res://World/GreenSwordCharge.gd" type="Script" id=2]
 [ext_resource path="res://UI/skill_panel_1.png" type="Texture" id=3]
 [ext_resource path="res://fonts/PixelTandysoft-0rJG.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://UI/L1_Pressed.tscn" type="PackedScene" id=5]
+[ext_resource path="res://UI/R1_Pressed.tscn" type="PackedScene" id=6]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 15.0333
@@ -24,6 +26,7 @@ texture = ExtResource( 1 )
 shape = SubResource( 1 )
 
 [node name="PopupDialog" type="PopupDialog" parent="."]
+rect_scale = Vector2( 0.7, 0.7 )
 
 [node name="Sprite" type="Sprite" parent="PopupDialog"]
 position = Vector2( -60.3571, -16.0714 )
@@ -42,27 +45,36 @@ margin_right = 47.4286
 margin_bottom = 1.57143
 custom_fonts/normal_font = SubResource( 2 )
 bbcode_enabled = true
-bbcode_text = "[center] Green Charge Enabled 
+bbcode_text = "[center] Green Charge Stone Obtained 
   [/center]"
-text = " Green Charge Enabled 
+text = " Green Charge Stone Obtained 
   "
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="PopupDialog"]
 margin_left = -142.857
-margin_top = -37.1429
+margin_top = -34.6939
 margin_right = 119.143
-margin_bottom = 21.8571
+margin_bottom = 24.3061
 rect_scale = Vector2( 0.8, 0.8 )
 custom_fonts/normal_font = SubResource( 2 )
 bbcode_enabled = true
 bbcode_text = "[center]  
 Switch charge type with 
-
-to deflect different projectiles  [/center]"
+or
+  [/center]"
 text = "  
 Switch charge type with 
+or
+  "
 
-to deflect different projectiles  "
+[node name="R1_Pressed" parent="PopupDialog" instance=ExtResource( 6 )]
+position = Vector2( -10.2041, -4.08163 )
+scale = Vector2( 1.42857, 1.42857 )
+frame = 2
+
+[node name="L1_Pressed" parent="PopupDialog" instance=ExtResource( 5 )]
+position = Vector2( -67.3469, -4.08163 )
+scale = Vector2( 1.42857, 1.42857 )
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 3.0

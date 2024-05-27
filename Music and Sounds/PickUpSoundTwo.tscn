@@ -5,6 +5,6 @@
 
 [node name="PickUpSoundTwo" type="AudioStreamPlayer"]
 stream = ExtResource( 2 )
-volume_db = -7.0
+volume_db = -9.0
 autoplay = true
 script = ExtResource( 1 )

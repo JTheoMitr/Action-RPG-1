@@ -138,8 +138,8 @@ func _on_Hurtbox_area_entered(area):
 	if hurtable:
 		stats.health -= area.damage
 		# print_debug("hit")
-		if area.knockback_vector != null:
-			knockback = area.knockback_vector * 130
+		#if area.knockback_vector != null:
+			#knockback = area.knockback_vector * 130
 		hurtbox.create_hit_effect()
 		playerDetectionZone.scale.x = (playerDetectionZone.scale.x * 3)
 		playerDetectionZone.scale.y = (playerDetectionZone.scale.y * 3)

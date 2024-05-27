@@ -8,6 +8,10 @@ const Laser = preload("res://Enemies/BossLaserBottomLeftStraight.tscn")
 const LaserTwo = preload("res://Enemies/BossLaserTopRightStraight.tscn")
 const LaserThree = preload("res://Enemies/BossLaserBottomRightStraight.tscn")
 const LaserFour = preload("res://Enemies/BossLaserTopLeftStraight.tscn")
+const LaserFive = preload("res://Enemies/BossLaserBottomStraight.tscn")
+const LaserSix = preload("res://Enemies/BossLaserTopStraight.tscn")
+const LaserSeven = preload("res://Enemies/BossLaserRightStraight.tscn")
+const LaserEight = preload("res://Enemies/BossLaserLeftStraight.tscn")
 const XpOrb = preload("res://Enemies/XpOrb.tscn")
 const BossLaserSound = preload("res://Music and Sounds/BossLaserSound.tscn")
 
@@ -37,6 +41,8 @@ onready var softCollision = $SoftCollision
 onready var wanderController = $WanderController
 onready var hitbox2 = $Hitbox2
 onready var timer = $Timer
+onready var timer2 = $Timer2
+onready var timer3 = $Timer3
 
 var laserEngaged = false
 var droneSound = DroneSound.instance()
@@ -101,10 +107,12 @@ func seek_player():
 		sprite.play("default")
 		droneSound.play(0.0)
 		timer.start(0.0)
+		timer3.start(0.0)
 			# laserEngaged = true
 		state = CHASE
 	else:
 		timer.stop()
+		timer2.stop()
 		sprite.play("idle")
 		
 		
@@ -193,5 +201,50 @@ func _on_Timer_timeout():
 
 func _on_PlayerDetectionZone_area_exited(area):
 	timer.stop()
+	timer2.stop()
 	if dead == false:
 		droneSound.stop()
+
+
+func _on_Timer2_timeout():
+	var laserSound = BossLaserSound.instance()
+	get_parent().call_deferred("add_child", laserSound)
+	
+	var laser = LaserFive.instance()
+	get_parent().call_deferred("add_child", laser)
+	laser.global_position = global_position
+	
+	var laserTwo = LaserSix.instance()
+	get_parent().call_deferred("add_child", laserTwo)
+	laserTwo.global_position = global_position
+	
+	var laserThree = LaserSeven.instance()
+	get_parent().call_deferred("add_child", laserThree)
+	laserThree.global_position = global_position
+	
+	var laserFour = LaserEight.instance()
+	get_parent().call_deferred("add_child", laserFour)
+	laserFour.global_position = global_position
+
+
+func _on_Timer3_timeout():
+	timer2.start()
+	
+	var laserSound = BossLaserSound.instance()
+	get_parent().call_deferred("add_child", laserSound)
+	
+	var laser = LaserFive.instance()
+	get_parent().call_deferred("add_child", laser)
+	laser.global_position = global_position
+	
+	var laserTwo = LaserSix.instance()
+	get_parent().call_deferred("add_child", laserTwo)
+	laserTwo.global_position = global_position
+	
+	var laserThree = LaserSeven.instance()
+	get_parent().call_deferred("add_child", laserThree)
+	laserThree.global_position = global_position
+	
+	var laserFour = LaserEight.instance()
+	get_parent().call_deferred("add_child", laserFour)
+	laserFour.global_position = global_position

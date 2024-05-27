@@ -31,7 +31,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	self.global_position.x -= 1
+	self.global_position.y -= 1
 	knockback = knockback.move_toward(Vector2.ZERO, FRICTION * delta)
 	knockback = move_and_slide(knockback)
 	input_vector.x = Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left")
