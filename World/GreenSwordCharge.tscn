@@ -70,7 +70,7 @@ or
 [node name="R1_Pressed" parent="PopupDialog" instance=ExtResource( 6 )]
 position = Vector2( -10.2041, -4.08163 )
 scale = Vector2( 1.42857, 1.42857 )
-frame = 2
+frame = 3
 
 [node name="L1_Pressed" parent="PopupDialog" instance=ExtResource( 5 )]
 position = Vector2( -67.3469, -4.08163 )

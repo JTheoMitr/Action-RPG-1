@@ -1,0 +1,25 @@
+extends StaticBody2D
+
+
+# Declare member variables here. Examples:
+# var a = 2
+# var b = "text"
+onready var worldStats = WorldStats
+onready var collisionShape = $CollisionShape2D
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	worldStats.connect("portal_opened", self, "open_ses")
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+#func _process(delta):
+#	pass
+func open_ses():
+	$AnimatedSprite.play("default")
+	collisionShape.queue_free()
+
+
+func _on_AnimatedSprite_animation_finished():
+	$AnimatedSprite.frame = 5
+	$AnimatedSprite.stop()

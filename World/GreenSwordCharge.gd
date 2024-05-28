@@ -1,6 +1,6 @@
 extends Area2D
 
-
+const NewSkill = preload("res://Music and Sounds/NewSkill.tscn")
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
@@ -24,6 +24,8 @@ func _on_GreenSwordCharge_area_entered(area):
 	$PopupDialog.show()
 	$Timer.start()
 	PlayerStats.emit_signal("green_charged")
+	var newSkill = NewSkill.instance()
+	get_tree().current_scene.add_child(newSkill)
 
 
 func _on_Timer_timeout():
