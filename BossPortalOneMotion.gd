@@ -11,12 +11,14 @@ var open = true
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	forceField.collision_layer = false
+	self.stop()
+	self.frame = 0
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if stats.boss_keys == 1:
-		self.play("Close", true)
+		self.play("Close", true) #plays the anim backwards
 		self.stop()
 		self.frame = 0
 		forceField.collision_layer = false

@@ -38,8 +38,9 @@ animations = [ {
 [sub_resource type="CapsuleShape2D" id=8]
 radius = 96.0
 
-[sub_resource type="CircleShape2D" id=9]
-radius = 88.0
+[sub_resource type="CapsuleShape2D" id=9]
+radius = 56.0
+height = 512.0
 
 [node name="BossPortalOneMotion" type="AnimatedSprite"]
 frames = SubResource( 7 )
@@ -57,7 +58,8 @@ collision_layer = 0
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DoorTrigger"]
-position = Vector2( 0, 232 )
+position = Vector2( 0, 168 )
+rotation = 1.5708
 shape = SubResource( 9 )
 
 [connection signal="animation_finished" from="." to="." method="_on_BossPortalOneMotion_animation_finished"]

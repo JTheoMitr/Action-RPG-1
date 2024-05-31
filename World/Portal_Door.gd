@@ -23,3 +23,6 @@ func open_ses():
 func _on_AnimatedSprite_animation_finished():
 	$AnimatedSprite.frame = 5
 	$AnimatedSprite.stop()
+	$LightningSpin.hide()
+	$LightningSpin2.hide()
+	$LightningSpin3.hide()
