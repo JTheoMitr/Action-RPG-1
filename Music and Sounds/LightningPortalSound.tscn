@@ -1,10 +1,11 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://Music and Sounds/Fighting_Game_Designed_Abilities_Special_FX_Pulse_Strike_Amp_Power_Up_Foley_Hit_Activate_Bass_Ascend_Low_Only.wav" type="AudioStream" id=1]
+[ext_resource path="res://Music and Sounds/Lazer 44.wav" type="AudioStream" id=1]
 [ext_resource path="res://Music and Sounds/BossPortalOneSound.gd" type="Script" id=2]
 
 [node name="BossPortalOneSound" type="AudioStreamPlayer"]
 stream = ExtResource( 1 )
 volume_db = -3.0
+pitch_scale = 0.6
 autoplay = true
 script = ExtResource( 2 )

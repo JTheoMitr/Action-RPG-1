@@ -332,7 +332,7 @@ func _on_Timer4_timeout():
 		worldStats.emit_signal("rage_mode")
 
 func _on_Timer5_timeout():
-	call_deferred("queue_free")
+	
 	$CanvasLayer/PopupDialog.hide()
 	playerStats.emit_signal("player_resumed")
 	worldStats.call_deferred("emit_signal", "fade_music_in")
@@ -342,6 +342,8 @@ func _on_Timer5_timeout():
 	var explosion = Explosion.instance()
 	get_parent().call_deferred("add_child", explosion)
 	explosion.global_position = global_position
+	$Timer8.start()
+	$Timer9.start()
 
 	get_parent().call_deferred("add_child", enemyDeathEffect)
 	get_parent().call_deferred("add_child", golemBossDeath)
@@ -381,3 +383,16 @@ func _on_Timer7_timeout():
 	self.MAX_SPEED = 65
 	playerDetectionZone.monitoring = true
 	playerDetectionZone.monitorable = true
+
+
+func _on_Timer8_timeout():
+	var explosion = Explosion.instance()
+	get_parent().call_deferred("add_child", explosion)
+	explosion.global_position = dust5.global_position
+
+
+func _on_Timer9_timeout():
+	var explosion = Explosion.instance()
+	call_deferred("queue_free")
+	get_parent().call_deferred("add_child", explosion)
+	explosion.global_position = dust3.global_position

@@ -12,13 +12,13 @@ scale = Vector2( 2.35, 2.35 )
 script = ExtResource( 2 )
 
 [node name="DeadGolemSprite" type="Sprite" parent="."]
-position = Vector2( -40.5213, 5.23829 )
+position = Vector2( -34.5638, 0.557442 )
 scale = Vector2( 0.7, 0.7 )
 texture = ExtResource( 1 )
 offset = Vector2( 55, -27 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( -3.53578, 2.55719 )
+position = Vector2( 2.42167, -2.12365 )
 rotation = 1.5708
 shape = SubResource( 1 )
 

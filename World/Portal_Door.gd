@@ -1,5 +1,6 @@
 extends StaticBody2D
 
+const PortalSound = preload("res://Music and Sounds/LightningPortalSound.tscn")
 
 # Declare member variables here. Examples:
 # var a = 2
@@ -18,6 +19,8 @@ func _ready():
 func open_ses():
 	$AnimatedSprite.play("default")
 	collisionShape.queue_free()
+	var portalSound = PortalSound.instance()
+	get_tree().current_scene.add_child(portalSound)
 
 
 func _on_AnimatedSprite_animation_finished():
