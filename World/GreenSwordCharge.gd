@@ -20,6 +20,7 @@ func _process(delta):
 func _on_GreenSwordCharge_area_entered(area):
 	PlayerStats.greenCharge = true
 	PlayerStats.purpleCharge = false
+	PlayerStats.gcEnabled = true
 	$Sprite.hide()
 	$PopupDialog.show()
 	$Timer.start()

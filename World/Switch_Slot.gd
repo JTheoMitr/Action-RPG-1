@@ -17,4 +17,4 @@ func _ready():
 
 
 func _on_Switch_Slot_area_entered(area):
-	worldStats.emit_signal("portal_opened")
+	worldStats.emit_signal("portal_2_opened")

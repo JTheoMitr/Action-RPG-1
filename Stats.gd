@@ -42,9 +42,11 @@ var purpleCharge = true
 #deflect ability on purple projectiles
 
 var greenCharge = false
+var gcEnabled = false
 #deflect ability on green projectiles
 
 var redCharge = false
+var rcEnabled = false
 #deflect ability on red projectiles
 
 #need to pick a button to toggle charges
