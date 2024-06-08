@@ -47,6 +47,8 @@ var greenCharge = false
 var redCharge = false
 #deflect ability on red projectiles
 
+#need to pick a button to toggle charges
+
 # add sundaes
 
 signal no_health
