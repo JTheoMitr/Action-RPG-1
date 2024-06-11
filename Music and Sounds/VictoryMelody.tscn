@@ -1,10 +1,10 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://Music and Sounds/KOTWB_DETHDITTY.wav" type="AudioStream" id=1]
+[ext_resource path="res://Music and Sounds/KOTWB_VICTORYDITTY.wav" type="AudioStream" id=1]
 [ext_resource path="res://Music and Sounds/DeathMelody.gd" type="Script" id=2]
 
-[node name="DeathMelody" type="AudioStreamPlayer"]
+[node name="VictoryMelody" type="AudioStreamPlayer"]
 stream = ExtResource( 1 )
-volume_db = -5.0
+volume_db = -3.0
 autoplay = true
 script = ExtResource( 2 )

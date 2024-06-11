@@ -1,7 +1,7 @@
 [gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://World/Portal_Door2.gd" type="Script" id=1]
-[ext_resource path="res://World/Portal_Door_Switch_Activated2.png" type="Texture" id=2]
+[ext_resource path="res://World/Portal_Door_Switch_Activated.png" type="Texture" id=2]
 [ext_resource path="res://Effects/LightningSpin.tscn" type="PackedScene" id=3]
 [ext_resource path="res://World/Portal_Base.png" type="Texture" id=4]
 
@@ -70,18 +70,18 @@ shape = SubResource( 9 )
 [node name="LightningSpin" parent="." instance=ExtResource( 3 )]
 position = Vector2( -10, -10 )
 scale = Vector2( 1, 1 )
-frame = 116
+frame = 13
 
 [node name="LightningSpin2" parent="." instance=ExtResource( 3 )]
 position = Vector2( 11.0764, 19.1319 )
 rotation = 0.785398
 scale = Vector2( 1, 1 )
-frame = 115
+frame = 12
 
 [node name="LightningSpin3" parent="." instance=ExtResource( 3 )]
 position = Vector2( -4.97479, 6.54354 )
 rotation = 3.49066
 scale = Vector2( 1, 1 )
-frame = 114
+frame = 11
 
 [connection signal="animation_finished" from="AnimatedSprite" to="." method="_on_AnimatedSprite_animation_finished"]

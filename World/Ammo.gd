@@ -14,7 +14,7 @@ func _process(delta):
 
 func _on_Ammo_area_entered(area):
 	if stats.ammo < stats.max_ammo && (picked == false):
-		stats.ammo += 3
+		stats.ammo += 2
 		var pickUpSound = PickUpSound.instance()
 		get_tree().current_scene.add_child(pickUpSound)
 		picked = true

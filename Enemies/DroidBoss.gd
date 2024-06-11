@@ -12,7 +12,7 @@ const LaserFive = preload("res://Enemies/BossLaserRightStraight.tscn")
 const LaserSix = preload("res://Enemies/BossLaserLeftStraight.tscn")
 const XpOrb = preload("res://Enemies/XpOrbLrg.tscn")
 const BossLaserSound = preload("res://Music and Sounds/BossLaserSound.tscn")
-
+const VictorySound = preload("res://Music and Sounds/VictoryMelody.tscn")
 
 export var ACCELERATION = 280
 export var MAX_SPEED = 40
@@ -230,6 +230,8 @@ func _on_Stats_no_health():
 	get_parent().call_deferred("add_child", xpOrb3)
 	xpOrb3.global_position = global_position
 	xpOrb3.MAX_SPEED = 70
+	var victorySound = VictorySound.instance()
+	get_parent().call_deferred("add_child", victorySound)
 	
 	#robotCorpse.global_position.x = global_position.x
 	#robotCorpse.global_position.y = global_position.y + 2

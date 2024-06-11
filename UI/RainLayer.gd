@@ -23,7 +23,7 @@ var raining = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	rainTimer.wait_time = random_drop_generator([75, 75, 75])	
+	rainTimer.wait_time = random_drop_generator([45, 75, 125])	
 	rainTimer.start(0.0)
 	lightning.hide()
 	lightning2.hide()
@@ -104,3 +104,5 @@ func _on_RainHideTimer_timeout():
 	darkSky.hide()
 	raining = false
 	rainSound.stop()
+	rainTimer.wait_time = random_drop_generator([45, 75, 125])	
+	rainTimer.start(0.0)

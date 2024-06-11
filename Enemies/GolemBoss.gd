@@ -7,6 +7,7 @@ const GolemCorpse = preload("res://Enemies/DeadGolemBoss.tscn")
 const Boulder = preload("res://Enemies/BoulderBaddie.tscn")
 const XpOrb = preload("res://Enemies/XpOrbLrg.tscn")
 const Explosion = preload("res://Inventory/Explosion.tscn")
+const VictoryMelody = preload("res://Music and Sounds/VictoryMelody.tscn")
 
 
 export var ACCELERATION = 280
@@ -342,6 +343,8 @@ func _on_Timer5_timeout():
 	var explosion = Explosion.instance()
 	get_parent().call_deferred("add_child", explosion)
 	explosion.global_position = global_position
+	var victoryMelody = VictoryMelody.instance()
+	get_parent().call_deferred("add_child", victoryMelody)
 	$Timer8.start()
 	$Timer9.start()
 
