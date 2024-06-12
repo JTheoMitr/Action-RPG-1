@@ -7,6 +7,7 @@ const FootstepTwo = preload("res://Music and Sounds/Footstep2.tscn")
 const FootstepThree = preload("res://Music and Sounds/Footstep3.tscn")
 const PauseSound = preload("res://Music and Sounds/PauseSound.tscn")
 const LaserSound = preload("res://Music and Sounds/LaserSound.tscn")
+const KnifeSound = preload("res://Music and Sounds/KnifeSound.tscn")
 
 onready var playerSpritePurple = preload("res://Player/Main Player One Ranger Helmet GREEN three lighteroutline.png")
 onready var playerSpriteGreen = preload("res://Player/Main Player One Ranger Helmet GREEN three lighteroutline GREEN SWORD.png")
@@ -216,6 +217,8 @@ func move_state(delta):
 			
 		if Input.is_action_just_pressed("charge_switch_f"):
 			if stats.gcEnabled == true:
+				var knifeSound = KnifeSound.instance()
+				get_tree().current_scene.add_child(knifeSound)
 				if stats.greenCharge == true:
 					stats.greenCharge = false
 					stats.purpleCharge = true

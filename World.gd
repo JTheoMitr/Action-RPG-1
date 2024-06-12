@@ -26,6 +26,8 @@ func _ready():
 	worldStats.connect("play_blast_anim", self, "blast_animation")
 	stats.connect("level_changed", self, "leveled")
 	generate_laser_effect(Vector2(-1248, 459.451538))
+	stats.set_max_health(5)
+	stats.set_health(5)
 	#$CanvasLayer/BatteryUI.hide()
 
 

@@ -12,6 +12,7 @@ func show_death_alert():
 	get_tree().current_scene.add_child(deathSound)
 	$Timer.start(9)
 	$Button.grab_focus()
+	worldStats.emit_signal("fade_music_out")
 
 func _ready():
 	PlayerStats.connect("no_health", self, "show_death_alert")

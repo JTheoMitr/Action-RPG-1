@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Music and Sounds/Synth Hit 08.wav" type="AudioStream" id=1]
+[ext_resource path="res://Music and Sounds/KnifeSound.gd" type="Script" id=2]
+
+[node name="KnifeSound" type="AudioStreamPlayer"]
+stream = ExtResource( 1 )
+volume_db = -3.0
+pitch_scale = 1.3
+autoplay = true
+script = ExtResource( 2 )

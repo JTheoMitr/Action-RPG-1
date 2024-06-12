@@ -3,6 +3,7 @@ extends PopupDialog
 const DeathSound = preload("res://Music and Sounds/DeathMelody.tscn")
 
 var stats = PlayerStats
+var worldStats = WorldStats
 
 
 func show_death_alert():
@@ -11,9 +12,10 @@ func show_death_alert():
 	get_tree().current_scene.add_child(deathSound)
 	$Timer.start(9)
 	$Button.grab_focus()
+	worldStats.emit_signal("fade_music_out")
 
 func _ready():
-	PlayerStats.connect("no_health", self, "show_death_alert")
+	stats.connect("no_health", self, "show_death_alert")
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -24,6 +26,11 @@ func _reset_stats():
 	stats.overcharge = false
 	stats.batteries = 2
 	stats.coins = 0
+	#stats.keys = 0
+	stats.boss_keys = 0
+	stats.xp = 0
+	stats.level = 1
+	worldStats.freed = 0
 
 
 func _on_Timer_timeout():

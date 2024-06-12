@@ -167,7 +167,7 @@ MAX_SPEED = 60
 scale = Vector2( 0.6, 0.6 )
 frames = SubResource( 7 )
 animation = "birth"
-frame = 2
+frame = 1
 playing = true
 offset = Vector2( 1, -15 )
 
@@ -215,6 +215,7 @@ one_shot = true
 
 [node name="Squelch" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 3 )
+volume_db = -5.0
 pitch_scale = 0.3
 
 [connection signal="area_entered" from="Hurtbox" to="." method="_on_Hurtbox_area_entered"]
