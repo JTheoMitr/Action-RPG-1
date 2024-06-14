@@ -1,0 +1,23 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/WHSH_Whoosh Alert Bright Small Rattle Sweep Short 02_ESM_DBT.wav-af368c57c4716b91e6e80cd909f2af9f.sample"
+
+[deps]
+
+source_file="res://Music and Sounds/WHSH_Whoosh Alert Bright Small Rattle Sweep Short 02_ESM_DBT.wav"
+dest_files=[ "res://.import/WHSH_Whoosh Alert Bright Small Rattle Sweep Short 02_ESM_DBT.wav-af368c57c4716b91e6e80cd909f2af9f.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
