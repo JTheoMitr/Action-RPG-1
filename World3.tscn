@@ -1744,57 +1744,58 @@ z_index = 1
 
 [node name="SwarmOne" parent="Swarms" instance=ExtResource( 68 )]
 position = Vector2( -37, 442 )
-frame = 5
+frame = 3
 
 [node name="SwarmOne7" parent="Swarms" instance=ExtResource( 68 )]
 position = Vector2( -40, 444 )
 scale = Vector2( 0.475, 0.506251 )
-frame = 7
+frame = 5
 
 [node name="SwarmOne11" parent="Swarms" instance=ExtResource( 68 )]
 position = Vector2( 455, 440 )
 scale = Vector2( 0.475, 0.506251 )
-frame = 7
+frame = 5
 
 [node name="SwarmOne12" parent="Swarms" instance=ExtResource( 68 )]
 position = Vector2( 459, 441 )
 rotation = 1.309
 scale = Vector2( 0.3, 0.3 )
-frame = 6
+frame = 4
 
 [node name="SwarmOne3" parent="Swarms" instance=ExtResource( 68 )]
 position = Vector2( -23, 30 )
+frame = 0
 
 [node name="SwarmOne8" parent="Swarms" instance=ExtResource( 68 )]
 position = Vector2( -113, -264 )
-frame = 1
+frame = 7
 
 [node name="SwarmOne9" parent="Swarms" instance=ExtResource( 68 )]
 position = Vector2( -115, -263 )
 scale = Vector2( 0.5, 0.4 )
-frame = 1
+frame = 7
 
 [node name="SwarmOne4" parent="Swarms" instance=ExtResource( 68 )]
 position = Vector2( 465, -145 )
-frame = 1
+frame = 7
 
 [node name="SwarmOne5" parent="Swarms" instance=ExtResource( 68 )]
 position = Vector2( 488, -88 )
-frame = 1
+frame = 7
 
 [node name="SwarmOne6" parent="Swarms" instance=ExtResource( 68 )]
 position = Vector2( 684, -261 )
-frame = 1
+frame = 7
 
 [node name="SwarmOne10" parent="Swarms" instance=ExtResource( 68 )]
 position = Vector2( 682, -260 )
 rotation = 1.0472
 scale = Vector2( 0.5, 0.5 )
-frame = 7
+frame = 5
 
 [node name="SwarmOne2" parent="Swarms" instance=ExtResource( 68 )]
 position = Vector2( -78, 221 )
-frame = 5
+frame = 3
 
 [node name="DirtPathTileMap" type="TileMap" parent="."]
 visible = false
@@ -3293,7 +3294,7 @@ frame = 0
 
 [node name="Bonfire" parent="YSort/Torches" instance=ExtResource( 85 )]
 position = Vector2( -648, 465 )
-frame = 2
+frame = 3
 
 [node name="Dwellers" type="YSort" parent="YSort"]
 
@@ -3827,208 +3828,202 @@ position = Vector2( -913, -569 )
 [node name="SkyCloud" parent="YSort/Clouds" instance=ExtResource( 3 )]
 position = Vector2( -560, 464 )
 scale = Vector2( 3.21405, 0.41623 )
-frame = 0
+frame = 1
 
 [node name="SkyCloud2" parent="YSort/Clouds" instance=ExtResource( 3 )]
 position = Vector2( -536, 480 )
 scale = Vector2( 3.21405, 0.41623 )
+frame = 0
 
 [node name="SkyCloud17" parent="YSort/Clouds" instance=ExtResource( 3 )]
 position = Vector2( -454, 564 )
 scale = Vector2( 2.96703, 0.41623 )
+frame = 0
 
 [node name="SkyCloud18" parent="YSort/Clouds" instance=ExtResource( 3 )]
 position = Vector2( -414, 554 )
 scale = Vector2( 3.21405, 0.41623 )
-frame = 2
 
 [node name="SkyCloud20" parent="YSort/Clouds" instance=ExtResource( 3 )]
 position = Vector2( -784, 440 )
 scale = Vector2( 3.21405, 0.41623 )
-frame = 2
 
 [node name="SkyCloud21" parent="YSort/Clouds" instance=ExtResource( 3 )]
 position = Vector2( -824, 456 )
 scale = Vector2( 2.2975, 0.408114 )
-frame = 2
 
 [node name="SkyCloud19" parent="YSort/Clouds" instance=ExtResource( 3 )]
 position = Vector2( -434, 602 )
 scale = Vector2( 3.21405, 0.41623 )
-frame = 2
 
 [node name="SkyCloud13" parent="YSort/Clouds" instance=ExtResource( 3 )]
 position = Vector2( -666, 523 )
 scale = Vector2( 1.81351, 0.119683 )
-frame = 2
 
 [node name="SkyCloud16" parent="YSort/Clouds" instance=ExtResource( 3 )]
 position = Vector2( -650, 529 )
 scale = Vector2( 1.81351, 0.119683 )
-frame = 1
+frame = 2
 
 [node name="SkyCloud15" parent="YSort/Clouds" instance=ExtResource( 3 )]
 position = Vector2( -578, 379 )
 scale = Vector2( 2.22702, 0.176864 )
-frame = 1
+frame = 2
 
 [node name="SkyCloud42" parent="YSort/Clouds" instance=ExtResource( 3 )]
 position = Vector2( -560, 311 )
 scale = Vector2( 2.22702, 0.176864 )
-frame = 1
+frame = 2
 
 [node name="SkyCloud43" parent="YSort/Clouds" instance=ExtResource( 3 )]
 position = Vector2( -591, 325 )
 scale = Vector2( 2.22702, 0.176864 )
-frame = 0
+frame = 1
 
 [node name="SkyCloud14" parent="YSort/Clouds" instance=ExtResource( 3 )]
 position = Vector2( -553, 375 )
 scale = Vector2( 2.07676, 0.154507 )
-frame = 2
 
 [node name="SkyCloud3" parent="YSort/Clouds" instance=ExtResource( 3 )]
 position = Vector2( -1000, 448 )
 scale = Vector2( 3.21405, 0.41623 )
+frame = 0
 
 [node name="SkyCloud4" parent="YSort/Clouds" instance=ExtResource( 3 )]
 position = Vector2( -1080, 464 )
 scale = Vector2( 3.21405, 0.41623 )
-frame = 2
 
 [node name="SkyCloud5" parent="YSort/Clouds" instance=ExtResource( 3 )]
 position = Vector2( -1080, 448 )
 scale = Vector2( 3.21405, 0.41623 )
-frame = 1
+frame = 2
 
 [node name="SkyCloud6" parent="YSort/Clouds" instance=ExtResource( 3 )]
 position = Vector2( -1176, 344 )
 scale = Vector2( 3.21405, 0.41623 )
-frame = 0
+frame = 1
 
 [node name="SkyCloud7" parent="YSort/Clouds" instance=ExtResource( 3 )]
 position = Vector2( -1392, 424 )
 scale = Vector2( 3.21405, 0.41623 )
-frame = 0
+frame = 1
 
 [node name="SkyCloud8" parent="YSort/Clouds" instance=ExtResource( 3 )]
 position = Vector2( -1440, 408 )
 scale = Vector2( 3.21405, 0.41623 )
-frame = 0
+frame = 1
 
 [node name="SkyCloud26" parent="YSort/Clouds" instance=ExtResource( 3 )]
 position = Vector2( -1456, 200 )
 scale = Vector2( 3.21405, 0.41623 )
+frame = 0
 
 [node name="SkyCloud9" parent="YSort/Clouds" instance=ExtResource( 3 )]
 position = Vector2( -1368, 296 )
 scale = Vector2( 3.21405, 0.41623 )
+frame = 0
 
 [node name="SkyCloud10" parent="YSort/Clouds" instance=ExtResource( 3 )]
 position = Vector2( -1344, 288 )
 scale = Vector2( 3.21405, 0.41623 )
-frame = 2
 
 [node name="SkyCloud22" parent="YSort/Clouds" instance=ExtResource( 3 )]
 position = Vector2( -942, 210 )
 scale = Vector2( 3.21405, 0.41623 )
-frame = 1
+frame = 2
 
 [node name="SkyCloud23" parent="YSort/Clouds" instance=ExtResource( 3 )]
 position = Vector2( -890, 180 )
 scale = Vector2( 3.21405, 0.41623 )
-frame = 1
+frame = 2
 
 [node name="SkyCloud27" parent="YSort/Clouds" instance=ExtResource( 3 )]
 position = Vector2( -776, -34 )
 scale = Vector2( 3.21405, 0.41623 )
-frame = 0
+frame = 1
 
 [node name="SkyCloud28" parent="YSort/Clouds" instance=ExtResource( 3 )]
 position = Vector2( -1106, -110 )
 scale = Vector2( 3.21405, 0.41623 )
-frame = 0
+frame = 1
 
 [node name="SkyCloud33" parent="YSort/Clouds" instance=ExtResource( 3 )]
 position = Vector2( -1275, -60 )
 scale = Vector2( 3.21405, 0.41623 )
+frame = 0
 
 [node name="SkyCloud37" parent="YSort/Clouds" instance=ExtResource( 3 )]
 position = Vector2( -1356, 80 )
 scale = Vector2( 3.21405, 0.41623 )
+frame = 0
 
 [node name="SkyCloud35" parent="YSort/Clouds" instance=ExtResource( 3 )]
 position = Vector2( -1005, 2.99999 )
 scale = Vector2( 3.21405, 0.41623 )
-frame = 2
 
 [node name="SkyCloud36" parent="YSort/Clouds" instance=ExtResource( 3 )]
 position = Vector2( -965, -2 )
 scale = Vector2( 3.21405, 0.41623 )
-frame = 2
 
 [node name="SkyCloud34" parent="YSort/Clouds" instance=ExtResource( 3 )]
 position = Vector2( -1343, -140 )
 scale = Vector2( 3.21405, 0.41623 )
-frame = 2
 
 [node name="SkyCloud29" parent="YSort/Clouds" instance=ExtResource( 3 )]
 position = Vector2( -793, -195 )
 scale = Vector2( 3.21405, 0.41623 )
+frame = 0
 
 [node name="SkyCloud30" parent="YSort/Clouds" instance=ExtResource( 3 )]
 position = Vector2( -732, -49 )
 scale = Vector2( 3.21405, 0.41623 )
-frame = 2
 
 [node name="SkyCloud31" parent="YSort/Clouds" instance=ExtResource( 3 )]
 position = Vector2( -885, -148 )
 scale = Vector2( 3.21405, 0.41623 )
-frame = 2
 
 [node name="SkyCloud32" parent="YSort/Clouds" instance=ExtResource( 3 )]
 position = Vector2( -1167, -204 )
 scale = Vector2( 3.21405, 0.41623 )
-frame = 1
+frame = 2
 
 [node name="SkyCloud24" parent="YSort/Clouds" instance=ExtResource( 3 )]
 position = Vector2( -822, 176 )
 scale = Vector2( 3.21405, 0.41623 )
-frame = 0
+frame = 1
 
 [node name="SkyCloud38" parent="YSort/Clouds" instance=ExtResource( 3 )]
 position = Vector2( -609, 126 )
 scale = Vector2( 3.21405, 0.41623 )
+frame = 0
 
 [node name="SkyCloud39" parent="YSort/Clouds" instance=ExtResource( 3 )]
 position = Vector2( -659, 136 )
 scale = Vector2( 3.21405, 0.41623 )
-frame = 2
 
 [node name="SkyCloud40" parent="YSort/Clouds" instance=ExtResource( 3 )]
 position = Vector2( -910, 78 )
 scale = Vector2( 3.21405, 0.41623 )
-frame = 2
 
 [node name="SkyCloud41" parent="YSort/Clouds" instance=ExtResource( 3 )]
 position = Vector2( -751, 13 )
 scale = Vector2( 3.21405, 0.41623 )
-frame = 1
+frame = 2
 
 [node name="SkyCloud25" parent="YSort/Clouds" instance=ExtResource( 3 )]
 position = Vector2( -1115, 111 )
 scale = Vector2( 3.21405, 0.41623 )
-frame = 0
+frame = 1
 
 [node name="SkyCloud11" parent="YSort/Clouds" instance=ExtResource( 3 )]
 position = Vector2( -1016, 328 )
 scale = Vector2( 3.21405, 0.41623 )
-frame = 1
+frame = 2
 
 [node name="SkyCloud12" parent="YSort/Clouds" instance=ExtResource( 3 )]
 position = Vector2( -1136, 288 )
 scale = Vector2( 3.21405, 0.41623 )
-frame = 1
+frame = 2
 
 [node name="Trees" type="YSort" parent="YSort"]
 

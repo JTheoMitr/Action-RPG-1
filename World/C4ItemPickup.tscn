@@ -32,6 +32,7 @@ texture = ExtResource( 1 )
 visible = true
 margin_right = 100.0
 margin_bottom = 20.0
+rect_scale = Vector2( 0.8, 0.8 )
 custom_styles/panel = SubResource( 2 )
 
 [node name="RichTextLabel" type="RichTextLabel" parent="PopupDialog"]

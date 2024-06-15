@@ -12,7 +12,7 @@ const LaserFive = preload("res://Enemies/BossLaserBottomStraight.tscn")
 const LaserSix = preload("res://Enemies/BossLaserTopStraight.tscn")
 const LaserSeven = preload("res://Enemies/BossLaserRightStraight.tscn")
 const LaserEight = preload("res://Enemies/BossLaserLeftStraight.tscn")
-const XpOrb = preload("res://Enemies/XpOrb.tscn")
+const XpOrb = preload("res://Enemies/XpOrbLrg.tscn")
 const BossLaserSound = preload("res://Music and Sounds/BossLaserSound.tscn")
 
 export var ACCELERATION = 280
@@ -162,14 +162,6 @@ func _on_Stats_no_health():
 	get_parent().call_deferred("add_child", xpOrb3)
 	xpOrb3.global_position = global_position
 	xpOrb3.MAX_SPEED = 70
-	var xpOrb4 = XpOrb.instance()
-	get_parent().call_deferred("add_child", xpOrb4)
-	xpOrb4.global_position = global_position
-	xpOrb4.MAX_SPEED = 63
-	var xpOrb5 = XpOrb.instance()
-	get_parent().call_deferred("add_child", xpOrb5)
-	xpOrb5.global_position = global_position
-	xpOrb5.MAX_SPEED = 60
 	var randomDrop = random_drop_generator(["drop", "none"])
 	if (randomDrop == "drop"):
 		var battery = Battery.instance()

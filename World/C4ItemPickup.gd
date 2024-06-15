@@ -1,6 +1,6 @@
 extends Area2D
 
-const PickUpSound = preload("res://Music and Sounds/PickUpSoundTwo.tscn")
+const PickUpSound = preload("res://Music and Sounds/PickUpSoundThree.tscn")
 
 onready var popup = $PopupDialog
 onready var timer = $Timer

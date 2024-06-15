@@ -9,6 +9,7 @@ signal fade_music_out
 signal lowest_volume
 signal open_fence
 signal open_fence_two
+signal open_fence_three
 signal in_the_tall_grass
 signal out_of_the_tall_grass
 signal play_blast_anim
