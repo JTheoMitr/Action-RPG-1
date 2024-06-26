@@ -16,6 +16,7 @@ signal play_blast_anim
 signal rage_mode
 signal portal_opened
 signal portal_2_opened
+signal chamber_one_start
 
 func set_max_freed(value):
 	max_freed = value

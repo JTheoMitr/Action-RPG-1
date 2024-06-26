@@ -1,0 +1,236 @@
+[gd_scene load_steps=22 format=2]
+
+[ext_resource path="res://UI/pixel_rest_int_3.jpeg" type="Texture" id=1]
+[ext_resource path="res://Dialogue Headshots/Generic Female 1.png" type="Texture" id=2]
+[ext_resource path="res://UI/panel_Example2.png" type="Texture" id=3]
+[ext_resource path="res://fonts/PixelTandysoft-0rJG.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://UI/37_dumplings_dish.png" type="Texture" id=5]
+[ext_resource path="res://UI/87_ramen.png" type="Texture" id=6]
+[ext_resource path="res://UI/98_sushi_dish.png" type="Texture" id=7]
+[ext_resource path="res://World/DumplingHouseInterior.gd" type="Script" id=8]
+[ext_resource path="res://Effects/SlideDust.png" type="Texture" id=9]
+
+[sub_resource type="DynamicFont" id=1]
+size = 10
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 10
+font_data = ExtResource( 4 )
+
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 0.431373, 0.521569, 0.415686, 0.686275 )
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0.462745, 0.423529, 0.423529, 1 )
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id=5]
+bg_color = Color( 0.431373, 0.521569, 0.415686, 0.686275 )
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id=6]
+bg_color = Color( 0.431373, 0.521569, 0.415686, 0.686275 )
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="AtlasTexture" id=7]
+atlas = ExtResource( 9 )
+region = Rect2( 0, 0, 25, 32 )
+
+[sub_resource type="AtlasTexture" id=8]
+atlas = ExtResource( 9 )
+region = Rect2( 25, 0, 25, 32 )
+
+[sub_resource type="AtlasTexture" id=9]
+atlas = ExtResource( 9 )
+region = Rect2( 50, 0, 25, 32 )
+
+[sub_resource type="AtlasTexture" id=10]
+atlas = ExtResource( 9 )
+region = Rect2( 75, 0, 25, 32 )
+
+[sub_resource type="AtlasTexture" id=11]
+atlas = ExtResource( 9 )
+region = Rect2( 100, 0, 25, 32 )
+
+[sub_resource type="SpriteFrames" id=12]
+animations = [ {
+"frames": [ SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 11 ) ],
+"loop": true,
+"name": "default",
+"speed": 3.0
+} ]
+
+[node name="DumplingHouseInterior" type="Node2D"]
+script = ExtResource( 8 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="SpriteBackground" type="Sprite" parent="CanvasLayer"]
+position = Vector2( 161, 82 )
+scale = Vector2( 0.42, 0.42 )
+texture = ExtResource( 1 )
+
+[node name="PopupDialog" type="PopupDialog" parent="CanvasLayer"]
+visible = true
+margin_left = 160.0
+margin_top = 63.0
+margin_right = 160.0
+margin_bottom = 63.0
+
+[node name="Sprite" type="Sprite" parent="CanvasLayer/PopupDialog"]
+position = Vector2( 4.00001, 26.5937 )
+scale = Vector2( 0.646111, 1.41875 )
+texture = ExtResource( 3 )
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/PopupDialog"]
+margin_left = -61.0
+margin_top = -22.0
+margin_right = 110.0
+margin_bottom = 20.0
+custom_fonts/normal_font = SubResource( 1 )
+bbcode_enabled = true
+bbcode_text = "[center]Welcome, traveler...
+You look famished.
+what'll it be?"
+text = "Welcome, traveler...
+You look famished.
+what'll it be?"
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="CanvasLayer/PopupDialog"]
+margin_left = -103.0
+margin_top = 63.0
+margin_right = -19.0
+margin_bottom = 81.0
+rect_scale = Vector2( 0.8, 0.8 )
+custom_fonts/normal_font = SubResource( 1 )
+bbcode_enabled = true
+bbcode_text = "[center]+2 Max Health"
+text = "+2 Max Health"
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="CanvasLayer/PopupDialog"]
+margin_left = -29.0
+margin_top = 63.0
+margin_right = 58.0
+margin_bottom = 81.0
+rect_scale = Vector2( 0.8, 0.8 )
+custom_fonts/normal_font = SubResource( 1 )
+bbcode_enabled = true
+bbcode_text = "[center]+3 ATK Power"
+text = "+3 ATK Power"
+
+[node name="RichTextLabel4" type="RichTextLabel" parent="CanvasLayer/PopupDialog"]
+margin_left = 42.0
+margin_top = 63.0
+margin_right = 139.0
+margin_bottom = 92.0
+rect_scale = Vector2( 0.78, 0.78 )
+custom_fonts/normal_font = SubResource( 1 )
+bbcode_enabled = true
+bbcode_text = "[center]-200 ms reload"
+text = "-200 ms reload"
+
+[node name="Panel" type="Panel" parent="CanvasLayer/PopupDialog"]
+margin_left = -108.0
+margin_top = -20.0
+margin_right = -68.0
+margin_bottom = 20.0
+
+[node name="Sprite2" type="Sprite" parent="CanvasLayer/PopupDialog"]
+position = Vector2( -88, 0 )
+scale = Vector2( 0.75, 0.75 )
+texture = ExtResource( 2 )
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/PopupDialog"]
+margin_left = -108.0
+margin_top = 27.0
+margin_right = 116.0
+margin_bottom = 61.0
+alignment = 1
+
+[node name="Button" type="Button" parent="CanvasLayer/PopupDialog/HBoxContainer"]
+margin_left = 3.0
+margin_right = 73.0
+margin_bottom = 34.0
+rect_min_size = Vector2( 70, 0 )
+custom_fonts/font = SubResource( 2 )
+custom_styles/focus = SubResource( 4 )
+custom_styles/normal = SubResource( 3 )
+text = "Ramen"
+icon = ExtResource( 6 )
+expand_icon = true
+
+[node name="Button2" type="Button" parent="CanvasLayer/PopupDialog/HBoxContainer"]
+margin_left = 77.0
+margin_right = 147.0
+margin_bottom = 34.0
+rect_min_size = Vector2( 70, 0 )
+custom_fonts/font = SubResource( 2 )
+custom_styles/focus = SubResource( 5 )
+custom_styles/normal = SubResource( 3 )
+text = "GYOZA"
+icon = ExtResource( 5 )
+expand_icon = true
+
+[node name="Button3" type="Button" parent="CanvasLayer/PopupDialog/HBoxContainer"]
+margin_left = 151.0
+margin_right = 221.0
+margin_bottom = 34.0
+rect_min_size = Vector2( 70, 0 )
+custom_fonts/font = SubResource( 2 )
+custom_styles/focus = SubResource( 6 )
+custom_styles/normal = SubResource( 3 )
+text = "SUSHI"
+icon = ExtResource( 7 )
+expand_icon = true
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="CanvasLayer/PopupDialog"]
+self_modulate = Color( 1, 1, 1, 0.705882 )
+position = Vector2( -97, 45 )
+frames = SubResource( 12 )
+frame = 2
+playing = true
+
+[node name="AnimatedSprite3" type="AnimatedSprite" parent="CanvasLayer/PopupDialog"]
+self_modulate = Color( 1, 1, 1, 0.705882 )
+position = Vector2( -92, 45 )
+frames = SubResource( 12 )
+frame = 1
+playing = true
+
+[node name="AnimatedSprite2" type="AnimatedSprite" parent="CanvasLayer/PopupDialog"]
+modulate = Color( 1, 1, 1, 0.705882 )
+position = Vector2( -79, 44 )
+frames = SubResource( 12 )
+frame = 1
+playing = true
+flip_h = true
+
+[node name="AnimatedSprite4" type="AnimatedSprite" parent="CanvasLayer/PopupDialog"]
+self_modulate = Color( 1, 1, 1, 0.705882 )
+position = Vector2( -85, 45 )
+frames = SubResource( 12 )
+frame = 1
+playing = true
+flip_h = true
+
+[node name="AnimatedSprite5" type="AnimatedSprite" parent="CanvasLayer/PopupDialog"]
+self_modulate = Color( 1, 1, 1, 0.705882 )
+position = Vector2( -89, 47 )
+frames = SubResource( 12 )
+frame = 1
+playing = true
+flip_h = true

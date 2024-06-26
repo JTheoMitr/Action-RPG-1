@@ -1,133 +1,133 @@
 [gd_scene load_steps=43 format=2]
 
-[ext_resource path="res://Enemies/Black_Soldier.png" type="Texture" id=1]
+[ext_resource path="res://Enemies/Black_Soldier_Green.png" type="Texture" id=1]
 [ext_resource path="res://Hitboxes and Hurtboxes/Hurtbox.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Shadows/SmallShadow.png" type="Texture" id=3]
 [ext_resource path="res://Stats.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Hitboxes and Hurtboxes/Hitbox.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Enemies/PlayerDetectionZone.tscn" type="PackedScene" id=6]
 [ext_resource path="res://SoftCollision.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Enemies/Droid.gd" type="Script" id=8]
+[ext_resource path="res://Enemies/SoldierGreen.gd" type="Script" id=8]
 [ext_resource path="res://Enemies/WanderController.tscn" type="PackedScene" id=9]
 
-[sub_resource type="AtlasTexture" id=13]
+[sub_resource type="AtlasTexture" id=40]
 atlas = ExtResource( 1 )
 region = Rect2( 0, 737, 116, 67 )
 
-[sub_resource type="AtlasTexture" id=14]
+[sub_resource type="AtlasTexture" id=41]
 atlas = ExtResource( 1 )
 region = Rect2( 116, 737, 116, 67 )
 
-[sub_resource type="AtlasTexture" id=15]
+[sub_resource type="AtlasTexture" id=42]
 atlas = ExtResource( 1 )
 region = Rect2( 232, 737, 116, 67 )
 
-[sub_resource type="AtlasTexture" id=16]
+[sub_resource type="AtlasTexture" id=43]
 atlas = ExtResource( 1 )
 region = Rect2( 0, 804, 116, 67 )
 
-[sub_resource type="AtlasTexture" id=17]
+[sub_resource type="AtlasTexture" id=44]
 atlas = ExtResource( 1 )
 region = Rect2( 116, 804, 116, 67 )
 
-[sub_resource type="AtlasTexture" id=18]
+[sub_resource type="AtlasTexture" id=45]
 atlas = ExtResource( 1 )
 region = Rect2( 232, 804, 116, 67 )
 
-[sub_resource type="AtlasTexture" id=19]
+[sub_resource type="AtlasTexture" id=46]
 atlas = ExtResource( 1 )
 region = Rect2( 0, 871, 116, 67 )
 
-[sub_resource type="AtlasTexture" id=20]
+[sub_resource type="AtlasTexture" id=47]
 atlas = ExtResource( 1 )
 region = Rect2( 0, 938, 116, 67 )
 
-[sub_resource type="AtlasTexture" id=21]
+[sub_resource type="AtlasTexture" id=48]
 atlas = ExtResource( 1 )
 region = Rect2( 116, 938, 116, 67 )
 
-[sub_resource type="AtlasTexture" id=22]
+[sub_resource type="AtlasTexture" id=49]
 atlas = ExtResource( 1 )
 region = Rect2( 232, 938, 116, 67 )
 
-[sub_resource type="AtlasTexture" id=23]
+[sub_resource type="AtlasTexture" id=50]
 atlas = ExtResource( 1 )
 region = Rect2( 0, 1005, 116, 67 )
 
-[sub_resource type="AtlasTexture" id=24]
+[sub_resource type="AtlasTexture" id=51]
 atlas = ExtResource( 1 )
 region = Rect2( 116, 1005, 116, 67 )
 
-[sub_resource type="AtlasTexture" id=29]
+[sub_resource type="AtlasTexture" id=52]
 atlas = ExtResource( 1 )
 region = Rect2( 116, 1407, 116, 67 )
 
-[sub_resource type="AtlasTexture" id=25]
+[sub_resource type="AtlasTexture" id=53]
 atlas = ExtResource( 1 )
 region = Rect2( 0, 1340, 116, 67 )
 
-[sub_resource type="AtlasTexture" id=26]
+[sub_resource type="AtlasTexture" id=54]
 atlas = ExtResource( 1 )
 region = Rect2( 116, 1340, 116, 67 )
 
-[sub_resource type="AtlasTexture" id=27]
+[sub_resource type="AtlasTexture" id=55]
 atlas = ExtResource( 1 )
 region = Rect2( 232, 1340, 116, 67 )
 
-[sub_resource type="AtlasTexture" id=28]
+[sub_resource type="AtlasTexture" id=56]
 atlas = ExtResource( 1 )
 region = Rect2( 0, 1407, 116, 67 )
 
-[sub_resource type="AtlasTexture" id=30]
+[sub_resource type="AtlasTexture" id=57]
 atlas = ExtResource( 1 )
 region = Rect2( 0, 335, 116, 67 )
 
-[sub_resource type="AtlasTexture" id=31]
+[sub_resource type="AtlasTexture" id=58]
 atlas = ExtResource( 1 )
 region = Rect2( 116, 335, 116, 67 )
 
-[sub_resource type="AtlasTexture" id=32]
+[sub_resource type="AtlasTexture" id=59]
 atlas = ExtResource( 1 )
 region = Rect2( 232, 335, 116, 67 )
 
-[sub_resource type="AtlasTexture" id=33]
+[sub_resource type="AtlasTexture" id=60]
 atlas = ExtResource( 1 )
 region = Rect2( 0, 402, 116, 67 )
 
-[sub_resource type="AtlasTexture" id=34]
+[sub_resource type="AtlasTexture" id=61]
 atlas = ExtResource( 1 )
 region = Rect2( 116, 402, 116, 67 )
 
-[sub_resource type="AtlasTexture" id=35]
+[sub_resource type="AtlasTexture" id=62]
 atlas = ExtResource( 1 )
 region = Rect2( 232, 402, 116, 67 )
 
-[sub_resource type="AtlasTexture" id=36]
+[sub_resource type="AtlasTexture" id=63]
 atlas = ExtResource( 1 )
 region = Rect2( 0, 469, 116, 67 )
 
-[sub_resource type="AtlasTexture" id=37]
+[sub_resource type="AtlasTexture" id=64]
 atlas = ExtResource( 1 )
 region = Rect2( 116, 469, 116, 67 )
 
 [sub_resource type="SpriteFrames" id=7]
 animations = [ {
-"frames": [ SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 16 ), SubResource( 17 ), SubResource( 18 ), SubResource( 19 ) ],
+"frames": [ SubResource( 40 ), SubResource( 41 ), SubResource( 42 ), SubResource( 43 ), SubResource( 44 ), SubResource( 45 ), SubResource( 46 ) ],
 "loop": true,
 "name": "death",
 "speed": 7.0
 }, {
-"frames": [ SubResource( 20 ), SubResource( 21 ), SubResource( 22 ), SubResource( 23 ), SubResource( 24 ) ],
+"frames": [ SubResource( 47 ), SubResource( 48 ), SubResource( 49 ), SubResource( 50 ), SubResource( 51 ) ],
 "loop": true,
 "name": "idle",
 "speed": 3.0
 }, {
-"frames": [ SubResource( 29 ), SubResource( 29 ), SubResource( 25 ), SubResource( 26 ), SubResource( 27 ), SubResource( 28 ), SubResource( 29 ) ],
+"frames": [ SubResource( 52 ), SubResource( 52 ), SubResource( 53 ), SubResource( 54 ), SubResource( 55 ), SubResource( 56 ), SubResource( 52 ) ],
 "loop": true,
 "name": "shoot",
 "speed": 7.0
 }, {
-"frames": [ SubResource( 30 ), SubResource( 31 ), SubResource( 32 ), SubResource( 33 ), SubResource( 34 ), SubResource( 35 ), SubResource( 36 ), SubResource( 37 ) ],
+"frames": [ SubResource( 57 ), SubResource( 58 ), SubResource( 59 ), SubResource( 60 ), SubResource( 61 ), SubResource( 62 ), SubResource( 63 ), SubResource( 64 ) ],
 "loop": true,
 "name": "walk",
 "speed": 7.0
@@ -158,7 +158,7 @@ radius = 1.86016
 [sub_resource type="CircleShape2D" id=39]
 radius = 60.5997
 
-[node name="Soldier" type="KinematicBody2D"]
+[node name="SoldierGreen" type="KinematicBody2D"]
 scale = Vector2( 1.7, 1.7 )
 collision_layer = 16
 script = ExtResource( 8 )
@@ -172,7 +172,7 @@ position = Vector2( -0.588, 15 )
 scale = Vector2( 0.45, 0.45 )
 frames = SubResource( 7 )
 animation = "idle"
-frame = 1
+frame = 3
 playing = true
 offset = Vector2( 1, -60 )
 
@@ -192,7 +192,6 @@ shape = SubResource( 9 )
 max_health = 2
 
 [node name="PlayerDetectionZone" parent="." instance=ExtResource( 6 )]
-visible = false
 
 [node name="CollisionShape2D" parent="PlayerDetectionZone" index="0"]
 shape = SubResource( 10 )
@@ -229,7 +228,6 @@ wait_time = 0.5
 one_shot = true
 
 [node name="Area2D" type="Area2D" parent="."]
-visible = false
 collision_layer = 0
 collision_mask = 2
 

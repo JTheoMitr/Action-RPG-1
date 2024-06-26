@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://World/CollisionShape2D.gd" type="Script" id=1]
+
+[sub_resource type="CapsuleShape2D" id=1]
+radius = 49.0
+height = 110.0
+
+[node name="ChamberTriggerOne" type="Area2D"]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = 1.5708
+shape = SubResource( 1 )
+script = ExtResource( 1 )
+
+[connection signal="area_entered" from="." to="CollisionShape2D" method="_on_ChamberTriggerOne_area_entered"]

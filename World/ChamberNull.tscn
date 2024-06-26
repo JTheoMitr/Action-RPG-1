@@ -1,8 +1,7 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://World/droidchamber.png" type="Texture" id=1]
 [ext_resource path="res://World/floatingBody.png" type="Texture" id=2]
-[ext_resource path="res://World/ChamberOne.gd" type="Script" id=3]
 [ext_resource path="res://Effects/DoorDustEffectOne.tscn" type="PackedScene" id=4]
 
 [sub_resource type="CapsuleShape2D" id=1]
@@ -29,11 +28,8 @@ animations = [ {
 "speed": 2.0
 } ]
 
-[sub_resource type="CircleShape2D" id=6]
-
-[node name="ChamberOne" type="StaticBody2D"]
+[node name="ChamberNull" type="StaticBody2D"]
 scale = Vector2( 0.8, 0.8 )
-script = ExtResource( 3 )
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 1 )
@@ -48,40 +44,18 @@ frames = SubResource( 5 )
 frame = 1
 playing = true
 
-[node name="Timer" type="Timer" parent="."]
-wait_time = 17.5
-one_shot = true
-
-[node name="Timer2" type="Timer" parent="."]
-wait_time = 9.0
-
-[node name="Timer3" type="Timer" parent="."]
-wait_time = 17.0
-
-[node name="SpawnArea" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="SpawnArea"]
-position = Vector2( 0, 65 )
-shape = SubResource( 6 )
-
 [node name="DoorDustEffectOne2" parent="." instance=ExtResource( 4 )]
 self_modulate = Color( 1, 1, 1, 0.658824 )
 position = Vector2( 0, 20.1 )
 scale = Vector2( 0.08, 1.25625 )
-frame = 1
 
 [node name="DoorDustEffectOne3" parent="." instance=ExtResource( 4 )]
 self_modulate = Color( 1, 1, 1, 0.658824 )
 position = Vector2( -9, 24.55 )
 scale = Vector2( 0.08, 0.659375 )
-frame = 1
 
 [node name="DoorDustEffectOne" parent="." instance=ExtResource( 4 )]
 self_modulate = Color( 1, 1, 1, 0.658824 )
 position = Vector2( 9, 18 )
 scale = Vector2( 0.08, 1.1375 )
-frame = 2
-
-[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
-[connection signal="timeout" from="Timer2" to="." method="_on_Timer2_timeout"]
-[connection signal="timeout" from="Timer3" to="." method="_on_Timer3_timeout"]
+frame = 1

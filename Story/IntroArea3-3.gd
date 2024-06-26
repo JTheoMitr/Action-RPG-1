@@ -5,7 +5,7 @@ onready var text = $IntroDialog1/RichTextLabel
 onready var sprite = $IntroDialog1/Sprite
 onready var stats = PlayerStats
 
-onready var samuraiSprite = preload("res://World/frog_sam_headshot.png")
+onready var labSprite = preload("res://Enemies/LabNPCOneHeadshot.png")
 onready var proSprite = preload("res://Dialogue Headshots/main_player_face_still.png")
 
 var inArea = false
@@ -23,17 +23,17 @@ func _process(delta):
 	if (inArea == true) && Input.is_action_just_pressed("interact"):
 		textNum += 1
 		if textNum == 1:
-			text.bbcode_text = "[center]Hai. Hajimemashite[/center]"
-			sprite.texture = samuraiSprite
-			sprite.scale.x = .7
-			sprite.scale.y = .7
-			sprite.global_position.y -= 12
+			text.bbcode_text = "[center]\n Cloning Droid Soldiers here in the caverns[/center]"
+			#sprite.texture = proSprite
+			#sprite.scale.x = 2.5
+			#sprite.scale.y = 2.5
+			#sprite.global_position.y += 12
 		elif textNum == 2:
-			text.bbcode_text = "[center]Ah, nice to meet you as well.[center]"
-			sprite.texture = proSprite
+			text.bbcode_text = "[center]Hey guy, you shouldn't be down here.[center]"
+			sprite.texture = labSprite
 			sprite.scale.x = 2.5
 			sprite.scale.y = 2.5
-			sprite.global_position.y += 12
+			sprite.global_position.y -= 12
 		elif textNum == 3:
 			stats.emit_signal("player_resumed")
 			stats.emit_signal("give_movement")

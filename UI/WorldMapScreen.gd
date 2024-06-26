@@ -118,3 +118,9 @@ func _on_MarshButton_pressed():
 	SceneTransitionLong.change_scene("res://World3.tscn")
 	pressSound.play(0.0)
 	fade_out(mapMusic)
+
+
+func _on_CityButton_pressed():
+	SceneTransitionLong.change_scene("res://World/DumplingHouseInterior.tscn")
+	pressSound.play(0.0)
+	fade_out(mapMusic)
