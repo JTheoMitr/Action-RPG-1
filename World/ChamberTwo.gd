@@ -29,7 +29,7 @@ func _on_Timer_timeout():
 	
 func start_timers():
 	if triggered == false:
-		var soldier = SoldierGreen.instance()
+		var soldier = Soldier.instance()
 		get_parent().call_deferred("add_child", soldier)
 		soldier.global_position = $SpawnArea/CollisionShape2D.global_position
 		$Timer.start()
@@ -39,13 +39,13 @@ func start_timers():
 
 
 func _on_Timer2_timeout():
-	var soldier = Soldier.instance()
+	var soldier = SoldierGreen.instance()
 	get_parent().call_deferred("add_child", soldier)
 	soldier.global_position = $SpawnArea/CollisionShape2D.global_position
 
 
 func _on_Timer3_timeout():
 	pass
-	#var soldier = SoldierGreen.instance()
+	#var soldier = Soldier.instance()
 	#get_parent().call_deferred("add_child", soldier)
 	#soldier.global_position = $SpawnArea/CollisionShape2D.global_position

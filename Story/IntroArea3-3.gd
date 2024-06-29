@@ -29,7 +29,7 @@ func _process(delta):
 			#sprite.scale.y = 2.5
 			#sprite.global_position.y += 12
 		elif textNum == 2:
-			text.bbcode_text = "[center]Hey guy, you shouldn't be down here.[center]"
+			text.bbcode_text = "[center]\n Hey guy, you shouldn't be down here.[center]"
 			sprite.texture = labSprite
 			sprite.scale.x = 2.5
 			sprite.scale.y = 2.5
