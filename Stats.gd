@@ -53,6 +53,8 @@ var rcEnabled = false
 
 # add sundaes
 
+onready var save_file = SaveFile.g_data
+
 signal no_health
 signal no_keys
 signal no_batteries
@@ -153,75 +155,138 @@ func set_health(value):
 		
 func set_keys(value):
 	keys = value
+	save_file.player_keys = value
 	emit_signal("keys_changed")
 	if keys == 0:
 		emit_signal("no_keys")
 		
 func set_keys_collected(value):
 	keys_collected = value
+	save_file.player_keys_collected = value
 			
 func set_xp(value):
 	xp = value
+	save_file.player_xp = value
+	#print_debug(value)
+	#print_debug(save_file.player_xp)
 	emit_signal("xp_changed", xp)
 	if xp >= xpCap:
 		# print_debug("levelsup")
 		# print_debug(xp)
 		# print_debug(xpCap)
 		self.level += 1
+		#save_file.player_level += 1
 		xp = (xp - xpCap)
-		xpCap = (xpCap * 2)
+		#save_file.player_xp = (xp - xpCap)
+		var holdCap = (xpCap * 2)
+		xpCap = holdCap
+		save_file.player_xpCap = holdCap
 		# update attributes here?
+		# auto-save here?
 		
 
 func set_level(value):
 	level = value
+	save_file.player_level = value
 	emit_signal("level_changed")
 	
 func set_boss_keys(value):
 	boss_keys = value
+	save_file.player_boss_keys = value
 		
 func set_batteries(value):
 	batteries = value
+	save_file.player_batteries = value	
 	emit_signal("batteries_changed", batteries)
 	if batteries == 0:
 		emit_signal("no_batteries")
 		
 func set_ammo(value):
 	ammo = value
+	save_file.player_ammo = value
 	emit_signal("ammo_changed", ammo)
 	if ammo == 0:
 		emit_signal("no_ammo")
 		
 func set_coins(value):
 	coins = value
+	save_file.player_coins = value
 	emit_signal("coins_changed", coins)
 	if coins == 0:
 		emit_signal("no_coins")
 		
 func set_redpops(value):
 	redpops = value
+	save_file.player_red_pops = value
 	emit_signal("redpops_changed", redpops)
 	if redpops == 0:
 		emit_signal("no_redpops")
 
 func set_bluepops(value):
 	bluepops = value
+	save_file.player_blue_pops = value
 	emit_signal("bluepops_changed", bluepops)
 	if bluepops == 0:
 		emit_signal("no_bluepops")
 
 
 func _ready():
+	#print_debug(save_file)
 	self.health = max_health
-	self.keys = 0
-	self.keys_collected = 0
-	self.batteries = 2
-	self.coins = 0
-	self.xp = 0
-	self.redpops = 0
-	self.bluepops = 0
-	self.boss_keys = 0
-	self.ammo = 10
-	self.level = 1
-	self.xpCap = 50
-	self.overcharge = false
+	self.max_health = save_file.player_max_health
+	#self.keys = 0
+	self.keys = save_file.player_keys
+	#self.keys_collected = 0
+	self.keys_collected = save_file.player_keys_collected
+	#self.batteries = 2
+	self.batteries = save_file.player_batteries
+	#self.coins = 0
+	self.coins = save_file.player_coins
+	#self.xp = 0
+	self.xp = save_file.player_xp
+	#self.redpops = 0
+	self.redpops = save_file.player_red_pops
+	#self.bluepops = 0
+	self.bluepops = save_file.player_blue_pops
+	#self.boss_keys = 0
+	self.boss_keys = save_file.player_boss_keys
+	#self.ammo = 10
+	self.ammo = save_file.player_ammo
+	#self.level = 1
+	self.level = save_file.player_level
+	#self.xpCap = 50
+	self.xpCap = save_file.player_xpCap
+	#self.overcharge = false
+	self.overcharge = save_file.overcharge_status
+	
+func reset():
+	#print_debug(save_file)
+	self.health = max_health
+	self.max_health = save_file.player_max_health
+	#self.keys = 0
+	self.keys = save_file.player_keys
+	#self.keys_collected = 0
+	self.keys_collected = save_file.player_keys_collected
+	#self.batteries = 2
+	self.batteries = save_file.player_batteries
+	#self.coins = 0
+	self.coins = save_file.player_coins
+	#self.xp = 0
+	self.xp = save_file.player_xp
+	#self.redpops = 0
+	self.xp = save_file.player_red_pops
+	#self.bluepops = 0
+	self.bluepops = save_file.player_blue_pops
+	#self.boss_keys = 0
+	self.boss_keys = save_file.player_boss_keys
+	#self.ammo = 10
+	self.ammo = save_file.player_ammo
+	#self.level = 1
+	self.level = save_file.player_level
+	#self.xpCap = 50
+	self.xpCap = save_file.player_xpCap
+	#self.overcharge = false
+	self.overcharge = save_file.overcharge_status
+
+
+

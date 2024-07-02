@@ -3,6 +3,8 @@ extends StaticBody2D
 const DoorDust = preload("res://Effects/DoorDustEffectOne.tscn")
 const DoorCreak = preload("res://Music and Sounds/DoorCreak.tscn")
 onready var popup = $PopupDialog
+onready var worldStats = WorldStats
+onready var save_file = SaveFile.g_data
 
 
 # Declare member variables here. Examples:
@@ -28,15 +30,19 @@ func create_dust_effect():
 	dustEffect.global_position.y = global_position.y + 25
 	
 func _on_Area2D_area_entered(area):
-	if stats.boss_keys == 1 && WorldStats.freed == 3: #check this for exit issues, change WorldStats to an onready var
+	if stats.boss_keys == 1 && worldStats.freed == 3 && stats.keys_collected == 3: #check this for exit issues, change WorldStats to an onready var
 		create_dust_effect()
+		stats.boss_keys -= 1
+		worldStats.freed -= 3
+		stats.keys_collected -= 3
+		SaveFile.save_data()
 		var creakSound = DoorCreak.instance()
 		get_tree().current_scene.add_child(creakSound)
 		queue_free()
 	else:
 		popup.popup()
 		print_debug(stats.boss_keys)
-		print_debug(WorldStats.freed)
+		print_debug(worldStats.freed)
 		
 
 

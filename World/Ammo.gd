@@ -4,6 +4,7 @@ const PickUpSound = preload("res://Music and Sounds/PickUpSoundTwo.tscn")
 
 onready var popup = $PopupDialog
 onready var timer = $Timer
+onready var save_file = SaveFile.g_data
 
 var stats = PlayerStats
 var picked = false

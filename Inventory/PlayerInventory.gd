@@ -18,6 +18,8 @@ onready var controlsPanel = $ControlsPanel
 onready var timer = $Timer
 onready var levelText = $Control/CenterContainer/HBoxContainer/Panel/LevelText
 
+onready var save_file = SaveFile.g_data
+
 const ItemFocusSound = preload("res://Music and Sounds/ItemFocusSound.tscn")
 const ItemSelectSound = preload("res://Music and Sounds/MenuSelectSound.tscn")
 

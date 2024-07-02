@@ -4,6 +4,8 @@ export(int) var max_freed = 1 setget set_max_freed
 
 var freed = max_freed setget set_freed
 
+onready var save_file = SaveFile.g_data
+
 signal fade_music_in
 signal fade_music_out
 signal lowest_volume
@@ -24,6 +26,11 @@ func set_max_freed(value):
 	
 func set_freed(value):
 	freed = value
+	if save_file != null:
+		save_file.worldstats_freed = value
+	
 
 func _ready():
-	self.freed = 0
+	#self.freed = 0
+	self.freed = save_file.worldstats_freed
+	print_debug(self.freed)

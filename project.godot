@@ -22,6 +22,7 @@ PlayerStats="*res://Player/PlayerStats.tscn"
 WorldStats="*res://WorldStats.tscn"
 SceneTransition="*res://scene_transition.tscn"
 SceneTransitionLong="*res://scene_transition_long.tscn"
+SaveFile="*res://save_file.gd"
 
 [debug]
 

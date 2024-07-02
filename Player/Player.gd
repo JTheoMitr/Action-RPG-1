@@ -12,6 +12,7 @@ const KnifeSound = preload("res://Music and Sounds/KnifeSound.tscn")
 onready var playerSpritePurple = preload("res://Player/Main Player One Ranger Helmet GREEN three lighteroutline.png")
 onready var playerSpriteGreen = preload("res://Player/Main Player One Ranger Helmet GREEN three lighteroutline GREEN SWORD.png")
 onready var playerSpriteRed = preload("res://Player/Main Player One Ranger Helmet GREEN three lighteroutline RED SWORD.png")
+onready var save_file = SaveFile.g_data
 
 signal fired_shot
 

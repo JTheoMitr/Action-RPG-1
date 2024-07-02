@@ -5,7 +5,7 @@ onready var popup = $PopupDialog
 var stats = PlayerStats
 const CellDoorSound = preload("res://Music and Sounds/CellDoorSoundOne.tscn")
 
-
+onready var save_file = SaveFile.g_data
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"

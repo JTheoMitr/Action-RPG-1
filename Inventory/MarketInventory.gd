@@ -6,6 +6,7 @@ const BuzzerSound = preload("res://Music and Sounds/BuzzerSound.tscn")
 onready var redPopButton = $Control/CenterContainer/VBoxContainer/Button
 onready var coinLabel = $Control/CoinTextLabel
 onready var grooves = $BossaNova
+onready var save_file = SaveFile.g_data
 
 var stats = PlayerStats
 

@@ -3,7 +3,7 @@ extends Area2D
 const PickUpSound = preload("res://Music and Sounds/BossKeySound.tscn")
 var stats = PlayerStats
 
-
+onready var save_file = SaveFile.g_data
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.

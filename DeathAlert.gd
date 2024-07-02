@@ -22,15 +22,7 @@ func _ready():
 #func _process(delta):
 #	pass
 func _reset_stats():
-	stats.health = 4
-	stats.overcharge = false
-	stats.batteries = 2
-	stats.coins = 0
-	# stats.keys = 0
-	stats.boss_keys = 0
-	stats.xp = 0
-	stats.level = 1
-	worldStats.freed = 0
+	stats.reset()
 	
 
 

@@ -68,6 +68,7 @@ position = Vector2( 1.66282, 3.26625 )
 scale = Vector2( 0.444677, 0.455625 )
 frames = SubResource( 7 )
 animation = "walk"
+frame = 3
 playing = true
 offset = Vector2( 1, -10 )
 
