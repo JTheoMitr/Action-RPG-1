@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=28 format=2]
 
 [ext_resource path="res://UI/FrozencaScriptTypeface.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://IntroTitleScreen.gd" type="Script" id=2]
@@ -12,6 +12,9 @@
 [ext_resource path="res://Music and Sounds/KOTWB_CHIME_1.wav" type="AudioStream" id=10]
 [ext_resource path="res://Music and Sounds/KOTWB_CHIME_2.wav" type="AudioStream" id=11]
 [ext_resource path="res://fonts/PixelTandysoft-0rJG.ttf" type="DynamicFontData" id=12]
+[ext_resource path="res://World/gdb-playstation-2 circle flat.png" type="Texture" id=13]
+[ext_resource path="res://World/gdb-playstation-2 cross flat.png" type="Texture" id=14]
+[ext_resource path="res://UI/UI_Flat_Button_Medium_Lock_02a1 copy.png" type="Texture" id=15]
 
 [sub_resource type="DynamicFont" id=1]
 size = 27
@@ -36,6 +39,22 @@ bg_color = Color( 0.803922, 0.67451, 0.67451, 0.509804 )
 
 [sub_resource type="StyleBoxFlat" id=4]
 bg_color = Color( 0.117647, 0.109804, 0.109804, 0.52549 )
+
+[sub_resource type="DynamicFont" id=8]
+size = 10
+font_data = ExtResource( 12 )
+
+[sub_resource type="DynamicFont" id=9]
+size = 10
+font_data = ExtResource( 12 )
+
+[sub_resource type="StyleBoxEmpty" id=10]
+
+[sub_resource type="DynamicFont" id=11]
+size = 10
+font_data = ExtResource( 12 )
+
+[sub_resource type="StyleBoxEmpty" id=12]
 
 [node name="IntroTitleScreen" type="ColorRect"]
 anchor_right = 1.0
@@ -99,21 +118,21 @@ visible = false
 position = Vector2( 163, 83.75 )
 scale = Vector2( 0.585, 1.025 )
 animation = "New Anim"
-frame = 3
+frame = 63
 
 [node name="SnowFallOne2" parent="." instance=ExtResource( 5 )]
 modulate = Color( 1, 1, 1, 0.305882 )
 position = Vector2( 83, 89.5 )
 scale = Vector2( 1.6125, 1.81 )
 animation = "New Anim"
-frame = 3
+frame = 63
 
 [node name="SnowFallOne3" parent="." instance=ExtResource( 5 )]
 modulate = Color( 1, 1, 1, 0.305882 )
 position = Vector2( 241, 90 )
 scale = Vector2( 1.6125, 1.82 )
 animation = "New Anim"
-frame = 2
+frame = 62
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 margin_left = 133.0
@@ -138,6 +157,15 @@ custom_fonts/font = SubResource( 7 )
 custom_styles/focus = SubResource( 5 )
 custom_styles/normal = SubResource( 4 )
 text = "Options"
+
+[node name="Button3" type="Button" parent="VBoxContainer"]
+margin_top = 34.0
+margin_right = 114.0
+margin_bottom = 47.0
+custom_fonts/font = SubResource( 7 )
+custom_styles/focus = SubResource( 5 )
+custom_styles/normal = SubResource( 4 )
+text = "Clear Data"
 
 [node name="TitleMusic" parent="." instance=ExtResource( 4 )]
 stream = ExtResource( 9 )
@@ -174,10 +202,59 @@ stream = ExtResource( 11 )
 volume_db = -15.0
 pitch_scale = 0.72
 
+[node name="PopupDialog" type="PopupDialog" parent="."]
+visible = true
+margin_left = 142.0
+margin_top = 102.0
+margin_right = 182.0
+margin_bottom = 142.0
+
+[node name="Sprite" type="Sprite" parent="PopupDialog"]
+position = Vector2( 19, 20 )
+texture = ExtResource( 15 )
+
+[node name="RichTextLabel" type="RichTextLabel" parent="PopupDialog"]
+margin_left = -2.0
+margin_top = 9.0
+margin_right = 88.0
+margin_bottom = 60.0
+rect_scale = Vector2( 0.5, 0.5 )
+custom_fonts/normal_font = SubResource( 8 )
+bbcode_enabled = true
+bbcode_text = "[center]Delete current save?"
+text = "Delete current save?"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PopupDialog"]
+margin_left = -4.0
+margin_top = 21.0
+margin_right = 126.0
+margin_bottom = 61.0
+rect_scale = Vector2( 0.35, 0.35 )
+
+[node name="PopButton" type="Button" parent="PopupDialog/HBoxContainer"]
+margin_right = 60.0
+margin_bottom = 40.0
+custom_fonts/font = SubResource( 9 )
+custom_styles/normal = SubResource( 10 )
+text = "Cancel"
+icon = ExtResource( 13 )
+
+[node name="PopButton2" type="Button" parent="PopupDialog/HBoxContainer"]
+margin_left = 64.0
+margin_right = 130.0
+margin_bottom = 40.0
+custom_fonts/font = SubResource( 11 )
+custom_styles/normal = SubResource( 12 )
+text = "Confirm"
+icon = ExtResource( 14 )
+
 [connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_Button_pressed"]
 [connection signal="pressed" from="VBoxContainer/Button2" to="." method="_on_Button2_pressed"]
+[connection signal="pressed" from="VBoxContainer/Button3" to="." method="_on_Button3_pressed"]
 [connection signal="tween_completed" from="Tween" to="." method="_on_Tween_tween_completed"]
 [connection signal="animation_finished" from="LightningStrikeOne" to="." method="_on_LightningStrikeOne_animation_finished"]
 [connection signal="timeout" from="LightningTimer" to="." method="_on_LightningTimer_timeout"]
 [connection signal="animation_finished" from="LightningStrikeOne2" to="." method="_on_LightningStrikeOne2_animation_finished"]
 [connection signal="timeout" from="LightningTimerTwo" to="." method="_on_LightningTimerTwo_timeout"]
+[connection signal="pressed" from="PopupDialog/HBoxContainer/PopButton" to="." method="_on_PopButton_pressed"]
+[connection signal="pressed" from="PopupDialog/HBoxContainer/PopButton2" to="." method="_on_PopButton2_pressed"]

@@ -92,7 +92,7 @@ func _ready():
 	stats._ready()
 	crosshair.hide()
 	
-	# starting position
+	# starting position...need to rethink this if we add player position to saving, and need to stop from doing the initial runup
 	global_position.x = -463
 	global_position.y = 760
 	

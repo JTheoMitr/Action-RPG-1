@@ -59,4 +59,4 @@ func load_data():
 func clear_save_file():
 	var dir = Directory.new()
 	dir.remove(SAVE_FILE)
-	
+	load_data()

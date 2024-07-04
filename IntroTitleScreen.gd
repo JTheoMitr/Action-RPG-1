@@ -12,6 +12,7 @@ onready var lightningTimerTwo = $LightningTimerTwo
 onready var lightningTwo = $LightningStrikeOne2
 onready var chimeOne = $Button1Sound
 onready var chimeTwo = $Button2Sound
+onready var popup = $PopupDialog
 export var transition_duration = 2.00
 export var transition_type = 1 # TRANS_SINE
 
@@ -34,7 +35,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	pass
+	popup.rect_global_position = self.rect_global_position
 
 
 func _on_Button_pressed():
@@ -74,3 +75,16 @@ func _on_LightningStrikeOne2_animation_finished():
 	lightningTwo.hide()
 	lightningTwo.stop()
 	lightningTwo.frame = 0
+
+
+func _on_Button3_pressed():
+	popup.popup()
+
+
+func _on_PopButton_pressed():
+	popup.hide()
+
+
+func _on_PopButton2_pressed():
+	SaveFile.clear_save_file()
+	popup.hide()

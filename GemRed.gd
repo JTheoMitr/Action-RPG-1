@@ -19,7 +19,7 @@ func _ready():
 func _on_Area2D_area_entered(area):
 	stats.coins += 1
 	#save_file.player_coins += 1
-	SaveFile.save_data()
+	#SaveFile.save_data()
 	var pickUpSound = CoinSound.instance()
 	get_tree().current_scene.add_child(pickUpSound)
 	queue_free()

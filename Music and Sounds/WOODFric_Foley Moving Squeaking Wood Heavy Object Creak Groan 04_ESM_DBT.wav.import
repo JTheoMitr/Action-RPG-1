@@ -1,0 +1,23 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/WOODFric_Foley Moving Squeaking Wood Heavy Object Creak Groan 04_ESM_DBT.wav-342ba9f562cb5aaf04ff5301ffb11839.sample"
+
+[deps]
+
+source_file="res://Music and Sounds/WOODFric_Foley Moving Squeaking Wood Heavy Object Creak Groan 04_ESM_DBT.wav"
+dest_files=[ "res://.import/WOODFric_Foley Moving Squeaking Wood Heavy Object Creak Groan 04_ESM_DBT.wav-342ba9f562cb5aaf04ff5301ffb11839.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
