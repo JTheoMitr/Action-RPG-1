@@ -6,7 +6,7 @@
 [ext_resource path="res://Effects/DoorDustOne.png" type="Texture" id=4]
 [ext_resource path="res://UI/UI_Flat_Button_Medium_Lock_02a1 copy.png" type="Texture" id=5]
 [ext_resource path="res://fonts/PixelTandysoft-0rJG.ttf" type="DynamicFontData" id=6]
-[ext_resource path="res://Music and Sounds/WG_SFX_Chime_Wobble.wav" type="AudioStream" id=7]
+[ext_resource path="res://Music and Sounds/button-37.wav" type="AudioStream" id=7]
 [ext_resource path="res://Music and Sounds/WOODFric_Foley Moving Squeaking Wood Heavy Object Creak Groan 04_ESM_DBT.wav" type="AudioStream" id=8]
 [ext_resource path="res://UI/coin_single.png" type="Texture" id=9]
 [ext_resource path="res://Music and Sounds/steam_001.wav" type="AudioStream" id=10]
@@ -105,9 +105,9 @@ margin_bottom = -48.0
 rect_scale = Vector2( 1.2, 1.2 )
 custom_fonts/normal_font = SubResource( 10 )
 bbcode_enabled = true
-bbcode_text = "[center]save-o-matic
+bbcode_text = "[center]persistotron
   Costs 5    "
-text = "save-o-matic
+text = "persistotron
   Costs 5    "
 
 [node name="EntryArea2D" type="CollisionShape2D" parent="."]
@@ -174,8 +174,8 @@ bbcode_text = "[center]Game Saved"
 text = "Game Saved"
 
 [node name="RichTextSave2" type="RichTextLabel" parent="PopupDialog"]
-margin_left = -22.0
-margin_right = 52.0
+margin_left = -34.0
+margin_right = 40.0
 margin_bottom = 15.0
 rect_scale = Vector2( 0.7, 0.7 )
 custom_fonts/normal_font = SubResource( 10 )
@@ -184,8 +184,8 @@ bbcode_text = "[center] -5"
 text = " -5"
 
 [node name="Sprite2" type="Sprite" parent="PopupDialog"]
-position = Vector2( -8, 6 )
-scale = Vector2( 0.5, 0.5 )
+position = Vector2( 6, 5 )
+scale = Vector2( 0.4, 0.4 )
 texture = ExtResource( 9 )
 
 [node name="Timer4" type="Timer" parent="."]
@@ -201,8 +201,7 @@ one_shot = true
 
 [node name="Click" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 7 )
-volume_db = -3.0
-pitch_scale = 0.75
+pitch_scale = 0.6
 
 [node name="Groan" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 8 )
@@ -218,13 +217,13 @@ autostart = true
 
 [node name="Sprite3" type="Sprite" parent="."]
 self_modulate = Color( 1, 1, 1, 0.662745 )
-position = Vector2( 26, -52 )
+position = Vector2( 26, -54 )
 scale = Vector2( 0.6, 0.6 )
 texture = ExtResource( 9 )
 
 [node name="Steam" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 10 )
-volume_db = -5.0
+volume_db = -9.0
 
 [node name="Error" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 11 )

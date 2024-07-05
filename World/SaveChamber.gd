@@ -81,12 +81,16 @@ func _on_SaveChamber_area_exited(area):
 func _on_SaveZone2D_area_entered(area):
 	if stats.coins >= 5:
 		lightFlash.show()
+		$PopupDialog/RichTextSave.bbcode_text = "[center]Game Saved"
+		$PopupDialog/RichTextSave2.bbcode_text = "[center] -5"
 		click.play()
 		flashTimer.start()
 		print_debug(self.global_position)
-		SaveFile.save_data()
+		#SaveFile.save_data()
 	else:
 		redFlash.show()
+		$PopupDialog/RichTextSave.bbcode_text = "[center]Not Enough"
+		$PopupDialog/RichTextSave2.bbcode_text = "     Need"
 		error.play()
 		flashTimer.start()
 
@@ -104,7 +108,11 @@ func _on_Timer5_timeout():
 		stats.coins -= 5
 		var cashSound = CashSound.instance()
 		get_parent().add_child(cashSound)
-
+		SaveFile.save_data()
+	else:
+		popUpSave.popup()
+		saveTimer2.start()
+	
 
 func _on_Timer6_timeout():
 	popUpSave.hide()
