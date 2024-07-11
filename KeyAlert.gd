@@ -9,7 +9,8 @@ func show_key_alert():
 	$Timer.start(3)
 
 func _ready():
-	stats.connect("keys_changed", self, "show_key_alert")
+	stats.connect("key_pickup", self, "show_key_alert")
+	stats.connect("key_use", self, "show_key_alert")
 
 
 

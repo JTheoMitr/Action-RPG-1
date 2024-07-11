@@ -7,6 +7,7 @@ onready var musicTimer = $MusicTimer
 onready var tween_out = $Tween
 onready var blastAnim = $CanvasLayer/AmmoUI/BlastAnim
 onready var stealthUI = $CanvasLayer/StealthUI
+onready var keyAlert = $AlertCanvas/KeyAlert
 
 export var transition_duration = 3.00
 export var transition_type = 1 # TRANS_SINE
@@ -25,6 +26,7 @@ func _ready():
 	worldStats.connect("out_of_the_tall_grass", self, "stealth_ui_off")
 	worldStats.connect("play_blast_anim", self, "blast_animation")
 	stats.connect("level_changed", self, "leveled")
+
 	generate_laser_effect(Vector2(-1248, 459.451538))
 	#stats.set_max_health(5)
 	#stats.set_health(5)
@@ -38,6 +40,8 @@ func _process(delta):
 func leveled():
 	if stats.level >= 2:
 		$Timer.start()
+		
+
 
 func raise_music_volume():
 	print("fading_in")

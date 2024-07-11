@@ -45,7 +45,6 @@ shape = SubResource( 1 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( 1, 13 )
 frames = SubResource( 5 )
-frame = 2
 playing = true
 
 [node name="Timer" type="Timer" parent="."]
@@ -68,19 +67,17 @@ shape = SubResource( 6 )
 self_modulate = Color( 1, 1, 1, 0.658824 )
 position = Vector2( 0, 20.1 )
 scale = Vector2( 0.08, 1.25625 )
-frame = 3
 
 [node name="DoorDustEffectOne3" parent="." instance=ExtResource( 4 )]
 self_modulate = Color( 1, 1, 1, 0.658824 )
 position = Vector2( -9, 24.55 )
 scale = Vector2( 0.08, 0.659375 )
-frame = 2
+frame = 3
 
 [node name="DoorDustEffectOne" parent="." instance=ExtResource( 4 )]
 self_modulate = Color( 1, 1, 1, 0.658824 )
 position = Vector2( 9, 18 )
 scale = Vector2( 0.08, 1.1375 )
-frame = 3
 
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 [connection signal="timeout" from="Timer2" to="." method="_on_Timer2_timeout"]

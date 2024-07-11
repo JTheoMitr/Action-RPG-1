@@ -13,6 +13,7 @@ onready var dust4 = $DustAnimation4
 onready var explosionSound = $AudioStreamPlayer
 onready var alarmSound = $AlarmSound
 onready var hitBox = $Hitbox/CollisionShape2D
+onready var save_file = SaveFile.g_data
 
 
 
@@ -60,7 +61,9 @@ func _on_DestructTimer_timeout():
 	sprite.hide()
 	explosionAnim.frame = 0
 	explosionAnim.play("explode")
+	save_file.world_one_boss_lives = false
 
 
 func _on_AnimatedSprite_animation_finished():
 	self.call_deferred("queue_free")
+	SaveFile.save_data()

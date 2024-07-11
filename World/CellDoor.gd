@@ -27,6 +27,7 @@ func _on_DoorEntry_area_entered(area):
 		var cellDoorSound = CellDoorSound.instance()
 		get_tree().current_scene.add_child(cellDoorSound)
 		stats.keys -= 1
+		stats.emit_signal("key_use")
 		queue_free()
 	elif stats.keys == 0:
 		popup.popup()

@@ -72,6 +72,9 @@ signal green_charged
 signal red_charged
 signal purple_charged
 
+signal key_pickup
+signal key_use
+
 signal health_changed(value)
 signal max_health_changed(value)
 signal keys_changed(value)
@@ -264,6 +267,7 @@ func _ready():
 	self.overcharge = save_file.overcharge_status
 	
 func reset():
+	SaveFile.load_data()
 	#print_debug(save_file)
 	self.health = max_health
 	self.max_health = save_file.player_max_health
@@ -278,7 +282,7 @@ func reset():
 	#self.xp = 0
 	self.xp = save_file.player_xp
 	#self.redpops = 0
-	self.xp = save_file.player_red_pops
+	self.redpops = save_file.player_red_pops
 	#self.bluepops = 0
 	self.bluepops = save_file.player_blue_pops
 	#self.boss_keys = 0

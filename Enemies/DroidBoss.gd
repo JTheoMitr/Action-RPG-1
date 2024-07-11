@@ -33,7 +33,7 @@ var playerStats = PlayerStats
 var songStarted = false
 
 var state = CHASE
-
+onready var save_file = SaveFile.g_data
 onready var sprite = $AnimatedSprite
 onready var shadow = $ShadowSprite
 onready var stats = $Stats
@@ -64,6 +64,8 @@ var introduced = false
 func _ready():
 	state = pick_random_state([IDLE, WANDER])
 	bossHealthUI.hide()
+	if save_file.world_one_boss_lives == false:
+		queue_free()
 
 func _physics_process(delta):
 	knockback = knockback.move_toward(Vector2.ZERO, FRICTION * delta)

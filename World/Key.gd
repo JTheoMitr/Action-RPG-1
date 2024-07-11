@@ -15,5 +15,5 @@ func _on_Key_area_entered(area):
 		# print_debug(stats.keys)
 		var pickUpSound = PickUpSound.instance()
 		get_tree().current_scene.add_child(pickUpSound)
-		# stats.emit_signal("keys_changed")
+		stats.emit_signal("key_pickup")
 		queue_free()

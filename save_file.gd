@@ -16,7 +16,10 @@ var g_data = {"player_level": 1,
 			"player_red_pops": 0,
 			"player_blue_pops": 0,
 			"worldstats_freed": 0,
-			"overcharge_status": false,}
+			"overcharge_status": false,
+			"world_one_boss_lives": true,
+			"world_two_boss_lives": true,
+			}
 
 func _ready():
 	print_debug("save file ready")
@@ -50,6 +53,8 @@ func load_data():
 			"player_blue_pops": 0,
 			"worldstats_freed": 0,
 			"overcharge_status": false,
+			"world_one_boss_lives": true,
+			"world_two_boss_lives": true,
 		}
 		save_data()
 	file.open(SAVE_FILE, File.READ)

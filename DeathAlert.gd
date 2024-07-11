@@ -15,7 +15,7 @@ func show_death_alert():
 	worldStats.emit_signal("fade_music_out")
 
 func _ready():
-	PlayerStats.connect("no_health", self, "show_death_alert")
+	stats.connect("no_health", self, "show_death_alert")
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
