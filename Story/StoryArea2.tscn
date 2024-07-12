@@ -235,6 +235,7 @@ one_shot = true
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="SkillPopUp" type="PopupDialog" parent="CanvasLayer"]
+visible = true
 margin_left = 40.0
 margin_top = 19.0
 margin_right = 373.0
@@ -255,14 +256,14 @@ text = "You've learned OVERCHARGE: "
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="CanvasLayer/SkillPopUp"]
 margin_left = 112.857
-margin_top = 78.5714
+margin_top = 77.1429
 margin_right = 311.857
-margin_bottom = 175.571
+margin_bottom = 174.142
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_fonts/normal_font = SubResource( 13 )
 bbcode_enabled = true
-bbcode_text = "[center] Press    to damage all nearby enemies with an electric blast. Costs 1 battery. [/center]"
-text = " Press    to damage all nearby enemies with an electric blast. Costs 1 battery. "
+bbcode_text = "[center] Press    to damage all nearby enemies with an electric blast. Costs 1 Floppy Disk. [/center]"
+text = " Press    to damage all nearby enemies with an electric blast. Costs 1 Floppy Disk. "
 
 [node name="Panel" type="Panel" parent="CanvasLayer/SkillPopUp"]
 margin_left = 38.0

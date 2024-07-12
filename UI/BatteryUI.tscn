@@ -2,7 +2,7 @@
 
 [ext_resource path="res://UI/BatteryUI.gd" type="Script" id=1]
 [ext_resource path="res://World/pixel_batt_empty.png" type="Texture" id=2]
-[ext_resource path="res://World/battery.png" type="Texture" id=3]
+[ext_resource path="res://World/floppy.png" type="Texture" id=3]
 [ext_resource path="res://UI/lightning_line1a8.png" type="Texture" id=4]
 
 [node name="BatteryUI" type="Control"]
@@ -23,7 +23,7 @@ stretch_mode = 2
 anchor_right = 5.0
 margin_right = -76.0
 margin_bottom = 32.0
-rect_scale = Vector2( 0.282, 0.34 )
+rect_scale = Vector2( 0.3, 0.34 )
 texture = ExtResource( 3 )
 expand = true
 stretch_mode = 2
