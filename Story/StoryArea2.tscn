@@ -262,8 +262,8 @@ margin_bottom = 174.142
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_fonts/normal_font = SubResource( 13 )
 bbcode_enabled = true
-bbcode_text = "[center] Press    to damage all nearby enemies with an electric blast. Costs 1 Floppy Disk. [/center]"
-text = " Press    to damage all nearby enemies with an electric blast. Costs 1 Floppy Disk. "
+bbcode_text = "[center] Press    to damage all nearby enemies with an electric blast. Costs 1 Floppy D. [/center]"
+text = " Press    to damage all nearby enemies with an electric blast. Costs 1 Floppy D. "
 
 [node name="Panel" type="Panel" parent="CanvasLayer/SkillPopUp"]
 margin_left = 38.0
