@@ -240,7 +240,7 @@ func set_bluepops(value):
 func _ready():
 	#print_debug(save_file)
 	self.health = max_health
-	self.max_health = save_file.player_max_health
+	#self.max_health = save_file.player_max_health
 	#self.keys = 0
 	self.keys = save_file.player_keys
 	#self.keys_collected = 0
@@ -270,7 +270,7 @@ func reset():
 	SaveFile.load_data()
 	#print_debug(save_file)
 	self.health = max_health
-	self.max_health = save_file.player_max_health
+	#self.max_health = save_file.player_max_health
 	#self.keys = 0
 	self.keys = save_file.player_keys
 	#self.keys_collected = 0

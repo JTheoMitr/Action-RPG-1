@@ -12,7 +12,7 @@ height = 128.0
 bg_color = Color( 0, 0, 0, 0.666667 )
 
 [sub_resource type="DynamicFont" id=3]
-size = 13
+size = 10
 font_data = ExtResource( 3 )
 
 [node name="Battery" type="Area2D"]
@@ -36,8 +36,10 @@ rect_scale = Vector2( 0.5, 0.5 )
 custom_styles/panel = SubResource( 2 )
 
 [node name="RichTextLabel" type="RichTextLabel" parent="PopupDialog"]
-margin_right = 200.0
-margin_bottom = 20.0
+margin_left = 8.0
+margin_top = 3.0
+margin_right = 208.0
+margin_bottom = 23.0
 rect_min_size = Vector2( 200, 20 )
 custom_fonts/normal_font = SubResource( 3 )
 text = "Batteries Full"

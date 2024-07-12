@@ -11,7 +11,7 @@ radius = 4.0
 bg_color = Color( 0, 0, 0, 0.666667 )
 
 [sub_resource type="DynamicFont" id=3]
-size = 13
+size = 10
 font_data = ExtResource( 3 )
 
 [node name="Apple" type="Area2D"]
@@ -35,9 +35,10 @@ rect_scale = Vector2( 0.45, 0.45 )
 custom_styles/panel = SubResource( 2 )
 
 [node name="RichTextLabel" type="RichTextLabel" parent="PopupDialog"]
-margin_left = 2.22222
-margin_right = 130.222
-margin_bottom = 49.0
+margin_left = 9.0
+margin_top = 2.0
+margin_right = 137.0
+margin_bottom = 51.0
 rect_scale = Vector2( 0.9, 0.9 )
 custom_fonts/normal_font = SubResource( 3 )
 text = "Health Full"
