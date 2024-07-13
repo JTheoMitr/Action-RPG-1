@@ -7,9 +7,8 @@ var stats = PlayerStats
 onready var save_file = SaveFile.g_data
 
 func _ready():
-	if save_file.key1_1_nabbed == true:
+	if save_file.key1_2_nabbed == true:
 		queue_free()
-
 
 func _on_Key_area_entered(area):
 		stats.keyLost = false
@@ -20,5 +19,5 @@ func _on_Key_area_entered(area):
 		var pickUpSound = PickUpSound.instance()
 		get_tree().current_scene.add_child(pickUpSound)
 		stats.emit_signal("key_pickup")
-		save_file.key1_1_nabbed = true
+		save_file.key1_2_nabbed = true
 		queue_free()
