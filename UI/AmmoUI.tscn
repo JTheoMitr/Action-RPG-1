@@ -84,10 +84,10 @@ texture = ExtResource( 1 )
 expand = true
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
-margin_left = 0.833
-margin_top = 2.0
-margin_right = 25.833
-margin_bottom = 17.0
+margin_left = 0.833333
+margin_top = 1.66667
+margin_right = 25.8333
+margin_bottom = 16.6667
 rect_scale = Vector2( 0.6, 0.65 )
 custom_colors/default_color = Color( 0.0235294, 1, 0.176471, 1 )
 custom_fonts/normal_font = SubResource( 13 )

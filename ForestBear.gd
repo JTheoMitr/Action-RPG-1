@@ -5,8 +5,11 @@ const BearVaporEffect = preload("res://Effects/EnemyDeathEffect.tscn")
 onready var worldStats = WorldStats
 var bearVapor = BearVaporEffect.instance()
 
+onready var save_data = SaveFile.g_data
+
 func _ready():
-	pass
+	if save_data.forest_bear_saved == true:
+		queue_free()
 	
 
 onready var popup = $RescuePopUp
@@ -33,8 +36,10 @@ func _on_Timer_timeout():
 	popup.hide()
 	bear.hide()
 	shadow.hide()
+	save_data.forest_bear_saved = true
 	worldStats.freed += 1
 	PlayerStats.xp += 15
+	SaveFile.save_data()
 	$Timer2.start()
 
 
