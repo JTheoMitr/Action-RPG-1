@@ -143,7 +143,7 @@ one_shot = true
 [node name="TrippinSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 2 )
 volume_db = -5.0
-pitch_scale = 0.9
+pitch_scale = 0.7
 
 [node name="Tween" type="Tween" parent="."]
 
@@ -159,33 +159,34 @@ wait_time = 3.0
 self_modulate = Color( 1, 1, 1, 0.466667 )
 position = Vector2( 58, 52 )
 frames = SubResource( 12 )
-frame = 2
 playing = true
 
 [node name="AnimatedSprite2" type="AnimatedSprite" parent="."]
 self_modulate = Color( 1, 1, 1, 0.466667 )
 position = Vector2( 156, 101 )
 frames = SubResource( 12 )
-frame = 1
+frame = 8
 playing = true
 
 [node name="AnimatedSprite5" type="AnimatedSprite" parent="."]
 self_modulate = Color( 1, 1, 1, 0.466667 )
 position = Vector2( 243, 45 )
 frames = SubResource( 12 )
+frame = 7
 playing = true
 
 [node name="AnimatedSprite3" type="AnimatedSprite" parent="."]
 self_modulate = Color( 1, 1, 1, 0.466667 )
 position = Vector2( 64, 141 )
 frames = SubResource( 12 )
-frame = 1
+frame = 8
 playing = true
 
 [node name="AnimatedSprite4" type="AnimatedSprite" parent="."]
 self_modulate = Color( 1, 1, 1, 0.466667 )
 position = Vector2( 248, 136 )
 frames = SubResource( 12 )
+frame = 7
 playing = true
 
 [node name="AnimatedSprite6" type="AnimatedSprite" parent="."]
@@ -193,7 +194,6 @@ self_modulate = Color( 1, 1, 1, 0.329412 )
 position = Vector2( 155, 90 )
 scale = Vector2( 0.140625, 0.158203 )
 frames = SubResource( 15 )
-frame = 1
 playing = true
 
 [connection signal="timeout" from="ShroomTimer" to="." method="_on_ShroomTimer_timeout"]
