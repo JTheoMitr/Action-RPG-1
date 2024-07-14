@@ -13,8 +13,7 @@ onready var save_file = SaveFile.g_data
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	#if save_file != null:
-	if save_file.cell_1_1_opened == true:
+	if save_file.cell_1_3_opened == true:
 		queue_free()
 
 
@@ -30,7 +29,7 @@ func _on_DoorEntry_area_entered(area):
 		get_tree().current_scene.add_child(cellDoorSound)
 		stats.keys -= 1
 		stats.emit_signal("key_use")
-		save_file.cell_1_1_opened = true
+		save_file.cell_1_3_opened = true
 		queue_free()
 	elif stats.keys == 0:
 		popup.popup()

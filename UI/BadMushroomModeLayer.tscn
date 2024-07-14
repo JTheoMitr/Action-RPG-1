@@ -1,0 +1,200 @@
+[gd_scene load_steps=22 format=2]
+
+[ext_resource path="res://UI/BadMushroomModeLayer.gd" type="Script" id=1]
+[ext_resource path="res://Music and Sounds/Drifting_145bpm_Bells.wav" type="AudioStream" id=2]
+[ext_resource path="res://Effects/1.png" type="Texture" id=3]
+[ext_resource path="res://Effects/Free Smoke Fx Pixel Green.png" type="Texture" id=4]
+[ext_resource path="res://Effects/2.png" type="Texture" id=5]
+[ext_resource path="res://Music and Sounds/electricity_glitch_17.wav" type="AudioStream" id=7]
+
+[sub_resource type="Shader" id=2]
+code = "// Rain and Snow shader by Brian Smith (steampunkdemon.itch.io)
+// MIT licence
+
+shader_type canvas_item;
+
+uniform float rain_amount = 50.0;
+uniform float near_rain_length : hint_range(0.01, 1.0) = 0.9;
+uniform float far_rain_length : hint_range(0.01, 1.0) = 0.7;
+uniform float near_rain_width : hint_range(0.1, 1.0) = 0.8;
+uniform float far_rain_width : hint_range(0.1, 1.0) = 0.7;
+uniform float near_rain_transparency : hint_range(0.1, 1.0) = 0.7;
+uniform float far_rain_transparency : hint_range(0.1, 1.0) = 0.3;
+// Replace the below reference to source_color with hint_color if you are using a version of Godot before 4.0.
+uniform vec4 rain_color : hint_color = vec4(0.0, 23.0, 3.6, 53.0);
+uniform float base_rain_speed : hint_range(0.1, 1.0) = 0.6;
+uniform float additional_rain_speed : hint_range(0.1, 1.0) = 1.5;
+uniform float slant : hint_range(-1.0, 1.0) = 0.9;
+
+void fragment() {
+// To control the rainfall from your program comment out the below line and add a new uniform above as:
+// uniform float time = 10000.0;
+// Then update the time uniform from your _physics_process function by adding delta. You can then pause the rainfall by not changing the time uniform.
+	float time = 10000.0 + TIME;
+
+// Uncomment the following line if you are applying the shader to a TextureRect and using a version of Godot before 4.0.
+//	COLOR = texture(TEXTURE,UV);
+
+	vec2 uv = vec2(0.0);
+	float remainder = mod(UV.x - UV.y * slant, 1.0 / rain_amount);
+	uv.x = (UV.x - UV.y * slant) - remainder;
+	float rn = fract(sin(uv.x * rain_amount));
+	uv.y = fract((UV.y + rn));
+
+// Blurred trail. Works well for rain:
+//	COLOR = mix(COLOR, rain_color, smoothstep(1.0 - (far_rain_length + (near_rain_length - far_rain_length) * rn), 1.0, fract(uv.y - time * (base_rain_speed + additional_rain_speed * rn))) * (far_rain_transparency + (near_rain_transparency - far_rain_transparency) * rn) * step(remainder * rain_amount, far_rain_width + (near_rain_width - far_rain_width) * rn));
+
+// No trail. Works well for snow:
+	COLOR = mix(COLOR, rain_color, step(1.0 - (far_rain_length + (near_rain_length - far_rain_length) * rn), fract(uv.y - time * (base_rain_speed + additional_rain_speed * rn))) * (far_rain_transparency + (near_rain_transparency - far_rain_transparency) * rn) * step(remainder * rain_amount, far_rain_width + (near_rain_width - far_rain_width) * rn));
+}
+"
+
+[sub_resource type="ShaderMaterial" id=1]
+resource_local_to_scene = true
+shader = SubResource( 2 )
+shader_param/rain_amount = 100.0
+shader_param/near_rain_length = 0.127
+shader_param/far_rain_length = 0.452
+shader_param/near_rain_width = 0.8
+shader_param/far_rain_width = 1.0
+shader_param/near_rain_transparency = 0.5
+shader_param/far_rain_transparency = 0.3
+shader_param/rain_color = Color( 0.556863, 0.164706, 0.905882, 1 )
+shader_param/base_rain_speed = 0.341
+shader_param/additional_rain_speed = 0.589
+shader_param/slant = 0.015
+
+[sub_resource type="AtlasTexture" id=3]
+atlas = ExtResource( 4 )
+region = Rect2( 0, 640, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=4]
+atlas = ExtResource( 4 )
+region = Rect2( 64, 640, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=5]
+atlas = ExtResource( 4 )
+region = Rect2( 128, 640, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=6]
+atlas = ExtResource( 4 )
+region = Rect2( 192, 640, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=7]
+atlas = ExtResource( 4 )
+region = Rect2( 256, 640, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=8]
+atlas = ExtResource( 4 )
+region = Rect2( 320, 640, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=9]
+atlas = ExtResource( 4 )
+region = Rect2( 384, 640, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=10]
+atlas = ExtResource( 4 )
+region = Rect2( 448, 640, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=11]
+atlas = ExtResource( 4 )
+region = Rect2( 512, 640, 64, 64 )
+
+[sub_resource type="SpriteFrames" id=12]
+animations = [ {
+"frames": [ SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 11 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="AtlasTexture" id=13]
+atlas = ExtResource( 3 )
+region = Rect2( 0, 0, 512, 512 )
+
+[sub_resource type="AtlasTexture" id=14]
+atlas = ExtResource( 5 )
+region = Rect2( 0, 0, 512, 512 )
+
+[sub_resource type="SpriteFrames" id=15]
+animations = [ {
+"frames": [ SubResource( 13 ), SubResource( 14 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[node name="BadMushroomModeLayer" type="Control"]
+margin_right = 40.0
+margin_bottom = 40.0
+script = ExtResource( 1 )
+
+[node name="Shroomin" type="ColorRect" parent="."]
+self_modulate = Color( 1, 0.827451, 1, 0.6 )
+material = SubResource( 1 )
+margin_right = 320.0
+margin_bottom = 180.0
+color = Color( 0.247059, 0.764706, 0.215686, 0.596078 )
+
+[node name="ShroomTimer" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+
+[node name="TrippinSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 2 )
+volume_db = -5.0
+pitch_scale = 0.9
+
+[node name="Tween" type="Tween" parent="."]
+
+[node name="ScreenGlitch" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 7 )
+volume_db = -3.0
+pitch_scale = 0.8
+
+[node name="HideTimer" type="Timer" parent="."]
+wait_time = 3.0
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+self_modulate = Color( 1, 1, 1, 0.466667 )
+position = Vector2( 58, 52 )
+frames = SubResource( 12 )
+frame = 2
+playing = true
+
+[node name="AnimatedSprite2" type="AnimatedSprite" parent="."]
+self_modulate = Color( 1, 1, 1, 0.466667 )
+position = Vector2( 156, 101 )
+frames = SubResource( 12 )
+frame = 1
+playing = true
+
+[node name="AnimatedSprite5" type="AnimatedSprite" parent="."]
+self_modulate = Color( 1, 1, 1, 0.466667 )
+position = Vector2( 243, 45 )
+frames = SubResource( 12 )
+playing = true
+
+[node name="AnimatedSprite3" type="AnimatedSprite" parent="."]
+self_modulate = Color( 1, 1, 1, 0.466667 )
+position = Vector2( 64, 141 )
+frames = SubResource( 12 )
+frame = 1
+playing = true
+
+[node name="AnimatedSprite4" type="AnimatedSprite" parent="."]
+self_modulate = Color( 1, 1, 1, 0.466667 )
+position = Vector2( 248, 136 )
+frames = SubResource( 12 )
+playing = true
+
+[node name="AnimatedSprite6" type="AnimatedSprite" parent="."]
+self_modulate = Color( 1, 1, 1, 0.329412 )
+position = Vector2( 155, 90 )
+scale = Vector2( 0.140625, 0.158203 )
+frames = SubResource( 15 )
+frame = 1
+playing = true
+
+[connection signal="timeout" from="ShroomTimer" to="." method="_on_ShroomTimer_timeout"]
+[connection signal="timeout" from="HideTimer" to="." method="_on_HideTimer_timeout"]

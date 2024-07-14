@@ -89,6 +89,7 @@ func _ready():
 	
 	worldStats.connect("in_the_tall_grass", self, "_stealth_mode")
 	worldStats.connect("out_of_the_tall_grass", self, "_visible_again")
+	worldStats.connect("bad_trip", self, "bad_trippin")
 	stats._ready()
 	crosshair.hide()
 	
@@ -325,6 +326,11 @@ func random_drop_generator(drop_list):
 	drop_list.shuffle()
 	return drop_list.pop_front()
 	
+func bad_trippin():
+	self.MAX_SPEED = 15
+	$TripTimer.start()
+	
+	
 func foot_step():
 	# for footstep audio
 	var foot1 = FootstepOne.instance()
@@ -386,3 +392,7 @@ func green_mode():
 	
 func red_mode():
 	sprite.texture = playerSpriteRed
+
+
+func _on_TripTimer_timeout():
+	self.MAX_SPEED = 90
