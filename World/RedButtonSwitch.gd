@@ -3,6 +3,7 @@ extends AnimatedSprite
 onready var click = $Click
 var worldStats = WorldStats
 var clicked
+onready var save_file = SaveFile.g_data
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
@@ -10,8 +11,12 @@ var clicked
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	self.frame = 0
-	clicked = false
+	if save_file.gate_1_opened == true:
+		self.frame = 1
+		clicked = true
+	else:
+		self.frame = 0
+		clicked = false
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
