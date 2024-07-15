@@ -13,6 +13,7 @@ onready var responseText = $Response/RichTextLabel
 onready var timer = $Timer
 onready var skillTimer = $SkillDescTimer
 onready var skillPop = $CanvasLayer/SkillPopUp
+onready var save_file = SaveFile.g_data
 # onready var chatterSound = ChatterSound.instance()
 
 var inArea = false
@@ -33,7 +34,10 @@ var textOptionsThree = ["[center] \n Oh, my mistake.  \n You're giving off \n se
 
 
 func _ready():
-	dialog.bbcode_enabled = true
+	if save_file.overcharge_status == true:
+		queue_free()
+	else:
+		dialog.bbcode_enabled = true
 	
 func _process(delta):
 	popup.rect_global_position.x = self.position.x
@@ -153,6 +157,7 @@ func _on_SkillDescTimer_timeout():
 	get_tree().current_scene.add_child(newSkill)
 	skillPop.show()
 	stats.overcharge = true
+	save_file.overcharge_status = true
 	stats.emit_signal("player_paused")
 	skillPopShow = true
 	skillTimer.queue_free()

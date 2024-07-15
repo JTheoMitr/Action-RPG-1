@@ -2,12 +2,14 @@ extends Area2D
 
 onready var popup = $IntroDialog1
 onready var stats = PlayerStats
+onready var save_data = SaveFile.g_data
 
 var inArea = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass
+	if save_data.forest_bunny_saved == true:
+		queue_free()
 	
 func _process(delta):
 	popup.rect_global_position.x = self.position.x - 75

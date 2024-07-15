@@ -28,6 +28,7 @@ var g_data = {"player_level": 1,
 			"forest_bunny_saved": false,
 			"forest_deer_saved": false,
 			"world_one_boss_lives": true,
+			"boss_key_1_nabbed": false,
 			"world_two_boss_lives": true,
 			}
 
@@ -74,6 +75,7 @@ func load_data():
 			"forest_bunny_saved": false,
 			"forest_deer_saved": false,
 			"world_one_boss_lives": true,
+			"boss_key_1_nabbed": false,
 			"world_two_boss_lives": true,
 		}
 		save_data()
