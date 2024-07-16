@@ -1,8 +1,8 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://World/droidchamber.png" type="Texture" id=1]
 [ext_resource path="res://World/floatingBody.png" type="Texture" id=2]
-[ext_resource path="res://Effects/DoorDustEffectOne.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Effects/DoorDustOne.png" type="Texture" id=3]
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 15.0
@@ -28,6 +28,30 @@ animations = [ {
 "speed": 2.0
 } ]
 
+[sub_resource type="AtlasTexture" id=6]
+atlas = ExtResource( 3 )
+region = Rect2( 0, 0, 100, 32 )
+
+[sub_resource type="AtlasTexture" id=7]
+atlas = ExtResource( 3 )
+region = Rect2( 100, 0, 100, 32 )
+
+[sub_resource type="AtlasTexture" id=8]
+atlas = ExtResource( 3 )
+region = Rect2( 200, 0, 100, 32 )
+
+[sub_resource type="AtlasTexture" id=9]
+atlas = ExtResource( 3 )
+region = Rect2( 300, 0, 100, 32 )
+
+[sub_resource type="SpriteFrames" id=10]
+animations = [ {
+"frames": [ SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
 [node name="ChamberNull" type="StaticBody2D"]
 scale = Vector2( 0.8, 0.8 )
 
@@ -44,18 +68,10 @@ frames = SubResource( 5 )
 frame = 1
 playing = true
 
-[node name="DoorDustEffectOne2" parent="." instance=ExtResource( 4 )]
-self_modulate = Color( 1, 1, 1, 0.658824 )
-position = Vector2( 0, 20.1 )
-scale = Vector2( 0.08, 1.25625 )
-
-[node name="DoorDustEffectOne3" parent="." instance=ExtResource( 4 )]
-self_modulate = Color( 1, 1, 1, 0.658824 )
-position = Vector2( -9, 24.55 )
-scale = Vector2( 0.08, 0.659375 )
-
-[node name="DoorDustEffectOne" parent="." instance=ExtResource( 4 )]
-self_modulate = Color( 1, 1, 1, 0.658824 )
-position = Vector2( 9, 18 )
-scale = Vector2( 0.08, 1.1375 )
+[node name="AnimatedSprite2" type="AnimatedSprite" parent="."]
+self_modulate = Color( 1, 1, 1, 0.45098 )
+position = Vector2( 0, 13.75 )
+scale = Vector2( 0.2625, 1.5625 )
+frames = SubResource( 10 )
 frame = 1
+playing = true

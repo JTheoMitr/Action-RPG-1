@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Enemies/xpOrbanim.png" type="Texture" id=1]
 [ext_resource path="res://UI/XpUI.gd" type="Script" id=2]
 [ext_resource path="res://fonts/PixelTandysoft-0rJG.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://UI/xpUI_node.png" type="Texture" id=4]
 
 [sub_resource type="AtlasTexture" id=2]
 atlas = ExtResource( 1 )
@@ -28,6 +29,34 @@ animations = [ {
 size = 10
 font_data = ExtResource( 3 )
 
+[sub_resource type="AtlasTexture" id=6]
+atlas = ExtResource( 4 )
+region = Rect2( 0, 0, 48, 18 )
+
+[sub_resource type="AtlasTexture" id=7]
+atlas = ExtResource( 4 )
+region = Rect2( 48, 0, 48, 18 )
+
+[sub_resource type="AtlasTexture" id=8]
+atlas = ExtResource( 4 )
+region = Rect2( 96, 0, 48, 18 )
+
+[sub_resource type="AtlasTexture" id=9]
+atlas = ExtResource( 4 )
+region = Rect2( 144, 0, 48, 18 )
+
+[sub_resource type="AtlasTexture" id=10]
+atlas = ExtResource( 4 )
+region = Rect2( 192, 0, 48, 18 )
+
+[sub_resource type="SpriteFrames" id=11]
+animations = [ {
+"frames": [ SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
 [node name="XpUI" type="Control"]
 margin_left = 2.0
 margin_top = 35.0
@@ -43,6 +72,7 @@ frame = 2
 playing = true
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
+visible = false
 margin_left = 25.0
 margin_top = 5.0
 margin_right = 295.0
@@ -50,3 +80,9 @@ margin_bottom = 52.0
 rect_scale = Vector2( 0.55, 0.55 )
 custom_fonts/normal_font = SubResource( 1 )
 text = "xp 0"
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( 36, 9 )
+scale = Vector2( 0.6, 0.6 )
+frames = SubResource( 11 )
+frame = 4

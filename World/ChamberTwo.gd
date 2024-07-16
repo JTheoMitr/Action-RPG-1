@@ -29,9 +29,9 @@ func _on_Timer_timeout():
 	
 func start_timers():
 	if triggered == false:
-		var soldier = Soldier.instance()
-		get_parent().call_deferred("add_child", soldier)
-		soldier.global_position = $SpawnArea/CollisionShape2D.global_position
+		#var soldier = Soldier.instance()
+		#get_parent().call_deferred("add_child", soldier)
+		#soldier.global_position = $SpawnArea/CollisionShape2D.global_position
 		$Timer.start()
 		$Timer2.start()
 		$Timer3.start()
