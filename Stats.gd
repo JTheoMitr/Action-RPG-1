@@ -190,6 +190,7 @@ func set_xp(value):
 		save_file.player_xpCap = holdCap
 		# update attributes here?
 		# auto-save here?
+		SaveFile.save_data()
 		
 
 func set_level(value):

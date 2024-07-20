@@ -9,7 +9,7 @@ var inArea = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	if save_data.forest_bunny_saved == true:
-		queue_free()
+		$IntroDialog2/RichTextLabel.text = "Let's clear this place out"
 	
 func _process(delta):
 	popup.rect_global_position.x = self.position.x - 75

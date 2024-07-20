@@ -1016,6 +1016,7 @@ frame = 36
 
 [node name="PlayerSpriteSpecials" type="Sprite" parent="."]
 visible = false
+self_modulate = Color( 1, 1, 1, 0.643137 )
 position = Vector2( 0, -9 )
 texture = ExtResource( 2 )
 hframes = 60
