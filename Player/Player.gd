@@ -43,6 +43,10 @@ onready var laserTimer = $Pointer/LaserTimer
 onready var laserSpeed = $Pointer/LaserSpeed
 onready var laserZone = $Pointer/Sprite/LaserZone/CollisionShape2D
 onready var sprite = $PlayerSprite
+onready var chargeTimer = $ChargeTimer
+onready var playerSpriteSpecials = $PlayerSpriteSpecials
+onready var aura = $Aura
+
 
 enum {
 	MOVE,
@@ -70,8 +74,15 @@ var zapping = false
 # prevents player from interfering with intro "run up"
 var horiZone = false
 
+# determines charge readiness and velocity for all-direction maneuver
+var chargeReady = false
+var veLockity = false
+
 
 func _ready():
+	
+	playerSpriteSpecials.hide()
+	aura.hide()
 	# randomize()
 	
 	# Find user's controller type:
@@ -153,8 +164,9 @@ func move_state(delta):
 		input_vector.y = -1
 
 	if horiZone == true:
-		input_vector.x = Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left")
-		input_vector.y = Input.get_action_strength("ui_down") - Input.get_action_strength("ui_up")
+		if veLockity == false:
+			input_vector.x = Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left")
+			input_vector.y = Input.get_action_strength("ui_down") - Input.get_action_strength("ui_up")
 		
 
 		if input_vector.x == 1:
@@ -192,6 +204,24 @@ func move_state(delta):
 	
 		if Input.is_action_just_pressed("attack"):
 			state = ATTACK
+			chargeTimer.start()
+			
+		if Input.is_action_just_released("attack"):
+			if chargeReady == true:
+				playerSpriteSpecials.show()
+				aura.show()
+				aura.play("default")
+				state = ATTACK
+				#blastZone.disabled = false
+				veLockity = true
+				self.MAX_SPEED = 0
+				var sword = animationPlayer.play("SwordSpecial")
+				chargeReady = false
+			else:
+				chargeTimer.stop()
+				playerSpriteSpecials.hide()
+				aura.hide()
+				aura.stop()
 			
 			#laser logic for Ray2D
 		if Input.is_action_just_released("laser"):
@@ -330,6 +360,15 @@ func bad_trippin():
 	self.MAX_SPEED = 15
 	$TripTimer.start()
 	
+func sword_special_over():
+	#blastZone.disabled = true
+	self.MAX_SPEED = 90
+	veLockity = false
+	playerSpriteSpecials.hide()
+	aura.hide()
+	aura.stop()
+	
+	
 	
 func foot_step():
 	# for footstep audio
@@ -396,3 +435,7 @@ func red_mode():
 
 func _on_TripTimer_timeout():
 	self.MAX_SPEED = 90
+
+
+func _on_ChargeTimer_timeout():
+	chargeReady = true

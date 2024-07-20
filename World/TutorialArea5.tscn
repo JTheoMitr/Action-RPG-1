@@ -43,15 +43,18 @@ rect_scale = Vector2( 0.8, 0.8 )
 custom_styles/panel = SubResource( 2 )
 
 [node name="RichTextLabel" type="RichTextLabel" parent="PopupDialog"]
-margin_left = 27.5
-margin_top = 6.25
-margin_right = 133.5
-margin_bottom = 51.25
+margin_left = 7.5
+margin_top = 5.0
+margin_right = 145.5
+margin_bottom = 34.0
 rect_scale = Vector2( 0.7, 0.7 )
 custom_fonts/normal_font = SubResource( 8 )
-text = "Hide from enemies in the tall plants"
+bbcode_enabled = true
+bbcode_text = "[center] Hide from enemies in the tall plants"
+text = " Hide from enemies in the tall plants"
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="PopupDialog"]
+visible = false
 position = Vector2( 17.5, 15 )
 scale = Vector2( 0.5, 0.6 )
 frames = SubResource( 7 )

@@ -1,4 +1,4 @@
-[gd_scene load_steps=67 format=2]
+[gd_scene load_steps=79 format=2]
 
 [ext_resource path="res://Player/Player.gd" type="Script" id=1]
 [ext_resource path="res://Player/Main Player One Ranger Helmet GREEN three lighteroutline.png" type="Texture" id=2]
@@ -14,6 +14,7 @@
 [ext_resource path="res://Music and Sounds/NinjaRobeSwishClothFlapsVariousVersions_YLdX9_19.wav" type="AudioStream" id=12]
 [ext_resource path="res://Player/LaserZone.gd" type="Script" id=13]
 [ext_resource path="res://UI/crosshair048.png" type="Texture" id=14]
+[ext_resource path="res://Effects/Free Smoke Fx  Pixel 05 copy.png" type="Texture" id=15]
 
 [sub_resource type="CircleShape2D" id=52]
 radius = 49.6488
@@ -671,6 +672,87 @@ tracks/2/keys = {
 "values": [ false, true ]
 }
 
+[sub_resource type="Animation" id=54]
+resource_name = "SwordSpecial"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("PlayerSprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39 ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.1, 0.5, 0.9, 1.3, 1.4, 1.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"values": [ {
+"args": [  ],
+"method": "sword_swipe"
+}, {
+"args": [  ],
+"method": "sword_swipe"
+}, {
+"args": [  ],
+"method": "sword_swipe"
+}, {
+"args": [  ],
+"method": "sword_swipe"
+}, {
+"args": [  ],
+"method": "sword_special_over"
+}, {
+"args": [  ],
+"method": "attack_animation_finished"
+} ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("HitboxPivot:rotation_degrees")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.4, 0.8, 1.2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 270.0, 180.0, 90.0 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("HitboxPivot/SwordHitbox/CollisionShape2D:disabled")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0.1, 0.3, 0.5, 0.7, 0.9, 1.1, 1.3, 1.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false, true, false, true, false, true ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("PlayerSpriteSpecials:frame")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39 ]
+}
+
 [sub_resource type="AnimationNodeAnimation" id=30]
 animation = "AttackLeft"
 
@@ -794,7 +876,7 @@ states/Run/node = SubResource( 20 )
 states/Run/position = Vector2( 557, 140 )
 transitions = [ "Idle", "Run", SubResource( 23 ), "Run", "Idle", SubResource( 24 ), "Idle", "Attack", SubResource( 35 ), "Attack", "Idle", SubResource( 36 ), "Roll", "Idle", SubResource( 47 ), "Idle", "Roll", SubResource( 48 ) ]
 start_node = "Idle"
-graph_offset = Vector2( 5.30294, -4.92025 )
+graph_offset = Vector2( -50.3471, -66.2702 )
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=22]
 
@@ -808,6 +890,50 @@ height = 6.0
 [sub_resource type="CapsuleShape2D" id=50]
 radius = 6.0
 height = 0.0
+
+[sub_resource type="AtlasTexture" id=86]
+atlas = ExtResource( 15 )
+region = Rect2( 0, 576, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=87]
+atlas = ExtResource( 15 )
+region = Rect2( 64, 576, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=88]
+atlas = ExtResource( 15 )
+region = Rect2( 128, 576, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=89]
+atlas = ExtResource( 15 )
+region = Rect2( 192, 576, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=90]
+atlas = ExtResource( 15 )
+region = Rect2( 256, 576, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=91]
+atlas = ExtResource( 15 )
+region = Rect2( 320, 576, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=92]
+atlas = ExtResource( 15 )
+region = Rect2( 384, 576, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=93]
+atlas = ExtResource( 15 )
+region = Rect2( 448, 576, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=94]
+atlas = ExtResource( 15 )
+region = Rect2( 512, 576, 64, 64 )
+
+[sub_resource type="SpriteFrames" id=85]
+animations = [ {
+"frames": [ SubResource( 86 ), SubResource( 87 ), SubResource( 88 ), SubResource( 89 ), SubResource( 90 ), SubResource( 91 ), SubResource( 92 ), SubResource( 93 ), SubResource( 94 ) ],
+"loop": true,
+"name": "default",
+"speed": 10.0
+} ]
 
 [node name="Player" type="KinematicBody2D"]
 position = Vector2( 113, 84 )
@@ -836,6 +962,7 @@ damage = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SpecialOneSprite/SpecialAttackArea"]
 shape = SubResource( 52 )
+disabled = true
 
 [node name="Pointer" type="Node2D" parent="."]
 position = Vector2( 0, -13.5 )
@@ -887,6 +1014,13 @@ texture = ExtResource( 2 )
 hframes = 60
 frame = 36
 
+[node name="PlayerSpriteSpecials" type="Sprite" parent="."]
+visible = false
+position = Vector2( 0, -9 )
+texture = ExtResource( 2 )
+hframes = 60
+frame = 37
+
 [node name="PlayerCollision" type="CollisionShape2D" parent="."]
 rotation = 1.5708
 shape = SubResource( 1 )
@@ -910,6 +1044,7 @@ anims/RunLeft = SubResource( 5 )
 anims/RunRight = SubResource( 3 )
 anims/RunUp = SubResource( 4 )
 anims/SpecialOne = SubResource( 51 )
+anims/SwordSpecial = SubResource( 54 )
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
 tree_root = SubResource( 21 )
@@ -922,6 +1057,7 @@ parameters/Run/blend_position = Vector2( 0, 1 )
 
 [node name="HitboxPivot" type="Position2D" parent="."]
 position = Vector2( 0, -4 )
+rotation = 1.5708
 
 [node name="SwordHitbox" parent="HitboxPivot" instance=ExtResource( 3 )]
 position = Vector2( 15, 0 )
@@ -968,11 +1104,25 @@ one_shot = true
 wait_time = 6.0
 one_shot = true
 
+[node name="ChargeTimer" type="Timer" parent="."]
+wait_time = 2.5
+one_shot = true
+
+[node name="Aura" type="AnimatedSprite" parent="."]
+modulate = Color( 0.764706, 0.243137, 0.909804, 0.760784 )
+self_modulate = Color( 1, 1, 1, 0.513726 )
+position = Vector2( 0, -10 )
+scale = Vector2( 0.8, 0.8 )
+frames = SubResource( 85 )
+frame = 8
+playing = true
+
 [connection signal="timeout" from="Pointer/LaserTimer" to="." method="_on_LaserTimer_timeout"]
 [connection signal="timeout" from="Pointer/LaserSpeed" to="." method="_on_LaserSpeed_timeout"]
 [connection signal="area_entered" from="Hurtbox" to="." method="_on_Hurtbox_area_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 [connection signal="timeout" from="TripTimer" to="." method="_on_TripTimer_timeout"]
+[connection signal="timeout" from="ChargeTimer" to="." method="_on_ChargeTimer_timeout"]
 
 [editable path="HitboxPivot/SwordHitbox"]
 [editable path="Hurtbox"]

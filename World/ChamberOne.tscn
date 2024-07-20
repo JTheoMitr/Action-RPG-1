@@ -69,6 +69,7 @@ shape = SubResource( 1 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( 1, 13 )
 frames = SubResource( 5 )
+frame = 2
 playing = true
 
 [node name="Timer" type="Timer" parent="."]
@@ -92,6 +93,7 @@ self_modulate = Color( 1, 1, 1, 0.513726 )
 position = Vector2( 1.25, 15.25 )
 scale = Vector2( 0.1875, 1.5 )
 frames = SubResource( 11 )
+frame = 3
 playing = true
 
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
