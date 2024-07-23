@@ -3,7 +3,7 @@
 [ext_resource path="res://Enemies/xpOrbanim.png" type="Texture" id=1]
 [ext_resource path="res://UI/XpUI.gd" type="Script" id=2]
 [ext_resource path="res://fonts/PixelTandysoft-0rJG.ttf" type="DynamicFontData" id=3]
-[ext_resource path="res://UI/xpUInewnew.png" type="Texture" id=4]
+[ext_resource path="res://UI/swordMeter.png" type="Texture" id=4]
 
 [sub_resource type="AtlasTexture" id=2]
 atlas = ExtResource( 1 )
@@ -29,36 +29,36 @@ animations = [ {
 size = 10
 font_data = ExtResource( 3 )
 
-[sub_resource type="AtlasTexture" id=12]
+[sub_resource type="AtlasTexture" id=17]
 atlas = ExtResource( 4 )
-region = Rect2( 0, 0, 45, 16 )
-
-[sub_resource type="AtlasTexture" id=13]
-atlas = ExtResource( 4 )
-region = Rect2( 48, 0, 45, 16 )
-
-[sub_resource type="AtlasTexture" id=14]
-atlas = ExtResource( 4 )
-region = Rect2( 96, 0, 45, 16 )
-
-[sub_resource type="AtlasTexture" id=15]
-atlas = ExtResource( 4 )
-region = Rect2( 144, 0, 45, 16 )
+region = Rect2( 240, 0, 48, 10 )
 
 [sub_resource type="AtlasTexture" id=16]
 atlas = ExtResource( 4 )
-region = Rect2( 192, 0, 45, 16 )
+region = Rect2( 192, 0, 48, 10 )
 
-[sub_resource type="AtlasTexture" id=17]
+[sub_resource type="AtlasTexture" id=15]
 atlas = ExtResource( 4 )
-region = Rect2( 240, 0, 45, 16 )
+region = Rect2( 144, 0, 48, 10 )
+
+[sub_resource type="AtlasTexture" id=14]
+atlas = ExtResource( 4 )
+region = Rect2( 96, 0, 48, 10 )
+
+[sub_resource type="AtlasTexture" id=13]
+atlas = ExtResource( 4 )
+region = Rect2( 48, 0, 48, 10 )
+
+[sub_resource type="AtlasTexture" id=12]
+atlas = ExtResource( 4 )
+region = Rect2( 0, 0, 48, 10 )
 
 [sub_resource type="SpriteFrames" id=11]
 animations = [ {
-"frames": [ SubResource( 12 ), SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 16 ), SubResource( 17 ) ],
+"frames": [ SubResource( 17 ), SubResource( 16 ), SubResource( 15 ), SubResource( 14 ), SubResource( 13 ), SubResource( 12 ) ],
 "loop": true,
 "name": "default",
-"speed": 5.0
+"speed": 2.0
 } ]
 
 [node name="XpUI" type="Control"]
@@ -72,20 +72,21 @@ script = ExtResource( 2 )
 position = Vector2( 20, 9 )
 scale = Vector2( 0.25, 0.25 )
 frames = SubResource( 5 )
-frame = 1
 playing = true
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
-visible = false
 margin_left = 25.0
-margin_top = 5.0
+margin_top = 7.0
 margin_right = 295.0
-margin_bottom = 52.0
-rect_scale = Vector2( 0.55, 0.55 )
+margin_bottom = 54.0
+rect_scale = Vector2( 0.3, 0.3 )
 custom_fonts/normal_font = SubResource( 1 )
 text = "xp 0"
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-position = Vector2( 38, 9.5 )
-scale = Vector2( 0.75, 0.75 )
+position = Vector2( 43, 13 )
+scale = Vector2( 0.4, 0.4 )
 frames = SubResource( 11 )
+frame = 4
+
+[connection signal="animation_finished" from="AnimatedSprite" to="." method="_on_AnimatedSprite_animation_finished"]

@@ -209,6 +209,7 @@ func move_state(delta):
 		if Input.is_action_just_released("attack"):
 			if chargeReady == true:
 				playerSpriteSpecials.show()
+				hurtbox.monitoring = false
 				aura.show()
 				aura.play("default")
 				state = ATTACK
@@ -363,6 +364,7 @@ func bad_trippin():
 func sword_special_over():
 	#blastZone.disabled = true
 	self.MAX_SPEED = 90
+	hurtbox.monitoring = true
 	veLockity = false
 	playerSpriteSpecials.hide()
 	aura.hide()
