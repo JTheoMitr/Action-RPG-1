@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Music and Sounds/ESRED_PSYAP_Kit_1_Synth_Hit_2_Wet_no_SC_Gmin_140bpm.wav" type="AudioStream" id=1]
+
+[node name="ChargeUp" type="AudioStreamPlayer"]
+stream = ExtResource( 1 )
+volume_db = -2.0

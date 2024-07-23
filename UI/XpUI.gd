@@ -4,6 +4,9 @@ extends Control
 onready var stats = PlayerStats
 onready var animSprite = $AnimatedSprite
 var chargeTrue = false
+onready var chargeUp = $ChargeUp
+onready var charged = $Charged
+onready var sprite = $Sprite
 
 func _process(delta):
 	$RichTextLabel.text = "xp " + str(stats.xp) + " / " + str(stats.xpCap)
@@ -11,11 +14,14 @@ func _process(delta):
 	if Input.is_action_just_pressed("attack"):
 		if chargeTrue == false:
 			animSprite.play()
+			chargeUp.play()
 	
 	if Input.is_action_just_released("attack"):
 			chargeTrue = false
 			animSprite.stop()
 			animSprite.frame = 0
+			chargeUp.stop()
+			sprite.hide()
 			
 #	if stats.xp < (stats.xpCap * .18):
 #		animSprite.frame = 5
@@ -33,6 +39,7 @@ func _process(delta):
 func _ready():
 	$RichTextLabel.text = "xp " + str(stats.xp) + " / " + str(stats.xpCap)
 	animSprite.frame = 0
+	sprite.hide()
 	
 
 
@@ -40,3 +47,6 @@ func _on_AnimatedSprite_animation_finished():
 	chargeTrue = true
 	animSprite.frame = 7
 	animSprite.stop()
+	charged.play()
+	chargeUp.stop()
+	sprite.show()

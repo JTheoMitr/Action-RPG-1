@@ -1,0 +1,23 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/ESRED_PSYAP_Kit_1_Synth_Hit_2_Wet_no_SC_Gmin_140bpm.wav-47b6a394d3e27475eeaf0ad83f435f6c.sample"
+
+[deps]
+
+source_file="res://Music and Sounds/ESRED_PSYAP_Kit_1_Synth_Hit_2_Wet_no_SC_Gmin_140bpm.wav"
+dest_files=[ "res://.import/ESRED_PSYAP_Kit_1_Synth_Hit_2_Wet_no_SC_Gmin_140bpm.wav-47b6a394d3e27475eeaf0ad83f435f6c.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

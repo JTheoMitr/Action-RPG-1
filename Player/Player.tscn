@@ -1105,7 +1105,7 @@ wait_time = 6.0
 one_shot = true
 
 [node name="ChargeTimer" type="Timer" parent="."]
-wait_time = 2.5
+wait_time = 2.9
 one_shot = true
 
 [node name="Aura" type="AnimatedSprite" parent="."]
@@ -1113,7 +1113,7 @@ modulate = Color( 0.929412, 0.690196, 1, 1 )
 position = Vector2( 0, -10 )
 scale = Vector2( 0.8, 0.8 )
 frames = SubResource( 85 )
-frame = 8
+frame = 3
 playing = true
 
 [connection signal="timeout" from="Pointer/LaserTimer" to="." method="_on_LaserTimer_timeout"]
