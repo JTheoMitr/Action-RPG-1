@@ -8,26 +8,6 @@
 [ext_resource path="res://Music and Sounds/Charged.tscn" type="PackedScene" id=6]
 [ext_resource path="res://UI/xpUIblueframe.png" type="Texture" id=7]
 
-[sub_resource type="AtlasTexture" id=2]
-atlas = ExtResource( 1 )
-region = Rect2( 0, 0, 100, 100 )
-
-[sub_resource type="AtlasTexture" id=3]
-atlas = ExtResource( 1 )
-region = Rect2( 100, 0, 100, 100 )
-
-[sub_resource type="AtlasTexture" id=4]
-atlas = ExtResource( 1 )
-region = Rect2( 0, 100, 100, 100 )
-
-[sub_resource type="SpriteFrames" id=5]
-animations = [ {
-"frames": [ SubResource( 2 ), SubResource( 3 ), SubResource( 4 ) ],
-"loop": true,
-"name": "default",
-"speed": 5.0
-} ]
-
 [sub_resource type="DynamicFont" id=1]
 size = 10
 font_data = ExtResource( 3 )
@@ -64,6 +44,26 @@ animations = [ {
 "speed": 2.0
 } ]
 
+[sub_resource type="AtlasTexture" id=2]
+atlas = ExtResource( 1 )
+region = Rect2( 0, 0, 100, 100 )
+
+[sub_resource type="AtlasTexture" id=3]
+atlas = ExtResource( 1 )
+region = Rect2( 100, 0, 100, 100 )
+
+[sub_resource type="AtlasTexture" id=4]
+atlas = ExtResource( 1 )
+region = Rect2( 0, 100, 100, 100 )
+
+[sub_resource type="SpriteFrames" id=5]
+animations = [ {
+"frames": [ SubResource( 2 ), SubResource( 3 ), SubResource( 4 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
 [node name="XpUI" type="Control"]
 margin_left = 2.0
 margin_top = 35.0
@@ -71,33 +71,33 @@ margin_right = 39.0
 margin_bottom = 54.0
 script = ExtResource( 2 )
 
-[node name="Orbs" type="AnimatedSprite" parent="."]
-position = Vector2( 20, 9 )
-scale = Vector2( 0.25, 0.25 )
-frames = SubResource( 5 )
-frame = 1
-playing = true
-
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
-margin_left = 25.0
-margin_top = 7.0
-margin_right = 295.0
-margin_bottom = 54.0
+margin_left = 33.0
+margin_top = 11.5
+margin_right = 303.0
+margin_bottom = 55.5
 rect_scale = Vector2( 0.3, 0.3 )
 custom_fonts/normal_font = SubResource( 1 )
-text = "xp 0"
+text = "    0"
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 42.7338, 13 )
-scale = Vector2( 0.680321, 0.545455 )
+position = Vector2( 36, 8.0625 )
+scale = Vector2( 1.07692, 0.738636 )
 texture = ExtResource( 7 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-position = Vector2( 43, 13 )
-scale = Vector2( 0.4, 0.4 )
+position = Vector2( 36.5325, 8.125 )
+scale = Vector2( 0.6, 0.6 )
 frames = SubResource( 11 )
 frame = 3
 speed_scale = 1.1
+
+[node name="Orbs" type="AnimatedSprite" parent="."]
+position = Vector2( 36.5, 14 )
+scale = Vector2( 0.2, 0.2 )
+frames = SubResource( 5 )
+frame = 2
+playing = true
 
 [node name="ChargeUp" parent="." instance=ExtResource( 5 )]
 

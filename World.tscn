@@ -6979,7 +6979,7 @@ position = Vector2( -16, -272 )
 [node name="ScreenCrackleOne" parent="YSort/OilCoDoors" instance=ExtResource( 57 )]
 position = Vector2( -17, -270.5 )
 scale = Vector2( 0.094, 0.0833333 )
-frame = 1
+frame = 5
 
 [node name="Flowers" type="YSort" parent="YSort"]
 
@@ -7197,9 +7197,11 @@ position = Vector2( -305, 346 )
 
 [node name="Bonfire" parent="YSort/Fires" instance=ExtResource( 82 )]
 position = Vector2( 976, -240 )
+frame = 2
 
 [node name="Bonfire2" parent="YSort/Fires" instance=ExtResource( 82 )]
 position = Vector2( 976, -208 )
+frame = 2
 
 [node name="Runes" type="YSort" parent="YSort"]
 
@@ -7227,26 +7229,30 @@ position = Vector2( 568, -8 )
 [node name="Bird" parent="YSort/Sky" instance=ExtResource( 91 )]
 position = Vector2( 6, 252 )
 z_index = 1
+frame = 0
 
 [node name="Bird3" parent="YSort/Sky" instance=ExtResource( 91 )]
 position = Vector2( -263, -31 )
 animation = "eat"
-frame = 3
+frame = 2
 flip_h = true
 
 [node name="Bird2" parent="YSort/Sky" instance=ExtResource( 91 )]
 position = Vector2( -240, 498 )
 z_index = 2
+frame = 0
 flip_h = true
 
 [node name="Bird5" parent="YSort/Sky" instance=ExtResource( 91 )]
 position = Vector2( 284, -36 )
 z_index = 1
+frame = 0
 flip_h = true
 
 [node name="Bird4" parent="YSort/Sky" instance=ExtResource( 91 )]
 position = Vector2( -515, 66 )
 z_index = 1
+frame = 0
 flip_h = true
 
 [node name="FlyingBird" parent="YSort/Sky" instance=ExtResource( 71 )]
@@ -7267,26 +7273,29 @@ frame = 6
 
 [node name="Bird6" parent="YSort/Sky" instance=ExtResource( 93 )]
 position = Vector2( -130, 69 )
+frame = 1
 flip_h = true
 
 [node name="Bird7" parent="YSort/Sky" instance=ExtResource( 93 )]
 position = Vector2( 45, -29 )
+frame = 1
 flip_h = true
 
 [node name="Bird10" parent="YSort/Sky" instance=ExtResource( 93 )]
 position = Vector2( 582, -265 )
 z_index = 2
+frame = 1
 
 [node name="Bird8" parent="YSort/Sky" instance=ExtResource( 93 )]
 position = Vector2( 171, -277 )
 animation = "eat"
-frame = 1
+frame = 4
 flip_h = true
 
 [node name="Bird9" parent="YSort/Sky" instance=ExtResource( 93 )]
 position = Vector2( 746, -216 )
 animation = "eat"
-frame = 1
+frame = 4
 
 [node name="FlyingBirdOrange" parent="YSort/Sky" instance=ExtResource( 94 )]
 position = Vector2( 2003, -609 )
@@ -7326,52 +7335,63 @@ frame = 6
 
 [node name="SkyCloud" parent="YSort/Sky" instance=ExtResource( 76 )]
 position = Vector2( -244, 113 )
-frame = 1
+frame = 2
 
 [node name="SkyCloud9" parent="YSort/Sky" instance=ExtResource( 76 )]
 position = Vector2( -32, -179 )
 scale = Vector2( 1.29286, 1.3 )
-frame = 1
+frame = 2
 
 [node name="SkyCloud10" parent="YSort/Sky" instance=ExtResource( 76 )]
 position = Vector2( 901, -281 )
+frame = 0
 
 [node name="SkyCloud11" parent="YSort/Sky" instance=ExtResource( 76 )]
 position = Vector2( 658, 131 )
+frame = 0
 
 [node name="SkyCloud12" parent="YSort/Sky" instance=ExtResource( 76 )]
 position = Vector2( 1045, -112 )
+frame = 0
 
 [node name="SkyCloud2" parent="YSort/Sky" instance=ExtResource( 76 )]
 position = Vector2( 92, 209 )
+frame = 0
 
 [node name="SkyCloud3" parent="YSort/Sky" instance=ExtResource( 76 )]
 position = Vector2( 129, 214 )
 scale = Vector2( 1.73, 1.86875 )
+frame = 0
 
 [node name="SkyCloud13" parent="YSort/Sky" instance=ExtResource( 76 )]
 position = Vector2( 671, 162 )
 scale = Vector2( 1.73, 1.86875 )
+frame = 0
 
 [node name="SkyCloud8" parent="YSort/Sky" instance=ExtResource( 76 )]
 position = Vector2( -2, -158 )
 scale = Vector2( 1.565, 1.62188 )
+frame = 0
 
 [node name="SkyCloud6" parent="YSort/Sky" instance=ExtResource( 76 )]
 position = Vector2( 153, 195 )
 scale = Vector2( 1.525, 1.62188 )
+frame = 0
 
 [node name="SkyCloud7" parent="YSort/Sky" instance=ExtResource( 76 )]
 position = Vector2( 374, 186 )
 scale = Vector2( 1.525, 1.62188 )
+frame = 0
 
 [node name="SkyCloud4" parent="YSort/Sky" instance=ExtResource( 76 )]
 position = Vector2( 78, 448 )
 scale = Vector2( 1.385, 1.62188 )
+frame = 0
 
 [node name="SkyCloud5" parent="YSort/Sky" instance=ExtResource( 76 )]
 position = Vector2( -267, 130 )
 scale = Vector2( 1.385, 1.62188 )
+frame = 0
 
 [node name="Traps" type="YSort" parent="YSort"]
 
@@ -7409,11 +7429,11 @@ margin_right = 35.0
 margin_bottom = 26.0
 
 [node name="CoinUI" parent="CanvasLayer" instance=ExtResource( 70 )]
-margin_left = 287.0
-margin_top = 168.0
-margin_right = 324.0
-margin_bottom = 187.0
-rect_scale = Vector2( 0.5, 0.5 )
+margin_left = 288.0
+margin_top = 170.0
+margin_right = 325.0
+margin_bottom = 189.0
+rect_scale = Vector2( 0.35, 0.35 )
 
 [node name="AmmoUI" parent="CanvasLayer" instance=ExtResource( 74 )]
 margin_left = 30.0
