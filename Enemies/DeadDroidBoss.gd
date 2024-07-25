@@ -14,6 +14,8 @@ onready var explosionSound = $AudioStreamPlayer
 onready var alarmSound = $AlarmSound
 onready var hitBox = $Hitbox/CollisionShape2D
 onready var save_file = SaveFile.g_data
+const XpOrb = preload("res://Enemies/XpOrbLrg.tscn")
+const VictorySound = preload("res://Music and Sounds/VictoryMelody.tscn")
 
 
 
@@ -53,6 +55,19 @@ func _on_DestructTimer_timeout():
 	hitBox.disabled = false
 	explosionSound.play(0.0)
 	explosionAnim.show()
+	var xpOrb = XpOrb.instance()
+	get_parent().call_deferred("add_child", xpOrb)
+	xpOrb.global_position = global_position
+	var xpOrb2 = XpOrb.instance()
+	get_parent().call_deferred("add_child", xpOrb2)
+	xpOrb2.global_position = global_position
+	xpOrb2.MAX_SPEED = 65
+	var xpOrb3 = XpOrb.instance()
+	get_parent().call_deferred("add_child", xpOrb3)
+	xpOrb3.global_position = global_position
+	xpOrb3.MAX_SPEED = 70
+	var victorySound = VictorySound.instance()
+	get_parent().call_deferred("add_child", victorySound)
 	dust1.hide()
 	dust2.hide()
 	dust3.hide()

@@ -7,9 +7,10 @@ var chargeTrue = false
 onready var chargeUp = $ChargeUp
 onready var charged = $Charged
 onready var sprite = $Sprite
+onready var blueFrame = $Sprite2
 
 func _process(delta):
-	$RichTextLabel.text = "xp " + str(stats.xp) + " / " + str(stats.xpCap)
+	$RichTextLabel.text = "   " + str(stats.xp) + " / " + str(stats.xpCap)
 	
 	if Input.is_action_just_pressed("attack"):
 		if chargeTrue == false:
@@ -22,6 +23,7 @@ func _process(delta):
 			animSprite.frame = 0
 			chargeUp.stop()
 			sprite.hide()
+			blueFrame.hide()
 			
 #	if stats.xp < (stats.xpCap * .18):
 #		animSprite.frame = 5
@@ -40,11 +42,13 @@ func _ready():
 	$RichTextLabel.text = "xp " + str(stats.xp) + " / " + str(stats.xpCap)
 	animSprite.frame = 0
 	sprite.hide()
+	blueFrame.hide()
 	
 
 
 func _on_AnimatedSprite_animation_finished():
 	chargeTrue = true
+	blueFrame.show()
 	animSprite.frame = 7
 	animSprite.stop()
 	charged.play()
