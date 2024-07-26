@@ -73,18 +73,23 @@ margin_bottom = 54.0
 script = ExtResource( 2 )
 
 [node name="Sprite2" type="Sprite" parent="."]
-self_modulate = Color( 1, 1, 1, 0.647059 )
+self_modulate = Color( 1, 1, 1, 0.505882 )
+position = Vector2( 36.5, 15.5 )
+texture = ExtResource( 8 )
+
+[node name="Sprite3" type="Sprite" parent="."]
+self_modulate = Color( 1, 1, 1, 0.505882 )
 position = Vector2( 36.5, 15.5 )
 texture = ExtResource( 8 )
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
-margin_left = 33.0
-margin_top = 11.5
-margin_right = 303.0
-margin_bottom = 55.5
+margin_left = 40.0
+margin_top = 12.0
+margin_right = 310.0
+margin_bottom = 56.0
 rect_scale = Vector2( 0.3, 0.3 )
 custom_fonts/normal_font = SubResource( 1 )
-text = "    0"
+text = "0"
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 36, 8.0625 )
@@ -102,7 +107,7 @@ speed_scale = 1.1
 position = Vector2( 36.5, 14 )
 scale = Vector2( 0.2, 0.2 )
 frames = SubResource( 5 )
-frame = 1
+frame = 2
 playing = true
 
 [node name="ChargeUp" parent="." instance=ExtResource( 5 )]

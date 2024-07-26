@@ -3,17 +3,18 @@ extends Area2D
 const ChatterSound = preload("res://Music and Sounds/GuideBotChatterSound.tscn")
 const NewSkill = preload("res://Music and Sounds/NewSkill.tscn")
 
-onready var popup = $StoryDialog2
-onready var question = $QuestionPopUp
-onready var dialog = $StoryDialog2/RichTextLabel
+onready var popup = $CanvasLayer/StoryDialog2
+onready var question = $CanvasLayer/QuestionPopUp
+onready var dialog = $CanvasLayer/StoryDialog2/RichTextLabel
 onready var stats = PlayerStats
-onready var response = $Response
-onready var yes = $QuestionPopUp/HBoxContainer/Yes
-onready var responseText = $Response/RichTextLabel
+onready var response = $CanvasLayer/Response
+onready var yes = $CanvasLayer/QuestionPopUp/HBoxContainer/Yes
+onready var responseText = $CanvasLayer/Response/RichTextLabel
 onready var timer = $Timer
 onready var skillTimer = $SkillDescTimer
 onready var skillPop = $CanvasLayer/SkillPopUp
 onready var save_file = SaveFile.g_data
+onready var panel = $CanvasLayer/Panel
 # onready var chatterSound = ChatterSound.instance()
 
 var inArea = false
@@ -34,18 +35,13 @@ var textOptionsThree = ["[center] \n Oh, my mistake.  \n You're giving off \n se
 
 
 func _ready():
+	panel.hide()
 	if save_file.overcharge_status == true:
 		queue_free()
 	else:
 		dialog.bbcode_enabled = true
 	
 func _process(delta):
-	popup.rect_global_position.x = self.position.x
-	popup.rect_global_position.y = self.position.y + 15
-
-	
-	question.rect_global_position = self.position
-	response.rect_global_position = self.position
 	
 	if skillPopShow == true:
 		if Input.is_action_just_pressed("interact"):
@@ -105,6 +101,7 @@ func _process(delta):
 				stats.emit_signal("player_resumed")
 				response.hide()
 				popup.hide()
+				
 				skillTimer.start()
 			if textNumberTwo >= 15:
 				print("we past it all")
@@ -123,6 +120,7 @@ func _reset():
 
 func _on_StoryArea2_area_entered(area):
 	popup.popup()
+	panel.show()
 	var chatterSound = ChatterSound.instance()
 	get_tree().current_scene.add_child(chatterSound)
 	inArea = true

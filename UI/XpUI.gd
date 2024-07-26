@@ -10,7 +10,7 @@ onready var sprite = $Sprite
 onready var blueFrame = $Sprite2
 
 func _process(delta):
-	$RichTextLabel.text = "   " + str(stats.xp) + " / " + str(stats.xpCap)
+	$RichTextLabel.text = "" + str(stats.xp) + " / " + str(stats.xpCap)
 	
 	if Input.is_action_just_pressed("attack"):
 		if chargeTrue == false:
@@ -39,7 +39,7 @@ func _process(delta):
 #		animSprite.frame = 0
 #
 func _ready():
-	$RichTextLabel.text = "xp " + str(stats.xp) + " / " + str(stats.xpCap)
+	
 	animSprite.frame = 0
 	sprite.hide()
 	blueFrame.hide()
