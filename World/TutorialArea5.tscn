@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://TutorialArea2.gd" type="Script" id=1]
 [ext_resource path="res://World/Flower 13 - PURPLE.png" type="Texture" id=2]
 [ext_resource path="res://fonts/PixelTandysoft-0rJG.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://World/bloobs.png" type="Texture" id=4]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 66.0
@@ -50,8 +51,8 @@ margin_bottom = 34.0
 rect_scale = Vector2( 0.7, 0.7 )
 custom_fonts/normal_font = SubResource( 8 )
 bbcode_enabled = true
-bbcode_text = "[center] Hide from enemies in the tall plants"
-text = " Hide from enemies in the tall plants"
+bbcode_text = "[center] Hide from enemies in the berry bushes  "
+text = " Hide from enemies in the berry bushes  "
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="PopupDialog"]
 visible = false
@@ -60,6 +61,11 @@ scale = Vector2( 0.5, 0.6 )
 frames = SubResource( 7 )
 animation = "Animate"
 playing = true
+
+[node name="Sprite" type="Sprite" parent="PopupDialog"]
+position = Vector2( 92.5, 20 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 4 )
 
 [connection signal="area_entered" from="." to="." method="_on_TutorialArea2_area_entered"]
 [connection signal="area_exited" from="." to="." method="_on_TutorialArea2_area_exited"]
