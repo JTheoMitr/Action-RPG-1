@@ -57,11 +57,13 @@ onready var health2 = $CanvasLayer/DroidBossHealthUI/HBoxContainer/Health_Two
 onready var health3 = $CanvasLayer/DroidBossHealthUI/HBoxContainer/Health_Three
 onready var health4 = $CanvasLayer/DroidBossHealthUI/HBoxContainer/Health_Four
 onready var timer5 = $Timer5
+onready var panel = $CanvasLayer/Panel
 
 var introduced = false
 
 
 func _ready():
+	panel.hide()
 	state = pick_random_state([IDLE, WANDER])
 	bossHealthUI.hide()
 	if save_file.world_one_boss_lives == false:
@@ -178,6 +180,7 @@ func seek_player():
 		if introduced == false:
 			bossHealthUI.show()
 			$CanvasLayer/PopupDialog.show()
+			panel.show()
 			playerStats.emit_signal("player_paused")
 			self.MAX_SPEED = 0
 			introduced = true
@@ -313,3 +316,4 @@ func _on_Timer6_timeout():
 	timer.start()
 	$Timer2.start()
 	$CanvasLayer/PopupDialog.hide()
+	panel.hide()

@@ -144,7 +144,7 @@ position = Vector2( -70, -31.6667 )
 scale = Vector2( 1.2, 1.2 )
 frames = SubResource( 7 )
 animation = "attack"
-frame = 5
+frame = 4
 playing = true
 centered = false
 offset = Vector2( 1, -60 )
@@ -227,6 +227,11 @@ wait_time = 0.2
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
+[node name="Panel" type="Panel" parent="CanvasLayer"]
+self_modulate = Color( 1, 1, 1, 0.576471 )
+margin_right = 323.0
+margin_bottom = 182.0
+
 [node name="DroidBossHealthUI" parent="CanvasLayer" instance=ExtResource( 15 )]
 margin_right = 186.0
 margin_bottom = 56.0
@@ -266,10 +271,13 @@ position = Vector2( -28, 16 )
 
 [node name="PopupDialog" type="PopupDialog" parent="CanvasLayer"]
 visible = true
-margin_left = 148.0
-margin_top = 60.0
-margin_right = 148.0
-margin_bottom = 60.0
+margin_left = 161.0
+margin_top = 92.0
+margin_right = 161.0
+margin_bottom = 92.0
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="Sprite" type="Sprite" parent="CanvasLayer/PopupDialog"]
 scale = Vector2( 0.5, 0.5 )
