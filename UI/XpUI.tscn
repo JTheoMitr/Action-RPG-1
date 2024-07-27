@@ -111,6 +111,7 @@ frame = 2
 playing = true
 
 [node name="ChargeUp" parent="." instance=ExtResource( 5 )]
+volume_db = 0.0
 
 [node name="Charged" parent="." instance=ExtResource( 6 )]
 volume_db = -10.0
