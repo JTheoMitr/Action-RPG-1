@@ -100,9 +100,6 @@ margin_top = 74.0
 margin_right = 216.0
 margin_bottom = 103.0
 custom_styles/panel = SubResource( 6 )
-__meta__ = {
-"_edit_group_": true
-}
 
 [node name="BoxSprite" type="Sprite" parent="CanvasLayer/PopupDialog"]
 position = Vector2( 48.75, 11.875 )
@@ -122,6 +119,20 @@ bbcode_text = "[center] Hey, my dude... you lookin' to
  get down on some dairy? [/center]"
 text = " Hey, my dude... you lookin' to
  get down on some dairy? "
+fit_content_height = true
+scroll_active = false
+
+[node name="MenuText" type="RichTextLabel" parent="CanvasLayer/PopupDialog"]
+margin_left = -14.0
+margin_top = 43.0
+margin_right = 240.0
+margin_bottom = 89.0
+rect_scale = Vector2( 0.5, 0.5 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_fonts/normal_font = SubResource( 8 )
+bbcode_enabled = true
+bbcode_text = "[center] Pulling up today's menu... [/center]"
+text = " Pulling up today's menu... "
 fit_content_height = true
 scroll_active = false
 

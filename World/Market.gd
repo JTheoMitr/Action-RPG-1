@@ -8,6 +8,7 @@ onready var textLabel = $CanvasLayer/PopupDialog/RichTextLabel
 onready var panel = $CanvasLayer/Panel
 onready var sprite2 = $CanvasLayer/PopupDialog/Sprite2
 onready var label = $CanvasLayer/PopupDialog/Label
+onready var menuText = $CanvasLayer/PopupDialog/MenuText
 
 
 var inArea = false
@@ -22,6 +23,7 @@ func _process(delta):
 	if (inArea == true) && (textLabel.bbcode_text == textOptions[0]):
 		panel.show()
 		popup.show() 
+		menuText.hide()
 		PlayerStats.emit_signal("player_paused")
 		textLabel.bbcode_text = textOptions[0]
 	if (Input.is_action_pressed("interact")) && (inArea == true):
@@ -29,6 +31,7 @@ func _process(delta):
 			textLabel.bbcode_text = textOptions[1]
 			sprite2.hide()
 			label.hide()
+			menuText.show()
 			$Timer.start()
 	
 

@@ -3,9 +3,10 @@ extends Node2D
 const CashSound = preload("res://Music and Sounds/CashRegisterSound.tscn")
 const BuzzerSound = preload("res://Music and Sounds/BuzzerSound.tscn")
 
-onready var redPopButton = $Control/CenterContainer/VBoxContainer/Button
-onready var coinLabel = $Control/CoinTextLabel
+onready var redPopButton = $CanvasLayer/Control/CenterContainer/VBoxContainer/Button
+onready var coinLabel = $CanvasLayer/Control/CoinTextLabel
 onready var grooves = $BossaNova
+onready var canvasLayer = $CanvasLayer
 onready var save_file = SaveFile.g_data
 
 var stats = PlayerStats
@@ -54,7 +55,7 @@ func _on_Button3_pressed(): #sundae
 
 
 func _on_Button4_pressed():
-	hide()
+	canvasLayer.hide()
 	grooves.stop()
 	stats.emit_signal("player_resumed")
 	WorldStats.emit_signal("fade_music_in")
