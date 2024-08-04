@@ -14,10 +14,11 @@ onready var pressSound = $PressSound
 onready var mapMusic = $MapMusic
 onready var timer = $Timer
 onready var tween_out = $Tween
+onready var playerLevelText = $LevelText
 export var transition_duration = 2.00
 export var transition_type = 1 # TRANS_SINE
 
-
+onready var stats = PlayerStats
 
 
 func fade_out(stream_player):
@@ -37,6 +38,9 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	
+	playerLevelText = "Level " + stats.level 
+	
 	if forestButton.has_focus():
 		wolfIcon.position.x = 191
 		wolfIcon.position.y = 159
