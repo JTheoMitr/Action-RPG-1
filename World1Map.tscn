@@ -1,4 +1,4 @@
-[gd_scene load_steps=211 format=2]
+[gd_scene load_steps=178 format=2]
 
 [ext_resource path="res://World/Bush.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=2]
@@ -6,43 +6,28 @@
 [ext_resource path="res://World/DirtTileset.png" type="Texture" id=4]
 [ext_resource path="res://World/CliffTileset.png" type="Texture" id=5]
 [ext_resource path="res://World/Grass.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Enemies/Bat.tscn" type="PackedScene" id=7]
-[ext_resource path="res://UI/HealthUI.tscn" type="PackedScene" id=8]
+[ext_resource path="res://World1Map.gd" type="Script" id=7]
 [ext_resource path="res://World/Tree.tscn" type="PackedScene" id=9]
-[ext_resource path="res://Enemies/Soldier.tscn" type="PackedScene" id=10]
 [ext_resource path="res://World/Barrel.tscn" type="PackedScene" id=11]
 [ext_resource path="res://World/Apple.tscn" type="PackedScene" id=12]
 [ext_resource path="res://World/CellDoor.tscn" type="PackedScene" id=13]
-[ext_resource path="res://Enemies/Snake.tscn" type="PackedScene" id=14]
 [ext_resource path="res://World/Chest.tscn" type="PackedScene" id=15]
 [ext_resource path="res://World/Key.tscn" type="PackedScene" id=16]
-[ext_resource path="res://World/KeyAlert.tscn" type="PackedScene" id=17]
 [ext_resource path="res://Animals/ForestBear.tscn" type="PackedScene" id=18]
 [ext_resource path="res://World/TreeTwo.tscn" type="PackedScene" id=19]
 [ext_resource path="res://World/TreeThree.tscn" type="PackedScene" id=20]
-[ext_resource path="res://World/DeathAlert.tscn" type="PackedScene" id=21]
 [ext_resource path="res://Animals/ForestBunny.tscn" type="PackedScene" id=22]
 [ext_resource path="res://Animals/ForestDeerOne.tscn" type="PackedScene" id=23]
-[ext_resource path="res://UI/BatteryUI.tscn" type="PackedScene" id=24]
 [ext_resource path="res://World/Coin.tscn" type="PackedScene" id=25]
 [ext_resource path="res://World/GreyStone1.tscn" type="PackedScene" id=26]
-[ext_resource path="res://World/Market.tscn" type="PackedScene" id=27]
 [ext_resource path="res://World/GuideBot.tscn" type="PackedScene" id=28]
 [ext_resource path="res://World/GreyStoneSmall1.tscn" type="PackedScene" id=29]
 [ext_resource path="res://World/PurpleStoneSmall1.tscn" type="PackedScene" id=30]
-[ext_resource path="res://Enemies/DroidBoss.tscn" type="PackedScene" id=31]
 [ext_resource path="res://World/PurpleStoneLarge1.tscn" type="PackedScene" id=32]
-[ext_resource path="res://World.gd" type="Script" id=33]
 [ext_resource path="res://Music and Sounds/KOTWB_WORLD1_NEW.wav" type="AudioStream" id=34]
 [ext_resource path="res://World/FlowersSpreadOne.tscn" type="PackedScene" id=35]
 [ext_resource path="res://World/MushroomOne.tscn" type="PackedScene" id=36]
-[ext_resource path="res://World/TutorialArea1.tscn" type="PackedScene" id=37]
-[ext_resource path="res://Story/StoryArea1.tscn" type="PackedScene" id=38]
 [ext_resource path="res://Music and Sounds/MotionGrass1.tscn" type="PackedScene" id=39]
-[ext_resource path="res://World/TutorialArea2.tscn" type="PackedScene" id=40]
-[ext_resource path="res://Story/StoryArea2.tscn" type="PackedScene" id=41]
-[ext_resource path="res://Story/IntroArea.tscn" type="PackedScene" id=42]
-[ext_resource path="res://Story/IntroArea2.tscn" type="PackedScene" id=43]
 [ext_resource path="res://World/BasicDoorOne.tscn" type="PackedScene" id=44]
 [ext_resource path="res://World/Key1-3.tscn" type="PackedScene" id=45]
 [ext_resource path="res://World/Water Tileset Grass.png" type="Texture" id=46]
@@ -54,12 +39,9 @@
 [ext_resource path="res://World/NeonArrowOne.tscn" type="PackedScene" id=52]
 [ext_resource path="res://World/BossSkull.tscn" type="PackedScene" id=53]
 [ext_resource path="res://World/BossKeyOne.tscn" type="PackedScene" id=54]
-[ext_resource path="res://World/BossKeyAlert.tscn" type="PackedScene" id=55]
 [ext_resource path="res://World/OilCoDoorOne.tscn" type="PackedScene" id=56]
 [ext_resource path="res://Effects/ScreenCrackleOne.tscn" type="PackedScene" id=57]
-[ext_resource path="res://Enemies/SecurityDroid.tscn" type="PackedScene" id=58]
 [ext_resource path="res://World/BasicDoorOneOpen.tscn" type="PackedScene" id=59]
-[ext_resource path="res://DemoCompletion.tscn" type="PackedScene" id=60]
 [ext_resource path="res://World/WaterLilyTwo.tscn" type="PackedScene" id=61]
 [ext_resource path="res://World/WaterLily.tscn" type="PackedScene" id=62]
 [ext_resource path="res://World/WaterLilyChunks.tscn" type="PackedScene" id=63]
@@ -69,38 +51,24 @@
 [ext_resource path="res://World/VinesOne.tscn" type="PackedScene" id=67]
 [ext_resource path="res://World/SwarmOne.tscn" type="PackedScene" id=68]
 [ext_resource path="res://World/WallCrack.tscn" type="PackedScene" id=69]
-[ext_resource path="res://UI/CoinUI.tscn" type="PackedScene" id=70]
 [ext_resource path="res://World/FlyingBird.tscn" type="PackedScene" id=71]
 [ext_resource path="res://World/OilBarrelsOne.tscn" type="PackedScene" id=72]
-[ext_resource path="res://Effects/LaserEffect.tscn" type="PackedScene" id=73]
-[ext_resource path="res://UI/AmmoUI.tscn" type="PackedScene" id=74]
-[ext_resource path="res://World/TutorialArea3.tscn" type="PackedScene" id=75]
 [ext_resource path="res://World/SkyCloud.tscn" type="PackedScene" id=76]
-[ext_resource path="res://World/TutorialArea4.tscn" type="PackedScene" id=77]
-[ext_resource path="res://Enemies/DroidYellow.tscn" type="PackedScene" id=78]
 [ext_resource path="res://World/ExitSign.tscn" type="PackedScene" id=79]
 [ext_resource path="res://World/RedButtonSwitch.tscn" type="PackedScene" id=80]
 [ext_resource path="res://World/BasicFence_One.tscn" type="PackedScene" id=81]
 [ext_resource path="res://World/Bonfire.tscn" type="PackedScene" id=82]
 [ext_resource path="res://World/AncientRuneOne.tscn" type="PackedScene" id=83]
 [ext_resource path="res://World/TallGrass.tscn" type="PackedScene" id=84]
-[ext_resource path="res://World/TutorialArea5.tscn" type="PackedScene" id=85]
-[ext_resource path="res://UI/StealthUI.tscn" type="PackedScene" id=86]
 [ext_resource path="res://World/FlowersBlueOne.tscn" type="PackedScene" id=87]
 [ext_resource path="res://World/FlowersYellowOne.tscn" type="PackedScene" id=88]
 [ext_resource path="res://World/PopSign.tscn" type="PackedScene" id=89]
 [ext_resource path="res://World/ForestTier.tscn" type="PackedScene" id=90]
 [ext_resource path="res://World/Bird.tscn" type="PackedScene" id=91]
-[ext_resource path="res://Enemies/SimpleDroid.tscn" type="PackedScene" id=92]
 [ext_resource path="res://World/BirdOrange.tscn" type="PackedScene" id=93]
 [ext_resource path="res://World/FlyingBirdOrange.tscn" type="PackedScene" id=94]
 [ext_resource path="res://World/FlyingBirdStraightOrange.tscn" type="PackedScene" id=95]
 [ext_resource path="res://World/FlyingBirdStraight.tscn" type="PackedScene" id=96]
-[ext_resource path="res://UI/ChargeUI.tscn" type="PackedScene" id=97]
-[ext_resource path="res://UI/XpUI.tscn" type="PackedScene" id=98]
-[ext_resource path="res://World/TutorialArea1_2.tscn" type="PackedScene" id=99]
-[ext_resource path="res://World/LevelUpAlert.tscn" type="PackedScene" id=100]
-[ext_resource path="res://UI/RainLayer.tscn" type="PackedScene" id=101]
 [ext_resource path="res://World/OilDrill1.tscn" type="PackedScene" id=102]
 [ext_resource path="res://World/BlackHole.tscn" type="PackedScene" id=103]
 [ext_resource path="res://World/Portal_Door.tscn" type="PackedScene" id=104]
@@ -1075,16 +1043,8 @@ points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
 } ]
 0/z_index = 0
 
-[sub_resource type="StyleBoxFlat" id=100]
-bg_color = Color( 0, 0, 0, 0.372549 )
-corner_radius_top_left = 1
-corner_radius_top_right = 1
-corner_radius_bottom_right = 1
-corner_radius_bottom_left = 1
-
-[node name="World" type="Node2D"]
-script = ExtResource( 33 )
-laser_effect = ExtResource( 73 )
+[node name="World1Map" type="Node2D"]
+script = ExtResource( 7 )
 
 [node name="SpriteBackground2" type="Sprite" parent="."]
 position = Vector2( 186.5, 163.625 )
@@ -1236,11 +1196,13 @@ format = 1
 tile_data = PoolIntArray( -1048605, 0, 4, -1048604, 0, 196609, -1048603, 0, 196609, -1048602, 0, 196609, -1048601, 0, 196609, -1048600, 0, 196609, -1048599, 0, 196609, -1048598, 0, 196609, -1048597, 0, 196609, -1048596, 0, 196609, -1048595, 0, 196609, -1048594, 0, 196609, -1048593, 0, 196609, -1048592, 0, 196609, -1048591, 0, 196609, -1048590, 0, 196609, -1048589, 0, 196609, -1048588, 0, 196609, -1048587, 0, 6, -1048586, 0, 5, -1048585, 0, 196609, -1048584, 0, 196609, -1048583, 0, 196609, -1048582, 0, 196609, -1048581, 0, 196609, -1048580, 0, 196609, -1048579, 0, 6, -1048578, 0, 1, -1048577, 0, 5, -1114112, 0, 196609, -1114111, 0, 196609, -1114110, 0, 196609, -1114109, 0, 196609, -1114108, 0, 7, -983069, 0, 65539, -983051, 0, 131072, -983050, 0, 131074, -983043, 0, 131072, -983042, 0, 131073, -983041, 0, 131074, -1048572, 0, 65539, -917534, 0, 4, -917533, 0, 196615, -917525, 0, 4, -917524, 0, 196609, -917523, 0, 196609, -917522, 0, 196609, -917521, 0, 8, -917520, 0, 196609, -917519, 0, 196609, -917518, 0, 196609, -917517, 0, 7, -917511, 0, 3, -983036, 0, 65539, -851998, 0, 65539, -851989, 0, 65539, -851985, 0, 65539, -851981, 0, 65539, -851975, 0, 65539, -917500, 0, 65539, -786462, 0, 196612, -786461, 0, 7, -786453, 0, 65539, -786451, 0, 196608, -786450, 0, 196609, -786449, 0, 196616, -786448, 0, 196610, -786445, 0, 196612, -786444, 0, 196609, -786443, 0, 196609, -786442, 0, 7, -786439, 0, 196612, -786438, 0, 7, -851964, 0, 65539, -851938, 0, 3, -720925, 0, 65539, -720917, 0, 65539, -720906, 0, 65539, -720902, 0, 196612, -720901, 0, 196609, -720900, 0, 196609, -720899, 0, 7, -786430, 0, 4, -786429, 0, 196609, -786428, 0, 196615, -786402, 0, 65539, -655389, 0, 65539, -655382, 0, 4, -655381, 0, 196616, -655380, 0, 8, -655379, 0, 196609, -655378, 0, 196609, -655377, 0, 196610, -655375, 0, 196608, -655374, 0, 7, -655370, 0, 65539, -655363, 0, 131076, -655362, 0, 2, -720896, 0, 4, -720895, 0, 196609, -720894, 0, 196615, -720866, 0, 65539, -720864, 0, 4, -720863, 0, 196609, -720862, 0, 196609, -720861, 0, 196610, -589858, 0, 4, -589857, 0, 196609, -589856, 0, 196609, -589855, 0, 196609, -589854, 0, 196609, -589853, 0, 196616, -589852, 0, 196609, -589851, 0, 7, -589846, 0, 65539, -589844, 0, 65539, -589838, 0, 131076, -589837, 0, 1, -589836, 0, 2, -589834, 0, 65539, -589828, 0, 4, -589827, 0, 196614, -589826, 0, 65543, -655360, 0, 65539, -655330, 0, 65539, -655328, 0, 65539, -524322, 0, 65539, -524315, 0, 196612, -524314, 0, 196609, -524313, 0, 196609, -524312, 0, 196609, -524311, 0, 196609, -524310, 0, 196615, -524308, 0, 196612, -524307, 0, 196610, -524302, 0, 65540, -524301, 0, 131073, -524300, 0, 131074, -524298, 0, 131075, -524295, 0, 196608, -524294, 0, 196609, -524293, 0, 196609, -524292, 0, 196615, -524290, 0, 131075, -589824, 0, 196612, -589823, 0, 196609, -589822, 0, 196609, -589821, 0, 196609, -589820, 0, 196609, -589819, 0, 196609, -589818, 0, 196609, -589817, 0, 196609, -589816, 0, 196609, -589815, 0, 196609, -589814, 0, 196609, -589813, 0, 196609, -589812, 0, 196609, -589811, 0, 196609, -589810, 0, 196609, -589809, 0, 8, -589808, 0, 196609, -589807, 0, 196609, -589806, 0, 196609, -589805, 0, 196609, -589804, 0, 8, -589803, 0, 196609, -589802, 0, 196609, -589801, 0, 6, -589800, 0, 1, -589799, 0, 5, -589798, 0, 196609, -589797, 0, 196609, -589796, 0, 196609, -589795, 0, 8, -589794, 0, 196615, -589792, 0, 65539, -458786, 0, 65539, -458766, 0, 65539, -524273, 0, 65539, -524268, 0, 65539, -524265, 0, 65540, -524264, 0, 131073, -524263, 0, 131074, -524259, 0, 65539, -524256, 0, 65539, -393250, 0, 65539, -393230, 0, 65539, -458737, 0, 196612, -458736, 0, 7, -458732, 0, 65539, -458729, 0, 65539, -458723, 0, 65539, -458720, 0, 65539, -327714, 0, 65539, -327694, 0, 196612, -327693, 0, 8, -327692, 0, 196609, -327691, 0, 196609, -327690, 0, 6, -327689, 0, 2, -393203, 0, 3, -393200, 0, 131076, -393199, 0, 1, -393198, 0, 2, -393196, 0, 131075, -393193, 0, 131075, -393190, 0, 4, -393189, 0, 196610, -393187, 0, 65539, -393184, 0, 65539, -262178, 0, 65539, -262157, 0, 65539, -262154, 0, 65536, -262153, 0, 65538, -262145, 0, 0, -327680, 0, 2, -327677, 0, 4, -327676, 0, 196610, -327674, 0, 3, -327667, 0, 131075, -327664, 0, 131072, -327663, 0, 65542, -327662, 0, 65538, -327654, 0, 65539, -327652, 0, 4, -327651, 0, 196615, -327648, 0, 65539, -196642, 0, 65539, -196629, 0, 3, -196626, 0, 3, -196624, 0, 0, -196623, 0, 1, -196622, 0, 1, -196621, 0, 131079, -196618, 0, 65540, -196617, 0, 131074, -196609, 0, 65540, -262144, 0, 131074, -262141, 0, 131075, -262138, 0, 65539, -262127, 0, 65536, -262126, 0, 65538, -262124, 0, 3, -262118, 0, 196612, -262117, 0, 196609, -262116, 0, 196615, -262112, 0, 65539, -131106, 0, 65539, -131093, 0, 65539, -131090, 0, 262148, -131089, 0, 196609, -131088, 0, 196614, -131087, 0, 131073, -131086, 0, 131073, -131085, 0, 196613, -131084, 0, 196610, -131082, 0, 65539, -131073, 0, 65539, -196602, 0, 65539, -196597, 0, 0, -196596, 0, 2, -196594, 0, 196608, -196593, 0, 7, -196591, 0, 65540, -196590, 0, 131074, -196588, 0, 131076, -196587, 0, 2, -196578, 0, 0, -196577, 0, 1, -196576, 0, 131079, -65570, 0, 65539, -65560, 0, 4, -65559, 0, 196609, -65558, 0, 196609, -65557, 0, 262151, -65555, 0, 0, -65554, 0, 131079, -65546, 0, 196612, -65545, 0, 7, -65543, 0, 0, -65542, 0, 2, -65537, 0, 65539, -131066, 0, 65539, -131061, 0, 65536, -131060, 0, 65538, -131057, 0, 65539, -131055, 0, 65539, -131052, 0, 65536, -131051, 0, 65538, -131043, 0, 0, -131042, 0, 131078, -131041, 0, 65537, -131040, 0, 65538, -34, 0, 65539, -24, 0, 65539, -21, 0, 196612, -20, 0, 196609, -19, 0, 196614, -18, 0, 65543, -9, 0, 131075, -7, 0, 65536, -6, 0, 65538, -1, 0, 262148, -65536, 0, 196609, -65535, 0, 6, -65534, 0, 1, -65533, 0, 2, -65530, 0, 131076, -65529, 0, 1, -65528, 0, 2, -65525, 0, 65540, -65524, 0, 196613, -65523, 0, 196610, -65521, 0, 65539, -65519, 0, 196612, -65518, 0, 196610, -65516, 0, 65540, -65515, 0, 131074, -65507, 0, 65540, -65506, 0, 131073, -65505, 0, 65542, -65504, 0, 65538, 65502, 0, 196612, 65503, 0, 196609, 65504, 0, 196609, 65505, 0, 196609, 65506, 0, 196609, 65507, 0, 196609, 65508, 0, 196609, 65509, 0, 196609, 65510, 0, 196609, 65511, 0, 196609, 65512, 0, 196615, 65518, 0, 262148, 65519, 0, 196610, 65522, 0, 3, 65529, 0, 65536, 65530, 0, 131077, 65531, 0, 2, 65535, 0, 131075, 1, 0, 131072, 2, 0, 131073, 3, 0, 131074, 6, 0, 131072, 7, 0, 131073, 8, 0, 65543, 11, 0, 65539, 15, 0, 65539, 20, 0, 65539, 29, 0, 65539, 31, 0, 65536, 32, 0, 65538, 131054, 0, 65539, 131057, 0, 0, 131058, 0, 131079, 131065, 0, 65536, 131066, 0, 65537, 131067, 0, 65538, 65544, 0, 131075, 65547, 0, 131075, 65549, 0, 196608, 65550, 0, 196609, 65551, 0, 262151, 65554, 0, 196608, 65555, 0, 196609, 65556, 0, 196616, 65557, 0, 7, 65565, 0, 65539, 65567, 0, 65536, 65568, 0, 65538, 196590, 0, 262148, 196591, 0, 196609, 196592, 0, 196609, 196593, 0, 196614, 196594, 0, 196613, 196595, 0, 196609, 196596, 0, 196609, 196597, 0, 196609, 196598, 0, 196609, 196599, 0, 6, 196600, 0, 5, 196601, 0, 196614, 196602, 0, 65544, 196603, 0, 131074, 131087, 0, 65539, 131093, 0, 65539, 131101, 0, 65539, 131103, 0, 65536, 131104, 0, 65538, 262126, 0, 65539, 262135, 0, 65536, 262136, 0, 65538, 262138, 0, 65539, 196623, 0, 131075, 196627, 0, 0, 196628, 0, 1, 196629, 0, 131079, 196631, 0, 196611, 196637, 0, 131075, 196639, 0, 65536, 196640, 0, 65538, 327662, 0, 65539, 327670, 0, 0, 327671, 0, 131078, 327672, 0, 131077, 327673, 0, 1, 327674, 0, 131079, 262144, 0, 0, 262145, 0, 1, 262146, 0, 1, 262147, 0, 1, 262148, 0, 1, 262149, 0, 2, 262163, 0, 65536, 262164, 0, 65537, 262165, 0, 65538, 262168, 0, 3, 262175, 0, 65536, 262176, 0, 65538, 393198, 0, 65539, 393206, 0, 131072, 393207, 0, 131073, 393208, 0, 131073, 393209, 0, 131073, 393210, 0, 131074, 327680, 0, 65536, 327681, 0, 65537, 327682, 0, 65537, 327683, 0, 65537, 327684, 0, 65537, 327685, 0, 65538, 327699, 0, 65536, 327700, 0, 65537, 327701, 0, 65538, 327703, 0, 4, 327704, 0, 196615, 327710, 0, 0, 327711, 0, 131078, 327712, 0, 65538, 458734, 0, 65539, 458749, 0, 196608, 458750, 0, 196609, 458751, 0, 196609, 393216, 0, 262150, 393217, 0, 65537, 393218, 0, 65537, 393219, 0, 65537, 393220, 0, 65537, 393221, 0, 65538, 393230, 0, 0, 393231, 0, 2, 393235, 0, 131072, 393236, 0, 131073, 393237, 0, 196613, 393238, 0, 6, 393239, 0, 131079, 393246, 0, 65540, 393247, 0, 131073, 393248, 0, 65543, 524270, 0, 65539, 524278, 0, 196608, 524279, 0, 6, 524280, 0, 1, 524281, 0, 1, 524282, 0, 2, 458752, 0, 65540, 458753, 0, 131073, 458754, 0, 65542, 458755, 0, 65537, 458756, 0, 65537, 458757, 0, 65538, 458766, 0, 131072, 458767, 0, 65543, 458774, 0, 131072, 458775, 0, 65543, 458780, 0, 4, 458781, 0, 196609, 458782, 0, 196615, 458784, 0, 65539, 589806, 0, 65539, 589815, 0, 131072, 589816, 0, 131073, 589817, 0, 65542, 589818, 0, 65538, 524288, 0, 131075, 524290, 0, 65536, 524291, 0, 65537, 524292, 0, 65537, 524293, 0, 65538, 524299, 0, 0, 524300, 0, 2, 524303, 0, 65539, 524308, 0, 3, 524311, 0, 65539, 524316, 0, 65539, 524320, 0, 65539, 655342, 0, 262148, 655343, 0, 196609, 655344, 0, 8, 655345, 0, 196609, 655346, 0, 196609, 655347, 0, 196609, 655348, 0, 196609, 655349, 0, 7, 655353, 0, 65536, 655354, 0, 65538, 589826, 0, 131072, 589827, 0, 65542, 589828, 0, 65537, 589829, 0, 65538, 589835, 0, 65540, 589836, 0, 196613, 589837, 0, 196609, 589838, 0, 8, 589839, 0, 196615, 589843, 0, 4, 589844, 0, 196616, 589845, 0, 196609, 589846, 0, 196609, 589847, 0, 196615, 589852, 0, 65539, 589854, 0, 4, 589855, 0, 196609, 589856, 0, 262151, 720878, 0, 65539, 720880, 0, 65539, 720885, 0, 131075, 720887, 0, 196608, 720888, 0, 196609, 720889, 0, 196614, 720890, 0, 65543, 655363, 0, 65536, 655364, 0, 65537, 655365, 0, 65538, 655371, 0, 65539, 655374, 0, 65539, 655379, 0, 65539, 655387, 0, 0, 655388, 0, 131079, 655390, 0, 65539, 655392, 0, 65539, 786414, 0, 65539, 786416, 0, 131075, 786426, 0, 65539, 720899, 0, 131072, 720900, 0, 65542, 720901, 0, 65538, 720907, 0, 65539, 720910, 0, 65539, 720915, 0, 65539, 720922, 0, 196608, 720923, 0, 196614, 720924, 0, 65543, 720926, 0, 65539, 720928, 0, 65539, 851950, 0, 65539, 851956, 0, 0, 851957, 0, 5, 851958, 0, 196609, 851959, 0, 8, 851960, 0, 196610, 851962, 0, 131076, 851963, 0, 1, 851964, 0, 5, 851965, 0, 196609, 851966, 0, 7, 786436, 0, 65536, 786437, 0, 65538, 786442, 0, 4, 786443, 0, 196615, 786445, 0, 4, 786446, 0, 196616, 786447, 0, 196610, 786451, 0, 196612, 786452, 0, 196609, 786453, 0, 196610, 786460, 0, 65539, 786462, 0, 65539, 786464, 0, 65539, 917486, 0, 65539, 917490, 0, 196608, 917491, 0, 196609, 917492, 0, 196614, 917493, 0, 131074, 917495, 0, 131075, 917498, 0, 131072, 917499, 0, 131073, 917500, 0, 131074, 917502, 0, 131075, 851971, 0, 4, 851972, 0, 196614, 851973, 0, 65543, 851978, 0, 65539, 851981, 0, 65539, 851994, 0, 196608, 851995, 0, 196609, 851996, 0, 262151, 851998, 0, 65539, 852000, 0, 65539, 983022, 0, 65539, 917505, 0, 0, 917506, 0, 1, 917507, 0, 131079, 917509, 0, 262148, 917510, 0, 196609, 917511, 0, 7, 917514, 0, 131076, 917515, 0, 2, 917517, 0, 131075, 917532, 0, 65539, 917534, 0, 65539, 917536, 0, 65539, 1048558, 0, 65539, 1048569, 0, 0, 1048570, 0, 2, 1048573, 0, 4, 1048574, 0, 196609, 1048575, 0, 196609, 983040, 0, 196609, 983041, 0, 196614, 983042, 0, 131073, 983043, 0, 131074, 983045, 0, 131075, 983047, 0, 196612, 983048, 0, 196609, 983049, 0, 196609, 983050, 0, 196614, 983051, 0, 131074, 983066, 0, 196608, 983067, 0, 196609, 983068, 0, 196615, 983070, 0, 131075, 983072, 0, 65539, 1114094, 0, 65539, 1114103, 0, 0, 1114104, 0, 1, 1114105, 0, 131078, 1114106, 0, 131077, 1114107, 0, 1, 1114108, 0, 1, 1114109, 0, 131079, 1048608, 0, 65539, 1179630, 0, 196612, 1179631, 0, 196609, 1179632, 0, 7, 1179634, 0, 4, 1179635, 0, 196609, 1179636, 0, 196609, 1179637, 0, 196609, 1179638, 0, 196609, 1179639, 0, 196614, 1179640, 0, 131073, 1179641, 0, 131073, 1179642, 0, 131073, 1179643, 0, 131073, 1179644, 0, 131073, 1179645, 0, 196613, 1179646, 0, 196609, 1179647, 0, 196609, 1114112, 0, 196609, 1114113, 0, 196609, 1114114, 0, 196609, 1114115, 0, 196609, 1114116, 0, 196609, 1114117, 0, 196609, 1114118, 0, 196609, 1114119, 0, 196609, 1114120, 0, 196609, 1114121, 0, 196609, 1114122, 0, 196609, 1114123, 0, 196609, 1114124, 0, 196609, 1114125, 0, 196609, 1114126, 0, 196609, 1114127, 0, 196609, 1114128, 0, 196609, 1114129, 0, 196609, 1114130, 0, 196609, 1114131, 0, 196609, 1114132, 0, 196609, 1114133, 0, 196609, 1114134, 0, 196609, 1114135, 0, 196609, 1114136, 0, 196609, 1114137, 0, 196609, 1114138, 0, 196609, 1114139, 0, 196609, 1114140, 0, 196609, 1114141, 0, 196609, 1114142, 0, 196609, 1114143, 0, 196609, 1114144, 0, 196615, 1245168, 0, 65539, 1245170, 0, 65539, 1310704, 0, 65539, 1310706, 0, 65539, 1376240, 0, 65539, 1376242, 0, 65539, 1441776, 0, 65539, 1441778, 0, 65539, 1507312, 0, 65539, 1507314, 0, 65539, 1572848, 0, 65539, 1572850, 0, 65539, 1638384, 0, 65539, 1638386, 0, 196612, 1638387, 0, 196609, 1638388, 0, 196610, 1703919, 0, 196608, 1703920, 0, 196615 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
+visible = false
 position = Vector2( -467, 552 )
 current = true
 smoothing_enabled = true
 
 [node name="YSort" type="YSort" parent="."]
+visible = false
 
 [node name="Player" parent="YSort" instance=ExtResource( 2 )]
 position = Vector2( -467, 552 )
@@ -6374,71 +6336,6 @@ z_index = 1
 position = Vector2( 144, 456 )
 z_index = 1
 
-[node name="Markets" type="YSort" parent="YSort"]
-
-[node name="Market" parent="YSort/Markets" instance=ExtResource( 27 )]
-position = Vector2( 608, -248 )
-
-[node name="Droids" type="YSort" parent="YSort"]
-
-[node name="Droid" parent="YSort/Droids" instance=ExtResource( 10 )]
-position = Vector2( 258, 433 )
-
-[node name="Droid4" parent="YSort/Droids" instance=ExtResource( 10 )]
-position = Vector2( 360, -178 )
-
-[node name="Droid15" parent="YSort/Droids" instance=ExtResource( 10 )]
-position = Vector2( -496, -16 )
-
-[node name="Droid11" parent="YSort/Droids" instance=ExtResource( 10 )]
-position = Vector2( 174, 65 )
-
-[node name="Droid6" parent="YSort/Droids" instance=ExtResource( 10 )]
-position = Vector2( 243, -169 )
-
-[node name="Droid13" parent="YSort/Droids" instance=ExtResource( 10 )]
-position = Vector2( 8, 469 )
-
-[node name="Droid12" parent="YSort/Droids" instance=ExtResource( 10 )]
-position = Vector2( 838, 98 )
-
-[node name="DroidGrey" parent="YSort/Droids" instance=ExtResource( 31 )]
-position = Vector2( -976, -120 )
-MAX_SPEED = 75
-
-[node name="SecurityDroid" parent="YSort/Droids" instance=ExtResource( 58 )]
-position = Vector2( 344, 112 )
-
-[node name="SecurityDroid2" parent="YSort/Droids" instance=ExtResource( 58 )]
-position = Vector2( 648, 472 )
-
-[node name="SecurityDroid3" parent="YSort/Droids" instance=ExtResource( 58 )]
-position = Vector2( 816, -56 )
-
-[node name="DroidYellow" parent="YSort/Droids" instance=ExtResource( 78 )]
-position = Vector2( -457, -424 )
-
-[node name="DroidYellow3" parent="YSort/Droids" instance=ExtResource( 78 )]
-position = Vector2( 878, 130 )
-
-[node name="DroidYellow2" parent="YSort/Droids" instance=ExtResource( 78 )]
-position = Vector2( -64, -43 )
-
-[node name="DroidYellow4" parent="YSort/Droids" instance=ExtResource( 78 )]
-position = Vector2( 63, -108 )
-
-[node name="SimpleDroid" parent="YSort/Droids" instance=ExtResource( 92 )]
-position = Vector2( -208, 409 )
-
-[node name="SimpleDroid3" parent="YSort/Droids" instance=ExtResource( 92 )]
-position = Vector2( 796, -142 )
-
-[node name="SimpleDroid4" parent="YSort/Droids" instance=ExtResource( 92 )]
-position = Vector2( 692, 363 )
-
-[node name="SimpleDroid2" parent="YSort/Droids" instance=ExtResource( 92 )]
-position = Vector2( -131, 240 )
-
 [node name="GuideBot" type="YSort" parent="YSort"]
 
 [node name="GuideBot" parent="YSort/GuideBot" instance=ExtResource( 28 )]
@@ -6717,43 +6614,6 @@ position = Vector2( 7, 37 )
 [node name="MotionGrass17" parent="YSort/MotionGrass" instance=ExtResource( 39 )]
 position = Vector2( -471, -451 )
 
-[node name="Tutorials" type="YSort" parent="YSort"]
-
-[node name="TutorialArea1" parent="YSort/Tutorials" instance=ExtResource( 37 )]
-position = Vector2( -225, 481 )
-z_index = 1
-
-[node name="TutorialArea2" parent="YSort/Tutorials" instance=ExtResource( 40 )]
-position = Vector2( -22, 338 )
-
-[node name="TutorialArea3" parent="YSort/Tutorials" instance=ExtResource( 75 )]
-position = Vector2( -93, 191 )
-z_index = 1
-
-[node name="TutorialArea4" parent="YSort/Tutorials" instance=ExtResource( 77 )]
-position = Vector2( -315, 194 )
-
-[node name="TutorialArea5" parent="YSort/Tutorials" instance=ExtResource( 85 )]
-position = Vector2( 77, -93 )
-
-[node name="TutorialArea1_2" parent="YSort/Tutorials" instance=ExtResource( 99 )]
-position = Vector2( -209, -209 )
-
-[node name="Story" type="YSort" parent="YSort"]
-
-[node name="StoryArea1" parent="YSort/Story" instance=ExtResource( 38 )]
-position = Vector2( -520, 400 )
-
-[node name="StoryArea2" parent="YSort/Story" instance=ExtResource( 41 )]
-position = Vector2( -464, 159 )
-
-[node name="IntroArea" parent="YSort/Story" instance=ExtResource( 42 )]
-visible = false
-position = Vector2( -464, 520 )
-
-[node name="IntroArea2" parent="YSort/Story" instance=ExtResource( 43 )]
-position = Vector2( -488, 456 )
-
 [node name="Doors" type="YSort" parent="YSort"]
 
 [node name="BasicDoorOne" parent="YSort/Doors" instance=ExtResource( 44 )]
@@ -6776,102 +6636,6 @@ scale = Vector2( 0.2, 0.25 )
 
 [node name="TeslaCoilSwitch" parent="YSort/Doors" instance=ExtResource( 105 )]
 position = Vector2( -403, -202 )
-
-[node name="Bats" type="YSort" parent="YSort"]
-
-[node name="Bat" parent="YSort/Bats" instance=ExtResource( 7 )]
-position = Vector2( 216, 320 )
-
-[node name="Bat2" parent="YSort/Bats" instance=ExtResource( 7 )]
-position = Vector2( -104, 8 )
-
-[node name="Bat3" parent="YSort/Bats" instance=ExtResource( 7 )]
-position = Vector2( 77, -42 )
-
-[node name="Bat4" parent="YSort/Bats" instance=ExtResource( 7 )]
-position = Vector2( 462, 15 )
-
-[node name="Bat5" parent="YSort/Bats" instance=ExtResource( 7 )]
-position = Vector2( 75, 96 )
-
-[node name="Bat14" parent="YSort/Bats" instance=ExtResource( 7 )]
-position = Vector2( -241, 204 )
-
-[node name="Bat12" parent="YSort/Bats" instance=ExtResource( 7 )]
-position = Vector2( -3, -196 )
-
-[node name="Bat6" parent="YSort/Bats" instance=ExtResource( 7 )]
-position = Vector2( -389, 360 )
-
-[node name="Bat13" parent="YSort/Bats" instance=ExtResource( 7 )]
-position = Vector2( 246, 537 )
-
-[node name="Bat7" parent="YSort/Bats" instance=ExtResource( 7 )]
-position = Vector2( 736, 408 )
-
-[node name="Bat8" parent="YSort/Bats" instance=ExtResource( 7 )]
-position = Vector2( 704, 16 )
-
-[node name="Bat9" parent="YSort/Bats" instance=ExtResource( 7 )]
-position = Vector2( 976, 88 )
-
-[node name="Bat10" parent="YSort/Bats" instance=ExtResource( 7 )]
-position = Vector2( 799, 355 )
-
-[node name="Bat11" parent="YSort/Bats" instance=ExtResource( 7 )]
-position = Vector2( 954, -105 )
-
-[node name="Snakes" type="YSort" parent="YSort"]
-
-[node name="Snake" parent="YSort/Snakes" instance=ExtResource( 14 )]
-position = Vector2( -238, -20 )
-
-[node name="Snake2" parent="YSort/Snakes" instance=ExtResource( 14 )]
-position = Vector2( -459, -19 )
-
-[node name="Snake8" parent="YSort/Snakes" instance=ExtResource( 14 )]
-position = Vector2( -393, 5 )
-
-[node name="Snake11" parent="YSort/Snakes" instance=ExtResource( 14 )]
-position = Vector2( -332, -227 )
-
-[node name="Snake9" parent="YSort/Snakes" instance=ExtResource( 14 )]
-position = Vector2( -552, -384 )
-
-[node name="Snake12" parent="YSort/Snakes" instance=ExtResource( 14 )]
-position = Vector2( -582, -449 )
-
-[node name="Snake3" parent="YSort/Snakes" instance=ExtResource( 14 )]
-position = Vector2( -380, -29 )
-
-[node name="Snake4" parent="YSort/Snakes" instance=ExtResource( 14 )]
-position = Vector2( -365, 54 )
-
-[node name="Snake10" parent="YSort/Snakes" instance=ExtResource( 14 )]
-position = Vector2( 201, -172 )
-
-[node name="Snake15" parent="YSort/Snakes" instance=ExtResource( 14 )]
-position = Vector2( 146, -22 )
-
-[node name="Snake13" parent="YSort/Snakes" instance=ExtResource( 14 )]
-position = Vector2( 461, -210 )
-
-[node name="Snake14" parent="YSort/Snakes" instance=ExtResource( 14 )]
-position = Vector2( 450, -48 )
-
-[node name="Snake5" parent="YSort/Snakes" instance=ExtResource( 14 )]
-position = Vector2( 877, 216 )
-
-[node name="Snake6" parent="YSort/Snakes" instance=ExtResource( 14 )]
-position = Vector2( 918, -173 )
-
-[node name="Snake16" parent="YSort/Snakes" instance=ExtResource( 14 )]
-position = Vector2( 906, -203 )
-
-[node name="Snake7" parent="YSort/Snakes" instance=ExtResource( 14 )]
-position = Vector2( 837, 246 )
-
-[node name="SaveCat" type="YSort" parent="YSort"]
 
 [node name="MotionWater" type="YSort" parent="YSort"]
 
@@ -6978,7 +6742,7 @@ position = Vector2( -16, -272 )
 [node name="ScreenCrackleOne" parent="YSort/OilCoDoors" instance=ExtResource( 57 )]
 position = Vector2( -17, -270.5 )
 scale = Vector2( 0.094, 0.0833333 )
-frame = 4
+frame = 5
 
 [node name="Flowers" type="YSort" parent="YSort"]
 
@@ -7196,11 +6960,11 @@ position = Vector2( -305, 346 )
 
 [node name="Bonfire" parent="YSort/Fires" instance=ExtResource( 82 )]
 position = Vector2( 976, -240 )
-frame = 1
+frame = 2
 
 [node name="Bonfire2" parent="YSort/Fires" instance=ExtResource( 82 )]
 position = Vector2( 976, -208 )
-frame = 1
+frame = 2
 
 [node name="Runes" type="YSort" parent="YSort"]
 
@@ -7228,30 +6992,25 @@ position = Vector2( 568, -8 )
 [node name="Bird" parent="YSort/Sky" instance=ExtResource( 91 )]
 position = Vector2( 6, 252 )
 z_index = 1
-frame = 0
 
 [node name="Bird3" parent="YSort/Sky" instance=ExtResource( 91 )]
 position = Vector2( -263, -31 )
 animation = "eat"
-frame = 2
 flip_h = true
 
 [node name="Bird2" parent="YSort/Sky" instance=ExtResource( 91 )]
 position = Vector2( -240, 498 )
 z_index = 2
-frame = 0
 flip_h = true
 
 [node name="Bird5" parent="YSort/Sky" instance=ExtResource( 91 )]
 position = Vector2( 284, -36 )
 z_index = 1
-frame = 0
 flip_h = true
 
 [node name="Bird4" parent="YSort/Sky" instance=ExtResource( 91 )]
 position = Vector2( -515, 66 )
 z_index = 1
-frame = 0
 flip_h = true
 
 [node name="FlyingBird" parent="YSort/Sky" instance=ExtResource( 71 )]
@@ -7272,29 +7031,26 @@ frame = 7
 
 [node name="Bird6" parent="YSort/Sky" instance=ExtResource( 93 )]
 position = Vector2( -130, 69 )
-frame = 1
 flip_h = true
 
 [node name="Bird7" parent="YSort/Sky" instance=ExtResource( 93 )]
 position = Vector2( 45, -29 )
-frame = 1
 flip_h = true
 
 [node name="Bird10" parent="YSort/Sky" instance=ExtResource( 93 )]
 position = Vector2( 582, -265 )
 z_index = 2
-frame = 1
 
 [node name="Bird8" parent="YSort/Sky" instance=ExtResource( 93 )]
 position = Vector2( 171, -277 )
 animation = "eat"
-frame = 2
+frame = 4
 flip_h = true
 
 [node name="Bird9" parent="YSort/Sky" instance=ExtResource( 93 )]
 position = Vector2( 746, -216 )
 animation = "eat"
-frame = 2
+frame = 4
 
 [node name="FlyingBirdOrange" parent="YSort/Sky" instance=ExtResource( 94 )]
 position = Vector2( 2003, -609 )
@@ -7326,63 +7082,52 @@ position = Vector2( 3090, -690 )
 
 [node name="SkyCloud" parent="YSort/Sky" instance=ExtResource( 76 )]
 position = Vector2( -244, 113 )
-frame = 0
+frame = 1
 
 [node name="SkyCloud9" parent="YSort/Sky" instance=ExtResource( 76 )]
 position = Vector2( -32, -179 )
 scale = Vector2( 1.29286, 1.3 )
-frame = 0
+frame = 1
 
 [node name="SkyCloud10" parent="YSort/Sky" instance=ExtResource( 76 )]
 position = Vector2( 901, -281 )
-frame = 2
 
 [node name="SkyCloud11" parent="YSort/Sky" instance=ExtResource( 76 )]
 position = Vector2( 658, 131 )
-frame = 2
 
 [node name="SkyCloud12" parent="YSort/Sky" instance=ExtResource( 76 )]
 position = Vector2( 1045, -112 )
-frame = 2
 
 [node name="SkyCloud2" parent="YSort/Sky" instance=ExtResource( 76 )]
 position = Vector2( 92, 209 )
-frame = 2
 
 [node name="SkyCloud3" parent="YSort/Sky" instance=ExtResource( 76 )]
 position = Vector2( 129, 214 )
 scale = Vector2( 1.73, 1.86875 )
-frame = 2
 
 [node name="SkyCloud13" parent="YSort/Sky" instance=ExtResource( 76 )]
 position = Vector2( 671, 162 )
 scale = Vector2( 1.73, 1.86875 )
-frame = 2
 
 [node name="SkyCloud8" parent="YSort/Sky" instance=ExtResource( 76 )]
 position = Vector2( -2, -158 )
 scale = Vector2( 1.565, 1.62188 )
-frame = 2
 
 [node name="SkyCloud6" parent="YSort/Sky" instance=ExtResource( 76 )]
 position = Vector2( 153, 195 )
 scale = Vector2( 1.525, 1.62188 )
-frame = 2
 
 [node name="SkyCloud7" parent="YSort/Sky" instance=ExtResource( 76 )]
 position = Vector2( 374, 186 )
 scale = Vector2( 1.525, 1.62188 )
-frame = 2
 
 [node name="SkyCloud4" parent="YSort/Sky" instance=ExtResource( 76 )]
 position = Vector2( 78, 448 )
 scale = Vector2( 1.385, 1.62188 )
-frame = 2
 
 [node name="SkyCloud5" parent="YSort/Sky" instance=ExtResource( 76 )]
 position = Vector2( -267, 130 )
 scale = Vector2( 1.385, 1.62188 )
-frame = 2
 
 [node name="Traps" type="YSort" parent="YSort"]
 
@@ -7398,67 +7143,6 @@ position = Vector2( -837, -181 )
 [node name="SpinningSawTrap3" parent="YSort/Traps" instance=ExtResource( 106 )]
 position = Vector2( -896, -152 )
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="Panel" type="Panel" parent="CanvasLayer"]
-margin_left = 269.0
-margin_top = 157.0
-margin_right = 312.0
-margin_bottom = 178.0
-custom_styles/panel = SubResource( 100 )
-
-[node name="HealthUI" parent="CanvasLayer" instance=ExtResource( 8 )]
-margin_left = 2.0
-margin_top = 2.0
-margin_right = 64.0
-margin_bottom = 14.0
-
-[node name="BatteryUI" parent="CanvasLayer" instance=ExtResource( 24 )]
-margin_left = 3.0
-margin_top = 16.0
-margin_right = 35.0
-margin_bottom = 26.0
-
-[node name="XpUI" parent="CanvasLayer" instance=ExtResource( 98 )]
-margin_left = 254.0
-margin_top = 152.0
-margin_right = 291.0
-margin_bottom = 171.0
-
-[node name="CoinUI" parent="CanvasLayer" instance=ExtResource( 70 )]
-margin_left = 288.0
-margin_top = 170.0
-margin_right = 325.0
-margin_bottom = 189.0
-rect_scale = Vector2( 0.35, 0.35 )
-
-[node name="AmmoUI" parent="CanvasLayer" instance=ExtResource( 74 )]
-margin_left = 30.0
-margin_top = 14.0
-margin_right = 70.0
-margin_bottom = 54.0
-
-[node name="StealthUI" parent="CanvasLayer" instance=ExtResource( 86 )]
-visible = false
-
-[node name="ChargeUI" parent="CanvasLayer" instance=ExtResource( 97 )]
-margin_left = -11.0
-margin_right = -11.0
-
-[node name="RainLayer" parent="CanvasLayer" instance=ExtResource( 101 )]
-
-[node name="AlertCanvas" type="CanvasLayer" parent="."]
-
-[node name="KeyAlert" parent="AlertCanvas" instance=ExtResource( 17 )]
-
-[node name="DeathAlert" parent="AlertCanvas" instance=ExtResource( 21 )]
-margin_left = 87.0
-margin_right = 87.0
-
-[node name="BossKeyAlert" parent="AlertCanvas" instance=ExtResource( 55 )]
-
-[node name="LevelUpAlert" parent="AlertCanvas" instance=ExtResource( 100 )]
-
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 pause_mode = 2
 stream = ExtResource( 34 )
@@ -7467,11 +7151,6 @@ volume_db = -3.0
 [node name="MusicTimer" type="Timer" parent="."]
 wait_time = 5.0
 one_shot = true
-
-[node name="DemoCompletion" parent="." instance=ExtResource( 60 )]
-position = Vector2( 1038, -395 )
-
-[node name="Tween" type="Tween" parent="."]
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.5

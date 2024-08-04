@@ -17,6 +17,11 @@ onready var worldStats = WorldStats
 onready var controlsPanel = $ControlsPanel
 onready var timer = $Timer
 onready var levelText = $Control/CenterContainer/HBoxContainer/Panel/LevelText
+onready var forestMap = $ForestWorldMap
+onready var map = $Map
+onready var mapButton = $MapButton
+onready var mapShadow = $MapShadow
+
 
 onready var save_file = SaveFile.g_data
 
@@ -25,6 +30,7 @@ const ItemSelectSound = preload("res://Music and Sounds/MenuSelectSound.tscn")
 
 var menuOn = false
 var controlsOn = false
+var mapOn = false
 
 
 func _ready():
@@ -32,6 +38,7 @@ func _ready():
 	cellCheckTwo.hide()
 	cellCheckThree.hide()
 	controlsPanel.hide()
+	forestMap.hide()
 	
 func _process(_delta):
 	if Input.is_action_just_pressed("laser"):
@@ -49,6 +56,23 @@ func _process(_delta):
 			controlsPanel.show()
 			controlsOn = true
 			switchText.text = "Inventory"
+	if (Input.is_action_just_pressed("charge_switch_f")) && self.visible:
+		if mapOn == false:
+			controlsPanel.hide()
+			forestMap.show()
+			mapOn = true
+			mapButton.hide()
+			mapShadow.hide()
+			map.hide()
+		else:
+			forestMap.hide()
+			controlsPanel.hide()
+			mapOn = false
+			controlsOn = false
+			switchText.text = "Controls"
+			mapButton.show()
+			mapShadow.show()
+			map.show()
 		
 	redPop.text = str(stats.redpops)
 	bluePop.text = str(stats.bluepops)

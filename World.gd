@@ -26,7 +26,7 @@ func _ready():
 	worldStats.connect("out_of_the_tall_grass", self, "stealth_ui_off")
 	worldStats.connect("play_blast_anim", self, "blast_animation")
 	stats.connect("level_changed", self, "leveled")
-
+	#$Timer2.start() // camera timer
 	generate_laser_effect(Vector2(-1248, 459.451538))
 	#stats.set_max_health(5)
 	#stats.set_health(5)
@@ -81,6 +81,12 @@ func stealth_ui_on():
 func stealth_ui_off():
 	stealthUI.hide()
 
+func takePhoto():
+	var vpt = get_viewport()
+	var txt = vpt.get_texture()
+	var image = txt.get_data()
+	image.flip_y()
+	image.save_png("break.png")
 
 func _on_AudioStreamPlayer_finished():
 	musicPlayer.play(0.0)
@@ -88,3 +94,8 @@ func _on_AudioStreamPlayer_finished():
 
 func _on_Timer_timeout():
 	pass
+
+
+func _on_Timer2_timeout():
+	pass
+	#takePhoto()

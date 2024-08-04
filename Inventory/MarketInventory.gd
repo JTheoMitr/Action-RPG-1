@@ -8,12 +8,23 @@ onready var coinLabel = $CanvasLayer/Control/CoinTextLabel
 onready var grooves = $BossaNova
 onready var canvasLayer = $CanvasLayer
 onready var save_file = SaveFile.g_data
+onready var bgnd = $CanvasLayer/Control/BGND
+
+onready var world1Bgnd = preload("res://UI/IMG_4107.JPG")
+onready var world2Bgnd = preload("res://UI/IMG_4104.JPG")
+onready var world3Bgnd = preload("res://UI/IMG_4113.JPG")
 
 var stats = PlayerStats
 
 func _ready():
 	grooves.play(0.0)
-	print_debug(get_parent())
+	print_debug(get_parent().get_parent().get_parent().to_string()) #this is what checks for the current world node, check for World, World2, World3, etc
+	if (get_parent().get_parent().get_parent()).to_string().begins_with("World:"): #try this
+		bgnd.texture = world1Bgnd
+	if (get_parent().get_parent().get_parent()).to_string().begins_with("World2"): #try this
+		bgnd.texture = world2Bgnd
+	if (get_parent().get_parent().get_parent()).to_string().begins_with("World3"): #try this
+		bgnd.texture = world3Bgnd
 	
 func _process(delta):
 	coinLabel.text = "x " + str(stats.coins)

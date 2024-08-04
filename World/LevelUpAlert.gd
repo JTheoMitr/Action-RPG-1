@@ -10,6 +10,7 @@ onready var timer = $Timer
 
 func show_level_up_alert():
 	if stats.level >= 2:
+		print_debug(stats.level)
 		popup()
 		var lvlSound = LevelUpSound.instance()
 		get_tree().current_scene.call_deferred("add_child", lvlSound)
