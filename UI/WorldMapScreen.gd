@@ -15,10 +15,14 @@ onready var mapMusic = $MapMusic
 onready var timer = $Timer
 onready var tween_out = $Tween
 onready var playerLevelText = $LevelText
+onready var coinText = $CoinText
+onready var xpText = $XpText
+onready var ammoText = $AmmoText
 export var transition_duration = 2.00
 export var transition_type = 1 # TRANS_SINE
 
 onready var stats = PlayerStats
+onready var save_file = SaveFile.g_data
 
 
 func fade_out(stream_player):
@@ -34,12 +38,15 @@ func _ready():
 	mapMusic.play(0.0)
 	selectSound.volume_db = -60
 	timer.start(0.0)
-
+	SaveFile.load_data()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	
-	playerLevelText = "Level " + stats.level 
+	playerLevelText.text = "Level " + str(save_file.player_level)
+	coinText.text = "x " + str(save_file.player_coins)
+	xpText.text = "x " + str(save_file.player_xp)
+	ammoText.text = "x " + str(save_file.player_ammo)
 	
 	if forestButton.has_focus():
 		wolfIcon.position.x = 191
@@ -51,6 +58,7 @@ func _process(delta):
 		wolfIcon.position.y = 142
 		levelPreText.text = "Wylde"
 		levelText.text = "Caverns"
+		print_debug(save_file.player_level)
 	if marshButton.has_focus():
 		wolfIcon.position.x = 183
 		wolfIcon.position.y = 112
