@@ -18,6 +18,7 @@ onready var playerLevelText = $LevelText
 onready var coinText = $CoinText
 onready var xpText = $XpText
 onready var ammoText = $AmmoText
+onready var levelLabel = $LevelLabel
 export var transition_duration = 2.00
 export var transition_type = 1 # TRANS_SINE
 
@@ -53,32 +54,37 @@ func _process(delta):
 		wolfIcon.position.y = 159
 		levelPreText.text = "The"
 		levelText.text = "Forest"
+		levelLabel.bbcode_text = "[center]The Forest"
 	if caveButton.has_focus():
 		wolfIcon.position.x = 171
 		wolfIcon.position.y = 142
 		levelPreText.text = "Wylde"
 		levelText.text = "Caverns"
-		print_debug(save_file.player_level)
+		levelLabel.bbcode_text = "[center]Wylde Caverns"
 	if marshButton.has_focus():
 		wolfIcon.position.x = 183
 		wolfIcon.position.y = 112
 		levelPreText.text = "Toad"
 		levelText.text = "Marsh"
+		levelLabel.bbcode_text = "[center]Toad Marsh"
 	if cityButton.has_focus():
 		wolfIcon.position.x = 174
 		wolfIcon.position.y = 66
 		levelPreText.text = "Arcade"
 		levelText.text = "Heights"
+		levelLabel.bbcode_text = "[center]Arcade Heights"
 	if desertButton.has_focus():
 		wolfIcon.position.x = 128
 		wolfIcon.position.y = 85
 		levelPreText.text = "The"
 		levelText.text = "Desert"
+		levelLabel.bbcode_text = "[center]The Desert"
 	if blizzardButton.has_focus():
 		wolfIcon.position.x = 152
 		wolfIcon.position.y = 34
 		levelPreText.text = "Blizzard"
 		levelText.text = "Canyon"
+		levelLabel.bbcode_text = "[center]Blizzard Canyon"
 		
 		
 
