@@ -19,6 +19,9 @@ onready var coinText = $CoinText
 onready var xpText = $XpText
 onready var ammoText = $AmmoText
 onready var levelLabel = $LevelLabel
+onready var bossCheck = $BossCheck
+onready var anmlCheck = $AnmlCheck
+onready var drillCheck = $DrillCheck
 export var transition_duration = 2.00
 export var transition_type = 1 # TRANS_SINE
 
@@ -48,6 +51,7 @@ func _process(delta):
 	coinText.text = "x " + str(save_file.player_coins)
 	xpText.text = "x " + str(save_file.player_xp)
 	ammoText.text = "x " + str(save_file.player_ammo)
+	drillCheck.hide() # add dynamic once drill controls are added for destruction
 	
 	if forestButton.has_focus():
 		wolfIcon.position.x = 191
@@ -55,6 +59,14 @@ func _process(delta):
 		levelPreText.text = "The"
 		levelText.text = "Forest"
 		levelLabel.bbcode_text = "[center]The Forest"
+		if save_file.world_one_boss_lives == false:
+			bossCheck.show()
+		else:
+			bossCheck.hide()
+		if (save_file.forest_deer_saved == true) && (save_file.forest_bear_saved == true) && (save_file.forest_bunny_saved == true):
+			anmlCheck.show()
+		else:
+			anmlCheck.hide()
 	if caveButton.has_focus():
 		wolfIcon.position.x = 171
 		wolfIcon.position.y = 142

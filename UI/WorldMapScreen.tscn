@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=2]
+[gd_scene load_steps=43 format=2]
 
 [ext_resource path="res://UI/MapFinal1.png" type="Texture" id=1]
 [ext_resource path="res://UI/EquipmentIconsC330.png" type="Texture" id=2]
@@ -20,13 +20,18 @@
 [ext_resource path="res://UI/coin_single.png" type="Texture" id=18]
 [ext_resource path="res://Enemies/xpOrbanim.png" type="Texture" id=19]
 [ext_resource path="res://World/EquipmentIconsC349.png" type="Texture" id=20]
+[ext_resource path="res://World/oil_drill_1.png" type="Texture" id=21]
+[ext_resource path="res://UI/e8ba734de1b8121.png" type="Texture" id=22]
+[ext_resource path="res://Animals/MiniDeer1 chill solo.png" type="Texture" id=23]
+[ext_resource path="res://UI/ammo_frame.png" type="Texture" id=24]
+[ext_resource path="res://UI/military_incursion_bot_death_anim_red bust.png" type="Texture" id=25]
 
 [sub_resource type="DynamicFont" id=1]
-size = 12
+size = 10
 font_data = ExtResource( 10 )
 
 [sub_resource type="DynamicFont" id=2]
-size = 7
+size = 10
 font_data = ExtResource( 10 )
 
 [sub_resource type="DynamicFont" id=3]
@@ -56,6 +61,46 @@ animations = [ {
 [sub_resource type="DynamicFont" id=8]
 size = 10
 font_data = ExtResource( 10 )
+
+[sub_resource type="AtlasTexture" id=9]
+atlas = ExtResource( 21 )
+region = Rect2( 0, 0, 192, 192 )
+
+[sub_resource type="AtlasTexture" id=10]
+atlas = ExtResource( 21 )
+region = Rect2( 192, 0, 192, 192 )
+
+[sub_resource type="AtlasTexture" id=11]
+atlas = ExtResource( 21 )
+region = Rect2( 384, 0, 192, 192 )
+
+[sub_resource type="AtlasTexture" id=12]
+atlas = ExtResource( 21 )
+region = Rect2( 576, 0, 192, 192 )
+
+[sub_resource type="AtlasTexture" id=13]
+atlas = ExtResource( 21 )
+region = Rect2( 768, 0, 192, 192 )
+
+[sub_resource type="AtlasTexture" id=14]
+atlas = ExtResource( 21 )
+region = Rect2( 960, 0, 192, 192 )
+
+[sub_resource type="AtlasTexture" id=15]
+atlas = ExtResource( 21 )
+region = Rect2( 1152, 0, 192, 192 )
+
+[sub_resource type="AtlasTexture" id=16]
+atlas = ExtResource( 21 )
+region = Rect2( 1344, 0, 192, 192 )
+
+[sub_resource type="SpriteFrames" id=17]
+animations = [ {
+"frames": [ SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ), SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 16 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
 
 [node name="WorldMapScreen" type="ColorRect"]
 margin_right = 320.0
@@ -192,81 +237,77 @@ position = Vector2( 154, 63.1476 )
 rotation = 1.5708
 scale = Vector2( 0.105515, 0.162135 )
 z_index = 1
-frame = 0
+frame = 2
 
 [node name="SmokeStackEffectOne2" parent="YSort" instance=ExtResource( 7 )]
 position = Vector2( 160.708, 62.6218 )
 rotation = 1.5708
 scale = Vector2( 0.0979507, 0.0814104 )
 z_index = 1
-frame = 2
 
 [node name="SandDustEffectOne" parent="YSort" instance=ExtResource( 8 )]
 position = Vector2( 118.071, 91 )
 scale = Vector2( 0.275267, 0.321116 )
-frame = 1
+frame = 0
 
 [node name="SandDustEffectOne3" parent="YSort" instance=ExtResource( 8 )]
 position = Vector2( 130, 88 )
 scale = Vector2( 0.176063, 0.252752 )
-frame = 1
+frame = 0
 
 [node name="SandDustEffectOne4" parent="YSort" instance=ExtResource( 8 )]
 position = Vector2( 129, 100 )
-frame = 0
+frame = 3
 
 [node name="SandDustEffectOne5" parent="YSort" instance=ExtResource( 8 )]
 position = Vector2( 124, 103 )
 scale = Vector2( 0.172111, 0.268454 )
-frame = 3
 
 [node name="SandDustEffectOne6" parent="YSort" instance=ExtResource( 8 )]
 position = Vector2( 110, 79 )
 scale = Vector2( 0.207118, 0.365592 )
-frame = 3
 
 [node name="SandDustEffectOne2" parent="YSort" instance=ExtResource( 8 )]
 position = Vector2( 124, 75 )
 scale = Vector2( 0.170904, 0.293682 )
-frame = 0
+frame = 3
 
 [node name="SandDustEffectOne7" parent="YSort" instance=ExtResource( 8 )]
 position = Vector2( 115, 66 )
-frame = 0
+frame = 3
 
 [node name="MapClouds" parent="YSort" instance=ExtResource( 9 )]
 position = Vector2( 173, 150 )
+frame = 2
 
 [node name="MapClouds2" parent="YSort" instance=ExtResource( 9 )]
 position = Vector2( 171, 151 )
-frame = 1
 
 [node name="MapClouds4" parent="YSort" instance=ExtResource( 9 )]
 position = Vector2( 160, 121 )
+frame = 2
 
 [node name="MapClouds5" parent="YSort" instance=ExtResource( 9 )]
 position = Vector2( 169, 116 )
+frame = 2
 
 [node name="MapClouds3" parent="YSort" instance=ExtResource( 9 )]
 position = Vector2( 169, 156 )
-frame = 1
 
 [node name="SnowFallOne" parent="YSort" instance=ExtResource( 13 )]
 position = Vector2( 164.75, 38 )
 scale = Vector2( 0.695, 0.42 )
 z_index = 2
 animation = "New Anim"
-frame = 64
+frame = 19
 
 [node name="SwarmOne" parent="YSort" instance=ExtResource( 15 )]
 position = Vector2( 180, 97 )
 scale = Vector2( 0.38125, 0.38125 )
-frame = 0
 
 [node name="SwarmOne2" parent="YSort" instance=ExtResource( 15 )]
 position = Vector2( 182, 95 )
 scale = Vector2( 0.38125, 0.38125 )
-frame = 0
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 106, 158 )
@@ -274,10 +315,11 @@ scale = Vector2( 1.02222, 1.08 )
 texture = ExtResource( 14 )
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
-margin_left = 84.0
-margin_top = 152.0
-margin_right = 141.0
-margin_bottom = 175.0
+margin_left = 85.0
+margin_top = 153.0
+margin_right = 142.0
+margin_bottom = 176.0
+rect_scale = Vector2( 1.2, 1.2 )
 custom_fonts/normal_font = SubResource( 1 )
 bbcode_text = "Forest"
 text = "Forest"
@@ -294,10 +336,11 @@ stream = ExtResource( 12 )
 one_shot = true
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="."]
-margin_left = 84.0
-margin_top = 147.0
-margin_right = 127.0
-margin_bottom = 160.0
+margin_left = 85.0
+margin_top = 148.0
+margin_right = 131.0
+margin_bottom = 163.0
+rect_scale = Vector2( 0.8, 0.8 )
 custom_fonts/normal_font = SubResource( 2 )
 text = "The"
 
@@ -308,73 +351,173 @@ pitch_scale = 0.7
 
 [node name="Tween" type="Tween" parent="."]
 
+[node name="Panel" type="Panel" parent="."]
+visible = false
+margin_left = 9.0
+margin_top = 8.0
+margin_right = 59.0
+margin_bottom = 68.0
+
 [node name="PlayerSprite" type="Sprite" parent="."]
-position = Vector2( 13, 30 )
-scale = Vector2( 0.7, 0.7 )
+position = Vector2( 9, 170 )
+scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 17 )
 
 [node name="LevelText" type="RichTextLabel" parent="."]
-margin_left = 25.0
-margin_top = 26.0
-margin_right = 97.0
-margin_bottom = 66.0
-rect_scale = Vector2( 0.7, 0.7 )
+margin_left = 18.0
+margin_top = 170.0
+margin_right = 90.0
+margin_bottom = 210.0
+rect_scale = Vector2( 0.45, 0.45 )
 custom_fonts/normal_font = SubResource( 3 )
 text = "Level 1"
 
 [node name="CoinSprite" type="Sprite" parent="."]
-position = Vector2( 13, 61 )
-scale = Vector2( 0.7, 0.7 )
+visible = false
+position = Vector2( 16, 31 )
+scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 18 )
 
 [node name="CoinText" type="RichTextLabel" parent="."]
-margin_left = 25.0
-margin_top = 56.0
-margin_right = 97.0
-margin_bottom = 96.0
-rect_scale = Vector2( 0.7, 0.7 )
+visible = false
+margin_left = 26.0
+margin_top = 28.0
+margin_right = 98.0
+margin_bottom = 68.0
+rect_scale = Vector2( 0.5, 0.5 )
 custom_fonts/normal_font = SubResource( 3 )
 text = "X 100"
 
 [node name="XpAnim" type="AnimatedSprite" parent="."]
-position = Vector2( 13, 90 )
-scale = Vector2( 0.6, 0.6 )
+visible = false
+position = Vector2( 16, 45 )
+scale = Vector2( 0.4, 0.4 )
 frames = SubResource( 7 )
+frame = 1
 playing = true
 
 [node name="XpText" type="RichTextLabel" parent="."]
-margin_left = 25.0
-margin_top = 86.0
-margin_right = 97.0
-margin_bottom = 126.0
-rect_scale = Vector2( 0.7, 0.7 )
+visible = false
+margin_left = 26.0
+margin_top = 41.0
+margin_right = 98.0
+margin_bottom = 81.0
+rect_scale = Vector2( 0.5, 0.5 )
 custom_fonts/normal_font = SubResource( 3 )
 text = "X 100"
 
 [node name="AmmoSprite" type="Sprite" parent="."]
-position = Vector2( 13, 120 )
-scale = Vector2( 0.5, 0.5 )
+visible = false
+position = Vector2( 16, 59 )
+scale = Vector2( 0.35, 0.35 )
 texture = ExtResource( 20 )
 
 [node name="AmmoText" type="RichTextLabel" parent="."]
-margin_left = 25.0
-margin_top = 115.0
-margin_right = 97.0
-margin_bottom = 155.0
-rect_scale = Vector2( 0.7, 0.7 )
+visible = false
+margin_left = 26.0
+margin_top = 55.0
+margin_right = 98.0
+margin_bottom = 95.0
+rect_scale = Vector2( 0.5, 0.5 )
 custom_fonts/normal_font = SubResource( 3 )
 text = "X 100"
 
+[node name="Panel2" type="Panel" parent="."]
+margin_left = 255.0
+margin_top = 141.0
+margin_right = 318.0
+margin_bottom = 178.0
+
 [node name="LevelLabel" type="RichTextLabel" parent="."]
-margin_left = 254.0
-margin_top = 26.0
-margin_right = 359.0
-margin_bottom = 43.0
+visible = false
+margin_left = 252.7
+margin_top = 58.0
+margin_right = 357.7
+margin_bottom = 75.0
 rect_scale = Vector2( 0.6, 0.6 )
 custom_fonts/normal_font = SubResource( 8 )
 bbcode_enabled = true
 bbcode_text = "[center]The Forest[/center]"
 text = "The Forest"
+
+[node name="AnmlText" type="RichTextLabel" parent="."]
+margin_left = 260.0
+margin_top = 145.8
+margin_right = 365.0
+margin_bottom = 162.8
+rect_scale = Vector2( 0.45, 0.45 )
+custom_fonts/normal_font = SubResource( 8 )
+bbcode_enabled = true
+bbcode_text = "[center]   Animals Freed[/center]"
+text = "   Animals Freed"
+
+[node name="AnmlSprite" type="Sprite" parent="."]
+position = Vector2( 263.4, 148.8 )
+scale = Vector2( 0.6, 0.6 )
+texture = ExtResource( 23 )
+
+[node name="AnmlFrame" type="Sprite" parent="."]
+position = Vector2( 311.45, 148.325 )
+scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 24 )
+
+[node name="AnmlCheck" type="Sprite" parent="."]
+position = Vector2( 311.45, 148.325 )
+scale = Vector2( 0.03, 0.03 )
+texture = ExtResource( 22 )
+
+[node name="BossText" type="RichTextLabel" parent="."]
+margin_left = 260.6
+margin_top = 157.0
+margin_right = 365.6
+margin_bottom = 174.0
+rect_scale = Vector2( 0.45, 0.45 )
+custom_fonts/normal_font = SubResource( 8 )
+bbcode_enabled = true
+bbcode_text = "[center]  Boss Defeated[/center]"
+text = "  Boss Defeated"
+
+[node name="BossSprite" type="Sprite" parent="."]
+position = Vector2( 262, 159 )
+scale = Vector2( 0.35, 0.35 )
+texture = ExtResource( 25 )
+
+[node name="BossFrame" type="Sprite" parent="."]
+position = Vector2( 311.45, 159.125 )
+scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 24 )
+
+[node name="BossCheck" type="Sprite" parent="."]
+position = Vector2( 311.45, 159.125 )
+scale = Vector2( 0.03, 0.03 )
+texture = ExtResource( 22 )
+
+[node name="DrillText" type="RichTextLabel" parent="."]
+margin_left = 260.0
+margin_top = 168.0
+margin_right = 383.0
+margin_bottom = 185.0
+rect_scale = Vector2( 0.45, 0.45 )
+custom_fonts/normal_font = SubResource( 8 )
+bbcode_enabled = true
+bbcode_text = "[center]Drill Toppled[/center]"
+text = "Drill Toppled"
+
+[node name="DrillSprite" type="AnimatedSprite" parent="."]
+position = Vector2( 263, 171.5 )
+scale = Vector2( 0.12, 0.12 )
+frames = SubResource( 17 )
+playing = true
+
+[node name="DrillFrame" type="Sprite" parent="."]
+position = Vector2( 311.525, 170.525 )
+scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 24 )
+
+[node name="DrillCheck" type="Sprite" parent="."]
+position = Vector2( 311.525, 170.525 )
+scale = Vector2( 0.03, 0.03 )
+texture = ExtResource( 22 )
 
 [connection signal="focus_entered" from="ForestButton" to="." method="_on_ForestButton_focus_entered"]
 [connection signal="pressed" from="ForestButton" to="." method="_on_ForestButton_pressed"]
