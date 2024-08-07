@@ -6,6 +6,7 @@ extends KinematicBody2D
 # var b = "text"
 var velocity = Vector2.ZERO
 onready var timer = $Timer
+onready var zagTimer = $ZagTimer
 
 var zag = false
 
@@ -15,6 +16,7 @@ export var MAX_SPEED = 50
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	timer.start()
+	zagTimer.start()
 
 
 
