@@ -44,6 +44,7 @@ height = 0.0
 collision_layer = 0
 collision_mask = 0
 script = ExtResource( 1 )
+MAX_SPEED = 70
 
 [node name="ShadowSprite" type="Sprite" parent="."]
 position = Vector2( 2, 9.33333 )

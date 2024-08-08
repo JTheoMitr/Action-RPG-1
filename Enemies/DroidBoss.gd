@@ -10,6 +10,8 @@ const LaserThree = preload("res://Enemies/BossLaserBottomRightStraight.tscn")
 const LaserFour = preload("res://Enemies/BossLaserTopLeftStraight.tscn")
 const LaserFive = preload("res://Enemies/BossLaserRightStraight.tscn")
 const LaserSix = preload("res://Enemies/BossLaserLeftStraight.tscn")
+const LaserZagR = preload("res://Enemies/BossLaserRightZag.tscn")
+const LaserZagL = preload("res://Enemies/BossLaserLeftZag.tscn")
 
 const BossLaserSound = preload("res://Music and Sounds/BossLaserSound.tscn")
 
@@ -299,9 +301,17 @@ func _on_Timer4_timeout():
 	get_parent().call_deferred("add_child", laserFive)
 	laserFive.global_position = hitbox.global_position
 	
+	var laserZagR = LaserZagR.instance()
+	get_parent().call_deferred("add_child", laserZagR)
+	laserZagR.global_position = hitbox.global_position
+	
 	var laserSix = LaserSix.instance()
 	get_parent().call_deferred("add_child", laserSix)
 	laserSix.global_position = hitbox.global_position
+	
+	var laserZagL = LaserZagL.instance()
+	get_parent().call_deferred("add_child", laserZagL)
+	laserZagL.global_position = hitbox.global_position
 
 
 func _on_Timer5_timeout():

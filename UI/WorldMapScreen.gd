@@ -42,6 +42,7 @@ func _ready():
 	mapMusic.play(0.0)
 	selectSound.volume_db = -60
 	timer.start(0.0)
+	drillCheck.hide() # add dynamic once drill controls are added for destruction
 	SaveFile.load_data()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -51,7 +52,7 @@ func _process(delta):
 	coinText.text = "x " + str(save_file.player_coins)
 	xpText.text = "x " + str(save_file.player_xp)
 	ammoText.text = "x " + str(save_file.player_ammo)
-	drillCheck.hide() # add dynamic once drill controls are added for destruction
+	
 	
 	if forestButton.has_focus():
 		wolfIcon.position.x = 191
@@ -73,6 +74,9 @@ func _process(delta):
 		levelPreText.text = "Wylde"
 		levelText.text = "Caverns"
 		levelLabel.bbcode_text = "[center]Wylde Caverns"
+		bossCheck.hide() # placeholder
+		anmlCheck.hide() # placeholder
+		
 	if marshButton.has_focus():
 		wolfIcon.position.x = 183
 		wolfIcon.position.y = 112
