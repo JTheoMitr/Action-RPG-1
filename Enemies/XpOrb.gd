@@ -100,3 +100,5 @@ func _on_Area2D_area_entered(area):
 	var ting = ExpSound.instance()
 	get_parent().add_child(ting)
 	self.call_deferred("queue_free")	
+	if stats.resetValue == true:
+		stats.resetValue = false

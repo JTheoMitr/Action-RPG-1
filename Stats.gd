@@ -94,6 +94,8 @@ signal max_bluepops_changed(value)
 signal ammo_changed(value)
 signal max_ammo_changed(value)
 
+var resetValue = false
+
 func set_max_health(value):
 	max_health = value
 	if save_file != null:
@@ -190,7 +192,6 @@ func set_xp(value):
 		save_file.player_xpCap = holdCap
 		# update attributes here?
 		# auto-save here?
-		SaveFile.save_data()
 		
 
 func set_level(value):
@@ -268,6 +269,7 @@ func _ready():
 	self.overcharge = save_file.overcharge_status
 	
 func reset():
+	resetValue = true
 	SaveFile.load_data()
 	#print_debug(save_file)
 	self.health = max_health

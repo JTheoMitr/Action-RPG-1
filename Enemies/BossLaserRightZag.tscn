@@ -57,6 +57,7 @@ position = Vector2( 1.66282, 3.26625 )
 scale = Vector2( 0.444677, 0.455625 )
 frames = SubResource( 7 )
 animation = "walk"
+frame = 1
 playing = true
 offset = Vector2( 1, -10 )
 
@@ -87,6 +88,7 @@ visible = false
 wait_time = 5.0
 
 [node name="ZagTimer" type="Timer" parent="."]
+wait_time = 0.5
 
 [connection signal="no_health" from="Stats" to="." method="_on_Stats_no_health"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

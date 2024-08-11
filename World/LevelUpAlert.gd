@@ -9,7 +9,7 @@ onready var timer = $Timer
 
 
 func show_level_up_alert():
-	if stats.level >= 2:
+	if stats.level >= 2 && stats.resetValue == false :
 		print_debug(stats.level)
 		popup()
 		var lvlSound = LevelUpSound.instance()
