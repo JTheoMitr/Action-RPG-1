@@ -87,11 +87,11 @@ func _process(_delta):
 		cellKeyText.text = "- Find 3 Cell Keys"
 		cellCheck.show()
 		
-	if worldStats.freed == 1:
+	if stats.forest_freed == 1:
 		animalsText.text = "- Free Animals (1/3)"
-	elif worldStats.freed== 2:
+	elif stats.forest_freed == 2:
 		animalsText.text = "- Free Animals (2/3)"
-	elif worldStats.freed == 3:
+	elif stats.forest_freed == 3:
 		animalsText.text = "- Free Animals"
 		cellCheckTwo.show()
 		

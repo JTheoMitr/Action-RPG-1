@@ -12,6 +12,7 @@ export(int) var max_redpops = 10 setget set_max_redpops
 export(int) var max_bluepops = 10 setget set_max_bluepops
 
 export(int) var max_ammo = 99 setget set_max_ammo
+export(int) var max_forest_freed = 3 setget set_max_forest_freed
 
 
 var keys = max_keys setget set_keys
@@ -25,6 +26,7 @@ var level = max_level setget set_level
 var redpops = max_redpops setget set_redpops
 var bluepops = max_bluepops setget set_bluepops
 var ammo = max_ammo setget set_ammo
+var forest_freed = max_forest_freed setget set_forest_freed
 
 var overcharge = false
 # controls player's ability to use special one
@@ -138,6 +140,11 @@ func set_max_ammo(value):
 	self.ammo = min(ammo, max_ammo)
 	emit_signal("max_ammo_changed", max_ammo)
 	
+func set_max_forest_freed(value):
+	max_forest_freed = value
+	self.forest_freed = min(forest_freed, max_forest_freed)
+	#emit_signal("max_ffreed_changed", max_forest_freed)
+	
 func set_max_coins(value):
 	max_coins = value
 	self.coins = min(coins, max_coins)
@@ -216,7 +223,13 @@ func set_ammo(value):
 	emit_signal("ammo_changed", ammo)
 	if ammo == 0:
 		emit_signal("no_ammo")
-		
+
+func set_forest_freed(value):
+	forest_freed = value
+	save_file.worldstats_freed = value
+	#emit_signal("ffreed_changed", forest_freed)
+	
+
 func set_coins(value):
 	coins = value
 	save_file.player_coins = value
@@ -267,6 +280,7 @@ func _ready():
 	self.xpCap = save_file.player_xpCap
 	#self.overcharge = false
 	self.overcharge = save_file.overcharge_status
+	self.forest_freed = save_file.worldstats_freed
 	
 func reset():
 	resetValue = true
@@ -298,6 +312,7 @@ func reset():
 	self.xpCap = save_file.player_xpCap
 	#self.overcharge = false
 	self.overcharge = save_file.overcharge_status
+	self.forest_freed = save_file.worldstats_freed
 
 
 

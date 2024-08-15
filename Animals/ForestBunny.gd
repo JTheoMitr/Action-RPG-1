@@ -5,6 +5,7 @@ const BearVaporEffect = preload("res://Effects/EnemyDeathEffect.tscn")
 onready var worldStats = WorldStats
 var bearVapor = BearVaporEffect.instance()
 
+onready var stats = PlayerStats
 onready var save_data = SaveFile.g_data
 
 func _ready():
@@ -39,8 +40,8 @@ func _on_Timer_timeout():
 	bunny.hide()
 	shadow.hide()
 	save_data.forest_bunny_saved = true
-	worldStats.freed += 1
-	PlayerStats.xp += 15
+	stats.forest_freed += 1
+	stats.xp += 15
 	SaveFile.save_data()
 	$Timer2.start()
 	

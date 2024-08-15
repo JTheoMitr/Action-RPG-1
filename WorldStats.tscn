@@ -4,4 +4,3 @@
 
 [node name="WorldStats" type="Node"]
 script = ExtResource( 1 )
-max_freed = 9
