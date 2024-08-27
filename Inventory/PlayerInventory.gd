@@ -17,7 +17,7 @@ onready var worldStats = WorldStats
 onready var controlsPanel = $ControlsPanel
 onready var timer = $Timer
 onready var levelText = $Control/CenterContainer/HBoxContainer/Panel/LevelText
-onready var forestMap = $ForestWorldMap
+onready var displayMap = $ForestWorldMap
 onready var map = $Map
 onready var mapButton = $MapButton
 onready var mapShadow = $MapShadow
@@ -34,11 +34,15 @@ var mapOn = false
 
 
 func _ready():
+	print_debug((get_parent().get_parent().get_parent()).to_string()) #try this
+	if (get_parent().get_parent().get_parent()).to_string().begins_with("World:"): #need to add rest of maps for other levels
+		displayMap = $ForestWorldMap
+	
 	cellCheck.hide()
 	cellCheckTwo.hide()
 	cellCheckThree.hide()
 	controlsPanel.hide()
-	forestMap.hide()
+	displayMap.hide()
 	
 func _process(_delta):
 	if Input.is_action_just_pressed("laser"):
@@ -59,13 +63,13 @@ func _process(_delta):
 	if (Input.is_action_just_pressed("charge_switch_f")) && self.visible:
 		if mapOn == false:
 			controlsPanel.hide()
-			forestMap.show()
+			displayMap.show()
 			mapOn = true
 			mapButton.hide()
 			mapShadow.hide()
 			map.hide()
 		else:
-			forestMap.hide()
+			displayMap.hide()
 			controlsPanel.hide()
 			mapOn = false
 			controlsOn = false
