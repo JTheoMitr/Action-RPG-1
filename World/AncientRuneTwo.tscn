@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Effects/rune_glint.png" type="Texture" id=1]
 [ext_resource path="res://World/EquipmentIconsC266.png" type="Texture" id=2]
-[ext_resource path="res://World/AncientRuneOne.gd" type="Script" id=3]
+[ext_resource path="res://World/AncientRuneTwo.gd" type="Script" id=3]
 [ext_resource path="res://UI/panel_Intro.png" type="Texture" id=4]
 [ext_resource path="res://Dialogue Headshots/main_player_face_still.png" type="Texture" id=5]
 [ext_resource path="res://fonts/PixelTandysoft-0rJG.ttf" type="DynamicFontData" id=6]
@@ -50,7 +50,7 @@ font_data = ExtResource( 6 )
 size = 10
 font_data = ExtResource( 6 )
 
-[node name="AncientRuneOne" type="Node2D"]
+[node name="AncientRuneTwo" type="Node2D"]
 scale = Vector2( 0.5, 0.5 )
 script = ExtResource( 3 )
 
@@ -60,7 +60,7 @@ texture = ExtResource( 2 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 scale = Vector2( 0.35, 0.4 )
 frames = SubResource( 7 )
-frame = 3
+frame = 5
 playing = true
 
 [node name="Area2D" type="Area2D" parent="."]

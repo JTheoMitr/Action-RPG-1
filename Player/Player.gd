@@ -204,7 +204,7 @@ func move_state(delta):
 	
 		if Input.is_action_just_pressed("attack"):
 			state = ATTACK
-			chargeTimer.start()
+			chargeTimer.start(0.0)
 			
 		if Input.is_action_just_released("attack"):
 			if chargeReady == true:

@@ -116,7 +116,6 @@ func set_max_level(value):
 	emit_signal("max_level_changed", max_level)
 	
 	
-	
 func set_max_keys(value):
 	max_keys = value
 	self.keys = min(keys, max_keys)
