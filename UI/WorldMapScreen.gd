@@ -22,6 +22,9 @@ onready var levelLabel = $LevelLabel
 onready var bossCheck = $BossCheck
 onready var anmlCheck = $AnmlCheck
 onready var drillCheck = $DrillCheck
+onready var bossSprite = $BossSprite
+onready var robotBossHead = preload("res://UI/military_incursion_bot_death_anim_red bust.png")
+onready var golemBossHead = preload("res://Enemies/golem_purple_attack headshot.png")
 export var transition_duration = 2.00
 export var transition_type = 1 # TRANS_SINE
 
@@ -58,6 +61,9 @@ func _process(delta):
 		wolfIcon.position.x = 191
 		wolfIcon.position.y = 159
 		levelPreText.text = "The"
+		bossSprite.texture = robotBossHead
+		bossSprite.scale.x = 0.35
+		bossSprite.scale.y = 0.35
 		levelText.text = "Forest"
 		levelLabel.bbcode_text = "[center]The Forest"
 		if save_file.world_one_boss_lives == false:
@@ -73,6 +79,9 @@ func _process(delta):
 		wolfIcon.position.y = 142
 		levelPreText.text = "Wylde"
 		levelText.text = "Caverns"
+		bossSprite.texture = golemBossHead
+		bossSprite.scale.x = 0.3
+		bossSprite.scale.y = 0.27
 		levelLabel.bbcode_text = "[center]Wylde Caverns"
 		bossCheck.hide() # placeholder
 		anmlCheck.hide() # placeholder
