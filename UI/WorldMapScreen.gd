@@ -74,6 +74,7 @@ func _process(delta):
 			anmlCheck.show()
 		else:
 			anmlCheck.hide()
+			
 	if caveButton.has_focus():
 		wolfIcon.position.x = 171
 		wolfIcon.position.y = 142
@@ -83,6 +84,15 @@ func _process(delta):
 		bossSprite.scale.x = 0.3
 		bossSprite.scale.y = 0.27
 		levelLabel.bbcode_text = "[center]Wylde Caverns"
+		if save_file.world_two_boss_lives == false:
+			bossCheck.show()
+		else:
+			bossCheck.hide()
+		if (save_file.cave_deer_saved == true) && (save_file.cave_fox_saved == true) && (save_file.cave_wolf_saved == true):
+			anmlCheck.show()
+		else:
+			anmlCheck.hide()
+		
 		bossCheck.hide() # placeholder
 		anmlCheck.hide() # placeholder
 		

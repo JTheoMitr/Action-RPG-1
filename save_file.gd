@@ -27,9 +27,13 @@ var g_data = {"player_level": 1,
 			"forest_bear_saved": false,
 			"forest_bunny_saved": false,
 			"forest_deer_saved": false,
+			"cave_deer_saved": false,
+			"cave_fox_saved": false,
+			"cave_wolf_saved": false,
 			"world_one_boss_lives": true,
 			"boss_key_1_nabbed": false,
 			"world_two_boss_lives": true,
+			"boss_key_2_nabbed": true,
 			}
 
 func _ready():
@@ -74,9 +78,13 @@ func load_data():
 			"forest_bear_saved": false,
 			"forest_bunny_saved": false,
 			"forest_deer_saved": false,
+			"cave_deer_saved": false,
+			"cave_fox_saved": false,
+			"cave_wolf_saved": false,
 			"world_one_boss_lives": true,
 			"boss_key_1_nabbed": false,
 			"world_two_boss_lives": true,
+			"boss_key_2_nabbed": true,
 		}
 		save_data()
 	file.open(SAVE_FILE, File.READ)
