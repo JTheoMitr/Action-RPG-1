@@ -33,7 +33,7 @@ func _on_Area2D_area_entered(area):
 	if stats.boss_keys == 1 && stats.forest_freed == 3 && stats.keys_collected == 3: #check this for exit issues, change WorldStats to an onready var
 		create_dust_effect()
 		stats.boss_keys -= 1
-		worldStats.freed -= 3
+		stats.forest_freed -= 3
 		stats.keys_collected -= 3
 		SaveFile.save_data()
 		var creakSound = DoorCreak.instance()

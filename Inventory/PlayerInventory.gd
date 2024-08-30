@@ -91,13 +91,15 @@ func _process(_delta):
 		cellKeyText.text = "- Find 3 Cell Keys"
 		cellCheck.show()
 		
-	if stats.forest_freed == 1:
-		animalsText.text = "- Free Animals (1/3)"
-	elif stats.forest_freed == 2:
-		animalsText.text = "- Free Animals (2/3)"
-	elif stats.forest_freed == 3:
-		animalsText.text = "- Free Animals"
-		cellCheckTwo.show()
+		#add a get_parent() check here to determine which 'freed' animals we're checking against (forest, cave, etc)
+	if displayMap == $ForestWorldMap:
+		if stats.forest_freed == 1:
+			animalsText.text = "- Free Animals (1/3)"
+		elif stats.forest_freed == 2:
+			animalsText.text = "- Free Animals (2/3)"
+		elif stats.forest_freed == 3:
+			animalsText.text = "- Free Animals"
+			cellCheckTwo.show()
 		
 	if stats.boss_keys >= 1:
 		cellCheckThree.show()
