@@ -6,6 +6,7 @@ onready var worldStats = WorldStats
 var bearVapor = BearVaporEffect.instance()
 
 onready var save_data = SaveFile.g_data
+onready var stats = PlayerStats
 
 func _ready():
 	if save_data.forest_bear_saved == true:
@@ -37,7 +38,7 @@ func _on_Timer_timeout():
 	bear.hide()
 	shadow.hide()
 	save_data.forest_bear_saved = true
-	worldStats.freed += 1
+	stats.forest_freed += 1
 	PlayerStats.xp += 15
 	SaveFile.save_data()
 	$Timer2.start()
