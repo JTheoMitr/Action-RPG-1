@@ -1,9 +1,14 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://World/master_key_red.png" type="Texture" id=1]
 [ext_resource path="res://DemoOverviewScreen.gd" type="Script" id=2]
 [ext_resource path="res://Animals/MiniDeer1 chill solo.png" type="Texture" id=3]
 [ext_resource path="res://World/cage_key_1.png" type="Texture" id=4]
+[ext_resource path="res://fonts/PixelTandysoft-0rJG.ttf" type="DynamicFontData" id=5]
+
+[sub_resource type="DynamicFont" id=2]
+size = 10
+font_data = ExtResource( 5 )
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.184314, 0.0431373, 0.0196078, 0.827451 )
@@ -24,11 +29,12 @@ anchor_bottom = 1.0
 color = Color( 0, 0, 0, 1 )
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
-margin_left = 15.0
-margin_top = 15.0
-margin_right = 334.0
-margin_bottom = 181.0
+margin_left = 16.0
+margin_top = 17.0
+margin_right = 335.0
+margin_bottom = 183.0
 rect_scale = Vector2( 0.9, 0.9 )
+custom_fonts/normal_font = SubResource( 2 )
 bbcode_enabled = true
 bbcode_text = "[center] To complete the demo:
 
@@ -79,6 +85,7 @@ custom_styles/normal = SubResource( 1 )
 text = "Return"
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="."]
+visible = false
 margin_left = 269.0
 margin_top = 167.0
 margin_right = 433.0

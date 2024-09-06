@@ -60,7 +60,7 @@ texture = ExtResource( 2 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 scale = Vector2( 0.35, 0.4 )
 frames = SubResource( 7 )
-frame = 7
+frame = 5
 playing = true
 
 [node name="Area2D" type="Area2D" parent="."]

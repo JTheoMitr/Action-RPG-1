@@ -1,4 +1,4 @@
-[gd_scene load_steps=211 format=2]
+[gd_scene load_steps=210 format=2]
 
 [ext_resource path="res://World/Bush.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=2]
@@ -105,7 +105,6 @@
 [ext_resource path="res://World/BlackHole.tscn" type="PackedScene" id=103]
 [ext_resource path="res://World/Portal_Door.tscn" type="PackedScene" id=104]
 [ext_resource path="res://World/TeslaCoilSwitch.tscn" type="PackedScene" id=105]
-[ext_resource path="res://World/SpinningSawTrap.tscn" type="PackedScene" id=106]
 [ext_resource path="res://World/SaveChamber.tscn" type="PackedScene" id=107]
 [ext_resource path="res://World/Key1-2.tscn" type="PackedScene" id=108]
 [ext_resource path="res://World/CellDoor1-3.tscn" type="PackedScene" id=109]
@@ -6980,7 +6979,7 @@ position = Vector2( -16, -272 )
 [node name="ScreenCrackleOne" parent="YSort/OilCoDoors" instance=ExtResource( 57 )]
 position = Vector2( -17, -270.5 )
 scale = Vector2( 0.094, 0.0833333 )
-frame = 2
+frame = 1
 
 [node name="Flowers" type="YSort" parent="YSort"]
 
@@ -7198,11 +7197,9 @@ position = Vector2( -305, 346 )
 
 [node name="Bonfire" parent="YSort/Fires" instance=ExtResource( 82 )]
 position = Vector2( 976, -240 )
-frame = 2
 
 [node name="Bonfire2" parent="YSort/Fires" instance=ExtResource( 82 )]
 position = Vector2( 976, -208 )
-frame = 2
 
 [node name="Runes" type="YSort" parent="YSort"]
 
@@ -7235,7 +7232,7 @@ frame = 0
 [node name="Bird3" parent="YSort/Sky" instance=ExtResource( 91 )]
 position = Vector2( -263, -31 )
 animation = "eat"
-frame = 0
+frame = 3
 flip_h = true
 
 [node name="Bird2" parent="YSort/Sky" instance=ExtResource( 91 )]
@@ -7290,13 +7287,13 @@ frame = 1
 [node name="Bird8" parent="YSort/Sky" instance=ExtResource( 93 )]
 position = Vector2( 171, -277 )
 animation = "eat"
-frame = 5
+frame = 3
 flip_h = true
 
 [node name="Bird9" parent="YSort/Sky" instance=ExtResource( 93 )]
 position = Vector2( 746, -216 )
 animation = "eat"
-frame = 5
+frame = 3
 
 [node name="FlyingBirdOrange" parent="YSort/Sky" instance=ExtResource( 94 )]
 position = Vector2( 2003, -609 )
@@ -7394,18 +7391,6 @@ scale = Vector2( 1.385, 1.62188 )
 frame = 0
 
 [node name="Traps" type="YSort" parent="YSort"]
-
-[node name="SpinningSawTrap" parent="YSort/Traps" instance=ExtResource( 106 )]
-position = Vector2( -768, -152 )
-
-[node name="SpinningSawTrap4" parent="YSort/Traps" instance=ExtResource( 106 )]
-position = Vector2( -705, -182 )
-
-[node name="SpinningSawTrap2" parent="YSort/Traps" instance=ExtResource( 106 )]
-position = Vector2( -837, -181 )
-
-[node name="SpinningSawTrap3" parent="YSort/Traps" instance=ExtResource( 106 )]
-position = Vector2( -896, -152 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
