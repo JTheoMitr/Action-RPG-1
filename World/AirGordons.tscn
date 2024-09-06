@@ -1,0 +1,112 @@
+[gd_scene load_steps=17 format=2]
+
+[ext_resource path="res://Effects/rune_glint.png" type="Texture" id=1]
+[ext_resource path="res://World/Jordan 1 Travis Scott pink copy.png" type="Texture" id=2]
+[ext_resource path="res://Music and Sounds/Drumloop_Hip-Hop_LoFI_Beat_Vinyl_90bpm_1.wav" type="AudioStream" id=3]
+[ext_resource path="res://UI/panel_Intro.png" type="Texture" id=4]
+[ext_resource path="res://World/AirGordons.gd" type="Script" id=5]
+[ext_resource path="res://fonts/PixelTandysoft-0rJG.ttf" type="DynamicFontData" id=6]
+[ext_resource path="res://World/gdb-playstation-2 cross flat.png" type="Texture" id=7]
+
+[sub_resource type="AtlasTexture" id=1]
+atlas = ExtResource( 1 )
+region = Rect2( 0, 700, 100, 100 )
+
+[sub_resource type="AtlasTexture" id=2]
+atlas = ExtResource( 1 )
+region = Rect2( 100, 700, 100, 100 )
+
+[sub_resource type="AtlasTexture" id=3]
+atlas = ExtResource( 1 )
+region = Rect2( 200, 700, 100, 100 )
+
+[sub_resource type="AtlasTexture" id=4]
+atlas = ExtResource( 1 )
+region = Rect2( 300, 700, 100, 100 )
+
+[sub_resource type="AtlasTexture" id=5]
+atlas = ExtResource( 1 )
+region = Rect2( 400, 700, 100, 100 )
+
+[sub_resource type="AtlasTexture" id=6]
+atlas = ExtResource( 1 )
+region = Rect2( 500, 700, 100, 100 )
+
+[sub_resource type="SpriteFrames" id=7]
+animations = [ {
+"frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 5 ), SubResource( 4 ), SubResource( 3 ), SubResource( 2 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="CircleShape2D" id=8]
+
+[sub_resource type="DynamicFont" id=9]
+size = 10
+font_data = ExtResource( 6 )
+
+[node name="AirGordons" type="Node2D"]
+scale = Vector2( 0.5, 0.5 )
+script = ExtResource( 5 )
+
+[node name="Sprite" type="Sprite" parent="."]
+scale = Vector2( 0.6, 0.6 )
+texture = ExtResource( 2 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+scale = Vector2( 0.35, 0.4 )
+frames = SubResource( 7 )
+frame = 2
+playing = true
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource( 8 )
+
+[node name="PopupDialog" type="PopupDialog" parent="."]
+visible = true
+rect_scale = Vector2( 0.6, 0.6 )
+
+[node name="Sprite" type="Sprite" parent="PopupDialog"]
+position = Vector2( 135.5, 34.5 )
+scale = Vector2( 0.668889, 0.526667 )
+texture = ExtResource( 4 )
+
+[node name="Sprite2" type="Sprite" parent="PopupDialog"]
+position = Vector2( 37, 35 )
+scale = Vector2( 1.25, 1.25 )
+texture = ExtResource( 2 )
+
+[node name="RichTextLabel" type="RichTextLabel" parent="PopupDialog"]
+margin_left = 66.6667
+margin_top = 16.6667
+margin_right = 337.667
+margin_bottom = 68.6667
+rect_scale = Vector2( 0.8, 0.8 )
+custom_fonts/normal_font = SubResource( 9 )
+bbcode_text = "You found a sick pair of AIR Gordons...
+And in your size!!
+Hold    For a Temporary speed boost"
+text = "You found a sick pair of AIR Gordons...
+And in your size!!
+Hold    For a Temporary speed boost"
+
+[node name="Sprite3" type="Sprite" parent="PopupDialog"]
+position = Vector2( 96.6666, 46.6667 )
+scale = Vector2( 0.75, 0.75 )
+texture = ExtResource( 7 )
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+volume_db = 0.75
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_Area2D_area_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
