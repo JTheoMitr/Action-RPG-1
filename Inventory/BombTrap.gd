@@ -9,6 +9,7 @@ onready var timer = $Timer
 onready var beep = $Beep
 onready var blink = $Blink
 onready var damageTimer = $DamageTimer
+onready var prxmtyArea = $CollisionShape2DC4
 
 
 # Called when the node enters the scene tree for the first time.
@@ -34,6 +35,7 @@ func _on_Timer_timeout():
 	beep.stop()
 	blink.hide()
 	$BlinkTimer.stop()
+	prxmtyArea.disabled = true
 	
 
 

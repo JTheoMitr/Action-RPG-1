@@ -69,7 +69,7 @@ shape = SubResource( 8 )
 
 [node name="PopupDialog" type="PopupDialog" parent="."]
 visible = true
-rect_scale = Vector2( 0.6, 0.6 )
+rect_scale = Vector2( 0.75, 0.75 )
 
 [node name="Sprite" type="Sprite" parent="PopupDialog"]
 position = Vector2( 135.5, 34.5 )
@@ -96,12 +96,12 @@ And in your size!!
 Hold    For a Temporary speed boost"
 
 [node name="Sprite3" type="Sprite" parent="PopupDialog"]
-position = Vector2( 96.6666, 46.6667 )
+position = Vector2( 96.667, 45 )
 scale = Vector2( 0.75, 0.75 )
 texture = ExtResource( 7 )
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 5.0
+wait_time = 10.0
 one_shot = true
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]

@@ -218,6 +218,7 @@ func move_state(delta):
 				self.MAX_SPEED = 0
 				var sword = animationPlayer.play("SwordSpecial")
 				chargeReady = false
+				chargeTimer.stop()
 			else:
 				chargeTimer.stop()
 				playerSpriteSpecials.hide()
