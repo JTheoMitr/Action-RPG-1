@@ -33,10 +33,13 @@ var controlsOn = false
 var mapOn = false
 
 
+
 func _ready():
 	print_debug((get_parent().get_parent().get_parent()).to_string()) #checking for level
-	if (get_parent().get_parent().get_parent()).to_string().begins_with("World:"): #need to add rest of maps for other levels
+	if (get_parent().get_parent().get_parent()).to_string().begins_with("World:") && stats.forestMapFound: #need to add rest of maps for other levels and also check whether map was picked up for that area
 		displayMap = $ForestWorldMap
+	else:
+		displayMap = $DefaultMap
 	
 	cellCheck.hide()
 	cellCheckTwo.hide()

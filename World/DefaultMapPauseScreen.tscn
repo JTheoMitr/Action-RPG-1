@@ -1,0 +1,36 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://UI/UI_Flat_Button_Medium_Lock_02a1 copy.png" type="Texture" id=2]
+[ext_resource path="res://fonts/PixelTandysoft-0rJG.ttf" type="DynamicFontData" id=4]
+
+[sub_resource type="DynamicFont" id=1]
+size = 10
+font_data = ExtResource( 4 )
+
+[node name="DefaultMap" type="Sprite"]
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="."]
+visible = false
+modulate = Color( 0.937255, 0.921569, 0.827451, 1 )
+margin_left = -425.0
+margin_top = 302.0
+margin_right = -346.0
+margin_bottom = 316.0
+rect_scale = Vector2( 2.5, 2.5 )
+custom_fonts/normal_font = SubResource( 1 )
+text = "Entrance"
+
+[node name="Sprite2" type="Sprite" parent="."]
+self_modulate = Color( 0.47451, 0.380392, 0.380392, 1 )
+scale = Vector2( 5.1, 4 )
+texture = ExtResource( 2 )
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+modulate = Color( 0.937255, 0.921569, 0.827451, 1 )
+margin_left = -115.0
+margin_top = -13.0
+margin_right = 39.0
+margin_bottom = 5.0
+rect_scale = Vector2( 1.5, 1.5 )
+custom_fonts/normal_font = SubResource( 1 )
+text = "No Map Found for this area"

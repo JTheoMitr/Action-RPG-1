@@ -51,9 +51,8 @@ var redCharge = false
 var rcEnabled = false
 #deflect ability on red projectiles
 
-#need to pick a button to toggle charges
 
-# add sundaes
+var forestMapFound = false
 
 onready var save_file = SaveFile.g_data
 
