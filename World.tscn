@@ -1,4 +1,4 @@
-[gd_scene load_steps=212 format=2]
+[gd_scene load_steps=214 format=2]
 
 [ext_resource path="res://World/Bush.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=2]
@@ -111,6 +111,8 @@
 [ext_resource path="res://World/CellDoor1-3.tscn" type="PackedScene" id=109]
 [ext_resource path="res://World/CellDoor1-2.tscn" type="PackedScene" id=110]
 [ext_resource path="res://World/SpearTrap.tscn" type="PackedScene" id=111]
+[ext_resource path="res://World/ForestMapPickup.tscn" type="PackedScene" id=112]
+[ext_resource path="res://World/MapAlert.tscn" type="PackedScene" id=113]
 
 [sub_resource type="ConvexPolygonShape2D" id=53]
 points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
@@ -1165,55 +1167,53 @@ z_index = 1
 
 [node name="SwarmOne" parent="Swarms" instance=ExtResource( 68 )]
 position = Vector2( -37, 442 )
-frame = 0
+frame = 6
 
 [node name="SwarmOne7" parent="Swarms" instance=ExtResource( 68 )]
 position = Vector2( -40, 444 )
 scale = Vector2( 0.475, 0.506251 )
+frame = 0
 
 [node name="SwarmOne11" parent="Swarms" instance=ExtResource( 68 )]
 position = Vector2( 455, 440 )
 scale = Vector2( 0.475, 0.506251 )
+frame = 0
 
 [node name="SwarmOne12" parent="Swarms" instance=ExtResource( 68 )]
 position = Vector2( 459, 441 )
 rotation = 1.309
 scale = Vector2( 0.3, 0.3 )
-frame = 1
+frame = 7
 
 [node name="SwarmOne3" parent="Swarms" instance=ExtResource( 68 )]
 position = Vector2( -23, 30 )
-frame = 5
+frame = 3
 
 [node name="SwarmOne8" parent="Swarms" instance=ExtResource( 68 )]
 position = Vector2( -113, -264 )
-frame = 4
 
 [node name="SwarmOne9" parent="Swarms" instance=ExtResource( 68 )]
 position = Vector2( -115, -263 )
 scale = Vector2( 0.5, 0.4 )
-frame = 4
 
 [node name="SwarmOne4" parent="Swarms" instance=ExtResource( 68 )]
 position = Vector2( 465, -145 )
-frame = 4
 
 [node name="SwarmOne5" parent="Swarms" instance=ExtResource( 68 )]
 position = Vector2( 561, -1.00001 )
-frame = 4
 
 [node name="SwarmOne6" parent="Swarms" instance=ExtResource( 68 )]
 position = Vector2( 684, -261 )
-frame = 4
 
 [node name="SwarmOne10" parent="Swarms" instance=ExtResource( 68 )]
 position = Vector2( 682, -260 )
 rotation = 1.0472
 scale = Vector2( 0.5, 0.5 )
+frame = 0
 
 [node name="SwarmOne2" parent="Swarms" instance=ExtResource( 68 )]
 position = Vector2( -78, 221 )
-frame = 0
+frame = 6
 
 [node name="WaterTileMap" type="TileMap" parent="."]
 tile_set = SubResource( 52 )
@@ -6345,6 +6345,9 @@ position = Vector2( -495, -288 )
 [node name="Key1-3" parent="YSort/Keys" instance=ExtResource( 45 )]
 position = Vector2( -305, 111 )
 
+[node name="ForestMapPickup" parent="YSort/Keys" instance=ExtResource( 112 )]
+position = Vector2( -344, 496 )
+
 [node name="MasterKey" type="YSort" parent="YSort"]
 
 [node name="MasterKeyOne" parent="YSort/MasterKey" instance=ExtResource( 54 )]
@@ -6978,7 +6981,7 @@ position = Vector2( -16, -272 )
 [node name="ScreenCrackleOne" parent="YSort/OilCoDoors" instance=ExtResource( 57 )]
 position = Vector2( -17, -270.5 )
 scale = Vector2( 0.094, 0.0833333 )
-frame = 4
+frame = 1
 
 [node name="Flowers" type="YSort" parent="YSort"]
 
@@ -7179,7 +7182,7 @@ position = Vector2( -135, 91 )
 [node name="OilDrill1" parent="YSort/OilBarrels" instance=ExtResource( 102 )]
 position = Vector2( -915, -258 )
 z_index = 1
-frame = 7
+frame = 5
 
 [node name="BlackHole" parent="YSort/OilBarrels" instance=ExtResource( 103 )]
 position = Vector2( -914, -228 )
@@ -7228,168 +7231,151 @@ position = Vector2( 568, -8 )
 [node name="Bird" parent="YSort/Sky" instance=ExtResource( 91 )]
 position = Vector2( 6, 252 )
 z_index = 1
-frame = 0
 
 [node name="Bird3" parent="YSort/Sky" instance=ExtResource( 91 )]
 position = Vector2( -263, -31 )
 animation = "eat"
+frame = 4
 flip_h = true
 
 [node name="Bird2" parent="YSort/Sky" instance=ExtResource( 91 )]
 position = Vector2( -240, 498 )
 z_index = 2
-frame = 0
 flip_h = true
 
 [node name="Bird5" parent="YSort/Sky" instance=ExtResource( 91 )]
 position = Vector2( 284, -36 )
 z_index = 1
-frame = 0
 flip_h = true
 
 [node name="Bird4" parent="YSort/Sky" instance=ExtResource( 91 )]
 position = Vector2( -515, 66 )
 z_index = 1
-frame = 0
 flip_h = true
 
 [node name="FlyingBird" parent="YSort/Sky" instance=ExtResource( 71 )]
 position = Vector2( 2691, -226 )
-frame = 5
+frame = 3
 
 [node name="FlyingBird2" parent="YSort/Sky" instance=ExtResource( 71 )]
 position = Vector2( 646, -790 )
-frame = 5
+frame = 3
 
 [node name="FlyingBird3" parent="YSort/Sky" instance=ExtResource( 71 )]
 position = Vector2( 319, -1106 )
-frame = 5
+frame = 3
 
 [node name="FlyingBird4" parent="YSort/Sky" instance=ExtResource( 71 )]
 position = Vector2( 1943, -277 )
-frame = 5
+frame = 3
 
 [node name="Bird6" parent="YSort/Sky" instance=ExtResource( 93 )]
 position = Vector2( -130, 69 )
-frame = 1
 flip_h = true
 
 [node name="Bird7" parent="YSort/Sky" instance=ExtResource( 93 )]
 position = Vector2( 45, -29 )
-frame = 1
 flip_h = true
 
 [node name="Bird10" parent="YSort/Sky" instance=ExtResource( 93 )]
 position = Vector2( 582, -265 )
 z_index = 2
-frame = 1
 
 [node name="Bird8" parent="YSort/Sky" instance=ExtResource( 93 )]
 position = Vector2( 171, -277 )
 animation = "eat"
-frame = 2
+frame = 1
 flip_h = true
 
 [node name="Bird9" parent="YSort/Sky" instance=ExtResource( 93 )]
 position = Vector2( 746, -216 )
 animation = "eat"
-frame = 2
+frame = 1
 
 [node name="FlyingBirdOrange" parent="YSort/Sky" instance=ExtResource( 94 )]
 position = Vector2( 2003, -609 )
-frame = 1
+frame = 7
 
 [node name="FlyingBirdOrange3" parent="YSort/Sky" instance=ExtResource( 94 )]
 position = Vector2( 2040, -924 )
-frame = 1
+frame = 7
 
 [node name="FlyingBirdOrange2" parent="YSort/Sky" instance=ExtResource( 94 )]
 position = Vector2( 1178, -745 )
-frame = 1
+frame = 7
 
 [node name="FlyingBirdStraight" parent="YSort/Sky" instance=ExtResource( 96 )]
 position = Vector2( 1537, -205 )
-frame = 5
+frame = 3
 
 [node name="FlyingBirdStraight2" parent="YSort/Sky" instance=ExtResource( 96 )]
 position = Vector2( 2980, -249 )
-frame = 5
+frame = 3
 
 [node name="FlyingBirdStraight4" parent="YSort/Sky" instance=ExtResource( 96 )]
 position = Vector2( 1196, 405 )
-frame = 4
+frame = 2
 
 [node name="FlyingBirdStraight3" parent="YSort/Sky" instance=ExtResource( 96 )]
 position = Vector2( 1821, -17 )
-frame = 5
+frame = 3
 
 [node name="FlyingBirdStraightOrange" parent="YSort/Sky" instance=ExtResource( 95 )]
 position = Vector2( 2351, 52 )
-frame = 5
+frame = 3
 
 [node name="FlyingBirdStraightOrange2" parent="YSort/Sky" instance=ExtResource( 95 )]
 position = Vector2( 3090, -690 )
-frame = 5
+frame = 3
 
 [node name="SkyCloud" parent="YSort/Sky" instance=ExtResource( 76 )]
 position = Vector2( -244, 113 )
-frame = 2
+frame = 1
 
 [node name="SkyCloud9" parent="YSort/Sky" instance=ExtResource( 76 )]
 position = Vector2( -32, -179 )
 scale = Vector2( 1.29286, 1.3 )
-frame = 2
+frame = 1
 
 [node name="SkyCloud10" parent="YSort/Sky" instance=ExtResource( 76 )]
 position = Vector2( 901, -281 )
-frame = 0
 
 [node name="SkyCloud11" parent="YSort/Sky" instance=ExtResource( 76 )]
 position = Vector2( 658, 131 )
-frame = 0
 
 [node name="SkyCloud12" parent="YSort/Sky" instance=ExtResource( 76 )]
 position = Vector2( 1045, -112 )
-frame = 0
 
 [node name="SkyCloud2" parent="YSort/Sky" instance=ExtResource( 76 )]
 position = Vector2( 92, 209 )
-frame = 0
 
 [node name="SkyCloud3" parent="YSort/Sky" instance=ExtResource( 76 )]
 position = Vector2( 129, 214 )
 scale = Vector2( 1.73, 1.86875 )
-frame = 0
 
 [node name="SkyCloud13" parent="YSort/Sky" instance=ExtResource( 76 )]
 position = Vector2( 671, 162 )
 scale = Vector2( 1.73, 1.86875 )
-frame = 0
 
 [node name="SkyCloud8" parent="YSort/Sky" instance=ExtResource( 76 )]
 position = Vector2( -2, -158 )
 scale = Vector2( 1.565, 1.62188 )
-frame = 0
 
 [node name="SkyCloud6" parent="YSort/Sky" instance=ExtResource( 76 )]
 position = Vector2( 153, 195 )
 scale = Vector2( 1.525, 1.62188 )
-frame = 0
 
 [node name="SkyCloud7" parent="YSort/Sky" instance=ExtResource( 76 )]
 position = Vector2( 374, 186 )
 scale = Vector2( 1.525, 1.62188 )
-frame = 0
 
 [node name="SkyCloud4" parent="YSort/Sky" instance=ExtResource( 76 )]
 position = Vector2( 78, 448 )
 scale = Vector2( 1.385, 1.62188 )
-frame = 0
 
 [node name="SkyCloud5" parent="YSort/Sky" instance=ExtResource( 76 )]
 position = Vector2( -267, 130 )
 scale = Vector2( 1.385, 1.62188 )
-frame = 0
 
 [node name="Traps" type="YSort" parent="YSort"]
 
@@ -7483,6 +7469,8 @@ margin_right = 87.0
 [node name="BossKeyAlert" parent="AlertCanvas" instance=ExtResource( 55 )]
 
 [node name="LevelUpAlert" parent="AlertCanvas" instance=ExtResource( 100 )]
+
+[node name="MapAlert" parent="AlertCanvas" instance=ExtResource( 113 )]
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 pause_mode = 2

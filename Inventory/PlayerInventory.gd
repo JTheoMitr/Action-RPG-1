@@ -34,9 +34,11 @@ var mapOn = false
 
 
 
+
 func _ready():
+	stats.connect("map_pickup", self, "swap_map")
 	print_debug((get_parent().get_parent().get_parent()).to_string()) #checking for level
-	if (get_parent().get_parent().get_parent()).to_string().begins_with("World:") && stats.forestMapFound: #need to add rest of maps for other levels and also check whether map was picked up for that area
+	if (get_parent().get_parent().get_parent()).to_string().begins_with("World:") && save_file.forestMapPickedUp: #need to add rest of maps for other levels and also check whether map was picked up for that area
 		displayMap = $ForestWorldMap
 	else:
 		displayMap = $DefaultMap
@@ -155,3 +157,10 @@ func _on_Button3_pressed():
 
 func _on_Timer_timeout():
 	get_tree().paused = false
+	
+
+func swap_map():
+	if (get_parent().get_parent().get_parent()).to_string().begins_with("World:") && stats.forestMapFound: #need to add rest of maps for other levels and also check whether map was picked up for that area
+		displayMap = $ForestWorldMap
+	else:
+		displayMap = $DefaultMap

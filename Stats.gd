@@ -73,6 +73,7 @@ signal green_charged
 signal red_charged
 signal purple_charged
 
+signal map_pickup
 signal key_pickup
 signal key_use
 
