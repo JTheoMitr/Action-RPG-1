@@ -37,6 +37,7 @@ func _on_Area2D_area_entered(area):
 	get_tree().current_scene.add_child(newSkill)
 	
 	
+	
 
 
 func _on_Timer_timeout():

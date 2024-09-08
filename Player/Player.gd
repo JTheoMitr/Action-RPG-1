@@ -205,6 +205,7 @@ func move_state(delta):
 		if Input.is_action_just_pressed("attack"):
 			state = ATTACK
 			chargeTimer.start(0.0)
+			chargeReady = false
 			
 		if Input.is_action_just_released("attack"):
 			if chargeReady == true:
@@ -217,8 +218,8 @@ func move_state(delta):
 				veLockity = true
 				self.MAX_SPEED = 0
 				var sword = animationPlayer.play("SwordSpecial")
-				chargeReady = false
 				chargeTimer.stop()
+				
 			else:
 				chargeTimer.stop()
 				playerSpriteSpecials.hide()
