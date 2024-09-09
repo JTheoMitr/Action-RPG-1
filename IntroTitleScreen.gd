@@ -13,6 +13,7 @@ onready var lightningTwo = $LightningStrikeOne2
 onready var chimeOne = $Button1Sound
 onready var chimeTwo = $Button2Sound
 onready var popup = $CanvasLayer/PopupDialog
+onready var popup2 = $CanvasLayer/PopupDialog2
 export var transition_duration = 2.00
 export var transition_type = 1 # TRANS_SINE
 
@@ -51,8 +52,8 @@ func _on_Button_pressed():
 
 
 func _on_Button2_pressed():
-	chimeTwo.play()
-	SceneTransitionLong.change_scene("res://DemoOverviewScreen.tscn")
+	
+	popup2.popup()
 
 
 func _on_LightningTimer_timeout():
@@ -89,3 +90,19 @@ func _on_PopButton_pressed():
 func _on_PopButton2_pressed():
 	SaveFile.clear_save_file()
 	popup.hide()
+
+
+func _on_ControlsButton_pressed():
+	chimeTwo.play()
+	SceneTransitionLong.change_scene("res://ControlsScreen.tscn")
+	popup2.hide()
+
+
+func _on_TutorialButton_pressed():
+	pass # Replace with function body.
+
+
+func _on_DemoButton_pressed():
+	chimeTwo.play()
+	SceneTransitionLong.change_scene("res://DemoOverviewScreen.tscn")
+	popup2.hide()
