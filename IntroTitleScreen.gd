@@ -99,7 +99,9 @@ func _on_ControlsButton_pressed():
 
 
 func _on_TutorialButton_pressed():
-	pass # Replace with function body.
+	chimeTwo.play()
+	SceneTransitionLong.change_scene("res://TutorialScreen.tscn")
+	popup2.hide()
 
 
 func _on_DemoButton_pressed():

@@ -183,21 +183,21 @@ visible = false
 position = Vector2( 163, 83.75 )
 scale = Vector2( 0.585, 1.025 )
 animation = "New Anim"
-frame = 69
+frame = 60
 
 [node name="SnowFallOne2" parent="." instance=ExtResource( 5 )]
 modulate = Color( 1, 1, 1, 0.305882 )
 position = Vector2( 83, 89.5 )
 scale = Vector2( 1.6125, 1.81 )
 animation = "New Anim"
-frame = 69
+frame = 60
 
 [node name="SnowFallOne3" parent="." instance=ExtResource( 5 )]
 modulate = Color( 1, 1, 1, 0.305882 )
 position = Vector2( 241, 90 )
 scale = Vector2( 1.6125, 1.82 )
 animation = "New Anim"
-frame = 68
+frame = 59
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 margin_left = 133.0
