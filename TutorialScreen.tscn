@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://UI/deflectnosoundtrimmed.webm" type="VideoStream" id=1]
 [ext_resource path="res://TutorialScreen.gd" type="Script" id=2]
@@ -15,6 +15,10 @@ corner_radius_top_right = 3
 corner_radius_bottom_right = 3
 corner_radius_bottom_left = 3
 
+[sub_resource type="DynamicFont" id=3]
+size = 10
+font_data = ExtResource( 5 )
+
 [node name="TutorialScreen" type="ColorRect"]
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -26,14 +30,16 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 color = Color( 0, 0, 0, 1 )
 
-[node name="RichTextLabel" type="RichTextLabel" parent="."]
-margin_left = 124.0
-margin_top = 154.0
-margin_right = 224.0
-margin_bottom = 183.0
+[node name="DescriptionText" type="RichTextLabel" parent="."]
+margin_left = 6.0
+margin_top = 144.0
+margin_right = 396.0
+margin_bottom = 187.0
 rect_scale = Vector2( 0.8, 0.8 )
 custom_fonts/normal_font = SubResource( 2 )
-text = "- Special Attack"
+bbcode_enabled = true
+bbcode_text = "[center]A Powerful Melee weapon that can cut through the toughest of enemies (    ). Damage can be increased when the player levels up. "
+text = "A Powerful Melee weapon that can cut through the toughest of enemies (    ). Damage can be increased when the player levels up. "
 
 [node name="Button" type="Button" parent="."]
 margin_left = 9.0
@@ -45,12 +51,60 @@ custom_styles/normal = SubResource( 1 )
 text = "Return"
 
 [node name="VideoPlayer" type="VideoPlayer" parent="."]
-margin_left = 81.0
+margin_left = 112.0
 margin_top = 37.0
-margin_right = 234.0
-margin_bottom = 104.0
+margin_right = 283.0
+margin_bottom = 121.0
 stream = ExtResource( 1 )
 autoplay = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+margin_left = 10.0
+margin_top = 26.0
+margin_right = 94.0
+margin_bottom = 137.0
+rect_scale = Vector2( 0.8, 0.8 )
+
+[node name="Button" type="Button" parent="VBoxContainer"]
+margin_right = 90.0
+margin_bottom = 19.0
+custom_fonts/font = SubResource( 3 )
+text = "Plasma Blade"
+
+[node name="Button2" type="Button" parent="VBoxContainer"]
+margin_top = 23.0
+margin_right = 90.0
+margin_bottom = 42.0
+custom_fonts/font = SubResource( 3 )
+text = "Deflection"
+
+[node name="Button3" type="Button" parent="VBoxContainer"]
+margin_top = 46.0
+margin_right = 90.0
+margin_bottom = 65.0
+custom_fonts/font = SubResource( 3 )
+text = "Laser Eye"
+
+[node name="Button4" type="Button" parent="VBoxContainer"]
+margin_top = 69.0
+margin_right = 90.0
+margin_bottom = 88.0
+custom_fonts/font = SubResource( 3 )
+text = "Roll (Dodge)"
+
+[node name="Button5" type="Button" parent="VBoxContainer"]
+margin_top = 92.0
+margin_right = 90.0
+margin_bottom = 111.0
+custom_fonts/font = SubResource( 3 )
+text = "Charge Stones"
+
+[node name="Button6" type="Button" parent="VBoxContainer"]
+margin_top = 115.0
+margin_right = 90.0
+margin_bottom = 134.0
+custom_fonts/font = SubResource( 3 )
+text = "Leveling Up"
 
 [connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
 [connection signal="finished" from="VideoPlayer" to="." method="_on_VideoPlayer_finished"]
