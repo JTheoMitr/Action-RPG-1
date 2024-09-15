@@ -18,3 +18,4 @@ func _ready():
 
 func _on_ChamberTriggerOne_area_entered(area):
 	WorldStats.emit_signal("chamber_one_start")
+	queue_free()

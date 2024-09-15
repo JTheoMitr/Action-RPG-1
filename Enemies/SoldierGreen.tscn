@@ -212,7 +212,7 @@ shape = SubResource( 12 )
 [node name="WanderController" parent="." instance=ExtResource( 9 )]
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 0.9
+wait_time = 0.7
 
 [node name="Timer2" type="Timer" parent="."]
 one_shot = true

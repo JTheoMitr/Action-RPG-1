@@ -1,11 +1,8 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://UI/deflectnosoundtrimmed.webm" type="VideoStream" id=1]
 [ext_resource path="res://TutorialScreen.gd" type="Script" id=2]
-[ext_resource path="res://World/gdb-playstation-2 square pressed still.png" type="Texture" id=3]
-[ext_resource path="res://World/gdb-playstation-2 circle flat.png" type="Texture" id=4]
 [ext_resource path="res://fonts/PixelTandysoft-0rJG.ttf" type="DynamicFontData" id=5]
-[ext_resource path="res://World/gdb-playstation-2 cross flat.png" type="Texture" id=6]
 
 [sub_resource type="DynamicFont" id=2]
 size = 10
@@ -55,7 +52,7 @@ color = Color( 0, 0, 0, 1 )
 margin_left = 14.0
 margin_top = 144.0
 margin_right = 381.0
-margin_bottom = 187.0
+margin_bottom = 186.0
 rect_scale = Vector2( 0.8, 0.8 )
 custom_fonts/normal_font = SubResource( 2 )
 bbcode_enabled = true
@@ -143,28 +140,10 @@ custom_fonts/font = SubResource( 3 )
 custom_styles/normal = SubResource( 9 )
 text = "Leveling Up"
 
-[node name="PlasmaBladeImg" type="Sprite" parent="."]
-position = Vector2( 73.5, 161 )
-scale = Vector2( 0.7, 0.7 )
-texture = ExtResource( 3 )
-
-[node name="DeflectImg" type="Sprite" parent="."]
-position = Vector2( 136, 151 )
-scale = Vector2( 0.7, 0.7 )
-texture = ExtResource( 3 )
-
-[node name="LaserEyeImg" type="Sprite" parent="."]
-position = Vector2( 46, 150 )
-scale = Vector2( 0.7, 0.7 )
-texture = ExtResource( 4 )
-
-[node name="RollDodgeImg" type="Sprite" parent="."]
-position = Vector2( 47, 150 )
-scale = Vector2( 0.7, 0.7 )
-texture = ExtResource( 6 )
-
-[node name="ChargeStonesIMG" type="Sprite" parent="."]
-
 [connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
 [connection signal="finished" from="VideoPlayer" to="." method="_on_VideoPlayer_finished"]
+[connection signal="focus_entered" from="VBoxContainer/Button" to="." method="_on_Button_focus_entered"]
 [connection signal="focus_entered" from="VBoxContainer/Button2" to="." method="_on_Button2_focus_entered"]
+[connection signal="focus_entered" from="VBoxContainer/Button3" to="." method="_on_Button3_focus_entered"]
+[connection signal="focus_entered" from="VBoxContainer/Button4" to="." method="_on_Button4_focus_entered"]
+[connection signal="focus_entered" from="VBoxContainer/Button5" to="." method="_on_Button5_focus_entered"]
