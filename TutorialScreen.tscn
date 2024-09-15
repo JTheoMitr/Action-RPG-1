@@ -1,10 +1,14 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://UI/deflectnosoundtrimmed.webm" type="VideoStream" id=1]
 [ext_resource path="res://TutorialScreen.gd" type="Script" id=2]
 [ext_resource path="res://fonts/PixelTandysoft-0rJG.ttf" type="DynamicFontData" id=5]
 
 [sub_resource type="DynamicFont" id=2]
+size = 10
+font_data = ExtResource( 5 )
+
+[sub_resource type="DynamicFont" id=10]
 size = 10
 font_data = ExtResource( 5 )
 
@@ -70,11 +74,12 @@ bbcode_text = "[center]Tutorials "
 text = "Tutorials "
 
 [node name="Button" type="Button" parent="."]
-margin_left = 9.0
+margin_left = 14.0
 margin_top = 7.0
-margin_right = 63.0
+margin_right = 68.0
 margin_bottom = 27.0
 rect_scale = Vector2( 0.5, 0.5 )
+custom_fonts/font = SubResource( 10 )
 custom_styles/normal = SubResource( 1 )
 text = "Return"
 
