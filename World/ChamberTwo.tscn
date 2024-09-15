@@ -69,6 +69,7 @@ shape = SubResource( 1 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( 1, 13 )
 frames = SubResource( 5 )
+frame = 1
 playing = true
 
 [node name="Timer" type="Timer" parent="."]
@@ -76,7 +77,8 @@ wait_time = 17.5
 one_shot = true
 
 [node name="Timer2" type="Timer" parent="."]
-wait_time = 9.0
+wait_time = 2.0
+one_shot = true
 
 [node name="Timer3" type="Timer" parent="."]
 wait_time = 17.0
@@ -92,6 +94,7 @@ self_modulate = Color( 1, 1, 1, 0.478431 )
 position = Vector2( 0, 15 )
 scale = Vector2( 0.2375, 1.40625 )
 frames = SubResource( 11 )
+frame = 2
 playing = true
 
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

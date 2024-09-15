@@ -3,8 +3,8 @@
 [ext_resource path="res://World/CollisionShape2D.gd" type="Script" id=1]
 
 [sub_resource type="CapsuleShape2D" id=1]
-radius = 49.0
-height = 110.0
+radius = 20.9999
+height = 76.0
 
 [node name="ChamberTriggerOne" type="Area2D"]
 collision_layer = 0
