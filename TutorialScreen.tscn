@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://UI/deflectnosoundtrimmed.webm" type="VideoStream" id=1]
 [ext_resource path="res://TutorialScreen.gd" type="Script" id=2]
@@ -36,9 +36,6 @@ bg_color = Color( 0.211765, 0.196078, 0.196078, 1 )
 bg_color = Color( 0.211765, 0.196078, 0.196078, 1 )
 
 [sub_resource type="StyleBoxFlat" id=8]
-bg_color = Color( 0.211765, 0.196078, 0.196078, 1 )
-
-[sub_resource type="StyleBoxFlat" id=9]
 bg_color = Color( 0.211765, 0.196078, 0.196078, 1 )
 
 [node name="TutorialScreen" type="ColorRect"]
@@ -137,13 +134,13 @@ custom_fonts/font = SubResource( 3 )
 custom_styles/normal = SubResource( 8 )
 text = "Charge Stones"
 
-[node name="Button6" type="Button" parent="VBoxContainer"]
+[node name="Button7" type="Button" parent="VBoxContainer"]
 margin_top = 85.0
 margin_right = 84.0
 margin_bottom = 98.0
 custom_fonts/font = SubResource( 3 )
-custom_styles/normal = SubResource( 9 )
-text = "Leveling Up"
+custom_styles/normal = SubResource( 8 )
+text = "Phase Attack"
 
 [connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
 [connection signal="finished" from="VideoPlayer" to="." method="_on_VideoPlayer_finished"]
@@ -152,3 +149,4 @@ text = "Leveling Up"
 [connection signal="focus_entered" from="VBoxContainer/Button3" to="." method="_on_Button3_focus_entered"]
 [connection signal="focus_entered" from="VBoxContainer/Button4" to="." method="_on_Button4_focus_entered"]
 [connection signal="focus_entered" from="VBoxContainer/Button5" to="." method="_on_Button5_focus_entered"]
+[connection signal="focus_entered" from="VBoxContainer/Button7" to="." method="_on_Button7_focus_entered"]
