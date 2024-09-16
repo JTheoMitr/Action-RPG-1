@@ -9,15 +9,19 @@ onready var deflection = $VBoxContainer/Button2
 onready var laserEye = $VBoxContainer/Button3
 onready var rollDodge = $VBoxContainer/Button4
 onready var chargeStones = $VBoxContainer/Button5
-
+onready var tvFuzz = $TVFuzz
 onready var phaseAtk = $VBoxContainer/Button7
 onready var description = $DescriptionText
 onready var videoPlayer = $VideoPlayer
+onready var timer = $Timer
+onready var staticSound = $AudioStreamPlayer
 
-
+var mute
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	plasmaBlade.grab_focus()
+	tvFuzz.hide()
+	var mute = true
 
 
 
@@ -60,28 +64,54 @@ func _on_VideoPlayer_finished():
 func _on_Button2_focus_entered():
 	videoPlayer.stream = load("res://UI/deflection.webm")
 	videoPlayer.play()
+	tvFuzz.show()
+	timer.start()
+	staticSound.play()
+	mute = false
+	
 
 
 func _on_Button4_focus_entered():
 	videoPlayer.stream = load("res://UI/rollDodge.webm")
 	videoPlayer.play()
+	tvFuzz.show()
+	timer.start()
+	staticSound.play()
 
 
 func _on_Button3_focus_entered():
 	videoPlayer.stream = load("res://UI/laserEye.webm")
 	videoPlayer.play()
+	tvFuzz.show()
+	timer.start()
+	staticSound.play()
 
 
 func _on_Button_focus_entered():
 	videoPlayer.stream = load("res://UI/plasmaBlade.webm")
 	videoPlayer.play()
+	tvFuzz.show()
+	timer.start()
+	if mute == false:
+		staticSound.play()
 
 
 func _on_Button5_focus_entered():
 	videoPlayer.stream = load("res://UI/chargeSwap.webm")
 	videoPlayer.play()
+	tvFuzz.show()
+	timer.start()
+	staticSound.play()
 
 
 func _on_Button7_focus_entered():
 	videoPlayer.stream = load("res://UI/phaseAtk.webm")
 	videoPlayer.play()
+	tvFuzz.show()
+	timer.start()
+	staticSound.play()
+
+
+func _on_Timer_timeout():
+	tvFuzz.hide()
+

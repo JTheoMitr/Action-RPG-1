@@ -1,7 +1,9 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://UI/deflectnosoundtrimmed.webm" type="VideoStream" id=1]
 [ext_resource path="res://TutorialScreen.gd" type="Script" id=2]
+[ext_resource path="res://UI/tv_fuzz.jpg" type="Texture" id=3]
+[ext_resource path="res://Music and Sounds/ESND_Neurofunk_Percussion_Static Noise.wav" type="AudioStream" id=4]
 [ext_resource path="res://fonts/PixelTandysoft-0rJG.ttf" type="DynamicFontData" id=5]
 
 [sub_resource type="DynamicFont" id=2]
@@ -88,6 +90,11 @@ margin_bottom = 122.0
 stream = ExtResource( 1 )
 autoplay = true
 
+[node name="TVFuzz" type="Sprite" parent="."]
+position = Vector2( 198.5, 80.5312 )
+scale = Vector2( 0.171, 0.155257 )
+texture = ExtResource( 3 )
+
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 margin_left = 14.0
 margin_top = 40.0
@@ -142,6 +149,15 @@ custom_fonts/font = SubResource( 3 )
 custom_styles/normal = SubResource( 8 )
 text = "Phase Attack"
 
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.2
+one_shot = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+volume_db = 0.15
+pitch_scale = 0.65
+
 [connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
 [connection signal="finished" from="VideoPlayer" to="." method="_on_VideoPlayer_finished"]
 [connection signal="focus_entered" from="VBoxContainer/Button" to="." method="_on_Button_focus_entered"]
@@ -150,3 +166,4 @@ text = "Phase Attack"
 [connection signal="focus_entered" from="VBoxContainer/Button4" to="." method="_on_Button4_focus_entered"]
 [connection signal="focus_entered" from="VBoxContainer/Button5" to="." method="_on_Button5_focus_entered"]
 [connection signal="focus_entered" from="VBoxContainer/Button7" to="." method="_on_Button7_focus_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
