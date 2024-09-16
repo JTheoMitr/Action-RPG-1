@@ -17,4 +17,5 @@ func _ready():
 
 
 func _on_Button_pressed():
-	SceneTransitionLong.change_scene("res://IntroTitleScreen.tscn")
+	#SceneTransitionLong.change_scene("res://IntroTitleScreen.tscn")
+	self.hide()

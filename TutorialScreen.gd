@@ -42,10 +42,10 @@ func _process(delta):
 		description.bbcode_text = "[center]Use ([img=c,15]res://World/gdb-playstation-2 cross flat.png[/img]) to perform a quick roll, granting the player a brief moment of invulnerability."
 
 	if chargeStones.has_focus():
-		description.bbcode_text = "[center]Charge stones give your blade the ability to shift colors. Match colors with ranged enemy weaponry to deflect their projectiles. You can swap colors ( [img=c,15]res://UI/gdb-playstation-2 L1 pressed single.png[/img] or [img=c,15]res://UI/gdb-playstation-2 R1 pressed Single.png[/img] ) while in combat."
+		description.bbcode_text = "[center]Match your blade color with enemy projectiles to deflect or destroy them. Each represents an energy type. You can swap energies ( [img=c,15]res://UI/gdb-playstation-2 L1 pressed single.png[/img] or [img=c,15]res://UI/gdb-playstation-2 R1 pressed Single.png[/img] ) while in combat. Find energy stones to acquire new types"
 
 	if phaseAtk.has_focus():
-		description.bbcode_text = "Hold ([img=c, 10]res://World/gdb-playstation-2 square pressed still.png[/img]) until your charge meter is full to perform your phase attack. A quick slash in 4 directions, the player is also greanted a brief moment of invulnerability."
+		description.bbcode_text = "Hold ([img=c, 10]res://World/gdb-playstation-2 square pressed still.png[/img]) until your charge meter is full to perform your phase attack: A quick slash in 4 directions, the player is also granted a brief moment of invulnerability."
 	
 
 		

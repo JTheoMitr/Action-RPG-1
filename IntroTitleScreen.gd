@@ -14,6 +14,9 @@ onready var chimeOne = $Button1Sound
 onready var chimeTwo = $Button2Sound
 onready var popup = $CanvasLayer/PopupDialog
 onready var popup2 = $CanvasLayer/PopupDialog2
+onready var controlScreen = $CanvasLayer/ControlScreen
+onready var demoOverview = $CanvasLayer/DemoOverviewScreen
+onready var returnBtn = $CanvasLayer/Popup
 export var transition_duration = 2.00
 export var transition_type = 1 # TRANS_SINE
 
@@ -32,6 +35,8 @@ func _ready():
 	lightningTwo.frame = 0
 	lightningTwo.hide()
 	lightningTimerTwo.start()
+	controlScreen.hide()
+	demoOverview.hide()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -94,8 +99,11 @@ func _on_PopButton2_pressed():
 
 func _on_ControlsButton_pressed():
 	chimeTwo.play()
-	SceneTransitionLong.change_scene("res://ControlsScreen.tscn")
+	controlScreen.show()
 	popup2.hide()
+	returnBtn.popup()
+
+	
 
 
 func _on_TutorialButton_pressed():
@@ -106,5 +114,12 @@ func _on_TutorialButton_pressed():
 
 func _on_DemoButton_pressed():
 	chimeTwo.play()
-	SceneTransitionLong.change_scene("res://DemoOverviewScreen.tscn")
+	demoOverview.show()
 	popup2.hide()
+	returnBtn.popup()
+
+
+func _on_ReturnButton_pressed():
+	controlScreen.hide()
+	demoOverview.hide()
+	returnBtn.hide()
