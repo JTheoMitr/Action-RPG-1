@@ -1,0 +1,23 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/wt_ih_synth_hit_cashin_Dbmaj.wav-0870b7f893c6d4257a18063c112dae94.sample"
+
+[deps]
+
+source_file="res://UI/wt_ih_synth_hit_cashin_Dbmaj.wav"
+dest_files=[ "res://.import/wt_ih_synth_hit_cashin_Dbmaj.wav-0870b7f893c6d4257a18063c112dae94.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

@@ -1,0 +1,23 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/ESM_Bounce_3_Tonal_Classic_Game_Synth_Click.wav-a6148c00188a33f399286d07390461e7.sample"
+
+[deps]
+
+source_file="res://Music and Sounds/ESM_Bounce_3_Tonal_Classic_Game_Synth_Click.wav"
+dest_files=[ "res://.import/ESM_Bounce_3_Tonal_Classic_Game_Synth_Click.wav-a6148c00188a33f399286d07390461e7.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

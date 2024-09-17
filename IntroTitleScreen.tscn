@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=2]
+[gd_scene load_steps=38 format=2]
 
 [ext_resource path="res://UI/FrozencaScriptTypeface.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://IntroTitleScreen.gd" type="Script" id=2]
@@ -16,6 +16,7 @@
 [ext_resource path="res://ControlsScreen.tscn" type="PackedScene" id=14]
 [ext_resource path="res://UI/UI_Flat_Button_Medium_Lock_02a1 copy.png" type="Texture" id=15]
 [ext_resource path="res://DemoOverviewScreen.tscn" type="PackedScene" id=16]
+[ext_resource path="res://Music and Sounds/wt_ih_synth_hit_orange_G#m.wav" type="AudioStream" id=17]
 
 [sub_resource type="DynamicFont" id=1]
 size = 27
@@ -192,21 +193,19 @@ visible = false
 position = Vector2( 163, 83.75 )
 scale = Vector2( 0.585, 1.025 )
 animation = "New Anim"
-frame = 6
 
 [node name="SnowFallOne2" parent="." instance=ExtResource( 5 )]
 modulate = Color( 1, 1, 1, 0.305882 )
 position = Vector2( 83, 89.5 )
 scale = Vector2( 1.6125, 1.81 )
 animation = "New Anim"
-frame = 6
 
 [node name="SnowFallOne3" parent="." instance=ExtResource( 5 )]
 modulate = Color( 1, 1, 1, 0.305882 )
 position = Vector2( 241, 90 )
 scale = Vector2( 1.6125, 1.82 )
 animation = "New Anim"
-frame = 5
+frame = 53
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 margin_left = 133.0
@@ -380,6 +379,7 @@ custom_styles/normal = SubResource( 4 )
 text = "DEMO INFO"
 
 [node name="ControlScreen" parent="CanvasLayer" instance=ExtResource( 14 )]
+visible = false
 
 [node name="Popup" type="Popup" parent="CanvasLayer"]
 visible = true
@@ -399,18 +399,30 @@ text = "Return"
 [node name="DemoOverviewScreen" parent="CanvasLayer" instance=ExtResource( 16 )]
 visible = false
 
+[node name="SelectSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 17 )
+pitch_scale = 0.8
+
+[connection signal="focus_entered" from="VBoxContainer/Button" to="." method="_on_Button_focus_entered"]
 [connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_Button_pressed"]
+[connection signal="focus_entered" from="VBoxContainer/Button2" to="." method="_on_Button2_focus_entered"]
 [connection signal="pressed" from="VBoxContainer/Button2" to="." method="_on_Button2_pressed"]
+[connection signal="focus_entered" from="VBoxContainer/Button3" to="." method="_on_Button3_focus_entered"]
 [connection signal="pressed" from="VBoxContainer/Button3" to="." method="_on_Button3_pressed"]
 [connection signal="tween_completed" from="Tween" to="." method="_on_Tween_tween_completed"]
 [connection signal="animation_finished" from="LightningStrikeOne" to="." method="_on_LightningStrikeOne_animation_finished"]
 [connection signal="timeout" from="LightningTimer" to="." method="_on_LightningTimer_timeout"]
 [connection signal="animation_finished" from="LightningStrikeOne2" to="." method="_on_LightningStrikeOne2_animation_finished"]
 [connection signal="timeout" from="LightningTimerTwo" to="." method="_on_LightningTimerTwo_timeout"]
+[connection signal="focus_entered" from="CanvasLayer/PopupDialog/HBoxContainer/PopButton" to="." method="_on_PopButton_focus_entered"]
 [connection signal="pressed" from="CanvasLayer/PopupDialog/HBoxContainer/PopButton" to="." method="_on_PopButton_pressed"]
+[connection signal="focus_entered" from="CanvasLayer/PopupDialog/HBoxContainer/PopButton2" to="." method="_on_PopButton2_focus_entered"]
 [connection signal="pressed" from="CanvasLayer/PopupDialog/HBoxContainer/PopButton2" to="." method="_on_PopButton2_pressed"]
+[connection signal="focus_entered" from="CanvasLayer/PopupDialog2/VBoxContainer/ControlsButton" to="." method="_on_ControlsButton_focus_entered"]
 [connection signal="pressed" from="CanvasLayer/PopupDialog2/VBoxContainer/ControlsButton" to="." method="_on_ControlsButton_pressed"]
+[connection signal="focus_entered" from="CanvasLayer/PopupDialog2/VBoxContainer/TutorialButton" to="." method="_on_TutorialButton_focus_entered"]
 [connection signal="pressed" from="CanvasLayer/PopupDialog2/VBoxContainer/TutorialButton" to="." method="_on_TutorialButton_pressed"]
+[connection signal="focus_entered" from="CanvasLayer/PopupDialog2/VBoxContainer/DemoButton" to="." method="_on_DemoButton_focus_entered"]
 [connection signal="pressed" from="CanvasLayer/PopupDialog2/VBoxContainer/DemoButton" to="." method="_on_DemoButton_pressed"]
 [connection signal="pressed" from="CanvasLayer/Popup/ReturnButton" to="." method="_on_ReturnButton_pressed"]
 

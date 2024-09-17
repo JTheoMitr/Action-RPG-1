@@ -17,8 +17,11 @@ onready var popup2 = $CanvasLayer/PopupDialog2
 onready var controlScreen = $CanvasLayer/ControlScreen
 onready var demoOverview = $CanvasLayer/DemoOverviewScreen
 onready var returnBtn = $CanvasLayer/Popup
+onready var selectSound = $SelectSound
 export var transition_duration = 2.00
 export var transition_type = 1 # TRANS_SINE
+
+var mute
 
 func fade_out(stream_player):
 	# tween music volume down to 0
@@ -37,6 +40,7 @@ func _ready():
 	lightningTimerTwo.start()
 	controlScreen.hide()
 	demoOverview.hide()
+	mute = true
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -123,3 +127,37 @@ func _on_ReturnButton_pressed():
 	controlScreen.hide()
 	demoOverview.hide()
 	returnBtn.hide()
+
+
+func _on_Button_focus_entered():
+	if mute == false:
+		selectSound.play()
+
+
+func _on_Button2_focus_entered():
+	mute = false
+	selectSound.play()
+
+
+func _on_Button3_focus_entered():
+	selectSound.play()
+
+
+func _on_PopButton_focus_entered():
+	selectSound.play()
+
+
+func _on_PopButton2_focus_entered():
+	selectSound.play()
+
+
+func _on_ControlsButton_focus_entered():
+	selectSound.play()
+
+
+func _on_TutorialButton_focus_entered():
+	selectSound.play()
+
+
+func _on_DemoButton_focus_entered():
+	selectSound.play()
