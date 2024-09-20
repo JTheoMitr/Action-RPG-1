@@ -326,7 +326,6 @@ custom_fonts/normal_font = SubResource( 14 )
 text = "Controls"
 
 [node name="ControlsPanel" type="Panel" parent="."]
-visible = false
 margin_right = 200.0
 margin_bottom = 101.0
 
@@ -408,6 +407,7 @@ scale = Vector2( 0.6, 0.6 )
 texture = ExtResource( 16 )
 
 [node name="DefaultMap" parent="." instance=ExtResource( 18 )]
+visible = false
 position = Vector2( 152.857, 51.4286 )
 
 [connection signal="focus_entered" from="Control/CenterContainer/HBoxContainer/VBoxContainer/Button" to="." method="_on_Button_focus_entered"]

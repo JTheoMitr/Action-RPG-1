@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://UI/deflectnosoundtrimmed.webm" type="VideoStream" id=1]
 [ext_resource path="res://TutorialScreen.gd" type="Script" id=2]
@@ -26,20 +26,62 @@ corner_radius_bottom_left = 3
 size = 10
 font_data = ExtResource( 5 )
 
+[sub_resource type="StyleBoxFlat" id=11]
+bg_color = Color( 0.184314, 0.0431373, 0.0196078, 0.827451 )
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+
 [sub_resource type="StyleBoxFlat" id=4]
 bg_color = Color( 0.211765, 0.196078, 0.196078, 1 )
+
+[sub_resource type="StyleBoxFlat" id=12]
+bg_color = Color( 0.184314, 0.0431373, 0.0196078, 0.827451 )
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
 
 [sub_resource type="StyleBoxFlat" id=5]
 bg_color = Color( 0.211765, 0.196078, 0.196078, 1 )
 
+[sub_resource type="StyleBoxFlat" id=13]
+bg_color = Color( 0.184314, 0.0431373, 0.0196078, 0.827451 )
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+
 [sub_resource type="StyleBoxFlat" id=6]
 bg_color = Color( 0.211765, 0.196078, 0.196078, 1 )
+
+[sub_resource type="StyleBoxFlat" id=14]
+bg_color = Color( 0.184314, 0.0431373, 0.0196078, 0.827451 )
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
 
 [sub_resource type="StyleBoxFlat" id=7]
 bg_color = Color( 0.211765, 0.196078, 0.196078, 1 )
 
+[sub_resource type="StyleBoxFlat" id=15]
+bg_color = Color( 0.184314, 0.0431373, 0.0196078, 0.827451 )
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+
 [sub_resource type="StyleBoxFlat" id=8]
 bg_color = Color( 0.211765, 0.196078, 0.196078, 1 )
+
+[sub_resource type="StyleBoxFlat" id=16]
+bg_color = Color( 0.184314, 0.0431373, 0.0196078, 0.827451 )
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
 
 [node name="TutorialScreen" type="ColorRect"]
 anchor_right = 1.0
@@ -56,7 +98,7 @@ texture = ExtResource( 6 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 107.0
-margin_top = 34.0
+margin_top = 33.0
 margin_right = -30.0
 margin_bottom = -52.0
 color = Color( 0, 0, 0, 1 )
@@ -116,6 +158,7 @@ rect_scale = Vector2( 0.8, 0.8 )
 margin_right = 84.0
 margin_bottom = 13.0
 custom_fonts/font = SubResource( 3 )
+custom_styles/focus = SubResource( 11 )
 custom_styles/normal = SubResource( 4 )
 text = "Plasma Blade"
 
@@ -124,6 +167,7 @@ margin_top = 17.0
 margin_right = 84.0
 margin_bottom = 30.0
 custom_fonts/font = SubResource( 3 )
+custom_styles/focus = SubResource( 12 )
 custom_styles/normal = SubResource( 5 )
 text = "Deflection"
 
@@ -132,6 +176,7 @@ margin_top = 34.0
 margin_right = 84.0
 margin_bottom = 47.0
 custom_fonts/font = SubResource( 3 )
+custom_styles/focus = SubResource( 13 )
 custom_styles/normal = SubResource( 6 )
 text = "Laser Eye"
 
@@ -140,6 +185,7 @@ margin_top = 51.0
 margin_right = 84.0
 margin_bottom = 64.0
 custom_fonts/font = SubResource( 3 )
+custom_styles/focus = SubResource( 14 )
 custom_styles/normal = SubResource( 7 )
 text = "Roll (Dodge)"
 
@@ -148,6 +194,7 @@ margin_top = 68.0
 margin_right = 84.0
 margin_bottom = 81.0
 custom_fonts/font = SubResource( 3 )
+custom_styles/focus = SubResource( 15 )
 custom_styles/normal = SubResource( 8 )
 text = "Energy Types"
 
@@ -156,6 +203,7 @@ margin_top = 85.0
 margin_right = 84.0
 margin_bottom = 98.0
 custom_fonts/font = SubResource( 3 )
+custom_styles/focus = SubResource( 16 )
 custom_styles/normal = SubResource( 8 )
 text = "Phase Attack"
 

@@ -15,7 +15,7 @@ func _process(delta):
 	popup.rect_global_position.x = self.position.x - 75
 	popup.rect_global_position.y = self.position.y - 15
 	
-	if (inArea == true) && Input.is_action_just_pressed("interact"):
+	if (inArea == true) && Input.is_action_just_released("interact"):
 		stats.emit_signal("player_resumed")
 		stats.emit_signal("give_movement")
 		Input.action_press("ui_up")

@@ -82,4 +82,9 @@ custom_fonts/normal_font = SubResource( 5 )
 text = "Continue
 "
 
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+
 [connection signal="area_entered" from="." to="." method="_on_IntroArea_area_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

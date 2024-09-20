@@ -17,7 +17,7 @@ stretch_mode = 2
 
 [node name="HeartUIFull" type="TextureRect" parent="."]
 margin_right = 60.0
-margin_bottom = 11.0
+margin_bottom = 10.9
 texture = ExtResource( 3 )
 expand = true
 stretch_mode = 2
