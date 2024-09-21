@@ -47,6 +47,7 @@ func _ready():
 	timer.start(0.0)
 	drillCheck.hide() # add dynamic once drill controls are added for destruction
 	SaveFile.load_data()
+	print_debug(save_file)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

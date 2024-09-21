@@ -14,6 +14,7 @@ signal play_blast_anim
 signal rage_mode
 signal portal_opened
 signal portal_2_opened
+signal portal_purp2_opened
 signal chamber_one_start
 signal bad_trip
 

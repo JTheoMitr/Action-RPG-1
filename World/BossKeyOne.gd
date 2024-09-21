@@ -18,6 +18,7 @@ func _ready():
 func _on_BossKeyOne_area_entered(area):
 	stats.boss_keys += 1
 	save_data.boss_key_1_nabbed = true
+	SaveFile.save_data()
 	var pickUpSound = PickUpSound.instance()
 	get_tree().current_scene.add_child(pickUpSound)
 	stats.emit_signal("boss_key_acquired")

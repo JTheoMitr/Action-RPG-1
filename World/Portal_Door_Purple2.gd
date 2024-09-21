@@ -7,19 +7,10 @@ const PortalSound = preload("res://Music and Sounds/LightningPortalSound.tscn")
 # var b = "text"
 onready var worldStats = WorldStats
 onready var collisionShape = $CollisionShape2D
-onready var save_data = SaveFile.g_data
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	worldStats.connect("portal_opened", self, "open_ses")
-	if save_data.portal_1_opened:
-		collisionShape.queue_free()
-		$AnimatedSprite.frame = 5
-		$AnimatedSprite.stop()
-		$LightningSpin.hide()
-		$LightningSpin2.hide()
-		$LightningSpin3.hide()
-	
+	worldStats.connect("portal_purp2_opened", self, "open_ses")
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -38,5 +29,3 @@ func _on_AnimatedSprite_animation_finished():
 	$LightningSpin.hide()
 	$LightningSpin2.hide()
 	$LightningSpin3.hide()
-	save_data.portal_1_opened = true
-	SaveFile.save_data()

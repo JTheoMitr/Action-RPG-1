@@ -111,9 +111,8 @@ func set_max_experience(value):
 	emit_signal("max_xp_changed", max_xp)
 	
 func set_max_level(value):
-	max_level = value
-	self.level = min(level, max_level)
-	emit_signal("max_level_changed", max_level)
+	max_level = 999
+	
 	
 	
 func set_max_keys(value):

@@ -1,7 +1,7 @@
 [gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://World/TeslaCoilRod.png" type="Texture" id=1]
-[ext_resource path="res://TeslaCoilSwitch.gd" type="Script" id=2]
+[ext_resource path="res://World/TeslaCoilSwitch2.gd" type="Script" id=2]
 [ext_resource path="res://World/TeslaCoilBase.png" type="Texture" id=3]
 [ext_resource path="res://Effects/lightning_one_5_step.png" type="Texture" id=4]
 [ext_resource path="res://Music and Sounds/electricity_glitch_11.wav" type="AudioStream" id=5]
@@ -40,7 +40,7 @@ animations = [ {
 "speed": 15.0
 } ]
 
-[node name="TeslaCoilSwitch" type="StaticBody2D"]
+[node name="TeslaCoilSwitch2" type="StaticBody2D"]
 scale = Vector2( 0.6, 0.6 )
 script = ExtResource( 2 )
 
@@ -69,6 +69,7 @@ position = Vector2( 5, -68.3333 )
 rotation = 0.261799
 scale = Vector2( 0.3, 0.3 )
 frames = SubResource( 8 )
+frame = 2
 playing = true
 
 [node name="Lightning2" type="AnimatedSprite" parent="."]
@@ -76,7 +77,7 @@ position = Vector2( 11.6667, -63.3333 )
 rotation = 0.523599
 scale = Vector2( 0.3, 0.3 )
 frames = SubResource( 8 )
-frame = 4
+frame = 1
 playing = true
 
 [node name="Lightning3" type="AnimatedSprite" parent="."]
@@ -84,7 +85,6 @@ position = Vector2( 16.6667, -56.6666 )
 rotation = 0.785398
 scale = Vector2( 0.3, 0.3 )
 frames = SubResource( 8 )
-frame = 3
 playing = true
 
 [node name="Lightning4" type="AnimatedSprite" parent="."]
@@ -92,7 +92,6 @@ position = Vector2( -20, -56.6667 )
 rotation = -0.785398
 scale = Vector2( 0.3, 0.3 )
 frames = SubResource( 8 )
-frame = 3
 playing = true
 
 [node name="Lightning5" type="AnimatedSprite" parent="."]
@@ -100,7 +99,6 @@ position = Vector2( -15, -63.3333 )
 rotation = -0.523599
 scale = Vector2( 0.3, 0.3 )
 frames = SubResource( 8 )
-frame = 3
 playing = true
 
 [node name="Lightning6" type="AnimatedSprite" parent="."]
@@ -108,7 +106,7 @@ position = Vector2( -8.33333, -66.6667 )
 rotation = -0.261799
 scale = Vector2( 0.3, 0.3 )
 frames = SubResource( 8 )
-frame = 2
+frame = 4
 playing = true
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
