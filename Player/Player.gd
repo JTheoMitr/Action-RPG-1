@@ -72,7 +72,7 @@ var laserboi = true
 var zapping = false
 
 # prevents player from interfering with intro "run up"
-var horiZone = false
+var horiZone
 
 # determines charge readiness and velocity for all-direction maneuver
 var chargeReady = false
@@ -105,8 +105,28 @@ func _ready():
 	crosshair.hide()
 	
 	# starting position...need to rethink this if we add player position to saving, and need to stop from doing the initial runup
-	global_position.x = -463
-	global_position.y = 760
+	# if player_position_saved in save_file is true, load that (upon saving at stations), if its false (default, or any other auto save or world load...maybe in the first intro area of each? )... then:
+	print_debug((get_parent().get_parent()).to_string()) #checking for level
+	print_debug((get_parent().get_parent()).to_string()[5])
+	print_debug(save_file.current_world[5])
+	if (save_file.position_saved == true) && (save_file.current_world[5] == (get_parent().get_parent()).to_string()[5]): #checking current world against save file's world for positioning
+		global_position.x = save_file.player_position_x
+		global_position.y = save_file.player_position_y
+		#stats.emit_signal("player_resumed")
+		horiZone = true
+		veLockity = false
+		stats.emit_signal("player_resumed")
+		stats.emit_signal("give_movement")
+		
+		
+	else:
+		horiZone = false
+		global_position.x = -463
+		global_position.y = 760
+		save_file.position_saved = false
+		# send player walking "up" to the first level intro/story zone
+		ready_run_state()
+		
 	
 	# activate animation tree and knockback vectors (add vectors to special moves)
 	animationTree.active = true
@@ -121,7 +141,7 @@ func _ready():
 	blastZone.disabled = true
 	
 	# send player walking "up" to the first level intro/story zone
-	ready_run_state()
+	#ready_run_state()
 	
 
 func _process(delta):
@@ -443,3 +463,5 @@ func _on_TripTimer_timeout():
 
 func _on_ChargeTimer_timeout():
 	chargeReady = true
+
+

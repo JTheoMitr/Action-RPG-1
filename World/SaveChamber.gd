@@ -19,6 +19,8 @@ onready var click = $Click
 onready var groan = $Groan
 onready var steam = $Steam
 onready var error = $Error
+onready var spawnArea = $SpawnArea/CollisionShape2D
+onready var save_data = SaveFile.g_data
 
 onready var stats = PlayerStats
 
@@ -32,6 +34,7 @@ func _ready():
 	popUpSave.hide()
 	lightFlash.hide()
 	redFlash.hide()
+	print_debug((get_parent().get_parent().get_parent()).to_string()) #checking for level
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	popUpSave.rect_global_position = self.global_position
@@ -106,6 +109,10 @@ func _on_Timer5_timeout():
 		popUpSave.popup()
 		saveTimer2.start()
 		stats.coins -= 5
+		save_data.position_saved = true
+		save_data.player_position_x = spawnArea.global_position.x
+		save_data.player_position_y = spawnArea.global_position.y
+		save_data.current_world = (get_parent().get_parent().get_parent()).to_string()
 		var cashSound = CashSound.instance()
 		get_parent().add_child(cashSound)
 		SaveFile.save_data()
