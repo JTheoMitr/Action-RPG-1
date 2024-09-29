@@ -230,6 +230,7 @@ func move_state(delta):
 		if Input.is_action_just_released("attack"):
 			if chargeReady == true:
 				playerSpriteSpecials.show()
+				sprite.hide()
 				hurtbox.monitoring = false
 				aura.show()
 				aura.play("default")
@@ -242,6 +243,7 @@ func move_state(delta):
 				
 			else:
 				chargeTimer.stop()
+				sprite.show()
 				playerSpriteSpecials.hide()
 				aura.hide()
 				aura.stop()
@@ -389,6 +391,7 @@ func sword_special_over():
 	hurtbox.monitoring = true
 	veLockity = false
 	playerSpriteSpecials.hide()
+	sprite.show()
 	aura.hide()
 	aura.stop()
 	

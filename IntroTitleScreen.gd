@@ -18,6 +18,7 @@ onready var controlScreen = $CanvasLayer/ControlScreen
 onready var demoOverview = $CanvasLayer/DemoOverviewScreen
 onready var returnBtn = $CanvasLayer/Popup
 onready var selectSound = $SelectSound
+onready var dataClearPopup = $CanvasLayer/DataCleared
 export var transition_duration = 2.00
 export var transition_type = 1 # TRANS_SINE
 
@@ -97,6 +98,9 @@ func _on_PopButton_pressed():
 
 
 func _on_PopButton2_pressed():
+	$SaveCleared.play()
+	$SCTimer.start()
+	dataClearPopup.popup()
 	SaveFile.clear_save_file()
 	popup.hide()
 
@@ -161,3 +165,7 @@ func _on_TutorialButton_focus_entered():
 
 func _on_DemoButton_focus_entered():
 	selectSound.play()
+
+
+func _on_SCTimer_timeout():
+	dataClearPopup.hide()

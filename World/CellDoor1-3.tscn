@@ -55,11 +55,11 @@ rect_min_size = Vector2( 80, 15 )
 rect_scale = Vector2( 0.8, 0.8 )
 
 [node name="RichTextLabel" type="RichTextLabel" parent="PopupDialog"]
-margin_left = 6.25
-margin_top = 1.25
-margin_right = 213.25
-margin_bottom = 62.25
-rect_scale = Vector2( 0.8, 0.8 )
+margin_left = 10.0
+margin_top = 3.0
+margin_right = 217.0
+margin_bottom = 64.0
+rect_scale = Vector2( 0.7, 0.7 )
 custom_fonts/normal_font = SubResource( 4 )
 text = "You need a key"
 

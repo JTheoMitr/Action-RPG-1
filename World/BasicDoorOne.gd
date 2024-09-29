@@ -35,6 +35,7 @@ func _on_Area2D_area_entered(area):
 		stats.boss_keys -= 1
 		stats.forest_freed -= 3
 		stats.keys_collected -= 3
+		save_file.world_1_path_opened = true
 		SaveFile.save_data()
 		var creakSound = DoorCreak.instance()
 		get_tree().current_scene.add_child(creakSound)

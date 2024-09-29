@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=2]
+[gd_scene load_steps=40 format=2]
 
 [ext_resource path="res://UI/FrozencaScriptTypeface.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://IntroTitleScreen.gd" type="Script" id=2]
@@ -17,6 +17,7 @@
 [ext_resource path="res://UI/UI_Flat_Button_Medium_Lock_02a1 copy.png" type="Texture" id=15]
 [ext_resource path="res://DemoOverviewScreen.tscn" type="PackedScene" id=16]
 [ext_resource path="res://Music and Sounds/wt_ih_synth_hit_orange_G#m.wav" type="AudioStream" id=17]
+[ext_resource path="res://Music and Sounds/Ice_Crash_&_Debris_Dry_Ice_Falling_Little__And_Big_Pieces_To_Floor_02_VADI.wav" type="AudioStream" id=18]
 
 [sub_resource type="DynamicFont" id=1]
 size = 27
@@ -131,6 +132,10 @@ font_data = ExtResource( 12 )
 [sub_resource type="StyleBoxFlat" id=21]
 bg_color = Color( 0.184314, 0.0431373, 0.0196078, 0.827451 )
 
+[sub_resource type="DynamicFont" id=22]
+size = 10
+font_data = ExtResource( 12 )
+
 [node name="IntroTitleScreen" type="ColorRect"]
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -193,21 +198,21 @@ visible = false
 position = Vector2( 163, 83.75 )
 scale = Vector2( 0.585, 1.025 )
 animation = "New Anim"
-frame = 36
+frame = 45
 
 [node name="SnowFallOne2" parent="." instance=ExtResource( 5 )]
 modulate = Color( 1, 1, 1, 0.305882 )
 position = Vector2( 83, 89.5 )
 scale = Vector2( 1.6125, 1.81 )
 animation = "New Anim"
-frame = 36
+frame = 45
 
 [node name="SnowFallOne3" parent="." instance=ExtResource( 5 )]
 modulate = Color( 1, 1, 1, 0.305882 )
 position = Vector2( 241, 90 )
 scale = Vector2( 1.6125, 1.82 )
 animation = "New Anim"
-frame = 9
+frame = 18
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 margin_left = 133.0
@@ -401,9 +406,40 @@ text = "Return"
 [node name="DemoOverviewScreen" parent="CanvasLayer" instance=ExtResource( 16 )]
 visible = false
 
+[node name="DataCleared" type="Popup" parent="CanvasLayer"]
+visible = true
+margin_left = 106.0
+margin_top = 92.0
+margin_right = 215.0
+margin_bottom = 132.0
+
+[node name="Sprite" type="Sprite" parent="CanvasLayer/DataCleared"]
+self_modulate = Color( 0.384314, 0.858824, 0.894118, 0.654902 )
+position = Vector2( 54.75, 28.75 )
+scale = Vector2( 1.82031, 0.484375 )
+texture = ExtResource( 15 )
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/DataCleared"]
+margin_left = -3.0
+margin_top = 22.0
+margin_right = 113.0
+margin_bottom = 37.0
+custom_fonts/normal_font = SubResource( 22 )
+bbcode_enabled = true
+bbcode_text = "[center]Save Data Cleared"
+text = "Save Data Cleared"
+
 [node name="SelectSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 17 )
 pitch_scale = 0.8
+
+[node name="SaveCleared" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 18 )
+pitch_scale = 0.9
+
+[node name="SCTimer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
 
 [connection signal="focus_entered" from="VBoxContainer/Button" to="." method="_on_Button_focus_entered"]
 [connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_Button_pressed"]
@@ -427,5 +463,6 @@ pitch_scale = 0.8
 [connection signal="focus_entered" from="CanvasLayer/PopupDialog2/VBoxContainer/DemoButton" to="." method="_on_DemoButton_focus_entered"]
 [connection signal="pressed" from="CanvasLayer/PopupDialog2/VBoxContainer/DemoButton" to="." method="_on_DemoButton_pressed"]
 [connection signal="pressed" from="CanvasLayer/Popup/ReturnButton" to="." method="_on_ReturnButton_pressed"]
+[connection signal="timeout" from="SCTimer" to="." method="_on_SCTimer_timeout"]
 
 [editable path="CanvasLayer/ControlScreen"]

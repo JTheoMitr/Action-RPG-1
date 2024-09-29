@@ -40,6 +40,7 @@ var g_data = {"player_level": 1,
 			"boss_key_1_nabbed": false,
 			"world_two_boss_lives": true,
 			"boss_key_2_nabbed": true,
+			"world_1_path_opened": false,
 			}
 
 func _ready():
@@ -97,6 +98,7 @@ func load_data():
 			"boss_key_1_nabbed": false,
 			"world_two_boss_lives": true,
 			"boss_key_2_nabbed": true,
+			"world_1_path_opened": false,
 		}
 		save_data()
 	file.open(SAVE_FILE, File.READ)
