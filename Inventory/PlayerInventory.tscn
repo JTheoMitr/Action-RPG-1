@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=2]
+[gd_scene load_steps=41 format=2]
 
 [ext_resource path="res://Inventory/popsicle-red.png" type="Texture" id=1]
 [ext_resource path="res://Inventory/popsicle-blue.png" type="Texture" id=2]
@@ -76,6 +76,30 @@ size = 10
 font_data = ExtResource( 13 )
 
 [sub_resource type="DynamicFont" id=14]
+size = 10
+font_data = ExtResource( 13 )
+
+[sub_resource type="DynamicFont" id=17]
+size = 10
+font_data = ExtResource( 13 )
+
+[sub_resource type="DynamicFont" id=18]
+size = 10
+font_data = ExtResource( 13 )
+
+[sub_resource type="DynamicFont" id=19]
+size = 10
+font_data = ExtResource( 13 )
+
+[sub_resource type="DynamicFont" id=20]
+size = 10
+font_data = ExtResource( 13 )
+
+[sub_resource type="DynamicFont" id=21]
+size = 10
+font_data = ExtResource( 13 )
+
+[sub_resource type="DynamicFont" id=22]
 size = 10
 font_data = ExtResource( 13 )
 
@@ -339,11 +363,11 @@ scale = Vector2( 0.2, 0.2 )
 texture = ExtResource( 11 )
 
 [node name="RichTextLabel" type="RichTextLabel" parent="ControlsPanel"]
-margin_left = 68.5714
-margin_top = 2.85714
-margin_right = 139.571
-margin_bottom = 19.8571
-rect_scale = Vector2( 0.9, 0.9 )
+margin_left = 77.1428
+margin_top = 1.42857
+margin_right = 126.143
+margin_bottom = 18.4286
+custom_fonts/normal_font = SubResource( 17 )
 text = "CONTROLS"
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="ControlsPanel"]
@@ -352,6 +376,7 @@ margin_top = 38.5714
 margin_right = 148.571
 margin_bottom = 55.5714
 rect_scale = Vector2( 0.5, 0.5 )
+custom_fonts/normal_font = SubResource( 18 )
 text = "Movement ------"
 
 [node name="RichTextLabel3" type="RichTextLabel" parent="ControlsPanel"]
@@ -360,6 +385,7 @@ margin_top = 48.5714
 margin_right = 278.571
 margin_bottom = 65.5714
 rect_scale = Vector2( 0.4, 0.4 )
+custom_fonts/normal_font = SubResource( 19 )
 text = "-------- Roll / Dodge"
 
 [node name="RichTextLabel6" type="RichTextLabel" parent="ControlsPanel"]
@@ -368,6 +394,7 @@ margin_top = 41.4286
 margin_right = 285.714
 margin_bottom = 58.4286
 rect_scale = Vector2( 0.4, 0.4 )
+custom_fonts/normal_font = SubResource( 20 )
 text = "-------- Laser"
 
 [node name="RichTextLabel5" type="RichTextLabel" parent="ControlsPanel"]
@@ -376,6 +403,7 @@ margin_top = 32.8571
 margin_right = 278.571
 margin_bottom = 49.8571
 rect_scale = Vector2( 0.4, 0.4 )
+custom_fonts/normal_font = SubResource( 21 )
 text = "---- Special Attack"
 
 [node name="RichTextLabel4" type="RichTextLabel" parent="ControlsPanel"]
@@ -384,6 +412,7 @@ margin_top = 40.0
 margin_right = 240.0
 margin_bottom = 57.0
 rect_scale = Vector2( 0.4, 0.4 )
+custom_fonts/normal_font = SubResource( 22 )
 text = "Sword ----"
 
 [node name="Timer" type="Timer" parent="."]
