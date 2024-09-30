@@ -1116,12 +1116,22 @@ frames = SubResource( 85 )
 frame = 5
 playing = true
 
+[node name="ZoomTimer" type="Timer" parent="."]
+wait_time = 1.5
+one_shot = true
+
+[node name="ZoomOffTimer" type="Timer" parent="."]
+wait_time = 1.5
+one_shot = true
+
 [connection signal="timeout" from="Pointer/LaserTimer" to="." method="_on_LaserTimer_timeout"]
 [connection signal="timeout" from="Pointer/LaserSpeed" to="." method="_on_LaserSpeed_timeout"]
 [connection signal="area_entered" from="Hurtbox" to="." method="_on_Hurtbox_area_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 [connection signal="timeout" from="TripTimer" to="." method="_on_TripTimer_timeout"]
 [connection signal="timeout" from="ChargeTimer" to="." method="_on_ChargeTimer_timeout"]
+[connection signal="timeout" from="ZoomTimer" to="." method="_on_ZoomTimer_timeout"]
+[connection signal="timeout" from="ZoomOffTimer" to="." method="_on_ZoomOffTimer_timeout"]
 
 [editable path="HitboxPivot/SwordHitbox"]
 [editable path="Hurtbox"]

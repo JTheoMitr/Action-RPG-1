@@ -12,6 +12,7 @@ onready var levelPreText = $RichTextLabel2
 onready var selectSound = $SelectSound
 onready var pressSound = $PressSound
 onready var mapMusic = $MapMusic
+onready var deniedSound = $DeniedSound
 onready var timer = $Timer
 onready var tween_out = $Tween
 onready var playerLevelText = $LevelText
@@ -170,21 +171,40 @@ func _on_CaveButton_pressed():
 	else:
 		denied.popup()
 		timer2.start()
+		deniedSound.play()
 
 # add a tween node and use introTitle fade out method
 
 
 func _on_MarshButton_pressed():
-	SceneTransitionLong.change_scene("res://World3.tscn")
-	pressSound.play(0.0)
-	fade_out(mapMusic)
+	denied.popup()
+	timer2.start()
+	deniedSound.play()
+	#SceneTransitionLong.change_scene("res://World3.tscn")
+	#pressSound.play(0.0)
+	#fade_out(mapMusic)
 
 
 func _on_CityButton_pressed():
-	SceneTransitionLong.change_scene("res://World/DumplingHouseInterior.tscn")
-	pressSound.play(0.0)
-	fade_out(mapMusic)
+	denied.popup()
+	timer2.start()
+	deniedSound.play()
+	#SceneTransitionLong.change_scene("res://World/DumplingHouseInterior.tscn")
+	#pressSound.play(0.0)
+	#fade_out(mapMusic)
 
 
 func _on_Timer2_timeout():
 	denied.hide()
+
+
+func _on_DesertButton_pressed():
+	denied.popup()
+	timer2.start()
+	deniedSound.play()
+
+
+func _on_BlizzardButton_pressed():
+	denied.popup()
+	timer2.start()
+	deniedSound.play()

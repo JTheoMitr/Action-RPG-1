@@ -46,6 +46,8 @@ onready var sprite = $PlayerSprite
 onready var chargeTimer = $ChargeTimer
 onready var playerSpriteSpecials = $PlayerSpriteSpecials
 onready var aura = $Aura
+onready var zoomTimer = $ZoomTimer
+onready var zoomOffTimer = $ZoomOffTimer
 
 
 enum {
@@ -221,6 +223,12 @@ func move_state(delta):
 		if Input.is_action_just_pressed("roll"):
 			state = ROLL
 			crosshair.hide()
+			zoomTimer.start(0.0)
+			
+		if Input.is_action_just_released("roll"):
+			zoomTimer.stop()
+			self.MAX_SPEED = 90
+			self.ACCELERATION = 650
 	
 		if Input.is_action_just_pressed("attack"):
 			state = ATTACK
@@ -468,3 +476,15 @@ func _on_ChargeTimer_timeout():
 	chargeReady = true
 
 
+
+
+func _on_ZoomTimer_timeout():
+	self.MAX_SPEED = 165
+	self.ACCELERATION = 735
+	zoomOffTimer.start()
+
+
+func _on_ZoomOffTimer_timeout():
+	zoomTimer.stop()
+	self.MAX_SPEED = 90
+	self.ACCELERATION = 650
