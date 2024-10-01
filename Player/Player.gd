@@ -80,6 +80,9 @@ var horiZone
 var chargeReady = false
 var veLockity = false
 
+# for speed boost / air gordon skill
+var zoomOn = false
+
 
 func _ready():
 	
@@ -221,11 +224,15 @@ func move_state(delta):
 				laserTop = true
 		
 		if Input.is_action_just_pressed("roll"):
-			state = ROLL
+			#adjust so roll only happens on release when zoom is not enabled? tie to zoomTimer
+			#state = ROLL
+			zoomOn = false
 			crosshair.hide()
 			zoomTimer.start(0.0)
 			
 		if Input.is_action_just_released("roll"):
+			if zoomOn == false:
+				state = ROLL
 			zoomTimer.stop()
 			self.MAX_SPEED = 90
 			self.ACCELERATION = 650
@@ -479,6 +486,7 @@ func _on_ChargeTimer_timeout():
 
 
 func _on_ZoomTimer_timeout():
+	zoomOn = true
 	self.MAX_SPEED = 165
 	self.ACCELERATION = 735
 	zoomOffTimer.start()
