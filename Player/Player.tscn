@@ -1,4 +1,4 @@
-[gd_scene load_steps=79 format=2]
+[gd_scene load_steps=80 format=2]
 
 [ext_resource path="res://Player/Player.gd" type="Script" id=1]
 [ext_resource path="res://Player/Main Player One Ranger Helmet GREEN three lighteroutline.png" type="Texture" id=2]
@@ -15,6 +15,7 @@
 [ext_resource path="res://Player/LaserZone.gd" type="Script" id=13]
 [ext_resource path="res://UI/crosshair048.png" type="Texture" id=14]
 [ext_resource path="res://Effects/Free Smoke Fx  Pixel 05 copy.png" type="Texture" id=15]
+[ext_resource path="res://Music and Sounds/DSGNStngr_Action Arcane Attack Fire Swept Whoosh Flame 04_ESM_CG2.wav" type="AudioStream" id=16]
 
 [sub_resource type="CircleShape2D" id=52]
 radius = 49.6488
@@ -1113,7 +1114,7 @@ modulate = Color( 0.929412, 0.690196, 1, 1 )
 position = Vector2( 0, -10 )
 scale = Vector2( 0.8, 0.8 )
 frames = SubResource( 85 )
-frame = 4
+frame = 5
 playing = true
 
 [node name="ZoomTimer" type="Timer" parent="."]
@@ -1123,6 +1124,10 @@ one_shot = true
 [node name="ZoomOffTimer" type="Timer" parent="."]
 wait_time = 1.5
 one_shot = true
+
+[node name="ZoomSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 16 )
+volume_db = 0.7
 
 [connection signal="timeout" from="Pointer/LaserTimer" to="." method="_on_LaserTimer_timeout"]
 [connection signal="timeout" from="Pointer/LaserSpeed" to="." method="_on_LaserSpeed_timeout"]

@@ -8,6 +8,7 @@ const FootstepThree = preload("res://Music and Sounds/Footstep3.tscn")
 const PauseSound = preload("res://Music and Sounds/PauseSound.tscn")
 const LaserSound = preload("res://Music and Sounds/LaserSound.tscn")
 const KnifeSound = preload("res://Music and Sounds/KnifeSound.tscn")
+const ZoomCloud = preload("res://Effects/ZoomCloud.tscn")
 
 onready var playerSpritePurple = preload("res://Player/Main Player One Ranger Helmet GREEN three lighteroutline.png")
 onready var playerSpriteGreen = preload("res://Player/Main Player One Ranger Helmet GREEN three lighteroutline GREEN SWORD.png")
@@ -48,6 +49,7 @@ onready var playerSpriteSpecials = $PlayerSpriteSpecials
 onready var aura = $Aura
 onready var zoomTimer = $ZoomTimer
 onready var zoomOffTimer = $ZoomOffTimer
+onready var zoomSound = $ZoomSound
 
 
 enum {
@@ -487,9 +489,20 @@ func _on_ChargeTimer_timeout():
 
 func _on_ZoomTimer_timeout():
 	zoomOn = true
+	
 	self.MAX_SPEED = 165
 	self.ACCELERATION = 735
 	zoomOffTimer.start()
+	var input_vector = Vector2.ZERO
+	input_vector.x = Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left")
+	input_vector.y = Input.get_action_strength("ui_down") - Input.get_action_strength("ui_up")
+	if  (input_vector.x != 0) || (input_vector.y != 0):
+		zoomSound.play()
+		var zoomCloud = ZoomCloud.instance()
+		get_tree().current_scene.add_child(zoomCloud)
+		zoomCloud.global_position.x = self.global_position.x
+		zoomCloud.global_position.y = self.global_position.y + 3
+	
 
 
 func _on_ZoomOffTimer_timeout():

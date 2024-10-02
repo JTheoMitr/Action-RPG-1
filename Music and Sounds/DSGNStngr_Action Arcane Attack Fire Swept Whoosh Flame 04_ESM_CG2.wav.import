@@ -1,0 +1,23 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/DSGNStngr_Action Arcane Attack Fire Swept Whoosh Flame 04_ESM_CG2.wav-163af52aeb34e294622cdf845801dc91.sample"
+
+[deps]
+
+source_file="res://Music and Sounds/DSGNStngr_Action Arcane Attack Fire Swept Whoosh Flame 04_ESM_CG2.wav"
+dest_files=[ "res://.import/DSGNStngr_Action Arcane Attack Fire Swept Whoosh Flame 04_ESM_CG2.wav-163af52aeb34e294622cdf845801dc91.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
