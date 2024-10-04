@@ -2,6 +2,7 @@ extends Area2D
 
 onready var popup = $IntroDialog2
 onready var stats = PlayerStats
+onready var timer = $Timer
 
 var inArea = false
 
@@ -14,12 +15,9 @@ func _process(delta):
 	popup.rect_global_position.y = self.position.y - 15
 	
 	if (inArea == true) && Input.is_action_just_released("interact"):
-		stats.emit_signal("player_resumed")
-		stats.emit_signal("give_movement")
-		Input.action_press("ui_up")
-		Input.action_release("ui_up")
+		timer.start()
 		popup.hide()
-		queue_free()
+		
 
 
 func _on_IntroArea_area_entered(area):
@@ -28,3 +26,11 @@ func _on_IntroArea_area_entered(area):
 	stats.emit_signal("player_paused")
 	
 
+
+
+func _on_Timer_timeout():
+	stats.emit_signal("player_resumed")
+	stats.emit_signal("give_movement")
+	Input.action_press("ui_up")
+	Input.action_release("ui_up")
+	queue_free()

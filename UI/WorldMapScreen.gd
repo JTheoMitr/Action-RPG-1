@@ -164,14 +164,17 @@ func _on_ForestButton_pressed():
 
 
 func _on_CaveButton_pressed():
-	if save_file.world_1_path_opened == true:
-		SceneTransitionLong.change_scene("res://World2.tscn")
-		pressSound.play(0.0)
-		fade_out(mapMusic)
-	else:
-		denied.popup()
-		timer2.start()
-		deniedSound.play()
+	SceneTransitionLong.change_scene("res://World2.tscn")
+	pressSound.play(0.0)
+	fade_out(mapMusic)
+#	if save_file.world_1_path_opened == true:
+#		SceneTransitionLong.change_scene("res://World2.tscn")
+#		pressSound.play(0.0)
+#		fade_out(mapMusic)
+#	else:
+#		denied.popup()
+#		timer2.start()
+#		deniedSound.play()
 
 # add a tween node and use introTitle fade out method
 
