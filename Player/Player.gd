@@ -209,15 +209,20 @@ func move_state(delta):
 		
 		if Input.is_action_just_pressed("ui_up"):
 			show = false
+			stats.globalPos = self.global_position
+			print_debug(self.global_position)
 				
 		if Input.is_action_just_pressed("ui_down"):
 			show = true
+			stats.globalPos = self.global_position
 				
 		if Input.is_action_just_pressed("ui_right"):
 			show = false
+			stats.globalPos = self.global_position
 				
 		if Input.is_action_just_pressed("ui_left"):
 			show = true
+			stats.globalPos = self.global_position
 		
 		if input_vector.x == 0 && input_vector.y == 0:
 			if show == false:

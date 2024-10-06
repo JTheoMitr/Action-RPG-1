@@ -51,6 +51,7 @@ var redCharge = false
 var rcEnabled = false
 #deflect ability on red projectiles
 
+var globalPos
 
 var forestMapFound = false
 
