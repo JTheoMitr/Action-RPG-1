@@ -90,7 +90,7 @@ texture = ExtResource( 3 )
 
 [node name="PlayerPosition" type="Sprite" parent="."]
 self_modulate = Color( 0, 0.843137, 0.788235, 0.356863 )
-position = Vector2( -308, 268 )
+position = Vector2( -368, 296 )
 scale = Vector2( 7, 7 )
 texture = ExtResource( 5 )
 

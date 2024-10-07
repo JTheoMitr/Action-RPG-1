@@ -19,9 +19,11 @@ func _process(delta):
 
 func _on_Timer_timeout():
 	print_debug(playerPos.position)
+	print_debug(stats.globalPos)
 	if stats.globalPos != null:
-		playerPos.position.x = (stats.globalPos.x * .75)
-		if stats.globalPos > 0:
+		playerPos.position.x = (stats.globalPos.x * .65)
+		if stats.globalPos.y > 0.0:
 			playerPos.position.y = (stats.globalPos.y * .45)
 		else:
-			playerPos.position.y = (stats.globalPos.y * .75)
+			playerPos.position.y = (stats.globalPos.y)
+		
