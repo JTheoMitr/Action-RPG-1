@@ -169,3 +169,7 @@ func _on_DemoButton_focus_entered():
 
 func _on_SCTimer_timeout():
 	dataClearPopup.hide()
+
+
+func _on_TitleMusic_finished():
+	music.play()
