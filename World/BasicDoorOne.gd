@@ -43,7 +43,7 @@ func _on_Area2D_area_entered(area):
 	else:
 		popup.popup()
 		print_debug(stats.boss_keys)
-		print_debug(worldStats.freed)
+		print_debug(stats.forest_freed)
 		
 
 

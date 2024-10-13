@@ -11,7 +11,7 @@ onready var magic = $AnimatedSprite
 onready var healthUp = $PopupDialog2
 onready var timer2 = $Timer2
 
-
+onready var save_file = SaveFile.g_data
 var playerStats = PlayerStats
 
 
@@ -35,6 +35,7 @@ func _on_Area2D_area_entered(area):
 	playerStats.set_health(5)
 	var newSkill = NewSkill.instance()
 	get_tree().current_scene.add_child(newSkill)
+	save_file.player_max_health = 5
 	
 	
 	

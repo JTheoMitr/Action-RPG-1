@@ -101,8 +101,6 @@ var resetValue = false
 
 func set_max_health(value):
 	max_health = value
-	if save_file != null:
-		save_file.player_max_health = value
 	self.health = min(health, max_health)
 	emit_signal("max_health_changed", max_health)
 	
@@ -112,7 +110,9 @@ func set_max_experience(value):
 	emit_signal("max_xp_changed", max_xp)
 	
 func set_max_level(value):
-	max_level = 999
+	max_level = value
+	self.level = min(level, max_level)
+	emit_signal("max_level_changed")
 	
 	
 	

@@ -2,10 +2,12 @@ extends Control
 
 
 var hearts = 4 setget set_hearts
-var max_hearts = 4 setget set_max_hearts
+var max_hearts = 5 setget set_max_hearts
 
 onready var heartUIFull = $HeartUIFull
 onready var heartUIEmpty = $HeartUIEmpty
+
+onready var save_file = SaveFile.g_data
 
 
 func set_hearts(value):
@@ -21,7 +23,7 @@ func set_max_hearts(value):
 		heartUIEmpty.rect_size.x = max_hearts * 15
 
 func _ready():
-	self.max_hearts = PlayerStats.max_health
+	self.max_hearts = save_file.player_max_health
 	self.hearts = PlayerStats.health
 	PlayerStats.connect("health_changed", self, "set_hearts")
 	PlayerStats.connect("max_health_changed", self, "set_max_hearts")
