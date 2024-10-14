@@ -150,9 +150,9 @@ texture = ExtResource( 3 )
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 margin_left = 14.0
-margin_top = 40.0
+margin_top = 25.0
 margin_right = 98.0
-margin_bottom = 151.0
+margin_bottom = 140.0
 rect_scale = Vector2( 0.8, 0.8 )
 
 [node name="Button" type="Button" parent="VBoxContainer"]
@@ -208,13 +208,31 @@ custom_styles/focus = SubResource( 16 )
 custom_styles/normal = SubResource( 8 )
 text = "Phase Attack"
 
+[node name="Button8" type="Button" parent="VBoxContainer"]
+margin_top = 102.0
+margin_right = 84.0
+margin_bottom = 115.0
+custom_fonts/font = SubResource( 3 )
+custom_styles/focus = SubResource( 16 )
+custom_styles/normal = SubResource( 8 )
+text = "Speed Boost"
+
+[node name="Button9" type="Button" parent="VBoxContainer"]
+margin_top = 119.0
+margin_right = 84.0
+margin_bottom = 132.0
+custom_fonts/font = SubResource( 3 )
+custom_styles/focus = SubResource( 16 )
+custom_styles/normal = SubResource( 8 )
+text = "Overcharge"
+
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.2
 one_shot = true
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 4 )
-volume_db = -8.0
+volume_db = -11.0
 pitch_scale = 0.9
 
 [node name="Radio" parent="." instance=ExtResource( 7 )]
@@ -229,4 +247,6 @@ scale = Vector2( 0.7, 0.7 )
 [connection signal="focus_entered" from="VBoxContainer/Button4" to="." method="_on_Button4_focus_entered"]
 [connection signal="focus_entered" from="VBoxContainer/Button5" to="." method="_on_Button5_focus_entered"]
 [connection signal="focus_entered" from="VBoxContainer/Button7" to="." method="_on_Button7_focus_entered"]
+[connection signal="focus_entered" from="VBoxContainer/Button8" to="." method="_on_Button8_focus_entered"]
+[connection signal="focus_entered" from="VBoxContainer/Button9" to="." method="_on_Button9_focus_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

@@ -11,6 +11,8 @@ onready var rollDodge = $VBoxContainer/Button4
 onready var chargeStones = $VBoxContainer/Button5
 onready var tvFuzz = $TVFuzz
 onready var phaseAtk = $VBoxContainer/Button7
+onready var spdBtn = $VBoxContainer/Button8
+onready var ovchgBtn = $VBoxContainer/Button9
 onready var description = $DescriptionText
 onready var videoPlayer = $VideoPlayer
 onready var timer = $Timer
@@ -47,7 +49,12 @@ func _process(delta):
 	if phaseAtk.has_focus():
 		description.bbcode_text = "[center]Hold ([img=c, 10]res://World/gdb-playstation-2 square pressed still.png[/img]) until your charge meter is full to perform your phase attack: A quick slash in 4 directions, the player is also granted a brief moment of invulnerability.[/center]"
 	
-
+	if spdBtn.has_focus():
+		description.bbcode_text = "[center]Hold ([img=c,15]res://World/gdb-playstation-2 cross flat.png[/img]) to ignite your speed boost, a quick burst in any direction to help you escape tight situations.[/center]"
+	
+	if ovchgBtn.has_focus():
+		description.bbcode_text = "[center]Press ([img=c, 10]res://World/gdb-playstation-2 triangle flat.png[/img]) to use your overcharge skill. a burst of energy that damages any nearby enemies. costs 1 floppy disk, an acquired skill.[/center]"
+	
 		
 	
 
@@ -115,3 +122,19 @@ func _on_Button7_focus_entered():
 func _on_Timer_timeout():
 	tvFuzz.hide()
 
+
+
+func _on_Button8_focus_entered():
+	videoPlayer.stream = load("res://UI/speedboost.webm")
+	videoPlayer.play()
+	tvFuzz.show()
+	timer.start()
+	staticSound.play()
+
+
+func _on_Button9_focus_entered():
+	videoPlayer.stream = load("res://UI/overcharge.webm")
+	videoPlayer.play()
+	tvFuzz.show()
+	timer.start()
+	staticSound.play()
