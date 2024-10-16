@@ -9,6 +9,8 @@ onready var grooves = $BossaNova
 onready var canvasLayer = $CanvasLayer
 onready var save_file = SaveFile.g_data
 onready var bgnd = $CanvasLayer/Control/BGND
+onready var timer1 = $Timer
+onready var timer2 = $Timer2
 
 onready var world1Bgnd = preload("res://UI/IMG_4107.JPG")
 onready var world2Bgnd = preload("res://UI/IMG_4104.JPG")
@@ -68,9 +70,17 @@ func _on_Button3_pressed(): #sundae
 func _on_Button4_pressed():
 	canvasLayer.hide()
 	grooves.stop()
-	stats.emit_signal("player_resumed")
+	#stats.emit_signal("player_resumed")
 	WorldStats.emit_signal("fade_music_in")
+	timer1.start()
+	timer2.start()
 
 
 func _on_Timer_timeout():
+	stats.emit_signal("player_resumed")
+	
+	
+
+
+func _on_Timer2_timeout():
 	self.call_deferred("queue_free")

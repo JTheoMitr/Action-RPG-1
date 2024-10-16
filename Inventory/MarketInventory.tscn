@@ -398,6 +398,10 @@ texture = ExtResource( 9 )
 stream = ExtResource( 10 )
 
 [node name="Timer" type="Timer" parent="."]
+wait_time = 0.3
+one_shot = true
+
+[node name="Timer2" type="Timer" parent="."]
 one_shot = true
 
 [connection signal="pressed" from="CanvasLayer/Control/CenterContainer/VBoxContainer/Button" to="." method="_on_Button_pressed"]
@@ -405,3 +409,4 @@ one_shot = true
 [connection signal="pressed" from="CanvasLayer/Control/CenterContainer/VBoxContainer/Button3" to="." method="_on_Button3_pressed"]
 [connection signal="pressed" from="CanvasLayer/Control/CenterContainer/VBoxContainer/Button4" to="." method="_on_Button4_pressed"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[connection signal="timeout" from="Timer2" to="." method="_on_Timer2_timeout"]

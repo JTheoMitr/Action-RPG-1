@@ -15,6 +15,7 @@ onready var skillTimer = $SkillDescTimer
 onready var skillPop = $CanvasLayer/SkillPopUp
 onready var save_file = SaveFile.g_data
 onready var panel = $CanvasLayer/Panel
+onready var finaleTimer = $Timer2
 # onready var chatterSound = ChatterSound.instance()
 
 var inArea = false
@@ -45,8 +46,8 @@ func _process(delta):
 	
 	if skillPopShow == true:
 		if Input.is_action_just_pressed("interact"):
-			queue_free()
-			stats.emit_signal("player_resumed")
+			finaleTimer.start()
+			
 	if textNumber == 0:
 		dialog.get_font("normal_font").size = 18
 	if textNumber >= 1 && textNumber < 5:
@@ -160,3 +161,8 @@ func _on_SkillDescTimer_timeout():
 	skillPopShow = true
 	skillTimer.queue_free()
 
+
+
+func _on_Timer2_timeout():
+	queue_free()
+	stats.emit_signal("player_resumed")
