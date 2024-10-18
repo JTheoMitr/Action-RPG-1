@@ -12,7 +12,7 @@ onready var save_data = SaveFile.g_data
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	worldStats.connect("portal_opened", self, "open_ses")
-	if save_data.portal_1_opened:
+	if save_data.portal_1_opened == true:
 		collisionShape.queue_free()
 		$AnimatedSprite.frame = 5
 		$AnimatedSprite.stop()

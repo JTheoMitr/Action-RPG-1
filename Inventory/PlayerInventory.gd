@@ -32,6 +32,9 @@ var menuOn = false
 var controlsOn = false
 var mapOn = false
 
+# disable buttons while map or controller pane is visible
+var buttonsEnabled = true
+
 
 
 
@@ -61,10 +64,12 @@ func _process(_delta):
 			controlsPanel.hide()
 			controlsOn = false
 			switchText.text = "Controls"
+			buttonsEnabled = true
 		elif !controlsOn:
 			controlsPanel.show()
 			controlsOn = true
 			switchText.text = "Inventory"
+			buttonsEnabled = false
 	if (Input.is_action_just_pressed("charge_switch_f")) && self.visible:
 		if mapOn == false:
 			controlsPanel.hide()
@@ -73,6 +78,7 @@ func _process(_delta):
 			mapButton.hide()
 			mapShadow.hide()
 			map.hide()
+			buttonsEnabled = false
 		else:
 			displayMap.hide()
 			controlsPanel.hide()
@@ -82,6 +88,7 @@ func _process(_delta):
 			mapButton.show()
 			mapShadow.show()
 			map.show()
+			buttonsEnabled = true
 		
 	redPop.text = str(stats.redpops)
 	bluePop.text = str(stats.bluepops)
@@ -119,10 +126,11 @@ func selected():
 	get_tree().current_scene.add_child(ifSelect)
 
 func _on_Button_pressed(): #redpop
-	if stats.redpops >= 1 && stats.health < stats.max_health:
-		stats.health += 2
-		stats.redpops -= 1
-		selected()
+	if buttonsEnabled:
+		if stats.redpops >= 1 && stats.health < stats.max_health:
+			stats.health += 2
+			stats.redpops -= 1
+			selected()
 
 
 func _on_Button_focus_entered():
@@ -145,10 +153,11 @@ func _on_Button3_focus_entered():
 
 
 func _on_Button2_pressed(): #bluepop
-	if stats.bluepops >= 1 && stats.batteries < stats.max_batteries:
-		stats.batteries += 1
-		stats.bluepops -= 1
-		selected()
+	if buttonsEnabled:
+		if stats.bluepops >= 1 && stats.batteries < stats.max_batteries:
+			stats.batteries += 1
+			stats.bluepops -= 1
+			selected()
 
 
 func _on_Button3_pressed():

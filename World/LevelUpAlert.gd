@@ -17,7 +17,7 @@ func show_level_up_alert():
 		$RichTextLabel3.bbcode_text = "[center]You've reached Level %s[/center]" % stats.level
 		$Button.grab_focus()
 		SaveFile.save_data()
-		timer.start()
+		#timer.start()
 		get_tree().paused = true
 
 func _ready():
@@ -25,9 +25,10 @@ func _ready():
 
 
 func _on_Button_pressed():
-	get_tree().paused = false
-	hide()
+	timer.start()
+	
 
 
 func _on_Timer_timeout():
-	pass
+	get_tree().paused = false
+	hide()
