@@ -46,10 +46,12 @@ onready var laserZone = $Pointer/Sprite/LaserZone/CollisionShape2D
 onready var sprite = $PlayerSprite
 onready var chargeTimer = $ChargeTimer
 onready var playerSpriteSpecials = $PlayerSpriteSpecials
+onready var playerSpriteHit = $PlayerSpriteHIT
 onready var aura = $Aura
 onready var zoomTimer = $ZoomTimer
 onready var zoomOffTimer = $ZoomOffTimer
 onready var zoomSound = $ZoomSound
+onready var hitSpriteTimer = $HitSpriteTimer
 
 
 enum {
@@ -110,6 +112,7 @@ func _ready():
 	worldStats.connect("bad_trip", self, "bad_trippin")
 	stats._ready()
 	crosshair.hide()
+	playerSpriteHit.hide()
 	
 	# starting position...need to rethink this if we add player position to saving, and need to stop from doing the initial runup
 	# if player_position_saved in save_file is true, load that (upon saving at stations), if its false (default, or any other auto save or world load...maybe in the first intro area of each? )... then:
@@ -152,6 +155,7 @@ func _ready():
 	
 
 func _process(delta):
+	playerSpriteHit.frame = sprite.frame
 	match state:
 		MOVE:
 			move_state(delta)
@@ -448,6 +452,9 @@ func _on_Hurtbox_area_entered(area):
 	hurtbox.create_hit_effect()
 	var playerHurtSound = PlayerHurtSound.instance()
 	get_tree().current_scene.add_child(playerHurtSound)
+	sprite.hide()
+	playerSpriteHit.show()
+	hitSpriteTimer.start()
 
 func _on_Timer_timeout():
 	if horiZone == false:
@@ -514,3 +521,8 @@ func _on_ZoomOffTimer_timeout():
 	zoomTimer.stop()
 	self.MAX_SPEED = 90
 	self.ACCELERATION = 650
+
+
+func _on_HitSpriteTimer_timeout():
+	sprite.show()
+	playerSpriteHit.hide()

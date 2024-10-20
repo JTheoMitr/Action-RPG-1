@@ -1022,6 +1022,13 @@ texture = ExtResource( 2 )
 hframes = 60
 frame = 37
 
+[node name="PlayerSpriteHIT" type="Sprite" parent="."]
+self_modulate = Color( 1, 0, 0, 1 )
+position = Vector2( 0, -9 )
+texture = ExtResource( 2 )
+hframes = 60
+frame = 18
+
 [node name="PlayerCollision" type="CollisionShape2D" parent="."]
 rotation = 1.5708
 shape = SubResource( 1 )
@@ -1114,7 +1121,7 @@ modulate = Color( 0.929412, 0.690196, 1, 1 )
 position = Vector2( 0, -10 )
 scale = Vector2( 0.8, 0.8 )
 frames = SubResource( 85 )
-frame = 7
+frame = 1
 playing = true
 
 [node name="ZoomTimer" type="Timer" parent="."]
@@ -1129,6 +1136,10 @@ one_shot = true
 stream = ExtResource( 16 )
 volume_db = 0.7
 
+[node name="HitSpriteTimer" type="Timer" parent="."]
+wait_time = 0.3
+one_shot = true
+
 [connection signal="timeout" from="Pointer/LaserTimer" to="." method="_on_LaserTimer_timeout"]
 [connection signal="timeout" from="Pointer/LaserSpeed" to="." method="_on_LaserSpeed_timeout"]
 [connection signal="area_entered" from="Hurtbox" to="." method="_on_Hurtbox_area_entered"]
@@ -1137,6 +1148,7 @@ volume_db = 0.7
 [connection signal="timeout" from="ChargeTimer" to="." method="_on_ChargeTimer_timeout"]
 [connection signal="timeout" from="ZoomTimer" to="." method="_on_ZoomTimer_timeout"]
 [connection signal="timeout" from="ZoomOffTimer" to="." method="_on_ZoomOffTimer_timeout"]
+[connection signal="timeout" from="HitSpriteTimer" to="." method="_on_HitSpriteTimer_timeout"]
 
 [editable path="HitboxPivot/SwordHitbox"]
 [editable path="Hurtbox"]
