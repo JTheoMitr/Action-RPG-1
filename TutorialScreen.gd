@@ -18,6 +18,7 @@ onready var videoPlayer = $VideoPlayer
 onready var timer = $Timer
 onready var staticSound = $AudioStreamPlayer
 
+
 var mute
 # Called when the node enters the scene tree for the first time.
 func _ready():

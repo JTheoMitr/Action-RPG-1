@@ -7,6 +7,7 @@ extends Sprite
 
 onready var panel = $Panel
 onready var musicLabel = $MusicLabel
+onready var qrCode = $QRCode
 onready var music = $AudioStreamPlayer
 var musicSelection
 # Called when the node enters the scene tree for the first time.
@@ -24,7 +25,9 @@ func _ready():
 
 func _on_Button_focus_entered():
 	panel.show()
+	qrCode.show()
 
 
 func _on_Button_focus_exited():
 	panel.hide()
+	qrCode.hide()
