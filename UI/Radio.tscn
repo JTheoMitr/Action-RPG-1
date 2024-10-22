@@ -4,7 +4,7 @@
 [ext_resource path="res://UI/radio_signal.png" type="Texture" id=2]
 [ext_resource path="res://Radio.gd" type="Script" id=3]
 [ext_resource path="res://fonts/PixelTandysoft-0rJG.ttf" type="DynamicFontData" id=4]
-[ext_resource path="res://Music and Sounds/HarpersSill.wav" type="AudioStream" id=5]
+[ext_resource path="res://Music and Sounds/HarperOnTheSill1.6.wav" type="AudioStream" id=5]
 [ext_resource path="res://UI/RozanzuSpotify.png" type="Texture" id=6]
 
 [sub_resource type="StyleBoxFlat" id=1]
@@ -84,6 +84,7 @@ text = "Rozanzu - Harper's Sill"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 5 )
+volume_db = -2.0
 
 [node name="QRCode" type="Sprite" parent="."]
 visible = false
