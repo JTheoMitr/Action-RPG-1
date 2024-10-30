@@ -1,0 +1,23 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/UIAlert_System Notification Alert Foley Alarm Honk Beep Urgent 03_ESM_SPG.wav-49dbd980ea261f7df29c4e6dda3c6118.sample"
+
+[deps]
+
+source_file="res://Music and Sounds/UIAlert_System Notification Alert Foley Alarm Honk Beep Urgent 03_ESM_SPG.wav"
+dest_files=[ "res://.import/UIAlert_System Notification Alert Foley Alarm Honk Beep Urgent 03_ESM_SPG.wav-49dbd980ea261f7df29c4e6dda3c6118.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

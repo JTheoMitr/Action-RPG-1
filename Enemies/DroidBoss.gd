@@ -59,6 +59,12 @@ onready var health3 = $CanvasLayer/DroidBossHealthUI/HBoxContainer/Health_Three
 onready var health4 = $CanvasLayer/DroidBossHealthUI/HBoxContainer/Health_Four
 onready var timer5 = $Timer5
 onready var panel = $CanvasLayer/Panel
+onready var popup = $CanvasLayer/PopupDialog
+onready var bossBacker = $CanvasLayer/PopupDialog/Sprite
+onready var bossPic = $CanvasLayer/PopupDialog/Sprite2
+onready var bossChat = $CanvasLayer/PopupDialog/RichTextLabel
+onready var warningText = $CanvasLayer/PopupDialog/WarningText
+onready var warningSign = $CanvasLayer/PopupDialog/WarningSign
 
 var introduced = false
 
@@ -67,6 +73,7 @@ func _ready():
 	panel.hide()
 	state = pick_random_state([IDLE, WANDER])
 	bossHealthUI.hide()
+	self.stats.health = 8
 	if save_file.world_one_boss_lives == false:
 		queue_free()
 
@@ -180,13 +187,20 @@ func seek_player():
 	if playerDetectionZone.can_see_player():
 		if introduced == false:
 			bossHealthUI.show()
-			$CanvasLayer/PopupDialog.show()
+			popup.show()
+			bossBacker.hide()
+			bossChat.hide()
+			bossPic.hide()
+			warningSign.show()
+			warningSign.play()
+			warningText.show()
 			panel.show()
 			playerStats.emit_signal("player_paused")
 			self.MAX_SPEED = 0
 			introduced = true
 			timer5.start()
-			$ChatterSound.play(0.0)
+			$AlertSound.play(0.0)
+			
 		elif introduced == true && self.MAX_SPEED >= 50:
 			state = CHASE
 			timer.start()
@@ -293,6 +307,14 @@ func _on_Timer3_timeout():
 	var laserFour = LaserFour.instance()
 	get_parent().call_deferred("add_child", laserFour)
 	laserFour.global_position = hitbox.global_position
+	
+	var laserZagR = LaserZagR.instance()
+	get_parent().call_deferred("add_child", laserZagR)
+	laserZagR.global_position = hitbox.global_position
+	
+	var laserZagL = LaserZagL.instance()
+	get_parent().call_deferred("add_child", laserZagL)
+	laserZagL.global_position = hitbox.global_position
 
 
 func _on_Timer4_timeout():
@@ -307,11 +329,24 @@ func _on_Timer4_timeout():
 
 
 func _on_Timer5_timeout():
-	$CanvasLayer/PopupDialog/RichTextLabel.bbcode_text = "[center]But I can Pencil you in for a quick clobberin' [/center]"
+	bossBacker.show()
+	bossChat.show()
+	bossPic.show()
+	warningSign.stop()
+	warningSign.hide()
+	warningText.hide()
+	$ChatterSound.play(0.0)
+	$CanvasLayer/PopupDialog/RichTextLabel.bbcode_text = "[center]Drillin' fer oil keeps me on a tight schedule...[/center]"
 	$Timer6.start()
 
 
 func _on_Timer6_timeout():
+	$CanvasLayer/PopupDialog/RichTextLabel.bbcode_text = "[center]But I can Pencil you in for a quick clobberin'[/center]"
+	$Timer7.start()
+	
+
+
+func _on_Timer7_timeout():
 	playerStats.emit_signal("player_resumed")
 	self.MAX_SPEED = 50
 	state = CHASE
