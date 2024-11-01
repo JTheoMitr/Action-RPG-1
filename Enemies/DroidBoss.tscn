@@ -198,7 +198,7 @@ position = Vector2( -70, -31.6667 )
 scale = Vector2( 1.2, 1.2 )
 frames = SubResource( 7 )
 animation = "attack"
-frame = 3
+frame = 6
 playing = true
 centered = false
 offset = Vector2( 1, -60 )
@@ -364,7 +364,7 @@ Entering drill site"
 [node name="WarningSign" type="AnimatedSprite" parent="CanvasLayer/PopupDialog"]
 scale = Vector2( 1.3, 1.3 )
 frames = SubResource( 55 )
-frame = 3
+frame = 2
 playing = true
 
 [node name="Timer5" type="Timer" parent="."]

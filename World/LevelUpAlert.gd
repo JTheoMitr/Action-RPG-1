@@ -6,6 +6,9 @@ var stats = PlayerStats
 var worldStats = WorldStats
 onready var timer = $Timer
 
+func _process(delta):
+	if Input.is_action_just_pressed("interact"):
+		timer.start()
 
 
 func show_level_up_alert():

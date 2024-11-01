@@ -95,25 +95,25 @@ func _process(_delta):
 	levelText.text = "Level " + str(stats.level)
 	
 	
-	if stats.keys_collected == 1:
+	if save_file.key1_1_nabbed || save_file.key1_2_nabbed || save_file.key1_3_nabbed:
 		cellKeyText.text = "- Find 3 Cell Keys (1/3)"
-	elif stats.keys_collected == 2:
+	elif (save_file.key1_1_nabbed && save_file.key1_2_nabbed) || (save_file.key1_2_nabbed && save_file.key1_3_nabbed) || (save_file.key1_3_nabbed && save_file.key1_1_nabbed):
 		cellKeyText.text = "- Find 3 Cell Keys (2/3)"
-	elif stats.keys_collected == 3:
+	elif save_file.key1_1_nabbed && save_file.key1_2_nabbed && save_file.key1_3_nabbed:
 		cellKeyText.text = "- Find 3 Cell Keys"
 		cellCheck.show()
 		
 		#add a get_parent() check here to determine which 'freed' animals we're checking against (forest, cave, etc)
 	if displayMap == $ForestWorldMap:
-		if stats.forest_freed == 1:
+		if save_file.forest_bear_saved || save_file.forest_deer_saved || save_file.forest_bunny_saved: #stats.forest_freed == 1:
 			animalsText.text = "- Free Animals (1/3)"
-		elif stats.forest_freed == 2:
+		elif save_file.forest_bear_saved && save_file.forest_deer_saved || save_file.forest_deer_saved && save_file.forest_bunny_saved || save_file.forest_bunny_saved && save_file.forest_bear_saved: #stats.forest_freed == 2:
 			animalsText.text = "- Free Animals (2/3)"
-		elif stats.forest_freed == 3:
+		elif save_file.forest_bear_saved && save_file.forest_deer_saved && save_file.forest_bunny_saved: #stats.forest_freed == 3:
 			animalsText.text = "- Free Animals"
 			cellCheckTwo.show()
 		
-	if stats.boss_keys >= 1:
+	if save_file.boss_key_1_nabbed:
 		cellCheckThree.show()
 		
 

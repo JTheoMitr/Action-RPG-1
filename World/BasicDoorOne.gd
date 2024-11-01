@@ -30,11 +30,11 @@ func create_dust_effect():
 	dustEffect.global_position.y = global_position.y + 25
 	
 func _on_Area2D_area_entered(area):
-	if stats.boss_keys == 1 && stats.forest_freed == 3 && stats.keys_collected == 3: #check this for exit issues, change WorldStats to an onready var
+	if save_file.boss_key_1_nabbed && save_file.forest_bear_saved && save_file.forest_deer_saved && save_file.forest_bunny_saved: #check this for exit issues, change WorldStats to an onready var
 		create_dust_effect()
-		stats.boss_keys -= 1
-		stats.forest_freed -= 3
-		stats.keys_collected -= 3
+		#stats.boss_keys -= 1
+		#stats.forest_freed -= 3
+		#stats.keys_collected -= 3
 		save_file.world_1_path_opened = true
 		SaveFile.save_data()
 		var creakSound = DoorCreak.instance()
