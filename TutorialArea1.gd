@@ -13,7 +13,10 @@ func _process(delta):
 
 
 func _on_TutorialArea1_area_entered(area):
-	popup.popup()
+	# bypass for demo
+	pass
+	
+	# popup.popup()
 
 
 func _on_TutorialArea1_area_exited(area):

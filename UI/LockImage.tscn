@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://World/Sturdy Padlock - GOLD - Solo.png" type="Texture" id=1]
+
+[node name="LockImage" type="Sprite"]
+texture = ExtResource( 1 )

@@ -236,43 +236,49 @@ func move_state(delta):
 		
 		if Input.is_action_just_pressed("roll"):
 			#adjust so roll only happens on release when zoom is not enabled? tie to zoomTimer
-			#state = ROLL
-			zoomOn = false
-			crosshair.hide()
-			zoomTimer.start(0.0)
+			# right now roll is on pressed for demo, set back to release after demo
 			
-		if Input.is_action_just_released("roll"):
-			if zoomOn == false:
-				state = ROLL
-			zoomTimer.stop()
-			self.MAX_SPEED = 90
-			self.ACCELERATION = 650
+			state = ROLL
+			crosshair.hide()
+			#commenting out these lines and all release roll code for demo
+			#zoomOn = false
+#			zoomTimer.start(0.0)
+#
+#		if Input.is_action_just_released("roll"):
+#			if zoomOn == false:
+#				state = ROLL
+#			zoomTimer.stop()
+#			self.MAX_SPEED = 90
+#			self.ACCELERATION = 650
 	
 		if Input.is_action_just_pressed("attack"):
 			state = ATTACK
-			chargeTimer.start(0.0)
-			chargeReady = false
 			
-		if Input.is_action_just_released("attack"):
-			if chargeReady == true:
-				playerSpriteSpecials.show()
-				sprite.hide()
-				hurtbox.monitoring = false
-				aura.show()
-				aura.play("default")
-				state = ATTACK
-				#blastZone.disabled = false
-				veLockity = true
-				self.MAX_SPEED = 0
-				var sword = animationPlayer.play("SwordSpecial")
-				chargeTimer.stop()
-				
-			else:
-				chargeTimer.stop()
-				sprite.show()
-				playerSpriteSpecials.hide()
-				aura.hide()
-				aura.stop()
+			#commenting out the following two lines to block charge attack for demo
+			# chargeTimer.start(0.0)
+			# chargeReady = false
+			
+			#commenting out all action released code to block charge attack for demo
+#		if Input.is_action_just_released("attack"):
+#			if chargeReady == true:
+#				playerSpriteSpecials.show()
+#				sprite.hide()
+#				hurtbox.monitoring = false
+#				aura.show()
+#				aura.play("default")
+#				state = ATTACK
+#				#blastZone.disabled = false
+#				veLockity = true
+#				self.MAX_SPEED = 0
+#				var sword = animationPlayer.play("SwordSpecial")
+#				chargeTimer.stop()
+#
+#			else:
+#				chargeTimer.stop()
+#				sprite.show()
+#				playerSpriteSpecials.hide()
+#				aura.hide()
+#				aura.stop()
 			
 			#laser logic for Ray2D
 		if Input.is_action_just_released("laser"):

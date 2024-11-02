@@ -54,6 +54,8 @@ func _ready():
 	worldStats.connect("in_the_tall_grass", self, "cant_find_player")
 	get_parent().call_deferred("add_child", droneSound)
 	droneSound.stop()
+	self.stats.max_health = 5
+	self.stats.health = 5
 	
 	
 

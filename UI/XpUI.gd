@@ -13,9 +13,11 @@ func _process(delta):
 	$RichTextLabel.text = "" + str(stats.xp) + " / " + str(stats.xpCap)
 	
 	if Input.is_action_just_pressed("attack"):
-		if chargeTrue == false:
-			animSprite.play()
-			chargeUp.play()
+		# bypassing this method to block this special for demo
+		pass
+#		if chargeTrue == false:
+#			animSprite.play()
+#			chargeUp.play()
 	
 	if Input.is_action_just_released("attack"):
 			chargeTrue = false

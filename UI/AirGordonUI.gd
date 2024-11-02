@@ -22,7 +22,9 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if Input.is_action_just_pressed("roll"):
-		zoomTimer.start(0.0)
+		# bypassing this for now to block effect in demo
+		pass
+		# zoomTimer.start(0.0)
 		
 	if Input.is_action_just_released("roll"):
 		zoomTimer.stop()
