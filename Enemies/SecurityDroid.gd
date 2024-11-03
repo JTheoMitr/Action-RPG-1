@@ -43,6 +43,7 @@ onready var hitbox2 = $Hitbox2
 onready var timer = $Timer
 onready var timer2 = $Timer2
 onready var timer3 = $Timer3
+onready var smoke = $AnimatedSprite6
 
 var laserEngaged = false
 var droneSound = DroneSound.instance()
@@ -56,6 +57,7 @@ func _ready():
 	droneSound.stop()
 	self.stats.max_health = 5
 	self.stats.health = 5
+	smoke.hide()
 	
 	
 
@@ -108,6 +110,7 @@ func seek_player():
 		droidSound.play(0.0)
 		sprite.play("default")
 		droneSound.play(0.0)
+		smoke.show()
 		timer.start(0.0)
 		timer3.start(0.0)
 			# laserEngaged = true
@@ -116,12 +119,14 @@ func seek_player():
 		timer.stop()
 		timer2.stop()
 		sprite.play("idle")
+		smoke.hide()
 		
 		
 		
 		
 func cant_find_player():
 	state = IDLE
+	
 	
 		
 

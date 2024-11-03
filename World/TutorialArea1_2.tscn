@@ -215,7 +215,7 @@ self_modulate = Color( 0.976471, 0.572549, 1, 0.886275 )
 position = Vector2( 53.75, 90 )
 scale = Vector2( 0.996094, 0.996094 )
 frames = SubResource( 25 )
-frame = 13
+frame = 11
 playing = true
 
 [node name="AnimatedSprite2" type="AnimatedSprite" parent="PopupDialog"]
@@ -223,7 +223,7 @@ self_modulate = Color( 0.976471, 0.572549, 1, 0.886275 )
 position = Vector2( 53.75, 92.5 )
 scale = Vector2( 0.996094, 0.996094 )
 frames = SubResource( 25 )
-frame = 13
+frame = 11
 playing = true
 
 [node name="AnimatedSprite3" type="AnimatedSprite" parent="PopupDialog"]
@@ -231,7 +231,7 @@ self_modulate = Color( 0.94902, 0.741176, 0.960784, 0.556863 )
 position = Vector2( 52.5, 86.25 )
 scale = Vector2( 0.75, 0.75 )
 frames = SubResource( 37 )
-frame = 2
+frame = 3
 playing = true
 
 [connection signal="area_entered" from="." to="." method="_on_TutorialArea1_area_entered"]

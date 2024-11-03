@@ -1,6 +1,6 @@
 extends Area2D
 
-const PickUpSound = preload("res://Music and Sounds/KeyJingleSound.tscn")
+const PickUpSound = preload("res://Music and Sounds/PickUpSoundThree.tscn")
 
 var stats = PlayerStats
 

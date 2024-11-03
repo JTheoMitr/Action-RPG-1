@@ -8,7 +8,10 @@ const Laser = preload("res://Enemies/BossLaserBottomLeftStraight.tscn")
 const LaserTwo = preload("res://Enemies/BossLaserTopRightStraight.tscn")
 const LaserThree = preload("res://Enemies/BossLaserBottomRightStraight.tscn")
 const LaserFour = preload("res://Enemies/BossLaserTopLeftStraight.tscn")
-
+const LaserFive = preload("res://Enemies/BossLaserRightDownDiag.tscn")
+const LaserSix = preload("res://Enemies/BossLaserLeftDownDiag.tscn")
+const LaserSeven = preload("res://Enemies/BossLaserRightUpDiag.tscn")
+const LaserEight = preload("res://Enemies/BossLaserLeftUpDiag.tscn")
 const LaserZagR = preload("res://Enemies/BossLaserRightZag.tscn")
 const LaserZagL = preload("res://Enemies/BossLaserLeftZag.tscn")
 
@@ -307,6 +310,22 @@ func _on_Timer3_timeout():
 	var laserFour = LaserFour.instance()
 	get_parent().call_deferred("add_child", laserFour)
 	laserFour.global_position = hitbox.global_position
+	
+	var laserFive = LaserFive.instance()
+	get_parent().call_deferred("add_child", laserFive)
+	laserFive.global_position = hitbox.global_position
+	
+	var laserSix = LaserSix.instance()
+	get_parent().call_deferred("add_child", laserSix)
+	laserSix.global_position = hitbox.global_position
+	
+	var laserSeven = LaserSeven.instance()
+	get_parent().call_deferred("add_child", laserSeven)
+	laserSeven.global_position = hitbox.global_position
+	
+	var laserEight = LaserEight.instance()
+	get_parent().call_deferred("add_child", laserEight)
+	laserEight.global_position = hitbox.global_position
 	
 	var laserZagR = LaserZagR.instance()
 	get_parent().call_deferred("add_child", laserZagR)
