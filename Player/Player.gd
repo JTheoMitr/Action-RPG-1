@@ -52,6 +52,8 @@ onready var zoomTimer = $ZoomTimer
 onready var zoomOffTimer = $ZoomOffTimer
 onready var zoomSound = $ZoomSound
 onready var hitSpriteTimer = $HitSpriteTimer
+onready var heartbeat = $HeartBeat
+onready var heartBeatTimer = $HeartBeatTimer
 
 
 enum {
@@ -106,6 +108,7 @@ func _ready():
 	stats.connect("green_charged", self, "green_mode")
 	stats.connect("red_charged", self, "red_mode")
 	stats.connect("purple_charged", self, "purple_mode")
+	stats.connect("some_health", self, "heart_monitor")
 	
 	worldStats.connect("in_the_tall_grass", self, "_stealth_mode")
 	worldStats.connect("out_of_the_tall_grass", self, "_visible_again")
@@ -532,3 +535,23 @@ func _on_ZoomOffTimer_timeout():
 func _on_HitSpriteTimer_timeout():
 	sprite.show()
 	playerSpriteHit.hide()
+	
+
+func heart_monitor():
+	if stats.health == 1:
+		heartbeat.play(0.0)
+		heartBeatTimer.start()
+	else:
+		heartbeat.stop()
+		heartBeatTimer.stop()
+
+
+func _on_HeartBeat_finished():
+	if stats.health == 1:
+		heartbeat.play(0.0)
+
+
+func _on_HeartBeatTimer_timeout():
+	sprite.hide()
+	playerSpriteHit.show()
+	hitSpriteTimer.start()

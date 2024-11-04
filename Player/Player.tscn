@@ -1,4 +1,4 @@
-[gd_scene load_steps=80 format=2]
+[gd_scene load_steps=81 format=2]
 
 [ext_resource path="res://Player/Player.gd" type="Script" id=1]
 [ext_resource path="res://Player/Main Player One Ranger Helmet GREEN three lighteroutline.png" type="Texture" id=2]
@@ -16,6 +16,7 @@
 [ext_resource path="res://UI/crosshair048.png" type="Texture" id=14]
 [ext_resource path="res://Effects/Free Smoke Fx  Pixel 05 copy.png" type="Texture" id=15]
 [ext_resource path="res://Music and Sounds/DSGNStngr_Action Arcane Attack Fire Swept Whoosh Flame 04_ESM_CG2.wav" type="AudioStream" id=16]
+[ext_resource path="res://Music and Sounds/heartbeat-05.wav" type="AudioStream" id=17]
 
 [sub_resource type="CircleShape2D" id=52]
 radius = 49.6488
@@ -1121,7 +1122,7 @@ modulate = Color( 0.929412, 0.690196, 1, 1 )
 position = Vector2( 0, -10 )
 scale = Vector2( 0.8, 0.8 )
 frames = SubResource( 85 )
-frame = 4
+frame = 1
 playing = true
 
 [node name="ZoomTimer" type="Timer" parent="."]
@@ -1140,6 +1141,12 @@ volume_db = 0.7
 wait_time = 0.3
 one_shot = true
 
+[node name="HeartBeat" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 17 )
+
+[node name="HeartBeatTimer" type="Timer" parent="."]
+wait_time = 0.7
+
 [connection signal="timeout" from="Pointer/LaserTimer" to="." method="_on_LaserTimer_timeout"]
 [connection signal="timeout" from="Pointer/LaserSpeed" to="." method="_on_LaserSpeed_timeout"]
 [connection signal="area_entered" from="Hurtbox" to="." method="_on_Hurtbox_area_entered"]
@@ -1149,6 +1156,8 @@ one_shot = true
 [connection signal="timeout" from="ZoomTimer" to="." method="_on_ZoomTimer_timeout"]
 [connection signal="timeout" from="ZoomOffTimer" to="." method="_on_ZoomOffTimer_timeout"]
 [connection signal="timeout" from="HitSpriteTimer" to="." method="_on_HitSpriteTimer_timeout"]
+[connection signal="finished" from="HeartBeat" to="." method="_on_HeartBeat_finished"]
+[connection signal="timeout" from="HeartBeatTimer" to="." method="_on_HeartBeatTimer_timeout"]
 
 [editable path="HitboxPivot/SwordHitbox"]
 [editable path="Hurtbox"]

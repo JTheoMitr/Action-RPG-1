@@ -78,6 +78,8 @@ signal map_pickup
 signal key_pickup
 signal key_use
 
+signal some_health
+
 signal health_changed(value)
 signal max_health_changed(value)
 signal keys_changed(value)
@@ -111,8 +113,8 @@ func set_max_experience(value):
 	
 func set_max_level(value):
 	max_level = value
-	self.level = min(level, max_level)
-	emit_signal("max_level_changed")
+	#self.level = min(level, max_level)
+	#emit_signal("max_level_changed")
 	
 	
 	
@@ -167,6 +169,8 @@ func set_health(value):
 	emit_signal("health_changed", health)
 	if health <= 0:
 		emit_signal("no_health")
+	else:
+		emit_signal("some_health")
 		
 func set_keys(value):
 	keys = value
