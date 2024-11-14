@@ -1,11 +1,13 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://TutorialArea1.gd" type="Script" id=1]
 [ext_resource path="res://World/gdb-playstation-2 square pressed.png" type="Texture" id=2]
 [ext_resource path="res://fonts/PixelTandysoft-0rJG.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://UI/deflectnosoundtrimmed.webm" type="VideoStream" id=4]
+[ext_resource path="res://Music and Sounds/Blink_Reeds Windwood_C.wav" type="AudioStream" id=5]
 
 [sub_resource type="CircleShape2D" id=1]
-radius = 66.1211
+radius = 44.0114
 
 [sub_resource type="StyleBoxFlat" id=2]
 bg_color = Color( 0.184314, 0.152941, 0.152941, 0.682353 )
@@ -48,10 +50,15 @@ shape = SubResource( 1 )
 
 [node name="PopupDialog" type="PopupDialog" parent="."]
 visible = true
-margin_right = 82.0
-margin_bottom = 71.0
-rect_scale = Vector2( 0.8, 0.8 )
+margin_left = -65.0
+margin_top = -28.0
+margin_right = 132.0
+margin_bottom = 53.0
+rect_scale = Vector2( 0.7, 0.7 )
 custom_styles/panel = SubResource( 2 )
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="RichTextLabel" type="RichTextLabel" parent="PopupDialog"]
 margin_left = 27.5
@@ -64,21 +71,41 @@ bbcode_text = "[center] plasma  blade [/center]"
 text = " plasma  blade "
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="PopupDialog"]
-margin_left = 2.5
+margin_left = 8.75
 margin_top = 37.5
-margin_right = 115.5
+margin_right = 121.75
 margin_bottom = 154.5
 rect_scale = Vector2( 0.7, 0.7 )
 custom_fonts/normal_font = SubResource( 8 )
 bbcode_enabled = true
-bbcode_text = "[center] Hold Direction to deflect enemy projectiles [/center]"
-text = " Hold Direction to deflect enemy projectiles "
+bbcode_text = "[center] Hold Direction while attacking to deflect enemy projectiles [/center]"
+text = " Hold Direction while attacking to deflect enemy projectiles "
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="PopupDialog"]
 position = Vector2( 17.5, 17.5 )
 frames = SubResource( 7 )
 animation = "Animate"
+frame = 2
 playing = true
+
+[node name="VideoPlayer" type="VideoPlayer" parent="PopupDialog"]
+margin_left = 88.75
+margin_top = 15.0
+margin_right = 187.75
+margin_bottom = 71.0
+stream = ExtResource( 4 )
+autoplay = true
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 8.0
+one_shot = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+volume_db = -3.0
+pitch_scale = 0.8
 
 [connection signal="area_entered" from="." to="." method="_on_TutorialArea1_area_entered"]
 [connection signal="area_exited" from="." to="." method="_on_TutorialArea1_area_exited"]
+[connection signal="finished" from="PopupDialog/VideoPlayer" to="." method="_on_VideoPlayer_finished"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

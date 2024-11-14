@@ -21,6 +21,7 @@ onready var displayMap = $ForestWorldMap
 onready var map = $Map
 onready var mapButton = $MapButton
 onready var mapShadow = $MapShadow
+onready var popup = $PopupDialog
 
 
 onready var save_file = SaveFile.g_data
@@ -53,12 +54,11 @@ func _ready():
 	displayMap.hide()
 	
 func _process(_delta):
-	if Input.is_action_just_pressed("laser"):
-		hide()
-		controlsPanel.hide()
-		timer.start()
-		#get_tree().paused = false
-		menuOn = false
+	if Input.is_action_just_pressed("laser") && self.visible:
+		popup.popup()
+		popup.rect_global_position.y = self.global_position.y - 10
+		popup.rect_global_position.x = self.global_position.x - 50
+		$PopupDialog/Sprite/HBoxContainer/PopUpButton.grab_focus()
 	if (Input.is_action_just_pressed("special_one")) && self.visible:
 		if controlsOn:
 			controlsPanel.hide()
@@ -146,7 +146,7 @@ func _on_Button2_focus_entered():
 
 
 func _on_Button3_focus_entered():
-	description.bbcode_text = "[right] Full Health / Energy [/right]"
+	description.bbcode_text = "[right] Resume Playing [/right]"
 	focused()
 
 
@@ -161,7 +161,11 @@ func _on_Button2_pressed(): #bluepop
 
 
 func _on_Button3_pressed():
-	pass # Replace with function body.
+	hide()
+	controlsPanel.hide()
+	timer.start()
+	#get_tree().paused = false
+	menuOn = false
 
 
 func _on_Timer_timeout():
@@ -173,3 +177,21 @@ func swap_map():
 		displayMap = $ForestWorldMap
 	else:
 		displayMap = $DefaultMap
+
+
+func _on_PopUpButton_pressed():
+	popup.hide()
+
+
+func _on_QuitConfirm_pressed():
+	popup.hide()
+	get_tree().paused = false
+	SceneTransitionLong.change_scene("res://IntroTitleScreen.tscn")
+
+
+func _on_PopUpButton_focus_entered():
+	focused()
+
+
+func _on_QuitConfirm_focus_entered():
+	focused()

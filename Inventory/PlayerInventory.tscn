@@ -1,8 +1,8 @@
-[gd_scene load_steps=41 format=2]
+[gd_scene load_steps=51 format=2]
 
 [ext_resource path="res://Inventory/popsicle-red.png" type="Texture" id=1]
 [ext_resource path="res://Inventory/popsicle-blue.png" type="Texture" id=2]
-[ext_resource path="res://Inventory/icecream-sundae.png" type="Texture" id=3]
+[ext_resource path="res://UI/UI_Flat_Button_Medium_Lock_02a1 copy.png" type="Texture" id=3]
 [ext_resource path="res://Inventory/PlayerInventory.gd" type="Script" id=4]
 [ext_resource path="res://UI/CoinUI.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Player/Main Player One Ranger Helmet GREEN three single.png" type="Texture" id=6]
@@ -38,6 +38,12 @@ font_data = ExtResource( 13 )
 [sub_resource type="DynamicFont" id=5]
 size = 10
 font_data = ExtResource( 13 )
+
+[sub_resource type="StyleBoxFlat" id=27]
+bg_color = Color( 0.254902, 0.603922, 0.341176, 1 )
+
+[sub_resource type="StyleBoxFlat" id=32]
+bg_color = Color( 0.133333, 0.360784, 0.423529, 1 )
 
 [sub_resource type="DynamicFont" id=6]
 size = 10
@@ -107,6 +113,33 @@ font_data = ExtResource( 13 )
 size = 10
 font_data = ExtResource( 13 )
 
+[sub_resource type="DynamicFont" id=23]
+size = 10
+font_data = ExtResource( 13 )
+
+[sub_resource type="DynamicFont" id=24]
+size = 10
+extra_spacing_char = 3
+font_data = ExtResource( 13 )
+
+[sub_resource type="StyleBoxFlat" id=30]
+bg_color = Color( 0.866667, 0.290196, 0.290196, 1 )
+
+[sub_resource type="StyleBoxFlat" id=28]
+bg_color = Color( 0.176471, 0.32549, 0.196078, 1 )
+
+[sub_resource type="StyleBoxFlat" id=25]
+bg_color = Color( 0.133333, 0.360784, 0.423529, 1 )
+
+[sub_resource type="StyleBoxFlat" id=31]
+bg_color = Color( 0.866667, 0.290196, 0.290196, 1 )
+
+[sub_resource type="StyleBoxFlat" id=29]
+bg_color = Color( 0.176471, 0.32549, 0.196078, 1 )
+
+[sub_resource type="StyleBoxFlat" id=26]
+bg_color = Color( 0.133333, 0.360784, 0.423529, 1 )
+
 [node name="PlayerInventory" type="Node2D"]
 pause_mode = 2
 scale = Vector2( 0.7, 0.7 )
@@ -137,11 +170,11 @@ margin_bottom = 40.0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Control/CenterContainer"]
 margin_right = 304.0
-margin_bottom = 102.0
+margin_bottom = 100.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Control/CenterContainer/HBoxContainer"]
 margin_right = 200.0
-margin_bottom = 102.0
+margin_bottom = 100.0
 
 [node name="Panel" type="Panel" parent="Control/CenterContainer/HBoxContainer/VBoxContainer"]
 margin_right = 200.0
@@ -159,6 +192,7 @@ text = "Inventory"
 
 [node name="Button" type="Button" parent="Control/CenterContainer/HBoxContainer/VBoxContainer"]
 pause_mode = 2
+self_modulate = Color( 0.780392, 0.788235, 0.792157, 1 )
 margin_top = 34.0
 margin_right = 200.0
 margin_bottom = 54.0
@@ -167,8 +201,9 @@ expand_icon = true
 
 [node name="RPOP" type="RichTextLabel" parent="Control/CenterContainer/HBoxContainer/VBoxContainer/Button"]
 margin_left = 60.0
+margin_top = 1.0
 margin_right = 221.0
-margin_bottom = 50.0
+margin_bottom = 51.0
 rect_scale = Vector2( 1.2, 1.2 )
 custom_fonts/normal_font = SubResource( 2 )
 text = "RED POP   x
@@ -184,6 +219,7 @@ custom_fonts/normal_font = SubResource( 3 )
 text = "0"
 
 [node name="Button2" type="Button" parent="Control/CenterContainer/HBoxContainer/VBoxContainer"]
+self_modulate = Color( 0.780392, 0.788235, 0.792157, 1 )
 margin_top = 58.0
 margin_right = 200.0
 margin_bottom = 78.0
@@ -211,23 +247,27 @@ text = "0"
 [node name="Button3" type="Button" parent="Control/CenterContainer/HBoxContainer/VBoxContainer"]
 margin_top = 82.0
 margin_right = 200.0
-margin_bottom = 102.0
-icon = ExtResource( 3 )
+margin_bottom = 96.0
+custom_styles/focus = SubResource( 27 )
+custom_styles/normal = SubResource( 32 )
 expand_icon = true
 
 [node name="SUNDAE" type="RichTextLabel" parent="Control/CenterContainer/HBoxContainer/VBoxContainer/Button3"]
-margin_left = 60.0
-margin_top = 0.857147
-margin_right = 195.0
-margin_bottom = 30.8571
+margin_left = 20.0
+margin_top = 2.28571
+margin_right = 155.0
+margin_bottom = 32.2857
 rect_scale = Vector2( 1.2, 1.2 )
 custom_fonts/normal_font = SubResource( 6 )
-text = "SUNDAE    x"
+bbcode_enabled = true
+bbcode_text = "[center]Resume"
+text = "Resume"
 
 [node name="SUNDAEQ" type="RichTextLabel" parent="Control/CenterContainer/HBoxContainer/VBoxContainer/Button3"]
-margin_left = 172.857
+visible = false
+margin_left = 162.857
 margin_top = -2.0
-margin_right = 212.857
+margin_right = 202.857
 margin_bottom = 38.0
 rect_scale = Vector2( 1.6, 1.6 )
 custom_fonts/normal_font = SubResource( 7 )
@@ -236,7 +276,7 @@ text = "0"
 [node name="Panel" type="Panel" parent="Control/CenterContainer/HBoxContainer"]
 margin_left = 204.0
 margin_right = 304.0
-margin_bottom = 102.0
+margin_bottom = 100.0
 rect_min_size = Vector2( 100, 100 )
 
 [node name="ItemDescription" type="RichTextLabel" parent="Control/CenterContainer/HBoxContainer/Panel"]
@@ -326,34 +366,35 @@ margin_right = 244.0
 margin_bottom = 102.0
 
 [node name="Sprite2" type="Sprite" parent="."]
-position = Vector2( 273.743, 94.8 )
-scale = Vector2( 0.6, 0.6 )
+position = Vector2( 271.986, 95.6 )
+scale = Vector2( 0.7, 0.7 )
 texture = ExtResource( 10 )
 
 [node name="Sprite3" type="Sprite" parent="."]
-position = Vector2( 273.3, 85 )
-scale = Vector2( 0.6, 0.6 )
+position = Vector2( 271.664, 84.5214 )
+scale = Vector2( 0.7, 0.7 )
 texture = ExtResource( 12 )
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
-margin_left = 281.0
-margin_top = 91.943
-margin_right = 370.0
-margin_bottom = 131.943
-rect_scale = Vector2( 0.4, 0.4 )
+margin_left = 279.243
+margin_top = 92.743
+margin_right = 368.243
+margin_bottom = 132.743
+rect_scale = Vector2( 0.45, 0.45 )
 custom_fonts/normal_font = SubResource( 13 )
-text = "Resume"
+text = "Quit"
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="."]
-margin_left = 281.0
-margin_top = 82.0
-margin_right = 369.0
-margin_bottom = 97.0
-rect_scale = Vector2( 0.4, 0.4 )
+margin_left = 279.364
+margin_top = 81.5215
+margin_right = 367.364
+margin_bottom = 96.5215
+rect_scale = Vector2( 0.45, 0.45 )
 custom_fonts/normal_font = SubResource( 14 )
 text = "Controls"
 
 [node name="ControlsPanel" type="Panel" parent="."]
+visible = false
 margin_right = 200.0
 margin_bottom = 101.0
 
@@ -430,8 +471,8 @@ scale = Vector2( 0.015, 0.015 )
 texture = ExtResource( 17 )
 
 [node name="Map" type="Sprite" parent="."]
-position = Vector2( 292.857, 20 )
-scale = Vector2( 0.015, 0.015 )
+position = Vector2( 292, 21 )
+scale = Vector2( 0.02, 0.02 )
 texture = ExtResource( 14 )
 
 [node name="MapText" type="RichTextLabel" parent="Map"]
@@ -444,13 +485,62 @@ custom_fonts/normal_font = SubResource( 16 )
 text = "Map"
 
 [node name="MapButton" type="Sprite" parent="."]
-position = Vector2( 280, 20 )
-scale = Vector2( 0.7, 0.7 )
+position = Vector2( 275, 20 )
+scale = Vector2( 0.9, 0.9 )
 texture = ExtResource( 16 )
 
 [node name="DefaultMap" parent="." instance=ExtResource( 18 )]
 visible = false
 position = Vector2( 152.857, 51.4286 )
+
+[node name="PopupDialog" type="PopupDialog" parent="."]
+visible = true
+
+[node name="Sprite" type="Sprite" parent="PopupDialog"]
+position = Vector2( 152.857, 51.4286 )
+scale = Vector2( 2, 2 )
+z_index = 2
+texture = ExtResource( 3 )
+
+[node name="RichTextLabel" type="RichTextLabel" parent="PopupDialog/Sprite"]
+margin_left = -28.0
+margin_top = -12.0
+margin_right = 84.0
+margin_bottom = 9.0
+rect_scale = Vector2( 0.5, 0.5 )
+custom_fonts/normal_font = SubResource( 23 )
+bbcode_enabled = true
+bbcode_text = "[center]Quit the game?"
+text = "Quit the game?"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PopupDialog/Sprite"]
+margin_left = -18.0
+margin_right = 129.0
+margin_bottom = 19.0
+rect_scale = Vector2( 0.25, 0.25 )
+custom_constants/separation = 38
+alignment = 1
+
+[node name="PopUpButton" type="Button" parent="PopupDialog/Sprite/HBoxContainer"]
+margin_left = 4.0
+margin_right = 59.0
+margin_bottom = 19.0
+rect_min_size = Vector2( 55, 19 )
+custom_fonts/font = SubResource( 24 )
+custom_styles/pressed = SubResource( 30 )
+custom_styles/focus = SubResource( 28 )
+custom_styles/normal = SubResource( 25 )
+text = "Nope"
+
+[node name="QuitConfirm" type="Button" parent="PopupDialog/Sprite/HBoxContainer"]
+margin_left = 97.0
+margin_right = 142.0
+margin_bottom = 19.0
+custom_fonts/font = SubResource( 24 )
+custom_styles/pressed = SubResource( 31 )
+custom_styles/focus = SubResource( 29 )
+custom_styles/normal = SubResource( 26 )
+text = " Yes "
 
 [connection signal="focus_entered" from="Control/CenterContainer/HBoxContainer/VBoxContainer/Button" to="." method="_on_Button_focus_entered"]
 [connection signal="pressed" from="Control/CenterContainer/HBoxContainer/VBoxContainer/Button" to="." method="_on_Button_pressed"]
@@ -459,3 +549,7 @@ position = Vector2( 152.857, 51.4286 )
 [connection signal="focus_entered" from="Control/CenterContainer/HBoxContainer/VBoxContainer/Button3" to="." method="_on_Button3_focus_entered"]
 [connection signal="pressed" from="Control/CenterContainer/HBoxContainer/VBoxContainer/Button3" to="." method="_on_Button3_pressed"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[connection signal="focus_entered" from="PopupDialog/Sprite/HBoxContainer/PopUpButton" to="." method="_on_PopUpButton_focus_entered"]
+[connection signal="pressed" from="PopupDialog/Sprite/HBoxContainer/PopUpButton" to="." method="_on_PopUpButton_pressed"]
+[connection signal="focus_entered" from="PopupDialog/Sprite/HBoxContainer/QuitConfirm" to="." method="_on_QuitConfirm_focus_entered"]
+[connection signal="pressed" from="PopupDialog/Sprite/HBoxContainer/QuitConfirm" to="." method="_on_QuitConfirm_pressed"]

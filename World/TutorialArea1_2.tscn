@@ -1,6 +1,6 @@
 [gd_scene load_steps=40 format=2]
 
-[ext_resource path="res://TutorialArea1.gd" type="Script" id=1]
+[ext_resource path="res://World/TutorialArea1_2.gd" type="Script" id=1]
 [ext_resource path="res://Effects/Free Smoke Fx  Pixel 05 copy.png" type="Texture" id=2]
 [ext_resource path="res://fonts/PixelTandysoft-0rJG.ttf" type="DynamicFontData" id=3]
 [ext_resource path="res://World/gdb-playstation-2 square pressed still.png" type="Texture" id=4]
@@ -215,7 +215,7 @@ self_modulate = Color( 0.976471, 0.572549, 1, 0.886275 )
 position = Vector2( 53.75, 90 )
 scale = Vector2( 0.996094, 0.996094 )
 frames = SubResource( 25 )
-frame = 11
+frame = 2
 playing = true
 
 [node name="AnimatedSprite2" type="AnimatedSprite" parent="PopupDialog"]
@@ -223,7 +223,7 @@ self_modulate = Color( 0.976471, 0.572549, 1, 0.886275 )
 position = Vector2( 53.75, 92.5 )
 scale = Vector2( 0.996094, 0.996094 )
 frames = SubResource( 25 )
-frame = 11
+frame = 2
 playing = true
 
 [node name="AnimatedSprite3" type="AnimatedSprite" parent="PopupDialog"]
@@ -231,8 +231,8 @@ self_modulate = Color( 0.94902, 0.741176, 0.960784, 0.556863 )
 position = Vector2( 52.5, 86.25 )
 scale = Vector2( 0.75, 0.75 )
 frames = SubResource( 37 )
-frame = 3
+frame = 1
 playing = true
 
-[connection signal="area_entered" from="." to="." method="_on_TutorialArea1_area_entered"]
-[connection signal="area_exited" from="." to="." method="_on_TutorialArea1_area_exited"]
+[connection signal="area_entered" from="." to="." method="_on_TutorialArea1_2_area_entered"]
+[connection signal="area_exited" from="." to="." method="_on_TutorialArea1_2_area_exited"]

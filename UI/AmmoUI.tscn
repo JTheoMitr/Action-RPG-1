@@ -96,8 +96,9 @@ bbcode_text = "[center]10"
 text = "10"
 
 [node name="BlastAnim" type="AnimatedSprite" parent="."]
-position = Vector2( 25, 7 )
+position = Vector2( 8, 7 )
 scale = Vector2( 0.3, 0.3 )
+z_index = 1
 frames = SubResource( 12 )
 animation = "fire"
 frame = 10

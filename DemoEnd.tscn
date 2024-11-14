@@ -1,4 +1,11 @@
-[gd_scene format=2]
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://UI/overcharge.webm" type="VideoStream" id=1]
+[ext_resource path="res://fonts/PixelTandysoft-0rJG.ttf" type="DynamicFontData" id=2]
+
+[sub_resource type="DynamicFont" id=1]
+size = 10
+font_data = ExtResource( 2 )
 
 [node name="DemoEnd" type="CanvasLayer"]
 
@@ -10,14 +17,37 @@ color = Color( 0.0745098, 0.0745098, 0.0745098, 1 )
 [node name="RichTextLabel" type="RichTextLabel" parent="ColorRect"]
 margin_right = 318.0
 margin_bottom = 150.0
+custom_fonts/normal_font = SubResource( 1 )
+bbcode_enabled = true
+bbcode_text = "[center] 
+
+ Thank you for playing our demo[/center]"
+text = " 
+
+ Thank you for playing our demo"
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="ColorRect"]
+margin_right = 318.0
+margin_bottom = 150.0
+custom_fonts/normal_font = SubResource( 1 )
 bbcode_enabled = true
 bbcode_text = "[center] 
 
 
- 
-Congratulations on completing the level![/center]"
+This is the first small area in a vast world
+that needs the aid of a hero!
+ [/center]"
 text = " 
 
 
- 
-Congratulations on completing the level!"
+This is the first small area in a vast world
+that needs the aid of a hero!
+ "
+
+[node name="VideoPlayer" type="VideoPlayer" parent="."]
+margin_left = 61.0
+margin_top = 80.0
+margin_right = 258.0
+margin_bottom = 165.0
+stream = ExtResource( 1 )
+autoplay = true

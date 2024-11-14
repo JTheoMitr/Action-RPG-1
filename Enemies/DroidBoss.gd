@@ -68,6 +68,8 @@ onready var bossPic = $CanvasLayer/PopupDialog/Sprite2
 onready var bossChat = $CanvasLayer/PopupDialog/RichTextLabel
 onready var warningText = $CanvasLayer/PopupDialog/WarningText
 onready var warningSign = $CanvasLayer/PopupDialog/WarningSign
+onready var hitTimer = $HitTimer
+onready var oof = $Oof
 
 var introduced = false
 
@@ -79,6 +81,10 @@ func _ready():
 	self.stats.health = 8
 	if save_file.world_one_boss_lives == false:
 		queue_free()
+	sprite.modulate.r = 1.00
+	sprite.modulate.g = 1.00
+	sprite.modulate.b = 1.00
+	sprite.modulate.a = 1.00
 
 func _physics_process(delta):
 	knockback = knockback.move_toward(Vector2.ZERO, FRICTION * delta)
@@ -227,8 +233,15 @@ func _on_Hurtbox_area_entered(area):
 	print(stats.health)
 	knockback = area.knockback_vector * 130
 	hurtbox.create_hit_effect()
+	sprite.modulate.r = 1.00
+	sprite.modulate.g = 0.00
+	sprite.modulate.b = 0.00
+	sprite.modulate.a = 1.00
+	hitTimer.start()
+	oof.play()
 	playerDetectionZone.scale.x = (playerDetectionZone.scale.x * 3)
 	playerDetectionZone.scale.y = (playerDetectionZone.scale.y * 3)
+	
 	# print(atkHitbox.monitorable)
 
 
@@ -373,3 +386,10 @@ func _on_Timer7_timeout():
 	$Timer2.start()
 	$CanvasLayer/PopupDialog.hide()
 	panel.hide()
+
+
+func _on_HitTimer_timeout():
+	sprite.modulate.r = 1.00
+	sprite.modulate.g = 1.00
+	sprite.modulate.b = 1.00
+	sprite.modulate.a = 1.00

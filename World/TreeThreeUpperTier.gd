@@ -21,5 +21,5 @@ func _on_IndexArea_area_entered(area):
 
 
 func _on_IndexArea_area_exited(area):
-	self.z_index = 0
+	self.z_index = 1
 	
