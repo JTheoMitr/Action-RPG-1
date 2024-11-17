@@ -1,9 +1,12 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=40 format=2]
 
 [ext_resource path="res://World/Portal_Door_Switch_Activated2.png" type="Texture" id=1]
 [ext_resource path="res://World/Portal_Door.gd" type="Script" id=2]
 [ext_resource path="res://Effects/LightningSpin.tscn" type="PackedScene" id=3]
 [ext_resource path="res://World/Portal_Base.png" type="Texture" id=4]
+[ext_resource path="res://Enemies/Generic Male NPCs A Security Guard.png" type="Texture" id=5]
+[ext_resource path="res://Effects/DEAD.png" type="Texture" id=6]
+[ext_resource path="res://Effects/lightning_one_5_step.png" type="Texture" id=7]
 
 [sub_resource type="AtlasTexture" id=10]
 atlas = ExtResource( 1 )
@@ -43,6 +46,114 @@ radius = 83.3333
 [sub_resource type="CapsuleShape2D" id=9]
 height = 133.333
 
+[sub_resource type="AtlasTexture" id=16]
+atlas = ExtResource( 5 )
+region = Rect2( 0, 0, 76, 115 )
+
+[sub_resource type="AtlasTexture" id=17]
+atlas = ExtResource( 5 )
+region = Rect2( 76, 0, 76, 115 )
+
+[sub_resource type="AtlasTexture" id=18]
+atlas = ExtResource( 5 )
+region = Rect2( 152, 0, 76, 115 )
+
+[sub_resource type="AtlasTexture" id=19]
+atlas = ExtResource( 5 )
+region = Rect2( 0, 115, 76, 115 )
+
+[sub_resource type="AtlasTexture" id=20]
+atlas = ExtResource( 5 )
+region = Rect2( 76, 115, 76, 115 )
+
+[sub_resource type="AtlasTexture" id=21]
+atlas = ExtResource( 5 )
+region = Rect2( 152, 115, 76, 115 )
+
+[sub_resource type="SpriteFrames" id=22]
+animations = [ {
+"frames": [ SubResource( 16 ), SubResource( 17 ), SubResource( 18 ), SubResource( 17 ), SubResource( 16 ), SubResource( 17 ), SubResource( 18 ), SubResource( 19 ), SubResource( 20 ), SubResource( 21 ), SubResource( 20 ), SubResource( 19 ), SubResource( 20 ), SubResource( 21 ) ],
+"loop": true,
+"name": "default",
+"speed": 7.0
+} ]
+
+[sub_resource type="CapsuleShape2D" id=23]
+height = 140.0
+
+[sub_resource type="AtlasTexture" id=24]
+atlas = ExtResource( 6 )
+region = Rect2( 1492, 564, 356, 564 )
+
+[sub_resource type="AtlasTexture" id=25]
+atlas = ExtResource( 6 )
+region = Rect2( 0, 0, 390, 564 )
+
+[sub_resource type="AtlasTexture" id=26]
+atlas = ExtResource( 6 )
+region = Rect2( 407, 0, 390, 564 )
+
+[sub_resource type="AtlasTexture" id=27]
+atlas = ExtResource( 6 )
+region = Rect2( 814, 0, 390, 564 )
+
+[sub_resource type="AtlasTexture" id=28]
+atlas = ExtResource( 6 )
+region = Rect2( 1221, 0, 390, 564 )
+
+[sub_resource type="AtlasTexture" id=29]
+atlas = ExtResource( 6 )
+region = Rect2( 1628, 0, 390, 564 )
+
+[sub_resource type="AtlasTexture" id=30]
+atlas = ExtResource( 6 )
+region = Rect2( 2035, 0, 390, 564 )
+
+[sub_resource type="AtlasTexture" id=31]
+atlas = ExtResource( 6 )
+region = Rect2( 2442, 0, 390, 564 )
+
+[sub_resource type="SpriteFrames" id=32]
+animations = [ {
+"frames": [ SubResource( 24 ) ],
+"loop": true,
+"name": "dead",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 25 ), SubResource( 26 ), SubResource( 27 ), SubResource( 28 ), SubResource( 29 ), SubResource( 30 ), SubResource( 31 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="AtlasTexture" id=33]
+atlas = ExtResource( 7 )
+region = Rect2( 0, 0, 112, 112 )
+
+[sub_resource type="AtlasTexture" id=34]
+atlas = ExtResource( 7 )
+region = Rect2( 112, 0, 112, 112 )
+
+[sub_resource type="AtlasTexture" id=35]
+atlas = ExtResource( 7 )
+region = Rect2( 224, 0, 112, 112 )
+
+[sub_resource type="AtlasTexture" id=36]
+atlas = ExtResource( 7 )
+region = Rect2( 336, 0, 112, 112 )
+
+[sub_resource type="AtlasTexture" id=37]
+atlas = ExtResource( 7 )
+region = Rect2( 448, 0, 112, 112 )
+
+[sub_resource type="SpriteFrames" id=38]
+animations = [ {
+"frames": [ SubResource( 33 ), SubResource( 34 ), SubResource( 35 ), SubResource( 36 ), SubResource( 37 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
 [node name="PortalDoor" type="StaticBody2D"]
 scale = Vector2( 0.3, 0.4 )
 script = ExtResource( 2 )
@@ -70,18 +181,45 @@ shape = SubResource( 9 )
 [node name="LightningSpin" parent="." instance=ExtResource( 3 )]
 position = Vector2( -10, -10 )
 scale = Vector2( 1, 1 )
-frame = 113
+frame = 37
 
 [node name="LightningSpin2" parent="." instance=ExtResource( 3 )]
 position = Vector2( 11.0764, 19.1319 )
 rotation = 0.785398
 scale = Vector2( 1, 1 )
-frame = 112
+frame = 36
 
 [node name="LightningSpin3" parent="." instance=ExtResource( 3 )]
 position = Vector2( -4.97479, 6.54354 )
 rotation = 3.49066
 scale = Vector2( 1, 1 )
-frame = 111
+frame = 35
+
+[node name="GuardOne" type="AnimatedSprite" parent="."]
+position = Vector2( 17.6667, 92.5 )
+scale = Vector2( 1.46491, 1 )
+frames = SubResource( 22 )
+frame = 5
+playing = true
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2( 3.33333, 125 )
+rotation = 1.5708
+shape = SubResource( 23 )
+
+[node name="AnimatedSprite2" type="AnimatedSprite" parent="."]
+position = Vector2( 32.9167, 102.5 )
+scale = Vector2( 0.378205, 0.257092 )
+frames = SubResource( 32 )
+
+[node name="Electricity" type="AnimatedSprite" parent="."]
+position = Vector2( 33.3333, 92.5 )
+frames = SubResource( 38 )
+frame = 2
 
 [connection signal="animation_finished" from="AnimatedSprite" to="." method="_on_AnimatedSprite_animation_finished"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[connection signal="animation_finished" from="AnimatedSprite2" to="." method="_on_AnimatedSprite2_animation_finished"]
+[connection signal="animation_finished" from="Electricity" to="." method="_on_Electricity_animation_finished"]

@@ -1,6 +1,8 @@
 extends StaticBody2D
 
 onready var switchArea = $SwitchArea2D
+onready var popup = $PopupDialog
+onready var save_data = SaveFile.g_data
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
@@ -16,9 +18,11 @@ func _ready():
 	$Lightning6.hide()
 
 
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+func _process(delta):
+	popup.rect_global_position.y = switchArea.global_position.y
+	popup.rect_global_position.x = switchArea.global_position.x + 5
 
 func _on_SwitchArea2D_area_entered(area):
 	worldStats.emit_signal("portal_opened")
@@ -44,3 +48,14 @@ func _on_Timer_timeout():
 	$Lightning5.queue_free()
 	$Lightning6.queue_free()
 	$AudioStreamPlayer.queue_free()
+
+
+func _on_AlertArea2D_area_entered(area):
+	if save_data.portal_1_opened == false:
+		popup.popup()
+		$Timer2.start()
+
+
+func _on_Timer2_timeout():
+	popup.hide()
+	$AlertArea2D/CollisionShape2D.disabled = true
