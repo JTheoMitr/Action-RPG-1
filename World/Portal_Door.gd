@@ -70,6 +70,8 @@ func open_ses():
 	bloodSpatter2.global_position.y = skeleton.global_position.y + 3
 	bloodSpatter2.global_position.x = skeleton.global_position.x
 	
+	$Scream.play()
+	
 	guardAlive = false
 	guardOne.queue_free()
 	electricity.show()

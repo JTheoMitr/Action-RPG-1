@@ -3,7 +3,7 @@
 [ext_resource path="res://Story/IntroArea2.gd" type="Script" id=1]
 [ext_resource path="res://Dialogue Headshots/main_player_face_still.png" type="Texture" id=2]
 [ext_resource path="res://UI/panel_Intro.png" type="Texture" id=3]
-[ext_resource path="res://World/gdb-playstation-2 cross flat.png" type="Texture" id=4]
+[ext_resource path="res://UI/tilemap_btm_btn_still.png" type="Texture" id=4]
 [ext_resource path="res://fonts/PixelTandysoft-0rJG.ttf" type="DynamicFontData" id=5]
 
 [sub_resource type="CircleShape2D" id=1]
@@ -13,7 +13,7 @@ radius = 36.0555
 bg_color = Color( 0.101961, 0.0784314, 0.0784314, 0 )
 
 [sub_resource type="StyleBoxFlat" id=3]
-bg_color = Color( 0.647059, 0.560784, 0.788235, 0.270588 )
+bg_color = Color( 0.505882, 0.282353, 0.870588, 0.270588 )
 
 [sub_resource type="DynamicFont" id=4]
 size = 14
@@ -67,7 +67,7 @@ bbcode_enabled = true
 text = "It's so Quiet,  Something is off..."
 
 [node name="ButtonSprite" type="Sprite" parent="IntroDialog2"]
-position = Vector2( 111.75, 49 )
+position = Vector2( 109, 49 )
 scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 4 )
 

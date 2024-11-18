@@ -1,10 +1,10 @@
-[gd_scene load_steps=34 format=2]
+[gd_scene load_steps=35 format=2]
 
 [ext_resource path="res://StoryArea2.gd" type="Script" id=1]
 [ext_resource path="res://Dialogue Headshots/robot_guide_face_still.png" type="Texture" id=2]
 [ext_resource path="res://fonts/PixelTandysoft-0rJG.ttf" type="DynamicFontData" id=3]
 [ext_resource path="res://UI/panel_Example2.png" type="Texture" id=4]
-[ext_resource path="res://World/gdb-playstation-2 triangle flat.png" type="Texture" id=5]
+[ext_resource path="res://UI/tilemap_top_btn_still.png" type="Texture" id=5]
 [ext_resource path="res://UI/skill_panel_1.png" type="Texture" id=6]
 [ext_resource path="res://Player/overcharge_still.png" type="Texture" id=7]
 [ext_resource path="res://World/gdb-playstation-2 cross flat.png" type="Texture" id=8]
@@ -14,6 +14,7 @@
 [ext_resource path="res://UI/Pixel GUI Buttons pack black platform.png" type="Texture" id=12]
 [ext_resource path="res://Effects/lightning_line1a2.png" type="Texture" id=13]
 [ext_resource path="res://Effects/HitEffect copy.png" type="Texture" id=14]
+[ext_resource path="res://UI/tilemap_btm_btn_still.png" type="Texture" id=15]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 85.0529
@@ -51,10 +52,11 @@ font_data = ExtResource( 3 )
 font_data = ExtResource( 3 )
 
 [sub_resource type="DynamicFont" id=8]
+size = 10
 font_data = ExtResource( 3 )
 
 [sub_resource type="DynamicFont" id=9]
-size = 12
+size = 10
 extra_spacing_top = -7
 font_data = ExtResource( 3 )
 
@@ -72,7 +74,7 @@ texture = ExtResource( 9 )
 region_rect = Rect2( 0, 0, 64, 32 )
 
 [sub_resource type="DynamicFont" id=10]
-size = 12
+size = 10
 extra_spacing_top = -7
 font_data = ExtResource( 3 )
 
@@ -159,8 +161,8 @@ position = Vector2( 185, 88.5 )
 texture = ExtResource( 5 )
 
 [node name="ButtonSprite" type="Sprite" parent="CanvasLayer/SkillPopUp"]
-position = Vector2( 253, 151 )
-texture = ExtResource( 8 )
+position = Vector2( 250, 151 )
+texture = ExtResource( 15 )
 
 [node name="Continue" type="RichTextLabel" parent="CanvasLayer/SkillPopUp"]
 margin_left = 261.429
@@ -278,12 +280,15 @@ scale = Vector2( 2.625, 2.06452 )
 texture = ExtResource( 12 )
 
 [node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/QuestionPopUp"]
-margin_left = -3.0
-margin_top = 6.0
-margin_right = 151.0
-margin_bottom = 37.0
+margin_left = -18.0
+margin_top = 9.0
+margin_right = 88.0
+margin_bottom = 40.0
+rect_scale = Vector2( 1.5, 1.5 )
 custom_fonts/normal_font = SubResource( 8 )
-text = "Will you help?"
+bbcode_enabled = true
+bbcode_text = "[center] will you help?"
+text = " will you help?"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/QuestionPopUp"]
 margin_left = 38.0

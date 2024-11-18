@@ -243,81 +243,80 @@ position = Vector2( 154, 63.1476 )
 rotation = 1.5708
 scale = Vector2( 0.105515, 0.162135 )
 z_index = 1
-frame = 2
 
 [node name="SmokeStackEffectOne2" parent="YSort" instance=ExtResource( 7 )]
 position = Vector2( 160.708, 62.6218 )
 rotation = 1.5708
 scale = Vector2( 0.0979507, 0.0814104 )
 z_index = 1
+frame = 0
 
 [node name="SandDustEffectOne" parent="YSort" instance=ExtResource( 8 )]
 position = Vector2( 118.071, 91 )
 scale = Vector2( 0.275267, 0.321116 )
-frame = 1
+frame = 3
 
 [node name="SandDustEffectOne3" parent="YSort" instance=ExtResource( 8 )]
 position = Vector2( 130, 88 )
 scale = Vector2( 0.176063, 0.252752 )
-frame = 1
+frame = 3
 
 [node name="SandDustEffectOne4" parent="YSort" instance=ExtResource( 8 )]
 position = Vector2( 129, 100 )
-frame = 0
 
 [node name="SandDustEffectOne5" parent="YSort" instance=ExtResource( 8 )]
 position = Vector2( 124, 103 )
 scale = Vector2( 0.172111, 0.268454 )
-frame = 3
+frame = 1
 
 [node name="SandDustEffectOne6" parent="YSort" instance=ExtResource( 8 )]
 position = Vector2( 110, 79 )
 scale = Vector2( 0.207118, 0.365592 )
-frame = 3
+frame = 1
 
 [node name="SandDustEffectOne2" parent="YSort" instance=ExtResource( 8 )]
 position = Vector2( 124, 75 )
 scale = Vector2( 0.170904, 0.293682 )
-frame = 0
 
 [node name="SandDustEffectOne7" parent="YSort" instance=ExtResource( 8 )]
 position = Vector2( 115, 66 )
-frame = 0
 
 [node name="MapClouds" parent="YSort" instance=ExtResource( 9 )]
 position = Vector2( 173, 150 )
-frame = 2
+frame = 1
 
 [node name="MapClouds2" parent="YSort" instance=ExtResource( 9 )]
 position = Vector2( 171, 151 )
+frame = 2
 
 [node name="MapClouds4" parent="YSort" instance=ExtResource( 9 )]
 position = Vector2( 160, 121 )
-frame = 2
+frame = 1
 
 [node name="MapClouds5" parent="YSort" instance=ExtResource( 9 )]
 position = Vector2( 169, 116 )
-frame = 2
+frame = 1
 
 [node name="MapClouds3" parent="YSort" instance=ExtResource( 9 )]
 position = Vector2( 169, 156 )
+frame = 2
 
 [node name="SnowFallOne" parent="YSort" instance=ExtResource( 13 )]
 position = Vector2( 164.75, 38 )
 scale = Vector2( 0.695, 0.42 )
 z_index = 2
 animation = "New Anim"
-frame = 0
+frame = 71
 
 [node name="SwarmOne" parent="YSort" instance=ExtResource( 15 )]
 position = Vector2( 180, 97 )
 scale = Vector2( 0.38125, 0.38125 )
-frame = 5
+frame = 1
 
 [node name="SwarmOne2" parent="YSort" instance=ExtResource( 15 )]
 position = Vector2( 182, 95 )
 scale = Vector2( 0.38125, 0.38125 )
-frame = 5
+frame = 1
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 106, 158 )
@@ -403,6 +402,7 @@ visible = false
 position = Vector2( 16, 45 )
 scale = Vector2( 0.4, 0.4 )
 frames = SubResource( 7 )
+frame = 2
 playing = true
 
 [node name="XpText" type="RichTextLabel" parent="."]
@@ -516,7 +516,7 @@ text = "Drill Toppled"
 position = Vector2( 263, 171.5 )
 scale = Vector2( 0.12, 0.12 )
 frames = SubResource( 17 )
-frame = 3
+frame = 7
 playing = true
 
 [node name="DrillFrame" type="Sprite" parent="."]

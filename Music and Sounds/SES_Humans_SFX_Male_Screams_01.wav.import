@@ -1,0 +1,23 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/SES_Humans_SFX_Male_Screams_01.wav-8b97d7d716a8fe6f4e3f6bf11f4346bf.sample"
+
+[deps]
+
+source_file="res://Music and Sounds/SES_Humans_SFX_Male_Screams_01.wav"
+dest_files=[ "res://.import/SES_Humans_SFX_Male_Screams_01.wav-8b97d7d716a8fe6f4e3f6bf11f4346bf.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

@@ -1,7 +1,7 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://TutorialArea2.gd" type="Script" id=1]
-[ext_resource path="res://World/gdb-playstation-2 x pressed.png" type="Texture" id=2]
+[ext_resource path="res://UI/tilemap_btm_btn.png" type="Texture" id=2]
 [ext_resource path="res://fonts/PixelTandysoft-0rJG.ttf" type="DynamicFontData" id=3]
 
 [sub_resource type="CapsuleShape2D" id=9]
@@ -15,28 +15,20 @@ bg_color = Color( 0.184314, 0.152941, 0.152941, 0.682353 )
 size = 10
 font_data = ExtResource( 3 )
 
-[sub_resource type="AtlasTexture" id=3]
+[sub_resource type="AtlasTexture" id=10]
 atlas = ExtResource( 2 )
-region = Rect2( 2, 0, 16, 16 )
+region = Rect2( 0, 0, 16, 16 )
 
-[sub_resource type="AtlasTexture" id=4]
+[sub_resource type="AtlasTexture" id=11]
 atlas = ExtResource( 2 )
-region = Rect2( 18, 0, 16, 16 )
-
-[sub_resource type="AtlasTexture" id=5]
-atlas = ExtResource( 2 )
-region = Rect2( 34, 0, 16, 16 )
-
-[sub_resource type="AtlasTexture" id=6]
-atlas = ExtResource( 2 )
-region = Rect2( 50, 0, 16, 16 )
+region = Rect2( 0, 17, 16, 16 )
 
 [sub_resource type="SpriteFrames" id=7]
 animations = [ {
-"frames": [ SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ) ],
+"frames": [ SubResource( 10 ), SubResource( 11 ) ],
 "loop": true,
 "name": "Animate",
-"speed": 3.0
+"speed": 2.0
 } ]
 
 [node name="TutorialArea2" type="Area2D"]
@@ -68,9 +60,10 @@ bbcode_enabled = true
 text = "roll / dodge"
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="PopupDialog"]
-position = Vector2( 15, 15 )
+position = Vector2( 14, 15 )
 frames = SubResource( 7 )
 animation = "Animate"
+frame = 1
 playing = true
 
 [connection signal="area_entered" from="." to="." method="_on_TutorialArea2_area_entered"]

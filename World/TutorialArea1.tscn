@@ -1,7 +1,7 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://TutorialArea1.gd" type="Script" id=1]
-[ext_resource path="res://World/gdb-playstation-2 square pressed.png" type="Texture" id=2]
+[ext_resource path="res://UI/tilemap_left_btn.png" type="Texture" id=2]
 [ext_resource path="res://fonts/PixelTandysoft-0rJG.ttf" type="DynamicFontData" id=3]
 [ext_resource path="res://UI/deflectnosoundtrimmed.webm" type="VideoStream" id=4]
 [ext_resource path="res://Music and Sounds/Blink_Reeds Windwood_C.wav" type="AudioStream" id=5]
@@ -16,28 +16,20 @@ bg_color = Color( 0.184314, 0.152941, 0.152941, 0.682353 )
 size = 10
 font_data = ExtResource( 3 )
 
-[sub_resource type="AtlasTexture" id=3]
+[sub_resource type="AtlasTexture" id=9]
 atlas = ExtResource( 2 )
-region = Rect2( 6, 0, 16, 18 )
+region = Rect2( 0, 0, 16, 16 )
 
-[sub_resource type="AtlasTexture" id=4]
+[sub_resource type="AtlasTexture" id=10]
 atlas = ExtResource( 2 )
-region = Rect2( 22, 0, 16, 18 )
-
-[sub_resource type="AtlasTexture" id=5]
-atlas = ExtResource( 2 )
-region = Rect2( 38, 0, 16, 18 )
-
-[sub_resource type="AtlasTexture" id=6]
-atlas = ExtResource( 2 )
-region = Rect2( 54, 0, 16, 18 )
+region = Rect2( 0, 17, 16, 16 )
 
 [sub_resource type="SpriteFrames" id=7]
 animations = [ {
-"frames": [ SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ) ],
+"frames": [ SubResource( 9 ), SubResource( 10 ) ],
 "loop": true,
 "name": "Animate",
-"speed": 3.0
+"speed": 2.0
 } ]
 
 [node name="TutorialArea1" type="Area2D"]
@@ -54,11 +46,8 @@ margin_left = -65.0
 margin_top = -28.0
 margin_right = 132.0
 margin_bottom = 53.0
-rect_scale = Vector2( 0.7, 0.7 )
+rect_scale = Vector2( 0.8, 0.8 )
 custom_styles/panel = SubResource( 2 )
-__meta__ = {
-"_edit_group_": true
-}
 
 [node name="RichTextLabel" type="RichTextLabel" parent="PopupDialog"]
 margin_left = 27.5
@@ -72,20 +61,20 @@ text = " plasma  blade "
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="PopupDialog"]
 margin_left = 8.75
-margin_top = 37.5
+margin_top = 32.5
 margin_right = 121.75
-margin_bottom = 154.5
-rect_scale = Vector2( 0.7, 0.7 )
+margin_bottom = 149.5
+rect_scale = Vector2( 0.65, 0.65 )
 custom_fonts/normal_font = SubResource( 8 )
 bbcode_enabled = true
-bbcode_text = "[center] Hold Direction while attacking to deflect enemy projectiles [/center]"
-text = " Hold Direction while attacking to deflect enemy projectiles "
+bbcode_text = "[center] Melee Weapon - Hold Direction while attacking to deflect enemy projectiles [/center]"
+text = " Melee Weapon - Hold Direction while attacking to deflect enemy projectiles "
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="PopupDialog"]
 position = Vector2( 17.5, 17.5 )
 frames = SubResource( 7 )
 animation = "Animate"
-frame = 2
+frame = 1
 playing = true
 
 [node name="VideoPlayer" type="VideoPlayer" parent="PopupDialog"]

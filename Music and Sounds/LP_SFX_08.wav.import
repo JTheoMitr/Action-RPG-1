@@ -1,0 +1,23 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/LP_SFX_08.wav-a71528e48ae67c56f18274b57b573fd2.sample"
+
+[deps]
+
+source_file="res://Music and Sounds/LP_SFX_08.wav"
+dest_files=[ "res://.import/LP_SFX_08.wav-a71528e48ae67c56f18274b57b573fd2.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

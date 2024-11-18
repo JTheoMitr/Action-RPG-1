@@ -78,7 +78,7 @@ position = Vector2( 5, -68.3333 )
 rotation = 0.261799
 scale = Vector2( 0.3, 0.3 )
 frames = SubResource( 8 )
-frame = 1
+frame = 2
 playing = true
 
 [node name="Lightning2" type="AnimatedSprite" parent="."]
@@ -86,6 +86,7 @@ position = Vector2( 11.6667, -63.3333 )
 rotation = 0.523599
 scale = Vector2( 0.3, 0.3 )
 frames = SubResource( 8 )
+frame = 1
 playing = true
 
 [node name="Lightning3" type="AnimatedSprite" parent="."]
@@ -93,7 +94,6 @@ position = Vector2( 16.6667, -56.6666 )
 rotation = 0.785398
 scale = Vector2( 0.3, 0.3 )
 frames = SubResource( 8 )
-frame = 4
 playing = true
 
 [node name="Lightning4" type="AnimatedSprite" parent="."]
@@ -101,7 +101,6 @@ position = Vector2( -20, -56.6667 )
 rotation = -0.785398
 scale = Vector2( 0.3, 0.3 )
 frames = SubResource( 8 )
-frame = 4
 playing = true
 
 [node name="Lightning5" type="AnimatedSprite" parent="."]
@@ -109,7 +108,6 @@ position = Vector2( -15, -63.3333 )
 rotation = -0.523599
 scale = Vector2( 0.3, 0.3 )
 frames = SubResource( 8 )
-frame = 4
 playing = true
 
 [node name="Lightning6" type="AnimatedSprite" parent="."]
@@ -117,7 +115,7 @@ position = Vector2( -8.33333, -66.6667 )
 rotation = -0.261799
 scale = Vector2( 0.3, 0.3 )
 frames = SubResource( 8 )
-frame = 3
+frame = 4
 playing = true
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
@@ -146,9 +144,9 @@ texture = ExtResource( 6 )
 [node name="RichTextLabel" type="RichTextLabel" parent="PopupDialog/Sprite"]
 self_modulate = Color( 0.101961, 1, 0, 1 )
 margin_left = -20.0
-margin_top = -25.0
+margin_top = -26.6667
 margin_right = 57.0
-margin_bottom = -3.0
+margin_bottom = -4.66666
 rect_scale = Vector2( 0.5, 0.5 )
 custom_fonts/normal_font = SubResource( 10 )
 bbcode_enabled = true
@@ -157,18 +155,30 @@ text = "gate pylon"
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="PopupDialog/Sprite"]
 self_modulate = Color( 0.219608, 1, 0, 1 )
-margin_left = -26.6667
-margin_top = -11.6667
-margin_right = 93.3333
-margin_bottom = 55.3333
-rect_scale = Vector2( 0.45, 0.45 )
+margin_left = -25.0
+margin_top = -13.0
+margin_right = 123.0
+margin_bottom = 87.0
+rect_scale = Vector2( 0.35, 0.35 )
 custom_fonts/normal_font = SubResource( 10 )
 bbcode_enabled = true
-bbcode_text = "[center]Caution: Ensure no organic matter is nearby gate when pylon is activated."
-text = "Caution: Ensure no organic matter is nearby gate when pylon is activated."
+bbcode_text = "[center]Caution: Ensure no personnel are near gate when pylon is activated. Oilco is not responsible for employee harm or fatal injury"
+text = "Caution: Ensure no personnel are near gate when pylon is activated. Oilco is not responsible for employee harm or fatal injury"
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="PopupDialog/Sprite"]
+self_modulate = Color( 1, 0, 0, 1 )
+margin_left = -25.0
+margin_top = -13.0
+margin_right = 123.0
+margin_bottom = 87.0
+rect_scale = Vector2( 0.35, 0.35 )
+custom_fonts/normal_font = SubResource( 10 )
+bbcode_enabled = true
+bbcode_text = "[center]Caution:           "
+text = "Caution:           "
 
 [node name="Timer2" type="Timer" parent="."]
-wait_time = 5.0
+wait_time = 6.0
 one_shot = true
 
 [connection signal="area_entered" from="SwitchArea2D" to="." method="_on_SwitchArea2D_area_entered"]
