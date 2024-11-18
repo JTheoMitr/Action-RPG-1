@@ -19,6 +19,7 @@ onready var click = $Click
 onready var groan = $Groan
 onready var steam = $Steam
 onready var error = $Error
+onready var text = $RichTextSave2
 onready var spawnArea = $SpawnArea/CollisionShape2D
 onready var save_data = SaveFile.g_data
 
@@ -27,9 +28,11 @@ onready var stats = PlayerStats
 const CashSound = preload("res://Music and Sounds/CashRegisterSound.tscn")
 
 var colorAdjustmentsLeft = false
+var textChange
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	textChange = false
 	dustEffect1.hide()
 	popUpSave.hide()
 	lightFlash.hide()
@@ -37,6 +40,11 @@ func _ready():
 	print_debug((get_parent().get_parent().get_parent()).to_string()) #checking for level
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	if textChange == false:
+		text.bbcode_text = "[center] persistotron \nCosts 5"
+	else:
+		text.bbcode_text = "[center] Save yr game \nCosts 5"
+	
 	popUpSave.rect_global_position = self.global_position
 	if door.position.x > 3:
 		slideTimerRight.stop()
@@ -139,3 +147,10 @@ func _on_Timer8_timeout():
 	else:
 		$RichTextSave2.self_modulate.b -= .1
 		$RichTextSave2.self_modulate.g -= .1
+
+
+func _on_Timer9_timeout():
+	if textChange == false:
+		textChange = true
+	else:
+		textChange = false
