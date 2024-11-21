@@ -1,6 +1,6 @@
 [gd_scene load_steps=12 format=2]
 
-[ext_resource path="res://TutorialArea2.gd" type="Script" id=1]
+[ext_resource path="res://World/TutorialArea4.gd" type="Script" id=1]
 [ext_resource path="res://World/gdb-playstation-2 pause pressed.png" type="Texture" id=2]
 [ext_resource path="res://fonts/PixelTandysoft-0rJG.ttf" type="DynamicFontData" id=3]
 
@@ -68,7 +68,7 @@ text = "pause menu"
 position = Vector2( 13.75, 15 )
 frames = SubResource( 7 )
 animation = "Animate"
-frame = 1
+frame = 2
 playing = true
 
 [connection signal="area_entered" from="." to="." method="_on_TutorialArea2_area_entered"]

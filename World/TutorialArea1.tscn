@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://TutorialArea1.gd" type="Script" id=1]
 [ext_resource path="res://UI/tilemap_left_btn.png" type="Texture" id=2]
@@ -15,6 +15,10 @@ bg_color = Color( 0.184314, 0.152941, 0.152941, 0.682353 )
 [sub_resource type="DynamicFont" id=8]
 size = 10
 font_data = ExtResource( 3 )
+
+[sub_resource type="StyleBoxFlat" id=11]
+corner_radius_top_right = 12
+corner_radius_bottom_left = 12
 
 [sub_resource type="AtlasTexture" id=9]
 atlas = ExtResource( 2 )
@@ -70,11 +74,18 @@ bbcode_enabled = true
 bbcode_text = "[center] Melee Weapon - Hold Direction while attacking to deflect enemy projectiles [/center]"
 text = " Melee Weapon - Hold Direction while attacking to deflect enemy projectiles "
 
+[node name="Panel" type="Panel" parent="PopupDialog"]
+margin_left = 7.5
+margin_top = 7.5
+margin_right = 47.5
+margin_bottom = 47.5
+rect_scale = Vector2( 0.5, 0.5 )
+custom_styles/panel = SubResource( 11 )
+
 [node name="AnimatedSprite" type="AnimatedSprite" parent="PopupDialog"]
-position = Vector2( 17.5, 17.5 )
+position = Vector2( 18, 17.5 )
 frames = SubResource( 7 )
 animation = "Animate"
-frame = 1
 playing = true
 
 [node name="VideoPlayer" type="VideoPlayer" parent="PopupDialog"]
@@ -91,7 +102,6 @@ one_shot = true
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 5 )
-volume_db = -3.0
 pitch_scale = 0.8
 
 [connection signal="area_entered" from="." to="." method="_on_TutorialArea1_area_entered"]

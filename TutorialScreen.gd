@@ -33,28 +33,28 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if plasmaBlade.has_focus():
-		description.bbcode_text = "[center]A Powerful Melee weapon that can cut through the toughest of enemies. Attack with ([img=c, 10]res://World/gdb-playstation-2 square pressed still.png[/img]); Damage increases when the player levels up.[/center] "
+		description.bbcode_text = "[center]A Powerful Melee weapon that can cut through the toughest of enemies. Attack with ([img=c, 10]res://UI/tilemap_left_btn_still.png[/img]); Damage increases when the player levels up.[/center] "
 
 	if deflection.has_focus():
-		description.bbcode_text = "[center]Hold any direction while attacking with your plasma blade ([img=c,10]res://World/gdb-playstation-2 square pressed still.png[/img]) to deflect incoming projectiles. Blade Color must match projectile color (see: energy types)."
+		description.bbcode_text = "[center]Hold any direction while attacking with your plasma blade ([img=c,10]res://UI/tilemap_left_btn_still.png[/img]) to deflect incoming projectiles. Blade Color must match projectile color (see: energy types)."
 
 	if laserEye.has_focus():
-		description.bbcode_text = "[center]Use ([img=c,15]res://World/gdb-playstation-2 circle flat.png[/img]) to fire your laser eye; holding will bring up a crosshair for precision aiming (can be performed while moving)."
+		description.bbcode_text = "[center]Use ([img=c,10]res://UI/tilemap_rt_btn_still.png[/img]) to fire your laser eye; holding will bring up a crosshair for precision aiming (can be performed while moving)."
 
 	if rollDodge.has_focus():
-		description.bbcode_text = "[center]Use ([img=c,15]res://World/gdb-playstation-2 cross flat.png[/img]) to perform a quick roll, granting the player a brief moment of invulnerability."
+		description.bbcode_text = "[center]Use ([img=c,10]res://UI/tilemap_btm_btn_still.png[/img]) to perform a quick roll, granting the player a brief moment of invulnerability."
 
 	if chargeStones.has_focus():
 		description.bbcode_text = "[center]Match your blade's energy type (color) with enemy projectiles to deflect or destroy them. You can swap energies while in combat with ( [img=c,15]res://UI/gdb-playstation-2 L1 pressed single.png[/img] or [img=c,15]res://UI/gdb-playstation-2 R1 pressed Single.png[/img] ). Find energy stones to acquire new colors for your blade."
 
 	if phaseAtk.has_focus():
-		description.bbcode_text = "[center]Hold ([img=c, 10]res://World/gdb-playstation-2 square pressed still.png[/img]) until your charge meter is full to perform your phase attack: A quick slash in 4 directions, the player is also granted a brief moment of invulnerability.[/center]"
+		description.bbcode_text = "[center]Hold ([img=c, 10]res://UI/tilemap_left_btn_still.png[/img]) until your charge meter is full to perform your phase attack: A quick slash in 4 directions, the player is also granted a brief moment of invulnerability. An acquired skill.[/center]"
 	
 	if spdBtn.has_focus():
-		description.bbcode_text = "[center]Hold ([img=c,15]res://World/gdb-playstation-2 cross flat.png[/img]) to ignite your speed boost, a quick burst in any direction to help you escape tight situations.[/center]"
+		description.bbcode_text = "[center]Hold ([img=c,10]res://UI/tilemap_btm_btn_still.png[/img]) to ignite your speed boost, a quick burst in any direction to help you escape tight situations. An acquired skill.[/center]"
 	
 	if ovchgBtn.has_focus():
-		description.bbcode_text = "[center]Press ([img=c, 10]res://World/gdb-playstation-2 triangle flat.png[/img]) to use your overcharge skill. a burst of energy that damages any nearby enemies. costs 1 floppy disk, an acquired skill.[/center]"
+		description.bbcode_text = "[center]Press ([img=c, 10]res://UI/tilemap_top_btn_still.png[/img]) to use your overcharge skill. a burst of energy that damages any nearby enemies. costs 1 floppy disk, an acquired skill.[/center]"
 	
 		
 	

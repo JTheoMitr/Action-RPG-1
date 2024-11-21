@@ -1,6 +1,5 @@
-[gd_scene load_steps=40 format=2]
+[gd_scene load_steps=39 format=2]
 
-[ext_resource path="res://UI/FrozencaScriptTypeface.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://IntroTitleScreen.gd" type="Script" id=2]
 [ext_resource path="res://World/FelledSprite.png" type="Texture" id=3]
 [ext_resource path="res://TitleMusic.tscn" type="PackedScene" id=4]
@@ -21,7 +20,7 @@
 
 [sub_resource type="DynamicFont" id=1]
 size = 27
-font_data = ExtResource( 1 )
+font_data = ExtResource( 12 )
 
 [sub_resource type="DynamicFont" id=6]
 size = 10
@@ -155,6 +154,19 @@ texture = ExtResource( 7 )
 margin_left = 70.0
 margin_top = 22.0
 margin_right = 251.0
+margin_bottom = 130.0
+custom_fonts/normal_font = SubResource( 1 )
+bbcode_enabled = true
+bbcode_text = "[center] Keepers 
+ [/center]"
+text = " Keepers 
+ "
+
+[node name="RichTextLabel4" type="RichTextLabel" parent="."]
+visible = false
+margin_left = 70.0
+margin_top = 22.0
+margin_right = 251.0
 margin_bottom = 90.0
 custom_fonts/normal_font = SubResource( 1 )
 bbcode_enabled = true
@@ -165,22 +177,22 @@ text = " Keepers
 
 [node name="RichTextLabel3" type="RichTextLabel" parent="."]
 margin_left = 48.0
-margin_top = 47.0
-margin_right = 360.0
-margin_bottom = 115.0
+margin_top = 49.0
+margin_right = 369.0
+margin_bottom = 138.0
 rect_scale = Vector2( 0.7, 0.7 )
 custom_fonts/normal_font = SubResource( 1 )
 bbcode_enabled = true
-bbcode_text = "[center] of the
+bbcode_text = "[center]of the
  [/center]"
-text = " of the
+text = "of the
  "
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="."]
 margin_left = 4.0
 margin_top = 30.0
 margin_right = 316.0
-margin_bottom = 98.0
+margin_bottom = 110.0
 custom_fonts/normal_font = SubResource( 1 )
 bbcode_enabled = true
 bbcode_text = "[center] 
@@ -198,21 +210,21 @@ visible = false
 position = Vector2( 163, 83.75 )
 scale = Vector2( 0.585, 1.025 )
 animation = "New Anim"
-frame = 21
+frame = 19
 
 [node name="SnowFallOne2" parent="." instance=ExtResource( 5 )]
 modulate = Color( 1, 1, 1, 0.305882 )
 position = Vector2( 83, 89.5 )
 scale = Vector2( 1.6125, 1.81 )
 animation = "New Anim"
-frame = 21
+frame = 19
 
 [node name="SnowFallOne3" parent="." instance=ExtResource( 5 )]
 modulate = Color( 1, 1, 1, 0.305882 )
 position = Vector2( 241, 90 )
 scale = Vector2( 1.6125, 1.82 )
 animation = "New Anim"
-frame = 74
+frame = 72
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 margin_left = 133.0
@@ -236,7 +248,7 @@ margin_bottom = 30.0
 custom_fonts/font = SubResource( 7 )
 custom_styles/focus = SubResource( 5 )
 custom_styles/normal = SubResource( 4 )
-text = "Options"
+text = "Options/Tutorials"
 
 [node name="Button3" type="Button" parent="VBoxContainer"]
 margin_top = 34.0
@@ -245,7 +257,7 @@ margin_bottom = 47.0
 custom_fonts/font = SubResource( 7 )
 custom_styles/focus = SubResource( 5 )
 custom_styles/normal = SubResource( 4 )
-text = "Clear Data"
+text = "Clear Save Data"
 
 [node name="TitleMusic" parent="." instance=ExtResource( 4 )]
 stream = ExtResource( 9 )
@@ -435,6 +447,7 @@ pitch_scale = 0.8
 
 [node name="SaveCleared" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 18 )
+volume_db = -7.0
 pitch_scale = 0.9
 
 [node name="SCTimer" type="Timer" parent="."]

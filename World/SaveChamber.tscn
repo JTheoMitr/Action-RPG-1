@@ -142,7 +142,6 @@ autostart = true
 [node name="DoorDustEffectOne" type="AnimatedSprite" parent="."]
 position = Vector2( 0, 36 )
 frames = SubResource( 6 )
-frame = 3
 playing = true
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
@@ -218,7 +217,7 @@ pitch_scale = 0.6
 
 [node name="Groan" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 8 )
-volume_db = -3.0
+volume_db = -7.0
 pitch_scale = 0.8
 
 [node name="Timer7" type="Timer" parent="."]
@@ -236,7 +235,7 @@ texture = ExtResource( 9 )
 
 [node name="Steam" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 10 )
-volume_db = -9.0
+volume_db = -13.0
 
 [node name="Error" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 11 )

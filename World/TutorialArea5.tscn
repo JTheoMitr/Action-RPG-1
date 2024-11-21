@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=2]
 
-[ext_resource path="res://TutorialArea2.gd" type="Script" id=1]
+[ext_resource path="res://World/TutorialArea5.gd" type="Script" id=1]
 [ext_resource path="res://World/Flower 13 - PURPLE.png" type="Texture" id=2]
 [ext_resource path="res://fonts/PixelTandysoft-0rJG.ttf" type="DynamicFontData" id=3]
 [ext_resource path="res://World/bloobs.png" type="Texture" id=4]
@@ -27,7 +27,7 @@ animations = [ {
 "speed": 3.0
 } ]
 
-[node name="TutorialArea4" type="Area2D"]
+[node name="TutorialArea5" type="Area2D"]
 collision_layer = 0
 collision_mask = 2
 script = ExtResource( 1 )

@@ -39,7 +39,7 @@ var g_data = {"player_level": 1,
 			"world_one_boss_lives": true,
 			"boss_key_1_nabbed": false,
 			"world_two_boss_lives": true,
-			"boss_key_2_nabbed": true,
+			"boss_key_2_nabbed": false,
 			"world_1_path_opened": false,
 			}
 
@@ -97,7 +97,7 @@ func load_data():
 			"world_one_boss_lives": true,
 			"boss_key_1_nabbed": false,
 			"world_two_boss_lives": true,
-			"boss_key_2_nabbed": true,
+			"boss_key_2_nabbed": false,
 			"world_1_path_opened": false,
 		}
 		save_data()

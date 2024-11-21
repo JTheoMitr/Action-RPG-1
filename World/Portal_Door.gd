@@ -3,6 +3,8 @@ extends StaticBody2D
 const PortalSound = preload("res://Music and Sounds/LightningPortalSound.tscn")
 const BloodSpatter = preload("res://Effects/BloodSpatterEffect1.tscn")
 const BloodSpatter2 = preload("res://Effects/BloodSpatterEffect2.tscn")
+const LungsToss = preload("res://Effects/LungsToss1.tscn")
+const GutsToss = preload("res://Effects/GutsToss1.tscn")
 
 # Declare member variables here. Examples:
 # var a = 2
@@ -31,6 +33,7 @@ func _ready():
 	worldStats.connect("portal_opened", self, "open_ses")
 	if save_data.portal_1_opened == true:
 		guardAlive = false
+		guardOne.queue_free()
 		collisionShape.queue_free()
 		collisionShape2.queue_free()
 		$AnimatedSprite.frame = 5
@@ -52,34 +55,44 @@ func _process(delta):
 			guardOne.global_position.x -= 1
 		else:
 			guardOne.global_position.x += 1
-	else:
-		guardOne.hide()
+
 #	pass
 func open_ses():
-	$AnimatedSprite.play("default")
-	collisionShape.queue_free()
-	collisionShape2.queue_free()
-	var portalSound = PortalSound.instance()
-	get_tree().current_scene.add_child(portalSound)
-	var bloodSpatter = BloodSpatter.instance()
-	get_parent().call_deferred("add_child", bloodSpatter)
-	bloodSpatter.global_position = skeleton.global_position
+	if guardAlive && save_data.portal_1_opened == false:
+		$AnimatedSprite.play("default")
+		collisionShape.queue_free()
+		collisionShape2.queue_free()
+		$Pop.play()
+		var portalSound = PortalSound.instance()
+		get_tree().current_scene.add_child(portalSound)
+		var bloodSpatter = BloodSpatter.instance()
+		get_parent().call_deferred("add_child", bloodSpatter)
+		bloodSpatter.global_position = skeleton.global_position
 	
-	var bloodSpatter2 = BloodSpatter2.instance()
-	get_parent().call_deferred("add_child", bloodSpatter2)
-	bloodSpatter2.global_position.y = skeleton.global_position.y + 3
-	bloodSpatter2.global_position.x = skeleton.global_position.x
+		var bloodSpatter2 = BloodSpatter2.instance()
+		get_parent().call_deferred("add_child", bloodSpatter2)
+		bloodSpatter2.global_position.y = skeleton.global_position.y + 10
+		bloodSpatter2.global_position.x = skeleton.global_position.x
 	
-	$Scream.play()
+		var lungsToss = LungsToss.instance()
+		get_parent().call_deferred("add_child", lungsToss)
+		lungsToss.global_position = skeleton.global_position
 	
-	guardAlive = false
-	guardOne.queue_free()
-	electricity.show()
-	electricity.frame = 0
-	electricity.play("default")
-	skeleton.show()
-	skeleton.frame = 0
-	skeleton.play("default")
+		var gutsToss = GutsToss.instance()
+		get_parent().call_deferred("add_child", gutsToss)
+		gutsToss.global_position.y = skeleton.global_position.y + 1
+		gutsToss.global_position.x = skeleton.global_position.x - 2
+	
+		$Scream.play()
+	
+		guardAlive = false
+		guardOne.queue_free()
+		electricity.show()
+		electricity.frame = 0
+		electricity.play("default")
+		skeleton.show()
+		skeleton.frame = 0
+		skeleton.play("default")
 
 
 func _on_AnimatedSprite_animation_finished():

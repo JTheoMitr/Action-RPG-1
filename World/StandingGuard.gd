@@ -21,7 +21,7 @@ func _ready():
 	dialogTextNum = 0
 	popped = false
 	controlsOn = false
-	dialogText = "[center] Wouldn't go that way if I were you...'Big Drill' Larry is on a real tear today"
+	dialogText = "[center] Wouldn't go that way if I were you, pal...'Big Drill' Larry is on a real tear today"
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -35,11 +35,11 @@ func _process(delta):
 	if popped == false:
 		match dialogTextNum:
 			0:
-				dialogText = "[center]Wouldn't go that way if I were you...'Big Drill' Larry is on a real tear today"
+				dialogText = "[center] Wouldn't go that way if I were you, pal...'Big Drill' Larry is on a real tear today"
 			1:
-				dialogText = "[center]OILCO picked the wrong spot for his drill site; there's no oil here..."
+				dialogText = "[center] OILCO picked the wrong spot for his drill site; there's no oil here..."
 			2:
-				dialogText = "[center]I swear those jerks at HQ do no research before sending us out here"
+				dialogText = "[center] I swear those jerks at HQ dont do any research before sending us out here"
 			3:
 				dialogText = "[center]What's that? Well, if you insist on taking him on..."
 			4:
@@ -49,7 +49,7 @@ func _process(delta):
 			6:
 				dialogText = "[center]Last time I saw his food truck... it was due East from here"
 			7:
-				dialogText = "[center]Just dont tell the big boss, he'd drill me silly"
+				dialogText = "[center]Just dont tell the big boss I helped ya, he'd drill me silly"
 			8:
 				dialogText = "[center]Anyways, time for my lunch break. \n Have you seen Kyle?"
 			9:

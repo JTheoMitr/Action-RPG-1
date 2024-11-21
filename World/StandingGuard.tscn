@@ -34,7 +34,6 @@ font_data = ExtResource( 5 )
 [node name="StandingGuard1" type="AnimatedSprite"]
 scale = Vector2( 0.3, 0.3 )
 frames = SubResource( 3 )
-frame = 1
 playing = true
 script = ExtResource( 4 )
 
@@ -54,15 +53,16 @@ scale = Vector2( 1, 1.2 )
 texture = ExtResource( 3 )
 
 [node name="RichTextLabel" type="RichTextLabel" parent="PopupDialog"]
-margin_left = -100.0
-margin_top = -26.6667
-margin_right = 122.0
-margin_bottom = 25.3333
+margin_left = -93.0
+margin_top = -27.0
+margin_right = 117.0
+margin_bottom = 25.0
 rect_scale = Vector2( 1.3, 1.3 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_fonts/normal_font = SubResource( 5 )
 bbcode_enabled = true
-bbcode_text = "[center] Wouldn't go that way if I were you...'Big Drill' Larry is on a real tear today. "
-text = " Wouldn't go that way if I were you...'Big Drill' Larry is on a real tear today. "
+bbcode_text = "[center] Wouldn't go that way if I were you, pal...'Big Drill' Larry is on a real tear today. "
+text = " Wouldn't go that way if I were you, pal...'Big Drill' Larry is on a real tear today. "
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="PopupDialog"]
 margin_left = 114.5
@@ -70,6 +70,7 @@ margin_top = 26.667
 margin_right = 181.5
 margin_bottom = 44.667
 rect_scale = Vector2( 1.3, 1.3 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_fonts/normal_font = SubResource( 5 )
 text = " Continue"
 
@@ -80,7 +81,7 @@ margin_right = -101.0
 margin_bottom = 38.0
 
 [node name="Sprite2" type="Sprite" parent="PopupDialog"]
-position = Vector2( -138, 7 )
+position = Vector2( -138, 7.5 )
 scale = Vector2( 1.3, 1.3 )
 texture = ExtResource( 2 )
 
@@ -90,6 +91,6 @@ texture = ExtResource( 6 )
 
 [node name="Grunt" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 7 )
-pitch_scale = 0.25
+pitch_scale = 0.3
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_Area2D_area_entered"]

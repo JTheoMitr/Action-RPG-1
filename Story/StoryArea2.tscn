@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=2]
+[gd_scene load_steps=34 format=2]
 
 [ext_resource path="res://StoryArea2.gd" type="Script" id=1]
 [ext_resource path="res://Dialogue Headshots/robot_guide_face_still.png" type="Texture" id=2]
@@ -7,7 +7,6 @@
 [ext_resource path="res://UI/tilemap_top_btn_still.png" type="Texture" id=5]
 [ext_resource path="res://UI/skill_panel_1.png" type="Texture" id=6]
 [ext_resource path="res://Player/overcharge_still.png" type="Texture" id=7]
-[ext_resource path="res://World/gdb-playstation-2 cross flat.png" type="Texture" id=8]
 [ext_resource path="res://UI/Pixel GUI Button Black Wide Unpressed.png" type="Texture" id=9]
 [ext_resource path="res://UI/Pixel GUI Buttons Black Wide Pressed.png" type="Texture" id=10]
 [ext_resource path="res://UI/Pixel GUI Buttons Black Wide Focused.png" type="Texture" id=11]
@@ -115,7 +114,6 @@ margin_right = 323.0
 margin_bottom = 182.0
 
 [node name="SkillPopUp" type="PopupDialog" parent="CanvasLayer"]
-visible = true
 margin_left = 40.0
 margin_top = 19.0
 margin_right = 373.0
@@ -219,8 +217,8 @@ scale = Vector2( 0.6, 0.6 )
 texture = ExtResource( 2 )
 
 [node name="ButtonSprite" type="Sprite" parent="CanvasLayer/StoryDialog2"]
-position = Vector2( 173.333, 80 )
-texture = ExtResource( 8 )
+position = Vector2( 172, 80 )
+texture = ExtResource( 15 )
 
 [node name="Continue" type="RichTextLabel" parent="CanvasLayer/StoryDialog2"]
 margin_left = 183.333
@@ -264,7 +262,6 @@ scale = Vector2( 0.3, 0.3 )
 texture = ExtResource( 14 )
 
 [node name="QuestionPopUp" type="PopupDialog" parent="CanvasLayer"]
-visible = true
 margin_left = 95.0
 margin_top = 57.0
 margin_right = 95.0

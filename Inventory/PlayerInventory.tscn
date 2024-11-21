@@ -9,9 +9,9 @@
 [ext_resource path="res://Inventory/ItemDescription.gd" type="Script" id=7]
 [ext_resource path="res://UI/06 Border 01.png" type="Texture" id=8]
 [ext_resource path="res://UI/e8ba734de1b8121.png" type="Texture" id=9]
-[ext_resource path="res://World/gdb-playstation-2 circle flat.png" type="Texture" id=10]
+[ext_resource path="res://UI/tilemap_rt_btn_still.png" type="Texture" id=10]
 [ext_resource path="res://UI/ps4_gamepad isolated.png" type="Texture" id=11]
-[ext_resource path="res://World/gdb-playstation-2 triangle flat.png" type="Texture" id=12]
+[ext_resource path="res://UI/tilemap_top_btn_still.png" type="Texture" id=12]
 [ext_resource path="res://fonts/PixelTandysoft-0rJG.ttf" type="DynamicFontData" id=13]
 [ext_resource path="res://UI/map_icon.png" type="Texture" id=14]
 [ext_resource path="res://World/ForestWorldMap.tscn" type="PackedScene" id=15]
@@ -262,8 +262,8 @@ margin_bottom = 32.2857
 rect_scale = Vector2( 1.2, 1.2 )
 custom_fonts/normal_font = SubResource( 6 )
 bbcode_enabled = true
-bbcode_text = "[center]Resume"
-text = "Resume"
+bbcode_text = "[center]R e s u m e"
+text = "R e s u m e"
 
 [node name="SUNDAEQ" type="RichTextLabel" parent="Control/CenterContainer/HBoxContainer/VBoxContainer/Button3"]
 visible = false
@@ -368,7 +368,7 @@ margin_right = 244.0
 margin_bottom = 102.0
 
 [node name="Sprite2" type="Sprite" parent="."]
-position = Vector2( 271.986, 95.6 )
+position = Vector2( 271.664, 97 )
 scale = Vector2( 0.7, 0.7 )
 texture = ExtResource( 10 )
 

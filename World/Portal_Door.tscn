@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=2]
+[gd_scene load_steps=42 format=2]
 
 [ext_resource path="res://World/Portal_Door_Switch_Activated2.png" type="Texture" id=1]
 [ext_resource path="res://World/Portal_Door.gd" type="Script" id=2]
@@ -7,7 +7,8 @@
 [ext_resource path="res://Enemies/Generic Male NPCs A Security Guard.png" type="Texture" id=5]
 [ext_resource path="res://Effects/DEAD.png" type="Texture" id=6]
 [ext_resource path="res://Effects/lightning_one_5_step.png" type="Texture" id=7]
-[ext_resource path="res://Music and Sounds/SES_Humans_SFX_Male_Screams_01.wav" type="AudioStream" id=8]
+[ext_resource path="res://Music and Sounds/Sl Halloween Sfx Woman Screaming 1.wav" type="AudioStream" id=8]
+[ext_resource path="res://Music and Sounds/ESM CPH fx laser one shot down dirty synth wobble.wav" type="AudioStream" id=9]
 
 [sub_resource type="AtlasTexture" id=10]
 atlas = ExtResource( 1 )
@@ -182,19 +183,19 @@ shape = SubResource( 9 )
 [node name="LightningSpin" parent="." instance=ExtResource( 3 )]
 position = Vector2( -10, -10 )
 scale = Vector2( 1, 1 )
-frame = 89
+frame = 88
 
 [node name="LightningSpin2" parent="." instance=ExtResource( 3 )]
 position = Vector2( 11.0764, 19.1319 )
 rotation = 0.785398
 scale = Vector2( 1, 1 )
-frame = 88
+frame = 87
 
 [node name="LightningSpin3" parent="." instance=ExtResource( 3 )]
 position = Vector2( -4.97479, 6.54354 )
 rotation = 3.49066
 scale = Vector2( 1, 1 )
-frame = 87
+frame = 86
 
 [node name="GuardOne" type="AnimatedSprite" parent="."]
 position = Vector2( 17.6667, 92.5 )
@@ -222,8 +223,13 @@ frame = 2
 
 [node name="Scream" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 8 )
-volume_db = -17.0
-pitch_scale = 0.5
+volume_db = -7.0
+pitch_scale = 0.8
+
+[node name="Pop" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 9 )
+volume_db = -3.0
+pitch_scale = 0.7
 
 [connection signal="animation_finished" from="AnimatedSprite" to="." method="_on_AnimatedSprite_animation_finished"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

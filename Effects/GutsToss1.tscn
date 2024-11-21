@@ -1,0 +1,50 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://Effects/Effect.gd" type="Script" id=1]
+[ext_resource path="res://Effects/guts_toss_1.png" type="Texture" id=2]
+[ext_resource path="res://Music and Sounds/GORESqsh_Gore Blood Squelch Squeeze Squishing Wet Medium 03_ESM_CH.wav" type="AudioStream" id=3]
+
+[sub_resource type="AtlasTexture" id=4]
+atlas = ExtResource( 2 )
+region = Rect2( 10, 0, 36, 56 )
+
+[sub_resource type="AtlasTexture" id=5]
+atlas = ExtResource( 2 )
+region = Rect2( 46, 0, 36, 56 )
+
+[sub_resource type="AtlasTexture" id=6]
+atlas = ExtResource( 2 )
+region = Rect2( 82, 0, 36, 56 )
+
+[sub_resource type="AtlasTexture" id=7]
+atlas = ExtResource( 2 )
+region = Rect2( 118, 0, 36, 56 )
+
+[sub_resource type="AtlasTexture" id=8]
+atlas = ExtResource( 2 )
+region = Rect2( 154, 0, 36, 56 )
+
+[sub_resource type="AtlasTexture" id=9]
+atlas = ExtResource( 2 )
+region = Rect2( 190, 0, 36, 56 )
+
+[sub_resource type="SpriteFrames" id=3]
+animations = [ {
+"frames": [ SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ) ],
+"loop": true,
+"name": "Animate",
+"speed": 5.0
+} ]
+
+[node name="GutsToss1" type="AnimatedSprite"]
+scale = Vector2( 0.2, 0.2 )
+frames = SubResource( 3 )
+animation = "Animate"
+offset = Vector2( 0, -12 )
+flip_h = true
+script = ExtResource( 1 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+volume_db = 5.0
+pitch_scale = 0.3

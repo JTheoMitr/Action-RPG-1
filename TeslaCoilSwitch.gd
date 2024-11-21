@@ -54,6 +54,7 @@ func _on_AlertArea2D_area_entered(area):
 	if save_data.portal_1_opened == false:
 		popup.popup()
 		$Timer2.start()
+		$WarningSound.play()
 
 
 func _on_Timer2_timeout():
