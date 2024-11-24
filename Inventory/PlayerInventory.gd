@@ -33,6 +33,8 @@ var menuOn = false
 var controlsOn = false
 var mapOn = false
 
+var pauseEnabled
+
 # disable buttons while map or controller pane is visible
 var buttonsEnabled = true
 
@@ -41,6 +43,7 @@ var buttonsEnabled = true
 
 func _ready():
 	stats.connect("map_pickup", self, "swap_map")
+	stats.connect("enable_pause", self, "free_pause")
 	print_debug((get_parent().get_parent().get_parent()).to_string()) #checking for level
 	if (get_parent().get_parent().get_parent()).to_string().begins_with("World:") && save_file.forestMapPickedUp: #need to add rest of maps for other levels and also check whether map was picked up for that area
 		displayMap = $ForestWorldMap
@@ -52,6 +55,7 @@ func _ready():
 	cellCheckThree.hide()
 	controlsPanel.hide()
 	displayMap.hide()
+	pauseEnabled = false
 	
 func _process(_delta):
 	if Input.is_action_just_pressed("laser") && self.visible:
@@ -89,6 +93,14 @@ func _process(_delta):
 			mapShadow.show()
 			map.show()
 			buttonsEnabled = true
+	if (Input.is_action_just_pressed("ui_pause")):
+		if pauseEnabled:
+			hide()
+			controlsPanel.hide()
+			timer.start()
+			pauseEnabled = false
+	#		get_tree().paused = false
+			menuOn = false
 		
 	redPop.text = str(stats.redpops)
 	bluePop.text = str(stats.bluepops)
@@ -166,6 +178,7 @@ func _on_Button3_pressed():
 	timer.start()
 	#get_tree().paused = false
 	menuOn = false
+	pauseEnabled = false
 
 
 func _on_Timer_timeout():
@@ -195,3 +208,9 @@ func _on_PopUpButton_focus_entered():
 
 func _on_QuitConfirm_focus_entered():
 	focused()
+
+func free_pause():
+	$Timer2.start()
+
+func _on_Timer2_timeout():
+	pauseEnabled = true

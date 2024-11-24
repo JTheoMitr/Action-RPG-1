@@ -331,6 +331,7 @@ func move_state(delta):
 	
 		if Input.is_action_just_pressed("ui_pause"):
 			get_tree().paused = true
+			stats.emit_signal("enable_pause")
 			var pauseSound = PauseSound.instance()
 			get_tree().current_scene.add_child(pauseSound)
 			playerInventory.show()

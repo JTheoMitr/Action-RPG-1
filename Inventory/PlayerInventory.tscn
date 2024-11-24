@@ -543,6 +543,9 @@ custom_styles/focus = SubResource( 29 )
 custom_styles/normal = SubResource( 26 )
 text = " Yes "
 
+[node name="Timer2" type="Timer" parent="."]
+one_shot = true
+
 [connection signal="focus_entered" from="Control/CenterContainer/HBoxContainer/VBoxContainer/Button" to="." method="_on_Button_focus_entered"]
 [connection signal="pressed" from="Control/CenterContainer/HBoxContainer/VBoxContainer/Button" to="." method="_on_Button_pressed"]
 [connection signal="focus_entered" from="Control/CenterContainer/HBoxContainer/VBoxContainer/Button2" to="." method="_on_Button2_focus_entered"]
@@ -554,3 +557,4 @@ text = " Yes "
 [connection signal="pressed" from="PopupDialog/Sprite/HBoxContainer/PopUpButton" to="." method="_on_PopUpButton_pressed"]
 [connection signal="focus_entered" from="PopupDialog/Sprite/HBoxContainer/QuitConfirm" to="." method="_on_QuitConfirm_focus_entered"]
 [connection signal="pressed" from="PopupDialog/Sprite/HBoxContainer/QuitConfirm" to="." method="_on_QuitConfirm_pressed"]
+[connection signal="timeout" from="Timer2" to="." method="_on_Timer2_timeout"]

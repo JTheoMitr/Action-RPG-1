@@ -417,5 +417,6 @@ one_shot = true
 [connection signal="pressed" from="CanvasLayer/Control/CenterContainer/VBoxContainer/Button2" to="." method="_on_Button2_pressed"]
 [connection signal="pressed" from="CanvasLayer/Control/CenterContainer/VBoxContainer/Button3" to="." method="_on_Button3_pressed"]
 [connection signal="pressed" from="CanvasLayer/Control/CenterContainer/VBoxContainer/Button4" to="." method="_on_Button4_pressed"]
+[connection signal="finished" from="BossaNova" to="." method="_on_BossaNova_finished"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 [connection signal="timeout" from="Timer2" to="." method="_on_Timer2_timeout"]

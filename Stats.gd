@@ -80,6 +80,8 @@ signal key_use
 
 signal some_health
 
+signal enable_pause
+
 signal health_changed(value)
 signal max_health_changed(value)
 signal keys_changed(value)

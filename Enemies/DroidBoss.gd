@@ -14,6 +14,7 @@ const LaserSeven = preload("res://Enemies/BossLaserRightUpDiag.tscn")
 const LaserEight = preload("res://Enemies/BossLaserLeftUpDiag.tscn")
 const LaserZagR = preload("res://Enemies/BossLaserRightZag.tscn")
 const LaserZagL = preload("res://Enemies/BossLaserLeftZag.tscn")
+const BossKeyOne = preload("res://World/BossKeyOne.tscn")
 
 const BossLaserSound = preload("res://Music and Sounds/BossLaserSound.tscn")
 
@@ -264,11 +265,11 @@ func _on_Stats_no_health():
 	droidBossDeath.global_position = global_position
 	worldStats.emit_signal("fade_music_in")
 	call_deferred("queue_free")
-	var randomDrop = random_drop_generator(["drop", "none"])
+	var randomDrop = random_drop_generator(["drop", "drop"])
 	if (randomDrop == "drop"):
-		var battery = Battery.instance()
-		get_parent().call_deferred("add_child", battery)
-		battery.global_position = global_position
+		var bossKey = BossKeyOne.instance()
+		get_parent().call_deferred("add_child", bossKey)
+		bossKey.global_position = global_position
 
 
 func _on_Timer_timeout():

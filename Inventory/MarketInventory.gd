@@ -84,3 +84,7 @@ func _on_Timer_timeout():
 
 func _on_Timer2_timeout():
 	self.call_deferred("queue_free")
+
+
+func _on_BossaNova_finished():
+	grooves.play()
