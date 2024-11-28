@@ -1,9 +1,10 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://TutorialArea2.gd" type="Script" id=1]
 [ext_resource path="res://UI/tilemap_rt_btn.png" type="Texture" id=2]
 [ext_resource path="res://fonts/PixelTandysoft-0rJG.ttf" type="DynamicFontData" id=3]
 [ext_resource path="res://Music and Sounds/Blink_Reeds Windwood_C.wav" type="AudioStream" id=4]
+[ext_resource path="res://UI/crosshair048.png" type="Texture" id=5]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 66.0
@@ -47,14 +48,14 @@ shape = SubResource( 1 )
 visible = true
 margin_top = 3.0
 margin_right = 110.0
-margin_bottom = 33.0
+margin_bottom = 34.0
 rect_scale = Vector2( 0.8, 0.8 )
 custom_styles/panel = SubResource( 2 )
 
 [node name="RichTextLabel" type="RichTextLabel" parent="PopupDialog"]
-margin_left = 6.25
+margin_left = 7.5
 margin_top = 1.25
-margin_right = 135.25
+margin_right = 136.5
 margin_bottom = 52.25
 rect_scale = Vector2( 0.9, 0.9 )
 custom_fonts/normal_font = SubResource( 8 )
@@ -65,18 +66,29 @@ text = "Laser Eye
 "
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="PopupDialog"]
-margin_left = 16.0
-margin_top = 14.0
-margin_right = 254.0
-margin_bottom = 70.0
+margin_left = 1.25
+margin_top = 13.75
+margin_right = 272.25
+margin_bottom = 78.75
 rect_scale = Vector2( 0.4, 0.4 )
 custom_fonts/normal_font = SubResource( 8 )
 bbcode_enabled = true
-bbcode_text = "[center]Ranged Weapon -
-Hold to aim / release to fire
+bbcode_text = "[center]	      Ranged Weapon: Tap for quick fire"
+text = "	      Ranged Weapon: Tap for quick fire"
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="PopupDialog"]
+margin_left = 19.0
+margin_top = 16.25
+margin_right = 290.0
+margin_bottom = 62.25
+rect_scale = Vector2( 0.35, 0.35 )
+custom_fonts/normal_font = SubResource( 8 )
+bbcode_enabled = true
+bbcode_text = "[center]
+OR: Hold to aim    release to fire
 "
-text = "Ranged Weapon -
-Hold to aim / release to fire
+text = "
+OR: Hold to aim    release to fire
 "
 
 [node name="Panel" type="Panel" parent="PopupDialog"]
@@ -92,6 +104,11 @@ position = Vector2( 15, 15 )
 frames = SubResource( 7 )
 animation = "Animate"
 playing = true
+
+[node name="Sprite" type="Sprite" parent="PopupDialog"]
+position = Vector2( 65.5, 23.5 )
+scale = Vector2( 0.05, 0.05 )
+texture = ExtResource( 5 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 4 )

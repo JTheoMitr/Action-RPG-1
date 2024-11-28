@@ -4,7 +4,7 @@
 [ext_resource path="res://UI/radio_signal.png" type="Texture" id=2]
 [ext_resource path="res://Radio.gd" type="Script" id=3]
 [ext_resource path="res://fonts/PixelTandysoft-0rJG.ttf" type="DynamicFontData" id=4]
-[ext_resource path="res://Music and Sounds/HarperOnTheSill1.6.wav" type="AudioStream" id=5]
+[ext_resource path="res://Music and Sounds/HarperOnTheSill1.6.mp3" type="AudioStream" id=5]
 [ext_resource path="res://UI/RozanzuSpotify.png" type="Texture" id=6]
 
 [sub_resource type="StyleBoxFlat" id=1]
@@ -58,7 +58,7 @@ custom_styles/panel = SubResource( 1 )
 position = Vector2( -22, -16 )
 scale = Vector2( 0.65, 0.65 )
 frames = SubResource( 6 )
-frame = 3
+frame = 2
 playing = true
 
 [node name="Sprite" type="Sprite" parent="."]

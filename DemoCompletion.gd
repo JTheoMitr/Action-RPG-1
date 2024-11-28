@@ -17,4 +17,4 @@ func _ready():
 
 
 func _on_DemoCompletion_area_entered(area):
-	SceneTransition.change_scene("res://UI/WorldMapScreen.tscn")
+	SceneTransition.change_scene("res://DemoEnd.tscn")

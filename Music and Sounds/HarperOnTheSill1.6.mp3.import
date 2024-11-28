@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/HarperOnTheSill1.6.mp3-2f76cdd9564163e0959e63ed176efaae.mp3str"
+
+[deps]
+
+source_file="res://Music and Sounds/HarperOnTheSill1.6.mp3"
+dest_files=[ "res://.import/HarperOnTheSill1.6.mp3-2f76cdd9564163e0959e63ed176efaae.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

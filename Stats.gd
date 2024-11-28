@@ -6,8 +6,8 @@ export(int) var max_keys = 3 setget set_max_keys
 export(int) var max_keys_collected = 4 setget set_max_keys_collected
 export(int) var max_batteries = 3 setget set_max_batteries
 export(int) var max_coins = 99 setget set_max_coins
-export(int) var max_xp = 999999999 setget set_max_experience
-export(int) var max_level = 999 setget set_max_level
+export(int) var max_xp = 200 setget set_max_experience #set to 200 for demo
+export(int) var max_level = 3 setget set_max_level #set to level 3 for demo
 export(int) var max_redpops = 10 setget set_max_redpops
 export(int) var max_bluepops = 10 setget set_max_bluepops
 

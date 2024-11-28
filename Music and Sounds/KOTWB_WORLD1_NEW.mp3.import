@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/KOTWB_WORLD1_NEW.mp3-891732b7f4af177a8d577f114cfd783a.mp3str"
+
+[deps]
+
+source_file="res://Music and Sounds/KOTWB_WORLD1_NEW.mp3"
+dest_files=[ "res://.import/KOTWB_WORLD1_NEW.mp3-891732b7f4af177a8d577f114cfd783a.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

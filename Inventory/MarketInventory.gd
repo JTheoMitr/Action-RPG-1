@@ -69,7 +69,8 @@ func _on_Button3_pressed(): #sundae
 
 func _on_Button4_pressed():
 	canvasLayer.hide()
-	grooves.stop()
+	grooves.call_deferred("queue_free")
+	#print_debug("grooves stoppin")
 	#stats.emit_signal("player_resumed")
 	WorldStats.emit_signal("fade_music_in")
 	timer1.start()

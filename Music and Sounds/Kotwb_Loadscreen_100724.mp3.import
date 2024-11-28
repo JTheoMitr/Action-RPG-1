@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Kotwb_Loadscreen_100724.mp3-748e383c8ce373095f9da9cbf68fb87b.mp3str"
+
+[deps]
+
+source_file="res://Music and Sounds/Kotwb_Loadscreen_100724.mp3"
+dest_files=[ "res://.import/Kotwb_Loadscreen_100724.mp3-748e383c8ce373095f9da9cbf68fb87b.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

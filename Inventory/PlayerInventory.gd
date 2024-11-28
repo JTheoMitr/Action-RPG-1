@@ -58,11 +58,7 @@ func _ready():
 	pauseEnabled = false
 	
 func _process(_delta):
-	if Input.is_action_just_pressed("laser") && self.visible:
-		popup.popup()
-		popup.rect_global_position.y = self.global_position.y - 10
-		popup.rect_global_position.x = self.global_position.x - 50
-		$PopupDialog/Sprite/HBoxContainer/PopUpButton.grab_focus()
+	
 	if (Input.is_action_just_pressed("special_one")) && self.visible:
 		if controlsOn:
 			controlsPanel.hide()
@@ -158,7 +154,7 @@ func _on_Button2_focus_entered():
 
 
 func _on_Button3_focus_entered():
-	description.bbcode_text = "[right] Resume Playing [/right]"
+	description.bbcode_text = "[right] Quit Demo [/right]"
 	focused()
 
 
@@ -173,12 +169,10 @@ func _on_Button2_pressed(): #bluepop
 
 
 func _on_Button3_pressed():
-	hide()
-	controlsPanel.hide()
-	timer.start()
-	#get_tree().paused = false
-	menuOn = false
-	pauseEnabled = false
+	popup.popup()
+	popup.rect_global_position.y = self.global_position.y - 10
+	popup.rect_global_position.x = self.global_position.x - 50
+	$PopupDialog/Sprite/HBoxContainer/PopUpButton.grab_focus()
 
 
 func _on_Timer_timeout():

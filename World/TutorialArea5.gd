@@ -20,4 +20,4 @@ func _on_TutorialArea2_area_entered(area):
 func _on_TutorialArea2_area_exited(area):
 	popup.hide()
 	
-	queue_free()
+	#queue_free()

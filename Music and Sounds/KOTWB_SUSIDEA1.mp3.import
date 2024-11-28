@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/KOTWB_SUSIDEA1.mp3-1ca43f8b8d766a2da6a3aaf51b825dcc.mp3str"
+
+[deps]
+
+source_file="res://Music and Sounds/KOTWB_SUSIDEA1.mp3"
+dest_files=[ "res://.import/KOTWB_SUSIDEA1.mp3-1ca43f8b8d766a2da6a3aaf51b825dcc.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
