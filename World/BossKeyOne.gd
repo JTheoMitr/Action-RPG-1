@@ -22,5 +22,5 @@ func _on_BossKeyOne_area_entered(area):
 	var pickUpSound = PickUpSound.instance()
 	get_tree().current_scene.add_child(pickUpSound)
 	stats.emit_signal("boss_key_acquired")
-	stats.emit_signal("player_paused")
+	#stats.emit_signal("player_paused")
 	queue_free()

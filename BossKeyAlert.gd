@@ -17,5 +17,5 @@ func _ready():
 
 
 func _on_Timer_timeout():
-	stats.emit_signal("player_resumed")
+	#stats.emit_signal("player_resumed")
 	queue_free()

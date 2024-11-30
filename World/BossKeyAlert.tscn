@@ -11,7 +11,6 @@ bg_color = Color( 0, 0, 0, 0.317647 )
 font_data = ExtResource( 4 )
 
 [node name="BossKeyAlert" type="PopupDialog"]
-visible = true
 margin_left = 118.0
 margin_top = 85.0
 margin_right = 201.0
