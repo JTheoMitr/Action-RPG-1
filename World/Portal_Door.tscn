@@ -183,25 +183,25 @@ shape = SubResource( 9 )
 [node name="LightningSpin" parent="." instance=ExtResource( 3 )]
 position = Vector2( -10, -10 )
 scale = Vector2( 1, 1 )
-frame = 88
+frame = 91
 
 [node name="LightningSpin2" parent="." instance=ExtResource( 3 )]
 position = Vector2( 11.0764, 19.1319 )
 rotation = 0.785398
 scale = Vector2( 1, 1 )
-frame = 87
+frame = 90
 
 [node name="LightningSpin3" parent="." instance=ExtResource( 3 )]
 position = Vector2( -4.97479, 6.54354 )
 rotation = 3.49066
 scale = Vector2( 1, 1 )
-frame = 86
+frame = 89
 
 [node name="GuardOne" type="AnimatedSprite" parent="."]
 position = Vector2( 17.6667, 92.5 )
 scale = Vector2( 1.46491, 1 )
 frames = SubResource( 22 )
-frame = 1
+frame = 2
 playing = true
 
 [node name="Timer" type="Timer" parent="."]
@@ -231,7 +231,11 @@ stream = ExtResource( 9 )
 volume_db = -3.0
 pitch_scale = 0.7
 
+[node name="Timer2" type="Timer" parent="."]
+wait_time = 0.05
+
 [connection signal="animation_finished" from="AnimatedSprite" to="." method="_on_AnimatedSprite_animation_finished"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 [connection signal="animation_finished" from="AnimatedSprite2" to="." method="_on_AnimatedSprite2_animation_finished"]
 [connection signal="animation_finished" from="Electricity" to="." method="_on_Electricity_animation_finished"]
+[connection signal="timeout" from="Timer2" to="." method="_on_Timer2_timeout"]

@@ -15,6 +15,7 @@ onready var save_data = SaveFile.g_data
 onready var guardOne = $GuardOne
 onready var base = $Sprite
 onready var timer = $Timer
+onready var timer2 = $Timer2
 onready var collisionShape2 = $CollisionShape2D2
 onready var skeleton = $AnimatedSprite2
 onready var electricity = $Electricity
@@ -30,6 +31,7 @@ func _ready():
 	guardDirection = 0
 	guardOne.frame = 0
 	timer.start()
+	timer2.start()
 	worldStats.connect("portal_opened", self, "open_ses")
 	if save_data.portal_1_opened == true:
 		guardAlive = false
@@ -51,10 +53,7 @@ func _ready():
 func _process(delta):
 	if guardAlive == true:
 		skeleton.global_position = guardOne.global_position
-		if guardDirection == 0:
-			guardOne.global_position.x -= 1
-		else:
-			guardOne.global_position.x += 1
+		
 
 #	pass
 func open_ses():
@@ -119,3 +118,11 @@ func _on_AnimatedSprite2_animation_finished():
 
 func _on_Electricity_animation_finished():
 	electricity.queue_free()
+
+
+func _on_Timer2_timeout():
+	if guardAlive == true:
+		if guardDirection == 0:
+			guardOne.global_position.x -= 2
+		else:
+			guardOne.global_position.x += 2
