@@ -183,25 +183,25 @@ shape = SubResource( 9 )
 [node name="LightningSpin" parent="." instance=ExtResource( 3 )]
 position = Vector2( -10, -10 )
 scale = Vector2( 1, 1 )
-frame = 91
+frame = 48
 
 [node name="LightningSpin2" parent="." instance=ExtResource( 3 )]
 position = Vector2( 11.0764, 19.1319 )
 rotation = 0.785398
 scale = Vector2( 1, 1 )
-frame = 90
+frame = 47
 
 [node name="LightningSpin3" parent="." instance=ExtResource( 3 )]
 position = Vector2( -4.97479, 6.54354 )
 rotation = 3.49066
 scale = Vector2( 1, 1 )
-frame = 89
+frame = 46
 
 [node name="GuardOne" type="AnimatedSprite" parent="."]
 position = Vector2( 17.6667, 92.5 )
 scale = Vector2( 1.46491, 1 )
 frames = SubResource( 22 )
-frame = 2
+frame = 10
 playing = true
 
 [node name="Timer" type="Timer" parent="."]
