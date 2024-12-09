@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/bag_zipper.mp3-891eed0ec5203484f937b756ac89f037.mp3str"
+
+[deps]
+
+source_file="res://Music and Sounds/bag_zipper.mp3"
+dest_files=[ "res://.import/bag_zipper.mp3-891eed0ec5203484f937b756ac89f037.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

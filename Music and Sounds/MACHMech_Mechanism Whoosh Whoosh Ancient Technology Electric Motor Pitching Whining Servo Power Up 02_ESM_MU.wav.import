@@ -1,0 +1,23 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/MACHMech_Mechanism Whoosh Whoosh Ancient Technology Electric Motor Pitching Whining Servo Power Up 02_ESM_MU.wav-2becf7501ba1bf542aeec8e81a9a1f2b.sample"
+
+[deps]
+
+source_file="res://Music and Sounds/MACHMech_Mechanism Whoosh Whoosh Ancient Technology Electric Motor Pitching Whining Servo Power Up 02_ESM_MU.wav"
+dest_files=[ "res://.import/MACHMech_Mechanism Whoosh Whoosh Ancient Technology Electric Motor Pitching Whining Servo Power Up 02_ESM_MU.wav-2becf7501ba1bf542aeec8e81a9a1f2b.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

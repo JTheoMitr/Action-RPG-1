@@ -28,6 +28,7 @@ onready var save_file = SaveFile.g_data
 
 const ItemFocusSound = preload("res://Music and Sounds/ItemFocusSound.tscn")
 const ItemSelectSound = preload("res://Music and Sounds/MenuSelectSound.tscn")
+const BagZipperSound = preload("res://Music and Sounds/PauseCloseSound.tscn")
 
 var menuOn = false
 var controlsOn = false
@@ -68,7 +69,7 @@ func _process(_delta):
 		elif !controlsOn:
 			controlsPanel.show()
 			controlsOn = true
-			switchText.text = "Inventory"
+			switchText.text = "Backpack"
 			buttonsEnabled = false
 	if (Input.is_action_just_pressed("charge_switch_f")) && self.visible:
 		if mapOn == false:
@@ -97,6 +98,8 @@ func _process(_delta):
 			pauseEnabled = false
 	#		get_tree().paused = false
 			menuOn = false
+			var bagZip = BagZipperSound.instance()
+			get_tree().current_scene.add_child(bagZip)
 		
 	redPop.text = str(stats.redpops)
 	bluePop.text = str(stats.bluepops)

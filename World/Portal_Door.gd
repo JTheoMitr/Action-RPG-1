@@ -105,7 +105,7 @@ func _on_AnimatedSprite_animation_finished():
 
 
 func _on_Timer_timeout():
-	print_debug("timed")
+	#print_debug("timed")
 	if guardDirection == 1:
 		guardDirection = 0
 	else:

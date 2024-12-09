@@ -54,6 +54,11 @@ onready var zoomSound = $ZoomSound
 onready var hitSpriteTimer = $HitSpriteTimer
 onready var heartbeat = $HeartBeat
 onready var heartBeatTimer = $HeartBeatTimer
+onready var spinningGear = $SpinningGear
+onready var spinningGear2 = $SpinningGear2
+onready var debugTimer = $DebugTimer
+onready var gearTimer2 = $GearTimer2
+
 
 
 enum {
@@ -73,6 +78,9 @@ var worldStats = WorldStats
 var laserTop = false
 var show = false
 
+var gearOneShow = false
+var gearTwoShow = false
+var rollingGear = false
 # for laser fire rate
 var laserboi = true
 
@@ -95,7 +103,9 @@ func _ready():
 	playerSpriteSpecials.hide()
 	aura.hide()
 	# randomize()
-	
+	spinningGear.hide()
+	spinningGear2.hide()
+
 	# Find user's controller type:
 	# var pad = Input.get_joy_name(0)
 	# print(pad)
@@ -176,7 +186,7 @@ func _process(delta):
 	if horiZone == false:
 		if Input.is_action_just_pressed("ui_up"):
 			keep_going()
-	
+
 # func _unhandled_input(event):
 	#laser logic for Ray2D
 	# if event.is_action_pressed("laser"):
@@ -205,45 +215,95 @@ func move_state(delta):
 
 		if input_vector.x == 1:
 			laserTop = false
+			spinningGear.show()
+			spinningGear2.hide()
+
+
 		elif input_vector.x == -1:
 			laserTop = true
+			spinningGear.hide()
+			spinningGear2.show()
+
+
 		elif input_vector.x == 0:
+			debugTimer.stop()
+			gearTimer2.stop()
+			spinningGear.position.y = -13
+			spinningGear2.position.y = -13
+			
 			if input_vector.y == 1:
 				laserTop = true
+				spinningGear.hide()
+				spinningGear2.hide()
+
 			elif input_vector.y == -1:
 				laserTop = false
+				spinningGear.hide()
+				spinningGear2.hide()
+
 
 		
 		if Input.is_action_just_pressed("ui_up"):
 			show = false
+			gearOneShow = false
+			gearTwoShow = false
 			stats.globalPos = self.global_position
 			print_debug(self.global_position)
 				
 		if Input.is_action_just_pressed("ui_down"):
 			show = true
+			gearOneShow = false
+			gearTwoShow = false
 			stats.globalPos = self.global_position
 				
 		if Input.is_action_just_pressed("ui_right"):
 			show = false
+			gearOneShow = true
+			gearTwoShow = false
 			stats.globalPos = self.global_position
+			debugTimer.start()
+			gearTimer2.start()
+		
+			
+		if Input.is_action_just_released("ui_right"):
+			debugTimer.stop()
+			gearTimer2.stop()
 				
 		if Input.is_action_just_pressed("ui_left"):
 			show = true
+			gearOneShow = false
+			gearTwoShow = true
 			stats.globalPos = self.global_position
+			debugTimer.start()
+			gearTimer2.start()
+
+			
+		if Input.is_action_just_released("ui_left"):
+			debugTimer.stop()
+			gearTimer2.stop()
 		
 		if input_vector.x == 0 && input_vector.y == 0:
 			if show == false:
 				laserTop =false
 			elif show == true:
 				laserTop = true
+			elif gearOneShow:
+				spinningGear.show()
+				spinningGear2.hide()
+			elif gearTwoShow:
+				spinningGear.hide()
+				spinningGear2.show()
 		
 		if Input.is_action_just_pressed("roll"):
+			
 			#adjust so roll only happens on release when zoom is not enabled? tie to zoomTimer
 			# right now roll is on pressed for demo, set back to release after demo
 			
 			state = ROLL
 			crosshair.hide()
 			#commenting out these lines and all release roll code for demo
+			rollingGear = true
+
 			#zoomOn = false
 #			zoomTimer.start(0.0)
 #
@@ -256,6 +316,9 @@ func move_state(delta):
 	
 		if Input.is_action_just_pressed("attack"):
 			state = ATTACK
+			
+			spinningGear.position.x += 1
+			spinningGear2.position.x -= 1
 			
 			#commenting out the following two lines to block charge attack for demo
 			# chargeTimer.start(0.0)
@@ -392,9 +455,12 @@ func roll_animation_finished():
 	velocity = velocity * 0.7
 	state = MOVE
 	hurtbox.monitoring = true
+	rollingGear = false
 
 func attack_animation_finished():
 	state = MOVE
+	spinningGear.position.x -= 1
+	spinningGear2.position.x += 1
 
 func special_one_finished():
 	specialOne.hide()
@@ -556,3 +622,15 @@ func _on_HeartBeatTimer_timeout():
 	sprite.hide()
 	playerSpriteHit.show()
 	hitSpriteTimer.start()
+
+
+func _on_DebugTimer_timeout():
+	spinningGear.position.y -= .5
+	spinningGear2.position.y -= .5
+	gearTimer2.start()
+
+
+func _on_GearTimer2_timeout():
+	spinningGear.position.y += .5
+	spinningGear2.position.y += .5
+	debugTimer.start()
