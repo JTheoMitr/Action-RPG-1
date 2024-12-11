@@ -58,6 +58,8 @@ onready var spinningGear = $SpinningGear
 onready var spinningGear2 = $SpinningGear2
 onready var debugTimer = $DebugTimer
 onready var gearTimer2 = $GearTimer2
+onready var sgf = $SpinningGearFront
+onready var sgf2 = $SpinningGearFront2
 
 
 
@@ -217,12 +219,16 @@ func move_state(delta):
 			laserTop = false
 			spinningGear.show()
 			spinningGear2.hide()
+			sgf.hide()
+			sgf2.hide()
 
 
 		elif input_vector.x == -1:
 			laserTop = true
 			spinningGear.hide()
 			spinningGear2.show()
+			sgf.hide()
+			sgf2.hide()
 
 
 		elif input_vector.x == 0:
@@ -230,16 +236,22 @@ func move_state(delta):
 			gearTimer2.stop()
 			spinningGear.position.y = -13
 			spinningGear2.position.y = -13
+			sgf.position.y = -13
+			sgf2.position.y = -13
 			
 			if input_vector.y == 1:
 				laserTop = true
 				spinningGear.hide()
 				spinningGear2.hide()
+				sgf.show()
+				sgf2.show()
 
 			elif input_vector.y == -1:
 				laserTop = false
 				spinningGear.hide()
 				spinningGear2.hide()
+				sgf.show()
+				sgf2.show()
 
 
 		
@@ -303,6 +315,7 @@ func move_state(delta):
 			crosshair.hide()
 			#commenting out these lines and all release roll code for demo
 			rollingGear = true
+			$RollTimer.start()
 
 			#zoomOn = false
 #			zoomTimer.start(0.0)
@@ -456,6 +469,14 @@ func roll_animation_finished():
 	state = MOVE
 	hurtbox.monitoring = true
 	rollingGear = false
+	print_debug(sprite.frame)
+	if sprite.frame == 44:
+		spinningGear.show()
+	elif sprite.frame == 54:
+		spinningGear2.show()
+	else:
+		sgf.show()
+		sgf2.show()
 
 func attack_animation_finished():
 	state = MOVE
@@ -627,10 +648,24 @@ func _on_HeartBeatTimer_timeout():
 func _on_DebugTimer_timeout():
 	spinningGear.position.y -= .5
 	spinningGear2.position.y -= .5
+	sgf.position.y -= .5
+	sgf2.position.y -= .5
 	gearTimer2.start()
 
 
 func _on_GearTimer2_timeout():
 	spinningGear.position.y += .5
 	spinningGear2.position.y += .5
+	sgf.position.y += .5
+	sgf2.position.y += .5
 	debugTimer.start()
+
+
+
+
+
+func _on_RollTimer_timeout():
+	spinningGear.hide()
+	spinningGear2.hide()
+	sgf.hide()
+	sgf2.hide()

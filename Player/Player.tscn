@@ -1,4 +1,4 @@
-[gd_scene load_steps=83 format=2]
+[gd_scene load_steps=89 format=2]
 
 [ext_resource path="res://Player/Player.gd" type="Script" id=1]
 [ext_resource path="res://Player/Main Player One Ranger Helmet GREEN three lighteroutline.png" type="Texture" id=2]
@@ -19,6 +19,7 @@
 [ext_resource path="res://Music and Sounds/heartbeat-05.wav" type="AudioStream" id=17]
 [ext_resource path="res://Player/SpinningGear.tscn" type="PackedScene" id=18]
 [ext_resource path="res://Player/Main Player One Ranger Helmet GREEN three lighteroutline redbackpack detailed.png" type="Texture" id=19]
+[ext_resource path="res://Player/gear_1_lit_front.png" type="Texture" id=20]
 
 [sub_resource type="CircleShape2D" id=52]
 radius = 49.6488
@@ -939,6 +940,30 @@ animations = [ {
 "speed": 10.0
 } ]
 
+[sub_resource type="AtlasTexture" id=95]
+atlas = ExtResource( 20 )
+region = Rect2( 0, 0, 20, 20 )
+
+[sub_resource type="AtlasTexture" id=96]
+atlas = ExtResource( 20 )
+region = Rect2( 20, 0, 20, 20 )
+
+[sub_resource type="AtlasTexture" id=97]
+atlas = ExtResource( 20 )
+region = Rect2( 40, 0, 20, 20 )
+
+[sub_resource type="AtlasTexture" id=98]
+atlas = ExtResource( 20 )
+region = Rect2( 60, 0, 20, 20 )
+
+[sub_resource type="SpriteFrames" id=99]
+animations = [ {
+"frames": [ SubResource( 95 ), SubResource( 96 ), SubResource( 97 ), SubResource( 98 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
 [node name="Player" type="KinematicBody2D"]
 position = Vector2( 113, 84 )
 collision_layer = 2
@@ -1124,7 +1149,7 @@ modulate = Color( 0.929412, 0.690196, 1, 1 )
 position = Vector2( 0, -10 )
 scale = Vector2( 0.8, 0.8 )
 frames = SubResource( 85 )
-frame = 1
+frame = 3
 playing = true
 
 [node name="ZoomTimer" type="Timer" parent="."]
@@ -1165,6 +1190,24 @@ one_shot = true
 wait_time = 0.2
 one_shot = true
 
+[node name="SpinningGearFront" type="AnimatedSprite" parent="."]
+position = Vector2( -6.3, -13 )
+scale = Vector2( 0.2, 0.2 )
+frames = SubResource( 99 )
+frame = 2
+playing = true
+
+[node name="SpinningGearFront2" type="AnimatedSprite" parent="."]
+position = Vector2( 5.5, -13 )
+scale = Vector2( 0.2, 0.2 )
+frames = SubResource( 99 )
+frame = 2
+playing = true
+
+[node name="RollTimer" type="Timer" parent="."]
+wait_time = 0.1
+one_shot = true
+
 [connection signal="timeout" from="Pointer/LaserTimer" to="." method="_on_LaserTimer_timeout"]
 [connection signal="timeout" from="Pointer/LaserSpeed" to="." method="_on_LaserSpeed_timeout"]
 [connection signal="area_entered" from="Hurtbox" to="." method="_on_Hurtbox_area_entered"]
@@ -1178,6 +1221,7 @@ one_shot = true
 [connection signal="timeout" from="HeartBeatTimer" to="." method="_on_HeartBeatTimer_timeout"]
 [connection signal="timeout" from="DebugTimer" to="." method="_on_DebugTimer_timeout"]
 [connection signal="timeout" from="GearTimer2" to="." method="_on_GearTimer2_timeout"]
+[connection signal="timeout" from="RollTimer" to="." method="_on_RollTimer_timeout"]
 
 [editable path="HitboxPivot/SwordHitbox"]
 [editable path="Hurtbox"]
