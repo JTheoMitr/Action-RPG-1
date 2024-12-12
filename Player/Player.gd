@@ -60,6 +60,8 @@ onready var debugTimer = $DebugTimer
 onready var gearTimer2 = $GearTimer2
 onready var sgf = $SpinningGearFront
 onready var sgf2 = $SpinningGearFront2
+onready var spinningGearTimer = $SpinningGearTimer
+onready var spinningGearTimer2 = $SpinningGearTimer2
 
 
 
@@ -221,6 +223,8 @@ func move_state(delta):
 			spinningGear2.hide()
 			sgf.hide()
 			sgf2.hide()
+			
+
 
 
 		elif input_vector.x == -1:
@@ -236,8 +240,7 @@ func move_state(delta):
 			gearTimer2.stop()
 			spinningGear.position.y = -13
 			spinningGear2.position.y = -13
-			sgf.position.y = -13
-			sgf2.position.y = -13
+			
 			
 			if input_vector.y == 1:
 				laserTop = true
@@ -261,12 +264,24 @@ func move_state(delta):
 			gearTwoShow = false
 			stats.globalPos = self.global_position
 			print_debug(self.global_position)
+			spinningGearTimer.start()
+			spinningGearTimer2.start()
+			
+		if Input.is_action_just_released("ui_up"):
+			spinningGearTimer.stop()
+			spinningGearTimer2.stop()
 				
 		if Input.is_action_just_pressed("ui_down"):
 			show = true
 			gearOneShow = false
 			gearTwoShow = false
 			stats.globalPos = self.global_position
+			spinningGearTimer.start()
+			spinningGearTimer2.start()
+			
+		if Input.is_action_just_released("ui_down"):
+			spinningGearTimer.stop()
+			spinningGearTimer2.stop()
 				
 		if Input.is_action_just_pressed("ui_right"):
 			show = false
@@ -648,16 +663,12 @@ func _on_HeartBeatTimer_timeout():
 func _on_DebugTimer_timeout():
 	spinningGear.position.y -= .5
 	spinningGear2.position.y -= .5
-	sgf.position.y -= .5
-	sgf2.position.y -= .5
 	gearTimer2.start()
 
 
 func _on_GearTimer2_timeout():
 	spinningGear.position.y += .5
 	spinningGear2.position.y += .5
-	sgf.position.y += .5
-	sgf2.position.y += .5
 	debugTimer.start()
 
 
@@ -669,3 +680,16 @@ func _on_RollTimer_timeout():
 	spinningGear2.hide()
 	sgf.hide()
 	sgf2.hide()
+
+
+func _on_SpinningGearTimer_timeout():
+	print_debug("rockin")
+	sgf.position.y -= .5
+	sgf2.position.y -= .5
+	spinningGearTimer2.start()
+
+
+func _on_SpinningGearTimer2_timeout():
+	sgf.position.y += .5
+	sgf2.position.y += .5
+	spinningGearTimer.start()
