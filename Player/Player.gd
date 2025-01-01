@@ -270,6 +270,8 @@ func move_state(delta):
 		if Input.is_action_just_released("ui_up"):
 			spinningGearTimer.stop()
 			spinningGearTimer2.stop()
+			sgf.position.y = -13
+			sgf2.position.y = -13
 				
 		if Input.is_action_just_pressed("ui_down"):
 			show = true
@@ -282,6 +284,8 @@ func move_state(delta):
 		if Input.is_action_just_released("ui_down"):
 			spinningGearTimer.stop()
 			spinningGearTimer2.stop()
+			sgf.position.y = -13
+			sgf2.position.y = -13
 				
 		if Input.is_action_just_pressed("ui_right"):
 			show = false
