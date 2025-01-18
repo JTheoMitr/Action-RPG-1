@@ -1,7 +1,7 @@
 extends Node2D
 
-onready var redPop = $Control/CenterContainer/HBoxContainer/VBoxContainer/Button/RPOPQ
-onready var bluePop = $Control/CenterContainer/HBoxContainer/VBoxContainer/Button2/BPOPQ
+onready var redPop = $Control/CenterContainer/HBoxContainer/VBoxContainer/VBoxContainer/HBoxContainer/Button/RPOPQ
+onready var bluePop = $Control/CenterContainer/HBoxContainer/VBoxContainer/VBoxContainer/HBoxContainer/Button2/BPOPQ
 onready var description = $Control/CenterContainer/HBoxContainer/Panel/ItemDescription
 
 onready var cellKeyText = $Control/CenterContainer/HBoxContainer/Panel/CellKeyText
@@ -22,6 +22,7 @@ onready var map = $Map
 onready var mapButton = $MapButton
 onready var mapShadow = $MapShadow
 onready var popup = $PopupDialog
+onready var selectedItem = $Control/CenterContainer/HBoxContainer/VBoxContainer/Panel/PSPI
 
 
 onready var save_file = SaveFile.g_data
@@ -146,12 +147,14 @@ func _on_Button_pressed(): #redpop
 
 func _on_Button_focus_entered():
 	description.bbcode_text = "[right] +2 Health [/right]"
+	selectedItem.text = "Red Pop"
 	if menuOn == true:
 		focused()
 
 
 func _on_Button2_focus_entered():
 	description.bbcode_text = "[right] +1 Energy [/right]"
+	selectedItem.text = "Floppy Disk"
 	focused()
 	menuOn = true
 

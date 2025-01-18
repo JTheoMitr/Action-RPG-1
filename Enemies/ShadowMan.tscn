@@ -1,0 +1,271 @@
+[gd_scene load_steps=49 format=2]
+
+[ext_resource path="res://Enemies/shadow monster/Death.png" type="Texture" id=1]
+[ext_resource path="res://Hitboxes and Hurtboxes/Hurtbox.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Shadows/SmallShadow.png" type="Texture" id=3]
+[ext_resource path="res://Stats.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Hitboxes and Hurtboxes/Hitbox.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Enemies/PlayerDetectionZone.tscn" type="PackedScene" id=6]
+[ext_resource path="res://SoftCollision.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Enemies/shadow monster/Attack.png" type="Texture" id=8]
+[ext_resource path="res://Enemies/WanderController.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Enemies/shadow monster/Idle.png" type="Texture" id=10]
+[ext_resource path="res://Enemies/shadow monster/Run.png" type="Texture" id=11]
+[ext_resource path="res://Enemies/ShadowMan.gd" type="Script" id=12]
+
+[sub_resource type="AtlasTexture" id=64]
+atlas = ExtResource( 1 )
+region = Rect2( 300, 0, 150, 150 )
+
+[sub_resource type="AtlasTexture" id=65]
+atlas = ExtResource( 1 )
+region = Rect2( 450, 0, 150, 150 )
+
+[sub_resource type="AtlasTexture" id=66]
+atlas = ExtResource( 1 )
+region = Rect2( 150, 0, 150, 150 )
+
+[sub_resource type="AtlasTexture" id=67]
+atlas = ExtResource( 1 )
+region = Rect2( 0, 0, 150, 150 )
+
+[sub_resource type="AtlasTexture" id=40]
+atlas = ExtResource( 1 )
+region = Rect2( 0, 0, 150, 150 )
+
+[sub_resource type="AtlasTexture" id=41]
+atlas = ExtResource( 1 )
+region = Rect2( 150, 0, 150, 150 )
+
+[sub_resource type="AtlasTexture" id=42]
+atlas = ExtResource( 1 )
+region = Rect2( 300, 0, 150, 150 )
+
+[sub_resource type="AtlasTexture" id=43]
+atlas = ExtResource( 1 )
+region = Rect2( 450, 0, 150, 150 )
+
+[sub_resource type="AtlasTexture" id=44]
+atlas = ExtResource( 10 )
+region = Rect2( 0, 0, 150, 150 )
+
+[sub_resource type="AtlasTexture" id=45]
+atlas = ExtResource( 10 )
+region = Rect2( 150, 0, 150, 150 )
+
+[sub_resource type="AtlasTexture" id=46]
+atlas = ExtResource( 10 )
+region = Rect2( 300, 0, 150, 150 )
+
+[sub_resource type="AtlasTexture" id=47]
+atlas = ExtResource( 10 )
+region = Rect2( 450, 0, 150, 150 )
+
+[sub_resource type="AtlasTexture" id=48]
+atlas = ExtResource( 8 )
+region = Rect2( 0, 0, 150, 150 )
+
+[sub_resource type="AtlasTexture" id=49]
+atlas = ExtResource( 8 )
+region = Rect2( 150, 0, 150, 150 )
+
+[sub_resource type="AtlasTexture" id=50]
+atlas = ExtResource( 8 )
+region = Rect2( 300, 0, 150, 150 )
+
+[sub_resource type="AtlasTexture" id=51]
+atlas = ExtResource( 8 )
+region = Rect2( 450, 0, 150, 150 )
+
+[sub_resource type="AtlasTexture" id=52]
+atlas = ExtResource( 8 )
+region = Rect2( 600, 0, 150, 150 )
+
+[sub_resource type="AtlasTexture" id=53]
+atlas = ExtResource( 8 )
+region = Rect2( 750, 0, 150, 150 )
+
+[sub_resource type="AtlasTexture" id=54]
+atlas = ExtResource( 8 )
+region = Rect2( 900, 0, 150, 150 )
+
+[sub_resource type="AtlasTexture" id=55]
+atlas = ExtResource( 8 )
+region = Rect2( 1050, 0, 150, 150 )
+
+[sub_resource type="AtlasTexture" id=56]
+atlas = ExtResource( 11 )
+region = Rect2( 0, 0, 150, 150 )
+
+[sub_resource type="AtlasTexture" id=57]
+atlas = ExtResource( 11 )
+region = Rect2( 150, 0, 150, 150 )
+
+[sub_resource type="AtlasTexture" id=58]
+atlas = ExtResource( 11 )
+region = Rect2( 300, 0, 150, 150 )
+
+[sub_resource type="AtlasTexture" id=59]
+atlas = ExtResource( 11 )
+region = Rect2( 450, 0, 150, 150 )
+
+[sub_resource type="AtlasTexture" id=60]
+atlas = ExtResource( 11 )
+region = Rect2( 600, 0, 150, 150 )
+
+[sub_resource type="AtlasTexture" id=61]
+atlas = ExtResource( 11 )
+region = Rect2( 750, 0, 150, 150 )
+
+[sub_resource type="AtlasTexture" id=62]
+atlas = ExtResource( 11 )
+region = Rect2( 900, 0, 150, 150 )
+
+[sub_resource type="AtlasTexture" id=63]
+atlas = ExtResource( 11 )
+region = Rect2( 1050, 0, 150, 150 )
+
+[sub_resource type="SpriteFrames" id=7]
+animations = [ {
+"frames": [ SubResource( 64 ), SubResource( 65 ), SubResource( 66 ), SubResource( 67 ) ],
+"loop": true,
+"name": "birth",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 40 ), SubResource( 41 ), SubResource( 42 ), SubResource( 43 ) ],
+"loop": true,
+"name": "death",
+"speed": 3.0
+}, {
+"frames": [ SubResource( 44 ), SubResource( 45 ), SubResource( 46 ), SubResource( 47 ) ],
+"loop": true,
+"name": "idle",
+"speed": 3.0
+}, {
+"frames": [ SubResource( 48 ), SubResource( 49 ), SubResource( 50 ), SubResource( 51 ), SubResource( 52 ), SubResource( 53 ), SubResource( 54 ), SubResource( 55 ) ],
+"loop": true,
+"name": "shoot",
+"speed": 14.0
+}, {
+"frames": [ SubResource( 56 ), SubResource( 57 ), SubResource( 58 ), SubResource( 59 ), SubResource( 60 ), SubResource( 61 ), SubResource( 62 ), SubResource( 63 ) ],
+"loop": true,
+"name": "walk",
+"speed": 7.0
+} ]
+
+[sub_resource type="CapsuleShape2D" id=8]
+radius = 5.0
+height = 0.0
+
+[sub_resource type="CapsuleShape2D" id=9]
+radius = 6.0
+height = 8.58824
+
+[sub_resource type="CircleShape2D" id=10]
+radius = 82.355
+
+[sub_resource type="CapsuleShape2D" id=11]
+radius = 6.24041
+height = 3.58057
+
+[sub_resource type="CapsuleShape2D" id=12]
+radius = 4.70588
+height = 0.0
+
+[sub_resource type="CircleShape2D" id=38]
+radius = 1.86016
+
+[sub_resource type="CircleShape2D" id=39]
+radius = 25.6815
+
+[node name="ShadowMan" type="KinematicBody2D"]
+scale = Vector2( 2.3, 2.3 )
+collision_layer = 16
+script = ExtResource( 12 )
+
+[node name="ShadowSprite" type="Sprite" parent="."]
+texture = ExtResource( 3 )
+offset = Vector2( 0, 1 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( -0.588, 15 )
+scale = Vector2( 0.45, 0.45 )
+frames = SubResource( 7 )
+animation = "shoot"
+frame = 2
+offset = Vector2( 1, -60 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0, -3 )
+scale = Vector2( 1, 1.2 )
+shape = SubResource( 8 )
+
+[node name="Hurtbox" parent="." instance=ExtResource( 2 )]
+collision_layer = 72
+
+[node name="CollisionShape2D" parent="Hurtbox" index="0"]
+position = Vector2( 0, -5 )
+shape = SubResource( 9 )
+
+[node name="Stats" parent="." instance=ExtResource( 4 )]
+max_health = 3
+
+[node name="PlayerDetectionZone" parent="." instance=ExtResource( 6 )]
+visible = false
+
+[node name="CollisionShape2D" parent="PlayerDetectionZone" index="0"]
+shape = SubResource( 10 )
+
+[node name="Hitbox" parent="." instance=ExtResource( 5 )]
+position = Vector2( 8, 0 )
+collision_mask = 4
+damage = 3
+
+[node name="CollisionShape2D" parent="Hitbox" index="0"]
+position = Vector2( -0.588235, -5.88235 )
+shape = SubResource( 11 )
+
+[node name="SoftCollision" parent="." instance=ExtResource( 7 )]
+
+[node name="CollisionShape2D" parent="SoftCollision" index="0"]
+position = Vector2( 0, -0.588235 )
+shape = SubResource( 12 )
+
+[node name="WanderController" parent="." instance=ExtResource( 9 )]
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.55
+
+[node name="Timer2" type="Timer" parent="."]
+one_shot = true
+
+[node name="BulletZone2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BulletZone2D"]
+position = Vector2( 11, -7 )
+shape = SubResource( 38 )
+
+[node name="ShootTimer" type="Timer" parent="."]
+wait_time = 0.4
+one_shot = true
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2( 0, -4.70588 )
+shape = SubResource( 39 )
+
+[connection signal="area_entered" from="Hurtbox" to="." method="_on_Hurtbox_area_entered"]
+[connection signal="no_health" from="Stats" to="." method="_on_Stats_no_health"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[connection signal="timeout" from="Timer2" to="." method="_on_Timer2_timeout"]
+[connection signal="timeout" from="ShootTimer" to="." method="_on_ShootTimer_timeout"]
+[connection signal="area_entered" from="Area2D" to="." method="_on_Area2D_area_entered"]
+[connection signal="area_exited" from="Area2D" to="." method="_on_Area2D_area_exited"]
+
+[editable path="Hurtbox"]
+[editable path="PlayerDetectionZone"]
+[editable path="Hitbox"]
+[editable path="SoftCollision"]

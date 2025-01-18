@@ -151,7 +151,6 @@ self_modulate = Color( 0.705882, 0.32549, 0.992157, 0.568627 )
 position = Vector2( 0, -5 )
 scale = Vector2( 0.7, 0.7 )
 frames = SubResource( 22 )
-frame = 2
 playing = true
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
@@ -273,13 +272,13 @@ position = Vector2( 154, 63.1476 )
 rotation = 1.5708
 scale = Vector2( 0.105515, 0.162135 )
 z_index = 1
-frame = 2
 
 [node name="SmokeStackEffectOne2" parent="YSort" instance=ExtResource( 7 )]
 position = Vector2( 160.708, 62.6218 )
 rotation = 1.5708
 scale = Vector2( 0.0979507, 0.0814104 )
 z_index = 1
+frame = 0
 
 [node name="SandDustEffectOne" parent="YSort" instance=ExtResource( 8 )]
 position = Vector2( 118.071, 91 )
@@ -314,38 +313,40 @@ frame = 3
 
 [node name="MapClouds" parent="YSort" instance=ExtResource( 9 )]
 position = Vector2( 173, 150 )
-frame = 2
+frame = 1
 
 [node name="MapClouds2" parent="YSort" instance=ExtResource( 9 )]
 position = Vector2( 171, 151 )
+frame = 2
 
 [node name="MapClouds4" parent="YSort" instance=ExtResource( 9 )]
 position = Vector2( 160, 121 )
-frame = 2
+frame = 1
 
 [node name="MapClouds5" parent="YSort" instance=ExtResource( 9 )]
 position = Vector2( 169, 116 )
-frame = 2
+frame = 1
 
 [node name="MapClouds3" parent="YSort" instance=ExtResource( 9 )]
 position = Vector2( 169, 156 )
+frame = 2
 
 [node name="SnowFallOne" parent="YSort" instance=ExtResource( 13 )]
 position = Vector2( 164.75, 38 )
 scale = Vector2( 0.695, 0.42 )
 z_index = 2
 animation = "New Anim"
-frame = 1
+frame = 62
 
 [node name="SwarmOne" parent="YSort" instance=ExtResource( 15 )]
 position = Vector2( 180, 97 )
 scale = Vector2( 0.38125, 0.38125 )
-frame = 6
+frame = 4
 
 [node name="SwarmOne2" parent="YSort" instance=ExtResource( 15 )]
 position = Vector2( 182, 95 )
 scale = Vector2( 0.38125, 0.38125 )
-frame = 6
+frame = 4
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 106, 158 )
@@ -431,6 +432,7 @@ visible = false
 position = Vector2( 16, 45 )
 scale = Vector2( 0.4, 0.4 )
 frames = SubResource( 7 )
+frame = 1
 playing = true
 
 [node name="XpText" type="RichTextLabel" parent="."]
@@ -544,7 +546,7 @@ text = "Drill Toppled"
 position = Vector2( 263, 171.5 )
 scale = Vector2( 0.12, 0.12 )
 frames = SubResource( 17 )
-frame = 4
+frame = 2
 playing = true
 
 [node name="DrillFrame" type="Sprite" parent="."]
@@ -595,11 +597,11 @@ pitch_scale = 1.5
 [connection signal="pressed" from="ForestButton" to="." method="_on_ForestButton_pressed"]
 [connection signal="focus_entered" from="CaveButton" to="." method="_on_CaveButton_focus_entered"]
 [connection signal="pressed" from="CaveButton" to="." method="_on_CaveButton_pressed"]
-[connection signal="focus_entered" from="MarshButton" to="." method="_on_CaveButton_focus_entered"]
 [connection signal="focus_entered" from="MarshButton" to="." method="_on_MarshButton_focus_entered"]
+[connection signal="focus_entered" from="MarshButton" to="." method="_on_CaveButton_focus_entered"]
 [connection signal="pressed" from="MarshButton" to="." method="_on_MarshButton_pressed"]
-[connection signal="focus_entered" from="CityButton" to="." method="_on_CaveButton_focus_entered"]
 [connection signal="focus_entered" from="CityButton" to="." method="_on_CityButton_focus_entered"]
+[connection signal="focus_entered" from="CityButton" to="." method="_on_CaveButton_focus_entered"]
 [connection signal="pressed" from="CityButton" to="." method="_on_CityButton_pressed"]
 [connection signal="focus_entered" from="DesertButton" to="." method="_on_DesertButton_focus_entered"]
 [connection signal="focus_entered" from="DesertButton" to="." method="_on_CaveButton_focus_entered"]

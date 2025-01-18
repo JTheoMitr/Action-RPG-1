@@ -1,11 +1,11 @@
-[gd_scene load_steps=50 format=2]
+[gd_scene load_steps=65 format=2]
 
 [ext_resource path="res://Inventory/popsicle-red.png" type="Texture" id=1]
 [ext_resource path="res://World/floppy.png" type="Texture" id=2]
 [ext_resource path="res://UI/UI_Flat_Button_Medium_Lock_02a1 copy.png" type="Texture" id=3]
 [ext_resource path="res://Inventory/PlayerInventory.gd" type="Script" id=4]
 [ext_resource path="res://UI/CoinUI.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Player/Main Player One Ranger Helmet GREEN three single.png" type="Texture" id=6]
+[ext_resource path="res://World/Apple.png" type="Texture" id=6]
 [ext_resource path="res://Inventory/ItemDescription.gd" type="Script" id=7]
 [ext_resource path="res://UI/06 Border 01.png" type="Texture" id=8]
 [ext_resource path="res://UI/e8ba734de1b8121.png" type="Texture" id=9]
@@ -18,10 +18,19 @@
 [ext_resource path="res://UI/gdb-playstation-2 R1 Pressed Single.png" type="Texture" id=16]
 [ext_resource path="res://UI/map_icon_shadow.png" type="Texture" id=17]
 [ext_resource path="res://World/DefaultMapPauseScreen.tscn" type="PackedScene" id=18]
+[ext_resource path="res://Inventory/counter_strike_C4.png" type="Texture" id=19]
+[ext_resource path="res://Player/Main Player One Ranger Helmet GREEN three lighteroutline redbackpack detailed single.png" type="Texture" id=20]
+[ext_resource path="res://World/cage_key_1.png" type="Texture" id=21]
 
 [sub_resource type="DynamicFont" id=1]
 size = 10
 font_data = ExtResource( 13 )
+
+[sub_resource type="StyleBoxFlat" id=33]
+bg_color = Color( 0.360784, 0.631373, 0.427451, 1 )
+
+[sub_resource type="StyleBoxFlat" id=34]
+bg_color = Color( 0.133333, 0.360784, 0.423529, 1 )
 
 [sub_resource type="DynamicFont" id=2]
 size = 10
@@ -31,6 +40,12 @@ font_data = ExtResource( 13 )
 size = 10
 font_data = ExtResource( 13 )
 
+[sub_resource type="StyleBoxFlat" id=35]
+bg_color = Color( 0.360784, 0.631373, 0.427451, 1 )
+
+[sub_resource type="StyleBoxFlat" id=36]
+bg_color = Color( 0.133333, 0.360784, 0.423529, 1 )
+
 [sub_resource type="DynamicFont" id=4]
 size = 10
 font_data = ExtResource( 13 )
@@ -39,8 +54,32 @@ font_data = ExtResource( 13 )
 size = 10
 font_data = ExtResource( 13 )
 
+[sub_resource type="StyleBoxFlat" id=37]
+bg_color = Color( 0.360784, 0.631373, 0.427451, 1 )
+
+[sub_resource type="StyleBoxFlat" id=38]
+bg_color = Color( 0.133333, 0.360784, 0.423529, 1 )
+
+[sub_resource type="StyleBoxFlat" id=39]
+bg_color = Color( 0.360784, 0.631373, 0.427451, 1 )
+
+[sub_resource type="StyleBoxFlat" id=40]
+bg_color = Color( 0.133333, 0.360784, 0.423529, 1 )
+
+[sub_resource type="StyleBoxFlat" id=41]
+bg_color = Color( 0.360784, 0.631373, 0.427451, 1 )
+
+[sub_resource type="StyleBoxFlat" id=42]
+bg_color = Color( 0.133333, 0.360784, 0.423529, 1 )
+
+[sub_resource type="StyleBoxFlat" id=43]
+bg_color = Color( 0.360784, 0.631373, 0.427451, 1 )
+
+[sub_resource type="StyleBoxFlat" id=44]
+bg_color = Color( 0.133333, 0.360784, 0.423529, 1 )
+
 [sub_resource type="StyleBoxFlat" id=27]
-bg_color = Color( 0.254902, 0.603922, 0.341176, 1 )
+bg_color = Color( 0.360784, 0.631373, 0.427451, 1 )
 
 [sub_resource type="StyleBoxFlat" id=32]
 bg_color = Color( 0.133333, 0.360784, 0.423529, 1 )
@@ -150,10 +189,10 @@ texture = ExtResource( 10 )
 
 [node name="Panel" type="Panel" parent="."]
 self_modulate = Color( 1, 1, 1, 0.482353 )
-margin_left = -16.0
-margin_top = -17.0
-margin_right = 96.0
-margin_bottom = 29.0
+margin_left = -15.7143
+margin_top = -22.8571
+margin_right = 96.2857
+margin_bottom = 29.1429
 rect_scale = Vector2( 3, 3 )
 
 [node name="Sprite" type="Sprite" parent="."]
@@ -163,21 +202,24 @@ scale = Vector2( 6, 3 )
 texture = ExtResource( 8 )
 
 [node name="Control" type="Control" parent="."]
-margin_right = 40.0
-margin_bottom = 40.0
+margin_left = 0.285714
+margin_top = -5.85714
+margin_right = 40.2857
+margin_bottom = 34.1429
 
 [node name="CenterContainer" type="CenterContainer" parent="Control"]
-margin_right = 40.0
-margin_bottom = 40.0
+margin_top = -5.71428
+margin_right = 304.0
+margin_bottom = 128.286
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Control/CenterContainer"]
 margin_right = 304.0
-margin_bottom = 104.0
+margin_bottom = 134.0
 rect_min_size = Vector2( 304, 104 )
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Control/CenterContainer/HBoxContainer"]
 margin_right = 200.0
-margin_bottom = 104.0
+margin_bottom = 134.0
 
 [node name="Panel" type="Panel" parent="Control/CenterContainer/HBoxContainer/VBoxContainer"]
 margin_right = 200.0
@@ -196,16 +238,31 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="Button" type="Button" parent="Control/CenterContainer/HBoxContainer/VBoxContainer"]
-pause_mode = 2
-self_modulate = Color( 0.780392, 0.788235, 0.792157, 1 )
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/CenterContainer/HBoxContainer/VBoxContainer"]
 margin_top = 34.0
 margin_right = 200.0
-margin_bottom = 54.0
+margin_bottom = 108.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/CenterContainer/HBoxContainer/VBoxContainer/VBoxContainer"]
+margin_right = 200.0
+margin_bottom = 35.0
+rect_min_size = Vector2( 0, 35 )
+custom_constants/separation = 6
+
+[node name="Button" type="Button" parent="Control/CenterContainer/HBoxContainer/VBoxContainer/VBoxContainer/HBoxContainer"]
+pause_mode = 2
+self_modulate = Color( 0.780392, 0.788235, 0.792157, 1 )
+margin_right = 35.0
+margin_bottom = 35.0
+rect_min_size = Vector2( 35, 35 )
+custom_styles/focus = SubResource( 33 )
+custom_styles/normal = SubResource( 34 )
 icon = ExtResource( 1 )
+icon_align = 1
 expand_icon = true
 
-[node name="RPOP" type="RichTextLabel" parent="Control/CenterContainer/HBoxContainer/VBoxContainer/Button"]
+[node name="RPOP" type="RichTextLabel" parent="Control/CenterContainer/HBoxContainer/VBoxContainer/VBoxContainer/HBoxContainer/Button"]
+visible = false
 margin_left = 60.0
 margin_top = 1.0
 margin_right = 221.0
@@ -218,27 +275,36 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="RPOPQ" type="RichTextLabel" parent="Control/CenterContainer/HBoxContainer/VBoxContainer/Button"]
-margin_left = 172.857
-margin_top = -2.0
-margin_right = 189.857
-margin_bottom = 42.0
+[node name="RPOPQ" type="RichTextLabel" parent="Control/CenterContainer/HBoxContainer/VBoxContainer/VBoxContainer/HBoxContainer/Button"]
+anchor_left = -0.163266
+anchor_top = -0.502041
+anchor_right = 0.889786
+anchor_bottom = -0.273469
+margin_left = 174.0
+margin_top = 8.0
+margin_right = 214.0
+margin_bottom = 48.0
 rect_scale = Vector2( 1.6, 1.6 )
+rect_pivot_offset = Vector2( 280, 0 )
 custom_fonts/normal_font = SubResource( 3 )
 text = "0"
 __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="Button2" type="Button" parent="Control/CenterContainer/HBoxContainer/VBoxContainer"]
+[node name="Button2" type="Button" parent="Control/CenterContainer/HBoxContainer/VBoxContainer/VBoxContainer/HBoxContainer"]
 self_modulate = Color( 0.780392, 0.788235, 0.792157, 1 )
-margin_top = 58.0
-margin_right = 200.0
-margin_bottom = 78.0
+margin_left = 41.0
+margin_right = 76.0
+margin_bottom = 35.0
+rect_min_size = Vector2( 35, 35 )
+custom_styles/focus = SubResource( 35 )
+custom_styles/normal = SubResource( 36 )
 icon = ExtResource( 2 )
-expand_icon = true
+icon_align = 1
 
-[node name="BPOP" type="RichTextLabel" parent="Control/CenterContainer/HBoxContainer/VBoxContainer/Button2"]
+[node name="BPOP" type="RichTextLabel" parent="Control/CenterContainer/HBoxContainer/VBoxContainer/VBoxContainer/HBoxContainer/Button2"]
+visible = false
 margin_left = 60.0
 margin_top = 0.57143
 margin_right = 169.0
@@ -250,22 +316,361 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="BPOPQ" type="RichTextLabel" parent="Control/CenterContainer/HBoxContainer/VBoxContainer/Button2"]
-margin_left = 172.857
-margin_top = -2.28571
-margin_right = 212.857
-margin_bottom = 37.7143
+[node name="BPOPQ" type="RichTextLabel" parent="Control/CenterContainer/HBoxContainer/VBoxContainer/VBoxContainer/HBoxContainer/Button2"]
+anchor_left = -0.230205
+anchor_top = -0.46572
+anchor_bottom = -0.380006
+margin_left = 174.057
+margin_top = 7.3002
+margin_right = 214.057
+margin_bottom = 47.3002
 rect_scale = Vector2( 1.6, 1.6 )
+rect_pivot_offset = Vector2( 280, 0 )
 custom_fonts/normal_font = SubResource( 5 )
 text = "0"
 __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="Button3" type="Button" parent="Control/CenterContainer/HBoxContainer/VBoxContainer"]
-margin_top = 82.0
+[node name="Button3" type="Button" parent="Control/CenterContainer/HBoxContainer/VBoxContainer/VBoxContainer/HBoxContainer"]
+self_modulate = Color( 0.780392, 0.788235, 0.792157, 1 )
+margin_left = 82.0
+margin_right = 117.0
+margin_bottom = 35.0
+rect_min_size = Vector2( 35, 35 )
+custom_styles/focus = SubResource( 37 )
+custom_styles/normal = SubResource( 38 )
+icon = ExtResource( 21 )
+icon_align = 1
+expand_icon = true
+
+[node name="BPOP" type="RichTextLabel" parent="Control/CenterContainer/HBoxContainer/VBoxContainer/VBoxContainer/HBoxContainer/Button3"]
+visible = false
+margin_left = 60.0
+margin_top = 0.57143
+margin_right = 169.0
+margin_bottom = 24.5714
+rect_scale = Vector2( 1.2, 1.2 )
+custom_fonts/normal_font = SubResource( 4 )
+text = "F. Disk    x "
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="BPOPQ" type="RichTextLabel" parent="Control/CenterContainer/HBoxContainer/VBoxContainer/VBoxContainer/HBoxContainer/Button3"]
+anchor_left = -0.230205
+anchor_top = -0.494292
+anchor_right = -0.230205
+anchor_bottom = -0.494292
+margin_left = 174.057
+margin_top = 8.3002
+margin_right = 214.057
+margin_bottom = 48.3002
+rect_scale = Vector2( 1.6, 1.6 )
+rect_pivot_offset = Vector2( 280, 0 )
+custom_fonts/normal_font = SubResource( 5 )
+text = "2"
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Button4" type="Button" parent="Control/CenterContainer/HBoxContainer/VBoxContainer/VBoxContainer/HBoxContainer"]
+self_modulate = Color( 0.780392, 0.788235, 0.792157, 1 )
+margin_left = 123.0
+margin_right = 158.0
+margin_bottom = 35.0
+rect_min_size = Vector2( 35, 35 )
+custom_styles/focus = SubResource( 39 )
+custom_styles/normal = SubResource( 40 )
+icon = ExtResource( 19 )
+expand_icon = true
+
+[node name="BPOP" type="RichTextLabel" parent="Control/CenterContainer/HBoxContainer/VBoxContainer/VBoxContainer/HBoxContainer/Button4"]
+visible = false
+margin_left = 60.0
+margin_top = 0.57143
+margin_right = 169.0
+margin_bottom = 24.5714
+rect_scale = Vector2( 1.2, 1.2 )
+custom_fonts/normal_font = SubResource( 4 )
+text = "F. Disk    x "
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="BPOPQ" type="RichTextLabel" parent="Control/CenterContainer/HBoxContainer/VBoxContainer/VBoxContainer/HBoxContainer/Button4"]
+anchor_left = -0.230205
+anchor_top = -0.494292
+anchor_right = -0.230205
+anchor_bottom = -0.494292
+margin_left = 174.057
+margin_top = 8.3002
+margin_right = 214.057
+margin_bottom = 48.3002
+rect_scale = Vector2( 1.6, 1.6 )
+rect_pivot_offset = Vector2( 280, 0 )
+custom_fonts/normal_font = SubResource( 5 )
+text = "2"
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Button5" type="Button" parent="Control/CenterContainer/HBoxContainer/VBoxContainer/VBoxContainer/HBoxContainer"]
+self_modulate = Color( 0.780392, 0.788235, 0.792157, 1 )
+margin_left = 164.0
+margin_right = 199.0
+margin_bottom = 35.0
+rect_min_size = Vector2( 35, 35 )
+custom_styles/focus = SubResource( 41 )
+custom_styles/normal = SubResource( 42 )
+icon = ExtResource( 6 )
+expand_icon = true
+
+[node name="BPOP" type="RichTextLabel" parent="Control/CenterContainer/HBoxContainer/VBoxContainer/VBoxContainer/HBoxContainer/Button5"]
+visible = false
+margin_left = 60.0
+margin_top = 0.57143
+margin_right = 169.0
+margin_bottom = 24.5714
+rect_scale = Vector2( 1.2, 1.2 )
+custom_fonts/normal_font = SubResource( 4 )
+text = "F. Disk    x "
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="BPOPQ" type="RichTextLabel" parent="Control/CenterContainer/HBoxContainer/VBoxContainer/VBoxContainer/HBoxContainer/Button5"]
+anchor_left = -0.230205
+anchor_top = -0.494292
+anchor_right = -0.230205
+anchor_bottom = -0.494292
+margin_left = 174.057
+margin_top = 8.3002
+margin_right = 214.057
+margin_bottom = 48.3002
+rect_scale = Vector2( 1.6, 1.6 )
+rect_pivot_offset = Vector2( 280, 0 )
+custom_fonts/normal_font = SubResource( 5 )
+text = "1"
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Control/CenterContainer/HBoxContainer/VBoxContainer/VBoxContainer"]
+margin_top = 39.0
 margin_right = 200.0
-margin_bottom = 104.0
+margin_bottom = 74.0
+rect_min_size = Vector2( 0, 35 )
+custom_constants/separation = 6
+
+[node name="Button" type="Button" parent="Control/CenterContainer/HBoxContainer/VBoxContainer/VBoxContainer/HBoxContainer2"]
+pause_mode = 2
+self_modulate = Color( 0.780392, 0.788235, 0.792157, 1 )
+margin_right = 35.0
+margin_bottom = 35.0
+rect_min_size = Vector2( 35, 35 )
+custom_styles/focus = SubResource( 43 )
+custom_styles/normal = SubResource( 44 )
+expand_icon = true
+
+[node name="RPOP" type="RichTextLabel" parent="Control/CenterContainer/HBoxContainer/VBoxContainer/VBoxContainer/HBoxContainer2/Button"]
+visible = false
+margin_left = 60.0
+margin_top = 1.0
+margin_right = 221.0
+margin_bottom = 51.0
+rect_scale = Vector2( 1.2, 1.2 )
+custom_fonts/normal_font = SubResource( 2 )
+text = "RED POP   x
+"
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="RPOPQ" type="RichTextLabel" parent="Control/CenterContainer/HBoxContainer/VBoxContainer/VBoxContainer/HBoxContainer2/Button"]
+anchor_left = 0.657146
+anchor_top = -0.0942857
+anchor_right = 0.657146
+anchor_bottom = -0.0942857
+margin_left = 172.857
+margin_top = 35.0
+margin_right = 189.857
+margin_bottom = 79.0
+rect_scale = Vector2( 1.6, 1.6 )
+rect_pivot_offset = Vector2( 280, 0 )
+custom_fonts/normal_font = SubResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Button2" type="Button" parent="Control/CenterContainer/HBoxContainer/VBoxContainer/VBoxContainer/HBoxContainer2"]
+pause_mode = 2
+self_modulate = Color( 0.780392, 0.788235, 0.792157, 1 )
+margin_left = 41.0
+margin_right = 76.0
+margin_bottom = 35.0
+rect_min_size = Vector2( 35, 35 )
+custom_styles/focus = SubResource( 43 )
+custom_styles/normal = SubResource( 44 )
+expand_icon = true
+
+[node name="RPOP" type="RichTextLabel" parent="Control/CenterContainer/HBoxContainer/VBoxContainer/VBoxContainer/HBoxContainer2/Button2"]
+visible = false
+margin_left = 60.0
+margin_top = 1.0
+margin_right = 221.0
+margin_bottom = 51.0
+rect_scale = Vector2( 1.2, 1.2 )
+custom_fonts/normal_font = SubResource( 2 )
+text = "RED POP   x
+"
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="RPOPQ" type="RichTextLabel" parent="Control/CenterContainer/HBoxContainer/VBoxContainer/VBoxContainer/HBoxContainer2/Button2"]
+anchor_left = 0.657146
+anchor_top = -0.0942857
+anchor_right = 0.657146
+anchor_bottom = -0.0942857
+margin_left = 172.857
+margin_top = 35.0
+margin_right = 189.857
+margin_bottom = 79.0
+rect_scale = Vector2( 1.6, 1.6 )
+rect_pivot_offset = Vector2( 280, 0 )
+custom_fonts/normal_font = SubResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Button3" type="Button" parent="Control/CenterContainer/HBoxContainer/VBoxContainer/VBoxContainer/HBoxContainer2"]
+pause_mode = 2
+self_modulate = Color( 0.780392, 0.788235, 0.792157, 1 )
+margin_left = 82.0
+margin_right = 117.0
+margin_bottom = 35.0
+rect_min_size = Vector2( 35, 35 )
+custom_styles/focus = SubResource( 43 )
+custom_styles/normal = SubResource( 44 )
+expand_icon = true
+
+[node name="RPOP" type="RichTextLabel" parent="Control/CenterContainer/HBoxContainer/VBoxContainer/VBoxContainer/HBoxContainer2/Button3"]
+visible = false
+margin_left = 60.0
+margin_top = 1.0
+margin_right = 221.0
+margin_bottom = 51.0
+rect_scale = Vector2( 1.2, 1.2 )
+custom_fonts/normal_font = SubResource( 2 )
+text = "RED POP   x
+"
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="RPOPQ" type="RichTextLabel" parent="Control/CenterContainer/HBoxContainer/VBoxContainer/VBoxContainer/HBoxContainer2/Button3"]
+anchor_left = 0.657146
+anchor_top = -0.0942857
+anchor_right = 0.657146
+anchor_bottom = -0.0942857
+margin_left = 172.857
+margin_top = 35.0
+margin_right = 189.857
+margin_bottom = 79.0
+rect_scale = Vector2( 1.6, 1.6 )
+rect_pivot_offset = Vector2( 280, 0 )
+custom_fonts/normal_font = SubResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Button4" type="Button" parent="Control/CenterContainer/HBoxContainer/VBoxContainer/VBoxContainer/HBoxContainer2"]
+pause_mode = 2
+self_modulate = Color( 0.780392, 0.788235, 0.792157, 1 )
+margin_left = 123.0
+margin_right = 158.0
+margin_bottom = 35.0
+rect_min_size = Vector2( 35, 35 )
+custom_styles/focus = SubResource( 43 )
+custom_styles/normal = SubResource( 44 )
+expand_icon = true
+
+[node name="RPOP" type="RichTextLabel" parent="Control/CenterContainer/HBoxContainer/VBoxContainer/VBoxContainer/HBoxContainer2/Button4"]
+visible = false
+margin_left = 60.0
+margin_top = 1.0
+margin_right = 221.0
+margin_bottom = 51.0
+rect_scale = Vector2( 1.2, 1.2 )
+custom_fonts/normal_font = SubResource( 2 )
+text = "RED POP   x
+"
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="RPOPQ" type="RichTextLabel" parent="Control/CenterContainer/HBoxContainer/VBoxContainer/VBoxContainer/HBoxContainer2/Button4"]
+anchor_left = 0.657146
+anchor_top = -0.0942857
+anchor_right = 0.657146
+anchor_bottom = -0.0942857
+margin_left = 172.857
+margin_top = 35.0
+margin_right = 189.857
+margin_bottom = 79.0
+rect_scale = Vector2( 1.6, 1.6 )
+rect_pivot_offset = Vector2( 280, 0 )
+custom_fonts/normal_font = SubResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Button5" type="Button" parent="Control/CenterContainer/HBoxContainer/VBoxContainer/VBoxContainer/HBoxContainer2"]
+pause_mode = 2
+self_modulate = Color( 0.780392, 0.788235, 0.792157, 1 )
+margin_left = 164.0
+margin_right = 199.0
+margin_bottom = 35.0
+rect_min_size = Vector2( 35, 35 )
+custom_styles/focus = SubResource( 43 )
+custom_styles/normal = SubResource( 44 )
+expand_icon = true
+
+[node name="RPOP" type="RichTextLabel" parent="Control/CenterContainer/HBoxContainer/VBoxContainer/VBoxContainer/HBoxContainer2/Button5"]
+visible = false
+margin_left = 60.0
+margin_top = 1.0
+margin_right = 221.0
+margin_bottom = 51.0
+rect_scale = Vector2( 1.2, 1.2 )
+custom_fonts/normal_font = SubResource( 2 )
+text = "RED POP   x
+"
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="RPOPQ" type="RichTextLabel" parent="Control/CenterContainer/HBoxContainer/VBoxContainer/VBoxContainer/HBoxContainer2/Button5"]
+anchor_left = 0.657146
+anchor_top = -0.0942857
+anchor_right = 0.657146
+anchor_bottom = -0.0942857
+margin_left = 172.857
+margin_top = 35.0
+margin_right = 189.857
+margin_bottom = 79.0
+rect_scale = Vector2( 1.6, 1.6 )
+rect_pivot_offset = Vector2( 280, 0 )
+custom_fonts/normal_font = SubResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Button3" type="Button" parent="Control/CenterContainer/HBoxContainer/VBoxContainer"]
+margin_top = 112.0
+margin_right = 200.0
+margin_bottom = 134.0
 rect_min_size = Vector2( 200, 22 )
 custom_styles/focus = SubResource( 27 )
 custom_styles/normal = SubResource( 32 )
@@ -279,8 +684,8 @@ margin_bottom = 32.2857
 rect_scale = Vector2( 1.2, 1.2 )
 custom_fonts/normal_font = SubResource( 6 )
 bbcode_enabled = true
-bbcode_text = "[center]Quit Demo"
-text = "Quit Demo"
+bbcode_text = "[center]Quit Game"
+text = "Quit Game"
 __meta__ = {
 "_edit_use_anchors_": true
 }
@@ -298,16 +703,16 @@ text = "0"
 [node name="Panel" type="Panel" parent="Control/CenterContainer/HBoxContainer"]
 margin_left = 204.0
 margin_right = 304.0
-margin_bottom = 104.0
+margin_bottom = 134.0
 rect_min_size = Vector2( 100, 100 )
 
 [node name="ItemDescription" type="RichTextLabel" parent="Control/CenterContainer/HBoxContainer/Panel"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -164.0
-margin_top = 18.5714
+margin_left = -166.0
+margin_top = 19.0
 margin_right = -34.0
-margin_bottom = -19.4286
+margin_bottom = -88.0
 rect_scale = Vector2( 0.7, 0.7 )
 rect_clip_content = false
 custom_fonts/normal_font = SubResource( 8 )
@@ -319,7 +724,7 @@ script = ExtResource( 7 )
 
 [node name="Sprite" type="Sprite" parent="Control/CenterContainer/HBoxContainer/Panel"]
 position = Vector2( 15, 18 )
-texture = ExtResource( 6 )
+texture = ExtResource( 20 )
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Control/CenterContainer/HBoxContainer/Panel"]
 margin_left = 3.14285
@@ -382,20 +787,20 @@ custom_fonts/normal_font = SubResource( 15 )
 text = "Level 1"
 
 [node name="CoinUI" parent="." instance=ExtResource( 5 )]
-margin_left = 207.0
-margin_top = 83.0
-margin_right = 244.0
-margin_bottom = 102.0
+margin_left = 207.286
+margin_top = 71.4286
+margin_right = 244.286
+margin_bottom = 90.4286
 
 [node name="Sprite3" type="Sprite" parent="."]
-position = Vector2( 261.429, 91.4286 )
+position = Vector2( 261.715, 79.8572 )
 texture = ExtResource( 12 )
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="."]
-margin_left = 274.286
-margin_top = 87.1429
-margin_right = 362.286
-margin_bottom = 102.143
+margin_left = 274.572
+margin_top = 75.5715
+margin_right = 362.572
+margin_bottom = 90.5716
 rect_scale = Vector2( 0.55, 0.55 )
 custom_fonts/normal_font = SubResource( 14 )
 text = "Controls"
@@ -473,12 +878,12 @@ position = Vector2( 152, 51.429 )
 scale = Vector2( 0.19, 0.19 )
 
 [node name="MapShadow" type="Sprite" parent="."]
-position = Vector2( 292.857, 20 )
+position = Vector2( 293.145, 8.42856 )
 scale = Vector2( 0.015, 0.015 )
 texture = ExtResource( 17 )
 
 [node name="Map" type="Sprite" parent="."]
-position = Vector2( 292, 21 )
+position = Vector2( 292.286, 9.42859 )
 scale = Vector2( 0.02, 0.02 )
 texture = ExtResource( 14 )
 
@@ -492,7 +897,7 @@ custom_fonts/normal_font = SubResource( 16 )
 text = "Map"
 
 [node name="MapButton" type="Sprite" parent="."]
-position = Vector2( 275, 20 )
+position = Vector2( 275.286, 8.42857 )
 scale = Vector2( 0.9, 0.9 )
 texture = ExtResource( 16 )
 
@@ -551,10 +956,10 @@ text = " Yes "
 [node name="Timer2" type="Timer" parent="."]
 one_shot = true
 
-[connection signal="focus_entered" from="Control/CenterContainer/HBoxContainer/VBoxContainer/Button" to="." method="_on_Button_focus_entered"]
-[connection signal="pressed" from="Control/CenterContainer/HBoxContainer/VBoxContainer/Button" to="." method="_on_Button_pressed"]
-[connection signal="focus_entered" from="Control/CenterContainer/HBoxContainer/VBoxContainer/Button2" to="." method="_on_Button2_focus_entered"]
-[connection signal="pressed" from="Control/CenterContainer/HBoxContainer/VBoxContainer/Button2" to="." method="_on_Button2_pressed"]
+[connection signal="focus_entered" from="Control/CenterContainer/HBoxContainer/VBoxContainer/VBoxContainer/HBoxContainer/Button" to="." method="_on_Button_focus_entered"]
+[connection signal="pressed" from="Control/CenterContainer/HBoxContainer/VBoxContainer/VBoxContainer/HBoxContainer/Button" to="." method="_on_Button_pressed"]
+[connection signal="focus_entered" from="Control/CenterContainer/HBoxContainer/VBoxContainer/VBoxContainer/HBoxContainer/Button2" to="." method="_on_Button2_focus_entered"]
+[connection signal="pressed" from="Control/CenterContainer/HBoxContainer/VBoxContainer/VBoxContainer/HBoxContainer/Button2" to="." method="_on_Button2_pressed"]
 [connection signal="focus_entered" from="Control/CenterContainer/HBoxContainer/VBoxContainer/Button3" to="." method="_on_Button3_focus_entered"]
 [connection signal="pressed" from="Control/CenterContainer/HBoxContainer/VBoxContainer/Button3" to="." method="_on_Button3_pressed"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

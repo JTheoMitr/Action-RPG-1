@@ -59,6 +59,7 @@ func _on_RainTimer_timeout():
 	darkSky.show()
 	rain.show()
 	raining = true
+	print_debug("raining")
 
 
 func _on_RainSound_finished():

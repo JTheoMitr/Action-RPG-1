@@ -34,7 +34,7 @@ onready var rollSounds = $RollSounds
 onready var timer = $Timer
 onready var blastZone = $SpecialOneSprite/SpecialAttackArea/CollisionShape2D
 onready var playerInventory = $PlayerInventory
-onready var button = $PlayerInventory/Control/CenterContainer/HBoxContainer/VBoxContainer/Button
+onready var button = $PlayerInventory/Control/CenterContainer/HBoxContainer/VBoxContainer/VBoxContainer/HBoxContainer/Button
 onready var pointer = $Pointer
 onready var ray = $Pointer/RayCast2D
 onready var laserSprite = $Pointer/Sprite
@@ -687,7 +687,7 @@ func _on_RollTimer_timeout():
 
 
 func _on_SpinningGearTimer_timeout():
-	print_debug("rockin")
+	#print_debug("rockin")
 	sgf.position.y -= .5
 	sgf2.position.y -= .5
 	spinningGearTimer2.start()

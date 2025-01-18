@@ -1,0 +1,68 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://World/toxic_puddle_one.png" type="Texture" id=1]
+[ext_resource path="res://World/ShadowPuddleOne.gd" type="Script" id=2]
+[ext_resource path="res://Enemies/shadow monster/Death.png" type="Texture" id=3]
+[ext_resource path="res://Music and Sounds/FEETCrea_Footstep Slime Monster Jumping Wet Slimeey Sticky Squelchy Exterior 03_ESM_DGF.wav" type="AudioStream" id=4]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 51.0098
+
+[sub_resource type="AtlasTexture" id=2]
+atlas = ExtResource( 3 )
+region = Rect2( 300, 0, 150, 150 )
+
+[sub_resource type="AtlasTexture" id=3]
+atlas = ExtResource( 3 )
+region = Rect2( 450, 0, 150, 150 )
+
+[sub_resource type="AtlasTexture" id=4]
+atlas = ExtResource( 3 )
+region = Rect2( 150, 0, 150, 150 )
+
+[sub_resource type="AtlasTexture" id=5]
+atlas = ExtResource( 3 )
+region = Rect2( 0, 0, 150, 150 )
+
+[sub_resource type="SpriteFrames" id=6]
+animations = [ {
+"frames": [ SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ) ],
+"loop": false,
+"name": "default",
+"speed": 5.0
+} ]
+
+[node name="ShadowPuddleOne" type="Sprite"]
+self_modulate = Color( 0.109804, 0.101961, 0.101961, 1 )
+position = Vector2( 14.5, -4.5 )
+scale = Vector2( 1.725, 1.125 )
+texture = ExtResource( 1 )
+script = ExtResource( 2 )
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2( 0, 7 )
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2( 0, 2 )
+shape = SubResource( 1 )
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 55.0
+autostart = true
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( 1.44928, -16.4444 )
+scale = Vector2( 0.7, 0.9 )
+frames = SubResource( 6 )
+frame = 3
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+volume_db = -3.0
+pitch_scale = 0.5
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_Area2D_area_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[connection signal="animation_finished" from="AnimatedSprite" to="." method="_on_AnimatedSprite_animation_finished"]
