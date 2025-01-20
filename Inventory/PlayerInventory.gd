@@ -23,6 +23,7 @@ onready var mapButton = $MapButton
 onready var mapShadow = $MapShadow
 onready var popup = $PopupDialog
 onready var selectedItem = $Control/CenterContainer/HBoxContainer/VBoxContainer/Panel/PSPI
+onready var zipper = $Zipper
 
 
 onready var save_file = SaveFile.g_data
@@ -40,12 +41,20 @@ var pauseEnabled
 # disable buttons while map or controller pane is visible
 var buttonsEnabled = true
 
+#for zipper animations:
+var zipperRotate = false
+var zipperRotateReverse = false
+var zipperUp = false
+var zipperRight = false
+var zipperDown = false
+
 
 
 
 func _ready():
 	stats.connect("map_pickup", self, "swap_map")
 	stats.connect("enable_pause", self, "free_pause")
+	stats.connect("enable_pause", self, "opening")
 	print_debug((get_parent().get_parent().get_parent()).to_string()) #checking for level
 	if (get_parent().get_parent().get_parent()).to_string().begins_with("World:") && save_file.forestMapPickedUp: #need to add rest of maps for other levels and also check whether map was picked up for that area
 		displayMap = $ForestWorldMap
@@ -60,7 +69,16 @@ func _ready():
 	pauseEnabled = false
 	
 func _process(_delta):
-	
+	if zipperRotateReverse:
+		zipper.rotation_degrees -= .65
+	if zipperRotate:
+		zipper.rotation_degrees += 1
+	if zipperRight:
+		zipper.position.x += 8
+	if zipperDown:
+		zipper.position.y += 3
+	if zipperUp:
+		zipper.position.y -= 7
 	if (Input.is_action_just_pressed("special_one")) && self.visible:
 		if controlsOn:
 			controlsPanel.hide()
@@ -101,6 +119,9 @@ func _process(_delta):
 			menuOn = false
 			var bagZip = BagZipperSound.instance()
 			get_tree().current_scene.add_child(bagZip)
+			zipper.position.x = -30
+			zipper.position.y = 104
+			zipper.rotation_degrees = 0
 		
 	redPop.text = str(stats.redpops)
 	bluePop.text = str(stats.bluepops)
@@ -163,7 +184,24 @@ func _on_Button3_focus_entered():
 	description.bbcode_text = "[right] Quit Demo [/right]"
 	focused()
 
-
+func opening():
+	zipperRotate = true
+	zipperUp = true
+	yield(get_tree().create_timer(0.28), "timeout")
+	zipperRotate = false
+	zipperUp = false
+	zipperRight = true
+	yield(get_tree().create_timer(0.79), "timeout")
+	zipperRight = false
+	zipperDown = true
+	zipperRotateReverse = true
+	yield(get_tree().create_timer(0.6), "timeout")
+	zipperDown = false
+	zipperRotateReverse = false
+	
+	
+	
+	
 
 
 func _on_Button2_pressed(): #bluepop

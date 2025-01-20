@@ -8,6 +8,9 @@ const SoldierExplodeSound = preload("res://Music and Sounds/SoldierExplodeSound.
 const Laser = preload("res://Enemies/ShadowLaser.tscn")
 const XpOrb = preload("res://Enemies/XpOrb.tscn")
 const BloodSpatter = preload("res://Effects/BloodSpatterEffect1.tscn")
+const OilTrail = preload("res://World/OilTrail.tscn")
+const OilTrailSmall = preload("res://World/OilTrailSmall.tscn")
+const OilSpatter = preload("res://World/OilTrailSpatter.tscn")
 
 export var ACCELERATION = 300
 export var MAX_SPEED = 90
@@ -27,6 +30,7 @@ var state = CHASE
 var laserEngaged = false
 var hurtable = true
 
+onready var trailZone = $TrailZone
 onready var sprite = $AnimatedSprite
 onready var stats = $Stats
 onready var playerDetectionZone = $PlayerDetectionZone
@@ -37,6 +41,7 @@ onready var timer = $Timer
 onready var hitbox = $Hitbox/CollisionShape2D
 onready var bulletZone2D = $BulletZone2D/CollisionShape2D
 onready var shootTimer = $ShootTimer
+onready var trailTimer = $TrailTimer
 
 var worldStats = WorldStats
 var looking = true
@@ -51,6 +56,7 @@ func _ready():
 	self.stats.max_health = 3
 	self.stats.health = 3
 	hitbox.set_deferred("disabled", true)
+	trailTimer.start()
 
 func _physics_process(delta):
 	knockback = knockback.move_toward(Vector2.ZERO, FRICTION * delta)
@@ -59,13 +65,14 @@ func _physics_process(delta):
 	if shooting:
 		#velocity.x = 0
 		#velocity.y = 0
-		self.MAX_SPEED = 1
+		self.MAX_SPEED = 0
 
 	
 	match state:
 		IDLE:
 			if looking:
 				timer.stop()
+				
 				velocity = velocity.move_toward(Vector2.ZERO, FRICTION * delta)
 				seek_player()
 				sprite.play("idle")
@@ -74,6 +81,7 @@ func _physics_process(delta):
 				
 		WANDER:
 			if looking:
+				
 				seek_player()
 				sprite.play("walk")
 				if wanderController.get_time_left() == 0:
@@ -84,6 +92,7 @@ func _physics_process(delta):
 				
 		CHASE:
 			if looking:
+				
 				var player = playerDetectionZone.player
 				if player != null:
 					if shooting == false:
@@ -103,9 +112,9 @@ func accelerate_towards_point(point, delta):
 	sprite.flip_h = velocity.x < 0
 	if sprite.flip_h:
 		# print(shadow.position.x)
-		bulletZone2D.position.x = -11
+		bulletZone2D.position.x = -9
 	if !sprite.flip_h:
-		bulletZone2D.position.x = 11
+		bulletZone2D.position.x = 9
 	
 
 	
@@ -216,3 +225,12 @@ func _on_Area2D_area_exited(area):
 	shooting = false
 	timer.stop()
 	self.MAX_SPEED = 90
+
+
+func _on_TrailTimer_timeout():
+	var TrailDrop = random_drop_generator([OilTrail, OilTrailSmall, OilSpatter])
+	var currentDrop = TrailDrop.instance()
+	get_parent().call_deferred("add_child", currentDrop)
+	currentDrop.global_position = trailZone.global_position
+	print_debug("dropping")
+	

@@ -67,5 +67,5 @@ void fragment() {
     final *= mask_value;
 
     // Use the alpha value of the color to control the overall fog opacity
-    COLOR = vec4(color.rgb, final * color.a * 0.3);
+    COLOR = vec4(color.rgb, final * color.a * 0.4);
 }

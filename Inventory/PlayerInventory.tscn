@@ -1,4 +1,4 @@
-[gd_scene load_steps=65 format=2]
+[gd_scene load_steps=66 format=2]
 
 [ext_resource path="res://Inventory/popsicle-red.png" type="Texture" id=1]
 [ext_resource path="res://World/floppy.png" type="Texture" id=2]
@@ -9,7 +9,7 @@
 [ext_resource path="res://Inventory/ItemDescription.gd" type="Script" id=7]
 [ext_resource path="res://UI/06 Border 01.png" type="Texture" id=8]
 [ext_resource path="res://UI/e8ba734de1b8121.png" type="Texture" id=9]
-[ext_resource path="res://UI/zipperUI.png" type="Texture" id=10]
+[ext_resource path="res://UI/zipperUINOZIP.png" type="Texture" id=10]
 [ext_resource path="res://UI/ps4_gamepad isolated.png" type="Texture" id=11]
 [ext_resource path="res://UI/tilemap_top_btn_still.png" type="Texture" id=12]
 [ext_resource path="res://fonts/PixelTandysoft-0rJG.ttf" type="DynamicFontData" id=13]
@@ -21,6 +21,7 @@
 [ext_resource path="res://Inventory/counter_strike_C4.png" type="Texture" id=19]
 [ext_resource path="res://Player/Main Player One Ranger Helmet GREEN three lighteroutline redbackpack detailed single.png" type="Texture" id=20]
 [ext_resource path="res://World/cage_key_1.png" type="Texture" id=21]
+[ext_resource path="res://UI/zipper.png" type="Texture" id=22]
 
 [sub_resource type="DynamicFont" id=1]
 size = 10
@@ -955,6 +956,11 @@ text = " Yes "
 
 [node name="Timer2" type="Timer" parent="."]
 one_shot = true
+
+[node name="Zipper" type="Sprite" parent="."]
+position = Vector2( -30, 104 )
+scale = Vector2( 3.5, 3.5 )
+texture = ExtResource( 22 )
 
 [connection signal="focus_entered" from="Control/CenterContainer/HBoxContainer/VBoxContainer/VBoxContainer/HBoxContainer/Button" to="." method="_on_Button_focus_entered"]
 [connection signal="pressed" from="Control/CenterContainer/HBoxContainer/VBoxContainer/VBoxContainer/HBoxContainer/Button" to="." method="_on_Button_pressed"]

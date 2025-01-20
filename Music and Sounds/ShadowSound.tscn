@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://Music and Sounds/Monster_WORM_03.wav" type="AudioStream" id=1]
+[ext_resource path="res://Music and Sounds/Monster Synth Snarl 01.wav" type="AudioStream" id=1]
 [ext_resource path="res://Music and Sounds/SoldierSound.gd" type="Script" id=2]
 
 [node name="ShadowSound" type="AudioStreamPlayer"]
