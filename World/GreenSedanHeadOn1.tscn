@@ -1,0 +1,37 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://World/green_sedan_head_on_1.png" type="Texture" id=1]
+[ext_resource path="res://Effects/HeadlightDent.tscn" type="PackedScene" id=2]
+
+[sub_resource type="CapsuleShape2D" id=1]
+radius = 13.0
+
+[node name="GreenSedanHeadOn1" type="Node2D"]
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+flip_h = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+visible = false
+position = Vector2( 0, 2 )
+shape = SubResource( 1 )
+
+[node name="HeadlightDent" parent="." instance=ExtResource( 2 )]
+position = Vector2( 7.7, 16.5 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="HeadlightDent2" parent="." instance=ExtResource( 2 )]
+position = Vector2( -8.2, 16.5 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="Dent" parent="HeadlightDent2" index="0"]
+flip_h = true
+
+[node name="OpenTrunk" parent="HeadlightDent2" index="3"]
+flip_h = true
+
+[editable path="HeadlightDent2"]
+[editable path="HeadlightDent2/Hurtbox"]

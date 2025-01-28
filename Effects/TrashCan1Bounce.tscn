@@ -1,0 +1,31 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Effects/trashcan1_bounce.png" type="Texture" id=1]
+[ext_resource path="res://Effects/BarrelBounce.gd" type="Script" id=2]
+
+[sub_resource type="AtlasTexture" id=5]
+atlas = ExtResource( 1 )
+region = Rect2( 0, 0, 28, 22 )
+
+[sub_resource type="AtlasTexture" id=6]
+atlas = ExtResource( 1 )
+region = Rect2( 31, 0, 28, 22 )
+
+[sub_resource type="AtlasTexture" id=7]
+atlas = ExtResource( 1 )
+region = Rect2( 62, 0, 28, 22 )
+
+[sub_resource type="SpriteFrames" id=4]
+animations = [ {
+"frames": [ SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 6 ) ],
+"loop": true,
+"name": "Animate",
+"speed": 10.0
+} ]
+
+[node name="TrashCan1Bounce" type="AnimatedSprite"]
+scale = Vector2( 1.15, 1.23 )
+frames = SubResource( 4 )
+animation = "Animate"
+offset = Vector2( 0, 2 )
+script = ExtResource( 2 )

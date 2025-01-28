@@ -18,7 +18,7 @@
 [ext_resource path="res://UI/gdb-playstation-2 R1 Pressed Single.png" type="Texture" id=16]
 [ext_resource path="res://UI/map_icon_shadow.png" type="Texture" id=17]
 [ext_resource path="res://World/DefaultMapPauseScreen.tscn" type="PackedScene" id=18]
-[ext_resource path="res://Inventory/counter_strike_C4.png" type="Texture" id=19]
+[ext_resource path="res://World/Syringe_ooze1 copy.png" type="Texture" id=19]
 [ext_resource path="res://Player/Main Player One Ranger Helmet GREEN three lighteroutline redbackpack detailed single.png" type="Texture" id=20]
 [ext_resource path="res://World/cage_key_1.png" type="Texture" id=21]
 [ext_resource path="res://UI/zipper.png" type="Texture" id=22]
@@ -333,7 +333,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="Button3" type="Button" parent="Control/CenterContainer/HBoxContainer/VBoxContainer/VBoxContainer/HBoxContainer"]
+[node name="KeyButton" type="Button" parent="Control/CenterContainer/HBoxContainer/VBoxContainer/VBoxContainer/HBoxContainer"]
 self_modulate = Color( 0.780392, 0.788235, 0.792157, 1 )
 margin_left = 82.0
 margin_right = 117.0
@@ -345,7 +345,7 @@ icon = ExtResource( 21 )
 icon_align = 1
 expand_icon = true
 
-[node name="BPOP" type="RichTextLabel" parent="Control/CenterContainer/HBoxContainer/VBoxContainer/VBoxContainer/HBoxContainer/Button3"]
+[node name="BPOP" type="RichTextLabel" parent="Control/CenterContainer/HBoxContainer/VBoxContainer/VBoxContainer/HBoxContainer/KeyButton"]
 visible = false
 margin_left = 60.0
 margin_top = 0.57143
@@ -358,7 +358,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="BPOPQ" type="RichTextLabel" parent="Control/CenterContainer/HBoxContainer/VBoxContainer/VBoxContainer/HBoxContainer/Button3"]
+[node name="BPOPQ" type="RichTextLabel" parent="Control/CenterContainer/HBoxContainer/VBoxContainer/VBoxContainer/HBoxContainer/KeyButton"]
 anchor_left = -0.230205
 anchor_top = -0.494292
 anchor_right = -0.230205
@@ -375,7 +375,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="Button4" type="Button" parent="Control/CenterContainer/HBoxContainer/VBoxContainer/VBoxContainer/HBoxContainer"]
+[node name="Syringe" type="Button" parent="Control/CenterContainer/HBoxContainer/VBoxContainer/VBoxContainer/HBoxContainer"]
 self_modulate = Color( 0.780392, 0.788235, 0.792157, 1 )
 margin_left = 123.0
 margin_right = 158.0
@@ -384,9 +384,11 @@ rect_min_size = Vector2( 35, 35 )
 custom_styles/focus = SubResource( 39 )
 custom_styles/normal = SubResource( 40 )
 icon = ExtResource( 19 )
+align = 2
+icon_align = 1
 expand_icon = true
 
-[node name="BPOP" type="RichTextLabel" parent="Control/CenterContainer/HBoxContainer/VBoxContainer/VBoxContainer/HBoxContainer/Button4"]
+[node name="BPOP" type="RichTextLabel" parent="Control/CenterContainer/HBoxContainer/VBoxContainer/VBoxContainer/HBoxContainer/Syringe"]
 visible = false
 margin_left = 60.0
 margin_top = 0.57143
@@ -399,7 +401,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="BPOPQ" type="RichTextLabel" parent="Control/CenterContainer/HBoxContainer/VBoxContainer/VBoxContainer/HBoxContainer/Button4"]
+[node name="BPOPQ" type="RichTextLabel" parent="Control/CenterContainer/HBoxContainer/VBoxContainer/VBoxContainer/HBoxContainer/Syringe"]
 anchor_left = -0.230205
 anchor_top = -0.494292
 anchor_right = -0.230205
@@ -966,6 +968,8 @@ texture = ExtResource( 22 )
 [connection signal="pressed" from="Control/CenterContainer/HBoxContainer/VBoxContainer/VBoxContainer/HBoxContainer/Button" to="." method="_on_Button_pressed"]
 [connection signal="focus_entered" from="Control/CenterContainer/HBoxContainer/VBoxContainer/VBoxContainer/HBoxContainer/Button2" to="." method="_on_Button2_focus_entered"]
 [connection signal="pressed" from="Control/CenterContainer/HBoxContainer/VBoxContainer/VBoxContainer/HBoxContainer/Button2" to="." method="_on_Button2_pressed"]
+[connection signal="focus_entered" from="Control/CenterContainer/HBoxContainer/VBoxContainer/VBoxContainer/HBoxContainer/KeyButton" to="." method="_on_KeyButton_focus_entered"]
+[connection signal="focus_entered" from="Control/CenterContainer/HBoxContainer/VBoxContainer/VBoxContainer/HBoxContainer/Syringe" to="." method="_on_Syringe_focus_entered"]
 [connection signal="focus_entered" from="Control/CenterContainer/HBoxContainer/VBoxContainer/Button3" to="." method="_on_Button3_focus_entered"]
 [connection signal="pressed" from="Control/CenterContainer/HBoxContainer/VBoxContainer/Button3" to="." method="_on_Button3_pressed"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

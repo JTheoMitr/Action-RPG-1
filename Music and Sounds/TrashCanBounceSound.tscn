@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Music and Sounds/SFX_Foley_Shelf_Metal_Thump.wav" type="AudioStream" id=1]
+[ext_resource path="res://Music and Sounds/BarrelBounceSound.gd" type="Script" id=2]
+
+[node name="TrashCanBounceSound" type="AudioStreamPlayer"]
+stream = ExtResource( 1 )
+volume_db = 3.0
+pitch_scale = 1.2
+autoplay = true
+script = ExtResource( 2 )

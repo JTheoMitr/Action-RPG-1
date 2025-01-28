@@ -66,6 +66,7 @@ func _physics_process(delta):
 		#velocity.x = 0
 		#velocity.y = 0
 		self.MAX_SPEED = 0
+		self.FRICTION = 500
 
 	
 	match state:
@@ -225,6 +226,7 @@ func _on_Area2D_area_exited(area):
 	shooting = false
 	timer.stop()
 	self.MAX_SPEED = 90
+	self.FRICTION = 200
 
 
 func _on_TrailTimer_timeout():

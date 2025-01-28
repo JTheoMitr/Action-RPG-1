@@ -192,12 +192,12 @@ func _on_MarshButton_pressed():
 
 
 func _on_CityButton_pressed():
-	denied.popup()
-	timer2.start()
-	deniedSound.play()
-	#SceneTransitionLong.change_scene("res://World/DumplingHouseInterior.tscn")
-	#pressSound.play(0.0)
-	#fade_out(mapMusic)
+	#denied.popup()
+	#timer2.start()
+	#deniedSound.play()
+	SceneTransitionLong.change_scene("res://World4.tscn")
+	pressSound.play(0.0)
+	fade_out(mapMusic)
 
 
 func _on_Timer2_timeout():

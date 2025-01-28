@@ -11,4 +11,8 @@ func _ready():
 
 
 func _on_animation_finished():
+	hide()
+
+
+func _on_AudioStreamPlayer_finished():
 	queue_free()

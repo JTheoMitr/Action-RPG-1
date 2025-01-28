@@ -191,14 +191,20 @@ func opening():
 	zipperRotate = false
 	zipperUp = false
 	zipperRight = true
-	yield(get_tree().create_timer(0.79), "timeout")
+	yield(get_tree().create_timer(0.78), "timeout")
 	zipperRight = false
 	zipperDown = true
 	zipperRotateReverse = true
-	yield(get_tree().create_timer(0.6), "timeout")
+	yield(get_tree().create_timer(0.55), "timeout")
 	zipperDown = false
 	zipperRotateReverse = false
-	
+	zipperRotate = true
+	yield(get_tree().create_timer(0.25), "timeout")
+	zipperRotateReverse = true
+	zipperRotate = false
+	yield(get_tree().create_timer(0.27), "timeout")
+	zipperRotateReverse = false
+	zipperRotate = false
 	
 	
 	
@@ -252,3 +258,15 @@ func free_pause():
 
 func _on_Timer2_timeout():
 	pauseEnabled = true
+
+
+func _on_KeyButton_focus_entered():
+	description.bbcode_text = "[right] opens cell door [/right]"
+	selectedItem.text = "Key"
+	focused()
+
+
+func _on_Syringe_focus_entered():
+	description.bbcode_text = "[right] Can be used for scrap [/right]"
+	selectedItem.text = "Syringe"
+	focused()

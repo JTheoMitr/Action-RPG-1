@@ -6,6 +6,6 @@
 [node name="PauseSound" type="AudioStreamPlayer"]
 stream = ExtResource( 1 )
 volume_db = -10.0
-pitch_scale = 0.95
+pitch_scale = 0.85
 autoplay = true
 script = ExtResource( 2 )
