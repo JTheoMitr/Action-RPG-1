@@ -352,6 +352,10 @@ func move_state(delta):
 			spinningGear.position.x += 1
 			spinningGear2.position.x -= 1
 			
+			if show:
+				sgf.position.y += 3
+				sgf2.position.y += 3
+			
 			#commenting out the following two lines to block charge attack for demo
 			# chargeTimer.start(0.0)
 			# chargeReady = false
@@ -501,6 +505,9 @@ func attack_animation_finished():
 	state = MOVE
 	spinningGear.position.x -= 1
 	spinningGear2.position.x += 1
+	
+	sgf.position.y = -13
+	sgf2.position.y = -13
 
 func special_one_finished():
 	specialOne.hide()
@@ -515,7 +522,16 @@ func stop_moving():
 
 func sword_swipe():
 	swordSwiper.play()
+
+func gearDown():
+	pass
+	#sgf.position.y = -11
+	#sgf2.position.y = -11
 	
+func gearUp():
+	sgf.position.y = -13
+	sgf2.position.y = -13
+
 func roll_sound():
 	rollSounds.play()
 	
