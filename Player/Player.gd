@@ -34,7 +34,7 @@ onready var rollSounds = $RollSounds
 onready var timer = $Timer
 onready var blastZone = $SpecialOneSprite/SpecialAttackArea/CollisionShape2D
 onready var playerInventory = $PlayerInventory
-onready var button = $PlayerInventory/Control/CenterContainer/HBoxContainer/VBoxContainer/VBoxContainer/HBoxContainer/Button
+onready var button = $PlayerInventory/Control/CenterContainer/HBoxContainer/VBoxContainer/HBoxContainer/Consumables
 onready var pointer = $Pointer
 onready var ray = $Pointer/RayCast2D
 onready var laserSprite = $Pointer/Sprite
@@ -352,10 +352,6 @@ func move_state(delta):
 			spinningGear.position.x += 1
 			spinningGear2.position.x -= 1
 			
-			if show:
-				sgf.position.y += 3
-				sgf2.position.y += 3
-			
 			#commenting out the following two lines to block charge attack for demo
 			# chargeTimer.start(0.0)
 			# chargeReady = false
@@ -387,9 +383,9 @@ func move_state(delta):
 			crosshair.hide()
 			if stats.ammo > 0 && laserboi == true:
 				stats.ammo -= 1
-				laserSprite.show()
 				laserboi = false
-				
+				if !laserTop:
+					laserSprite.show()
 				laserSpeed.start()
 				laserZone.disabled = false
 				worldStats.emit_signal("play_blast_anim")
@@ -398,7 +394,7 @@ func move_state(delta):
 				laserTimer.start(0.0)
 				if ray.is_colliding():
 					emit_signal("fired_shot", ray.get_collision_point())
-				if laserTop == true:
+				if laserTop:
 					laserTwo.show()
 			else:
 				pass
@@ -524,9 +520,13 @@ func sword_swipe():
 	swordSwiper.play()
 
 func gearDown():
-	pass
-	#sgf.position.y = -11
-	#sgf2.position.y = -11
+	sgf.position.y = -10.5
+	sgf2.position.y = -10.5
+	
+func gearDownest():
+	sgf.position.y = -9.0
+	sgf2.position.y = -9.0
+	
 	
 func gearUp():
 	sgf.position.y = -13

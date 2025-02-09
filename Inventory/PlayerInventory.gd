@@ -1,16 +1,23 @@
 extends Node2D
 
-onready var redPop = $Control/CenterContainer/HBoxContainer/VBoxContainer/VBoxContainer/HBoxContainer/Button/RPOPQ
-onready var bluePop = $Control/CenterContainer/HBoxContainer/VBoxContainer/VBoxContainer/HBoxContainer/Button2/BPOPQ
-onready var description = $Control/CenterContainer/HBoxContainer/Panel/ItemDescription
+onready var redPop = $Control/CenterContainer/HBoxContainer/VBoxContainer/VBoxContainer/HBoxContainer/RedPop/RPOPQ
+onready var appleQ = $Control/CenterContainer/HBoxContainer/VBoxContainer/VBoxContainer/HBoxContainer/Apple/APQ
 
+onready var floppy = $Control/CenterContainer/HBoxContainer/VBoxContainer/VBoxContainer/HBoxContainer/Floppy/FLQ
+onready var description = $Control/CenterContainer/HBoxContainer/Panel/ItemDescription
+onready var consumablesBtn = $Control/CenterContainer/HBoxContainer/VBoxContainer/HBoxContainer/Consumables
+onready var storyItemsBtn = $Control/CenterContainer/HBoxContainer/VBoxContainer/HBoxContainer/StoryItems
 onready var cellKeyText = $Control/CenterContainer/HBoxContainer/Panel/CellKeyText
 onready var animalsText = $Control/CenterContainer/HBoxContainer/Panel/AnimalsText
 onready var exitKey = $Control/CenterContainer/HBoxContainer/Panel/ExitKey
-
+onready var redpopBtn = $Control/CenterContainer/HBoxContainer/VBoxContainer/VBoxContainer/HBoxContainer/RedPop
+onready var appleBtn = $Control/CenterContainer/HBoxContainer/VBoxContainer/VBoxContainer/HBoxContainer/Apple
+onready var floppyBtn = $Control/CenterContainer/HBoxContainer/VBoxContainer/VBoxContainer/HBoxContainer/Floppy
+onready var syringeBtn = $Control/CenterContainer/HBoxContainer/VBoxContainer/VBoxContainer/HBoxContainer/Syringe
 onready var cellCheck = $Control/CenterContainer/HBoxContainer/Panel/CellCheckSprite
 onready var cellCheckTwo = $Control/CenterContainer/HBoxContainer/Panel/CellCheckSprite2
 onready var cellCheckThree = $Control/CenterContainer/HBoxContainer/Panel/CellCheckSprite3
+onready var exitBtn = $Control/CenterContainer/HBoxContainer/Panel/ExitButton
 onready var switchText = $RichTextLabel2
 onready var stats = PlayerStats
 onready var worldStats = WorldStats
@@ -24,6 +31,9 @@ onready var mapShadow = $MapShadow
 onready var popup = $PopupDialog
 onready var selectedItem = $Control/CenterContainer/HBoxContainer/VBoxContainer/Panel/PSPI
 onready var zipper = $Zipper
+
+onready var aidMenu = $Control/CenterContainer/HBoxContainer/VBoxContainer/VBoxContainer
+onready var storyMenu = $Control/CenterContainer/HBoxContainer/VBoxContainer/VBoxContainer2
 
 
 onready var save_file = SaveFile.g_data
@@ -48,8 +58,9 @@ var zipperUp = false
 var zipperRight = false
 var zipperDown = false
 
-
-
+var consumables
+var story
+var craft
 
 func _ready():
 	stats.connect("map_pickup", self, "swap_map")
@@ -68,7 +79,32 @@ func _ready():
 	displayMap.hide()
 	pauseEnabled = false
 	
+	consumables = true
+	story = false
+	craft = false
+	
 func _process(_delta):
+	
+	#menu management
+	if consumables:
+		aidMenu.show()
+		storyMenu.hide()
+		consumablesBtn.pressed = true
+		storyItemsBtn.pressed = false
+	
+	if story:
+		aidMenu.hide()
+		storyMenu.show()
+		consumablesBtn.pressed = false
+		storyItemsBtn.pressed = true
+		storyMenu.rect_global_position = aidMenu.rect_global_position
+	
+	if craft:
+		aidMenu.hide()
+		storyMenu.hide()
+		
+	
+	#zipper animation sequence
 	if zipperRotateReverse:
 		zipper.rotation_degrees -= .65
 	if zipperRotate:
@@ -124,9 +160,37 @@ func _process(_delta):
 			zipper.rotation_degrees = 0
 		
 	redPop.text = str(stats.redpops)
-	bluePop.text = str(stats.bluepops)
+	floppy.text = str(stats.bluepops)
+	appleQ.text = str(stats.apples)
 	levelText.text = "Level " + str(stats.level)
 	
+	#coloring for buttons
+	if stats.redpops == 0:
+		redpopBtn.modulate.r = 0.4
+		redpopBtn.modulate.g = 0.4
+		redpopBtn.modulate.b = 0.4
+	if stats.redpops >= 1:
+		redpopBtn.modulate.r = 1.0
+		redpopBtn.modulate.g = 1.0
+		redpopBtn.modulate.b = 1.0
+		
+	if stats.apples == 0:
+		appleBtn.modulate.r = 0.4
+		appleBtn.modulate.g = 0.4
+		appleBtn.modulate.b = 0.4
+	if stats.apples >= 1:
+		appleBtn.modulate.r = 1.0
+		appleBtn.modulate.g = 1.0
+		appleBtn.modulate.b = 1.0
+		
+	if stats.bluepops == 0:
+		floppyBtn.modulate.r = 0.4
+		floppyBtn.modulate.g = 0.4
+		floppyBtn.modulate.b = 0.4
+	if stats.bluepops >= 1:
+		floppyBtn.modulate.r = 1.0
+		floppyBtn.modulate.g = 1.0
+		floppyBtn.modulate.b = 1.0
 	
 	if save_file.key1_1_nabbed && save_file.key1_2_nabbed && save_file.key1_3_nabbed:
 		cellKeyText.text = "- Find 3 Cell Keys"
@@ -158,32 +222,6 @@ func selected():
 	var ifSelect = ItemSelectSound.instance()
 	get_tree().current_scene.add_child(ifSelect)
 
-func _on_Button_pressed(): #redpop
-	if buttonsEnabled:
-		if stats.redpops >= 1 && stats.health < stats.max_health:
-			stats.health += 2
-			stats.redpops -= 1
-			selected()
-
-
-func _on_Button_focus_entered():
-	description.bbcode_text = "[right] +2 Health [/right]"
-	selectedItem.text = "Red Pop"
-	if menuOn == true:
-		focused()
-
-
-func _on_Button2_focus_entered():
-	description.bbcode_text = "[right] +1 Energy [/right]"
-	selectedItem.text = "Floppy Disk"
-	focused()
-	menuOn = true
-
-
-func _on_Button3_focus_entered():
-	description.bbcode_text = "[right] Quit Demo [/right]"
-	focused()
-
 func opening():
 	zipperRotate = true
 	zipperUp = true
@@ -205,25 +243,6 @@ func opening():
 	yield(get_tree().create_timer(0.27), "timeout")
 	zipperRotateReverse = false
 	zipperRotate = false
-	
-	
-	
-
-
-func _on_Button2_pressed(): #bluepop
-	if buttonsEnabled:
-		if stats.bluepops >= 1 && stats.batteries < stats.max_batteries:
-			stats.batteries += 1
-			stats.bluepops -= 1
-			selected()
-
-
-func _on_Button3_pressed():
-	popup.popup()
-	popup.rect_global_position.y = self.global_position.y - 10
-	popup.rect_global_position.x = self.global_position.x - 50
-	$PopupDialog/Sprite/HBoxContainer/PopUpButton.grab_focus()
-
 
 func _on_Timer_timeout():
 	get_tree().paused = false
@@ -260,13 +279,88 @@ func _on_Timer2_timeout():
 	pauseEnabled = true
 
 
-func _on_KeyButton_focus_entered():
-	description.bbcode_text = "[right] opens cell door [/right]"
-	selectedItem.text = "Key"
-	focused()
-
-
 func _on_Syringe_focus_entered():
 	description.bbcode_text = "[right] Can be used for scrap [/right]"
 	selectedItem.text = "Syringe"
 	focused()
+
+
+func _on_RedPop_pressed(): #redpop
+	if buttonsEnabled:
+		if stats.redpops >= 1 && stats.health < stats.max_health:
+			stats.health += 2
+			stats.redpops -= 1
+			selected()
+
+
+func _on_RedPop_focus_entered(): #redpop
+	description.bbcode_text = "[right] +2 Health [/right]"
+	selectedItem.text = "Red Pop"
+	if menuOn == true:
+		focused()
+
+#Menu Selections
+func _on_Consumables_focus_entered():
+	selectedItem.text = "Consumables"
+	description.bbcode_text = "[right] Health, Energy, and Buff Items [/right]"
+	consumables = true
+	story = false
+	craft = false
+	focused()
+
+
+func _on_StoryItems_focus_entered():
+	selectedItem.text = "Story Items"
+	description.bbcode_text = "[right] Items Required To Progress [/right]"
+	consumables = false
+	story = true
+	craft = false
+	focused()
+
+
+func _on_Crafting_focus_entered():
+	selectedItem.text = "Crafting"
+	description.bbcode_text = "[right] Use Scrap to Craft Items and Ammo [/right]"
+	focused()
+
+
+func _on_Floppy_focus_entered():
+	description.bbcode_text = "[right] +1 Energy [/right]"
+	selectedItem.text = "Floppy Disk"
+	focused()
+	menuOn = true
+
+
+func _on_Floppy_pressed():
+	if buttonsEnabled:
+		if stats.bluepops >= 1 && stats.batteries < stats.max_batteries:
+			stats.batteries += 1
+			stats.bluepops -= 1
+			selected()
+
+
+func _on_ExitButton_pressed():
+	popup.popup()
+	popup.rect_global_position.y = self.global_position.y - 10
+	popup.rect_global_position.x = self.global_position.x - 50
+	$PopupDialog/Sprite/HBoxContainer/PopUpButton.grab_focus()
+
+
+func _on_CellKey_focus_entered():
+	description.bbcode_text = "[right] opens cell door [/right]"
+	selectedItem.text = "Cell Key"
+	focused()
+
+
+func _on_Apple_focus_entered():
+	description.bbcode_text = "[right] +1 Health [/right]"
+	selectedItem.text = "Apple"
+	focused()
+
+
+func _on_Apple_pressed():
+	if buttonsEnabled:
+		if stats.apples >= 1 && stats.health < stats.max_health:
+			stats.health += 1
+			stats.apples -= 1
+			selected()

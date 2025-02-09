@@ -171,7 +171,7 @@ texture = ExtResource( 2 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 9 )
 animation = "idle"
-frame = 9
+frame = 8
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -228,7 +228,6 @@ one_shot = true
 self_modulate = Color( 0.180392, 0.92549, 0.0588235, 0.305882 )
 scale = Vector2( 1.1, 1.1 )
 frames = SubResource( 23 )
-frame = 1
 playing = true
 
 [node name="AnimatedSprite3" type="AnimatedSprite" parent="."]

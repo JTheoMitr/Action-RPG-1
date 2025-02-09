@@ -5,16 +5,18 @@ export(int) var max_boss_keys = 1 setget set_max_boss_keys
 export(int) var max_keys = 3 setget set_max_keys
 export(int) var max_keys_collected = 4 setget set_max_keys_collected
 export(int) var max_batteries = 3 setget set_max_batteries
-export(int) var max_coins = 99 setget set_max_coins
-export(int) var max_xp = 200 setget set_max_experience #set to 200 for demo
+export(int) var max_coins = 999 setget set_max_coins
+export(int) var max_xp = 20000 setget set_max_experience #set to 200 for demo
 export(int) var max_level = 3 setget set_max_level #set to level 3 for demo
 export(int) var max_redpops = 10 setget set_max_redpops
 export(int) var max_bluepops = 10 setget set_max_bluepops
+export(int) var max_apples = 10 setget set_max_apples
+
 
 export(int) var max_ammo = 99 setget set_max_ammo
 export(int) var max_forest_freed = 3 setget set_max_forest_freed
 
-
+var apples = max_apples setget set_apples
 var keys = max_keys setget set_keys
 var boss_keys = max_boss_keys setget set_boss_keys
 var keys_collected = max_keys_collected setget set_keys_collected
@@ -82,6 +84,8 @@ signal some_health
 
 signal enable_pause
 
+signal apples_changed(value)
+signal max_apples_changed(value)
 signal health_changed(value)
 signal max_health_changed(value)
 signal keys_changed(value)
@@ -118,7 +122,11 @@ func set_max_level(value):
 	#self.level = min(level, max_level)
 	#emit_signal("max_level_changed")
 	
-	
+
+func set_max_apples(value):
+	max_apples = value
+	self.apples = min(apples, max_apples)
+	emit_signal("max_apples_changed", max_apples)
 	
 func set_max_keys(value):
 	max_keys = value
@@ -228,6 +236,11 @@ func set_ammo(value):
 	emit_signal("ammo_changed", ammo)
 	if ammo == 0:
 		emit_signal("no_ammo")
+		
+func set_apples(value):
+	apples = value
+	save_file.player_apples = value
+	emit_signal("apples_changed", apples)
 
 func set_forest_freed(value):
 	forest_freed = value
@@ -287,6 +300,7 @@ func _ready():
 	#self.overcharge = false
 	self.overcharge = save_file.overcharge_status
 	self.forest_freed = save_file.worldstats_freed
+	self.apples = save_file.player_apples
 	
 func reset():
 	resetValue = true
@@ -319,6 +333,7 @@ func reset():
 	#self.overcharge = false
 	self.overcharge = save_file.overcharge_status
 	self.forest_freed = save_file.worldstats_freed
+	self.apples = save_file.player_apples
 
 
 

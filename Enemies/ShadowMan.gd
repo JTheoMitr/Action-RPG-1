@@ -234,5 +234,5 @@ func _on_TrailTimer_timeout():
 	var currentDrop = TrailDrop.instance()
 	get_parent().call_deferred("add_child", currentDrop)
 	currentDrop.global_position = trailZone.global_position
-	print_debug("dropping")
+	#print_debug("dropping")
 	

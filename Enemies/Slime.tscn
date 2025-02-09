@@ -167,7 +167,6 @@ MAX_SPEED = 60
 scale = Vector2( 0.6, 0.6 )
 frames = SubResource( 7 )
 animation = "birth"
-frame = 3
 playing = true
 offset = Vector2( 1, -15 )
 

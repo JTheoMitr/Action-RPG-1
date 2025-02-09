@@ -6,6 +6,10 @@ const Ammo = preload("res://World/Ammo.tscn")
 const DroidSound = preload("res://Music and Sounds/DroidSound.tscn")
 const Laser = preload("res://Enemies/DroidLaser.tscn")
 const XpOrb = preload("res://Enemies/XpOrb.tscn")
+const OilTrail = preload("res://World/OilTrail.tscn")
+const OilTrailSmall = preload("res://World/OilTrailSmall.tscn")
+const OilSpatter = preload("res://World/OilTrailSpatter.tscn")
+const ExplosionEffect = preload("res://Effects/ExplosionEffect.tscn")
 
 export var ACCELERATION = 280
 export var MAX_SPEED = 40
@@ -33,6 +37,7 @@ onready var playerDetectionZone = $PlayerDetectionZone
 onready var hurtbox = $Hurtbox
 onready var softCollision = $SoftCollision
 onready var wanderController = $WanderController
+onready var trailZone = $TrailZone
 
 
 func _ready():
@@ -114,6 +119,9 @@ func _on_Hurtbox_area_entered(area):
 
 func _on_Stats_no_health():
 	call_deferred("queue_free")
+	var explosion = ExplosionEffect.instance()
+	get_parent().add_child(explosion)
+	explosion.global_position = global_position
 	var enemyDeathEffect = EnemyDeathEffect.instance()
 	get_parent().add_child(enemyDeathEffect)
 	enemyDeathEffect.global_position = global_position
@@ -135,3 +143,11 @@ func _on_Stats_no_health():
 
 func _on_Timer_timeout():
 	pass
+
+
+func _on_TrailTimer_timeout():
+	var TrailDrop = random_drop_generator([OilTrail, OilTrailSmall, OilSpatter])
+	var currentDrop = TrailDrop.instance()
+	get_parent().call_deferred("add_child", currentDrop)
+	currentDrop.global_position = trailZone.global_position
+	#print_debug("dropping")

@@ -5,6 +5,7 @@ const AppleSound = preload("res://Music and Sounds/AppleSound.tscn")
 var stats = PlayerStats
 
 onready var popup = $PopupDialog
+onready var popupText = $PopupDialog/RichTextLabel
 onready var timer = $Timer
 
 
@@ -29,11 +30,14 @@ func _on_Apple_area_entered(area):
 		stats.health += 1
 		var pickUpSound = AppleSound.instance()
 		get_tree().current_scene.add_child(pickUpSound)
-		queue_free()
+		popupText.bbcode_text = "[center]+1 Health"
+		timer.start()
 	elif stats.health == stats.max_health:
 		timer.start()
+		stats.apples += 1
+		popupText.bbcode_text = "[center]+1 Apple"
 		popup.show()
 
 
 func _on_Timer_timeout():
-	popup.hide()
+	queue_free()

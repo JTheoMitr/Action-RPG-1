@@ -14,6 +14,7 @@ const LaserSeven = preload("res://Enemies/BossLaserRightStraight.tscn")
 const LaserEight = preload("res://Enemies/BossLaserLeftStraight.tscn")
 const XpOrb = preload("res://Enemies/XpOrbLrg.tscn")
 const BossLaserSound = preload("res://Music and Sounds/BossLaserSound.tscn")
+const ExplosionEffect = preload("res://Effects/ExplosionEffect.tscn")
 
 export var ACCELERATION = 280
 export var MAX_SPEED = 40
@@ -158,6 +159,9 @@ func _on_Stats_no_health():
 	var enemyDeathEffect = EnemyDeathEffect.instance()
 	get_parent().add_child(enemyDeathEffect)
 	enemyDeathEffect.global_position = global_position
+	var explosion = ExplosionEffect.instance()
+	get_parent().add_child(explosion)
+	explosion.global_position = global_position
 	var xpOrb = XpOrb.instance()
 	get_parent().call_deferred("add_child", xpOrb)
 	xpOrb.global_position = global_position
