@@ -7,6 +7,8 @@ var stats = PlayerStats
 onready var popup = $PopupDialog
 onready var popupText = $PopupDialog/RichTextLabel
 onready var timer = $Timer
+onready var sprite = $Sprite
+onready var coll = $CollisionShape2D
 
 
 # Declare member variables here. Examples:
@@ -31,12 +33,17 @@ func _on_Apple_area_entered(area):
 		var pickUpSound = AppleSound.instance()
 		get_tree().current_scene.add_child(pickUpSound)
 		popupText.bbcode_text = "[center]+1 Health"
+		sprite.hide()
+		coll.call_deferred("queue_free")
 		timer.start()
+		popup.popup()
 	elif stats.health == stats.max_health:
 		timer.start()
 		stats.apples += 1
 		popupText.bbcode_text = "[center]+1 Apple"
-		popup.show()
+		sprite.hide()
+		coll.call_deferred("queue_free")
+		popup.popup()
 
 
 func _on_Timer_timeout():

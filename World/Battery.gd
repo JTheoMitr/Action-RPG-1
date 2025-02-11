@@ -23,7 +23,7 @@ func _on_Battery_area_entered(area):
 		timer.start()
 		popup.show()
 		sprite.hide()
-		coll.disabled = true
+		coll.call_deferred("queue_free")
 	elif stats.batteries >= stats.max_batteries:
 		stats.bluepops += 1
 		var pickUpSound = PickUpSound.instance()
@@ -31,7 +31,7 @@ func _on_Battery_area_entered(area):
 		timer.start()
 		popup.show()
 		sprite.hide()
-		coll.disabled = true
+		coll.call_deferred("queue_free")
 
 
 
