@@ -1160,7 +1160,7 @@ modulate = Color( 0.929412, 0.690196, 1, 1 )
 position = Vector2( 0, -10 )
 scale = Vector2( 0.8, 0.8 )
 frames = SubResource( 85 )
-frame = 2
+frame = 7
 playing = true
 
 [node name="ZoomTimer" type="Timer" parent="."]
@@ -1205,14 +1205,12 @@ one_shot = true
 position = Vector2( -6.3, -13 )
 scale = Vector2( 0.2, 0.2 )
 frames = SubResource( 99 )
-frame = 3
 playing = true
 
 [node name="SpinningGearFront2" type="AnimatedSprite" parent="."]
 position = Vector2( 5.5, -13 )
 scale = Vector2( 0.2, 0.2 )
 frames = SubResource( 99 )
-frame = 3
 playing = true
 
 [node name="RollTimer" type="Timer" parent="."]

@@ -6,17 +6,13 @@ const NewSkill = preload("res://Music and Sounds/NewSkill.tscn")
 # var b = "text"
 onready var popup = $PopupDialog
 onready var timer = $Timer
-onready var rune = $Sprite
+onready var walkie = $Sprite
 onready var magic = $AnimatedSprite
-onready var healthUp = $PopupDialog2
+onready var walkieScooped = $PopupDialog2
 onready var timer2 = $Timer2
-
-onready var heart1 = $PopupDialog2/Heart1
-onready var heart2 = $PopupDialog2/Heart2
-onready var heart3 = $PopupDialog2/Heart3
-onready var heart4 = $PopupDialog2/Heart4
-onready var heart5 = $PopupDialog2/Heart5
-onready var heartTimer = $HeartTimer
+onready var timer3 = $Timer3
+onready var walkieMSG = $PopupDialog/RichTextLabel
+onready var chatter = $Chatter
 
 onready var save_file = SaveFile.g_data
 var playerStats = PlayerStats
@@ -24,25 +20,26 @@ var playerStats = PlayerStats
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	heart5.hide()
+	walkieMSG.text = " Excellent, you've \n found the 2-way \n radio That I left \n for you."
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	popup.rect_global_position = self.global_position
-	healthUp.rect_global_position = self.global_position
+	walkieScooped.rect_global_position = self.global_position
 
 
 func _on_Area2D_area_entered(area):
-	healthUp.popup()
+	walkieScooped.popup()
 	timer.start()
 	magic.hide()
-	rune.hide()
-	playerStats.set_max_health(5)
-	playerStats.set_health(5)
+	walkie.hide()
+	playerStats.walkieObtained = true
+	save_file.walkie_obtained = true
+	SaveFile.save_data()
+	#add this stat to the save file as well
 	var newSkill = NewSkill.instance()
 	get_tree().current_scene.add_child(newSkill)
-	save_file.player_max_health = 5
 	playerStats.controlsOn = false
 	
 	
@@ -50,9 +47,12 @@ func _on_Area2D_area_entered(area):
 
 
 func _on_Timer_timeout():
-	healthUp.hide()
+	chatter.play(0.0)
+	walkieScooped.hide()
 	popup.popup()
 	timer2.start()
+	timer3.start()
+	
 
 
 func _on_Timer2_timeout():
@@ -60,8 +60,7 @@ func _on_Timer2_timeout():
 	queue_free()
 
 
-func _on_HeartTimer_timeout():
-	if heart5.show():
-		heart5.hide()
-	else:
-		heart5.show()
+
+func _on_Timer3_timeout():
+	chatter.play(0.0)
+	walkieMSG.text = " Contact me \n when you arrive \n in the caverns..."

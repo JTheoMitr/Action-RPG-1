@@ -30,8 +30,15 @@ var bluepops = max_bluepops setget set_bluepops
 var ammo = max_ammo setget set_ammo
 var forest_freed = max_forest_freed setget set_forest_freed
 
+var walkieObtained = false
+var moledyMan = false
+# determines whether player has obtained walkie talkie and moledyMan add-on for tunes
+
 var overcharge = false
 # controls player's ability to use special one
+
+var controlsOn = true
+#set to false to lock player movement in cut scenes, etc (used in player script)
 
 var keyLost = false
 #determines text in the key alert - key gained or key lost

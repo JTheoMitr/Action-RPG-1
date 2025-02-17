@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://Effects/rune_glint.png" type="Texture" id=1]
 [ext_resource path="res://World/EquipmentIconsC266.png" type="Texture" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://Dialogue Headshots/main_player_face_still.png" type="Texture" id=5]
 [ext_resource path="res://fonts/PixelTandysoft-0rJG.ttf" type="DynamicFontData" id=6]
 [ext_resource path="res://UI/Pixel GUI Buttons Black Wide Pressed.png" type="Texture" id=7]
+[ext_resource path="res://UI/HeartUIFull.png" type="Texture" id=8]
 
 [sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 1 )
@@ -96,7 +97,7 @@ text = "One of the 6 ancient runes...
 This should be in the mountain temple"
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 2.0
+wait_time = 3.5
 one_shot = true
 
 [node name="PopupDialog2" type="PopupDialog" parent="."]
@@ -105,18 +106,53 @@ rect_scale = Vector2( 0.65, 0.65 )
 
 [node name="Sprite" type="Sprite" parent="PopupDialog2"]
 position = Vector2( 59, 12 )
-scale = Vector2( 2.59375, 1 )
+scale = Vector2( 4, 4 )
 texture = ExtResource( 7 )
 
 [node name="RichTextLabel" type="RichTextLabel" parent="PopupDialog2"]
-margin_right = 124.0
-margin_bottom = 16.0
+margin_left = -24.6154
+margin_top = -33.8462
+margin_right = 148.385
+margin_bottom = -17.8462
 custom_fonts/normal_font = SubResource( 10 )
+bbcode_enabled = true
+bbcode_text = "[center]Max Health Increased"
 text = "Max Health Increased"
+
+[node name="Heart1" type="Sprite" parent="PopupDialog2"]
+position = Vector2( 5.38462, -0.769231 )
+scale = Vector2( 1.53846, 1.53846 )
+texture = ExtResource( 8 )
+
+[node name="Heart2" type="Sprite" parent="PopupDialog2"]
+position = Vector2( 33.0769, -0.769231 )
+scale = Vector2( 1.53846, 1.53846 )
+texture = ExtResource( 8 )
+
+[node name="Heart3" type="Sprite" parent="PopupDialog2"]
+position = Vector2( 60.7692, -0.769231 )
+scale = Vector2( 1.53846, 1.53846 )
+texture = ExtResource( 8 )
+
+[node name="Heart4" type="Sprite" parent="PopupDialog2"]
+position = Vector2( 88.4615, -0.769231 )
+scale = Vector2( 1.53846, 1.53846 )
+texture = ExtResource( 8 )
+
+[node name="Heart5" type="Sprite" parent="PopupDialog2"]
+position = Vector2( 116.154, -0.769231 )
+scale = Vector2( 1.53846, 1.53846 )
+texture = ExtResource( 8 )
 
 [node name="Timer2" type="Timer" parent="."]
 wait_time = 5.0
+one_shot = true
+
+[node name="HeartTimer" type="Timer" parent="."]
+wait_time = 0.5
+autostart = true
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_Area2D_area_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 [connection signal="timeout" from="Timer2" to="." method="_on_Timer2_timeout"]
+[connection signal="timeout" from="HeartTimer" to="." method="_on_HeartTimer_timeout"]

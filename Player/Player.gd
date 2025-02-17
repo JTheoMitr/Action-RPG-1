@@ -210,11 +210,16 @@ func move_state(delta):
 	# horiZone logic
 	if horiZone == false:
 		input_vector.y = -1
+	
+	if stats.controlsOn == false:
+		input_vector.x = 0
+		input_vector.y = 0
 
 	if horiZone == true:
-		if veLockity == false:
-			input_vector.x = Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left")
-			input_vector.y = Input.get_action_strength("ui_down") - Input.get_action_strength("ui_up")
+		if stats.controlsOn == true:
+			if veLockity == false:
+				input_vector.x = Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left")
+				input_vector.y = Input.get_action_strength("ui_down") - Input.get_action_strength("ui_up")
 		
 
 		if input_vector.x == 1:

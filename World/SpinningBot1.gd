@@ -35,13 +35,14 @@ func _ready():
 	movingLeft = false
 	movingRight = false
 	movingUp = false
+	self.rotation_degrees -= 3
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if left:
-		self.rotation_degrees += 2
+		self.rotation_degrees += 6
 	if right:
-		self.rotation_degrees -= 3
+		self.rotation_degrees -= 6
 	if chaos:
 		self.rotation_degrees += 5
 		
