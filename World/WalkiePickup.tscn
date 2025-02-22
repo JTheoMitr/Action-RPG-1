@@ -126,10 +126,10 @@ rect_scale = Vector2( 0.35, 0.35 )
 rect_pivot_offset = Vector2( 0, -20 )
 
 [node name="Panel" type="Panel" parent="PopupDialog"]
-margin_left = -196.0
-margin_top = -183.0
-margin_right = 208.0
-margin_bottom = 231.0
+margin_left = -198.0
+margin_top = -182.0
+margin_right = 206.0
+margin_bottom = 232.0
 rect_scale = Vector2( 1.1, 1.1 )
 custom_styles/panel = SubResource( 24 )
 
@@ -166,7 +166,7 @@ modulate = Color( 0.223529, 0.862745, 0.368627, 0.533333 )
 position = Vector2( 75, 82.861 )
 scale = Vector2( 4, 2.5 )
 frames = SubResource( 23 )
-frame = 7
+frame = 3
 playing = true
 
 [node name="Timer" type="Timer" parent="."]

@@ -130,7 +130,7 @@ animations = [ {
 
 [node name="OilDrill1" type="AnimatedSprite"]
 frames = SubResource( 9 )
-frame = 6
+frame = 7
 playing = true
 script = ExtResource( 2 )
 
@@ -146,6 +146,7 @@ collision_layer = 8
 collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
+visible = false
 position = Vector2( -1, 6 )
 shape = SubResource( 11 )
 
@@ -153,7 +154,7 @@ shape = SubResource( 11 )
 modulate = Color( 1, 1, 1, 0.521569 )
 position = Vector2( -1, -33 )
 frames = SubResource( 37 )
-frame = 2
+frame = 5
 playing = true
 
 [connection signal="area_entered" from="HurtBox" to="." method="_on_HurtBox_area_entered"]

@@ -334,13 +334,13 @@ func move_state(delta):
 			
 			#adjust so roll only happens on release when zoom is not enabled? tie to zoomTimer
 			# right now roll is on pressed for demo, set back to release after demo
-			
-			state = ROLL
-			crosshair.hide()
+			if stats.controlsOn:
+				state = ROLL
+				crosshair.hide()
+				
+				rollingGear = true
+				$RollTimer.start()
 			#commenting out these lines and all release roll code for demo
-			rollingGear = true
-			$RollTimer.start()
-
 			#zoomOn = false
 #			zoomTimer.start(0.0)
 #

@@ -127,9 +127,7 @@ func _on_Area2D2_area_entered(area): #hurtbox
 	yield(get_tree().create_timer(0.3), "timeout")
 	movingLeft = false
 	movingDown = true
-	yield(get_tree().create_timer(0.3), "timeout")
-	movingDown = false
-	movingRight = true
+	
 	# next steps: add new "whoa" audio with buzzing low, timer for queue free, and an explosion
 	
 

@@ -8,6 +8,7 @@ onready var tween_out = $Tween
 onready var blastAnim = $CanvasLayer/AmmoUI/BlastAnim
 onready var stealthUI = $CanvasLayer/StealthUI
 onready var keyAlert = $AlertCanvas/KeyAlert
+onready var camera = $Camera2D
 
 export var transition_duration = 3.00
 export var transition_type = 1 # TRANS_SINE
