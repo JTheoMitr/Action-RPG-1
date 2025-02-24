@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/world1grab_drill.png-0c2018fd0746c72fef388e9ad7915936.stex"
+path="res://.import/busted_drill.png-707022920ebb41d7165a5ebf093896c6.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://UI/world1grab_drill.png"
-dest_files=[ "res://.import/world1grab_drill.png-0c2018fd0746c72fef388e9ad7915936.stex" ]
+source_file="res://World/busted_drill.png"
+dest_files=[ "res://.import/busted_drill.png-707022920ebb41d7165a5ebf093896c6.stex" ]
 
 [params]
 
@@ -23,8 +23,8 @@ flags/repeat=0
 flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
-flags/srgb=0
-process/fix_alpha_border=false
+flags/srgb=2
+process/fix_alpha_border=true
 process/premult_alpha=false
 process/HDR_as_SRGB=false
 process/invert_color=false
