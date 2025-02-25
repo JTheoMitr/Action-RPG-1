@@ -311,30 +311,97 @@ func _on_ExplodeTimer_timeout():
 	uiPanel.show()
 	chatter.play()
 	walkieText.bbcode_text = "Y"
-	yield(get_tree().create_timer(0.3), "timeout")
+	yield(get_tree().create_timer(0.1), "timeout")
 	walkieText.bbcode_text = "YO"
-	yield(get_tree().create_timer(0.3), "timeout")
+	yield(get_tree().create_timer(0.1), "timeout")
 	walkieText.bbcode_text = "YOU"
-	yield(get_tree().create_timer(0.3), "timeout")
+	yield(get_tree().create_timer(0.1), "timeout")
 	walkieText.bbcode_text = "YOU D"
-	yield(get_tree().create_timer(0.3), "timeout")
+	yield(get_tree().create_timer(0.1), "timeout")
 	walkieText.bbcode_text = "YOU DI"
-	yield(get_tree().create_timer(0.3), "timeout")
+	yield(get_tree().create_timer(0.1), "timeout")
 	walkieText.bbcode_text = "YOU DID"
-	yield(get_tree().create_timer(0.3), "timeout")
+	yield(get_tree().create_timer(0.1), "timeout")
 	walkieText.bbcode_text = "YOU DID \nI"
-	yield(get_tree().create_timer(0.3), "timeout")
+	yield(get_tree().create_timer(0.1), "timeout")
 	walkieText.bbcode_text = "YOU DID \nIT"
-	yield(get_tree().create_timer(0.3), "timeout")
+	yield(get_tree().create_timer(0.1), "timeout")
 	walkieText.bbcode_text = "YOU DID \nIT!"
 	yield(get_tree().create_timer(2.5), "timeout")
+	chatter.play()
+	walkieText.bbcode_text = "O"
+	yield(get_tree().create_timer(0.1), "timeout")
+	walkieText.bbcode_text = "OI"
+	yield(get_tree().create_timer(0.1), "timeout")
+	walkieText.bbcode_text = "OIL"
+	yield(get_tree().create_timer(0.1), "timeout")
+	walkieText.bbcode_text = "OILC"
+	yield(get_tree().create_timer(0.1), "timeout")
+	walkieText.bbcode_text = "OILCO"
+	yield(get_tree().create_timer(0.1), "timeout")
+	walkieText.bbcode_text = "OILCO W"
+	yield(get_tree().create_timer(0.1), "timeout")
+	walkieText.bbcode_text = "OILCO WI"
+	yield(get_tree().create_timer(0.1), "timeout")
+	walkieText.bbcode_text = "OILCO WIL"
+	yield(get_tree().create_timer(0.1), "timeout")
+	walkieText.bbcode_text = "OILCO WILL"
+	yield(get_tree().create_timer(0.1), "timeout")
+	walkieText.bbcode_text = "OILCO WILL \nB"
+	yield(get_tree().create_timer(0.1), "timeout")
+	walkieText.bbcode_text = "OILCO WILL \nBE"
+	yield(get_tree().create_timer(0.1), "timeout")
+	walkieText.bbcode_text = "OILCO WILL \nBE F"
+	yield(get_tree().create_timer(0.1), "timeout")
+	walkieText.bbcode_text = "OILCO WILL \nBE FO"
+	yield(get_tree().create_timer(0.1), "timeout")
+	walkieText.bbcode_text = "OILCO WILL \nBE FOR"
+	yield(get_tree().create_timer(0.1), "timeout")
+	walkieText.bbcode_text = "OILCO WILL \nBE FORC"
+	yield(get_tree().create_timer(0.1), "timeout")
+	walkieText.bbcode_text = "OILCO WILL \nBE FORCE"
+	yield(get_tree().create_timer(0.1), "timeout")
+	walkieText.bbcode_text = "OILCO WILL \nBE FORCED"
+	yield(get_tree().create_timer(0.1), "timeout")
+	walkieText.bbcode_text = "OILCO WILL \nBE FORCED"
+	yield(get_tree().create_timer(0.1), "timeout")
+	walkieText.bbcode_text = "OILCO WILL \nBE FORCED"
+	yield(get_tree().create_timer(0.1), "timeout")
+	walkieText.bbcode_text = "T"
+	yield(get_tree().create_timer(0.1), "timeout")
+	walkieText.bbcode_text = "TO"
+	yield(get_tree().create_timer(0.1), "timeout")
+	walkieText.bbcode_text = "TO L"
+	yield(get_tree().create_timer(0.1), "timeout")
+	walkieText.bbcode_text = "TO LE"
+	yield(get_tree().create_timer(0.1), "timeout")
+	walkieText.bbcode_text = "TO LEA"
+	yield(get_tree().create_timer(0.1), "timeout")
+	walkieText.bbcode_text = "TO LEAV"
+	yield(get_tree().create_timer(0.1), "timeout")
+	walkieText.bbcode_text = "TO LEAVE \n"
+	yield(get_tree().create_timer(0.1), "timeout")
+	walkieText.bbcode_text = "TO lEAVE \nT"
+	yield(get_tree().create_timer(0.1), "timeout")
+	walkieText.bbcode_text = "TO lEAVE \nTH"
+	yield(get_tree().create_timer(0.1), "timeout")
+	walkieText.bbcode_text = "TO lEAVE \nTHI"
+	yield(get_tree().create_timer(0.1), "timeout")
+	walkieText.bbcode_text = "TO lEAVE \nTHIS"
+	yield(get_tree().create_timer(0.1), "timeout")
+	walkieText.bbcode_text = "TO lEAVE \nTHIS A"
+	yield(get_tree().create_timer(0.1), "timeout")
+	walkieText.bbcode_text = "TO lEAVE \nTHIS AR"
+	yield(get_tree().create_timer(0.1), "timeout")
+	walkieText.bbcode_text = "TO lEAVE \nTHIS ARE"
+	yield(get_tree().create_timer(0.1), "timeout")
+	walkieText.bbcode_text = "TO lEAVE \nTHIS AREA"
+	yield(get_tree().create_timer(0.1), "timeout")
+	walkieText.bbcode_text = "TO lEAVE \nTHIS AREA"
+	yield(get_tree().create_timer(2.5), "timeout")
+
 	uiSprite.hide()
 	uiPanel.hide()
-	
-	
-	
-	
-	
 	
 	playerStats.controlsOn = true
 
@@ -344,3 +411,7 @@ func _on_Drillsplosion_animation_finished():
 	bigExplodeAnim.queue_free()
 	
 	
+
+
+func _on_Destroyed_finished():
+	destroyedJam.play()

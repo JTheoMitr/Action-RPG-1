@@ -1,4 +1,4 @@
-[gd_scene load_steps=154 format=2]
+[gd_scene load_steps=163 format=2]
 
 [ext_resource path="res://DrillControl.gd" type="Script" id=1]
 [ext_resource path="res://World/building_1 animation.png" type="Texture" id=2]
@@ -31,6 +31,7 @@
 [ext_resource path="res://Dialogue Headshots/robot_guide_face_still.png" type="Texture" id=29]
 [ext_resource path="res://Music and Sounds/Drumloop_Hip-Hop_LoFI_Beat_Vinyl_90bpm_2.wav" type="AudioStream" id=30]
 [ext_resource path="res://UI/5_light_meter.png" type="Texture" id=31]
+[ext_resource path="res://Effects/sparkle_one.png" type="Texture" id=32]
 
 [sub_resource type="DynamicFont" id=1]
 size = 10
@@ -544,6 +545,42 @@ animations = [ {
 "speed": 2.0
 } ]
 
+[sub_resource type="AtlasTexture" id=123]
+atlas = ExtResource( 32 )
+region = Rect2( 0, 0, 18, 32 )
+
+[sub_resource type="AtlasTexture" id=124]
+atlas = ExtResource( 32 )
+region = Rect2( 18, 0, 18, 32 )
+
+[sub_resource type="AtlasTexture" id=125]
+atlas = ExtResource( 32 )
+region = Rect2( 36, 0, 18, 32 )
+
+[sub_resource type="AtlasTexture" id=126]
+atlas = ExtResource( 32 )
+region = Rect2( 54, 0, 18, 32 )
+
+[sub_resource type="AtlasTexture" id=127]
+atlas = ExtResource( 32 )
+region = Rect2( 72, 0, 18, 32 )
+
+[sub_resource type="AtlasTexture" id=128]
+atlas = ExtResource( 32 )
+region = Rect2( 90, 0, 18, 32 )
+
+[sub_resource type="AtlasTexture" id=129]
+atlas = ExtResource( 32 )
+region = Rect2( 108, 0, 18, 32 )
+
+[sub_resource type="SpriteFrames" id=130]
+animations = [ {
+"frames": [ SubResource( 123 ), SubResource( 124 ), SubResource( 125 ), SubResource( 126 ), SubResource( 127 ), SubResource( 128 ), SubResource( 129 ) ],
+"loop": true,
+"name": "default",
+"speed": 2.0
+} ]
+
 [node name="DrillControl" type="Node2D"]
 script = ExtResource( 1 )
 
@@ -587,6 +624,7 @@ playing = true
 modulate = Color( 1, 1, 1, 0.439216 )
 position = Vector2( 23, -3 )
 frames = SubResource( 18 )
+frame = 10
 playing = true
 
 [node name="Clouds2" type="AnimatedSprite" parent="."]
@@ -594,7 +632,7 @@ modulate = Color( 1, 1, 1, 0.439216 )
 position = Vector2( 11, -7 )
 scale = Vector2( 0.90625, 0.9375 )
 frames = SubResource( 18 )
-frame = 10
+frame = 9
 playing = true
 
 [node name="Clouds3" type="AnimatedSprite" parent="."]
@@ -602,7 +640,7 @@ modulate = Color( 1, 1, 1, 0.439216 )
 position = Vector2( 21, -19 )
 scale = Vector2( 0.90625, 0.9375 )
 frames = SubResource( 18 )
-frame = 10
+frame = 9
 playing = true
 
 [node name="Clouds4" type="AnimatedSprite" parent="."]
@@ -610,7 +648,7 @@ modulate = Color( 1, 1, 1, 0.439216 )
 position = Vector2( 11, -26 )
 scale = Vector2( 0.671875, 0.71875 )
 frames = SubResource( 18 )
-frame = 10
+frame = 9
 playing = true
 
 [node name="Clouds5" type="AnimatedSprite" parent="."]
@@ -619,7 +657,7 @@ position = Vector2( 72, 10 )
 scale = Vector2( 0.671875, 0.71875 )
 z_index = 1
 frames = SubResource( 18 )
-frame = 9
+frame = 8
 playing = true
 
 [node name="Clouds6" type="AnimatedSprite" parent="."]
@@ -628,7 +666,7 @@ position = Vector2( -22.75, 1.5 )
 scale = Vector2( 0.992187, 1.01562 )
 z_index = 1
 frames = SubResource( 18 )
-frame = 9
+frame = 8
 playing = true
 
 [node name="Clouds7" type="AnimatedSprite" parent="."]
@@ -637,7 +675,7 @@ position = Vector2( -8, -38 )
 scale = Vector2( 0.992187, 1.01562 )
 z_index = 1
 frames = SubResource( 18 )
-frame = 8
+frame = 7
 playing = true
 
 [node name="Clouds8" type="AnimatedSprite" parent="."]
@@ -646,7 +684,7 @@ position = Vector2( 43.125, 5.25 )
 scale = Vector2( 1.05859, 1.07031 )
 z_index = 1
 frames = SubResource( 18 )
-frame = 7
+frame = 6
 playing = true
 
 [node name="Clouds9" type="AnimatedSprite" parent="."]
@@ -655,7 +693,7 @@ position = Vector2( 24, 44 )
 scale = Vector2( 1.05859, 1.07031 )
 z_index = 1
 frames = SubResource( 18 )
-frame = 7
+frame = 6
 playing = true
 
 [node name="Clouds10" type="AnimatedSprite" parent="."]
@@ -664,7 +702,7 @@ position = Vector2( 72.5625, 2.375 )
 scale = Vector2( 1.38867, 1.30078 )
 z_index = 1
 frames = SubResource( 18 )
-frame = 7
+frame = 6
 playing = true
 
 [node name="Clouds11" type="AnimatedSprite" parent="."]
@@ -673,7 +711,7 @@ position = Vector2( 56, 49 )
 scale = Vector2( 1.38867, 1.30078 )
 z_index = 1
 frames = SubResource( 18 )
-frame = 6
+frame = 5
 playing = true
 
 [node name="Clouds12" type="AnimatedSprite" parent="."]
@@ -682,7 +720,7 @@ position = Vector2( -11, 46 )
 scale = Vector2( 1.38867, 1.30078 )
 z_index = 1
 frames = SubResource( 18 )
-frame = 5
+frame = 4
 playing = true
 
 [node name="Clouds13" type="AnimatedSprite" parent="."]
@@ -691,7 +729,7 @@ position = Vector2( -10, -42 )
 scale = Vector2( 1.38867, 1.30078 )
 z_index = 1
 frames = SubResource( 18 )
-frame = 5
+frame = 4
 playing = true
 
 [node name="Sprite9" type="Sprite" parent="."]
@@ -813,7 +851,7 @@ texture = ExtResource( 25 )
 [node name="OilDrill1" parent="CanvasLayer/Sprite" instance=ExtResource( 15 )]
 position = Vector2( 10, 30 )
 scale = Vector2( 5.5, 5.5 )
-frame = 13
+frame = 2
 
 [node name="Barrel" parent="CanvasLayer/Sprite" instance=ExtResource( 16 )]
 position = Vector2( -333, 292 )
@@ -896,22 +934,36 @@ scale = Vector2( 0.07, 0.07 )
 texture = ExtResource( 29 )
 
 [node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/UISprite"]
-margin_left = 9.60001
-margin_top = -9.6
-margin_right = 58.6
-margin_bottom = 22.4
-rect_scale = Vector2( 0.3, 0.3 )
+margin_left = 10.0
+margin_top = -9.0
+margin_right = 72.0
+margin_bottom = 31.0
+rect_scale = Vector2( 0.2, 0.2 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_fonts/normal_font = SubResource( 117 )
 bbcode_enabled = true
 bbcode_text = "You did it!"
 text = "You did it!"
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="CanvasLayer/UISprite"]
-modulate = Color( 0.223529, 0.862745, 0.368627, 0.533333 )
+modulate = Color( 0.337255, 1, 0, 0.788235 )
 position = Vector2( 13, 2.4 )
 scale = Vector2( 0.6875, 0.246154 )
 frames = SubResource( 122 )
-frame = 5
+frame = 3
+playing = true
+
+[node name="AnimatedSprite2" type="AnimatedSprite" parent="CanvasLayer/UISprite"]
+position = Vector2( 8, -5.6 )
+scale = Vector2( 0.533334, 0.325 )
+frames = SubResource( 130 )
+playing = true
+
+[node name="AnimatedSprite3" type="AnimatedSprite" parent="CanvasLayer/UISprite"]
+position = Vector2( 18, -5.6 )
+scale = Vector2( 0.533334, 0.325 )
+frames = SubResource( 130 )
+frame = 6
 playing = true
 
 [node name="FadeSwitchTimer" type="Timer" parent="."]
@@ -939,3 +991,4 @@ pitch_scale = 1.2
 [connection signal="animation_finished" from="CanvasLayer/Sprite/Drillsplosion" to="." method="_on_Drillsplosion_animation_finished"]
 [connection signal="timeout" from="FadeSwitchTimer" to="." method="_on_FadeSwitchTimer_timeout"]
 [connection signal="timeout" from="ExplodeTimer" to="." method="_on_ExplodeTimer_timeout"]
+[connection signal="finished" from="Destroyed" to="." method="_on_Destroyed_finished"]
