@@ -618,13 +618,14 @@ frame = 2
 
 [node name="Furnace" type="AnimatedSprite" parent="."]
 frames = SubResource( 6 )
+frame = 3
 playing = true
 
 [node name="Clouds1" type="AnimatedSprite" parent="."]
 modulate = Color( 1, 1, 1, 0.439216 )
 position = Vector2( 23, -3 )
 frames = SubResource( 18 )
-frame = 10
+frame = 7
 playing = true
 
 [node name="Clouds2" type="AnimatedSprite" parent="."]
@@ -632,7 +633,7 @@ modulate = Color( 1, 1, 1, 0.439216 )
 position = Vector2( 11, -7 )
 scale = Vector2( 0.90625, 0.9375 )
 frames = SubResource( 18 )
-frame = 9
+frame = 6
 playing = true
 
 [node name="Clouds3" type="AnimatedSprite" parent="."]
@@ -640,7 +641,7 @@ modulate = Color( 1, 1, 1, 0.439216 )
 position = Vector2( 21, -19 )
 scale = Vector2( 0.90625, 0.9375 )
 frames = SubResource( 18 )
-frame = 9
+frame = 6
 playing = true
 
 [node name="Clouds4" type="AnimatedSprite" parent="."]
@@ -648,7 +649,7 @@ modulate = Color( 1, 1, 1, 0.439216 )
 position = Vector2( 11, -26 )
 scale = Vector2( 0.671875, 0.71875 )
 frames = SubResource( 18 )
-frame = 9
+frame = 6
 playing = true
 
 [node name="Clouds5" type="AnimatedSprite" parent="."]
@@ -657,7 +658,7 @@ position = Vector2( 72, 10 )
 scale = Vector2( 0.671875, 0.71875 )
 z_index = 1
 frames = SubResource( 18 )
-frame = 8
+frame = 5
 playing = true
 
 [node name="Clouds6" type="AnimatedSprite" parent="."]
@@ -666,7 +667,7 @@ position = Vector2( -22.75, 1.5 )
 scale = Vector2( 0.992187, 1.01562 )
 z_index = 1
 frames = SubResource( 18 )
-frame = 8
+frame = 5
 playing = true
 
 [node name="Clouds7" type="AnimatedSprite" parent="."]
@@ -675,7 +676,7 @@ position = Vector2( -8, -38 )
 scale = Vector2( 0.992187, 1.01562 )
 z_index = 1
 frames = SubResource( 18 )
-frame = 7
+frame = 4
 playing = true
 
 [node name="Clouds8" type="AnimatedSprite" parent="."]
@@ -684,7 +685,7 @@ position = Vector2( 43.125, 5.25 )
 scale = Vector2( 1.05859, 1.07031 )
 z_index = 1
 frames = SubResource( 18 )
-frame = 6
+frame = 3
 playing = true
 
 [node name="Clouds9" type="AnimatedSprite" parent="."]
@@ -693,7 +694,7 @@ position = Vector2( 24, 44 )
 scale = Vector2( 1.05859, 1.07031 )
 z_index = 1
 frames = SubResource( 18 )
-frame = 6
+frame = 3
 playing = true
 
 [node name="Clouds10" type="AnimatedSprite" parent="."]
@@ -702,7 +703,7 @@ position = Vector2( 72.5625, 2.375 )
 scale = Vector2( 1.38867, 1.30078 )
 z_index = 1
 frames = SubResource( 18 )
-frame = 6
+frame = 3
 playing = true
 
 [node name="Clouds11" type="AnimatedSprite" parent="."]
@@ -711,7 +712,7 @@ position = Vector2( 56, 49 )
 scale = Vector2( 1.38867, 1.30078 )
 z_index = 1
 frames = SubResource( 18 )
-frame = 5
+frame = 2
 playing = true
 
 [node name="Clouds12" type="AnimatedSprite" parent="."]
@@ -720,7 +721,7 @@ position = Vector2( -11, 46 )
 scale = Vector2( 1.38867, 1.30078 )
 z_index = 1
 frames = SubResource( 18 )
-frame = 4
+frame = 1
 playing = true
 
 [node name="Clouds13" type="AnimatedSprite" parent="."]
@@ -729,7 +730,7 @@ position = Vector2( -10, -42 )
 scale = Vector2( 1.38867, 1.30078 )
 z_index = 1
 frames = SubResource( 18 )
-frame = 4
+frame = 1
 playing = true
 
 [node name="Sprite9" type="Sprite" parent="."]
@@ -804,6 +805,7 @@ wait_time = 0.3
 z_index = 2
 
 [node name="Panel" type="Panel" parent="Sprite7"]
+visible = false
 margin_left = -250.0
 margin_top = -191.0
 margin_right = 277.0
@@ -820,6 +822,7 @@ volume_db = -7.0
 pitch_scale = 0.5
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+visible = false
 
 [node name="Sprite" type="Sprite" parent="CanvasLayer"]
 position = Vector2( 160, 90 )
@@ -851,7 +854,7 @@ texture = ExtResource( 25 )
 [node name="OilDrill1" parent="CanvasLayer/Sprite" instance=ExtResource( 15 )]
 position = Vector2( 10, 30 )
 scale = Vector2( 5.5, 5.5 )
-frame = 2
+frame = 1
 
 [node name="Barrel" parent="CanvasLayer/Sprite" instance=ExtResource( 16 )]
 position = Vector2( -333, 292 )
@@ -913,7 +916,7 @@ position = Vector2( 390.065, 140 )
 rotation = 1.5708
 scale = Vector2( 5, 7.59893 )
 frames = SubResource( 116 )
-frame = 2
+frame = 1
 playing = true
 
 [node name="Panel" type="Panel" parent="CanvasLayer"]
@@ -950,20 +953,20 @@ modulate = Color( 0.337255, 1, 0, 0.788235 )
 position = Vector2( 13, 2.4 )
 scale = Vector2( 0.6875, 0.246154 )
 frames = SubResource( 122 )
-frame = 3
+frame = 9
 playing = true
 
 [node name="AnimatedSprite2" type="AnimatedSprite" parent="CanvasLayer/UISprite"]
 position = Vector2( 8, -5.6 )
 scale = Vector2( 0.533334, 0.325 )
 frames = SubResource( 130 )
+frame = 1
 playing = true
 
 [node name="AnimatedSprite3" type="AnimatedSprite" parent="CanvasLayer/UISprite"]
 position = Vector2( 18, -5.6 )
 scale = Vector2( 0.533334, 0.325 )
 frames = SubResource( 130 )
-frame = 6
 playing = true
 
 [node name="FadeSwitchTimer" type="Timer" parent="."]

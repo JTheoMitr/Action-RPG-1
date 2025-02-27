@@ -87,7 +87,7 @@ func _ready():
 	clouds11.hide()
 	clouds12.hide()
 	clouds13.hide()
-	
+	panel.show()
 	panel.modulate.a = 0.0
 	
 	

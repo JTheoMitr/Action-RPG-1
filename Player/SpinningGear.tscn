@@ -60,7 +60,7 @@ script = ExtResource( 2 )
 
 [node name="Whir" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 3 )
-volume_db = -10.0
+volume_db = -15.0
 pitch_scale = 0.8
 
 [node name="Smoke" type="AnimatedSprite" parent="."]
