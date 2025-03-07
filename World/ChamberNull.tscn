@@ -1,8 +1,9 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://World/droidchamber.png" type="Texture" id=1]
 [ext_resource path="res://World/floatingBody.png" type="Texture" id=2]
 [ext_resource path="res://Effects/DoorDustOne.png" type="Texture" id=3]
+[ext_resource path="res://World/ChamberNull.gd" type="Script" id=4]
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 15.0
@@ -54,6 +55,7 @@ animations = [ {
 
 [node name="ChamberNull" type="StaticBody2D"]
 scale = Vector2( 0.8, 0.8 )
+script = ExtResource( 4 )
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 1 )
@@ -65,13 +67,11 @@ shape = SubResource( 1 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( 1, 13 )
 frames = SubResource( 5 )
-frame = 1
-playing = true
 
 [node name="AnimatedSprite2" type="AnimatedSprite" parent="."]
 self_modulate = Color( 1, 1, 1, 0.45098 )
-position = Vector2( 0, 13.75 )
-scale = Vector2( 0.2625, 1.5625 )
+position = Vector2( 0, 12.5 )
+scale = Vector2( 0.2625, 1.48438 )
 frames = SubResource( 10 )
-frame = 1
+frame = 2
 playing = true

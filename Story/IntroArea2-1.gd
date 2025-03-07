@@ -10,8 +10,8 @@ func _ready():
 	pass
 	
 func _process(delta):
-	popup.rect_global_position.x = self.position.x - 75
-	popup.rect_global_position.y = self.position.y - 15
+	popup.rect_global_position.x = self.position.x
+	popup.rect_global_position.y = self.position.y
 	
 	if (inArea == true) && Input.is_action_just_pressed("interact"):
 		stats.emit_signal("player_resumed")
@@ -21,7 +21,9 @@ func _process(delta):
 
 func _on_IntroArea_area_entered(area):
 	popup.popup()
+	popup.show()
 	inArea = true
 	stats.emit_signal("player_paused")
 	stats.overcharge = true
+	print_debug("fart")
 
