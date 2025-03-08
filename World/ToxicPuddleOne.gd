@@ -18,5 +18,6 @@ func _ready():
 
 func _on_Area2D_area_entered(area):
 	var slime = Slime.instance()
-	get_parent().call_deferred("add_child", slime)
 	slime.global_position = $Area2D/CollisionShape2D.global_position
+	get_parent().call_deferred("add_child", slime)
+	

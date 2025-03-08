@@ -13,7 +13,6 @@ size = 10
 font_data = ExtResource( 2 )
 
 [node name="MapAlert" type="PopupDialog"]
-visible = true
 margin_left = 136.0
 margin_top = 104.0
 margin_right = 136.0
