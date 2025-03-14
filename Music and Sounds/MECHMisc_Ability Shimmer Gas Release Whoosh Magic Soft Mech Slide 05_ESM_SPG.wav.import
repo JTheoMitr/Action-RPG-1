@@ -1,0 +1,23 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/MECHMisc_Ability Shimmer Gas Release Whoosh Magic Soft Mech Slide 05_ESM_SPG.wav-a095e4020634639af32069b8ffec6fc1.sample"
+
+[deps]
+
+source_file="res://Music and Sounds/MECHMisc_Ability Shimmer Gas Release Whoosh Magic Soft Mech Slide 05_ESM_SPG.wav"
+dest_files=[ "res://.import/MECHMisc_Ability Shimmer Gas Release Whoosh Magic Soft Mech Slide 05_ESM_SPG.wav-a095e4020634639af32069b8ffec6fc1.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

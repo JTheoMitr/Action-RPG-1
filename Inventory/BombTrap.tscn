@@ -308,7 +308,7 @@ animations = [ {
 } ]
 
 [sub_resource type="CircleShape2D" id=75]
-radius = 23.1948
+radius = 42.0
 
 [node name="BombTrap" type="Area2D"]
 collision_layer = 0

@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Toadly1.0.mp3-a7031207c8a892b88f310e69bdd11791.mp3str"
+
+[deps]
+
+source_file="res://Music and Sounds/Toadly1.0.mp3"
+dest_files=[ "res://.import/Toadly1.0.mp3-a7031207c8a892b88f310e69bdd11791.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -12,10 +12,10 @@ var stopped
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	beeps.volume_db = -36
-	fadeUp = true
-	fadeDown = false
+	fadeUp = false
+	fadeDown = true
 	stopped = true
-	volumeTimer.stop()
+
 
 
 
@@ -47,6 +47,8 @@ func _on_VolumeTimer_timeout():
 
 func _on_Area2D_area_exited(area):
 	stopped = false
+	if not is_inside_tree():
+		return
 	volumeTimer.start()
 	fadeUp = false
 	fadeDown = true

@@ -4,6 +4,7 @@
 [ext_resource path="res://World/PlasticBag.gd" type="Script" id=2]
 
 [node name="PlasticBag" type="Node2D"]
+z_index = 1
 script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]

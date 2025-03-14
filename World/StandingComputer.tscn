@@ -130,13 +130,13 @@ texture = ExtResource( 2 )
 [node name="BlackScreen" type="AnimatedSprite" parent="."]
 position = Vector2( 29, -28 )
 frames = SubResource( 13 )
-frame = 11
+frame = 7
 playing = true
 
 [node name="GreenScreen" type="AnimatedSprite" parent="."]
 position = Vector2( 29, -4.5 )
 frames = SubResource( 26 )
-frame = 10
+frame = 5
 playing = true
 
 [node name="Area2D" type="Area2D" parent="."]

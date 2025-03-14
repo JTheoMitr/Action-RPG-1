@@ -1,4 +1,4 @@
-[gd_scene load_steps=185 format=2]
+[gd_scene load_steps=186 format=2]
 
 [ext_resource path="res://World/CliffTileset cave.png" type="Texture" id=1]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=2]
@@ -101,7 +101,7 @@
 [ext_resource path="res://World/WhiteStatue.tscn" type="PackedScene" id=99]
 [ext_resource path="res://UI/RainLayer.tscn" type="PackedScene" id=100]
 [ext_resource path="res://World/ToxicMushroom.tscn" type="PackedScene" id=101]
-[ext_resource path="res://Music and Sounds/HarperOnTheSill1.6.mp3" type="AudioStream" id=102]
+[ext_resource path="res://Music and Sounds/Toadly1.0.mp3" type="AudioStream" id=102]
 [ext_resource path="res://World/WallPanel1.tscn" type="PackedScene" id=103]
 [ext_resource path="res://World/Building2.tscn" type="PackedScene" id=104]
 [ext_resource path="res://World/Shop1.tscn" type="PackedScene" id=105]
@@ -130,6 +130,7 @@
 [ext_resource path="res://World/Crack5.tscn" type="PackedScene" id=128]
 [ext_resource path="res://World/DarkGreySedan1.tscn" type="PackedScene" id=129]
 [ext_resource path="res://World/Shop3.tscn" type="PackedScene" id=130]
+[ext_resource path="res://World/PlasticBagRL.tscn" type="PackedScene" id=131]
 
 [sub_resource type="StyleBoxFlat" id=163]
 bg_color = Color( 0.2, 0.235294, 0.333333, 1 )
@@ -1182,24 +1183,24 @@ scale = Vector2( 0.6, 0.6 )
 z_index = 1
 
 [node name="PlasticBag" parent="Sidewalk" instance=ExtResource( 79 )]
-position = Vector2( -2899, -22 )
+position = Vector2( -2362, -22 )
 scale = Vector2( 0.6, 0.6 )
 
 [node name="PlasticBag2" parent="Sidewalk" instance=ExtResource( 79 )]
-position = Vector2( -1812, -41 )
+position = Vector2( -2251, -627 )
 scale = Vector2( 0.6, 0.6 )
 
 [node name="PlasticBag3" parent="Sidewalk" instance=ExtResource( 79 )]
-position = Vector2( -1461, -19 )
+position = Vector2( -1567, 147 )
 scale = Vector2( 0.6, 0.6 )
 
 [node name="PlasticBag4" parent="Sidewalk" instance=ExtResource( 79 )]
 position = Vector2( -1487, 165 )
 scale = Vector2( 0.6, 0.6 )
 
-[node name="PlasticBag5" parent="Sidewalk" instance=ExtResource( 79 )]
-position = Vector2( -2028, -25 )
-scale = Vector2( 0.6, 0.6 )
+[node name="PlasticBagRL" parent="Sidewalk" instance=ExtResource( 131 )]
+position = Vector2( 199, -19 )
+scale = Vector2( 0.35, 0.35 )
 
 [node name="YSort" type="YSort" parent="."]
 
@@ -2600,88 +2601,91 @@ visible = false
 
 [node name="Torch" parent="YSort/Torches" instance=ExtResource( 5 )]
 position = Vector2( 3, 58 )
-frame = 6
+frame = 8
 
 [node name="Torch2" parent="YSort/Torches" instance=ExtResource( 5 )]
 position = Vector2( -48, -72 )
-frame = 6
+frame = 8
 
 [node name="Torch6" parent="YSort/Torches" instance=ExtResource( 5 )]
 position = Vector2( -272, -104 )
-frame = 6
+frame = 8
 
 [node name="Torch7" parent="YSort/Torches" instance=ExtResource( 5 )]
 position = Vector2( -400, -264 )
-frame = 4
+frame = 6
 
 [node name="Torch10" parent="YSort/Torches" instance=ExtResource( 5 )]
 position = Vector2( -288, -264 )
-frame = 4
+frame = 6
 
 [node name="Torch11" parent="YSort/Torches" instance=ExtResource( 5 )]
 position = Vector2( -384, -488 )
-frame = 3
+frame = 5
 
 [node name="Torch16" parent="YSort/Torches" instance=ExtResource( 5 )]
 position = Vector2( -16, -488 )
-frame = 3
+frame = 5
 
 [node name="Torch12" parent="YSort/Torches" instance=ExtResource( 5 )]
 position = Vector2( -49, -264 )
-frame = 2
+frame = 4
 
 [node name="Torch9" parent="YSort/Torches" instance=ExtResource( 5 )]
 position = Vector2( -528, -453 )
-frame = 3
+frame = 5
 
 [node name="Torch18" parent="YSort/Torches" instance=ExtResource( 5 )]
 position = Vector2( -643, -17 )
-frame = 3
+frame = 5
 
 [node name="Torch19" parent="YSort/Torches" instance=ExtResource( 5 )]
 position = Vector2( -814, 248 )
-frame = 2
+frame = 4
 
 [node name="Torch20" parent="YSort/Torches" instance=ExtResource( 5 )]
 position = Vector2( -1026, 186 )
-frame = 2
+frame = 4
 
 [node name="Torch8" parent="YSort/Torches" instance=ExtResource( 5 )]
 position = Vector2( -111, 24 )
-frame = 3
+frame = 5
 
 [node name="Torch13" parent="YSort/Torches" instance=ExtResource( 5 )]
 position = Vector2( -400, 120 )
-frame = 3
+frame = 5
 
 [node name="Torch15" parent="YSort/Torches" instance=ExtResource( 5 )]
 position = Vector2( -240, 184 )
-frame = 2
+frame = 4
 
 [node name="Torch14" parent="YSort/Torches" instance=ExtResource( 5 )]
 position = Vector2( -649, 58 )
-frame = 2
+frame = 4
 
 [node name="Torch17" parent="YSort/Torches" instance=ExtResource( 5 )]
 position = Vector2( -479, 473 )
+frame = 3
 
 [node name="Torch21" parent="YSort/Torches" instance=ExtResource( 5 )]
 position = Vector2( -418, 792 )
+frame = 3
 
 [node name="Torch3" parent="YSort/Torches" instance=ExtResource( 5 )]
 position = Vector2( 64, -72 )
-frame = 6
+frame = 8
 
 [node name="Torch4" parent="YSort/Torches" instance=ExtResource( 5 )]
 position = Vector2( 104, -264 )
-frame = 6
+frame = 8
 
 [node name="Torch5" parent="YSort/Torches" instance=ExtResource( 5 )]
 position = Vector2( 299, -199 )
-frame = 6
+frame = 8
 
 [node name="Bonfire" parent="YSort/Torches" instance=ExtResource( 85 )]
 position = Vector2( -648, 465 )
+frame = 1
 
 [node name="Dwellers" type="YSort" parent="YSort"]
 

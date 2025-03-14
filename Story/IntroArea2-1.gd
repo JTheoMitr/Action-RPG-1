@@ -21,7 +21,7 @@ func _process(delta):
 
 func _on_IntroArea_area_entered(area):
 	popup.popup()
-	popup.show()
+	print_debug(self.global_position)
 	inArea = true
 	stats.emit_signal("player_paused")
 	stats.overcharge = true
