@@ -62,6 +62,8 @@ onready var sgf = $SpinningGearFront
 onready var sgf2 = $SpinningGearFront2
 onready var spinningGearTimer = $SpinningGearTimer
 onready var spinningGearTimer2 = $SpinningGearTimer2
+onready var plasmaCharge = $PlasmaCharge
+onready var plasmaSound = $PlasmaSound
 
 
 
@@ -90,6 +92,9 @@ var laserboi = true
 
 # only true whilst special attack is active
 var zapping = false
+
+# only true while charge attack is active
+var chargeAttacking = false
 
 # prevents player from interfering with intro "run up"
 var horiZone
@@ -172,6 +177,15 @@ func _ready():
 	
 
 func _process(delta):
+	if chargeAttacking:
+		playerSpriteSpecials.rotation_degrees += 3
+		plasmaCharge.show()
+		plasmaCharge.rotation_degrees += 9
+	else:
+		plasmaCharge.hide()
+		plasmaCharge.rotation_degrees = 0
+		playerSpriteSpecials.rotation_degrees = 0
+		
 	playerSpriteHit.frame = sprite.frame
 	match state:
 		MOVE:
@@ -245,6 +259,8 @@ func move_state(delta):
 			gearTimer2.stop()
 			spinningGear.position.y = -13
 			spinningGear2.position.y = -13
+			spinningGear.position.x = -5
+			spinningGear2.position.x = -5
 			
 			
 			if input_vector.y == 1:
@@ -358,30 +374,34 @@ func move_state(delta):
 			spinningGear2.position.x -= 1
 			
 			#commenting out the following two lines to block charge attack for demo
-			# chargeTimer.start(0.0)
-			# chargeReady = false
+			chargeTimer.start(0.0)
+			chargeReady = false
 			
 			#commenting out all action released code to block charge attack for demo
-#		if Input.is_action_just_released("attack"):
-#			if chargeReady == true:
-#				playerSpriteSpecials.show()
-#				sprite.hide()
-#				hurtbox.monitoring = false
-#				aura.show()
-#				aura.play("default")
-#				state = ATTACK
-#				#blastZone.disabled = false
-#				veLockity = true
-#				self.MAX_SPEED = 0
-#				var sword = animationPlayer.play("SwordSpecial")
-#				chargeTimer.stop()
-#
-#			else:
-#				chargeTimer.stop()
-#				sprite.show()
-#				playerSpriteSpecials.hide()
-#				aura.hide()
-#				aura.stop()
+		if Input.is_action_just_released("attack"):
+			if chargeReady == true:
+				playerSpriteSpecials.show()
+				spinningGear.hide()
+				spinningGear2.hide()
+				sprite.hide()
+				plasmaSound.play()
+				hurtbox.monitoring = false
+				aura.show()
+				aura.play("default")
+				state = ATTACK
+				blastZone.disabled = false
+				chargeAttacking = true
+				veLockity = true
+				self.MAX_SPEED = 0
+				var sword = animationPlayer.play("SwordSpecial")
+				chargeTimer.stop()
+
+			else:
+				chargeTimer.stop()
+				sprite.show()
+				playerSpriteSpecials.hide()
+				aura.hide()
+				aura.stop()
 			
 			#laser logic for Ray2D
 		if Input.is_action_just_released("laser"):
@@ -514,6 +534,7 @@ func special_one_finished():
 	specialOne.hide()
 	stats.batteries -= 1
 	zapping = false
+	blastZone.disabled = true
 	
 func stop_moving():
 	state = IDLE
@@ -549,7 +570,8 @@ func bad_trippin():
 	$TripTimer.start()
 	
 func sword_special_over():
-	#blastZone.disabled = true
+	blastZone.disabled = true
+	chargeAttacking = false
 	self.MAX_SPEED = 90
 	hurtbox.monitoring = true
 	veLockity = false

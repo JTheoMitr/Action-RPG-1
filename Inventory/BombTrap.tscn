@@ -329,6 +329,7 @@ animation = "explode"
 frame = 43
 
 [node name="Timer" type="Timer" parent="."]
+wait_time = 0.5
 one_shot = true
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
@@ -337,6 +338,7 @@ volume_db = -5.0
 
 [node name="Hitbox" parent="." instance=ExtResource( 6 )]
 collision_mask = 12
+damage = 2
 
 [node name="CollisionShape2D" parent="Hitbox" index="0"]
 shape = SubResource( 75 )

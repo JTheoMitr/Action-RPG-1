@@ -14,10 +14,10 @@ func _process(delta):
 	
 	if Input.is_action_just_pressed("attack"):
 		# bypassing this method to block this special for demo
-		pass
-#		if chargeTrue == false:
-#			animSprite.play()
-#			chargeUp.play()
+		
+		if chargeTrue == false:
+			animSprite.play()
+			chargeUp.play()
 	
 	if Input.is_action_just_released("attack"):
 			chargeTrue = false

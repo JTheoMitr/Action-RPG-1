@@ -6,6 +6,7 @@ var worldStats = WorldStats
 # var a = 2
 # var b = "text"
 onready var collisionShape = $StaticBody2D/CollisionShape2D
+onready var timer = $Timer
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -16,5 +17,11 @@ func _ready():
 #func _process(delta):
 func open_sesame():
 		self.frame = 1
-		collisionShape.queue_free()
+		collisionShape.disabled = true
+		timer.start()
 		
+
+
+func _on_Timer_timeout():
+	self.frame = 0
+	collisionShape.disabled = false
