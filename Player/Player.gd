@@ -260,7 +260,7 @@ func move_state(delta):
 			spinningGear.position.y = -13
 			spinningGear2.position.y = -13
 			spinningGear.position.x = -5
-			spinningGear2.position.x = -5
+			spinningGear2.position.x = 4
 			
 			
 			if input_vector.y == 1:
