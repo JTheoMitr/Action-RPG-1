@@ -1,6 +1,7 @@
 extends KinematicBody2D
 
 const EnemyDeathEffect = preload("res://Effects/EnemyDeathEffect.tscn")
+const EnemyGoreEffect = preload("res://Effects/BloodSpatterEffect1.tscn")
 const Battery = preload("res://World/Battery.tscn")
 const Ammo = preload("res://World/Ammo.tscn")
 const DwellerSound = preload("res://Music and Sounds/DwellerSound.tscn")
@@ -106,9 +107,12 @@ func _on_Hurtbox_area_entered(area):
 
 func _on_Stats_no_health():
 	call_deferred("queue_free")
-	var enemyDeathEffect = EnemyDeathEffect.instance()
-	get_parent().add_child(enemyDeathEffect)
-	enemyDeathEffect.global_position = global_position
+	var enemyGoreEffect = EnemyGoreEffect.instance()
+	get_parent().add_child(enemyGoreEffect)
+	enemyGoreEffect.global_position = global_position
+	var enemyDeathEffect2 = EnemyDeathEffect.instance()
+	get_parent().add_child(enemyDeathEffect2)
+	enemyDeathEffect2.global_position = global_position
 	var xpOrb = XpOrb.instance()
 	get_parent().call_deferred("add_child", xpOrb)
 	xpOrb.global_position = global_position

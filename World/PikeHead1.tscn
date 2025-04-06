@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://World/shrunken_head_low_res.png" type="Texture" id=1]
+[ext_resource path="res://World/Spear single.png" type="Texture" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 7, 31 )
+
+[node name="PikeHead1" type="Node2D"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+visible = false
+position = Vector2( 0, 1 )
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 2 )
+flip_h = true
+
+[node name="Sprite2" type="Sprite" parent="."]
+position = Vector2( 0, -22 )
+texture = ExtResource( 1 )

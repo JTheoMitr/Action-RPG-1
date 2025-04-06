@@ -64,6 +64,8 @@ onready var spinningGearTimer = $SpinningGearTimer
 onready var spinningGearTimer2 = $SpinningGearTimer2
 onready var plasmaCharge = $PlasmaCharge
 onready var plasmaSound = $PlasmaSound
+onready var purplePop = $PurplePop
+onready var thundee = $Thundee
 
 
 
@@ -180,7 +182,8 @@ func _process(delta):
 	if chargeAttacking:
 		playerSpriteSpecials.rotation_degrees += 3
 		plasmaCharge.show()
-		plasmaCharge.rotation_degrees += 9
+		plasmaCharge.rotation_degrees += 5
+		playerSpriteHit.hide()
 	else:
 		plasmaCharge.hide()
 		plasmaCharge.rotation_degrees = 0
@@ -570,7 +573,6 @@ func bad_trippin():
 	$TripTimer.start()
 	
 func sword_special_over():
-	blastZone.disabled = true
 	chargeAttacking = false
 	self.MAX_SPEED = 90
 	hurtbox.monitoring = true
@@ -579,6 +581,10 @@ func sword_special_over():
 	sprite.show()
 	aura.hide()
 	aura.stop()
+	purplePop.frame = 0
+	purplePop.show()
+	purplePop.play("default")
+	thundee.play()
 	
 	
 	
@@ -740,3 +746,8 @@ func _on_SpinningGearTimer2_timeout():
 	sgf.position.y += .5
 	sgf2.position.y += .5
 	spinningGearTimer.start()
+
+
+func _on_PurplePop_animation_finished():
+	purplePop.hide()
+	blastZone.disabled = true

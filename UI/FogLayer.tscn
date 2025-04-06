@@ -22,15 +22,21 @@ script = ExtResource( 1 )
 modulate = Color( 1, 1, 1, 0.780392 )
 show_behind_parent = true
 material = SubResource( 2 )
-margin_left = -71.0
-margin_top = -54.0
-margin_right = 680.0
-margin_bottom = 275.0
+margin_right = 751.0
+margin_bottom = 329.0
 
 [node name="Fog2" type="ColorRect" parent="."]
 self_modulate = Color( 1, 1, 1, 0.780392 )
 material = SubResource( 2 )
-margin_left = 669.0
-margin_top = -74.0
-margin_right = 990.0
-margin_bottom = 270.0
+margin_left = 751.0
+margin_right = 1502.0
+margin_bottom = 329.0
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.3
+
+[node name="Timer2" type="Timer" parent="."]
+wait_time = 0.3
+
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[connection signal="timeout" from="Timer2" to="." method="_on_Timer2_timeout"]

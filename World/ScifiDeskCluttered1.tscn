@@ -1,0 +1,56 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://World/SciFiFurniture1.1 plain desk copy.png" type="Texture" id=1]
+[ext_resource path="res://World/bong_1.png" type="Texture" id=2]
+[ext_resource path="res://World/SciFiTablePlant1 copy.png" type="Texture" id=3]
+[ext_resource path="res://World/chp_crumbs.png" type="Texture" id=4]
+[ext_resource path="res://World/weed_scatter.png" type="Texture" id=5]
+[ext_resource path="res://World/soda_fanta.png" type="Texture" id=6]
+[ext_resource path="res://World/potatochip_green.png" type="Texture" id=7]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 23.5, 20.5 )
+
+[node name="ScifiDeskClustered1" type="Node2D"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+visible = false
+position = Vector2( 2.5, 0.5 )
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+flip_h = true
+
+[node name="Sprite2" type="Sprite" parent="."]
+position = Vector2( 7, -4 )
+scale = Vector2( 0.3, 0.35 )
+texture = ExtResource( 6 )
+
+[node name="Sprite7" type="Sprite" parent="."]
+position = Vector2( -8, -5 )
+scale = Vector2( 0.35, 0.35 )
+texture = ExtResource( 5 )
+
+[node name="Sprite4" type="Sprite" parent="."]
+position = Vector2( 15, -9 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 4 )
+
+[node name="Sprite3" type="Sprite" parent="."]
+position = Vector2( 17, -3 )
+rotation = 5.75959
+scale = Vector2( 0.35, 0.35 )
+texture = ExtResource( 7 )
+
+[node name="Sprite5" type="Sprite" parent="."]
+position = Vector2( -13, -14 )
+scale = Vector2( 0.35, 0.35 )
+texture = ExtResource( 2 )
+
+[node name="Sprite6" type="Sprite" parent="."]
+position = Vector2( 0, -15 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 3 )

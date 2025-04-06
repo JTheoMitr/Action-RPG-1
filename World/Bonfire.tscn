@@ -35,11 +35,13 @@ height = 6.0
 
 [node name="Bonfire" type="AnimatedSprite"]
 frames = SubResource( 5 )
+frame = 3
 playing = true
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+visible = false
 position = Vector2( 0, 14 )
 rotation = 1.5708
 shape = SubResource( 6 )
