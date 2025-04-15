@@ -119,6 +119,7 @@ func _on_Stats_no_health():
 	get_parent().call_deferred("add_child", xpOrb)
 	xpOrb.global_position = global_position
 	hitbox.set_deferred("monitorable", false)
+	hitbox.set_deferred("monitoring", false)
 	hurtbox.set_deferred("monitoring", false)
 	deathSound.play()
 

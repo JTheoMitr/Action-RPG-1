@@ -334,7 +334,7 @@ position = Vector2( 164.75, 38 )
 scale = Vector2( 0.695, 0.42 )
 z_index = 2
 animation = "New Anim"
-frame = 49
+frame = 50
 
 [node name="SwarmOne" parent="YSort" instance=ExtResource( 15 )]
 position = Vector2( 180, 97 )
@@ -601,11 +601,11 @@ pitch_scale = 1.5
 [connection signal="focus_entered" from="CityButton" to="." method="_on_CaveButton_focus_entered"]
 [connection signal="focus_entered" from="CityButton" to="." method="_on_CityButton_focus_entered"]
 [connection signal="pressed" from="CityButton" to="." method="_on_CityButton_pressed"]
-[connection signal="focus_entered" from="DesertButton" to="." method="_on_DesertButton_focus_entered"]
 [connection signal="focus_entered" from="DesertButton" to="." method="_on_CaveButton_focus_entered"]
+[connection signal="focus_entered" from="DesertButton" to="." method="_on_DesertButton_focus_entered"]
 [connection signal="pressed" from="DesertButton" to="." method="_on_DesertButton_pressed"]
-[connection signal="focus_entered" from="BlizzardButton" to="." method="_on_BlizzardButton_focus_entered"]
 [connection signal="focus_entered" from="BlizzardButton" to="." method="_on_CaveButton_focus_entered"]
+[connection signal="focus_entered" from="BlizzardButton" to="." method="_on_BlizzardButton_focus_entered"]
 [connection signal="pressed" from="BlizzardButton" to="." method="_on_BlizzardButton_pressed"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 [connection signal="timeout" from="Timer2" to="." method="_on_Timer2_timeout"]

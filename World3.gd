@@ -39,12 +39,12 @@ func leveled():
 
 func raise_music_volume():
 	print("fading_in")
-	tween_out.interpolate_property(musicPlayer, "volume_db", -35, -3, transition_duration, transition_type, Tween.EASE_IN, 0)
+	tween_out.interpolate_property(musicPlayer, "volume_db", -80, -80, transition_duration, transition_type, Tween.EASE_IN, 0)
 	tween_out.start()
 	
 func lower_music_volume():
 	print("fading_out")
-	tween_out.interpolate_property(musicPlayer, "volume_db", -3, -35, transition_duration, transition_type, Tween.EASE_IN, 0)
+	tween_out.interpolate_property(musicPlayer, "volume_db", -80, -80, transition_duration, transition_type, Tween.EASE_IN, 0)
 	tween_out.start()
 	
 func lowest_music_volume():

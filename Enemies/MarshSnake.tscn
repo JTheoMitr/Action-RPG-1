@@ -7,7 +7,7 @@
 [ext_resource path="res://Hitboxes and Hurtboxes/Hitbox.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Enemies/PlayerDetectionZone.tscn" type="PackedScene" id=6]
 [ext_resource path="res://SoftCollision.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Music and Sounds/squanch_sound.wav" type="AudioStream" id=8]
+[ext_resource path="res://Music and Sounds/squish_1.wav" type="AudioStream" id=8]
 [ext_resource path="res://Enemies/WanderController.tscn" type="PackedScene" id=9]
 
 [sub_resource type="AtlasTexture" id=13]
@@ -148,8 +148,7 @@ script = ExtResource( 3 )
 position = Vector2( 0, -4 )
 scale = Vector2( 0.4, 0.4 )
 frames = SubResource( 7 )
-animation = "die"
-frame = 10
+animation = "idle"
 playing = true
 offset = Vector2( 1, -15 )
 
@@ -200,7 +199,7 @@ wait_time = 2.0
 
 [node name="Deathsound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 8 )
-pitch_scale = 0.9
+pitch_scale = 0.35
 
 [connection signal="area_entered" from="Hurtbox" to="." method="_on_Hurtbox_area_entered"]
 [connection signal="no_health" from="Stats" to="." method="_on_Stats_no_health"]
