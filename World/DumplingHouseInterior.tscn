@@ -201,20 +201,21 @@ expand_icon = true
 self_modulate = Color( 1, 1, 1, 0.705882 )
 position = Vector2( -97, 45 )
 frames = SubResource( 12 )
+frame = 4
 playing = true
 
 [node name="AnimatedSprite3" type="AnimatedSprite" parent="CanvasLayer/PopupDialog"]
 self_modulate = Color( 1, 1, 1, 0.705882 )
 position = Vector2( -92, 45 )
 frames = SubResource( 12 )
-frame = 4
+frame = 3
 playing = true
 
 [node name="AnimatedSprite2" type="AnimatedSprite" parent="CanvasLayer/PopupDialog"]
 modulate = Color( 1, 1, 1, 0.705882 )
 position = Vector2( -79, 44 )
 frames = SubResource( 12 )
-frame = 4
+frame = 3
 playing = true
 flip_h = true
 
@@ -222,7 +223,7 @@ flip_h = true
 self_modulate = Color( 1, 1, 1, 0.705882 )
 position = Vector2( -85, 45 )
 frames = SubResource( 12 )
-frame = 4
+frame = 3
 playing = true
 flip_h = true
 
@@ -230,6 +231,6 @@ flip_h = true
 self_modulate = Color( 1, 1, 1, 0.705882 )
 position = Vector2( -89, 47 )
 frames = SubResource( 12 )
-frame = 4
+frame = 3
 playing = true
 flip_h = true

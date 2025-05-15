@@ -1,0 +1,203 @@
+[gd_scene load_steps=30 format=2]
+
+[ext_resource path="res://Effects/Fire+Sparks-Sheet.png" type="Texture" id=1]
+[ext_resource path="res://Effects/SlideDust.png" type="Texture" id=2]
+
+[sub_resource type="AtlasTexture" id=1]
+atlas = ExtResource( 1 )
+region = Rect2( 0, 0, 96, 96 )
+
+[sub_resource type="AtlasTexture" id=2]
+atlas = ExtResource( 1 )
+region = Rect2( 96, 0, 96, 96 )
+
+[sub_resource type="AtlasTexture" id=3]
+atlas = ExtResource( 1 )
+region = Rect2( 192, 0, 96, 96 )
+
+[sub_resource type="AtlasTexture" id=4]
+atlas = ExtResource( 1 )
+region = Rect2( 288, 0, 96, 96 )
+
+[sub_resource type="AtlasTexture" id=5]
+atlas = ExtResource( 1 )
+region = Rect2( 0, 96, 96, 96 )
+
+[sub_resource type="AtlasTexture" id=6]
+atlas = ExtResource( 1 )
+region = Rect2( 96, 96, 96, 96 )
+
+[sub_resource type="AtlasTexture" id=7]
+atlas = ExtResource( 1 )
+region = Rect2( 192, 96, 96, 96 )
+
+[sub_resource type="AtlasTexture" id=8]
+atlas = ExtResource( 1 )
+region = Rect2( 288, 96, 96, 96 )
+
+[sub_resource type="AtlasTexture" id=9]
+atlas = ExtResource( 1 )
+region = Rect2( 0, 192, 96, 96 )
+
+[sub_resource type="AtlasTexture" id=10]
+atlas = ExtResource( 1 )
+region = Rect2( 96, 192, 96, 96 )
+
+[sub_resource type="AtlasTexture" id=11]
+atlas = ExtResource( 1 )
+region = Rect2( 192, 192, 96, 96 )
+
+[sub_resource type="AtlasTexture" id=12]
+atlas = ExtResource( 1 )
+region = Rect2( 288, 192, 96, 96 )
+
+[sub_resource type="AtlasTexture" id=13]
+atlas = ExtResource( 1 )
+region = Rect2( 0, 288, 96, 96 )
+
+[sub_resource type="AtlasTexture" id=14]
+atlas = ExtResource( 1 )
+region = Rect2( 96, 288, 96, 96 )
+
+[sub_resource type="AtlasTexture" id=15]
+atlas = ExtResource( 1 )
+region = Rect2( 192, 288, 96, 96 )
+
+[sub_resource type="AtlasTexture" id=16]
+atlas = ExtResource( 1 )
+region = Rect2( 288, 288, 96, 96 )
+
+[sub_resource type="AtlasTexture" id=17]
+atlas = ExtResource( 1 )
+region = Rect2( 0, 384, 96, 96 )
+
+[sub_resource type="AtlasTexture" id=18]
+atlas = ExtResource( 1 )
+region = Rect2( 96, 384, 96, 96 )
+
+[sub_resource type="AtlasTexture" id=19]
+atlas = ExtResource( 1 )
+region = Rect2( 192, 384, 96, 96 )
+
+[sub_resource type="SpriteFrames" id=20]
+animations = [ {
+"frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ), SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 16 ), SubResource( 17 ), SubResource( 18 ), SubResource( 19 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="CapsuleShape2D" id=21]
+radius = 9.0
+height = 16.0
+
+[sub_resource type="AtlasTexture" id=22]
+atlas = ExtResource( 2 )
+region = Rect2( 0, 0, 25, 32 )
+
+[sub_resource type="AtlasTexture" id=23]
+atlas = ExtResource( 2 )
+region = Rect2( 25, 0, 25, 32 )
+
+[sub_resource type="AtlasTexture" id=24]
+atlas = ExtResource( 2 )
+region = Rect2( 50, 0, 25, 32 )
+
+[sub_resource type="AtlasTexture" id=25]
+atlas = ExtResource( 2 )
+region = Rect2( 75, 0, 25, 32 )
+
+[sub_resource type="AtlasTexture" id=26]
+atlas = ExtResource( 2 )
+region = Rect2( 100, 0, 25, 32 )
+
+[sub_resource type="SpriteFrames" id=27]
+animations = [ {
+"frames": [ SubResource( 22 ), SubResource( 23 ), SubResource( 24 ), SubResource( 25 ), SubResource( 26 ) ],
+"loop": true,
+"name": "default",
+"speed": 2.0
+} ]
+
+[node name="OilcoFire1" type="Node2D"]
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+frames = SubResource( 20 )
+playing = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 1, 40 )
+rotation = 1.5708
+shape = SubResource( 21 )
+
+[node name="AnimatedSprite2" type="AnimatedSprite" parent="."]
+modulate = Color( 0.207843, 0.207843, 0.207843, 1 )
+position = Vector2( -3, 24 )
+scale = Vector2( 2, 2 )
+frames = SubResource( 27 )
+frame = 3
+playing = true
+
+[node name="AnimatedSprite5" type="AnimatedSprite" parent="."]
+modulate = Color( 0.207843, 0.207843, 0.207843, 1 )
+position = Vector2( -5, 0 )
+scale = Vector2( 2, 2 )
+frames = SubResource( 27 )
+frame = 2
+playing = true
+
+[node name="AnimatedSprite3" type="AnimatedSprite" parent="."]
+modulate = Color( 0.207843, 0.207843, 0.207843, 1 )
+position = Vector2( 0, 16 )
+scale = Vector2( 2, 2 )
+frames = SubResource( 27 )
+frame = 2
+playing = true
+flip_h = true
+
+[node name="AnimatedSprite4" type="AnimatedSprite" parent="."]
+modulate = Color( 0.207843, 0.207843, 0.207843, 1 )
+position = Vector2( 0, -8 )
+scale = Vector2( 2, 2 )
+frames = SubResource( 27 )
+frame = 1
+playing = true
+flip_h = true
+
+[node name="AnimatedSprite6" type="AnimatedSprite" parent="."]
+modulate = Color( 0.207843, 0.207843, 0.207843, 0.517647 )
+position = Vector2( -9.5, -3 )
+scale = Vector2( 2, 2 )
+frames = SubResource( 27 )
+frame = 2
+playing = true
+
+[node name="AnimatedSprite7" type="AnimatedSprite" parent="."]
+modulate = Color( 0.207843, 0.207843, 0.207843, 1 )
+self_modulate = Color( 1, 1, 1, 0.545098 )
+position = Vector2( -4.5, -14 )
+scale = Vector2( 2, 2 )
+frames = SubResource( 27 )
+frame = 2
+playing = true
+
+[node name="AnimatedSprite8" type="AnimatedSprite" parent="."]
+modulate = Color( 0.207843, 0.207843, 0.207843, 1 )
+self_modulate = Color( 1, 1, 1, 0.717647 )
+position = Vector2( 3.5, -8 )
+scale = Vector2( 2, 2 )
+frames = SubResource( 27 )
+frame = 1
+playing = true
+flip_h = true
+
+[node name="AnimatedSprite9" type="AnimatedSprite" parent="."]
+modulate = Color( 0.207843, 0.207843, 0.207843, 1 )
+self_modulate = Color( 1, 1, 1, 0.588235 )
+position = Vector2( 0, -10 )
+scale = Vector2( 2, 2 )
+frames = SubResource( 27 )
+playing = true
+flip_h = true

@@ -16,7 +16,7 @@ bg_color = Color( 0.101961, 0.0784314, 0.0784314, 0 )
 bg_color = Color( 0.505882, 0.282353, 0.870588, 0.270588 )
 
 [sub_resource type="DynamicFont" id=4]
-size = 14
+size = 10
 font_data = ExtResource( 5 )
 
 [sub_resource type="DynamicFont" id=5]
@@ -56,15 +56,15 @@ scale = Vector2( 2.5, 2.5 )
 texture = ExtResource( 2 )
 
 [node name="RichTextLabel" type="RichTextLabel" parent="IntroDialog2"]
-margin_left = 55.0
-margin_top = 6.25
-margin_right = 175.0
-margin_bottom = 92.25
-rect_scale = Vector2( 0.7, 0.7 )
+margin_left = 53.75
+margin_top = 12.5
+margin_right = 173.75
+margin_bottom = 48.5
+rect_scale = Vector2( 0.9, 0.9 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_fonts/normal_font = SubResource( 4 )
 bbcode_enabled = true
-text = "It's so Quiet,  Something is off..."
+text = "Fires everywhere,  but how?.."
 
 [node name="ButtonSprite" type="Sprite" parent="IntroDialog2"]
 position = Vector2( 109, 49 )

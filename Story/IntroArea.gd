@@ -2,6 +2,7 @@ extends Area2D
 
 onready var popup = $IntroDialog1
 onready var stats = PlayerStats
+onready var text = $IntroDialog1/RichTextLabel
 onready var save_data = SaveFile.g_data
 
 var inArea = false
