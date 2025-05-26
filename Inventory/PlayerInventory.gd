@@ -110,11 +110,14 @@ func _process(_delta):
 	if zipperRotate:
 		zipper.rotation_degrees += 1
 	if zipperRight:
-		zipper.position.x += 8
+		if zipper.position.x <= 338:
+			zipper.position.x += 8
 	if zipperDown:
-		zipper.position.y += 3
+		if zipper.position.y <= 93:
+			zipper.position.y += 3
 	if zipperUp:
-		zipper.position.y -= 7
+		if zipper.position.y >= -12:
+			zipper.position.y -= 7
 	if (Input.is_action_just_pressed("special_one")) && self.visible:
 		if controlsOn:
 			controlsPanel.hide()
@@ -225,22 +228,22 @@ func selected():
 func opening():
 	zipperRotate = true
 	zipperUp = true
-	yield(get_tree().create_timer(0.28), "timeout")
+	yield(get_tree().create_timer(0.18), "timeout")
 	zipperRotate = false
 	zipperUp = false
 	zipperRight = true
-	yield(get_tree().create_timer(0.78), "timeout")
+	yield(get_tree().create_timer(0.43), "timeout")
 	zipperRight = false
 	zipperDown = true
 	zipperRotateReverse = true
-	yield(get_tree().create_timer(0.55), "timeout")
+	yield(get_tree().create_timer(0.2), "timeout")
 	zipperDown = false
 	zipperRotateReverse = false
 	zipperRotate = true
-	yield(get_tree().create_timer(0.25), "timeout")
+	yield(get_tree().create_timer(0.15), "timeout")
 	zipperRotateReverse = true
 	zipperRotate = false
-	yield(get_tree().create_timer(0.27), "timeout")
+	yield(get_tree().create_timer(0.35), "timeout")
 	zipperRotateReverse = false
 	zipperRotate = false
 
