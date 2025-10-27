@@ -103,6 +103,7 @@ animations = [ {
 [node name="BSpatter1" type="AnimatedSprite"]
 frames = SubResource( 3 )
 animation = "Animate"
+frame = 2
 playing = true
 offset = Vector2( 0, -12 )
 script = ExtResource( 1 )

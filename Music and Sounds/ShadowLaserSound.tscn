@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Music and Sounds/ESM_Kitchen_Light_Metal_Hit_8_Clang_Ring_Bright_Chime.wav" type="AudioStream" id=1]
+[ext_resource path="res://Music and Sounds/BuzzerSound.gd" type="Script" id=2]
+
+[node name="ShadowLaserSound" type="AudioStreamPlayer"]
+stream = ExtResource( 1 )
+volume_db = -11.0
+pitch_scale = 0.15
+autoplay = true
+script = ExtResource( 2 )

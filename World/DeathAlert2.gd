@@ -7,6 +7,7 @@ var worldStats = WorldStats
 
 
 func show_death_alert():
+	
 	popup()
 	var deathSound = DeathSound.instance()
 	get_tree().current_scene.add_child(deathSound)
@@ -15,9 +16,10 @@ func show_death_alert():
 	worldStats.emit_signal("fade_music_out")
 
 func _ready():
-	stats.connect("no_health", self, "show_death_alert")
+	stats.connect("no_health", self, "_timestart")
 
-
+func _timestart():
+	$Timer2.start()
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
@@ -35,3 +37,7 @@ func _on_Button_pressed():
 	#need to make a reset_stats method:
 	_reset_stats()
 	SceneTransitionLong.change_scene("res://World2.tscn")
+
+
+func _on_Timer2_timeout():
+	show_death_alert()

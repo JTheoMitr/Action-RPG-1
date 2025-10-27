@@ -6,6 +6,7 @@ const Ammo = preload("res://World/Ammo.tscn")
 const SoldierSound = preload("res://Music and Sounds/ShadowSound.tscn")
 const SoldierExplodeSound = preload("res://Music and Sounds/SoldierExplodeSound.tscn")
 const Laser = preload("res://Enemies/ShadowLaser.tscn")
+const LaserSound = preload("res://Music and Sounds/ShadowLaserSound.tscn")
 const XpOrb = preload("res://Enemies/XpOrb.tscn")
 const BloodSpatter = preload("res://Effects/BloodSpatterEffect1.tscn")
 const OilTrail = preload("res://World/OilTrail.tscn")
@@ -177,6 +178,9 @@ func _on_Timer_timeout():
 	var laser = Laser.instance()
 	get_parent().call_deferred("add_child", laser)
 	laser.global_position = bulletZone2D.global_position
+	
+	var laserSound = LaserSound.instance()
+	get_parent().call_deferred("add_child", laserSound)
 	#var bSpatter = BloodSpatter.instance()
 	#get_parent().add_child(bSpatter)
 	#bSpatter.global_position = bulletZone2D.global_position

@@ -147,7 +147,7 @@ texture = ExtResource( 3 )
 position = Vector2( -9, -8 )
 scale = Vector2( 0.35, 0.4 )
 frames = SubResource( 7 )
-frame = 2
+frame = 1
 playing = true
 
 [node name="Area2D" type="Area2D" parent="."]
@@ -186,21 +186,20 @@ texture = ExtResource( 9 )
 position = Vector2( 7.69841, -5.79364 )
 scale = Vector2( 0.476191, 0.327381 )
 frames = SubResource( 32 )
-frame = 1
 playing = true
 
 [node name="AnimatedSprite2" type="AnimatedSprite" parent="PopupDialog/Sprite3"]
 position = Vector2( 14, -5.317 )
 scale = Vector2( 0.476191, 0.327381 )
 frames = SubResource( 32 )
-frame = 3
+frame = 2
 playing = true
 
 [node name="AnimatedSprite3" type="AnimatedSprite" parent="PopupDialog/Sprite3"]
 position = Vector2( 17.6984, -5.31746 )
 scale = Vector2( 0.476191, 0.327381 )
 frames = SubResource( 32 )
-frame = 6
+frame = 5
 playing = true
 
 [node name="Sprite2" type="Sprite" parent="PopupDialog"]
@@ -225,7 +224,7 @@ modulate = Color( 0.337255, 1, 0, 0.788235 )
 position = Vector2( 75, 80 )
 scale = Vector2( 4, 1.31868 )
 frames = SubResource( 23 )
-frame = 6
+frame = 5
 playing = true
 
 [node name="Timer" type="Timer" parent="."]
@@ -259,7 +258,7 @@ texture = ExtResource( 3 )
 position = Vector2( 48, -10 )
 scale = Vector2( 0.35, 0.35 )
 frames = SubResource( 19 )
-frame = 3
+frame = 2
 playing = true
 
 [node name="Timer2" type="Timer" parent="."]

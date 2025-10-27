@@ -144,6 +144,7 @@ func _ready():
 	print_debug((get_parent().get_parent()).to_string()[5])
 	print_debug(save_file.current_world[5])
 	if (save_file.position_saved == true) && (save_file.current_world[5] == (get_parent().get_parent()).to_string()[5]): #checking current world against save file's world for positioning
+		print_debug((get_parent().get_parent()).to_string()[5])
 		global_position.x = save_file.player_position_x
 		global_position.y = save_file.player_position_y
 		#stats.emit_signal("player_resumed")
