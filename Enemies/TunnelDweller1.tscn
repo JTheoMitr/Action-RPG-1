@@ -7,7 +7,7 @@
 [ext_resource path="res://Hitboxes and Hurtboxes/Hitbox.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Enemies/PlayerDetectionZone.tscn" type="PackedScene" id=6]
 [ext_resource path="res://SoftCollision.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Enemies/Dweller.gd" type="Script" id=8]
+[ext_resource path="res://Enemies/TunnelDweller1.gd" type="Script" id=8]
 [ext_resource path="res://Enemies/WanderController.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Enemies/Cave_Monster_1_Idle.png" type="Texture" id=10]
 [ext_resource path="res://Enemies/Cave_Monster_Attack_2.png" type="Texture" id=11]
@@ -137,7 +137,7 @@ offset = Vector2( 5, 1 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 7 )
 animation = "attack"
-frame = 3
+frame = 1
 playing = true
 offset = Vector2( 7, -15 )
 

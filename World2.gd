@@ -11,6 +11,7 @@ onready var keyAlert = $AlertCanvas/KeyAlert
 onready var camera = $Camera2D
 onready var canvasModulate = $CanvasModulate
 onready var darkPanel = $CanvasLayer/DarknessPanel
+onready var lightTimer = $LightTimer
 
 export var transition_duration = 3.00
 export var transition_type = 1 # TRANS_SINE
@@ -18,6 +19,8 @@ export var laser_effect: PackedScene
 
 var worldStats = WorldStats
 var stats = PlayerStats
+
+const clickSound = preload("res://Effects/FlashlightClick.tscn")
 
 var going_dark
 var into_the_light
@@ -56,21 +59,8 @@ func _process(delta):
 		darkPanel.self_modulate.a += .005
 	if into_the_light && darkPanel.self_modulate.a > 0.0:
 		darkPanel.visible = true
-		darkPanel.self_modulate.a -= .005
-		
-	if darkPanel.self_modulate.a == 0.005 && darkness:
-		lightness = true
-		darkness = false
-		print_debug("lightness")
-		darkPanel.visible = false
 		canvasModulate.visible = false
-		
-	if darkPanel.self_modulate.a == 0.99 && lightness:
-		lightness = false
-		darkness = true
-		print_debug("darkness")
-		darkPanel.visible = false
-		canvasModulate.visible = true
+	
 	
 func leveled():
 	if stats.level >= 2:
@@ -129,12 +119,38 @@ func _on_AudioStreamPlayer_finished():
 
 
 func _on_DarkZone_area_entered(area):
-	going_dark = true
-	into_the_light = false
-	print_debug("going dark")
+	if lightness:
+		lightTimer.start()
+		going_dark = true
+		into_the_light = false
+		print_debug("going dark")
 
 
 func _on_DarkZone_area_exited(area):
-	going_dark = false
-	into_the_light = true
-	print_debug("into the light")
+	if darkness:
+		lightTimer.start()
+		going_dark = false
+		into_the_light = true
+		print_debug("into the light")
+
+
+func _on_LightTimer_timeout():
+	if lightness:
+		lightness = false
+		darkness = true
+		going_dark = false
+		print_debug("darkness")
+		darkPanel.visible = false
+		var click = clickSound.instance()
+		add_child(click)
+		#play a flashlight click sound, do we change the panel white here for the 'entering light flash before the fade', or do we have two panels?
+		canvasModulate.visible = true
+	else:
+		lightness = true
+		darkness = false
+		print_debug("lightness")
+		into_the_light = false
+		darkPanel.visible = false
+		canvasModulate.visible = false
+		
+		
