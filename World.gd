@@ -10,12 +10,19 @@ onready var stealthUI = $CanvasLayer/StealthUI
 onready var keyAlert = $AlertCanvas/KeyAlert
 onready var camera = $Camera2D
 
+
 export var transition_duration = 3.00
 export var transition_type = 1 # TRANS_SINE
 export var laser_effect: PackedScene
 
 var worldStats = WorldStats
 var stats = PlayerStats
+
+var going_dark
+var into_the_light
+
+var darkness
+var lightness
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -32,11 +39,38 @@ func _ready():
 	#stats.set_max_health(5)
 	#stats.set_health(5)
 	#$CanvasLayer/BatteryUI.hide()
+#	canvasModulate.visible = false
+#	darkPanel.visible = false
+#	darkPanel.self_modulate.a = 0.0
+#	going_dark = false
+#	into_the_light = false
+#	lightness = true
+#	darkness = false
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
+#	if going_dark && darkPanel.self_modulate.a < 1.0:
+#		darkPanel.visible = true
+#		darkPanel.self_modulate.a += .005
+#	if into_the_light && darkPanel.self_modulate.a > 0.0:
+#		darkPanel.visible = true
+#		darkPanel.self_modulate.a -= .005
+#
+#	if darkPanel.self_modulate.a == 0.0 && darkness:
+#		lightness = true
+#		darkness = false
+#		print_debug("lightness")
+#		darkPanel.visible = false
+#		canvasModulate.visible = false
+#
+#	if darkPanel.self_modulate.a == 1.0 && lightness:
+#		lightness = false
+#		darkness = true
+#		print_debug("darkness")
+#		darkPanel.visible = false
+#		canvasModulate.visible = true
 	
 func leveled():
 	if stats.level >= 2:
@@ -100,3 +134,4 @@ func _on_Timer_timeout():
 func _on_Timer2_timeout():
 	pass
 	#takePhoto()
+

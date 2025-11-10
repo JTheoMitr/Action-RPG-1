@@ -1,4 +1,4 @@
-[gd_scene load_steps=183 format=2]
+[gd_scene load_steps=184 format=2]
 
 [ext_resource path="res://Player/Player.gd" type="Script" id=1]
 [ext_resource path="res://Effects/PlasmaSwordChargeAttackFX.png" type="Texture" id=2]
@@ -23,6 +23,7 @@
 [ext_resource path="res://Music and Sounds/59-Sound-Effect-Whoosh.wav" type="AudioStream" id=21]
 [ext_resource path="res://Music and Sounds/thunder1.wav" type="AudioStream" id=22]
 [ext_resource path="res://Effects/rune_glint.png" type="Texture" id=23]
+[ext_resource path="res://Effects/LampGlow1.png" type="Texture" id=24]
 
 [sub_resource type="CircleShape2D" id=52]
 radius = 49.6488
@@ -1612,6 +1613,10 @@ frame = 84
 stream = ExtResource( 22 )
 volume_db = -9.0
 pitch_scale = 1.3
+
+[node name="TorchLight" type="Light2D" parent="."]
+scale = Vector2( 4, 4 )
+texture = ExtResource( 24 )
 
 [connection signal="timeout" from="Pointer/LaserTimer" to="." method="_on_LaserTimer_timeout"]
 [connection signal="timeout" from="Pointer/LaserSpeed" to="." method="_on_LaserSpeed_timeout"]

@@ -66,6 +66,7 @@ onready var plasmaCharge = $PlasmaCharge
 onready var plasmaSound = $PlasmaSound
 onready var purplePop = $PurplePop
 onready var thundee = $Thundee
+onready var torchLight = $TorchLight
 
 
 
@@ -116,6 +117,9 @@ func _ready():
 	# randomize()
 	spinningGear.hide()
 	spinningGear2.hide()
+	
+	torchLight.visible = true
+	torchLight.self_modulate.a = 0.7
 
 	# Find user's controller type:
 	# var pad = Input.get_joy_name(0)
