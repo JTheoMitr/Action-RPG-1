@@ -11,6 +11,7 @@ onready var keyAlert = $AlertCanvas/KeyAlert
 onready var camera = $Camera2D
 onready var canvasModulate = $CanvasModulate
 onready var darkPanel = $CanvasLayer/DarknessPanel
+onready var lightPanel = $CanvasLayer/LightnessPanel
 onready var lightTimer = $LightTimer
 
 export var transition_duration = 3.00
@@ -46,6 +47,7 @@ func _ready():
 	canvasModulate.visible = false
 	darkPanel.visible = false
 	darkPanel.self_modulate.a = 0.0
+	lightPanel.visible = false
 	going_dark = false
 	into_the_light = false
 	lightness = true
@@ -55,11 +57,10 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if going_dark && darkPanel.self_modulate.a < 1.0:
-		darkPanel.visible = true
 		darkPanel.self_modulate.a += .005
-	if into_the_light && darkPanel.self_modulate.a > 0.0:
-		darkPanel.visible = true
-		canvasModulate.visible = false
+	if into_the_light && lightPanel.self_modulate.a > 0.0:
+		lightPanel.self_modulate.a -= .005
+		
 	
 	
 func leveled():
@@ -122,13 +123,18 @@ func _on_DarkZone_area_entered(area):
 	if lightness:
 		lightTimer.start()
 		going_dark = true
+		darkPanel.self_modulate.a = 0.0
+		darkPanel.visible = true
 		into_the_light = false
 		print_debug("going dark")
 
 
 func _on_DarkZone_area_exited(area):
 	if darkness:
-		lightTimer.start()
+		canvasModulate.visible = false
+		lightTimer.call_deferred("start")
+		lightPanel.self_modulate.a = 1.0
+		lightPanel.visible = true
 		going_dark = false
 		into_the_light = true
 		print_debug("into the light")
@@ -142,7 +148,9 @@ func _on_LightTimer_timeout():
 		print_debug("darkness")
 		darkPanel.visible = false
 		var click = clickSound.instance()
-		add_child(click)
+		get_parent().add_child(click)
+		click.play()
+		worldStats.emit_signal("flashlight_on")
 		#play a flashlight click sound, do we change the panel white here for the 'entering light flash before the fade', or do we have two panels?
 		canvasModulate.visible = true
 	else:
@@ -151,6 +159,8 @@ func _on_LightTimer_timeout():
 		print_debug("lightness")
 		into_the_light = false
 		darkPanel.visible = false
-		canvasModulate.visible = false
+		lightPanel.visible = false
+		worldStats.emit_signal("flashlight_off")
+		
 		
 		

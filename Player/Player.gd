@@ -118,7 +118,7 @@ func _ready():
 	spinningGear.hide()
 	spinningGear2.hide()
 	
-	torchLight.visible = true
+	torchLight.visible = false
 	torchLight.self_modulate.a = 0.7
 
 	# Find user's controller type:
@@ -138,6 +138,10 @@ func _ready():
 	worldStats.connect("in_the_tall_grass", self, "_stealth_mode")
 	worldStats.connect("out_of_the_tall_grass", self, "_visible_again")
 	worldStats.connect("bad_trip", self, "bad_trippin")
+	
+	worldStats.connect("flashlight_on", self, "_flashlight_function_on")
+	worldStats.connect("flashlight_off", self, "_flashlight_function_off")
+	
 	stats._ready()
 	crosshair.hide()
 	playerSpriteHit.hide()
@@ -756,3 +760,10 @@ func _on_SpinningGearTimer2_timeout():
 func _on_PurplePop_animation_finished():
 	purplePop.hide()
 	blastZone.disabled = true
+	
+func _flashlight_function_on():
+		torchLight.visible = true
+		
+func _flashlight_function_off():
+		torchLight.visible = false
+

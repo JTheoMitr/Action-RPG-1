@@ -17,6 +17,8 @@ signal portal_2_opened
 signal portal_purp2_opened
 signal chamber_one_start
 signal bad_trip
+signal flashlight_on
+signal flashlight_off
 
 
 	
