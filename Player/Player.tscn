@@ -1576,14 +1576,14 @@ one_shot = true
 position = Vector2( -6.3, -13 )
 scale = Vector2( 0.2, 0.2 )
 frames = SubResource( 99 )
-frame = 1
+frame = 2
 playing = true
 
 [node name="SpinningGearFront2" type="AnimatedSprite" parent="."]
 position = Vector2( 5.5, -13 )
 scale = Vector2( 0.2, 0.2 )
 frames = SubResource( 99 )
-frame = 1
+frame = 2
 playing = true
 
 [node name="RollTimer" type="Timer" parent="."]
