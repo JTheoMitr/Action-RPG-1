@@ -13,6 +13,7 @@ onready var canvasModulate = $CanvasModulate
 onready var darkPanel = $CanvasLayer/DarknessPanel
 onready var lightPanel = $CanvasLayer/LightnessPanel
 onready var lightTimer = $LightTimer
+onready var tunnelWind = $TunnelEntranceWind
 
 export var transition_duration = 3.00
 export var transition_type = 1 # TRANS_SINE
@@ -126,6 +127,8 @@ func _on_DarkZone_area_entered(area):
 		darkPanel.self_modulate.a = 0.0
 		darkPanel.visible = true
 		into_the_light = false
+		lower_music_volume()
+		tunnelWind.play()
 		print_debug("going dark")
 
 
