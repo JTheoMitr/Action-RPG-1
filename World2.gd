@@ -140,6 +140,8 @@ func _on_DarkZone_area_exited(area):
 		lightPanel.visible = true
 		going_dark = false
 		into_the_light = true
+		raise_music_volume()
+		tunnelWind.stop()
 		print_debug("into the light")
 
 
