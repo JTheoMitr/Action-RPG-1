@@ -104,7 +104,7 @@ animations = [ {
 
 [sub_resource type="CapsuleShape2D" id=8]
 radius = 21.0
-height = 48.0
+height = 38.0
 
 [sub_resource type="CapsuleShape2D" id=9]
 radius = 19.0
@@ -114,15 +114,15 @@ height = 24.0
 radius = 106.005
 
 [sub_resource type="CapsuleShape2D" id=11]
-radius = 22.0788
-height = 37.3206
+radius = 18.5526
+height = 26.536
 
 [sub_resource type="CapsuleShape2D" id=12]
 radius = 5.0
 height = 6.0
 
 [sub_resource type="CircleShape2D" id=44]
-radius = 61.0082
+radius = 51.0098
 
 [node name="TunnelDweller1" type="KinematicBody2D"]
 collision_layer = 17
@@ -137,12 +137,12 @@ offset = Vector2( 5, 1 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 7 )
 animation = "attack"
-frame = 3
+frame = 2
 playing = true
 offset = Vector2( 7, -15 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 5, 9 )
+position = Vector2( 5, 12 )
 shape = SubResource( 8 )
 
 [node name="Hurtbox" parent="." instance=ExtResource( 2 )]
@@ -166,7 +166,7 @@ position = Vector2( 45, 0 )
 collision_mask = 4
 
 [node name="CollisionShape2D" parent="Hitbox" index="0"]
-position = Vector2( -15, 6 )
+position = Vector2( -19, 11 )
 rotation = 0.523599
 shape = SubResource( 11 )
 
