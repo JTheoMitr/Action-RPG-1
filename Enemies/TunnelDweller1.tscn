@@ -118,8 +118,8 @@ radius = 18.5526
 height = 26.536
 
 [sub_resource type="CapsuleShape2D" id=12]
-radius = 5.0
-height = 6.0
+radius = 20.0
+height = 28.0
 
 [sub_resource type="CircleShape2D" id=44]
 radius = 51.0098
@@ -137,7 +137,6 @@ offset = Vector2( 5, 1 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 7 )
 animation = "attack"
-frame = 2
 playing = true
 offset = Vector2( 7, -15 )
 
@@ -171,10 +170,9 @@ rotation = 0.523599
 shape = SubResource( 11 )
 
 [node name="SoftCollision" parent="." instance=ExtResource( 7 )]
-visible = false
 
 [node name="CollisionShape2D" parent="SoftCollision" index="0"]
-position = Vector2( 7, -15 )
+position = Vector2( 0, 21 )
 shape = SubResource( 12 )
 
 [node name="WanderController" parent="." instance=ExtResource( 9 )]

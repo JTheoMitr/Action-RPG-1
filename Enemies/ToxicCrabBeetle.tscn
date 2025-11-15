@@ -1,115 +1,87 @@
-[gd_scene load_steps=39 format=2]
+[gd_scene load_steps=32 format=2]
 
-[ext_resource path="res://Enemies/SpiderMutant.gd" type="Script" id=1]
+[ext_resource path="res://Enemies/ToxicCrabBeetle.gd" type="Script" id=1]
 [ext_resource path="res://Hitboxes and Hurtboxes/Hurtbox.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Enemies/spider_mutant_attack.png" type="Texture" id=3]
+[ext_resource path="res://Enemies/Toxic Magma Crab.png" type="Texture" id=3]
 [ext_resource path="res://Stats.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Hitboxes and Hurtboxes/Hitbox.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Enemies/PlayerDetectionZone.tscn" type="PackedScene" id=6]
 [ext_resource path="res://SoftCollision.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Enemies/spider_mutant_idle.png" type="Texture" id=8]
+[ext_resource path="res://Effects/HitEffect copy.png" type="Texture" id=8]
 [ext_resource path="res://Enemies/WanderController.tscn" type="PackedScene" id=9]
 
 [sub_resource type="AtlasTexture" id=13]
 atlas = ExtResource( 3 )
-region = Rect2( 4, 0, 33, 30 )
+region = Rect2( 0, 320, 64, 64 )
 
 [sub_resource type="AtlasTexture" id=14]
 atlas = ExtResource( 3 )
-region = Rect2( 37, 0, 33, 30 )
+region = Rect2( 64, 320, 64, 64 )
 
 [sub_resource type="AtlasTexture" id=15]
 atlas = ExtResource( 3 )
-region = Rect2( 70, 0, 33, 30 )
+region = Rect2( 128, 320, 64, 64 )
 
 [sub_resource type="AtlasTexture" id=16]
 atlas = ExtResource( 3 )
-region = Rect2( 103, 0, 33, 30 )
+region = Rect2( 192, 320, 64, 64 )
 
 [sub_resource type="AtlasTexture" id=17]
 atlas = ExtResource( 3 )
-region = Rect2( 136, 0, 33, 30 )
+region = Rect2( 256, 320, 64, 64 )
 
 [sub_resource type="AtlasTexture" id=18]
 atlas = ExtResource( 3 )
-region = Rect2( 169, 0, 33, 30 )
+region = Rect2( 320, 320, 64, 64 )
 
 [sub_resource type="AtlasTexture" id=19]
 atlas = ExtResource( 3 )
-region = Rect2( 202, 0, 33, 30 )
+region = Rect2( 384, 320, 64, 64 )
 
 [sub_resource type="AtlasTexture" id=20]
 atlas = ExtResource( 3 )
-region = Rect2( 235, 0, 33, 30 )
+region = Rect2( 448, 320, 64, 64 )
 
 [sub_resource type="AtlasTexture" id=21]
 atlas = ExtResource( 3 )
-region = Rect2( 268, 0, 33, 30 )
+region = Rect2( 0, 128, 64, 64 )
 
 [sub_resource type="AtlasTexture" id=22]
 atlas = ExtResource( 3 )
-region = Rect2( 301, 0, 33, 30 )
+region = Rect2( 64, 128, 64, 64 )
 
 [sub_resource type="AtlasTexture" id=23]
 atlas = ExtResource( 3 )
-region = Rect2( 334, 0, 33, 30 )
+region = Rect2( 128, 128, 64, 64 )
 
 [sub_resource type="AtlasTexture" id=24]
 atlas = ExtResource( 3 )
-region = Rect2( 367, 0, 33, 30 )
+region = Rect2( 192, 128, 64, 64 )
 
 [sub_resource type="AtlasTexture" id=25]
 atlas = ExtResource( 3 )
-region = Rect2( 400, 0, 33, 30 )
+region = Rect2( 256, 128, 64, 64 )
 
 [sub_resource type="AtlasTexture" id=26]
 atlas = ExtResource( 3 )
-region = Rect2( 433, 0, 33, 30 )
+region = Rect2( 320, 128, 64, 64 )
 
 [sub_resource type="AtlasTexture" id=27]
 atlas = ExtResource( 3 )
-region = Rect2( 466, 0, 33, 30 )
-
-[sub_resource type="AtlasTexture" id=34]
-atlas = ExtResource( 3 )
-region = Rect2( 501, 0, 33, 30 )
-
-[sub_resource type="AtlasTexture" id=35]
-atlas = ExtResource( 3 )
-region = Rect2( 534, 0, 33, 30 )
+region = Rect2( 384, 128, 64, 64 )
 
 [sub_resource type="AtlasTexture" id=28]
-atlas = ExtResource( 8 )
-region = Rect2( 0, 0, 32, 30 )
-
-[sub_resource type="AtlasTexture" id=29]
-atlas = ExtResource( 8 )
-region = Rect2( 32, 0, 32, 30 )
-
-[sub_resource type="AtlasTexture" id=30]
-atlas = ExtResource( 8 )
-region = Rect2( 64, 0, 32, 30 )
-
-[sub_resource type="AtlasTexture" id=31]
-atlas = ExtResource( 8 )
-region = Rect2( 96, 0, 32, 30 )
-
-[sub_resource type="AtlasTexture" id=32]
-atlas = ExtResource( 8 )
-region = Rect2( 128, 0, 32, 30 )
-
-[sub_resource type="AtlasTexture" id=33]
-atlas = ExtResource( 8 )
-region = Rect2( 160, 0, 32, 30 )
+atlas = ExtResource( 3 )
+region = Rect2( 448, 128, 64, 64 )
 
 [sub_resource type="SpriteFrames" id=7]
 animations = [ {
-"frames": [ SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 16 ), SubResource( 17 ), SubResource( 18 ), SubResource( 19 ), SubResource( 20 ), SubResource( 21 ), SubResource( 22 ), SubResource( 23 ), SubResource( 24 ), SubResource( 25 ), SubResource( 26 ), SubResource( 27 ), SubResource( 26 ), SubResource( 25 ), SubResource( 27 ), SubResource( 26 ), SubResource( 25 ), SubResource( 27 ), SubResource( 34 ), SubResource( 35 ), SubResource( 23 ), SubResource( 22 ), SubResource( 21 ), SubResource( 20 ), SubResource( 19 ), SubResource( 18 ), SubResource( 17 ), SubResource( 16 ), SubResource( 15 ), SubResource( 14 ) ],
+"frames": [ SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 16 ), SubResource( 17 ), SubResource( 18 ), SubResource( 19 ), SubResource( 20 ) ],
 "loop": true,
 "name": "attack",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 28 ), SubResource( 29 ), SubResource( 30 ), SubResource( 31 ), SubResource( 32 ), SubResource( 33 ), SubResource( 32 ), SubResource( 29 ) ],
+"frames": [ SubResource( 21 ), SubResource( 22 ), SubResource( 23 ), SubResource( 24 ), SubResource( 25 ), SubResource( 26 ), SubResource( 27 ), SubResource( 28 ) ],
 "loop": true,
 "name": "idle",
 "speed": 5.0
@@ -120,31 +92,33 @@ radius = 4.0
 height = 10.0
 
 [sub_resource type="CapsuleShape2D" id=9]
-radius = 4.0
-height = 10.0
+radius = 9.0
+height = 6.0
 
 [sub_resource type="CircleShape2D" id=10]
 radius = 55.0364
 
 [sub_resource type="CapsuleShape2D" id=11]
-radius = 6.0
-height = 4.0
+radius = 8.99999
+height = 8.0001
 
 [sub_resource type="CapsuleShape2D" id=12]
 radius = 4.0
 height = 6.0
 
-[node name="SpiderMutant" type="KinematicBody2D"]
+[node name="ToxicCrabBeetle" type="KinematicBody2D"]
 collision_layer = 16
 script = ExtResource( 1 )
+MAX_SPEED = 55
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( 0, 10 )
+scale = Vector2( 0.5, 0.5 )
 frames = SubResource( 7 )
-animation = "attack"
-frame = 2
+animation = "idle"
 playing = true
 offset = Vector2( 1, -15 )
+flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
@@ -154,10 +128,12 @@ shape = SubResource( 8 )
 
 [node name="Hurtbox" parent="." instance=ExtResource( 2 )]
 visible = false
+position = Vector2( -10, 0 )
+rotation = 1.5708
 collision_layer = 72
 
 [node name="CollisionShape2D" parent="Hurtbox" index="0"]
-position = Vector2( 0, -7 )
+position = Vector2( 2, -8 )
 shape = SubResource( 9 )
 
 [node name="Stats" parent="." instance=ExtResource( 4 )]
@@ -173,7 +149,7 @@ visible = false
 collision_mask = 4
 
 [node name="CollisionShape2D" parent="Hitbox" index="0"]
-position = Vector2( 0, -5 )
+position = Vector2( -2, 2 )
 rotation = 1.5708
 shape = SubResource( 11 )
 
@@ -190,9 +166,20 @@ visible = false
 
 [node name="Timer" type="Timer" parent="."]
 
+[node name="Light2D" type="Light2D" parent="."]
+position = Vector2( 1, 1 )
+scale = Vector2( 1.5, 1.48438 )
+texture = ExtResource( 8 )
+color = Color( 0.0666667, 0.372549, 0.0509804, 1 )
+
+[node name="Timer2" type="Timer" parent="."]
+wait_time = 1.5
+autostart = true
+
 [connection signal="area_entered" from="Hurtbox" to="." method="_on_Hurtbox_area_entered"]
 [connection signal="no_health" from="Stats" to="." method="_on_Stats_no_health"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[connection signal="timeout" from="Timer2" to="." method="_on_Timer2_timeout"]
 
 [editable path="Hurtbox"]
 [editable path="PlayerDetectionZone"]
