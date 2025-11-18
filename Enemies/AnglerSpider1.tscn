@@ -1,4 +1,4 @@
-[gd_scene load_steps=153 format=2]
+[gd_scene load_steps=147 format=2]
 
 [ext_resource path="res://Enemies/AnglerSpider1.gd" type="Script" id=1]
 [ext_resource path="res://Hitboxes and Hurtboxes/Hurtbox.tscn" type="PackedScene" id=2]
@@ -11,7 +11,6 @@
 [ext_resource path="res://Enemies/WanderController.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Enemies/Scorpion_w_no_tail.png" type="Texture" id=10]
 [ext_resource path="res://Enemies/heart.png" type="Texture" id=11]
-[ext_resource path="res://Enemies/Zombie Arm.png" type="Texture" id=12]
 [ext_resource path="res://Effects/NEw pack blood/green_blood.png" type="Texture" id=13]
 [ext_resource path="res://Effects/Free Smoke Fx Pixel Green.png" type="Texture" id=14]
 [ext_resource path="res://Enemies/Bloody_skull32.png" type="Texture" id=15]
@@ -28,7 +27,7 @@ radius = 45.3542
 
 [sub_resource type="CapsuleShape2D" id=11]
 radius = 18.9999
-height = 44.0
+height = 32.0002
 
 [sub_resource type="CapsuleShape2D" id=12]
 radius = 14.9999
@@ -402,30 +401,6 @@ animations = [ {
 
 [sub_resource type="CapsuleShape2D" id=76]
 
-[sub_resource type="AtlasTexture" id=41]
-atlas = ExtResource( 12 )
-region = Rect2( 256, 0, 128, 128 )
-
-[sub_resource type="AtlasTexture" id=42]
-atlas = ExtResource( 12 )
-region = Rect2( 384, 0, 128, 128 )
-
-[sub_resource type="AtlasTexture" id=43]
-atlas = ExtResource( 12 )
-region = Rect2( 512, 0, 128, 128 )
-
-[sub_resource type="AtlasTexture" id=44]
-atlas = ExtResource( 12 )
-region = Rect2( 640, 0, 128, 128 )
-
-[sub_resource type="SpriteFrames" id=45]
-animations = [ {
-"frames": [ SubResource( 41 ), SubResource( 42 ), SubResource( 43 ), SubResource( 44 ), SubResource( 43 ), SubResource( 42 ) ],
-"loop": true,
-"name": "default",
-"speed": 5.0
-} ]
-
 [sub_resource type="AtlasTexture" id=109]
 atlas = ExtResource( 14 )
 region = Rect2( 0, 512, 64, 64 )
@@ -601,7 +576,7 @@ animations = [ {
 [node name="AnglerSpider1" type="KinematicBody2D"]
 collision_layer = 16
 script = ExtResource( 1 )
-MAX_SPEED = 20
+MAX_SPEED = 35
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0, -15 )
@@ -616,7 +591,6 @@ shape = SubResource( 8 )
 shape = SubResource( 10 )
 
 [node name="Hitbox" parent="." instance=ExtResource( 5 )]
-visible = false
 collision_mask = 4
 damage = 3
 
@@ -640,7 +614,6 @@ visible = false
 position = Vector2( -14, -46 )
 scale = Vector2( 1.2, 1.2 )
 frames = SubResource( 30 )
-frame = 1
 playing = true
 flip_h = true
 
@@ -649,7 +622,7 @@ position = Vector2( 30, -8 )
 rotation = 0.0872668
 scale = Vector2( 0.433333, 0.433333 )
 frames = SubResource( 108 )
-frame = 15
+frame = 5
 playing = true
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
@@ -657,7 +630,6 @@ position = Vector2( 5, -12 )
 scale = Vector2( 1.2, 1.2 )
 frames = SubResource( 7 )
 animation = "attack"
-frame = 2
 playing = true
 offset = Vector2( 1, -15 )
 flip_h = true
@@ -666,7 +638,7 @@ flip_h = true
 position = Vector2( 25, -60 )
 scale = Vector2( 0.45, 0.45 )
 frames = SubResource( 39 )
-frame = 1
+frame = 6
 playing = true
 flip_h = true
 
@@ -691,15 +663,6 @@ rotation = 6.10865
 scale = Vector2( 0.65, 0.65 )
 texture = ExtResource( 15 )
 
-[node name="Arm" type="AnimatedSprite" parent="."]
-modulate = Color( 0, 0, 0, 0 )
-position = Vector2( 10, -24 )
-rotation = 6.10865
-scale = Vector2( 0.9, 0.9 )
-frames = SubResource( 45 )
-frame = 3
-playing = true
-
 [node name="SmokeReveal" type="AnimatedSprite" parent="."]
 visible = false
 position = Vector2( 34, -33 )
@@ -715,7 +678,7 @@ self_modulate = Color( 0.905882, 0.396078, 0.396078, 1 )
 position = Vector2( -2, -20 )
 scale = Vector2( 0.2, 0.2 )
 frames = SubResource( 154 )
-frame = 4
+frame = 9
 playing = true
 
 [node name="Heart" type="AnimatedSprite" parent="."]
@@ -723,7 +686,6 @@ modulate = Color( 1, 0.686275, 0.686275, 1 )
 position = Vector2( -1, -19 )
 rotation = 5.75959
 frames = SubResource( 128 )
-frame = 3
 playing = true
 __meta__ = {
 "_edit_group_": true

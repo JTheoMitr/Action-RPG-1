@@ -37,7 +37,6 @@ onready var light = $Light2D
 onready var tail = $AnimatedSprite2
 onready var decoyBug = $AnimatedSprite3
 onready var skull = $Sprite
-onready var arm = $Arm
 onready var green_blood = $AnimatedSprite2/GreenBlood
 onready var smoke_reveal = $SmokeReveal
 onready var heart = $Heart
@@ -142,7 +141,7 @@ func accelerate_towards_point(point, delta):
 	sprite.flip_h = velocity.x > 0
 	tail.flip_h = velocity.x > 0
 	skull.flip_h = velocity.x < 0
-	arm.flip_h = velocity.x < 0
+	
 	
 	
 	
@@ -191,7 +190,7 @@ func _on_Stats_no_health():
 	skull.hide()
 	heart.hide()
 	light.hide()
-	arm.hide()
+	green_blood.hide()
 	hitbox.set_deferred("disabled", true)
 	
 	var squishSound = SquishSound2.instance()
