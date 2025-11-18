@@ -1,0 +1,23 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/ESM_One_Shot_Vocal_Ancient_Dragon_Monster_Death_4_Dinosaur_Creature_Pain_Screech_Scream_Roar_Groan.wav-cae16119b6eb576f98e260f14b9dcab6.sample"
+
+[deps]
+
+source_file="res://Music and Sounds/ESM_One_Shot_Vocal_Ancient_Dragon_Monster_Death_4_Dinosaur_Creature_Pain_Screech_Scream_Roar_Groan.wav"
+dest_files=[ "res://.import/ESM_One_Shot_Vocal_Ancient_Dragon_Monster_Death_4_Dinosaur_Creature_Pain_Screech_Scream_Roar_Groan.wav-cae16119b6eb576f98e260f14b9dcab6.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

@@ -1,9 +1,10 @@
 extends KinematicBody2D
 
 const EnemyDeathEffect = preload("res://Effects/EnemyDeathEffect.tscn")
-const HopSound = preload("res://Music and Sounds/SpiderHopLow.tscn")
-const SlimeLaser = preload("res://Enemies/SlimeLaserRightStraight.tscn")
-const SlimeLaserTwo = preload("res://Enemies/SlimeLaserLeftStraight.tscn")
+const HopSound = preload("res://Music and Sounds/AnglerScorpionSound1.tscn")
+const SquishSound = preload("res://Music and Sounds/SquishSound.tscn")
+const SquishSound2 = preload("res://Music and Sounds/SquishSound2.tscn")
+const WhooshSound = preload("res://Music and Sounds/WhooshSound1.tscn")
 const XpOrb = preload("res://Enemies/XpOrb.tscn")
 const Ammo = preload("res://World/Ammo.tscn")
 
@@ -27,27 +28,53 @@ var state = CHASE
 var dir := 1.0
 onready var sprite = $AnimatedSprite
 onready var stats = $Stats
+onready var hitbox = $Hitbox/CollisionShape2D
 onready var playerDetectionZone = $PlayerDetectionZone
-onready var hurtbox = $Hurtbox
+onready var hurtbox = $Heart/Hurtbox
 onready var softCollision = $SoftCollision
 onready var wanderController = $WanderController
-onready var timer = $Timer
 onready var light = $Light2D
 onready var tail = $AnimatedSprite2
 onready var decoyBug = $AnimatedSprite3
+onready var skull = $Sprite
+onready var arm = $Arm
+onready var green_blood = $AnimatedSprite2/GreenBlood
+onready var smoke_reveal = $SmokeReveal
+onready var heart = $Heart
+onready var blood_explosion = $Bloodsplosion
 
 var lightingUp
 var lightingDown
+var awoken
 func _ready():
 	state = IDLE
 	lightingDown = false
 	lightingUp = true
+	decoyBug.play("default")
+	awoken = false
+	green_blood.hide()
+	tail.hide()
+	sprite.hide()
+	skull.hide()
+	heart.hide()
+	smoke_reveal.hide()
+	smoke_reveal.frame = 0
+	blood_explosion.hide()
+	blood_explosion.frame = 0
+	hitbox.disabled = false
 	
 
 
 func _physics_process(delta):
 	knockback = knockback.move_toward(Vector2.ZERO, FRICTION * delta)
 	knockback = move_and_slide(knockback)
+	
+	if lightingDown:
+		skull.position.y = -12.0
+	if lightingUp:
+		skull.position.y = -13.0
+		
+		
 	
 	light.energy = clamp(light.energy + dir * 0.8 * delta, 0.4, 1.2)
 	if is_equal_approx(light.energy, 1.2):
@@ -56,13 +83,23 @@ func _physics_process(delta):
 		dir = 1.0
 		
 	if tail.flip_h:
-		tail.position.x = 37.0
-		decoyBug.position.x = 123.0
-		light.position.x = 126.5
+		tail.position.x = -14.0
+		decoyBug.position.x = 25.0
+		light.position.x = 23.0
+		skull.position.x = 18.0
+		skull.rotation_degrees = 350
+		heart.position.x = -1.0
+		heart.rotation_degrees = 330
+		green_blood.position.x = 30.0
 	else:
-		tail.position.x = -42.0
-		decoyBug.position.x = -123.0
-		light.position.x = -126.5
+		tail.position.x = 22.0
+		decoyBug.position.x = -25.0
+		light.position.x = -23.0
+		skull.position.x = -3
+		skull.rotation_degrees = 10
+		heart.position.x = 12
+		heart.rotation_degrees = 30
+		green_blood.position.x = -30.0
 		
 	
 	
@@ -72,7 +109,8 @@ func _physics_process(delta):
 			velocity = velocity.move_toward(Vector2.ZERO, FRICTION * delta)
 			seek_player()
 			if wanderController.get_time_left() == 0:
-				update_wander_state()
+				if awoken:
+					update_wander_state()
 				
 		WANDER:
 			seek_player()
@@ -103,21 +141,27 @@ func accelerate_towards_point(point, delta):
 	velocity = velocity.move_toward(direction * MAX_SPEED, ACCELERATION * delta)
 	sprite.flip_h = velocity.x > 0
 	tail.flip_h = velocity.x > 0
+	skull.flip_h = velocity.x < 0
+	arm.flip_h = velocity.x < 0
 	
 	
 	
 func seek_player():
+	sprite.play("attack")
 	if playerDetectionZone.can_see_player():
+		tail.show()
+		skull.show()
+		heart.show()
+		sprite.show()
 		var hopSound = HopSound.instance()
 		get_parent().add_child(hopSound)
 		hopSound.play(0.0)
 		print_debug("timer start")
-		sprite.play("attack")
-		timer.start(0.0)
+		#timer.start(0.0)
 		state = CHASE
 	else:
-		timer.stop()
-		sprite.play("idle")
+		pass
+		
 
 func update_wander_state():
 	state = pick_random_state([IDLE, WANDER])
@@ -138,13 +182,23 @@ func _on_Hurtbox_area_entered(area):
 		knockback = area.knockback_vector * 130
 	hurtbox.create_hit_effect()
 	
-	playerDetectionZone.scale.x = (playerDetectionZone.scale.x * 3)
-	playerDetectionZone.scale.y = (playerDetectionZone.scale.y * 3)
-	# state = WANDER
+
 
 	
 func _on_Stats_no_health():
-	queue_free()
+	sprite.hide()
+	tail.hide()
+	skull.hide()
+	heart.hide()
+	light.hide()
+	arm.hide()
+	hitbox.set_deferred("disabled", true)
+	
+	var squishSound = SquishSound2.instance()
+	get_parent().add_child(squishSound)
+	squishSound.play(0.0)
+	blood_explosion.show()
+	blood_explosion.play()
 	var enemyDeathEffect = EnemyDeathEffect.instance()
 	get_parent().add_child(enemyDeathEffect)
 	enemyDeathEffect.global_position = global_position
@@ -168,18 +222,35 @@ func _on_Stats_no_health():
 	
 
 
-func _on_Timer_timeout():
-	# print_debug("boom")
-	var laserTwo = SlimeLaserTwo.instance()
-	var laser = SlimeLaser.instance()
-	get_parent().call_deferred("add_child", laser)
-	laser.global_position = global_position
-	get_parent().call_deferred("add_child", laserTwo)
-	laserTwo.global_position = global_position
 
 
-func _on_Timer2_timeout():
-	if lightingDown:
-		lightingUp
-	else:
-		lightingDown
+
+func _on_BugArea_area_entered(area):
+	if awoken == false:
+		smoke_reveal.show()
+		smoke_reveal.play()
+		var squishSound = SquishSound.instance()
+		get_parent().add_child(squishSound)
+		squishSound.play(0.0)
+		var whooshSound = WhooshSound.instance()
+		get_parent().add_child(whooshSound)
+		whooshSound.play(0.0)
+		playerDetectionZone.scale.x += 3.0
+		playerDetectionZone.scale.y += 3.0
+		awoken = true
+		decoyBug.play("bleed")
+		green_blood.show()
+		tail.show()
+		sprite.show()
+		skull.show()
+		heart.show()
+	
+	#play an effect and sound
+
+
+func _on_SmokeReveal_animation_finished():
+	smoke_reveal.queue_free()
+
+
+func _on_Bloodsplosion_animation_finished():
+	queue_free()

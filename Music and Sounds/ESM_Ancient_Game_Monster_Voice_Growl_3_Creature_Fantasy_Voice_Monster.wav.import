@@ -1,0 +1,23 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/ESM_Ancient_Game_Monster_Voice_Growl_3_Creature_Fantasy_Voice_Monster.wav-bb13cb6205ae378a0f70afd3f56d8684.sample"
+
+[deps]
+
+source_file="res://Music and Sounds/ESM_Ancient_Game_Monster_Voice_Growl_3_Creature_Fantasy_Voice_Monster.wav"
+dest_files=[ "res://.import/ESM_Ancient_Game_Monster_Voice_Growl_3_Creature_Fantasy_Voice_Monster.wav-bb13cb6205ae378a0f70afd3f56d8684.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

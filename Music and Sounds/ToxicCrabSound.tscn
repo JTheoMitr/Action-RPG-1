@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Music and Sounds/FOODCook_Culinary Food Cook Preparation Mixing Almonds Clatter 01_ESM_ASMR.wav" type="AudioStream" id=1]
+
+[node name="ToxicCrabSound" type="AudioStreamPlayer"]
+stream = ExtResource( 1 )
+volume_db = -3.0
+pitch_scale = 0.95

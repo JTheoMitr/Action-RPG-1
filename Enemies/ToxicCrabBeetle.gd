@@ -1,7 +1,7 @@
 extends KinematicBody2D
 
 const EnemyDeathEffect = preload("res://Effects/EnemyDeathEffect.tscn")
-const HopSound = preload("res://Music and Sounds/SpiderHopLow.tscn")
+const HopSound = preload("res://Music and Sounds/ToxicCrabSound.tscn")
 const SlimeLaser = preload("res://Enemies/SlimeLaserRightStraight.tscn")
 const SlimeLaserTwo = preload("res://Enemies/SlimeLaserLeftStraight.tscn")
 const XpOrb = preload("res://Enemies/XpOrb.tscn")
@@ -33,12 +33,10 @@ onready var wanderController = $WanderController
 onready var timer = $Timer
 onready var light = $Light2D
 
-var lightingUp
-var lightingDown
+
 func _ready():
 	state = IDLE
-	lightingDown = false
-	lightingUp = true
+	
 	
 
 
@@ -90,17 +88,17 @@ func accelerate_towards_point(point, delta):
 	sprite.flip_h = velocity.x > 0
 	
 func seek_player():
+	sprite.play("attack")
 	if playerDetectionZone.can_see_player():
 		var hopSound = HopSound.instance()
 		get_parent().add_child(hopSound)
 		hopSound.play(0.0)
 		print_debug("timer start")
-		sprite.play("attack")
-		timer.start(0.0)
+		#timer.start(0.0)
 		state = CHASE
 	else:
 		timer.stop()
-		sprite.play("idle")
+
 
 func update_wander_state():
 	state = pick_random_state([IDLE, WANDER])
@@ -161,8 +159,3 @@ func _on_Timer_timeout():
 	laserTwo.global_position = global_position
 
 
-func _on_Timer2_timeout():
-	if lightingDown:
-		lightingUp
-	else:
-		lightingDown

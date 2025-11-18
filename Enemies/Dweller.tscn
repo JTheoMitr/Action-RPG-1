@@ -190,7 +190,7 @@ offset = Vector2( 5, 1 )
 scale = Vector2( 1.1, 1.5 )
 frames = SubResource( 7 )
 animation = "idle"
-frame = 9
+frame = 7
 playing = true
 offset = Vector2( 7, -15 )
 
@@ -208,7 +208,7 @@ position = Vector2( 7, -19 )
 shape = SubResource( 9 )
 
 [node name="Stats" parent="." instance=ExtResource( 4 )]
-max_health = 3
+max_health = 2
 
 [node name="PlayerDetectionZone" parent="." instance=ExtResource( 6 )]
 visible = false

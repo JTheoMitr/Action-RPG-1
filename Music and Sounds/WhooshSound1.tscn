@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://AppleSound.gd" type="Script" id=1]
+[ext_resource path="res://Music and Sounds/09-Cinematic-Whoosh.wav" type="AudioStream" id=2]
+
+[node name="WhooshSound" type="AudioStreamPlayer"]
+stream = ExtResource( 2 )
+volume_db = 1.0
+pitch_scale = 0.9
+autoplay = true
+script = ExtResource( 1 )
