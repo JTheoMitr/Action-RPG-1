@@ -191,6 +191,7 @@ func _on_Stats_no_health():
 	heart.hide()
 	light.hide()
 	green_blood.hide()
+	decoyBug.hide()
 	hitbox.set_deferred("disabled", true)
 	
 	var squishSound = SquishSound2.instance()

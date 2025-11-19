@@ -190,7 +190,7 @@ offset = Vector2( 5, 1 )
 scale = Vector2( 1.1, 1.5 )
 frames = SubResource( 7 )
 animation = "idle"
-frame = 5
+frame = 6
 playing = true
 offset = Vector2( 7, -15 )
 
@@ -236,6 +236,7 @@ shape = SubResource( 12 )
 visible = false
 
 [node name="TorchArea" type="Area2D" parent="."]
+visible = false
 collision_layer = 0
 collision_mask = 2
 

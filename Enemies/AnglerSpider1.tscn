@@ -614,6 +614,7 @@ visible = false
 position = Vector2( -14, -46 )
 scale = Vector2( 1.2, 1.2 )
 frames = SubResource( 30 )
+frame = 1
 playing = true
 flip_h = true
 
@@ -622,7 +623,7 @@ position = Vector2( 30, -8 )
 rotation = 0.0872668
 scale = Vector2( 0.433333, 0.433333 )
 frames = SubResource( 108 )
-frame = 5
+frame = 13
 playing = true
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
@@ -638,7 +639,7 @@ flip_h = true
 position = Vector2( 25, -60 )
 scale = Vector2( 0.45, 0.45 )
 frames = SubResource( 39 )
-frame = 6
+frame = 2
 playing = true
 flip_h = true
 
@@ -678,7 +679,7 @@ self_modulate = Color( 0.905882, 0.396078, 0.396078, 1 )
 position = Vector2( -2, -20 )
 scale = Vector2( 0.2, 0.2 )
 frames = SubResource( 154 )
-frame = 9
+frame = 7
 playing = true
 
 [node name="Heart" type="AnimatedSprite" parent="."]
