@@ -1,4 +1,4 @@
-[gd_scene load_steps=271 format=2]
+[gd_scene load_steps=272 format=2]
 
 [ext_resource path="res://World/CliffTileset cave.png" type="Texture" id=1]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=2]
@@ -167,6 +167,7 @@
 [ext_resource path="res://Enemies/ToxicCrabBeetle.tscn" type="PackedScene" id=165]
 [ext_resource path="res://Enemies/AnglerSpider1.tscn" type="PackedScene" id=166]
 [ext_resource path="res://World/soldier_corpse_1.tscn" type="PackedScene" id=167]
+[ext_resource path="res://World/BloodStainWall1.tscn" type="PackedScene" id=168]
 
 [sub_resource type="TileSet" id=1]
 0/name = "DirtTileset.png 0"
@@ -2774,235 +2775,234 @@ position = Vector2( -1024, -102 )
 
 [node name="SparkleOne" parent="YSort/Vines n Bush" instance=ExtResource( 56 )]
 position = Vector2( -114, -3 )
-frame = 3
+frame = 0
 
 [node name="SparkleOne2" parent="YSort/Vines n Bush" instance=ExtResource( 56 )]
 position = Vector2( -119, 5 )
 rotation = 1.5708
+frame = 6
 
 [node name="SparkleOne8" parent="YSort/Vines n Bush" instance=ExtResource( 56 )]
 position = Vector2( 350, 18 )
 rotation = 1.5708
-frame = 1
+frame = 5
 
 [node name="SparkleOne10" parent="YSort/Vines n Bush" instance=ExtResource( 56 )]
 position = Vector2( 350, 24 )
 rotation = 1.5708
-frame = 1
+frame = 5
 
 [node name="SparkleOne11" parent="YSort/Vines n Bush" instance=ExtResource( 56 )]
 position = Vector2( -264, 259 )
 rotation = 1.5708
-frame = 0
+frame = 4
 
 [node name="SparkleOne12" parent="YSort/Vines n Bush" instance=ExtResource( 56 )]
 position = Vector2( -251, 252 )
-frame = 0
+frame = 4
 
 [node name="SparkleOne13" parent="YSort/Vines n Bush" instance=ExtResource( 56 )]
 position = Vector2( -271, 253 )
-frame = 6
+frame = 3
 
 [node name="SparkleOne14" parent="YSort/Vines n Bush" instance=ExtResource( 56 )]
 position = Vector2( -529, 443 )
-frame = 6
+frame = 3
 
 [node name="SparkleOne15" parent="YSort/Vines n Bush" instance=ExtResource( 56 )]
 position = Vector2( -524, 443 )
 rotation = 3.14159
-frame = 5
 
 [node name="SparkleOne18" parent="YSort/Vines n Bush" instance=ExtResource( 56 )]
 position = Vector2( -660, -132 )
 rotation = 3.14159
-frame = 5
 
 [node name="SparkleOne19" parent="YSort/Vines n Bush" instance=ExtResource( 56 )]
 position = Vector2( -665, -125 )
 rotation = 4.71239
-frame = 0
+frame = 4
 
 [node name="SparkleOne16" parent="YSort/Vines n Bush" instance=ExtResource( 56 )]
 position = Vector2( -510, 451 )
 rotation = 1.5708
-frame = 0
+frame = 4
 
 [node name="SparkleOne17" parent="YSort/Vines n Bush" instance=ExtResource( 56 )]
 position = Vector2( -675, -129 )
 rotation = 1.5708
-frame = 0
+frame = 4
 
 [node name="SparkleOne20" parent="YSort/Vines n Bush" instance=ExtResource( 56 )]
 position = Vector2( -871, 113 )
 rotation = 1.5708
-frame = 3
+frame = 0
 
 [node name="SparkleOne21" parent="YSort/Vines n Bush" instance=ExtResource( 56 )]
 position = Vector2( -877, 124 )
 rotation = 3.14159
-frame = 3
+frame = 0
 
 [node name="SparkleOne23" parent="YSort/Vines n Bush" instance=ExtResource( 56 )]
 position = Vector2( -1291, 239 )
 rotation = 3.14159
+frame = 6
 
 [node name="SparkleOne24" parent="YSort/Vines n Bush" instance=ExtResource( 56 )]
 position = Vector2( -1285, 257 )
 rotation = 1.5708
+frame = 6
 
 [node name="SparkleOne25" parent="YSort/Vines n Bush" instance=ExtResource( 56 )]
 position = Vector2( -1285, 235 )
 rotation = 4.71239
-frame = 1
+frame = 5
 
 [node name="SparkleOne26" parent="YSort/Vines n Bush" instance=ExtResource( 56 )]
 position = Vector2( -1319, 1 )
 rotation = 4.71239
-frame = 0
+frame = 4
 
 [node name="SparkleOne27" parent="YSort/Vines n Bush" instance=ExtResource( 56 )]
 position = Vector2( -1320, -7 )
-frame = 0
+frame = 4
 
 [node name="SparkleOne28" parent="YSort/Vines n Bush" instance=ExtResource( 56 )]
 position = Vector2( -1309, -7 )
 rotation = 3.14159
-frame = 0
+frame = 4
 
 [node name="SparkleOne29" parent="YSort/Vines n Bush" instance=ExtResource( 56 )]
 position = Vector2( -1157, -207 )
 rotation = 1.5708
-frame = 0
+frame = 4
 
 [node name="SparkleOne36" parent="YSort/Vines n Bush" instance=ExtResource( 56 )]
 position = Vector2( -671, -289 )
 rotation = 1.5708
-frame = 6
+frame = 3
 
 [node name="SparkleOne34" parent="YSort/Vines n Bush" instance=ExtResource( 56 )]
 position = Vector2( -981, -418 )
 rotation = 1.5708
-frame = 6
+frame = 3
 
 [node name="SparkleOne32" parent="YSort/Vines n Bush" instance=ExtResource( 56 )]
 position = Vector2( -1001, -412 )
 rotation = 1.5708
-frame = 6
+frame = 3
 
 [node name="SparkleOne30" parent="YSort/Vines n Bush" instance=ExtResource( 56 )]
 position = Vector2( -1137, -193 )
 rotation = 4.71239
-frame = 6
+frame = 3
 
 [node name="SparkleOne37" parent="YSort/Vines n Bush" instance=ExtResource( 56 )]
 position = Vector2( -676, -306 )
 rotation = 4.71239
-frame = 6
+frame = 3
 
 [node name="SparkleOne31" parent="YSort/Vines n Bush" instance=ExtResource( 56 )]
 position = Vector2( -1145, -198 )
-frame = 6
+frame = 3
 
 [node name="SparkleOne35" parent="YSort/Vines n Bush" instance=ExtResource( 56 )]
 position = Vector2( -657, -293 )
-frame = 5
 
 [node name="SparkleOne33" parent="YSort/Vines n Bush" instance=ExtResource( 56 )]
 position = Vector2( -1009, -420 )
-frame = 5
 
 [node name="SparkleOne22" parent="YSort/Vines n Bush" instance=ExtResource( 56 )]
 position = Vector2( -863, 124 )
 rotation = 4.71239
+frame = 6
 
 [node name="SparkleOne3" parent="YSort/Vines n Bush" instance=ExtResource( 56 )]
 position = Vector2( -143, -9 )
 rotation = 1.5708
+frame = 6
 
 [node name="SparkleOne4" parent="YSort/Vines n Bush" instance=ExtResource( 56 )]
 position = Vector2( -125, -7 )
 rotation = 3.14159
-frame = 1
+frame = 5
 
 [node name="SparkleOne47" parent="YSort/Vines n Bush" instance=ExtResource( 56 )]
 position = Vector2( 335, -228 )
 rotation = 3.14159
-frame = 0
+frame = 4
 
 [node name="SparkleOne48" parent="YSort/Vines n Bush" instance=ExtResource( 56 )]
 position = Vector2( 337, -219 )
 rotation = 1.5708
-frame = 0
+frame = 4
 
 [node name="SparkleOne49" parent="YSort/Vines n Bush" instance=ExtResource( 56 )]
 position = Vector2( 322, -229 )
-frame = 6
+frame = 3
 
 [node name="SparkleOne38" parent="YSort/Vines n Bush" instance=ExtResource( 56 )]
 position = Vector2( 726, -292 )
 rotation = 3.14159
-frame = 1
+frame = 5
 
 [node name="SparkleOne39" parent="YSort/Vines n Bush" instance=ExtResource( 56 )]
 position = Vector2( 715, -284 )
 rotation = 1.5708
-frame = 0
+frame = 4
 
 [node name="SparkleOne40" parent="YSort/Vines n Bush" instance=ExtResource( 56 )]
 position = Vector2( 713, -292 )
 rotation = 4.71239
-frame = 0
+frame = 4
 
 [node name="SparkleOne44" parent="YSort/Vines n Bush" instance=ExtResource( 56 )]
 position = Vector2( -340, -503 )
 rotation = 4.71239
-frame = 6
+frame = 3
 
 [node name="SparkleOne45" parent="YSort/Vines n Bush" instance=ExtResource( 56 )]
 position = Vector2( -333, -513 )
 rotation = 3.14159
-frame = 5
 
 [node name="SparkleOne46" parent="YSort/Vines n Bush" instance=ExtResource( 56 )]
 position = Vector2( -357, -521 )
-frame = 4
+frame = 1
 
 [node name="SparkleOne41" parent="YSort/Vines n Bush" instance=ExtResource( 56 )]
 position = Vector2( 1150, -341 )
 rotation = 4.71239
 scale = Vector2( 0.729201, 1 )
-frame = 6
+frame = 3
 
 [node name="SparkleOne42" parent="YSort/Vines n Bush" instance=ExtResource( 56 )]
 position = Vector2( 1150, -341 )
 rotation = 1.5708
 scale = Vector2( 0.729201, 1 )
-frame = 6
+frame = 3
 
 [node name="SparkleOne43" parent="YSort/Vines n Bush" instance=ExtResource( 56 )]
 position = Vector2( 1153, -341 )
 rotation = 1.5708
 scale = Vector2( 0.729201, 1 )
-frame = 5
 
 [node name="SparkleOne6" parent="YSort/Vines n Bush" instance=ExtResource( 56 )]
 position = Vector2( 343, 23 )
 rotation = 3.14159
-frame = 1
+frame = 5
 
 [node name="SparkleOne5" parent="YSort/Vines n Bush" instance=ExtResource( 56 )]
 position = Vector2( -142, -6 )
 rotation = 3.14159
-frame = 1
+frame = 5
 
 [node name="SparkleOne7" parent="YSort/Vines n Bush" instance=ExtResource( 56 )]
 position = Vector2( 340, 27 )
 rotation = 3.14159
-frame = 0
+frame = 4
 
 [node name="SparkleOne9" parent="YSort/Vines n Bush" instance=ExtResource( 56 )]
 position = Vector2( 338, 26 )
-frame = 6
+frame = 3
 
 [node name="WallCracks" type="YSort" parent="YSort"]
 
@@ -3059,2092 +3059,2084 @@ position = Vector2( 1267, -320 )
 [node name="SkyCloud" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -124, 55 )
 scale = Vector2( 2.625, 0.327419 )
-frame = 0
+frame = 1
 
 [node name="SkyCloud39" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( 272, -32 )
 scale = Vector2( 2.625, 0.327419 )
+frame = 0
 
 [node name="SkyCloud40" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( 53, -70 )
 scale = Vector2( 2.625, 0.327419 )
+frame = 0
 
 [node name="SkyCloud2" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -272, 148 )
 scale = Vector2( 2.625, 0.327419 )
+frame = 0
 
 [node name="SkyCloud3" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -119, 269 )
 scale = Vector2( 2.625, 0.327419 )
+frame = 0
 
 [node name="SkyCloud106" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -36, 325 )
 scale = Vector2( 2.625, 0.327419 )
+frame = 0
 
 [node name="SkyCloud107" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -125.75, 213.963 )
 scale = Vector2( 2.2125, 0.260482 )
-frame = 2
 
 [node name="SkyCloud108" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -206, 180 )
 scale = Vector2( 2.2125, 0.260482 )
-frame = 2
 
 [node name="SkyCloud72" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( 602.187, 817.381 )
 scale = Vector2( 3.9925, 0.538708 )
+frame = 0
 
 [node name="SkyCloud241" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( 808, 808 )
 scale = Vector2( 3.9925, 0.538708 )
-frame = 2
 
 [node name="SkyCloud236" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( 912, 1240 )
 scale = Vector2( 3.9925, 0.538708 )
-frame = 2
 
 [node name="SkyCloud94" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( 663, 665 )
 scale = Vector2( 3.9925, 0.538708 )
-frame = 2
 
 [node name="SkyCloud242" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( 784, 496 )
 scale = Vector2( 3.9925, 0.538708 )
-frame = 1
+frame = 2
 
 [node name="SkyCloud243" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( 696, 440 )
 scale = Vector2( 3.9925, 0.538708 )
-frame = 0
+frame = 1
 
 [node name="SkyCloud244" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( 1048, 560 )
 scale = Vector2( 3.9925, 0.538708 )
+frame = 0
 
 [node name="SkyCloud245" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( 952, 488 )
 scale = Vector2( 3.9925, 0.538708 )
+frame = 0
 
 [node name="SkyCloud246" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( 1064, 408 )
 scale = Vector2( 3.9925, 0.538708 )
-frame = 2
 
 [node name="SkyCloud247" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( 960, 280 )
 scale = Vector2( 3.9925, 0.538708 )
-frame = 2
 
 [node name="SkyCloud95" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( 405, 737 )
 scale = Vector2( 3.9925, 0.538708 )
-frame = 2
 
 [node name="SkyCloud73" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( 838, 861 )
 scale = Vector2( 3.9925, 0.538708 )
-frame = 2
 
 [node name="SkyCloud100" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( 1250, 755 )
 scale = Vector2( 3.9925, 0.538708 )
-frame = 2
 
 [node name="SkyCloud74" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( 499, 955 )
 scale = Vector2( 3.9925, 0.538708 )
-frame = 1
+frame = 2
 
 [node name="SkyCloud93" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( 397, 992 )
 scale = Vector2( 3.9925, 0.538708 )
-frame = 1
+frame = 2
 
 [node name="SkyCloud75" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( 936, 988 )
 scale = Vector2( 3.9925, 0.538708 )
-frame = 1
+frame = 2
 
 [node name="SkyCloud76" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( 812, 1150 )
 scale = Vector2( 3.9925, 0.538708 )
-frame = 0
+frame = 1
 
 [node name="SkyCloud77" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( 546, 1063 )
 scale = Vector2( 3.9925, 0.538708 )
-frame = 0
+frame = 1
 
 [node name="SkyCloud78" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( 835, 1040 )
 scale = Vector2( 3.9925, 0.538708 )
+frame = 0
 
 [node name="SkyCloud237" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( 704, 1264 )
 scale = Vector2( 3.9925, 0.538708 )
-frame = 2
 
 [node name="SkyCloud238" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( 472, 1272 )
 scale = Vector2( 3.9925, 0.538708 )
-frame = 1
+frame = 2
 
 [node name="SkyCloud239" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( 736, 1208 )
 scale = Vector2( 3.9925, 0.538708 )
-frame = 0
+frame = 1
 
 [node name="SkyCloud79" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( 527, 1194 )
 scale = Vector2( 3.9925, 0.538708 )
-frame = 2
 
 [node name="SkyCloud80" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( 921, 785 )
 scale = Vector2( 3.9925, 0.538708 )
-frame = 2
 
 [node name="SkyCloud81" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( 696, 928 )
 scale = Vector2( 3.9925, 0.538708 )
-frame = 1
+frame = 2
 
 [node name="SkyCloud240" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( 704, 1032 )
 scale = Vector2( 3.9925, 0.538708 )
-frame = 0
+frame = 1
 
 [node name="SkyCloud82" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( 489, 775 )
 scale = Vector2( 3.9925, 0.538708 )
-frame = 0
+frame = 1
 
 [node name="SkyCloud83" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( 511, 788 )
 scale = Vector2( 3.35339, 0.3265 )
-frame = 0
+frame = 1
 
 [node name="SkyCloud84" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( 798, 900 )
 scale = Vector2( 3.35339, 0.3265 )
+frame = 0
 
 [node name="SkyCloud101" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( 797, 616 )
 scale = Vector2( 3.35339, 0.3265 )
+frame = 0
 
 [node name="SkyCloud96" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( 1006, 707 )
 scale = Vector2( 3.35339, 0.3265 )
+frame = 0
 
 [node name="SkyCloud85" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( 539, 1004 )
 scale = Vector2( 3.35339, 0.3265 )
-frame = 2
 
 [node name="SkyCloud86" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( 564, 887 )
 scale = Vector2( 3.35339, 0.3265 )
-frame = 1
+frame = 2
 
 [node name="SkyCloud87" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( 937, 1103 )
 scale = Vector2( 3.35339, 0.3265 )
-frame = 0
+frame = 1
 
 [node name="SkyCloud88" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( 796, 1101 )
 scale = Vector2( 3.35339, 0.248968 )
-frame = 0
+frame = 1
 
 [node name="SkyCloud89" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( 911, 926 )
 scale = Vector2( 3.35339, 0.248968 )
+frame = 0
 
 [node name="SkyCloud97" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( 1159, 908 )
 scale = Vector2( 3.35339, 0.248968 )
-frame = 2
 
 [node name="SkyCloud98" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( 1274, 1006 )
 scale = Vector2( 3.35339, 0.248968 )
-frame = 1
+frame = 2
 
 [node name="SkyCloud99" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( 1342, 870 )
 scale = Vector2( 3.35339, 0.248968 )
-frame = 1
+frame = 2
 
 [node name="SkyCloud90" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( 461, 1080 )
 scale = Vector2( 3.35339, 0.248968 )
+frame = 0
 
 [node name="SkyCloud91" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( 389, 1162 )
 scale = Vector2( 3.35339, 0.248968 )
-frame = 2
 
 [node name="SkyCloud264" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -1111, 437.808 )
 scale = Vector2( 3.9925, 0.538708 )
+frame = 0
 
 [node name="SkyCloud265" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -905.188, 428.427 )
 scale = Vector2( 3.9925, 0.538708 )
-frame = 2
 
 [node name="SkyCloud266" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -875.188, 481.427 )
 scale = Vector2( 3.9925, 0.538708 )
-frame = 2
 
 [node name="SkyCloud267" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -1258, 562 )
 scale = Vector2( 3.9925, 0.538708 )
-frame = 1
+frame = 2
 
 [node name="SkyCloud268" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -1316.19, 612.427 )
 scale = Vector2( 3.9925, 0.538708 )
-frame = 1
+frame = 2
 
 [node name="SkyCloud269" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -901.188, 770.427 )
 scale = Vector2( 3.9925, 0.538708 )
-frame = 0
+frame = 1
 
 [node name="SkyCloud270" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -1167.19, 683.427 )
 scale = Vector2( 3.9925, 0.538708 )
-frame = 0
+frame = 1
 
 [node name="SkyCloud271" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -878.188, 660.427 )
 scale = Vector2( 3.9925, 0.538708 )
+frame = 0
 
 [node name="SkyCloud272" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -1009.19, 884.427 )
 scale = Vector2( 3.9925, 0.538708 )
-frame = 2
 
 [node name="SkyCloud273" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -1241.19, 892.427 )
 scale = Vector2( 3.9925, 0.538708 )
-frame = 1
+frame = 2
 
 [node name="SkyCloud274" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -977.188, 828.427 )
 scale = Vector2( 3.9925, 0.538708 )
-frame = 0
+frame = 1
 
 [node name="SkyCloud275" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -1186.19, 814.427 )
 scale = Vector2( 3.9925, 0.538708 )
-frame = 2
 
 [node name="SkyCloud276" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -1017.19, 548.427 )
 scale = Vector2( 3.9925, 0.538708 )
-frame = 1
+frame = 2
 
 [node name="SkyCloud277" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -1009.19, 652.427 )
 scale = Vector2( 3.9925, 0.538708 )
-frame = 0
+frame = 1
 
 [node name="SkyCloud332" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -1569, 960 )
 scale = Vector2( 3.9925, 0.538708 )
-frame = 0
+frame = 1
 
 [node name="SkyCloud336" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -1346, 948 )
 scale = Vector2( 3.9925, 0.538708 )
+frame = 0
 
 [node name="SkyCloud333" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -1301, 1028 )
 scale = Vector2( 3.9925, 0.538708 )
+frame = 0
 
 [node name="SkyCloud278" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -1224.19, 395.427 )
 scale = Vector2( 3.9925, 0.538708 )
-frame = 0
+frame = 1
 
 [node name="SkyCloud279" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -1149.19, 507.427 )
 scale = Vector2( 3.35339, 0.3265 )
-frame = 1
+frame = 2
 
 [node name="SkyCloud280" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -1324.19, 782.427 )
 scale = Vector2( 3.35339, 0.248968 )
-frame = 2
 
 [node name="SkyCloud281" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -1476, 658 )
 scale = Vector2( 3.81625, 0.538708 )
+frame = 0
 
 [node name="SkyCloud282" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -1226.19, 664.35 )
 scale = Vector2( 3.9925, 0.538708 )
-frame = 2
 
 [node name="SkyCloud283" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -1196.19, 717.35 )
 scale = Vector2( 3.9925, 0.538708 )
-frame = 2
 
 [node name="SkyCloud284" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -1535.19, 811.35 )
 scale = Vector2( 3.9925, 0.538708 )
-frame = 1
+frame = 2
 
 [node name="SkyCloud285" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -1637.19, 848.35 )
 scale = Vector2( 3.9925, 0.538708 )
-frame = 1
+frame = 2
 
 [node name="SkyCloud286" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -1222.19, 1006.35 )
 scale = Vector2( 3.9925, 0.538708 )
-frame = 0
+frame = 1
 
 [node name="SkyCloud287" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -1505, 931 )
 scale = Vector2( 3.9925, 0.538708 )
-frame = 0
+frame = 1
 
 [node name="SkyCloud346" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -1680, 904 )
 scale = Vector2( 3.9925, 0.538708 )
+frame = 0
 
 [node name="SkyCloud347" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -1686, 983 )
 scale = Vector2( 3.9925, 0.538708 )
+frame = 0
 
 [node name="SkyCloud348" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -1603, 943 )
 scale = Vector2( 3.9925, 0.538708 )
+frame = 0
 
 [node name="SkyCloud288" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -1199.19, 896.35 )
 scale = Vector2( 3.9925, 0.538708 )
+frame = 0
 
 [node name="SkyCloud289" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -1330.19, 1120.35 )
 scale = Vector2( 3.9925, 0.538708 )
-frame = 2
 
 [node name="SkyCloud290" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -1562.19, 1128.35 )
 scale = Vector2( 3.9925, 0.538708 )
-frame = 1
+frame = 2
 
 [node name="SkyCloud291" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -1298.19, 1064.35 )
 scale = Vector2( 3.9925, 0.538708 )
-frame = 0
+frame = 1
 
 [node name="SkyCloud292" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -1507.19, 1050.35 )
 scale = Vector2( 3.9925, 0.538708 )
-frame = 2
 
 [node name="SkyCloud349" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -1416, 976 )
 scale = Vector2( 3.9925, 0.538708 )
-frame = 1
+frame = 2
 
 [node name="SkyCloud350" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -1471, 954 )
 scale = Vector2( 3.9925, 0.538708 )
-frame = 1
+frame = 2
 
 [node name="SkyCloud293" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -1338.19, 784.35 )
 scale = Vector2( 3.9925, 0.538708 )
-frame = 1
+frame = 2
 
 [node name="SkyCloud294" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -1330.19, 888.35 )
 scale = Vector2( 3.9925, 0.538708 )
-frame = 0
+frame = 1
 
 [node name="SkyCloud295" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -1545.19, 631.35 )
 scale = Vector2( 3.9925, 0.538708 )
-frame = 0
+frame = 1
 
 [node name="SkyCloud296" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -1470.19, 743.35 )
 scale = Vector2( 3.35339, 0.3265 )
-frame = 1
+frame = 2
 
 [node name="SkyCloud297" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -1750, 1064 )
 scale = Vector2( 3.35339, 0.248968 )
-frame = 2
 
 [node name="SkyCloud334" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -1402, 1003 )
 scale = Vector2( 3.35339, 0.248968 )
-frame = 1
+frame = 2
 
 [node name="SkyCloud335" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -1332, 999 )
 scale = Vector2( 3.35339, 0.248968 )
-frame = 1
+frame = 2
 
 [node name="SkyCloud298" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -1431.98, 194 )
 scale = Vector2( 3.9925, 0.538708 )
-frame = 2
 
 [node name="SkyCloud299" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -1226.17, 184.619 )
 scale = Vector2( 3.9925, 0.538708 )
-frame = 1
+frame = 2
 
 [node name="SkyCloud300" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -1196.17, 237.619 )
 scale = Vector2( 3.9925, 0.538708 )
-frame = 1
+frame = 2
 
 [node name="SkyCloud301" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -1535.17, 331.619 )
 scale = Vector2( 3.9925, 0.538708 )
-frame = 0
+frame = 1
 
 [node name="SkyCloud302" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -1637.17, 368.619 )
 scale = Vector2( 3.9925, 0.538708 )
-frame = 0
+frame = 1
 
 [node name="SkyCloud303" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -1222.17, 526.619 )
 scale = Vector2( 3.9925, 0.538708 )
+frame = 0
 
 [node name="SkyCloud304" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -1488.17, 439.619 )
 scale = Vector2( 3.9925, 0.538708 )
+frame = 0
 
 [node name="SkyCloud305" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -1199.17, 416.619 )
 scale = Vector2( 3.9925, 0.538708 )
-frame = 2
 
 [node name="SkyCloud306" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -1260, 460 )
 scale = Vector2( 3.9925, 0.538708 )
-frame = 1
+frame = 2
 
 [node name="SkyCloud337" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -1345, 708 )
 scale = Vector2( 3.9925, 0.538708 )
-frame = 1
+frame = 2
 
 [node name="SkyCloud307" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -981, 603 )
 scale = Vector2( 3.9925, 0.538708 )
-frame = 0
+frame = 1
 
 [node name="SkyCloud308" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -1298.17, 584.619 )
 scale = Vector2( 3.9925, 0.538708 )
+frame = 0
 
 [node name="SkyCloud338" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -1340, 687 )
 scale = Vector2( 3.9925, 0.538708 )
+frame = 0
 
 [node name="SkyCloud339" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -1332, 651 )
 scale = Vector2( 3.9925, 0.538708 )
-frame = 2
 
 [node name="SkyCloud340" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -1588, 708 )
 scale = Vector2( 2.85625, 0.456851 )
-frame = 2
 
 [node name="SkyCloud341" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -1372, 631 )
 scale = Vector2( 2.85625, 0.456851 )
-frame = 1
+frame = 2
 
 [node name="SkyCloud342" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -1555, 768 )
 scale = Vector2( 2.85625, 0.456851 )
-frame = 0
+frame = 1
 
 [node name="SkyCloud343" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -1497, 707 )
 scale = Vector2( 2.85625, 0.456851 )
-frame = 0
+frame = 1
 
 [node name="SkyCloud344" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -1496, 789 )
 scale = Vector2( 2.85625, 0.456851 )
+frame = 0
 
 [node name="SkyCloud345" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -1632, 786 )
 scale = Vector2( 2.85625, 0.456851 )
-frame = 2
 
 [node name="SkyCloud309" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -1507.17, 570.619 )
 scale = Vector2( 3.9925, 0.538708 )
-frame = 1
+frame = 2
 
 [node name="SkyCloud310" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -1338.17, 304.619 )
 scale = Vector2( 3.9925, 0.538708 )
-frame = 0
+frame = 1
 
 [node name="SkyCloud311" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -1330.17, 408.619 )
 scale = Vector2( 3.9925, 0.538708 )
+frame = 0
 
 [node name="SkyCloud312" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -1545.17, 151.619 )
 scale = Vector2( 3.9925, 0.538708 )
+frame = 0
 
 [node name="SkyCloud313" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -1470.17, 263.619 )
 scale = Vector2( 3.35339, 0.3265 )
-frame = 0
+frame = 1
 
 [node name="SkyCloud314" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -1645.17, 538.619 )
 scale = Vector2( 3.35339, 0.248968 )
-frame = 1
+frame = 2
 
 [node name="SkyCloud315" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -1533.98, -146 )
 scale = Vector2( 3.9925, 0.538708 )
-frame = 2
 
 [node name="SkyCloud316" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -1328.17, -155.381 )
 scale = Vector2( 3.9925, 0.538708 )
-frame = 1
+frame = 2
 
 [node name="SkyCloud317" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -1298.17, -102.381 )
 scale = Vector2( 3.9925, 0.538708 )
-frame = 1
+frame = 2
 
 [node name="SkyCloud318" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -1637.17, -8.38065 )
 scale = Vector2( 3.9925, 0.538708 )
-frame = 0
+frame = 1
 
 [node name="SkyCloud319" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -1739.17, 28.6194 )
 scale = Vector2( 3.9925, 0.538708 )
-frame = 0
+frame = 1
 
 [node name="SkyCloud320" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -1324.17, 186.619 )
 scale = Vector2( 3.9925, 0.538708 )
+frame = 0
 
 [node name="SkyCloud321" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -1590.17, 99.6194 )
 scale = Vector2( 3.9925, 0.538708 )
+frame = 0
 
 [node name="SkyCloud322" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -1301.17, 76.6194 )
 scale = Vector2( 3.9925, 0.538708 )
-frame = 2
 
 [node name="SkyCloud323" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -1432.17, 300.619 )
 scale = Vector2( 3.9925, 0.538708 )
-frame = 1
+frame = 2
 
 [node name="SkyCloud324" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -1664.17, 308.619 )
 scale = Vector2( 3.9925, 0.538708 )
-frame = 0
+frame = 1
 
 [node name="SkyCloud325" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -1400.17, 244.619 )
 scale = Vector2( 3.9925, 0.538708 )
+frame = 0
 
 [node name="SkyCloud326" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -1609.17, 230.619 )
 scale = Vector2( 3.9925, 0.538708 )
-frame = 1
+frame = 2
 
 [node name="SkyCloud327" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -1440.17, -35.3806 )
 scale = Vector2( 3.9925, 0.538708 )
-frame = 0
+frame = 1
 
 [node name="SkyCloud328" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -1432.17, 68.6194 )
 scale = Vector2( 3.9925, 0.538708 )
+frame = 0
 
 [node name="SkyCloud329" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -1647.17, -188.381 )
 scale = Vector2( 3.9925, 0.538708 )
+frame = 0
 
 [node name="SkyCloud330" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -1572.17, -76.3808 )
 scale = Vector2( 3.35339, 0.3265 )
-frame = 0
+frame = 1
 
 [node name="SkyCloud331" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -1747.17, 198.619 )
 scale = Vector2( 3.35339, 0.248968 )
-frame = 1
+frame = 2
 
 [node name="SkyCloud92" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( 330, 893 )
 scale = Vector2( 3.35339, 0.248968 )
-frame = 1
+frame = 2
 
 [node name="SkyCloud41" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -351, 248 )
 scale = Vector2( 2.625, 0.327419 )
-frame = 2
 
 [node name="SkyCloud110" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -394, 168 )
 scale = Vector2( 2.625, 0.327419 )
-frame = 2
 
 [node name="SkyCloud50" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -917, 244 )
 scale = Vector2( 2.625, 0.327419 )
-frame = 2
 
 [node name="SkyCloud45" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -729, 113 )
 scale = Vector2( 2.625, 0.327419 )
-frame = 2
 
 [node name="SkyCloud46" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -1064, 224 )
 scale = Vector2( 2.625, 0.327419 )
-frame = 2
 
 [node name="SkyCloud42" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -618, 303 )
 scale = Vector2( 2.625, 0.327419 )
-frame = 2
 
 [node name="SkyCloud109" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -804.813, 272.381 )
 scale = Vector2( 2.3125, 0.226209 )
-frame = 1
+frame = 2
 
 [node name="SkyCloud102" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -233, 366 )
 scale = Vector2( 2.625, 0.327419 )
-frame = 2
 
 [node name="SkyCloud103" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -309, 318 )
 scale = Vector2( 2.625, 0.327419 )
-frame = 1
+frame = 2
 
 [node name="SkyCloud104" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -76.0001, 141 )
 scale = Vector2( 2.625, 0.327419 )
-frame = 0
+frame = 1
 
 [node name="SkyCloud111" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( 221, -44 )
 scale = Vector2( 2.625, 0.327419 )
+frame = 0
 
 [node name="SkyCloud105" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -106, 150 )
 scale = Vector2( 2.26488, 0.277995 )
-frame = 0
+frame = 1
 
 [node name="SkyCloud44" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -594, 314 )
 scale = Vector2( 2.3125, 0.19496 )
-frame = 2
 
 [node name="SkyCloud47" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -1168.5, 336.075 )
 scale = Vector2( 2.625, 0.327419 )
-frame = 1
+frame = 2
 
 [node name="SkyCloud48" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -1144.5, 347.075 )
 scale = Vector2( 2.3125, 0.19496 )
-frame = 1
+frame = 2
 
 [node name="SkyCloud43" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -463, 397 )
 scale = Vector2( 2.625, 0.327419 )
-frame = 2
 
 [node name="SkyCloud49" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -774, 366 )
 scale = Vector2( 2.625, 0.327419 )
-frame = 1
+frame = 2
 
 [node name="SkyCloud4" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( 850, -196 )
 scale = Vector2( 2.625, 0.327419 )
-frame = 2
 
 [node name="SkyCloud19" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( 105, -161 )
 scale = Vector2( 2.625, 0.327419 )
-frame = 1
+frame = 2
 
 [node name="SkyCloud51" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -728, -218 )
 scale = Vector2( 2.625, 0.327419 )
-frame = 1
+frame = 2
 
 [node name="SkyCloud52" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -873, -248 )
 scale = Vector2( 2.625, 0.327419 )
-frame = 1
+frame = 2
 
 [node name="SkyCloud56" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -777, -434 )
 scale = Vector2( 2.625, 0.327419 )
-frame = 0
+frame = 1
 
 [node name="SkyCloud61" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -1033, -625 )
 scale = Vector2( 2.625, 0.327419 )
+frame = 0
 
 [node name="SkyCloud57" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -836.312, -450.619 )
 scale = Vector2( 2.0925, 0.22621 )
-frame = 0
+frame = 1
 
 [node name="SkyCloud58" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -1080, -603 )
 scale = Vector2( 2.0925, 0.22621 )
+frame = 0
 
 [node name="SkyCloud59" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -1038, -695 )
 scale = Vector2( 2.0925, 0.22621 )
+frame = 0
 
 [node name="SkyCloud60" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -923, -634 )
 scale = Vector2( 2.0925, 0.22621 )
-frame = 2
 
 [node name="SkyCloud53" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -975, -360 )
 scale = Vector2( 2.625, 0.327419 )
-frame = 0
+frame = 1
 
 [node name="SkyCloud55" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -967.062, -353.365 )
 scale = Vector2( 2.0506, 0.192282 )
-frame = 0
+frame = 1
 
 [node name="SkyCloud54" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -1206, -304 )
 scale = Vector2( 2.625, 0.327419 )
-frame = 0
+frame = 1
 
 [node name="SkyCloud66" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -1399, -34 )
 scale = Vector2( 2.625, 0.327419 )
-frame = 0
+frame = 1
 
 [node name="SkyCloud67" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -1475, -147 )
 scale = Vector2( 2.625, 0.327419 )
-frame = 0
+frame = 1
 
 [node name="SkyCloud68" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -1464.31, -166.119 )
 scale = Vector2( 2.2125, 0.19496 )
+frame = 0
 
 [node name="SkyCloud69" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -1442, -193 )
 scale = Vector2( 2.2125, 0.19496 )
+frame = 0
 
 [node name="SkyCloud70" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -1367, -174 )
 scale = Vector2( 2.38124, 0.387803 )
+frame = 0
 
 [node name="SkyCloud71" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -1324, -129 )
 scale = Vector2( 2.38124, 0.387803 )
-frame = 2
 
 [node name="SkyCloud63" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -1408, -426 )
 scale = Vector2( 2.625, 0.327419 )
+frame = 0
 
 [node name="SkyCloud62" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -1255, -343 )
 scale = Vector2( 2.625, 0.327419 )
+frame = 0
 
 [node name="SkyCloud64" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -1507.75, -326.038 )
 scale = Vector2( 2.0875, 0.260484 )
+frame = 0
 
 [node name="SkyCloud65" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -1508, -452 )
 scale = Vector2( 2.0875, 0.260484 )
-frame = 2
 
 [node name="SkyCloud20" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( 209, -122 )
 scale = Vector2( 2.625, 0.327419 )
-frame = 1
+frame = 2
 
 [node name="SkyCloud37" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( 45, -232 )
 scale = Vector2( 2.625, 0.327419 )
-frame = 1
+frame = 2
 
 [node name="SkyCloud38" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( 67, -226 )
 scale = Vector2( 2.3125, 0.25746 )
-frame = 1
+frame = 2
 
 [node name="SkyCloud21" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( 1404, -228 )
 scale = Vector2( 2.625, 0.327419 )
-frame = 1
+frame = 2
 
 [node name="SkyCloud29" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( 1232, -384 )
 scale = Vector2( 2.625, 0.327419 )
-frame = 1
+frame = 2
 
 [node name="SkyCloud211" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( 712, -680 )
 scale = Vector2( 2.625, 0.327419 )
-frame = 1
+frame = 2
 
 [node name="SkyCloud212" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( 912, -640 )
 scale = Vector2( 2.625, 0.327419 )
-frame = 0
+frame = 1
 
 [node name="SkyCloud213" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( 1072, -688 )
 scale = Vector2( 2.625, 0.327419 )
-frame = 0
+frame = 1
 
 [node name="SkyCloud214" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( 712, -464 )
 scale = Vector2( 2.625, 0.327419 )
-frame = 0
+frame = 1
 
 [node name="SkyCloud231" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( 710, -441 )
 scale = Vector2( 2.625, 0.327419 )
+frame = 0
 
 [node name="SkyCloud248" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( 1105, -851 )
 scale = Vector2( 2.625, 0.327419 )
+frame = 0
 
 [node name="SkyCloud249" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( 1203, -834 )
 scale = Vector2( 2.625, 0.327419 )
-frame = 2
 
 [node name="SkyCloud250" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( 1154.69, -806.119 )
 scale = Vector2( 3.6125, 0.44496 )
-frame = 2
 
 [node name="SkyCloud251" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( 1269, -818 )
 scale = Vector2( 3.6125, 0.44496 )
-frame = 1
+frame = 2
 
 [node name="SkyCloud252" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( 1065, -815 )
 scale = Vector2( 3.6125, 0.44496 )
-frame = 0
+frame = 1
 
 [node name="SkyCloud253" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( 1066, -832 )
 scale = Vector2( 3.6125, 0.44496 )
+frame = 0
 
 [node name="SkyCloud254" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( 1092, -821 )
 scale = Vector2( 3.6125, 0.44496 )
+frame = 0
 
 [node name="SkyCloud255" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( 1190, -820 )
 scale = Vector2( 3.6125, 0.44496 )
-frame = 2
 
 [node name="SkyCloud256" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( 1345, -854 )
 scale = Vector2( 3.6125, 0.44496 )
-frame = 1
+frame = 2
 
 [node name="SkyCloud257" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( 1200, -854 )
 scale = Vector2( 3.6125, 0.44496 )
-frame = 1
+frame = 2
 
 [node name="SkyCloud258" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( 1318, -836 )
 scale = Vector2( 3.6125, 0.44496 )
-frame = 0
+frame = 1
 
 [node name="SkyCloud259" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( 1113, -719 )
 scale = Vector2( 3.6125, 0.44496 )
-frame = 0
+frame = 1
 
 [node name="SkyCloud260" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( 1200, -745 )
 scale = Vector2( 3.6125, 0.44496 )
+frame = 0
 
 [node name="SkyCloud261" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( 1250, -710 )
 scale = Vector2( 3.6125, 0.44496 )
-frame = 2
 
 [node name="SkyCloud262" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( 1250, -720 )
 scale = Vector2( 3.6125, 0.44496 )
-frame = 2
 
 [node name="SkyCloud263" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( 1180, -735 )
 scale = Vector2( 3.6125, 0.44496 )
-frame = 1
+frame = 2
 
 [node name="SkyCloud226" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( 832, -408 )
 scale = Vector2( 2.625, 0.327419 )
+frame = 0
 
 [node name="SkyCloud230" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( 824, -488 )
 scale = Vector2( 2.625, 0.327419 )
+frame = 0
 
 [node name="SkyCloud225" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( 928, -520 )
 scale = Vector2( 2.625, 0.327419 )
+frame = 0
 
 [node name="SkyCloud215" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( 984, -440 )
 scale = Vector2( 2.625, 0.327419 )
+frame = 0
 
 [node name="SkyCloud216" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( 624, -352 )
 scale = Vector2( 2.625, 0.327419 )
+frame = 0
 
 [node name="SkyCloud217" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( 600, -552 )
 scale = Vector2( 2.625, 0.327419 )
-frame = 2
 
 [node name="SkyCloud222" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( 752, -616 )
 scale = Vector2( 2.625, 0.327419 )
-frame = 1
+frame = 2
 
 [node name="SkyCloud223" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( 648, -512 )
 scale = Vector2( 2.625, 0.16371 )
-frame = 1
+frame = 2
 
 [node name="SkyCloud233" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( 440, -368 )
 scale = Vector2( 2.625, 0.16371 )
-frame = 1
+frame = 2
 
 [node name="SkyCloud229" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( 912, -432 )
 scale = Vector2( 2.625, 0.16371 )
-frame = 1
+frame = 2
 
 [node name="SkyCloud227" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( 727.188, -546.619 )
 scale = Vector2( 2.5925, 0.16371 )
-frame = 0
+frame = 1
 
 [node name="SkyCloud228" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( 952, -632 )
 scale = Vector2( 2.5925, 0.16371 )
+frame = 0
 
 [node name="SkyCloud224" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( 880, -696 )
 scale = Vector2( 2.625, 0.327419 )
-frame = 1
+frame = 2
 
 [node name="SkyCloud218" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( 385, -480 )
 scale = Vector2( 2.625, 0.327419 )
-frame = 1
+frame = 2
 
 [node name="SkyCloud220" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( 272, -368 )
 scale = Vector2( 2.625, 0.327419 )
-frame = 1
+frame = 2
 
 [node name="SkyCloud234" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( 336, -280 )
 scale = Vector2( 2.625, 0.327419 )
-frame = 0
+frame = 1
 
 [node name="SkyCloud235" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( 296, -192 )
 scale = Vector2( 2.625, 0.327419 )
-frame = 0
+frame = 1
 
 [node name="SkyCloud232" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( 432, -328 )
 scale = Vector2( 2.625, 0.327419 )
-frame = 0
+frame = 1
 
 [node name="SkyCloud221" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( 360, -424 )
 scale = Vector2( 2.625, 0.327419 )
-frame = 0
+frame = 1
 
 [node name="SkyCloud219" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( 512, -408 )
 scale = Vector2( 2.625, 0.327419 )
-frame = 1
+frame = 2
 
 [node name="SkyCloud33" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( 1350, -559 )
 scale = Vector2( 2.625, 0.327419 )
-frame = 0
+frame = 1
 
 [node name="SkyCloud30" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( 1410, -445 )
 scale = Vector2( 2.625, 0.327419 )
-frame = 0
+frame = 1
 
 [node name="SkyCloud34" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( 1457, -514 )
 scale = Vector2( 2.625, 0.327419 )
+frame = 0
 
 [node name="SkyCloud31" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( 1182, -513 )
 scale = Vector2( 2.625, 0.327419 )
+frame = 0
 
 [node name="SkyCloud32" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( 1246, -396 )
 scale = Vector2( 2.2875, 0.163713 )
+frame = 0
 
 [node name="SkyCloud35" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( 530, -198 )
 scale = Vector2( 2.2875, 0.163713 )
-frame = 2
 
 [node name="SkyCloud36" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( 507, -191 )
 scale = Vector2( 2.58375, 0.238107 )
-frame = 1
+frame = 2
 
 [node name="SkyCloud112" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( 153.675, 50.6194 )
 scale = Vector2( 2.2875, 0.163713 )
-frame = 2
 
 [node name="SkyCloud113" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( 130.675, 57.6194 )
 scale = Vector2( 2.58375, 0.238107 )
-frame = 1
+frame = 2
 
 [node name="SkyCloud22" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( 1240, -271 )
 scale = Vector2( 2.625, 0.327419 )
-frame = 1
+frame = 2
 
 [node name="SkyCloud23" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( 1368, -242 )
 scale = Vector2( 2.05059, 0.249425 )
-frame = 0
+frame = 1
 
 [node name="SkyCloud24" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( 1405, -173 )
 scale = Vector2( 2.05059, 0.249425 )
-frame = 0
+frame = 1
 
 [node name="SkyCloud25" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( 1238, -147 )
 scale = Vector2( 2.05059, 0.249425 )
-frame = 0
+frame = 1
 
 [node name="SkyCloud26" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( 1387, -79 )
 scale = Vector2( 2.05059, 0.249425 )
+frame = 0
 
 [node name="SkyCloud27" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( 1195, -49 )
 scale = Vector2( 2.05059, 0.249425 )
+frame = 0
 
 [node name="SkyCloud28" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( 1220, -82 )
 scale = Vector2( 2.05059, 0.249425 )
-frame = 2
 
 [node name="SkyCloud5" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( 898, -289 )
 scale = Vector2( 2.625, 0.327419 )
-frame = 2
 
 [node name="SkyCloud9" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( 776, -274 )
 scale = Vector2( 2.625, 0.327419 )
 z_index = 3
-frame = 2
 
 [node name="SkyCloud11" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( 1057.19, -173.119 )
 scale = Vector2( 2.0325, 0.13246 )
 z_index = 3
-frame = 2
 
 [node name="SkyCloud13" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( 1079, -171 )
 scale = Vector2( 2.0325, 0.13246 )
 z_index = 3
-frame = 1
+frame = 2
 
 [node name="SkyCloud12" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( 1157, -304 )
 scale = Vector2( 2.625, 0.327419 )
 z_index = 3
-frame = 1
+frame = 2
 
 [node name="SkyCloud10" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( 792, -294 )
 scale = Vector2( 2.625, 0.327419 )
 z_index = 3
-frame = 2
 
 [node name="SkyCloud6" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( 786, -127 )
 scale = Vector2( 2.2325, 0.226209 )
-frame = 2
 
 [node name="SkyCloud8" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( 894, -56 )
 scale = Vector2( 2.2325, 0.226209 )
-frame = 2
 
 [node name="SkyCloud14" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( 475, -82 )
 scale = Vector2( 2.2325, 0.226209 )
-frame = 2
 
 [node name="SkyCloud15" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( 537, -25 )
 scale = Vector2( 2.2325, 0.0808462 )
-frame = 2
 
 [node name="SkyCloud16" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( 552, -20 )
 scale = Vector2( 2.41625, 0.169455 )
-frame = 1
+frame = 2
 
 [node name="SkyCloud18" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( 426, 23 )
 scale = Vector2( 2.41625, 0.169455 )
-frame = 1
+frame = 2
 
 [node name="SkyCloud17" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( 624, -73 )
 scale = Vector2( 2.41625, 0.169455 )
-frame = 0
+frame = 1
 
 [node name="SkyCloud7" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( 809, -190 )
 scale = Vector2( 2.2325, 0.226209 )
-frame = 1
+frame = 2
 
 [node name="SkyCloud114" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( 900.812, 108.239 )
 scale = Vector2( 2.625, 0.327419 )
-frame = 2
 
 [node name="SkyCloud115" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( 557.812, 113.239 )
 scale = Vector2( 2.58375, 0.238107 )
-frame = 1
+frame = 2
 
 [node name="SkyCloud116" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( 836.812, 177.239 )
 scale = Vector2( 2.2325, 0.226209 )
-frame = 2
 
 [node name="SkyCloud117" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( 525.812, 222.239 )
 scale = Vector2( 2.2325, 0.226209 )
-frame = 2
 
 [node name="SkyCloud118" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( 602.812, 284.239 )
 scale = Vector2( 2.41625, 0.169455 )
-frame = 1
+frame = 2
 
 [node name="SkyCloud119" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( 859.812, 114.239 )
 scale = Vector2( 2.2325, 0.226209 )
-frame = 1
+frame = 2
 
 [node name="SkyCloud120" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( 566.65, 269.075 )
 scale = Vector2( 2.625, 0.327419 )
-frame = 2
 
 [node name="SkyCloud121" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( 223.65, 274.075 )
 scale = Vector2( 2.58375, 0.238107 )
-frame = 1
+frame = 2
 
 [node name="SkyCloud122" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( 502.65, 338.075 )
 scale = Vector2( 2.2325, 0.226209 )
-frame = 2
 
 [node name="SkyCloud123" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( 191.65, 383.075 )
 scale = Vector2( 2.2325, 0.226209 )
-frame = 2
 
 [node name="SkyCloud124" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( 268.65, 445.075 )
 scale = Vector2( 2.41625, 0.169455 )
-frame = 1
+frame = 2
 
 [node name="SkyCloud125" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( 525.65, 275.075 )
 scale = Vector2( 2.2325, 0.226209 )
-frame = 1
+frame = 2
 
 [node name="SkyCloud126" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( 326.812, 326.239 )
 scale = Vector2( 2.625, 0.327419 )
-frame = 1
+frame = 2
 
 [node name="SkyCloud127" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -16.1875, 331.239 )
 scale = Vector2( 2.58375, 0.238107 )
-frame = 0
+frame = 1
 
 [node name="SkyCloud128" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( 262.812, 395.239 )
 scale = Vector2( 2.2325, 0.226209 )
-frame = 1
+frame = 2
 
 [node name="SkyCloud129" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -48.1875, 440.239 )
 scale = Vector2( 2.2325, 0.226209 )
-frame = 1
+frame = 2
 
 [node name="SkyCloud130" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( 28.8124, 502.239 )
 scale = Vector2( 2.41625, 0.169455 )
-frame = 0
+frame = 1
 
 [node name="SkyCloud131" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( 285.813, 332.239 )
 scale = Vector2( 2.2325, 0.226209 )
-frame = 0
+frame = 1
 
 [node name="SkyCloud132" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( 158.812, 347.239 )
 scale = Vector2( 2.625, 0.327419 )
-frame = 1
+frame = 2
 
 [node name="SkyCloud133" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -184.188, 352.239 )
 scale = Vector2( 2.58375, 0.238107 )
-frame = 0
+frame = 1
 
 [node name="SkyCloud134" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( 94.8125, 416.239 )
 scale = Vector2( 2.2325, 0.226209 )
-frame = 1
+frame = 2
 
 [node name="SkyCloud135" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -216.188, 461.239 )
 scale = Vector2( 2.2325, 0.226209 )
-frame = 1
+frame = 2
 
 [node name="SkyCloud136" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -139.188, 523.239 )
 scale = Vector2( 2.41625, 0.169455 )
-frame = 0
+frame = 1
 
 [node name="SkyCloud137" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( 117.813, 353.239 )
 scale = Vector2( 2.2325, 0.226209 )
-frame = 0
+frame = 1
 
 [node name="SkyCloud138" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( 406.65, 354.075 )
 scale = Vector2( 2.625, 0.327419 )
-frame = 0
+frame = 1
 
 [node name="SkyCloud139" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( 63.65, 359.075 )
 scale = Vector2( 2.58375, 0.238107 )
+frame = 0
 
 [node name="SkyCloud140" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( 342.65, 423.075 )
 scale = Vector2( 2.2325, 0.226209 )
-frame = 0
+frame = 1
 
 [node name="SkyCloud141" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( 31.65, 468.075 )
 scale = Vector2( 2.2325, 0.226209 )
-frame = 0
+frame = 1
 
 [node name="SkyCloud142" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( 108.65, 530.075 )
 scale = Vector2( 2.41625, 0.169455 )
+frame = 0
 
 [node name="SkyCloud143" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( 365.65, 360.075 )
 scale = Vector2( 2.2325, 0.226209 )
+frame = 0
 
 [node name="SkyCloud144" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( 823.65, 350.075 )
 scale = Vector2( 2.625, 0.327419 )
+frame = 0
 
 [node name="SkyCloud145" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( 480.65, 355.075 )
 scale = Vector2( 2.58375, 0.238107 )
-frame = 2
 
 [node name="SkyCloud146" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( 759.65, 419.075 )
 scale = Vector2( 2.2325, 0.226209 )
+frame = 0
 
 [node name="SkyCloud147" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( 448.65, 464.075 )
 scale = Vector2( 2.2325, 0.226209 )
+frame = 0
 
 [node name="SkyCloud148" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( 525.65, 526.075 )
 scale = Vector2( 2.41625, 0.169455 )
-frame = 2
 
 [node name="SkyCloud149" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( 782.65, 356.075 )
 scale = Vector2( 2.2325, 0.226209 )
-frame = 2
 
 [node name="SkyCloud150" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( 1033.81, 122.239 )
 scale = Vector2( 2.625, 0.327419 )
+frame = 0
 
 [node name="SkyCloud151" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( 690.812, 127.239 )
 scale = Vector2( 2.58375, 0.238107 )
-frame = 2
 
 [node name="SkyCloud152" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( 969.812, 191.239 )
 scale = Vector2( 2.2325, 0.226209 )
+frame = 0
 
 [node name="SkyCloud153" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( 658.812, 236.239 )
 scale = Vector2( 2.2325, 0.226209 )
+frame = 0
 
 [node name="SkyCloud154" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( 735.812, 298.239 )
 scale = Vector2( 2.41625, 0.169455 )
-frame = 2
 
 [node name="SkyCloud155" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( 992.812, 128.239 )
 scale = Vector2( 2.2325, 0.226209 )
-frame = 2
 
 [node name="SkyCloud156" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( 709.812, 39.9586 )
 scale = Vector2( 2.2325, 0.226209 )
-frame = 1
+frame = 2
 
 [node name="SkyCloud157" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( 732.812, -23.0414 )
 scale = Vector2( 2.2325, 0.226209 )
-frame = 0
+frame = 1
 
 [node name="SkyCloud158" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( 906.813, -15.0413 )
 scale = Vector2( 2.625, 0.327419 )
-frame = 2
 
 [node name="SkyCloud159" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( 842.812, 53.9587 )
 scale = Vector2( 2.2325, 0.226209 )
-frame = 2
 
 [node name="SkyCloud160" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( 865.812, -9.04131 )
 scale = Vector2( 2.2325, 0.226209 )
-frame = 1
+frame = 2
 
 [node name="SkyCloud161" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -356.35, -20.3807 )
 scale = Vector2( 2.2325, 0.226209 )
-frame = 1
+frame = 2
 
 [node name="SkyCloud162" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -333.35, -83.3807 )
 scale = Vector2( 2.2325, 0.226209 )
-frame = 0
+frame = 1
 
 [node name="SkyCloud163" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -159.35, -75.3806 )
 scale = Vector2( 2.625, 0.327419 )
-frame = 2
 
 [node name="SkyCloud164" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -223.35, -6.38061 )
 scale = Vector2( 2.2325, 0.226209 )
-frame = 2
 
 [node name="SkyCloud165" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -200.35, -69.3806 )
 scale = Vector2( 2.2325, 0.226209 )
-frame = 1
+frame = 2
 
 [node name="SkyCloud166" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -336.117, -181.381 )
 scale = Vector2( 2.2325, 0.226209 )
-frame = 1
+frame = 2
 
 [node name="SkyCloud167" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -313.117, -244.381 )
 scale = Vector2( 2.2325, 0.226209 )
-frame = 0
+frame = 1
 
 [node name="SkyCloud168" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -139.117, -236.381 )
 scale = Vector2( 2.625, 0.327419 )
-frame = 2
 
 [node name="SkyCloud169" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -203.117, -167.381 )
 scale = Vector2( 2.2325, 0.226209 )
-frame = 2
 
 [node name="SkyCloud170" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -180.117, -230.381 )
 scale = Vector2( 2.2325, 0.226209 )
-frame = 1
+frame = 2
 
 [node name="SkyCloud171" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -143.35, -119.381 )
 scale = Vector2( 2.2325, 0.226209 )
-frame = 0
+frame = 1
 
 [node name="SkyCloud172" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -120.35, -182.381 )
 scale = Vector2( 2.2325, 0.226209 )
+frame = 0
 
 [node name="SkyCloud173" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( 53.6501, -174.381 )
 scale = Vector2( 2.625, 0.327419 )
-frame = 1
+frame = 2
 
 [node name="SkyCloud174" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -10.35, -105.381 )
 scale = Vector2( 2.2325, 0.226209 )
-frame = 1
+frame = 2
 
 [node name="SkyCloud175" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( 12.65, -168.381 )
 scale = Vector2( 2.2325, 0.226209 )
-frame = 0
+frame = 1
 
 [node name="SkyCloud176" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -586.188, -63.0414 )
 scale = Vector2( 2.2325, 0.226209 )
-frame = 0
+frame = 1
 
 [node name="SkyCloud177" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -563.188, -126.041 )
 scale = Vector2( 2.2325, 0.226209 )
+frame = 0
 
 [node name="SkyCloud178" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -389.187, -118.041 )
 scale = Vector2( 2.625, 0.327419 )
-frame = 1
+frame = 2
 
 [node name="SkyCloud179" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -453.187, -49.0413 )
 scale = Vector2( 2.2325, 0.226209 )
-frame = 1
+frame = 2
 
 [node name="SkyCloud180" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -430.187, -112.041 )
 scale = Vector2( 2.2325, 0.226209 )
-frame = 0
+frame = 1
 
 [node name="SkyCloud181" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -625.35, -171.381 )
 scale = Vector2( 2.2325, 0.226209 )
-frame = 0
+frame = 1
 
 [node name="SkyCloud182" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -602.35, -234.381 )
 scale = Vector2( 2.2325, 0.226209 )
+frame = 0
 
 [node name="SkyCloud183" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -428.35, -226.381 )
 scale = Vector2( 2.625, 0.327419 )
-frame = 1
+frame = 2
 
 [node name="SkyCloud184" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -492.35, -157.381 )
 scale = Vector2( 2.2325, 0.226209 )
-frame = 1
+frame = 2
 
 [node name="SkyCloud185" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -469.35, -220.381 )
 scale = Vector2( 2.2325, 0.226209 )
-frame = 0
+frame = 1
 
 [node name="SkyCloud186" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -837.117, 152.619 )
 scale = Vector2( 2.2325, 0.226209 )
+frame = 0
 
 [node name="SkyCloud187" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -814.117, 89.6194 )
 scale = Vector2( 2.2325, 0.226209 )
-frame = 2
 
 [node name="SkyCloud188" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -640.117, 97.6194 )
 scale = Vector2( 2.625, 0.327419 )
-frame = 0
+frame = 1
 
 [node name="SkyCloud189" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -704.117, 166.619 )
 scale = Vector2( 2.2325, 0.226209 )
-frame = 0
+frame = 1
 
 [node name="SkyCloud190" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -681.117, 103.619 )
 scale = Vector2( 2.2325, 0.226209 )
+frame = 0
 
 [node name="SkyCloud191" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -96.1875, -372.041 )
 scale = Vector2( 2.2325, 0.226209 )
+frame = 0
 
 [node name="SkyCloud192" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -73.1875, -435.041 )
 scale = Vector2( 2.2325, 0.226209 )
-frame = 2
 
 [node name="SkyCloud193" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( 100.813, -427.041 )
 scale = Vector2( 2.625, 0.327419 )
-frame = 0
+frame = 1
 
 [node name="SkyCloud194" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( 36.8125, -358.041 )
 scale = Vector2( 2.2325, 0.226209 )
-frame = 0
+frame = 1
 
 [node name="SkyCloud195" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( 59.8125, -421.041 )
 scale = Vector2( 2.2325, 0.226209 )
+frame = 0
 
 [node name="SkyCloud196" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -421.188, -403.041 )
 scale = Vector2( 2.2325, 0.226209 )
-frame = 2
 
 [node name="SkyCloud197" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -398.188, -466.041 )
 scale = Vector2( 2.2325, 0.226209 )
-frame = 1
+frame = 2
 
 [node name="SkyCloud198" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -224.187, -458.041 )
 scale = Vector2( 2.625, 0.327419 )
+frame = 0
 
 [node name="SkyCloud199" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -288.188, -389.041 )
 scale = Vector2( 2.2325, 0.226209 )
+frame = 0
 
 [node name="SkyCloud200" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -265.188, -452.041 )
 scale = Vector2( 2.2325, 0.226209 )
-frame = 2
 
 [node name="SkyCloud201" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -342.188, -303.494 )
 scale = Vector2( 2.2325, 0.226209 )
-frame = 2
 
 [node name="SkyCloud202" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -319.188, -366.494 )
 scale = Vector2( 2.2325, 0.226209 )
-frame = 1
+frame = 2
 
 [node name="SkyCloud203" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -145.187, -358.494 )
 scale = Vector2( 2.625, 0.327419 )
+frame = 0
 
 [node name="SkyCloud204" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -209.188, -289.494 )
 scale = Vector2( 2.2325, 0.226209 )
+frame = 0
 
 [node name="SkyCloud205" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -186.188, -352.494 )
 scale = Vector2( 2.2325, 0.226209 )
-frame = 2
 
 [node name="SkyCloud206" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -669.35, -347.381 )
 scale = Vector2( 2.2325, 0.226209 )
-frame = 1
+frame = 2
 
 [node name="SkyCloud207" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -646.35, -410.381 )
 scale = Vector2( 2.2325, 0.226209 )
-frame = 0
+frame = 1
 
 [node name="SkyCloud208" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -472.35, -402.381 )
 scale = Vector2( 2.625, 0.327419 )
-frame = 2
 
 [node name="SkyCloud209" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -536.35, -333.381 )
 scale = Vector2( 2.2325, 0.226209 )
-frame = 2
 
 [node name="SkyCloud210" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -513.35, -396.381 )
 scale = Vector2( 2.2325, 0.226209 )
-frame = 1
+frame = 2
 
 [node name="SkyCloud351" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -1753.17, 997.35 )
 scale = Vector2( 3.9925, 0.538708 )
+frame = 0
 
 [node name="SkyCloud352" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -1454.98, 998 )
 scale = Vector2( 3.9925, 0.538708 )
-frame = 0
+frame = 1
 
 [node name="SkyCloud353" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -1770.15, 1014.62 )
 scale = Vector2( 3.9925, 0.538708 )
+frame = 0
 
 [node name="SkyCloud354" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -1547.98, 1053 )
 scale = Vector2( 3.9925, 0.538708 )
-frame = 2
 
 [node name="SkyCloud355" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -1539.98, 1017 )
 scale = Vector2( 3.9925, 0.538708 )
-frame = 1
+frame = 2
 
 [node name="SkyCloud356" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -1552.98, 1020 )
 scale = Vector2( 2.85625, 0.456851 )
-frame = 1
+frame = 2
 
 [node name="SkyCloud357" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -1715.15, 936.619 )
 scale = Vector2( 3.9925, 0.538708 )
-frame = 0
+frame = 1
 
 [node name="SkyCloud358" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -2034.21, 1046.35 )
 scale = Vector2( 3.9925, 0.538708 )
+frame = 0
 
 [node name="SkyCloud359" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -1736.02, 1047 )
 scale = Vector2( 3.9925, 0.538708 )
-frame = 0
+frame = 1
 
 [node name="SkyCloud360" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -2051.19, 1063.62 )
 scale = Vector2( 3.9925, 0.538708 )
+frame = 0
 
 [node name="SkyCloud361" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -1829.02, 1102 )
 scale = Vector2( 3.9925, 0.538708 )
-frame = 2
 
 [node name="SkyCloud362" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -1821.02, 1066 )
 scale = Vector2( 3.9925, 0.538708 )
-frame = 1
+frame = 2
 
 [node name="SkyCloud363" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -1885, 1038 )
 scale = Vector2( 2.85625, 0.456851 )
-frame = 1
+frame = 2
 
 [node name="SkyCloud365" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -1457.06, 940.224 )
 scale = Vector2( 3.9925, 0.538708 )
-frame = 0
+frame = 1
 
 [node name="SkyCloud366" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -1601.88, 1032.87 )
 scale = Vector2( 3.9925, 0.538708 )
-frame = 2
 
 [node name="SkyCloud367" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -1524.88, 1071.87 )
 scale = Vector2( 3.9925, 0.538708 )
-frame = 2
 
 [node name="SkyCloud368" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -1392.06, 872.224 )
 scale = Vector2( 3.35339, 0.3265 )
-frame = 0
+frame = 1
 
 [node name="SkyCloud369" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -1476.88, 896.874 )
 scale = Vector2( 2.85625, 0.456851 )
+frame = 0
 
 [node name="SkyCloud370" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -1553.88, 914.874 )
 scale = Vector2( 2.85625, 0.456851 )
-frame = 1
+frame = 2
 
 [node name="SkyCloud371" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -1675.04, 1126.22 )
 scale = Vector2( 3.9925, 0.538708 )
+frame = 0
 
 [node name="SkyCloud372" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -1692.02, 1143.49 )
 scale = Vector2( 3.9925, 0.538708 )
+frame = 0
 
 [node name="SkyCloud373" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -1469.85, 1181.87 )
 scale = Vector2( 3.9925, 0.538708 )
-frame = 2
 
 [node name="SkyCloud374" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -1637.02, 1065.49 )
 scale = Vector2( 3.9925, 0.538708 )
-frame = 0
+frame = 1
 
 [node name="SkyCloud375" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -1657.89, 1175.87 )
 scale = Vector2( 3.9925, 0.538708 )
-frame = 0
+frame = 1
 
 [node name="SkyCloud376" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -1750.89, 1230.87 )
 scale = Vector2( 3.9925, 0.538708 )
-frame = 2
 
 [node name="SkyCloud377" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -1742.89, 1194.87 )
 scale = Vector2( 3.9925, 0.538708 )
-frame = 1
+frame = 2
 
 [node name="SkyCloud378" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -1806.88, 1166.87 )
 scale = Vector2( 2.85625, 0.456851 )
-frame = 1
+frame = 2
 
 [node name="SkyCloud379" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -1976.76, 1117.43 )
 scale = Vector2( 3.9925, 0.538708 )
+frame = 0
 
 [node name="SkyCloud380" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -1993.74, 1134.7 )
 scale = Vector2( 3.9925, 0.538708 )
+frame = 0
 
 [node name="SkyCloud381" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -1771.57, 1173.08 )
 scale = Vector2( 3.9925, 0.538708 )
-frame = 2
 
 [node name="SkyCloud382" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -1959.61, 1167.08 )
 scale = Vector2( 3.9925, 0.538708 )
+frame = 0
 
 [node name="SkyCloud383" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -2052.61, 1222.08 )
 scale = Vector2( 3.9925, 0.538708 )
-frame = 1
+frame = 2
 
 [node name="SkyCloud384" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -2044.61, 1186.08 )
 scale = Vector2( 3.9925, 0.538708 )
-frame = 0
+frame = 1
 
 [node name="SkyCloud385" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -2108.59, 1158.08 )
 scale = Vector2( 2.85625, 0.456851 )
-frame = 0
+frame = 1
 
 [node name="SkyCloud386" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -1825.47, 1152.95 )
 scale = Vector2( 3.9925, 0.538708 )
-frame = 1
+frame = 2
 
 [node name="SkyCloud387" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -1748.47, 1191.95 )
 scale = Vector2( 3.9925, 0.538708 )
-frame = 1
+frame = 2
 
 [node name="SkyCloud388" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -1898.64, 1246.3 )
 scale = Vector2( 3.9925, 0.538708 )
-frame = 2
 
 [node name="SkyCloud389" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -1915.62, 1263.57 )
 scale = Vector2( 3.9925, 0.538708 )
-frame = 2
 
 [node name="SkyCloud390" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -1860.62, 1185.57 )
 scale = Vector2( 3.9925, 0.538708 )
+frame = 0
 
 [node name="SkyCloud391" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -1881.49, 1295.95 )
 scale = Vector2( 3.9925, 0.538708 )
+frame = 0
 
 [node name="SkyCloud392" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -1966.49, 1314.95 )
 scale = Vector2( 3.9925, 0.538708 )
-frame = 0
+frame = 1
 
 [node name="SkyCloud393" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -2030.47, 1286.95 )
 scale = Vector2( 2.85625, 0.456851 )
-frame = 0
+frame = 1
 
 [node name="SkyCloud394" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -1844.04, 821.619 )
 scale = Vector2( 3.9925, 0.538708 )
-frame = 2
 
 [node name="SkyCloud395" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -1861.02, 838.888 )
 scale = Vector2( 3.9925, 0.538708 )
-frame = 2
 
 [node name="SkyCloud396" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -1754, 920 )
 scale = Vector2( 3.9925, 0.538708 )
-frame = 1
+frame = 2
 
 [node name="SkyCloud397" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -1826.89, 871.27 )
 scale = Vector2( 3.9925, 0.538708 )
-frame = 2
 
 [node name="SkyCloud398" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -1919.89, 926.27 )
 scale = Vector2( 3.9925, 0.538708 )
-frame = 0
+frame = 1
 
 [node name="SkyCloud399" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -1911.89, 890.27 )
 scale = Vector2( 3.9925, 0.538708 )
+frame = 0
 
 [node name="SkyCloud400" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -1975.88, 862.27 )
 scale = Vector2( 2.85625, 0.456851 )
+frame = 0
 
 [node name="SkyCloud401" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -1692.75, 857.144 )
 scale = Vector2( 3.9925, 0.538708 )
-frame = 0
+frame = 1
 
 [node name="SkyCloud402" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -1615.75, 896.144 )
 scale = Vector2( 3.9925, 0.538708 )
-frame = 0
+frame = 1
 
 [node name="SkyCloud403" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -1765.92, 950.493 )
 scale = Vector2( 3.9925, 0.538708 )
-frame = 1
+frame = 2
 
 [node name="SkyCloud404" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -1782.9, 967.762 )
 scale = Vector2( 3.9925, 0.538708 )
-frame = 1
+frame = 2
 
 [node name="SkyCloud405" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -1727.9, 889.762 )
 scale = Vector2( 3.9925, 0.538708 )
-frame = 2
 
 [node name="SkyCloud406" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -1353, 918 )
 scale = Vector2( 3.9925, 0.538708 )
-frame = 2
 
 [node name="SkyCloud407" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -1401, 725 )
 scale = Vector2( 3.9925, 0.538708 )
+frame = 0
 
 [node name="SkyCloud408" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -1897.75, 991.144 )
 scale = Vector2( 2.85625, 0.456851 )
+frame = 0
 
 [node name="SkyCloud409" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -1045.76, 688.427 )
 scale = Vector2( 3.9925, 0.538708 )
-frame = 2
 
 [node name="SkyCloud410" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -1062.74, 705.696 )
 scale = Vector2( 3.9925, 0.538708 )
-frame = 2
 
 [node name="SkyCloud411" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -840.574, 744.078 )
 scale = Vector2( 3.9925, 0.538708 )
-frame = 1
+frame = 2
 
 [node name="SkyCloud412" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -1028.61, 738.078 )
 scale = Vector2( 3.9925, 0.538708 )
-frame = 2
 
 [node name="SkyCloud413" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -1121.61, 793.078 )
 scale = Vector2( 3.9925, 0.538708 )
-frame = 0
+frame = 1
 
 [node name="SkyCloud414" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -1113.61, 757.078 )
 scale = Vector2( 3.9925, 0.538708 )
+frame = 0
 
 [node name="SkyCloud415" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -1177.59, 729.078 )
 scale = Vector2( 2.85625, 0.456851 )
+frame = 0
 
 [node name="SkyCloud416" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -894.469, 723.952 )
 scale = Vector2( 3.9925, 0.538708 )
-frame = 0
+frame = 1
 
 [node name="SkyCloud417" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -817.469, 762.952 )
 scale = Vector2( 3.9925, 0.538708 )
-frame = 0
+frame = 1
 
 [node name="SkyCloud418" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -967.639, 817.301 )
 scale = Vector2( 3.9925, 0.538708 )
-frame = 1
+frame = 2
 
 [node name="SkyCloud419" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -984.619, 834.57 )
 scale = Vector2( 3.9925, 0.538708 )
-frame = 1
+frame = 2
 
 [node name="SkyCloud420" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -929.619, 756.57 )
 scale = Vector2( 3.9925, 0.538708 )
-frame = 2
 
 [node name="SkyCloud421" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -950.486, 866.952 )
 scale = Vector2( 3.9925, 0.538708 )
-frame = 2
 
 [node name="SkyCloud422" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -1035.49, 885.952 )
 scale = Vector2( 3.9925, 0.538708 )
+frame = 0
 
 [node name="SkyCloud423" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -1099.47, 857.952 )
 scale = Vector2( 2.85625, 0.456851 )
+frame = 0
 
 [node name="SkyCloud424" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -1725.04, 1205.62 )
 scale = Vector2( 3.9925, 0.538708 )
-frame = 2
 
 [node name="SkyCloud425" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -1742.02, 1222.89 )
 scale = Vector2( 3.9925, 0.538708 )
-frame = 2
 
 [node name="SkyCloud426" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -1519.85, 1261.27 )
 scale = Vector2( 3.9925, 0.538708 )
-frame = 1
+frame = 2
 
 [node name="SkyCloud427" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -1707.89, 1255.27 )
 scale = Vector2( 3.9925, 0.538708 )
-frame = 2
 
 [node name="SkyCloud428" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -1800.89, 1310.27 )
 scale = Vector2( 3.9925, 0.538708 )
-frame = 0
+frame = 1
 
 [node name="SkyCloud429" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -1792.89, 1274.27 )
 scale = Vector2( 3.9925, 0.538708 )
+frame = 0
 
 [node name="SkyCloud430" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -1856.88, 1246.27 )
 scale = Vector2( 2.85625, 0.456851 )
+frame = 0
 
 [node name="SkyCloud431" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -1573.75, 1241.14 )
 scale = Vector2( 3.9925, 0.538708 )
-frame = 0
+frame = 1
 
 [node name="SkyCloud432" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -1496.75, 1280.14 )
 scale = Vector2( 3.9925, 0.538708 )
-frame = 0
+frame = 1
 
 [node name="SkyCloud433" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -1646.92, 1334.49 )
 scale = Vector2( 3.9925, 0.538708 )
-frame = 1
+frame = 2
 
 [node name="SkyCloud434" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -1663.9, 1351.76 )
 scale = Vector2( 3.9925, 0.538708 )
-frame = 1
+frame = 2
 
 [node name="SkyCloud435" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -1608.9, 1273.76 )
 scale = Vector2( 3.9925, 0.538708 )
-frame = 2
 
 [node name="SkyCloud436" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -1629.77, 1384.14 )
 scale = Vector2( 3.9925, 0.538708 )
-frame = 2
 
 [node name="SkyCloud437" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -1714.77, 1403.14 )
 scale = Vector2( 3.9925, 0.538708 )
+frame = 0
 
 [node name="SkyCloud438" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -1778.75, 1375.14 )
 scale = Vector2( 2.85625, 0.456851 )
+frame = 0
 
 [node name="SkyCloud364" parent="YSort/Toxic Puddles and Barrels" instance=ExtResource( 119 )]
 position = Vector2( -1996.19, 985.619 )
 scale = Vector2( 3.9925, 0.538708 )
-frame = 0
+frame = 1
 
 [node name="Player" parent="YSort" instance=ExtResource( 2 )]
 
@@ -5155,97 +5147,101 @@ remote_path = NodePath("../../../Camera2D")
 
 [node name="Torch" parent="YSort/Torches" instance=ExtResource( 5 )]
 position = Vector2( 3, 58 )
+frame = 3
 
 [node name="Torch2" parent="YSort/Torches" instance=ExtResource( 5 )]
 position = Vector2( -48, -72 )
+frame = 3
 
 [node name="Torch6" parent="YSort/Torches" instance=ExtResource( 5 )]
 position = Vector2( -272, -104 )
+frame = 3
 
 [node name="Torch7" parent="YSort/Torches" instance=ExtResource( 5 )]
 position = Vector2( -400, -264 )
-frame = 9
 
 [node name="Torch10" parent="YSort/Torches" instance=ExtResource( 5 )]
 position = Vector2( -288, -264 )
-frame = 9
 
 [node name="Torch11" parent="YSort/Torches" instance=ExtResource( 5 )]
 position = Vector2( -384, -488 )
-frame = 8
+frame = 0
 
 [node name="Torch16" parent="YSort/Torches" instance=ExtResource( 5 )]
 position = Vector2( -16, -488 )
-frame = 8
+frame = 0
 
 [node name="Torch12" parent="YSort/Torches" instance=ExtResource( 5 )]
 position = Vector2( -72, -200 )
-frame = 7
+frame = 9
 
 [node name="Torch9" parent="YSort/Torches" instance=ExtResource( 5 )]
 position = Vector2( -576, -264 )
-frame = 8
+frame = 0
 
 [node name="Torch18" parent="YSort/Torches" instance=ExtResource( 5 )]
 position = Vector2( -864, 153 )
-frame = 8
+frame = 0
 
 [node name="Torch19" parent="YSort/Torches" instance=ExtResource( 5 )]
 position = Vector2( -817, 281 )
-frame = 7
+frame = 9
 
 [node name="Torch20" parent="YSort/Torches" instance=ExtResource( 5 )]
 position = Vector2( -1262, 281 )
-frame = 7
+frame = 9
 
 [node name="Torch8" parent="YSort/Torches" instance=ExtResource( 5 )]
 position = Vector2( -448, -72 )
-frame = 8
+frame = 0
 
 [node name="Torch13" parent="YSort/Torches" instance=ExtResource( 5 )]
 position = Vector2( -400, 120 )
-frame = 8
+frame = 0
 
 [node name="Torch15" parent="YSort/Torches" instance=ExtResource( 5 )]
 position = Vector2( -240, 184 )
-frame = 7
+frame = 9
 
 [node name="Torch14" parent="YSort/Torches" instance=ExtResource( 5 )]
 position = Vector2( -528, 216 )
-frame = 7
+frame = 9
 
 [node name="Torch17" parent="YSort/Torches" instance=ExtResource( 5 )]
 position = Vector2( -512, 472 )
-frame = 6
+frame = 8
 
 [node name="Torch3" parent="YSort/Torches" instance=ExtResource( 5 )]
 position = Vector2( 64, -72 )
+frame = 3
 
 [node name="Torch4" parent="YSort/Torches" instance=ExtResource( 5 )]
 position = Vector2( 104, -264 )
+frame = 3
 
 [node name="Torch5" parent="YSort/Torches" instance=ExtResource( 5 )]
 position = Vector2( 290, -199 )
+frame = 3
 
 [node name="Torch21" parent="YSort/Torches" instance=ExtResource( 5 )]
 position = Vector2( -1231.4, 569.4 )
-frame = 6
+frame = 8
 
 [node name="Torch22" parent="YSort/Torches" instance=ExtResource( 5 )]
 position = Vector2( -1172, 569 )
-frame = 5
+frame = 7
 
 [node name="Torch23" parent="YSort/Torches" instance=ExtResource( 5 )]
 position = Vector2( -1439.38, 935.4 )
-frame = 5
+frame = 7
 
 [node name="Torch24" parent="YSort/Torches" instance=ExtResource( 5 )]
 position = Vector2( -1801, 888 )
-frame = 5
+frame = 7
 
 [node name="Torch25" parent="YSort/Torches" instance=ExtResource( 5 )]
 position = Vector2( -1675, 760 )
-frame = 4
+frame = 6
 
 [node name="Dwellers" type="YSort" parent="YSort"]
 
@@ -5729,62 +5725,61 @@ position = Vector2( 832, -279 )
 [node name="CrystalPurple" parent="YSort/Crystals" instance=ExtResource( 79 )]
 position = Vector2( -279, 286 )
 scale = Vector2( 0.194118, 0.194117 )
-frame = 10
 
 [node name="CrystalPurple2" parent="YSort/Crystals" instance=ExtResource( 79 )]
 position = Vector2( -774, 412 )
-frame = 7
+frame = 11
 
 [node name="CrystalPurple4" parent="YSort/Crystals" instance=ExtResource( 79 )]
 position = Vector2( -977, 286 )
 scale = Vector2( 0.208823, 0.194118 )
-frame = 6
+frame = 10
 
 [node name="CrystalPurple13" parent="YSort/Crystals" instance=ExtResource( 79 )]
 position = Vector2( -1148, 191 )
 scale = Vector2( 0.148529, 0.12647 )
-frame = 5
+frame = 9
 
 [node name="CrystalPurple5" parent="YSort/Crystals" instance=ExtResource( 79 )]
 position = Vector2( -356, 127 )
 scale = Vector2( 0.177941, 0.155883 )
-frame = 6
+frame = 10
 
 [node name="CrystalPurple9" parent="YSort/Crystals" instance=ExtResource( 79 )]
 position = Vector2( -1235, -129 )
 scale = Vector2( 0.252942, 0.238235 )
-frame = 6
+frame = 10
 
 [node name="CrystalPurple10" parent="YSort/Crystals" instance=ExtResource( 79 )]
 position = Vector2( -1170, -388 )
-frame = 7
+frame = 11
 
 [node name="CrystalPurple11" parent="YSort/Crystals" instance=ExtResource( 79 )]
 position = Vector2( -471.6, -417.9 )
 scale = Vector2( 0.252941, 0.238235 )
-frame = 7
+frame = 11
 
 [node name="CrystalPurple8" parent="YSort/Crystals" instance=ExtResource( 79 )]
 position = Vector2( -805, -35 )
-frame = 6
+frame = 10
 
 [node name="CrystalPurple6" parent="YSort/Crystals" instance=ExtResource( 79 )]
 position = Vector2( -34.1, 221.6 )
 scale = Vector2( 0.238235, 0.252941 )
-frame = 6
+frame = 10
 
 [node name="CrystalPurple7" parent="YSort/Crystals" instance=ExtResource( 79 )]
 position = Vector2( 254.1, 383.1 )
 scale = Vector2( 0.179412, 0.208824 )
-frame = 7
+frame = 11
 
 [node name="CrystalPurple12" parent="YSort/Crystals" instance=ExtResource( 79 )]
 position = Vector2( 1154, -322 )
-frame = 7
+frame = 11
 
 [node name="CrystalPurple3" parent="YSort/Crystals" instance=ExtResource( 79 )]
 position = Vector2( -494, 315 )
-frame = 7
+frame = 11
 
 [node name="Crystal_Blue_One" parent="YSort/Crystals" instance=ExtResource( 86 )]
 position = Vector2( -122, 31 )
@@ -6363,7 +6358,7 @@ scale = Vector2( 0.35, 0.35 )
 [node name="SkyCloud264" parent="YSort/MoleRoz" instance=ExtResource( 119 )]
 position = Vector2( 213, -637.674 )
 scale = Vector2( 0.135625, 0.145365 )
-frame = 0
+frame = 1
 
 [node name="ScifiChair" parent="YSort/MoleRoz" instance=ExtResource( 153 )]
 position = Vector2( 410, -627 )
@@ -6438,8 +6433,12 @@ scale = Vector2( 0.15, 0.15 )
 [node name="Corpses" type="YSort" parent="YSort"]
 
 [node name="SoldierCorpse1" parent="YSort/Corpses" instance=ExtResource( 167 )]
-position = Vector2( -1215, 579 )
-scale = Vector2( 0.3, 0.3 )
+position = Vector2( -1183, 580 )
+scale = Vector2( 0.4, 0.4 )
+
+[node name="BloodStainWall1" parent="YSort/Corpses" instance=ExtResource( 168 )]
+position = Vector2( -1186, 575 )
+scale = Vector2( 0.75, 0.75 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
