@@ -13,17 +13,23 @@ onready var timer2 = $Timer2
 onready var timer3 = $Timer3
 onready var text_label = $Popup/RichTextLabel
 onready var chatter = $Chatter
+onready var close_button = $Popup2/Sprite3
+onready var close_text = $Popup2/RichTextLabel2
+onready var area_2d = $Area2D
+onready var timer4 = $Timer4
 var letter_count
 var full_text_one
+var close_enabled
 #var full_text_two
 #var full_text_three
-
+var player_stats = PlayerStats
 var reading_one
 #var reading_two
 #var reading_three
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	reading_one = true
+	close_enabled = false
 #	reading_two = false
 #	reading_three = false
 	letter_count = 0
@@ -34,11 +40,20 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	pass
+	if close_enabled:
+		if Input.is_action_just_pressed("roll"):
+			reading_one = true
+			close_enabled = false
+			popup2.queue_free()
+			area_2d.queue_free()
+			player_stats.emit_signal("give_movement")
+			player_stats.emit_signal("player_resumed")
+			timer4.start()
 
 
 func _on_Area2D_area_entered(area):
 	chatter.play()
+	player_stats.emit_signal("player_paused")
 	popup.popup()
 	popup.rect_global_position.x = self.global_position.x
 	popup.rect_global_position.y = self.global_position.y
@@ -89,6 +104,8 @@ func _on_Timer_timeout():
 
 func _on_Timer2_timeout():
 	popup.hide()
+	close_button.hide()
+	close_text.hide()
 	popup2.popup()
 	popup2.rect_global_position.x = self.global_position.x
 	popup2.rect_global_position.y = self.global_position.y
@@ -100,4 +117,12 @@ func _on_Timer2_timeout():
 
 func _on_Timer3_timeout():
 	popup.hide()
-	popup2.hide()
+	close_button.show()
+	close_text.show()
+	close_enabled = true
+	#popup2.hide()
+	
+
+
+func _on_Timer4_timeout():
+	queue_free()
