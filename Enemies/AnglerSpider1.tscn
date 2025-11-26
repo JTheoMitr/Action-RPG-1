@@ -570,7 +570,7 @@ animations = [ {
 "frames": [ SubResource( 129 ), SubResource( 130 ), SubResource( 131 ), SubResource( 132 ), SubResource( 133 ), SubResource( 134 ), SubResource( 135 ), SubResource( 136 ), SubResource( 137 ), SubResource( 138 ), SubResource( 139 ), SubResource( 140 ) ],
 "loop": true,
 "name": "default",
-"speed": 10.0
+"speed": 8.0
 } ]
 
 [node name="AnglerSpider1" type="KinematicBody2D"]
@@ -614,7 +614,6 @@ visible = false
 position = Vector2( -14, -46 )
 scale = Vector2( 1.2, 1.2 )
 frames = SubResource( 30 )
-frame = 1
 playing = true
 flip_h = true
 
@@ -623,7 +622,7 @@ position = Vector2( 30, -8 )
 rotation = 0.0872668
 scale = Vector2( 0.433333, 0.433333 )
 frames = SubResource( 108 )
-frame = 7
+frame = 14
 playing = true
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
@@ -631,6 +630,7 @@ position = Vector2( 5, -12 )
 scale = Vector2( 1.2, 1.2 )
 frames = SubResource( 7 )
 animation = "attack"
+frame = 2
 playing = true
 offset = Vector2( 1, -15 )
 flip_h = true
@@ -639,7 +639,7 @@ flip_h = true
 position = Vector2( 25, -60 )
 scale = Vector2( 0.45, 0.45 )
 frames = SubResource( 39 )
-frame = 1
+frame = 4
 playing = true
 flip_h = true
 
@@ -659,7 +659,14 @@ color = Color( 0.0666667, 0.372549, 0.0509804, 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
 modulate = Color( 0.509804, 0.509804, 0.509804, 1 )
-position = Vector2( 18, -12 )
+position = Vector2( 18, -13 )
+rotation = 6.10865
+scale = Vector2( 0.65, 0.65 )
+texture = ExtResource( 15 )
+
+[node name="Skull2" type="Sprite" parent="."]
+modulate = Color( 0.509804, 0.509804, 0.509804, 1 )
+position = Vector2( 18, -13 )
 rotation = 6.10865
 scale = Vector2( 0.65, 0.65 )
 texture = ExtResource( 15 )
@@ -679,7 +686,7 @@ self_modulate = Color( 0.905882, 0.396078, 0.396078, 1 )
 position = Vector2( -2, -20 )
 scale = Vector2( 0.2, 0.2 )
 frames = SubResource( 154 )
-frame = 5
+frame = 4
 playing = true
 
 [node name="Heart" type="AnimatedSprite" parent="."]

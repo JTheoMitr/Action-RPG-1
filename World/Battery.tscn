@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://World/floppy.png" type="Texture" id=1]
 [ext_resource path="res://World/Battery.gd" type="Script" id=2]
 [ext_resource path="res://fonts/PixelTandysoft-0rJG.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://World/pixel_pc_floppy_insertering_animation.png" type="Texture" id=4]
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 100.0
@@ -11,9 +12,48 @@ height = 128.0
 [sub_resource type="StyleBoxFlat" id=2]
 bg_color = Color( 0, 0, 0, 0.666667 )
 
+[sub_resource type="StyleBoxFlat" id=12]
+bg_color = Color( 0.262745, 0.509804, 0.443137, 1 )
+
 [sub_resource type="DynamicFont" id=3]
 size = 10
 font_data = ExtResource( 3 )
+
+[sub_resource type="AtlasTexture" id=4]
+atlas = ExtResource( 4 )
+region = Rect2( 128, 0, 128, 126 )
+
+[sub_resource type="AtlasTexture" id=5]
+atlas = ExtResource( 4 )
+region = Rect2( 256, 0, 128, 126 )
+
+[sub_resource type="AtlasTexture" id=6]
+atlas = ExtResource( 4 )
+region = Rect2( 384, 0, 128, 126 )
+
+[sub_resource type="AtlasTexture" id=7]
+atlas = ExtResource( 4 )
+region = Rect2( 512, 0, 128, 126 )
+
+[sub_resource type="AtlasTexture" id=8]
+atlas = ExtResource( 4 )
+region = Rect2( 640, 0, 128, 126 )
+
+[sub_resource type="AtlasTexture" id=9]
+atlas = ExtResource( 4 )
+region = Rect2( 768, 0, 128, 126 )
+
+[sub_resource type="AtlasTexture" id=10]
+atlas = ExtResource( 4 )
+region = Rect2( 0, 0, 128, 126 )
+
+[sub_resource type="SpriteFrames" id=11]
+animations = [ {
+"frames": [ SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
 
 [node name="Battery" type="Area2D"]
 scale = Vector2( 0.03, 0.03 )
@@ -30,24 +70,40 @@ texture = ExtResource( 1 )
 
 [node name="PopupDialog" type="PopupDialog" parent="."]
 visible = true
-margin_right = 100.0
-margin_bottom = 20.0
-rect_scale = Vector2( 0.5, 0.5 )
+margin_right = 110.0
+margin_bottom = 35.0
+rect_scale = Vector2( 0.65, 0.65 )
 custom_styles/panel = SubResource( 2 )
 
+[node name="Panel" type="Panel" parent="PopupDialog"]
+margin_left = 5.0
+margin_top = 5.0
+margin_right = 105.0
+margin_bottom = 30.0
+custom_styles/panel = SubResource( 12 )
+
 [node name="RichTextLabel" type="RichTextLabel" parent="PopupDialog"]
-margin_top = 3.0
-margin_right = 100.0
-margin_bottom = 23.0
+margin_left = 15.0
+margin_top = 10.0
+margin_right = 115.0
+margin_bottom = 30.0
 rect_min_size = Vector2( 100, 20 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_fonts/normal_font = SubResource( 3 )
 bbcode_enabled = true
 bbcode_text = "[center] +1 Floppy"
 text = " +1 Floppy"
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="PopupDialog"]
+position = Vector2( 25, 18 )
+scale = Vector2( 0.2, 0.2 )
+frames = SubResource( 11 )
+frame = 6
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 2.0
 one_shot = true
 
 [connection signal="area_entered" from="." to="." method="_on_Battery_area_entered"]
+[connection signal="animation_finished" from="PopupDialog/AnimatedSprite" to="." method="_on_AnimatedSprite_animation_finished"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

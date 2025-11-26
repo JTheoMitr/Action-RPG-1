@@ -1,9 +1,10 @@
 extends Area2D
 
-const PickUpSound = preload("res://Music and Sounds/PickUpSoundTwo.tscn")
+const PickUpSound = preload("res://Music and Sounds/FloppyPickupSound.tscn")
 
 onready var popup = $PopupDialog
 onready var timer = $Timer
+onready var computer = $PopupDialog/AnimatedSprite
 
 onready var save_file = SaveFile.g_data
 
@@ -22,6 +23,8 @@ func _on_Battery_area_entered(area):
 		get_tree().current_scene.add_child(pickUpSound)
 		timer.start()
 		popup.show()
+		computer.frame = 0
+		computer.play()
 		sprite.hide()
 		coll.call_deferred("queue_free")
 	elif stats.batteries >= stats.max_batteries:
@@ -37,3 +40,8 @@ func _on_Battery_area_entered(area):
 
 func _on_Timer_timeout():
 	queue_free()
+
+
+func _on_AnimatedSprite_animation_finished():
+	computer.frame = 6
+	computer.stop()

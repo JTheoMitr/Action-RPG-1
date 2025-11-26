@@ -3,7 +3,7 @@ extends KinematicBody2D
 const EnemyDeathEffect = preload("res://Effects/EnemyDeathEffect.tscn")
 const HopSound = preload("res://Music and Sounds/AnglerScorpionSound1.tscn")
 const SquishSound = preload("res://Music and Sounds/SquishSound.tscn")
-const SquishSound2 = preload("res://Music and Sounds/SquishSound2.tscn")
+const SquishSound2 = preload("res://Music and Sounds/BigSquishSound1.tscn")
 const WhooshSound = preload("res://Music and Sounds/WhooshSound1.tscn")
 const XpOrb = preload("res://Enemies/XpOrb.tscn")
 const Ammo = preload("res://World/Ammo.tscn")
@@ -37,6 +37,7 @@ onready var light = $Light2D
 onready var tail = $AnimatedSprite2
 onready var decoyBug = $AnimatedSprite3
 onready var skull = $Sprite
+onready var skull2 = $Skull2
 onready var green_blood = $AnimatedSprite2/GreenBlood
 onready var smoke_reveal = $SmokeReveal
 onready var heart = $Heart
@@ -45,10 +46,11 @@ onready var blood_explosion = $Bloodsplosion
 var lightingUp
 var lightingDown
 var awoken
+var spinning_skull
 func _ready():
 	state = IDLE
-	lightingDown = false
-	lightingUp = true
+	#lightingDown = false
+	#lightingUp = true
 	decoyBug.play("default")
 	awoken = false
 	green_blood.hide()
@@ -61,6 +63,8 @@ func _ready():
 	blood_explosion.hide()
 	blood_explosion.frame = 0
 	hitbox.disabled = false
+	spinning_skull = false
+	skull2.hide()
 	
 
 
@@ -73,7 +77,12 @@ func _physics_process(delta):
 	if lightingUp:
 		skull.position.y = -13.0
 		
-		
+	if spinning_skull:
+		skull2.show()
+		skull2.rotation_degrees -= 3
+		skull2.position.y += 1
+	if spinning_skull == false:
+		skull2.global_position = skull.global_position
 	
 	light.energy = clamp(light.energy + dir * 0.8 * delta, 0.4, 1.2)
 	if is_equal_approx(light.energy, 1.2):
@@ -84,7 +93,7 @@ func _physics_process(delta):
 	if tail.flip_h:
 		tail.position.x = -14.0
 		decoyBug.position.x = 25.0
-		light.position.x = 23.0
+		light.position.x = 25.0
 		skull.position.x = 18.0
 		skull.rotation_degrees = 350
 		heart.position.x = -1.0
@@ -93,7 +102,7 @@ func _physics_process(delta):
 	else:
 		tail.position.x = 22.0
 		decoyBug.position.x = -25.0
-		light.position.x = -23.0
+		light.position.x = -25.0
 		skull.position.x = -3
 		skull.rotation_degrees = 10
 		heart.position.x = 12
@@ -177,6 +186,7 @@ func pick_random_state(state_list):
 func _on_Hurtbox_area_entered(area):
 	stats.health -= area.damage
 	# print(stats.health)
+	#spinning_skull = true
 	if area.knockback_vector != null:
 		knockback = area.knockback_vector * 130
 	hurtbox.create_hit_effect()
@@ -188,6 +198,7 @@ func _on_Stats_no_health():
 	sprite.hide()
 	tail.hide()
 	skull.hide()
+	spinning_skull = true
 	heart.hide()
 	light.hide()
 	green_blood.hide()
