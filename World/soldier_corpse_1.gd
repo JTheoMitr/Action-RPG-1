@@ -36,7 +36,7 @@ func _ready():
 	timer.wait_time = NORMAL_SPEED
 	full_text_one = "Something ripped this \n soldier to pieces..."
 	#add another pop-up *You found the flashlight/torch, this will automatically turn on in dark areas
-	text_label.bbcode_text = ""
+	#text_label.bbcode_text = ""
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -57,16 +57,18 @@ func _on_Area2D_area_entered(area):
 	popup.popup()
 	popup.rect_global_position.x = self.global_position.x
 	popup.rect_global_position.y = self.global_position.y
-	timer.start()
+	#timer.start()
+	timer2.start()
 
 func _on_Timer_timeout():
-	if letter_count <= full_text_one.length() && reading_one:
-		text_label.bbcode_text = "[center]" + full_text_one.substr(0, letter_count)
-		letter_count += 1
-		if letter_count < full_text_one.length() && full_text_one[letter_count] == ".":
-			timer.wait_time = ELLIPSIS_SPEED
-		else:
-			timer.wait_time = NORMAL_SPEED
+	pass
+#	if letter_count <= full_text_one.length() && reading_one:
+#		text_label.bbcode_text = "[center]" + full_text_one.substr(0, letter_count)
+#		letter_count += 1
+#		if letter_count < full_text_one.length() && full_text_one[letter_count] == ".":
+#			timer.wait_time = ELLIPSIS_SPEED
+#		else:
+#			timer.wait_time = NORMAL_SPEED
 			
 #	if letter_count <= full_text_two.length() && reading_two:
 #		text_label.bbcode_text = "[center]" + full_text_two.substr(0, letter_count)
@@ -86,10 +88,10 @@ func _on_Timer_timeout():
 #		else:
 #			timer.wait_time = NORMAL_SPEED
 			
-	if letter_count > full_text_one.length() && reading_one:
-		timer2.start()
-		letter_count = 0
-		timer.stop()
+#	if letter_count > full_text_one.length() && reading_one:
+#		timer2.start()
+#		letter_count = 0
+#		timer.stop()
 #
 #	if letter_count > full_text_two.length() && reading_two:
 #		reading_two = false
@@ -97,7 +99,7 @@ func _on_Timer_timeout():
 #		letter_count = 0
 		
 		
-	print_debug(letter_count)
+#	print_debug(letter_count)
 	
 	
 

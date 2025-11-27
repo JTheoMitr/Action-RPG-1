@@ -2,6 +2,7 @@ extends KinematicBody2D
 
 const EnemyDeathEffect = preload("res://Effects/EnemyDeathEffect.tscn")
 const HopSound = preload("res://Music and Sounds/AnglerScorpionSound1.tscn")
+const DeathSqueal = preload("res://Music and Sounds/AnglerDyingSound1.tscn")
 const SquishSound = preload("res://Music and Sounds/SquishSound.tscn")
 const SquishSound2 = preload("res://Music and Sounds/BigSquishSound1.tscn")
 const WhooshSound = preload("res://Music and Sounds/WhooshSound1.tscn")
@@ -208,6 +209,11 @@ func _on_Stats_no_health():
 	var squishSound = SquishSound2.instance()
 	get_parent().add_child(squishSound)
 	squishSound.play(0.0)
+	
+	var death_sound = DeathSqueal.instance()
+	get_parent().add_child(death_sound)
+	death_sound.play()
+	
 	blood_explosion.show()
 	blood_explosion.play()
 	var enemyDeathEffect = EnemyDeathEffect.instance()

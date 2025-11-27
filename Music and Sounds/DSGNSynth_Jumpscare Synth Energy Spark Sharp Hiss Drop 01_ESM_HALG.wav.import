@@ -1,0 +1,23 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/DSGNSynth_Jumpscare Synth Energy Spark Sharp Hiss Drop 01_ESM_HALG.wav-fe53cb931210e770a456ff30e2b784b9.sample"
+
+[deps]
+
+source_file="res://Music and Sounds/DSGNSynth_Jumpscare Synth Energy Spark Sharp Hiss Drop 01_ESM_HALG.wav"
+dest_files=[ "res://.import/DSGNSynth_Jumpscare Synth Energy Spark Sharp Hiss Drop 01_ESM_HALG.wav-fe53cb931210e770a456ff30e2b784b9.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

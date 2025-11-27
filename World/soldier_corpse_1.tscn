@@ -8,7 +8,7 @@
 [ext_resource path="res://fonts/PixelTandysoft-0rJG.ttf" type="DynamicFontData" id=6]
 [ext_resource path="res://UI/UI_Panel_Blue_3d.png" type="Texture" id=7]
 [ext_resource path="res://World/tactical_flashlight.png" type="Texture" id=8]
-[ext_resource path="res://Music and Sounds/ESM_Micro_Bot_Machine_Chatter_Sci_Fi_Robot_Robotic_Glitch_Morph_Mechanism_Texture.wav" type="AudioStream" id=9]
+[ext_resource path="res://Music and Sounds/bat_drone.wav" type="AudioStream" id=9]
 [ext_resource path="res://UI/tilemap_btm_btn_still.png" type="Texture" id=10]
 
 [sub_resource type="CapsuleShape2D" id=1]
@@ -92,6 +92,8 @@ rect_scale = Vector2( 2, 2 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_fonts/normal_font = SubResource( 3 )
 bbcode_enabled = true
+bbcode_text = "[center]Something ripped this soldier to pieces..."
+text = "Something ripped this soldier to pieces..."
 
 [node name="Area2D" type="Area2D" parent="."]
 visible = false
@@ -109,15 +111,17 @@ shape = SubResource( 4 )
 wait_time = 0.075
 
 [node name="Timer2" type="Timer" parent="."]
+wait_time = 2.5
 one_shot = true
 
 [node name="Popup2" type="Popup" parent="."]
 visible = true
 margin_right = 40.0
 margin_bottom = 40.0
-rect_scale = Vector2( 0.85, 0.85 )
+rect_scale = Vector2( 0.95, 0.95 )
 
 [node name="Sprite" type="Sprite" parent="Popup2"]
+self_modulate = Color( 0.541176, 0.541176, 0.541176, 1 )
 texture = ExtResource( 7 )
 
 [node name="Panel" type="Panel" parent="Popup2"]
@@ -126,11 +130,11 @@ margin_right = 40.0
 margin_bottom = 32.0
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Popup2"]
-margin_left = -35.0
-margin_top = 2.0
-margin_right = 113.0
-margin_bottom = 62.0
-rect_scale = Vector2( 0.5, 0.5 )
+margin_left = -36.0
+margin_top = 1.0
+margin_right = 104.0
+margin_bottom = 59.0
+rect_scale = Vector2( 0.55, 0.55 )
 custom_fonts/normal_font = SubResource( 5 )
 bbcode_enabled = true
 bbcode_text = "[center]You found a tactical flashlight...it will turn on automatically when entering dark areas."
@@ -149,16 +153,17 @@ scale = Vector2( 0.35, 0.35 )
 texture = ExtResource( 8 )
 
 [node name="Sprite3" type="Sprite" parent="Popup2"]
-position = Vector2( -8.55615, 39.5722 )
+position = Vector2( -12, 39.572 )
 scale = Vector2( 0.6, 0.6 )
 texture = ExtResource( 10 )
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="Popup2"]
-margin_left = -1.06952
-margin_top = 35.2941
-margin_right = 41.9305
-margin_bottom = 50.2941
-rect_scale = Vector2( 0.65, 0.65 )
+margin_left = -1.5
+margin_top = 34.0
+margin_right = 41.5
+margin_bottom = 49.0
+rect_scale = Vector2( 0.7, 0.7 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_fonts/normal_font = SubResource( 7 )
 text = "Close"
 
@@ -168,7 +173,8 @@ one_shot = true
 
 [node name="Chatter" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 9 )
-volume_db = -5.0
+volume_db = 3.0
+pitch_scale = 0.55
 
 [node name="Timer4" type="Timer" parent="."]
 one_shot = true

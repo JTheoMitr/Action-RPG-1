@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Music and Sounds/DSGNSynth_Jumpscare Synth Energy Spark Sharp Hiss Drop 01_ESM_HALG.wav" type="AudioStream" id=1]
+[ext_resource path="res://Music and Sounds/SquanchSound.gd" type="Script" id=2]
+
+[node name="AnglerDyingSound1" type="AudioStreamPlayer"]
+stream = ExtResource( 1 )
+volume_db = -7.095
+pitch_scale = 0.57
+autoplay = true
+script = ExtResource( 2 )

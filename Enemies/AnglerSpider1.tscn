@@ -622,7 +622,7 @@ position = Vector2( 30, -8 )
 rotation = 0.0872668
 scale = Vector2( 0.433333, 0.433333 )
 frames = SubResource( 108 )
-frame = 14
+frame = 17
 playing = true
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
@@ -630,7 +630,6 @@ position = Vector2( 5, -12 )
 scale = Vector2( 1.2, 1.2 )
 frames = SubResource( 7 )
 animation = "attack"
-frame = 2
 playing = true
 offset = Vector2( 1, -15 )
 flip_h = true
@@ -639,7 +638,7 @@ flip_h = true
 position = Vector2( 25, -60 )
 scale = Vector2( 0.45, 0.45 )
 frames = SubResource( 39 )
-frame = 4
+frame = 7
 playing = true
 flip_h = true
 
@@ -686,7 +685,6 @@ self_modulate = Color( 0.905882, 0.396078, 0.396078, 1 )
 position = Vector2( -2, -20 )
 scale = Vector2( 0.2, 0.2 )
 frames = SubResource( 154 )
-frame = 4
 playing = true
 
 [node name="Heart" type="AnimatedSprite" parent="."]
@@ -694,7 +692,7 @@ modulate = Color( 1, 0.686275, 0.686275, 1 )
 position = Vector2( -1, -19 )
 rotation = 5.75959
 frames = SubResource( 128 )
-frame = 3
+frame = 1
 playing = true
 __meta__ = {
 "_edit_group_": true

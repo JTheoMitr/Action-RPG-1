@@ -2,7 +2,7 @@
 
 [ext_resource path="res://World/Map_WGrass.png" type="Texture" id=1]
 [ext_resource path="res://World/MapUnitWGrass.gd" type="Script" id=2]
-[ext_resource path="res://UI/Pixel GUI Buttons pack black platform.png" type="Texture" id=3]
+[ext_resource path="res://UI/UI_Flat_Button_Medium_Lock_02a1 copy.png" type="Texture" id=3]
 [ext_resource path="res://fonts/PixelTandysoft-0rJG.ttf" type="DynamicFontData" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
@@ -42,13 +42,13 @@ margin_left = -39.0
 margin_top = -108.0
 margin_right = 173.0
 margin_bottom = 53.0
-rect_scale = Vector2( 0.35, 0.35 )
+rect_scale = Vector2( 0.4, 0.4 )
 __meta__ = {
 "_edit_group_": true
 }
 
 [node name="Sprite" type="Sprite" parent="Popup"]
-modulate = Color( 0.172549, 0.145098, 0.145098, 0.721569 )
+self_modulate = Color( 0.819608, 0.819608, 0.819608, 1 )
 position = Vector2( 107, 20 )
 scale = Vector2( 3, 0.737328 )
 texture = ExtResource( 3 )
@@ -58,6 +58,7 @@ margin_left = 29.0
 margin_top = 12.0
 margin_right = 182.0
 margin_bottom = 46.0
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_fonts/normal_font = SubResource( 3 )
 bbcode_enabled = true
 bbcode_text = "[center]Tunnel Entrance Nearby"
