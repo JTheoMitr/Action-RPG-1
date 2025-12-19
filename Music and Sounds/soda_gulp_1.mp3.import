@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/soda_gulp_1.mp3-42abc8fc5f2ce8f4730b6b5a45fb2ec6.mp3str"
+
+[deps]
+
+source_file="res://Music and Sounds/soda_gulp_1.mp3"
+dest_files=[ "res://.import/soda_gulp_1.mp3-42abc8fc5f2ce8f4730b6b5a45fb2ec6.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

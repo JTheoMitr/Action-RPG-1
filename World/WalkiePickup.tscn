@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=2]
+[gd_scene load_steps=48 format=2]
 
 [ext_resource path="res://Dialogue Headshots/robot_guide_face_still.png" type="Texture" id=1]
 [ext_resource path="res://UI/nightsky1.png" type="Texture" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://UI/walkie_talkie_1_w_hand.png" type="Texture" id=9]
 [ext_resource path="res://UI/5_light_meter.png" type="Texture" id=10]
 [ext_resource path="res://Effects/sparkle_one.png" type="Texture" id=11]
+[ext_resource path="res://UI/walkie_addon_anim.png" type="Texture" id=12]
 
 [sub_resource type="AtlasTexture" id=11]
 atlas = ExtResource( 4 )
@@ -129,12 +130,51 @@ animations = [ {
 "speed": 5.0
 } ]
 
+[sub_resource type="AtlasTexture" id=33]
+atlas = ExtResource( 12 )
+region = Rect2( 0, 0, 62, 128 )
+
+[sub_resource type="AtlasTexture" id=34]
+atlas = ExtResource( 12 )
+region = Rect2( 62, 0, 62, 128 )
+
+[sub_resource type="AtlasTexture" id=35]
+atlas = ExtResource( 12 )
+region = Rect2( 124, 0, 62, 128 )
+
+[sub_resource type="AtlasTexture" id=36]
+atlas = ExtResource( 12 )
+region = Rect2( 186, 0, 62, 128 )
+
+[sub_resource type="AtlasTexture" id=37]
+atlas = ExtResource( 12 )
+region = Rect2( 248, 0, 62, 128 )
+
+[sub_resource type="AtlasTexture" id=38]
+atlas = ExtResource( 12 )
+region = Rect2( 310, 0, 62, 128 )
+
+[sub_resource type="AtlasTexture" id=39]
+atlas = ExtResource( 12 )
+region = Rect2( 372, 0, 62, 128 )
+
+[sub_resource type="AtlasTexture" id=40]
+atlas = ExtResource( 12 )
+region = Rect2( 434, 0, 62, 128 )
+
+[sub_resource type="SpriteFrames" id=41]
+animations = [ {
+"frames": [ SubResource( 33 ), SubResource( 34 ), SubResource( 35 ), SubResource( 36 ), SubResource( 37 ), SubResource( 38 ), SubResource( 39 ), SubResource( 40 ) ],
+"loop": true,
+"name": "default",
+"speed": 9.0
+} ]
+
 [node name="WalkiePickup" type="Node2D"]
 scale = Vector2( 0.5, 0.5 )
 script = ExtResource( 8 )
 
 [node name="Sprite2" type="Sprite" parent="."]
-visible = false
 scale = Vector2( 0.164117, 0.166329 )
 texture = ExtResource( 2 )
 
@@ -147,7 +187,7 @@ texture = ExtResource( 3 )
 position = Vector2( -9, -8 )
 scale = Vector2( 0.35, 0.4 )
 frames = SubResource( 7 )
-frame = 2
+frame = 3
 playing = true
 
 [node name="Area2D" type="Area2D" parent="."]
@@ -185,21 +225,21 @@ texture = ExtResource( 9 )
 position = Vector2( 7.69841, -5.79364 )
 scale = Vector2( 0.476191, 0.327381 )
 frames = SubResource( 32 )
-frame = 4
+frame = 1
 playing = true
 
 [node name="AnimatedSprite2" type="AnimatedSprite" parent="PopupDialog/Sprite3"]
 position = Vector2( 14, -5.317 )
 scale = Vector2( 0.476191, 0.327381 )
 frames = SubResource( 32 )
-frame = 6
+frame = 3
 playing = true
 
 [node name="AnimatedSprite3" type="AnimatedSprite" parent="PopupDialog/Sprite3"]
 position = Vector2( 17.6984, -5.31746 )
 scale = Vector2( 0.476191, 0.327381 )
 frames = SubResource( 32 )
-frame = 2
+frame = 6
 playing = true
 
 [node name="Sprite2" type="Sprite" parent="PopupDialog"]
@@ -224,7 +264,6 @@ modulate = Color( 0.337255, 1, 0, 0.788235 )
 position = Vector2( 75, 80 )
 scale = Vector2( 4, 1.31868 )
 frames = SubResource( 23 )
-frame = 4
 playing = true
 
 [node name="Timer" type="Timer" parent="."]
@@ -258,7 +297,6 @@ texture = ExtResource( 3 )
 position = Vector2( 48, -10 )
 scale = Vector2( 0.35, 0.35 )
 frames = SubResource( 19 )
-frame = 3
 playing = true
 
 [node name="Timer2" type="Timer" parent="."]
@@ -272,6 +310,20 @@ one_shot = true
 [node name="Chatter" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 5 )
 pitch_scale = 1.2
+
+[node name="AnimatedSprite3" type="AnimatedSprite" parent="."]
+position = Vector2( -2.5, -9.3 )
+scale = Vector2( 0.3, 0.3 )
+frames = SubResource( 41 )
+frame = 2
+playing = true
+
+[node name="AnimatedSprite2" type="AnimatedSprite" parent="."]
+modulate = Color( 0.337255, 1, 0, 0.788235 )
+position = Vector2( 1, 1 )
+scale = Vector2( 0.13, 0.1 )
+frames = SubResource( 23 )
+playing = true
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_Area2D_area_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

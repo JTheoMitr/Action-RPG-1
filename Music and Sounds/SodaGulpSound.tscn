@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://AppleSound.gd" type="Script" id=1]
+[ext_resource path="res://Music and Sounds/soda_gulp_1.mp3" type="AudioStream" id=2]
+
+[node name="SodaGulpSound" type="AudioStreamPlayer"]
+stream = ExtResource( 2 )
+volume_db = -3.0
+autoplay = true
+script = ExtResource( 1 )
