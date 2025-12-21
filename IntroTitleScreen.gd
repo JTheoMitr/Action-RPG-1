@@ -62,8 +62,8 @@ func _on_Button_pressed():
 
 
 func _on_Button2_pressed():
-	
-	popup2.popup()
+	SceneTransitionLong.change_scene("res://UI/AlbumSpin1.tscn")
+	#popup2.popup()
 
 
 func _on_LightningTimer_timeout():
