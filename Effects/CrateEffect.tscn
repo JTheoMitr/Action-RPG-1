@@ -1,0 +1,35 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Effects/BarrelEffect.png" type="Texture" id=1]
+[ext_resource path="res://Effects/BarrelEffect.gd" type="Script" id=2]
+
+[sub_resource type="AtlasTexture" id=4]
+atlas = ExtResource( 1 )
+region = Rect2( 191, 0, 62, 58 )
+
+[sub_resource type="AtlasTexture" id=5]
+atlas = ExtResource( 1 )
+region = Rect2( 254, 0, 62, 58 )
+
+[sub_resource type="AtlasTexture" id=6]
+atlas = ExtResource( 1 )
+region = Rect2( 317, 0, 62, 58 )
+
+[sub_resource type="AtlasTexture" id=7]
+atlas = ExtResource( 1 )
+region = Rect2( 380, 0, 62, 58 )
+
+[sub_resource type="SpriteFrames" id=8]
+animations = [ {
+"frames": [ SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ) ],
+"loop": true,
+"name": "Animate",
+"speed": 10.0
+} ]
+
+[node name="CrateEffect" type="AnimatedSprite"]
+self_modulate = Color( 0.658824, 0.658824, 0.658824, 1 )
+frames = SubResource( 8 )
+animation = "Animate"
+offset = Vector2( 0, 2 )
+script = ExtResource( 2 )
