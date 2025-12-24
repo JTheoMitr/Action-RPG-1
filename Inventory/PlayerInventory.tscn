@@ -1,4 +1,4 @@
-[gd_scene load_steps=73 format=2]
+[gd_scene load_steps=77 format=2]
 
 [ext_resource path="res://Inventory/popsicle-red.png" type="Texture" id=1]
 [ext_resource path="res://World/floppy.png" type="Texture" id=2]
@@ -27,6 +27,7 @@
 [ext_resource path="res://World/exit_pixel_sign right.png" type="Texture" id=25]
 [ext_resource path="res://World/master_key_red.png" type="Texture" id=26]
 [ext_resource path="res://World/cage_key_1.png" type="Texture" id=27]
+[ext_resource path="res://UI/walkie_w_addon_1.png" type="Texture" id=28]
 
 [sub_resource type="DynamicFont" id=1]
 size = 10
@@ -44,6 +45,12 @@ content_margin_bottom = 1.0
 bg_color = Color( 0.133333, 0.360784, 0.423529, 1 )
 
 [sub_resource type="StyleBoxFlat" id=49]
+bg_color = Color( 0.360784, 0.631373, 0.427451, 1 )
+
+[sub_resource type="StyleBoxFlat" id=51]
+bg_color = Color( 0.360784, 0.631373, 0.427451, 1 )
+
+[sub_resource type="StyleBoxFlat" id=52]
 bg_color = Color( 0.360784, 0.631373, 0.427451, 1 )
 
 [sub_resource type="StyleBoxFlat" id=33]
@@ -93,6 +100,8 @@ bg_color = Color( 0.133333, 0.360784, 0.423529, 1 )
 [sub_resource type="DynamicFont" id=2]
 size = 10
 font_data = ExtResource( 13 )
+
+[sub_resource type="StyleBoxTexture" id=50]
 
 [sub_resource type="DynamicFont" id=8]
 size = 10
@@ -225,12 +234,12 @@ margin_bottom = 128.286
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Control/CenterContainer"]
 margin_right = 304.0
-margin_bottom = 212.0
+margin_bottom = 290.0
 rect_min_size = Vector2( 304, 104 )
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Control/CenterContainer/HBoxContainer"]
 margin_right = 200.0
-margin_bottom = 212.0
+margin_bottom = 290.0
 
 [node name="Panel" type="Panel" parent="Control/CenterContainer/HBoxContainer/VBoxContainer"]
 margin_right = 200.0
@@ -284,8 +293,10 @@ margin_left = 136.0
 margin_right = 200.0
 margin_bottom = 22.0
 rect_min_size = Vector2( 64, 22 )
-custom_styles/focus = SubResource( 27 )
+custom_styles/pressed = SubResource( 51 )
+custom_styles/focus = SubResource( 52 )
 custom_styles/normal = SubResource( 32 )
+toggle_mode = true
 icon = ExtResource( 21 )
 icon_align = 1
 expand_icon = true
@@ -983,8 +994,9 @@ margin_left = 164.0
 margin_right = 199.0
 margin_bottom = 35.0
 rect_min_size = Vector2( 35, 35 )
-custom_styles/focus = SubResource( 43 )
+custom_styles/focus = SubResource( 50 )
 custom_styles/normal = SubResource( 44 )
+icon = ExtResource( 28 )
 expand_icon = true
 
 [node name="RPOP" type="RichTextLabel" parent="Control/CenterContainer/HBoxContainer/VBoxContainer/VBoxContainer2/HBoxContainer2/Button5"]
@@ -1017,10 +1029,373 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
+[node name="VBoxContainer3" type="VBoxContainer" parent="Control/CenterContainer/HBoxContainer/VBoxContainer"]
+margin_top = 216.0
+margin_right = 200.0
+margin_bottom = 290.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/CenterContainer/HBoxContainer/VBoxContainer/VBoxContainer3"]
+margin_right = 200.0
+margin_bottom = 35.0
+rect_min_size = Vector2( 0, 35 )
+custom_constants/separation = 6
+
+[node name="CellKey" type="Button" parent="Control/CenterContainer/HBoxContainer/VBoxContainer/VBoxContainer3/HBoxContainer"]
+pause_mode = 2
+self_modulate = Color( 0.780392, 0.788235, 0.792157, 1 )
+margin_right = 35.0
+margin_bottom = 35.0
+rect_min_size = Vector2( 35, 35 )
+custom_styles/focus = SubResource( 33 )
+custom_styles/normal = SubResource( 34 )
+icon = ExtResource( 27 )
+icon_align = 1
+expand_icon = true
+
+[node name="RPOPQ" type="RichTextLabel" parent="Control/CenterContainer/HBoxContainer/VBoxContainer/VBoxContainer3/HBoxContainer/CellKey"]
+anchor_left = -0.163266
+anchor_top = -0.502041
+anchor_right = 0.889786
+anchor_bottom = -0.273469
+margin_left = 174.0
+margin_top = 8.0
+margin_right = 214.0
+margin_bottom = 48.0
+rect_scale = Vector2( 1.6, 1.6 )
+rect_pivot_offset = Vector2( 280, 0 )
+custom_fonts/normal_font = SubResource( 3 )
+text = "0"
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="BossKey" type="Button" parent="Control/CenterContainer/HBoxContainer/VBoxContainer/VBoxContainer3/HBoxContainer"]
+self_modulate = Color( 0.780392, 0.788235, 0.792157, 1 )
+margin_left = 41.0
+margin_right = 76.0
+margin_bottom = 35.0
+rect_min_size = Vector2( 35, 35 )
+custom_styles/focus = SubResource( 35 )
+custom_styles/normal = SubResource( 36 )
+icon = ExtResource( 26 )
+icon_align = 1
+expand_icon = true
+
+[node name="APQ" type="RichTextLabel" parent="Control/CenterContainer/HBoxContainer/VBoxContainer/VBoxContainer3/HBoxContainer/BossKey"]
+anchor_left = -0.230205
+anchor_top = -0.46572
+anchor_bottom = -0.380006
+margin_left = 174.057
+margin_top = 7.3002
+margin_right = 214.057
+margin_bottom = 47.3002
+rect_scale = Vector2( 1.6, 1.6 )
+rect_pivot_offset = Vector2( 280, 0 )
+custom_fonts/normal_font = SubResource( 5 )
+text = "0"
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="RedCard" type="Button" parent="Control/CenterContainer/HBoxContainer/VBoxContainer/VBoxContainer3/HBoxContainer"]
+self_modulate = Color( 0.780392, 0.788235, 0.792157, 1 )
+margin_left = 82.0
+margin_right = 117.0
+margin_bottom = 35.0
+rect_min_size = Vector2( 35, 35 )
+custom_styles/focus = SubResource( 37 )
+custom_styles/normal = SubResource( 38 )
+icon_align = 1
+
+[node name="FLQ" type="RichTextLabel" parent="Control/CenterContainer/HBoxContainer/VBoxContainer/VBoxContainer3/HBoxContainer/RedCard"]
+anchor_left = -0.230205
+anchor_top = -0.494292
+anchor_right = -0.230205
+anchor_bottom = -0.494292
+margin_left = 174.057
+margin_top = 8.3002
+margin_right = 214.057
+margin_bottom = 48.3002
+rect_scale = Vector2( 1.6, 1.6 )
+rect_pivot_offset = Vector2( 280, 0 )
+custom_fonts/normal_font = SubResource( 5 )
+text = "2"
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="BlueCard" type="Button" parent="Control/CenterContainer/HBoxContainer/VBoxContainer/VBoxContainer3/HBoxContainer"]
+self_modulate = Color( 0.780392, 0.788235, 0.792157, 1 )
+margin_left = 123.0
+margin_right = 158.0
+margin_bottom = 35.0
+rect_min_size = Vector2( 35, 35 )
+custom_styles/focus = SubResource( 39 )
+custom_styles/normal = SubResource( 40 )
+align = 2
+icon_align = 1
+expand_icon = true
+
+[node name="SYQ" type="RichTextLabel" parent="Control/CenterContainer/HBoxContainer/VBoxContainer/VBoxContainer3/HBoxContainer/BlueCard"]
+anchor_left = -0.230205
+anchor_top = -0.494292
+anchor_right = -0.230205
+anchor_bottom = -0.494292
+margin_left = 174.057
+margin_top = 8.3002
+margin_right = 214.057
+margin_bottom = 48.3002
+rect_scale = Vector2( 1.6, 1.6 )
+rect_pivot_offset = Vector2( 280, 0 )
+custom_fonts/normal_font = SubResource( 5 )
+text = "2"
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="YellowCard" type="Button" parent="Control/CenterContainer/HBoxContainer/VBoxContainer/VBoxContainer3/HBoxContainer"]
+self_modulate = Color( 0.780392, 0.788235, 0.792157, 1 )
+margin_left = 164.0
+margin_right = 199.0
+margin_bottom = 35.0
+rect_min_size = Vector2( 35, 35 )
+custom_styles/focus = SubResource( 41 )
+custom_styles/normal = SubResource( 42 )
+expand_icon = true
+
+[node name="BTNQ" type="RichTextLabel" parent="Control/CenterContainer/HBoxContainer/VBoxContainer/VBoxContainer3/HBoxContainer/YellowCard"]
+anchor_left = -0.230205
+anchor_top = -0.494292
+anchor_right = -0.230205
+anchor_bottom = -0.494292
+margin_left = 174.057
+margin_top = 8.3002
+margin_right = 214.057
+margin_bottom = 48.3002
+rect_scale = Vector2( 1.6, 1.6 )
+rect_pivot_offset = Vector2( 280, 0 )
+custom_fonts/normal_font = SubResource( 5 )
+text = "1"
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Control/CenterContainer/HBoxContainer/VBoxContainer/VBoxContainer3"]
+margin_top = 39.0
+margin_right = 200.0
+margin_bottom = 74.0
+rect_min_size = Vector2( 0, 35 )
+custom_constants/separation = 6
+
+[node name="Button" type="Button" parent="Control/CenterContainer/HBoxContainer/VBoxContainer/VBoxContainer3/HBoxContainer2"]
+pause_mode = 2
+self_modulate = Color( 0.780392, 0.788235, 0.792157, 1 )
+margin_right = 35.0
+margin_bottom = 35.0
+rect_min_size = Vector2( 35, 35 )
+custom_styles/focus = SubResource( 43 )
+custom_styles/normal = SubResource( 44 )
+expand_icon = true
+
+[node name="RPOP" type="RichTextLabel" parent="Control/CenterContainer/HBoxContainer/VBoxContainer/VBoxContainer3/HBoxContainer2/Button"]
+visible = false
+margin_left = 60.0
+margin_top = 1.0
+margin_right = 221.0
+margin_bottom = 51.0
+rect_scale = Vector2( 1.2, 1.2 )
+custom_fonts/normal_font = SubResource( 2 )
+text = "RED POP   x
+"
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="RPOPQ" type="RichTextLabel" parent="Control/CenterContainer/HBoxContainer/VBoxContainer/VBoxContainer3/HBoxContainer2/Button"]
+anchor_left = 0.657146
+anchor_top = -0.0942857
+anchor_right = 0.657146
+anchor_bottom = -0.0942857
+margin_left = 172.857
+margin_top = 35.0
+margin_right = 189.857
+margin_bottom = 79.0
+rect_scale = Vector2( 1.6, 1.6 )
+rect_pivot_offset = Vector2( 280, 0 )
+custom_fonts/normal_font = SubResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Button2" type="Button" parent="Control/CenterContainer/HBoxContainer/VBoxContainer/VBoxContainer3/HBoxContainer2"]
+pause_mode = 2
+self_modulate = Color( 0.780392, 0.788235, 0.792157, 1 )
+margin_left = 41.0
+margin_right = 76.0
+margin_bottom = 35.0
+rect_min_size = Vector2( 35, 35 )
+custom_styles/focus = SubResource( 43 )
+custom_styles/normal = SubResource( 44 )
+expand_icon = true
+
+[node name="RPOP" type="RichTextLabel" parent="Control/CenterContainer/HBoxContainer/VBoxContainer/VBoxContainer3/HBoxContainer2/Button2"]
+visible = false
+margin_left = 60.0
+margin_top = 1.0
+margin_right = 221.0
+margin_bottom = 51.0
+rect_scale = Vector2( 1.2, 1.2 )
+custom_fonts/normal_font = SubResource( 2 )
+text = "RED POP   x
+"
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="RPOPQ" type="RichTextLabel" parent="Control/CenterContainer/HBoxContainer/VBoxContainer/VBoxContainer3/HBoxContainer2/Button2"]
+anchor_left = 0.657146
+anchor_top = -0.0942857
+anchor_right = 0.657146
+anchor_bottom = -0.0942857
+margin_left = 172.857
+margin_top = 35.0
+margin_right = 189.857
+margin_bottom = 79.0
+rect_scale = Vector2( 1.6, 1.6 )
+rect_pivot_offset = Vector2( 280, 0 )
+custom_fonts/normal_font = SubResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Button3" type="Button" parent="Control/CenterContainer/HBoxContainer/VBoxContainer/VBoxContainer3/HBoxContainer2"]
+pause_mode = 2
+self_modulate = Color( 0.780392, 0.788235, 0.792157, 1 )
+margin_left = 82.0
+margin_right = 117.0
+margin_bottom = 35.0
+rect_min_size = Vector2( 35, 35 )
+custom_styles/focus = SubResource( 43 )
+custom_styles/normal = SubResource( 44 )
+expand_icon = true
+
+[node name="RPOP" type="RichTextLabel" parent="Control/CenterContainer/HBoxContainer/VBoxContainer/VBoxContainer3/HBoxContainer2/Button3"]
+visible = false
+margin_left = 60.0
+margin_top = 1.0
+margin_right = 221.0
+margin_bottom = 51.0
+rect_scale = Vector2( 1.2, 1.2 )
+custom_fonts/normal_font = SubResource( 2 )
+text = "RED POP   x
+"
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="RPOPQ" type="RichTextLabel" parent="Control/CenterContainer/HBoxContainer/VBoxContainer/VBoxContainer3/HBoxContainer2/Button3"]
+anchor_left = 0.657146
+anchor_top = -0.0942857
+anchor_right = 0.657146
+anchor_bottom = -0.0942857
+margin_left = 172.857
+margin_top = 35.0
+margin_right = 189.857
+margin_bottom = 79.0
+rect_scale = Vector2( 1.6, 1.6 )
+rect_pivot_offset = Vector2( 280, 0 )
+custom_fonts/normal_font = SubResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Button4" type="Button" parent="Control/CenterContainer/HBoxContainer/VBoxContainer/VBoxContainer3/HBoxContainer2"]
+pause_mode = 2
+self_modulate = Color( 0.780392, 0.788235, 0.792157, 1 )
+margin_left = 123.0
+margin_right = 158.0
+margin_bottom = 35.0
+rect_min_size = Vector2( 35, 35 )
+custom_styles/focus = SubResource( 43 )
+custom_styles/normal = SubResource( 44 )
+expand_icon = true
+
+[node name="RPOP" type="RichTextLabel" parent="Control/CenterContainer/HBoxContainer/VBoxContainer/VBoxContainer3/HBoxContainer2/Button4"]
+visible = false
+margin_left = 60.0
+margin_top = 1.0
+margin_right = 221.0
+margin_bottom = 51.0
+rect_scale = Vector2( 1.2, 1.2 )
+custom_fonts/normal_font = SubResource( 2 )
+text = "RED POP   x
+"
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="RPOPQ" type="RichTextLabel" parent="Control/CenterContainer/HBoxContainer/VBoxContainer/VBoxContainer3/HBoxContainer2/Button4"]
+anchor_left = 0.657146
+anchor_top = -0.0942857
+anchor_right = 0.657146
+anchor_bottom = -0.0942857
+margin_left = 172.857
+margin_top = 35.0
+margin_right = 189.857
+margin_bottom = 79.0
+rect_scale = Vector2( 1.6, 1.6 )
+rect_pivot_offset = Vector2( 280, 0 )
+custom_fonts/normal_font = SubResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Button5" type="Button" parent="Control/CenterContainer/HBoxContainer/VBoxContainer/VBoxContainer3/HBoxContainer2"]
+pause_mode = 2
+self_modulate = Color( 0.780392, 0.788235, 0.792157, 1 )
+margin_left = 164.0
+margin_right = 199.0
+margin_bottom = 35.0
+rect_min_size = Vector2( 35, 35 )
+custom_styles/focus = SubResource( 50 )
+custom_styles/normal = SubResource( 44 )
+icon = ExtResource( 28 )
+expand_icon = true
+
+[node name="RPOP" type="RichTextLabel" parent="Control/CenterContainer/HBoxContainer/VBoxContainer/VBoxContainer3/HBoxContainer2/Button5"]
+visible = false
+margin_left = 60.0
+margin_top = 1.0
+margin_right = 221.0
+margin_bottom = 51.0
+rect_scale = Vector2( 1.2, 1.2 )
+custom_fonts/normal_font = SubResource( 2 )
+text = "RED POP   x
+"
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="RPOPQ" type="RichTextLabel" parent="Control/CenterContainer/HBoxContainer/VBoxContainer/VBoxContainer3/HBoxContainer2/Button5"]
+anchor_left = 0.657146
+anchor_top = -0.0942857
+anchor_right = 0.657146
+anchor_bottom = -0.0942857
+margin_left = 172.857
+margin_top = 35.0
+margin_right = 189.857
+margin_bottom = 79.0
+rect_scale = Vector2( 1.6, 1.6 )
+rect_pivot_offset = Vector2( 280, 0 )
+custom_fonts/normal_font = SubResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
 [node name="Panel" type="Panel" parent="Control/CenterContainer/HBoxContainer"]
 margin_left = 204.0
 margin_right = 304.0
-margin_bottom = 212.0
+margin_bottom = 290.0
 rect_min_size = Vector2( 100, 100 )
 
 [node name="ItemDescription" type="RichTextLabel" parent="Control/CenterContainer/HBoxContainer/Panel"]
@@ -1303,6 +1678,7 @@ texture = ExtResource( 22 )
 [connection signal="pressed" from="Control/CenterContainer/HBoxContainer/VBoxContainer/VBoxContainer/HBoxContainer/Floppy" to="." method="_on_Floppy_pressed"]
 [connection signal="focus_entered" from="Control/CenterContainer/HBoxContainer/VBoxContainer/VBoxContainer/HBoxContainer/Syringe" to="." method="_on_Syringe_focus_entered"]
 [connection signal="focus_entered" from="Control/CenterContainer/HBoxContainer/VBoxContainer/VBoxContainer2/HBoxContainer/CellKey" to="." method="_on_CellKey_focus_entered"]
+[connection signal="focus_entered" from="Control/CenterContainer/HBoxContainer/VBoxContainer/VBoxContainer3/HBoxContainer/CellKey" to="." method="_on_CellKey_focus_entered"]
 [connection signal="pressed" from="Control/CenterContainer/HBoxContainer/Panel/ExitButton" to="." method="_on_ExitButton_pressed"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 [connection signal="focus_entered" from="PopupDialog/Sprite/HBoxContainer/PopUpButton" to="." method="_on_PopUpButton_focus_entered"]

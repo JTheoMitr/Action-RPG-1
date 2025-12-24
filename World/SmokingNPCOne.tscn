@@ -1,6 +1,7 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://World/smoking_npc_1.png" type="Texture" id=1]
+[ext_resource path="res://UI/NPCInteractPrompt.tscn" type="PackedScene" id=2]
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 9.0
@@ -48,5 +49,8 @@ shape = SubResource( 1 )
 position = Vector2( 1, -4 )
 frames = SubResource( 7 )
 animation = "idle"
-frame = 1
 playing = true
+
+[node name="NPCInteractPrompt" parent="." instance=ExtResource( 2 )]
+position = Vector2( -9, -26 )
+scale = Vector2( 0.5, 0.5 )

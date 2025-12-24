@@ -13,6 +13,13 @@ onready var timer2 = $Timer2
 onready var timer3 = $Timer3
 onready var walkieMSG = $PopupDialog/RichTextLabel
 onready var chatter = $Chatter
+onready var stick_click_anim = $AnimatedSprite3
+onready var backlit = $AnimatedSprite3/Backlit
+onready var pixelWav = $AnimatedSprite3/PixelWav
+onready var pixelWav2 = $AnimatedSprite3/PixelWav2
+onready var signalBars = $Signal
+onready var sideLit = $AnimatedSprite3/Sidelit
+onready var splode = $Splode
 
 onready var save_file = SaveFile.g_data
 var playerStats = PlayerStats
@@ -20,8 +27,20 @@ var playerStats = PlayerStats
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	walkieMSG.text = " Excellent, you've \n found the 2-way \n radio That I left \n for you."
-	yield(get_tree().create_timer(0.1), "timeout")
+	#walkieMSG.text = " Excellent, you've \n found the 2-way \n radio That I left \n for you."
+	magic.hide()
+	stick_click_anim.frame = 0
+	backlit.hide()
+	pixelWav.hide()
+	pixelWav2.hide()
+	signalBars.hide()
+	sideLit.hide()
+	splode.hide()
+	splode.frame = 0
+	yield(get_tree().create_timer(3.0), "timeout")
+	stick_click_anim.play("default")
+	
+	
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -296,3 +315,25 @@ func _on_Timer3_timeout():
 	
 	
 	
+
+
+
+	
+
+
+func _on_AnimatedSprite3_animation_finished():
+	stick_click_anim.stop()
+	stick_click_anim.frame = 13
+	magic.show()
+	backlit.show()
+	pixelWav.show()
+	pixelWav2.show()
+	signalBars.show()
+	sideLit.show()
+	splode.show()
+	splode.play("default")
+
+
+func _on_Splode_animation_finished():
+	splode.hide()
+	splode.stop()

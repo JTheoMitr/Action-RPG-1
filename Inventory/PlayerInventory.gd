@@ -7,6 +7,7 @@ onready var floppy = $Control/CenterContainer/HBoxContainer/VBoxContainer/VBoxCo
 onready var description = $Control/CenterContainer/HBoxContainer/Panel/ItemDescription
 onready var consumablesBtn = $Control/CenterContainer/HBoxContainer/VBoxContainer/HBoxContainer/Consumables
 onready var storyItemsBtn = $Control/CenterContainer/HBoxContainer/VBoxContainer/HBoxContainer/StoryItems
+onready var craftingBtn = $Control/CenterContainer/HBoxContainer/VBoxContainer/HBoxContainer/Crafting
 onready var cellKeyText = $Control/CenterContainer/HBoxContainer/Panel/CellKeyText
 onready var animalsText = $Control/CenterContainer/HBoxContainer/Panel/AnimalsText
 onready var exitKey = $Control/CenterContainer/HBoxContainer/Panel/ExitKey
@@ -34,6 +35,7 @@ onready var zipper = $Zipper
 
 onready var aidMenu = $Control/CenterContainer/HBoxContainer/VBoxContainer/VBoxContainer
 onready var storyMenu = $Control/CenterContainer/HBoxContainer/VBoxContainer/VBoxContainer2
+onready var craftMenu = $Control/CenterContainer/HBoxContainer/VBoxContainer/VBoxContainer3
 
 
 onready var save_file = SaveFile.g_data
@@ -87,19 +89,27 @@ func _process(_delta):
 	
 	#menu management
 	if consumables:
+		craftMenu.hide()
 		aidMenu.show()
 		storyMenu.hide()
 		consumablesBtn.pressed = true
 		storyItemsBtn.pressed = false
+		craftingBtn.pressed = false
 	
 	if story:
+		craftMenu.hide()
 		aidMenu.hide()
 		storyMenu.show()
 		consumablesBtn.pressed = false
 		storyItemsBtn.pressed = true
+		craftingBtn.pressed = false
 		storyMenu.rect_global_position = aidMenu.rect_global_position
 	
 	if craft:
+		consumablesBtn.pressed = false
+		storyItemsBtn.pressed = false
+		craftingBtn.pressed = true
+		craftMenu.show()
 		aidMenu.hide()
 		storyMenu.hide()
 		
@@ -325,6 +335,9 @@ func _on_Crafting_focus_entered():
 	selectedItem.text = "Crafting"
 	description.bbcode_text = "[right] Use Scrap to Craft Items and Ammo [/right]"
 	focused()
+	consumables = false
+	story = false
+	craft = true
 
 
 func _on_Floppy_focus_entered():

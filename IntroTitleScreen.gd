@@ -62,7 +62,7 @@ func _on_Button_pressed():
 
 
 func _on_Button2_pressed():
-	#SceneTransitionLong.change_scene("res://UI/AlbumSpin1.tscn")
+	SceneTransitionLong.change_scene("res://World/WalkiePickup.tscn")
 	popup2.popup()
 
 
