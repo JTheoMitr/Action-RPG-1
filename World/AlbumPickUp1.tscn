@@ -59,14 +59,22 @@ collision_mask = 2
 shape = SubResource( 1 )
 
 [node name="Popup" type="Popup" parent="."]
+visible = true
 margin_right = 40.0
 margin_bottom = 40.0
+rect_scale = Vector2( 2.5, 2.5 )
 
 [node name="Sprite" type="Sprite" parent="Popup"]
 texture = ExtResource( 3 )
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Popup/Sprite"]
+[node name="Blackdrop" type="Panel" parent="Popup/Sprite"]
 visible = false
+margin_left = -24.0
+margin_top = -10.0
+margin_right = 24.0
+margin_bottom = 2.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Popup/Sprite"]
 margin_left = -25.0
 margin_top = -11.0
 margin_right = 75.0
@@ -78,18 +86,18 @@ bbcode_text = "[center]New Music Found!"
 text = "New Music Found!"
 
 [node name="AlbumSpin1" parent="Popup/Sprite" instance=ExtResource( 1 )]
+visible = false
 position = Vector2( -17, -4 )
 scale = Vector2( 0.36, 0.36 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Popup"]
-visible = false
 position = Vector2( -0.5, -1 )
 scale = Vector2( 0.46875, 0.15 )
 frames = SubResource( 7 )
-frame = 1
 playing = true
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Popup"]
+visible = false
 margin_left = -9.0
 margin_top = -11.0
 margin_right = 143.0

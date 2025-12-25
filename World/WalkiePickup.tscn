@@ -598,8 +598,13 @@ font_data = ExtResource( 6 )
 position = Vector2( 100, 100 )
 script = ExtResource( 8 )
 
-[node name="Sprite2" type="Sprite" parent="."]
-position = Vector2( 52, -5 )
+[node name="Bgnd2" type="Sprite" parent="."]
+position = Vector2( 58, 0 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 2 )
+
+[node name="Bgnd1" type="Sprite" parent="."]
+position = Vector2( 60, 1 )
 scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 2 )
 
@@ -610,13 +615,13 @@ scale = Vector2( 0.3, 0.3 )
 texture = ExtResource( 3 )
 
 [node name="Splode" type="AnimatedSprite" parent="."]
-position = Vector2( 49, 2 )
+position = Vector2( 54, -5 )
 scale = Vector2( 1.5, 1.5 )
 frames = SubResource( 152 )
 frame = 80
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-position = Vector2( 29, -33 )
+position = Vector2( 34, -40 )
 scale = Vector2( 0.65, 0.55 )
 frames = SubResource( 7 )
 frame = 1
@@ -657,21 +662,20 @@ texture = ExtResource( 9 )
 position = Vector2( 7.69841, -5.79364 )
 scale = Vector2( 0.476191, 0.327381 )
 frames = SubResource( 32 )
-frame = 3
+frame = 2
 playing = true
 
 [node name="AnimatedSprite2" type="AnimatedSprite" parent="PopupDialog/Sprite3"]
 position = Vector2( 14, -5.317 )
 scale = Vector2( 0.476191, 0.327381 )
 frames = SubResource( 32 )
-frame = 5
+frame = 4
 playing = true
 
 [node name="AnimatedSprite3" type="AnimatedSprite" parent="PopupDialog/Sprite3"]
 position = Vector2( 17.6984, -5.31746 )
 scale = Vector2( 0.476191, 0.327381 )
 frames = SubResource( 32 )
-frame = 1
 playing = true
 
 [node name="Sprite2" type="Sprite" parent="PopupDialog"]
@@ -696,7 +700,7 @@ modulate = Color( 0.337255, 1, 0, 0.788235 )
 position = Vector2( 75, 80 )
 scale = Vector2( 4, 1.31868 )
 frames = SubResource( 23 )
-frame = 6
+frame = 1
 playing = true
 
 [node name="Timer" type="Timer" parent="."]
@@ -746,7 +750,7 @@ stream = ExtResource( 5 )
 pitch_scale = 1.2
 
 [node name="AnimatedSprite3" type="AnimatedSprite" parent="."]
-position = Vector2( 51, -36 )
+position = Vector2( 56, -43 )
 frames = SubResource( 41 )
 frame = 13
 
@@ -761,13 +765,14 @@ custom_styles/panel = SubResource( 54 )
 position = Vector2( 11, 24.333 )
 scale = Vector2( 0.2, 0.12 )
 frames = SubResource( 60 )
+frame = 4
 playing = true
 
 [node name="PixelWav2" type="AnimatedSprite" parent="AnimatedSprite3"]
 position = Vector2( 11, 27 )
 scale = Vector2( 0.2, 0.12 )
 frames = SubResource( 60 )
-frame = 3
+frame = 2
 playing = true
 flip_v = true
 
@@ -780,21 +785,25 @@ custom_styles/panel = SubResource( 61 )
 
 [node name="Signal" type="AnimatedSprite" parent="."]
 modulate = Color( 0.337255, 1, 0, 0.788235 )
-position = Vector2( 62.2635, 0 )
+position = Vector2( 67.2635, -7 )
 scale = Vector2( 0.546032, 0.484188 )
 frames = SubResource( 23 )
-frame = 6
+frame = 1
 playing = true
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
-margin_left = -25.0
-margin_top = 39.0
-margin_right = 139.0
-margin_bottom = 59.0
+margin_left = -23.0
+margin_top = 32.0
+margin_right = 141.0
+margin_bottom = 52.0
 custom_fonts/normal_font = SubResource( 243 )
 bbcode_enabled = true
-bbcode_text = "[center]new attachment found"
-text = "new attachment found"
+bbcode_text = "[center]new attachment found!"
+text = "new attachment found!"
+
+[node name="SkyTimer" type="Timer" parent="."]
+wait_time = 2.0
+autostart = true
 
 [connection signal="animation_finished" from="Splode" to="." method="_on_Splode_animation_finished"]
 [connection signal="area_entered" from="Area2D" to="." method="_on_Area2D_area_entered"]
@@ -802,3 +811,4 @@ text = "new attachment found"
 [connection signal="timeout" from="Timer2" to="." method="_on_Timer2_timeout"]
 [connection signal="timeout" from="Timer3" to="." method="_on_Timer3_timeout"]
 [connection signal="animation_finished" from="AnimatedSprite3" to="." method="_on_AnimatedSprite3_animation_finished"]
+[connection signal="timeout" from="SkyTimer" to="." method="_on_SkyTimer_timeout"]

@@ -20,10 +20,14 @@ onready var pixelWav2 = $AnimatedSprite3/PixelWav2
 onready var signalBars = $Signal
 onready var sideLit = $AnimatedSprite3/Sidelit
 onready var splode = $Splode
+onready var new_attach = $RichTextLabel
+onready var nightSky1 = $Bgnd1
+onready var nightSky2 = $Bgnd2
 
 onready var save_file = SaveFile.g_data
 var playerStats = PlayerStats
-
+var night_sky_1_up
+var night_sky_2_up
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -35,10 +39,13 @@ func _ready():
 	pixelWav2.hide()
 	signalBars.hide()
 	sideLit.hide()
+	new_attach.hide()
 	splode.hide()
 	splode.frame = 0
 	yield(get_tree().create_timer(3.0), "timeout")
 	stick_click_anim.play("default")
+	night_sky_1_up = false
+	night_sky_2_up = true
 	
 	
 
@@ -47,6 +54,11 @@ func _ready():
 func _process(delta):
 	popup.rect_global_position = self.global_position
 	walkieScooped.rect_global_position = self.global_position
+	
+	if night_sky_1_up and nightSky1.self_modulate.a <= 1.00:
+		nightSky1.self_modulate.a += .005
+	if night_sky_2_up and nightSky1.self_modulate.a >= 0.0:
+		nightSky1.self_modulate.a -= .005
 
 
 func _on_Area2D_area_entered(area):
@@ -324,6 +336,7 @@ func _on_Timer3_timeout():
 func _on_AnimatedSprite3_animation_finished():
 	stick_click_anim.stop()
 	stick_click_anim.frame = 13
+	new_attach.show()
 	magic.show()
 	backlit.show()
 	pixelWav.show()
@@ -337,3 +350,14 @@ func _on_AnimatedSprite3_animation_finished():
 func _on_Splode_animation_finished():
 	splode.hide()
 	splode.stop()
+
+
+func _on_SkyTimer_timeout():
+	print_debug("skytimer")
+	if night_sky_1_up:
+		night_sky_2_up = true
+		night_sky_1_up = false
+	else:
+		night_sky_1_up = true
+		night_sky_2_up = false
+	

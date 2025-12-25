@@ -11,6 +11,7 @@ onready var music_bars = $Popup/AnimatedSprite
 onready var music_found = $Popup/Sprite/RichTextLabel
 onready var text_2 = $Popup/RichTextLabel
 onready var spinning_album_2 = $Popup/Sprite/AlbumSpin1
+onready var blackDrop = $Popup/Sprite/Blackdrop
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -32,6 +33,7 @@ func _on_Area2D_area_entered(area):
 	pop_timer.start()
 	music_bars.show()
 	music_found.show()
+	blackDrop.show()
 	text_2.hide()
 	spinning_album_2.hide()
 	
@@ -39,6 +41,7 @@ func _on_Area2D_area_entered(area):
 func _on_PopTimer1_timeout():
 	music_bars.hide()
 	music_found.hide()
+	blackDrop.hide()
 	text_2.show()
 	spinning_album_2.show()
 	

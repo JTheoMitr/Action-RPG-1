@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=2]
 
-[ext_resource path="res://World/fire_escape.png" type="Texture" id=1]
+[ext_resource path="res://World/fire_escape_dirty_1.png" type="Texture" id=1]
 
 [node name="FireEscape" type="Node2D"]
 
