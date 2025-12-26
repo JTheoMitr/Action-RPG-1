@@ -902,7 +902,12 @@ font_data = ExtResource( 143 )
 bg_color = Color( 0.137255, 0.196078, 0.301961, 1 )
 
 [sub_resource type="StyleBoxFlat" id=171]
-bg_color = Color( 0.415686, 0.486275, 0.678431, 1 )
+bg_color = Color( 0.360784, 0.231373, 0.117647, 1 )
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 0, 0, 0, 1 )
 
 [sub_resource type="DynamicFont" id=172]
 size = 10
@@ -939,7 +944,12 @@ bg_color = Color( 0.352941, 0.243137, 0.14902, 1 )
 [sub_resource type="StyleBoxFlat" id=180]
 
 [sub_resource type="StyleBoxFlat" id=182]
-bg_color = Color( 0.815686, 0.666667, 0.305882, 1 )
+bg_color = Color( 0.545098, 0.454902, 0.223529, 1 )
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 0.831373, 0.627451, 0.235294, 1 )
 
 [sub_resource type="DynamicFont" id=183]
 size = 10
@@ -1013,65 +1023,64 @@ z_index = 1
 
 [node name="SwarmOne" parent="Swarms" instance=ExtResource( 68 )]
 position = Vector2( -37, 442 )
-frame = 2
+frame = 0
 
 [node name="SwarmOne7" parent="Swarms" instance=ExtResource( 68 )]
 position = Vector2( -40, 444 )
 scale = Vector2( 0.475, 0.506251 )
+frame = 2
 
 [node name="SwarmOne11" parent="Swarms" instance=ExtResource( 68 )]
 position = Vector2( 455, 440 )
 scale = Vector2( 0.475, 0.506251 )
+frame = 2
 
 [node name="SwarmOne12" parent="Swarms" instance=ExtResource( 68 )]
 position = Vector2( 459, 441 )
 rotation = 1.309
 scale = Vector2( 0.3, 0.3 )
-frame = 3
+frame = 1
 
 [node name="SwarmOne3" parent="Swarms" instance=ExtResource( 68 )]
 position = Vector2( -23, 30 )
-frame = 7
+frame = 5
 
 [node name="SwarmOne8" parent="Swarms" instance=ExtResource( 68 )]
 position = Vector2( -113, -264 )
-frame = 6
 
 [node name="SwarmOne9" parent="Swarms" instance=ExtResource( 68 )]
 position = Vector2( 23, -416 )
 scale = Vector2( 0.5, 0.4 )
-frame = 6
 
 [node name="SwarmOne13" parent="Swarms" instance=ExtResource( 68 )]
 position = Vector2( 27, -412 )
 scale = Vector2( 0.5, 0.4 )
-frame = 5
+frame = 3
 
 [node name="SwarmOne14" parent="Swarms" instance=ExtResource( 68 )]
 position = Vector2( 34, -417 )
 scale = Vector2( 0.5, 0.4 )
-frame = 5
+frame = 3
 
 [node name="SwarmOne4" parent="Swarms" instance=ExtResource( 68 )]
-position = Vector2( 465, -145 )
-frame = 6
+position = Vector2( 504, -107 )
 
 [node name="SwarmOne5" parent="Swarms" instance=ExtResource( 68 )]
-position = Vector2( 488, -88 )
-frame = 6
+position = Vector2( 867, -392 )
+scale = Vector2( 1, 1 )
 
 [node name="SwarmOne6" parent="Swarms" instance=ExtResource( 68 )]
 position = Vector2( 684, -261 )
-frame = 6
 
 [node name="SwarmOne10" parent="Swarms" instance=ExtResource( 68 )]
 position = Vector2( 682, -260 )
 rotation = 1.0472
 scale = Vector2( 0.5, 0.5 )
+frame = 2
 
 [node name="SwarmOne2" parent="Swarms" instance=ExtResource( 68 )]
 position = Vector2( -78, 221 )
-frame = 2
+frame = 0
 
 [node name="DirtPathTileMap2" type="TileMap" parent="."]
 tile_set = SubResource( 1 )
@@ -1250,12 +1259,12 @@ z_index = 1
 [node name="SwarmOne" parent="Sidewalk" instance=ExtResource( 68 )]
 position = Vector2( -1383, 8 )
 scale = Vector2( 1, 1 )
-frame = 2
+frame = 0
 
 [node name="SwarmOne2" parent="Sidewalk" instance=ExtResource( 68 )]
 position = Vector2( -1382, 12 )
 scale = Vector2( 1, 1 )
-frame = 2
+frame = 0
 flip_h = true
 
 [node name="Streetlamp5" parent="Sidewalk" instance=ExtResource( 111 )]
@@ -1266,24 +1275,24 @@ z_index = 0
 [node name="SwarmOne5" parent="Sidewalk" instance=ExtResource( 68 )]
 position = Vector2( 226, -453 )
 scale = Vector2( 1, 1 )
-frame = 2
+frame = 0
 flip_h = true
 
 [node name="SwarmOne6" parent="Sidewalk" instance=ExtResource( 68 )]
 position = Vector2( 226, -453 )
 scale = Vector2( 1, 1 )
-frame = 1
+frame = 7
 
 [node name="SwarmOne3" parent="Sidewalk" instance=ExtResource( 68 )]
 position = Vector2( -671, -25 )
 scale = Vector2( 1, 1 )
-frame = 2
+frame = 0
 flip_h = true
 
 [node name="SwarmOne4" parent="Sidewalk" instance=ExtResource( 68 )]
 position = Vector2( -671, -14 )
 scale = Vector2( 1, 1 )
-frame = 2
+frame = 0
 flip_h = true
 
 [node name="Streetlamp6" parent="Sidewalk" instance=ExtResource( 111 )]
@@ -1299,13 +1308,13 @@ z_index = 1
 [node name="SwarmOne7" parent="Sidewalk" instance=ExtResource( 68 )]
 position = Vector2( -422, 218 )
 scale = Vector2( 1, 1 )
-frame = 2
+frame = 0
 flip_h = true
 
 [node name="SwarmOne8" parent="Sidewalk" instance=ExtResource( 68 )]
 position = Vector2( -422, 229 )
 scale = Vector2( 1, 1 )
-frame = 2
+frame = 0
 flip_h = true
 
 [node name="Streetlamp7" parent="Sidewalk" instance=ExtResource( 111 )]
@@ -1321,13 +1330,13 @@ z_index = 1
 [node name="SwarmOne9" parent="Sidewalk" instance=ExtResource( 68 )]
 position = Vector2( -528, 392 )
 scale = Vector2( 1, 1 )
-frame = 1
+frame = 7
 flip_h = true
 
 [node name="SwarmOne10" parent="Sidewalk" instance=ExtResource( 68 )]
 position = Vector2( -528, 403 )
 scale = Vector2( 1, 1 )
-frame = 1
+frame = 7
 flip_h = true
 
 [node name="Streetlamp8" parent="Sidewalk" instance=ExtResource( 111 )]
@@ -1343,13 +1352,13 @@ z_index = 1
 [node name="SwarmOne11" parent="Sidewalk" instance=ExtResource( 68 )]
 position = Vector2( -528, 305 )
 scale = Vector2( 1, 1 )
-frame = 1
+frame = 7
 flip_h = true
 
 [node name="SwarmOne12" parent="Sidewalk" instance=ExtResource( 68 )]
 position = Vector2( -528, 316 )
 scale = Vector2( 1, 1 )
-frame = 1
+frame = 7
 flip_h = true
 
 [node name="Streetlamp9" parent="Sidewalk" instance=ExtResource( 111 )]
@@ -1365,13 +1374,13 @@ z_index = 1
 [node name="SwarmOne13" parent="Sidewalk" instance=ExtResource( 68 )]
 position = Vector2( -528, 219 )
 scale = Vector2( 1, 1 )
-frame = 0
+frame = 6
 flip_h = true
 
 [node name="SwarmOne14" parent="Sidewalk" instance=ExtResource( 68 )]
 position = Vector2( -528, 230 )
 scale = Vector2( 1, 1 )
-frame = 0
+frame = 6
 flip_h = true
 
 [node name="Streetlamp10" parent="Sidewalk" instance=ExtResource( 111 )]
@@ -1387,13 +1396,13 @@ z_index = 1
 [node name="SwarmOne15" parent="Sidewalk" instance=ExtResource( 68 )]
 position = Vector2( -422, 305 )
 scale = Vector2( 1, 1 )
-frame = 7
+frame = 5
 flip_h = true
 
 [node name="SwarmOne16" parent="Sidewalk" instance=ExtResource( 68 )]
 position = Vector2( -422, 316 )
 scale = Vector2( 1, 1 )
-frame = 7
+frame = 5
 flip_h = true
 
 [node name="Streetlamp11" parent="Sidewalk" instance=ExtResource( 111 )]
@@ -1409,13 +1418,13 @@ z_index = 1
 [node name="SwarmOne17" parent="Sidewalk" instance=ExtResource( 68 )]
 position = Vector2( -422, 392 )
 scale = Vector2( 1, 1 )
-frame = 7
+frame = 5
 flip_h = true
 
 [node name="SwarmOne18" parent="Sidewalk" instance=ExtResource( 68 )]
 position = Vector2( -422, 403 )
 scale = Vector2( 1, 1 )
-frame = 7
+frame = 5
 flip_h = true
 
 [node name="ParkingCone1" parent="Sidewalk" instance=ExtResource( 113 )]
@@ -2576,239 +2585,237 @@ position = Vector2( -1196, 221 )
 
 [node name="SparkleOne" parent="YSort/Vines n Bush" instance=ExtResource( 56 )]
 position = Vector2( -438, 62 )
-frame = 1
 
 [node name="SparkleOne2" parent="YSort/Vines n Bush" instance=ExtResource( 56 )]
 position = Vector2( -429, 73 )
 rotation = 1.5708
-frame = 0
+frame = 1
 
 [node name="SparkleOne8" parent="YSort/Vines n Bush" instance=ExtResource( 56 )]
 position = Vector2( 350, 18 )
 rotation = 1.5708
-frame = 6
+frame = 0
 
 [node name="SparkleOne10" parent="YSort/Vines n Bush" instance=ExtResource( 56 )]
 position = Vector2( 350, 24 )
 rotation = 1.5708
-frame = 6
+frame = 0
 
 [node name="SparkleOne11" parent="YSort/Vines n Bush" instance=ExtResource( 56 )]
 position = Vector2( -264, 259 )
 rotation = 1.5708
-frame = 5
+frame = 6
 
 [node name="SparkleOne12" parent="YSort/Vines n Bush" instance=ExtResource( 56 )]
 position = Vector2( -251, 252 )
-frame = 5
+frame = 6
 
 [node name="SparkleOne13" parent="YSort/Vines n Bush" instance=ExtResource( 56 )]
 position = Vector2( -271, 253 )
-frame = 4
+frame = 5
 
 [node name="SparkleOne14" parent="YSort/Vines n Bush" instance=ExtResource( 56 )]
 position = Vector2( -529, 443 )
-frame = 4
+frame = 5
 
 [node name="SparkleOne15" parent="YSort/Vines n Bush" instance=ExtResource( 56 )]
 position = Vector2( -524, 443 )
 rotation = 3.14159
-frame = 3
+frame = 4
 
 [node name="SparkleOne18" parent="YSort/Vines n Bush" instance=ExtResource( 56 )]
 position = Vector2( -794, -44 )
 rotation = 3.14159
-frame = 3
+frame = 4
 
 [node name="SparkleOne19" parent="YSort/Vines n Bush" instance=ExtResource( 56 )]
 position = Vector2( -784, -57 )
 rotation = 4.71239
-frame = 5
+frame = 6
 
 [node name="SparkleOne16" parent="YSort/Vines n Bush" instance=ExtResource( 56 )]
 position = Vector2( -573, 453 )
 rotation = 1.5708
-frame = 5
+frame = 6
 
 [node name="SparkleOne17" parent="YSort/Vines n Bush" instance=ExtResource( 56 )]
 position = Vector2( -690, -34 )
 rotation = 1.5708
-frame = 5
+frame = 6
 
 [node name="SparkleOne20" parent="YSort/Vines n Bush" instance=ExtResource( 56 )]
 position = Vector2( -871, 113 )
 rotation = 1.5708
-frame = 1
 
 [node name="SparkleOne21" parent="YSort/Vines n Bush" instance=ExtResource( 56 )]
 position = Vector2( -877, 124 )
 rotation = 3.14159
-frame = 1
 
 [node name="SparkleOne23" parent="YSort/Vines n Bush" instance=ExtResource( 56 )]
 position = Vector2( -1291, 239 )
 rotation = 3.14159
-frame = 0
+frame = 1
 
 [node name="SparkleOne24" parent="YSort/Vines n Bush" instance=ExtResource( 56 )]
 position = Vector2( -1285, 257 )
 rotation = 1.5708
-frame = 0
+frame = 1
 
 [node name="SparkleOne25" parent="YSort/Vines n Bush" instance=ExtResource( 56 )]
 position = Vector2( -1285, 235 )
 rotation = 4.71239
-frame = 6
+frame = 0
 
 [node name="SparkleOne26" parent="YSort/Vines n Bush" instance=ExtResource( 56 )]
 position = Vector2( -1319, 1 )
 rotation = 4.71239
-frame = 5
+frame = 6
 
 [node name="SparkleOne27" parent="YSort/Vines n Bush" instance=ExtResource( 56 )]
 position = Vector2( -1320, -7 )
-frame = 5
+frame = 6
 
 [node name="SparkleOne28" parent="YSort/Vines n Bush" instance=ExtResource( 56 )]
 position = Vector2( -1309, -7 )
 rotation = 3.14159
-frame = 5
+frame = 6
 
 [node name="SparkleOne29" parent="YSort/Vines n Bush" instance=ExtResource( 56 )]
 position = Vector2( -1157, -207 )
 rotation = 1.5708
-frame = 5
+frame = 6
 
 [node name="SparkleOne36" parent="YSort/Vines n Bush" instance=ExtResource( 56 )]
 position = Vector2( -671, -289 )
 rotation = 1.5708
-frame = 4
+frame = 5
 
 [node name="SparkleOne34" parent="YSort/Vines n Bush" instance=ExtResource( 56 )]
 position = Vector2( -981, -418 )
 rotation = 1.5708
-frame = 4
+frame = 5
 
 [node name="SparkleOne32" parent="YSort/Vines n Bush" instance=ExtResource( 56 )]
 position = Vector2( -1001, -412 )
 rotation = 1.5708
-frame = 4
+frame = 5
 
 [node name="SparkleOne30" parent="YSort/Vines n Bush" instance=ExtResource( 56 )]
 position = Vector2( -1137, -193 )
 rotation = 4.71239
-frame = 4
+frame = 5
 
 [node name="SparkleOne37" parent="YSort/Vines n Bush" instance=ExtResource( 56 )]
 position = Vector2( -676, -306 )
 rotation = 4.71239
-frame = 4
+frame = 5
 
 [node name="SparkleOne31" parent="YSort/Vines n Bush" instance=ExtResource( 56 )]
 position = Vector2( -1145, -198 )
-frame = 4
+frame = 5
 
 [node name="SparkleOne35" parent="YSort/Vines n Bush" instance=ExtResource( 56 )]
 position = Vector2( -657, -293 )
-frame = 3
+frame = 4
 
 [node name="SparkleOne33" parent="YSort/Vines n Bush" instance=ExtResource( 56 )]
 position = Vector2( -1009, -420 )
-frame = 3
+frame = 4
 
 [node name="SparkleOne22" parent="YSort/Vines n Bush" instance=ExtResource( 56 )]
 position = Vector2( -863, 124 )
 rotation = 4.71239
-frame = 0
+frame = 1
 
 [node name="SparkleOne3" parent="YSort/Vines n Bush" instance=ExtResource( 56 )]
 position = Vector2( -442, 43 )
 rotation = 1.5708
-frame = 0
+frame = 1
 
 [node name="SparkleOne4" parent="YSort/Vines n Bush" instance=ExtResource( 56 )]
 position = Vector2( -435, 61 )
 rotation = 3.14159
-frame = 6
+frame = 0
 
 [node name="SparkleOne47" parent="YSort/Vines n Bush" instance=ExtResource( 56 )]
 position = Vector2( 257, -197 )
 rotation = 3.14159
-frame = 5
+frame = 6
 
 [node name="SparkleOne48" parent="YSort/Vines n Bush" instance=ExtResource( 56 )]
 position = Vector2( 259, -188 )
 rotation = 1.5708
-frame = 5
+frame = 6
 
 [node name="SparkleOne49" parent="YSort/Vines n Bush" instance=ExtResource( 56 )]
 position = Vector2( 244, -198 )
-frame = 4
+frame = 5
 
 [node name="SparkleOne38" parent="YSort/Vines n Bush" instance=ExtResource( 56 )]
 position = Vector2( 726, -292 )
 rotation = 3.14159
-frame = 6
+frame = 0
 
 [node name="SparkleOne39" parent="YSort/Vines n Bush" instance=ExtResource( 56 )]
 position = Vector2( 715, -284 )
 rotation = 1.5708
-frame = 5
+frame = 6
 
 [node name="SparkleOne40" parent="YSort/Vines n Bush" instance=ExtResource( 56 )]
 position = Vector2( 713, -292 )
 rotation = 4.71239
-frame = 5
+frame = 6
 
 [node name="SparkleOne44" parent="YSort/Vines n Bush" instance=ExtResource( 56 )]
 position = Vector2( -340, -503 )
 rotation = 4.71239
-frame = 4
+frame = 5
 
 [node name="SparkleOne45" parent="YSort/Vines n Bush" instance=ExtResource( 56 )]
 position = Vector2( -333, -513 )
 rotation = 3.14159
-frame = 3
+frame = 4
 
 [node name="SparkleOne46" parent="YSort/Vines n Bush" instance=ExtResource( 56 )]
 position = Vector2( -357, -521 )
+frame = 3
 
 [node name="SparkleOne41" parent="YSort/Vines n Bush" instance=ExtResource( 56 )]
 position = Vector2( 1150, -341 )
 rotation = 4.71239
 scale = Vector2( 0.729201, 1 )
-frame = 4
+frame = 5
 
 [node name="SparkleOne42" parent="YSort/Vines n Bush" instance=ExtResource( 56 )]
 position = Vector2( 1150, -341 )
 rotation = 1.5708
 scale = Vector2( 0.729201, 1 )
-frame = 4
+frame = 5
 
 [node name="SparkleOne43" parent="YSort/Vines n Bush" instance=ExtResource( 56 )]
 position = Vector2( 1153, -341 )
 rotation = 1.5708
 scale = Vector2( 0.729201, 1 )
-frame = 3
+frame = 4
 
 [node name="SparkleOne6" parent="YSort/Vines n Bush" instance=ExtResource( 56 )]
 position = Vector2( 343, 23 )
 rotation = 3.14159
-frame = 6
+frame = 0
 
 [node name="SparkleOne5" parent="YSort/Vines n Bush" instance=ExtResource( 56 )]
 position = Vector2( -452, 62 )
 rotation = 3.14159
-frame = 6
+frame = 0
 
 [node name="SparkleOne7" parent="YSort/Vines n Bush" instance=ExtResource( 56 )]
 position = Vector2( 340, 27 )
 rotation = 3.14159
-frame = 5
+frame = 6
 
 [node name="SparkleOne9" parent="YSort/Vines n Bush" instance=ExtResource( 56 )]
 position = Vector2( 338, 26 )
-frame = 4
+frame = 5
 
 [node name="MarshBush" parent="YSort/Vines n Bush" instance=ExtResource( 38 )]
 position = Vector2( -498, 455 )
@@ -2881,91 +2888,91 @@ visible = false
 
 [node name="Torch" parent="YSort/Torches" instance=ExtResource( 5 )]
 position = Vector2( 3, 58 )
-frame = 7
+frame = 9
 
 [node name="Torch2" parent="YSort/Torches" instance=ExtResource( 5 )]
 position = Vector2( -48, -72 )
-frame = 7
+frame = 9
 
 [node name="Torch6" parent="YSort/Torches" instance=ExtResource( 5 )]
 position = Vector2( -272, -104 )
-frame = 7
+frame = 9
 
 [node name="Torch7" parent="YSort/Torches" instance=ExtResource( 5 )]
 position = Vector2( -400, -264 )
-frame = 5
+frame = 7
 
 [node name="Torch10" parent="YSort/Torches" instance=ExtResource( 5 )]
 position = Vector2( -288, -264 )
-frame = 5
+frame = 7
 
 [node name="Torch11" parent="YSort/Torches" instance=ExtResource( 5 )]
 position = Vector2( -384, -488 )
-frame = 4
+frame = 6
 
 [node name="Torch16" parent="YSort/Torches" instance=ExtResource( 5 )]
 position = Vector2( -16, -488 )
-frame = 4
+frame = 6
 
 [node name="Torch12" parent="YSort/Torches" instance=ExtResource( 5 )]
 position = Vector2( -49, -264 )
-frame = 3
+frame = 5
 
 [node name="Torch9" parent="YSort/Torches" instance=ExtResource( 5 )]
 position = Vector2( -528, -453 )
-frame = 4
+frame = 6
 
 [node name="Torch18" parent="YSort/Torches" instance=ExtResource( 5 )]
 position = Vector2( -643, -17 )
-frame = 4
+frame = 6
 
 [node name="Torch19" parent="YSort/Torches" instance=ExtResource( 5 )]
 position = Vector2( -814, 248 )
-frame = 3
+frame = 5
 
 [node name="Torch20" parent="YSort/Torches" instance=ExtResource( 5 )]
 position = Vector2( -1026, 186 )
-frame = 3
+frame = 5
 
 [node name="Torch8" parent="YSort/Torches" instance=ExtResource( 5 )]
 position = Vector2( -111, 24 )
-frame = 4
+frame = 6
 
 [node name="Torch13" parent="YSort/Torches" instance=ExtResource( 5 )]
 position = Vector2( -400, 120 )
-frame = 4
+frame = 6
 
 [node name="Torch15" parent="YSort/Torches" instance=ExtResource( 5 )]
 position = Vector2( -240, 184 )
-frame = 3
+frame = 5
 
 [node name="Torch14" parent="YSort/Torches" instance=ExtResource( 5 )]
 position = Vector2( -649, 58 )
-frame = 3
+frame = 5
 
 [node name="Torch17" parent="YSort/Torches" instance=ExtResource( 5 )]
 position = Vector2( -479, 473 )
-frame = 2
+frame = 4
 
 [node name="Torch21" parent="YSort/Torches" instance=ExtResource( 5 )]
 position = Vector2( -418, 792 )
-frame = 2
+frame = 4
 
 [node name="Torch3" parent="YSort/Torches" instance=ExtResource( 5 )]
 position = Vector2( 64, -72 )
-frame = 7
+frame = 9
 
 [node name="Torch4" parent="YSort/Torches" instance=ExtResource( 5 )]
 position = Vector2( 104, -264 )
-frame = 7
+frame = 9
 
 [node name="Torch5" parent="YSort/Torches" instance=ExtResource( 5 )]
 position = Vector2( 299, -199 )
-frame = 7
+frame = 9
 
 [node name="Bonfire" parent="YSort/Torches" instance=ExtResource( 85 )]
 position = Vector2( -648, 465 )
-frame = 0
+frame = 1
 
 [node name="Dwellers" type="YSort" parent="YSort"]
 
@@ -3657,10 +3664,10 @@ custom_styles/panel = SubResource( 171 )
 
 [node name="RichTextLabel" type="RichTextLabel" parent="YSort/Buildings/Building5/Panel"]
 margin_left = 1.0
-margin_top = 1.429
+margin_top = 1.42857
 margin_right = 49.0
-margin_bottom = 34.429
-rect_scale = Vector2( 0.33, 0.33 )
+margin_bottom = 34.4286
+rect_scale = Vector2( 0.3, 0.3 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_fonts/normal_font = SubResource( 172 )
 bbcode_enabled = true
@@ -3670,7 +3677,7 @@ text = "Marcosa
 Coffee"
 
 [node name="Sprite" type="Sprite" parent="YSort/Buildings/Building5/Panel"]
-position = Vector2( 16.2, 8 )
+position = Vector2( 15.4, 7.14285 )
 scale = Vector2( 0.08, 0.11 )
 texture = ExtResource( 151 )
 
@@ -3756,20 +3763,21 @@ margin_bottom = 13.0
 custom_styles/panel = SubResource( 182 )
 
 [node name="RichTextLabel" type="RichTextLabel" parent="YSort/Buildings/Building6/Panel"]
-margin_left = -1.66663
-margin_top = -0.333328
-margin_right = 59.3334
-margin_bottom = 46.6667
-rect_scale = Vector2( 0.25, 0.25 )
+margin_left = -1.0
+margin_top = 1.33333
+margin_right = 60.0
+margin_bottom = 48.3333
+rect_scale = Vector2( 0.23, 0.23 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/line_separation = -1
 custom_fonts/normal_font = SubResource( 183 )
 bbcode_enabled = true
 bbcode_text = "[center]Tiger Stripe Bakery"
 text = "Tiger Stripe Bakery"
 
 [node name="Sprite" type="Sprite" parent="YSort/Buildings/Building6/Panel"]
-position = Vector2( 13.6666, 6.66669 )
-scale = Vector2( 0.13, 0.13 )
+position = Vector2( 13, 5.66667 )
+scale = Vector2( 0.25, 0.25 )
 texture = ExtResource( 152 )
 
 [node name="Panel2" type="Panel" parent="YSort/Buildings/Building6"]
