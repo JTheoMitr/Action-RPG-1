@@ -12,6 +12,7 @@ onready var music_found = $Popup/Sprite/RichTextLabel
 onready var text_2 = $Popup/RichTextLabel
 onready var spinning_album_2 = $Popup/Sprite/AlbumSpin1
 onready var blackDrop = $Popup/Sprite/Blackdrop
+onready var stopTimer = $StopTimer
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -44,4 +45,9 @@ func _on_PopTimer1_timeout():
 	blackDrop.hide()
 	text_2.show()
 	spinning_album_2.show()
+	stopTimer.start()
 	
+
+
+func _on_StopTimer_timeout():
+	queue_free()

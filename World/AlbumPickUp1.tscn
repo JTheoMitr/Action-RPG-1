@@ -94,6 +94,7 @@ scale = Vector2( 0.36, 0.36 )
 position = Vector2( -0.5, -1 )
 scale = Vector2( 0.46875, 0.15 )
 frames = SubResource( 7 )
+frame = 1
 playing = true
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Popup"]
@@ -112,5 +113,10 @@ text = "You found the track 'Cyberdyne' by Rozanzu. Play it from your tuneStick 
 wait_time = 2.5
 one_shot = true
 
+[node name="StopTimer" type="Timer" parent="."]
+wait_time = 2.5
+one_shot = true
+
 [connection signal="area_entered" from="Area2D" to="." method="_on_Area2D_area_entered"]
 [connection signal="timeout" from="PopTimer1" to="." method="_on_PopTimer1_timeout"]
+[connection signal="timeout" from="StopTimer" to="." method="_on_StopTimer_timeout"]

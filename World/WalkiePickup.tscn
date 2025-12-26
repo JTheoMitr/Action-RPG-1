@@ -662,20 +662,21 @@ texture = ExtResource( 9 )
 position = Vector2( 7.69841, -5.79364 )
 scale = Vector2( 0.476191, 0.327381 )
 frames = SubResource( 32 )
-frame = 2
+frame = 1
 playing = true
 
 [node name="AnimatedSprite2" type="AnimatedSprite" parent="PopupDialog/Sprite3"]
 position = Vector2( 14, -5.317 )
 scale = Vector2( 0.476191, 0.327381 )
 frames = SubResource( 32 )
-frame = 4
+frame = 3
 playing = true
 
 [node name="AnimatedSprite3" type="AnimatedSprite" parent="PopupDialog/Sprite3"]
 position = Vector2( 17.6984, -5.31746 )
 scale = Vector2( 0.476191, 0.327381 )
 frames = SubResource( 32 )
+frame = 6
 playing = true
 
 [node name="Sprite2" type="Sprite" parent="PopupDialog"]
@@ -700,7 +701,7 @@ modulate = Color( 0.337255, 1, 0, 0.788235 )
 position = Vector2( 75, 80 )
 scale = Vector2( 4, 1.31868 )
 frames = SubResource( 23 )
-frame = 1
+frame = 4
 playing = true
 
 [node name="Timer" type="Timer" parent="."]
@@ -765,7 +766,7 @@ custom_styles/panel = SubResource( 54 )
 position = Vector2( 11, 24.333 )
 scale = Vector2( 0.2, 0.12 )
 frames = SubResource( 60 )
-frame = 4
+frame = 3
 playing = true
 
 [node name="PixelWav2" type="AnimatedSprite" parent="AnimatedSprite3"]
@@ -788,7 +789,7 @@ modulate = Color( 0.337255, 1, 0, 0.788235 )
 position = Vector2( 67.2635, -7 )
 scale = Vector2( 0.546032, 0.484188 )
 frames = SubResource( 23 )
-frame = 1
+frame = 4
 playing = true
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
