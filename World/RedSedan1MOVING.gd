@@ -16,7 +16,7 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	
-	if global_position.x > 250:
+	if global_position.x > 1850:
 		goingLeft = true
 		goingRight = false
 	if global_position.x < -500:

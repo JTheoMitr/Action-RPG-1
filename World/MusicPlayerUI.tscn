@@ -1,0 +1,306 @@
+[gd_scene load_steps=36 format=2]
+
+[ext_resource path="res://UI/nightsky1.png" type="Texture" id=2]
+[ext_resource path="res://UI/walkie_talkie_1.png" type="Texture" id=3]
+[ext_resource path="res://UI/radio_signal.png" type="Texture" id=4]
+[ext_resource path="res://Music and Sounds/Mobile_Game_UI_Alien_Chatter_Box_2.wav" type="AudioStream" id=5]
+[ext_resource path="res://fonts/PixelTandysoft-0rJG.ttf" type="DynamicFontData" id=6]
+[ext_resource path="res://UI/5_light_meter.png" type="Texture" id=10]
+[ext_resource path="res://UI/walkie_addon_anim_extended.png" type="Texture" id=12]
+[ext_resource path="res://UI/pixel_wav_visual.png" type="Texture" id=13]
+
+[sub_resource type="CircleShape2D" id=8]
+
+[sub_resource type="AtlasTexture" id=52]
+atlas = ExtResource( 12 )
+region = Rect2( 372, 0, 62, 128 )
+
+[sub_resource type="SpriteFrames" id=41]
+animations = [ {
+"frames": [ SubResource( 52 ) ],
+"loop": true,
+"name": "default",
+"speed": 12.0
+} ]
+
+[sub_resource type="StyleBoxFlat" id=54]
+bg_color = Color( 0.368627, 0.882353, 0.262745, 1 )
+
+[sub_resource type="StyleBoxFlat" id=64]
+bg_color = Color( 0.333333, 0.313726, 0.313726, 0 )
+
+[sub_resource type="DynamicFont" id=62]
+size = 10
+font_data = ExtResource( 6 )
+
+[sub_resource type="StyleBoxFlat" id=63]
+bg_color = Color( 0, 0, 0, 1 )
+
+[sub_resource type="StyleBoxFlat" id=65]
+content_margin_left = 4.0
+content_margin_right = 4.0
+content_margin_top = 1.0
+content_margin_bottom = 1.0
+
+[sub_resource type="StyleBoxFlat" id=66]
+content_margin_left = 4.0
+content_margin_right = 4.0
+content_margin_top = 1.0
+content_margin_bottom = 1.0
+
+[sub_resource type="StyleBoxFlat" id=67]
+
+[sub_resource type="StyleBoxFlat" id=68]
+content_margin_left = 4.0
+content_margin_right = 4.0
+content_margin_top = 1.0
+content_margin_bottom = 1.0
+
+[sub_resource type="AtlasTexture" id=55]
+atlas = ExtResource( 13 )
+region = Rect2( 0, 0, 96, 32 )
+
+[sub_resource type="AtlasTexture" id=56]
+atlas = ExtResource( 13 )
+region = Rect2( 0, 32, 96, 32 )
+
+[sub_resource type="AtlasTexture" id=57]
+atlas = ExtResource( 13 )
+region = Rect2( 0, 64, 96, 32 )
+
+[sub_resource type="AtlasTexture" id=58]
+atlas = ExtResource( 13 )
+region = Rect2( 0, 96, 96, 32 )
+
+[sub_resource type="AtlasTexture" id=59]
+atlas = ExtResource( 13 )
+region = Rect2( 0, 128, 96, 32 )
+
+[sub_resource type="SpriteFrames" id=60]
+animations = [ {
+"frames": [ SubResource( 55 ), SubResource( 56 ), SubResource( 57 ), SubResource( 58 ), SubResource( 59 ) ],
+"loop": true,
+"name": "default",
+"speed": 3.0
+} ]
+
+[sub_resource type="StyleBoxFlat" id=61]
+bg_color = Color( 0.313726, 1, 0, 1 )
+
+[sub_resource type="AtlasTexture" id=20]
+atlas = ExtResource( 10 )
+region = Rect2( 0, 0, 32, 13 )
+
+[sub_resource type="AtlasTexture" id=21]
+atlas = ExtResource( 10 )
+region = Rect2( 32, 0, 32, 13 )
+
+[sub_resource type="AtlasTexture" id=22]
+atlas = ExtResource( 10 )
+region = Rect2( 64, 0, 32, 13 )
+
+[sub_resource type="SpriteFrames" id=23]
+animations = [ {
+"frames": [ SubResource( 20 ), SubResource( 20 ), SubResource( 21 ), SubResource( 20 ), SubResource( 21 ), SubResource( 20 ), SubResource( 21 ), SubResource( 22 ), SubResource( 21 ) ],
+"loop": true,
+"name": "default",
+"speed": 1.0
+} ]
+
+[sub_resource type="AtlasTexture" id=11]
+atlas = ExtResource( 4 )
+region = Rect2( 0, 0, 57, 64 )
+
+[sub_resource type="AtlasTexture" id=12]
+atlas = ExtResource( 4 )
+region = Rect2( 57, 0, 57, 64 )
+
+[sub_resource type="AtlasTexture" id=13]
+atlas = ExtResource( 4 )
+region = Rect2( 114, 0, 57, 64 )
+
+[sub_resource type="AtlasTexture" id=14]
+atlas = ExtResource( 4 )
+region = Rect2( 171, 0, 57, 64 )
+
+[sub_resource type="SpriteFrames" id=7]
+animations = [ {
+"frames": [ SubResource( 11 ), SubResource( 12 ), SubResource( 13 ), SubResource( 14 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[node name="MusicPlayerUI" type="Node2D"]
+position = Vector2( 100, 100 )
+
+[node name="Bgnd2" type="Sprite" parent="."]
+position = Vector2( 58, 0 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 2 )
+
+[node name="Bgnd1" type="Sprite" parent="."]
+position = Vector2( 60, 1 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 2 )
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+visible = false
+shape = SubResource( 8 )
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.5
+one_shot = true
+
+[node name="Timer2" type="Timer" parent="."]
+wait_time = 13.0
+one_shot = true
+
+[node name="Timer3" type="Timer" parent="."]
+wait_time = 7.0
+one_shot = true
+
+[node name="Chatter" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+pitch_scale = 1.2
+
+[node name="SkyTimer" type="Timer" parent="."]
+wait_time = 2.0
+autostart = true
+
+[node name="Sprite" type="Sprite" parent="."]
+visible = false
+position = Vector2( -3, 0 )
+scale = Vector2( 0.3, 0.3 )
+texture = ExtResource( 3 )
+
+[node name="AnimatedSprite3" type="AnimatedSprite" parent="."]
+position = Vector2( 56, -123 )
+scale = Vector2( 5, 5 )
+frames = SubResource( 41 )
+
+[node name="Backlit" type="Panel" parent="AnimatedSprite3"]
+margin_left = 1.0
+margin_top = 20.0
+margin_right = 21.0
+margin_bottom = 31.0
+rect_clip_content = true
+custom_styles/panel = SubResource( 54 )
+
+[node name="PanelContainer" type="PanelContainer" parent="AnimatedSprite3/Backlit"]
+margin_right = 134.0
+margin_bottom = 11.0
+custom_styles/panel = SubResource( 64 )
+
+[node name="ScrollContainer" type="ScrollContainer" parent="AnimatedSprite3/Backlit/PanelContainer"]
+margin_right = 134.0
+margin_bottom = 11.0
+size_flags_horizontal = 0
+scroll_horizontal_enabled = false
+
+[node name="VBoxContainer" type="VBoxContainer" parent="AnimatedSprite3/Backlit/PanelContainer/ScrollContainer"]
+margin_right = 122.0
+margin_bottom = 53.0
+rect_min_size = Vector2( 20, 20 )
+rect_clip_content = true
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="Button" type="Button" parent="AnimatedSprite3/Backlit/PanelContainer/ScrollContainer/VBoxContainer"]
+margin_right = 122.0
+margin_bottom = 15.0
+rect_min_size = Vector2( 0, 10 )
+rect_scale = Vector2( 0.25, 0.25 )
+size_flags_horizontal = 0
+size_flags_vertical = 0
+custom_colors/font_color_focus = Color( 1, 1, 1, 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 62 )
+custom_styles/focus = SubResource( 63 )
+custom_styles/normal = SubResource( 65 )
+text = "Rozanzu - Cyberdyne"
+flat = true
+align = 0
+
+[node name="Button2" type="Button" parent="AnimatedSprite3/Backlit/PanelContainer/ScrollContainer/VBoxContainer"]
+margin_top = 19.0
+margin_right = 122.0
+margin_bottom = 34.0
+rect_min_size = Vector2( 0, 10 )
+size_flags_horizontal = 0
+size_flags_vertical = 0
+custom_colors/font_color_focus = Color( 1, 1, 1, 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 62 )
+custom_styles/hover = SubResource( 66 )
+custom_styles/pressed = SubResource( 67 )
+custom_styles/focus = SubResource( 63 )
+custom_styles/normal = SubResource( 68 )
+text = "Rozanzu - Cyberdyne"
+flat = true
+align = 0
+
+[node name="Button3" type="Button" parent="AnimatedSprite3/Backlit/PanelContainer/ScrollContainer/VBoxContainer"]
+margin_top = 38.0
+margin_right = 122.0
+margin_bottom = 53.0
+rect_min_size = Vector2( 0, 10 )
+size_flags_horizontal = 0
+size_flags_vertical = 0
+custom_colors/font_color_focus = Color( 1, 1, 1, 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 62 )
+custom_styles/hover = SubResource( 66 )
+custom_styles/pressed = SubResource( 67 )
+custom_styles/focus = SubResource( 63 )
+custom_styles/normal = SubResource( 68 )
+text = "Rozanzu - Cyberdyne"
+flat = true
+align = 0
+
+[node name="PixelWav" type="AnimatedSprite" parent="AnimatedSprite3"]
+visible = false
+position = Vector2( 11, 24.333 )
+scale = Vector2( 0.2, 0.12 )
+frames = SubResource( 60 )
+frame = 1
+playing = true
+
+[node name="PixelWav2" type="AnimatedSprite" parent="AnimatedSprite3"]
+visible = false
+position = Vector2( 11, 27 )
+scale = Vector2( 0.2, 0.12 )
+frames = SubResource( 60 )
+playing = true
+flip_v = true
+
+[node name="Sidelit" type="Panel" parent="AnimatedSprite3"]
+margin_left = -24.0
+margin_top = 34.0
+margin_right = -21.0
+margin_bottom = 52.0
+custom_styles/panel = SubResource( 61 )
+
+[node name="Signal" type="AnimatedSprite" parent="."]
+modulate = Color( 0.337255, 1, 0, 0.788235 )
+position = Vector2( 114, 47 )
+scale = Vector2( 1.7, 1.7 )
+frames = SubResource( 23 )
+frame = 6
+playing = true
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( -24, -79 )
+frames = SubResource( 7 )
+playing = true
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_Area2D_area_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[connection signal="timeout" from="Timer2" to="." method="_on_Timer2_timeout"]
+[connection signal="timeout" from="Timer3" to="." method="_on_Timer3_timeout"]
+[connection signal="timeout" from="SkyTimer" to="." method="_on_SkyTimer_timeout"]
+[connection signal="animation_finished" from="AnimatedSprite3" to="." method="_on_AnimatedSprite3_animation_finished"]
