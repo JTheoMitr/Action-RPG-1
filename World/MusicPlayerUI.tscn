@@ -1,10 +1,12 @@
-[gd_scene load_steps=36 format=2]
+[gd_scene load_steps=35 format=2]
 
+[ext_resource path="res://World/MusicPlayerUI.gd" type="Script" id=1]
 [ext_resource path="res://UI/nightsky1.png" type="Texture" id=2]
 [ext_resource path="res://UI/walkie_talkie_1.png" type="Texture" id=3]
 [ext_resource path="res://UI/radio_signal.png" type="Texture" id=4]
 [ext_resource path="res://Music and Sounds/Mobile_Game_UI_Alien_Chatter_Box_2.wav" type="AudioStream" id=5]
 [ext_resource path="res://fonts/PixelTandysoft-0rJG.ttf" type="DynamicFontData" id=6]
+[ext_resource path="res://UI/MarqueeRow.tscn" type="PackedScene" id=7]
 [ext_resource path="res://UI/5_light_meter.png" type="Texture" id=10]
 [ext_resource path="res://UI/walkie_addon_anim_extended.png" type="Texture" id=12]
 [ext_resource path="res://UI/pixel_wav_visual.png" type="Texture" id=13]
@@ -41,20 +43,7 @@ content_margin_left = 4.0
 content_margin_right = 4.0
 content_margin_top = 1.0
 content_margin_bottom = 1.0
-
-[sub_resource type="StyleBoxFlat" id=66]
-content_margin_left = 4.0
-content_margin_right = 4.0
-content_margin_top = 1.0
-content_margin_bottom = 1.0
-
-[sub_resource type="StyleBoxFlat" id=67]
-
-[sub_resource type="StyleBoxFlat" id=68]
-content_margin_left = 4.0
-content_margin_right = 4.0
-content_margin_top = 1.0
-content_margin_bottom = 1.0
+bg_color = Color( 1, 1, 1, 0 )
 
 [sub_resource type="AtlasTexture" id=55]
 atlas = ExtResource( 13 )
@@ -133,6 +122,7 @@ animations = [ {
 
 [node name="MusicPlayerUI" type="Node2D"]
 position = Vector2( 100, 100 )
+script = ExtResource( 1 )
 
 [node name="Bgnd2" type="Sprite" parent="."]
 position = Vector2( 58, 0 )
@@ -152,18 +142,6 @@ collision_mask = 2
 visible = false
 shape = SubResource( 8 )
 
-[node name="Timer" type="Timer" parent="."]
-wait_time = 3.5
-one_shot = true
-
-[node name="Timer2" type="Timer" parent="."]
-wait_time = 13.0
-one_shot = true
-
-[node name="Timer3" type="Timer" parent="."]
-wait_time = 7.0
-one_shot = true
-
 [node name="Chatter" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 5 )
 pitch_scale = 1.2
@@ -179,7 +157,7 @@ scale = Vector2( 0.3, 0.3 )
 texture = ExtResource( 3 )
 
 [node name="AnimatedSprite3" type="AnimatedSprite" parent="."]
-position = Vector2( 56, -123 )
+position = Vector2( 24, -140 )
 scale = Vector2( 5, 5 )
 frames = SubResource( 41 )
 
@@ -190,31 +168,40 @@ margin_right = 21.0
 margin_bottom = 31.0
 rect_clip_content = true
 custom_styles/panel = SubResource( 54 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
 
 [node name="PanelContainer" type="PanelContainer" parent="AnimatedSprite3/Backlit"]
-margin_right = 134.0
-margin_bottom = 11.0
+margin_right = 187.0
+margin_bottom = 125.0
+rect_scale = Vector2( 0.15, 0.15 )
 custom_styles/panel = SubResource( 64 )
 
 [node name="ScrollContainer" type="ScrollContainer" parent="AnimatedSprite3/Backlit/PanelContainer"]
-margin_right = 134.0
-margin_bottom = 11.0
+margin_right = 170.0
+margin_bottom = 125.0
 size_flags_horizontal = 0
 scroll_horizontal_enabled = false
 
 [node name="VBoxContainer" type="VBoxContainer" parent="AnimatedSprite3/Backlit/PanelContainer/ScrollContainer"]
-margin_right = 122.0
-margin_bottom = 53.0
+margin_right = 158.0
+margin_bottom = 128.0
 rect_min_size = Vector2( 20, 20 )
 rect_clip_content = true
 size_flags_horizontal = 0
 size_flags_vertical = 0
 
+[node name="MarqueeRow" parent="AnimatedSprite3/Backlit/PanelContainer/ScrollContainer/VBoxContainer" instance=ExtResource( 7 )]
+margin_right = 158.0
+margin_bottom = 14.0
+title_text = "dsadsasda"
+
 [node name="Button" type="Button" parent="AnimatedSprite3/Backlit/PanelContainer/ScrollContainer/VBoxContainer"]
+margin_top = 18.0
 margin_right = 122.0
-margin_bottom = 15.0
+margin_bottom = 33.0
 rect_min_size = Vector2( 0, 10 )
-rect_scale = Vector2( 0.25, 0.25 )
 size_flags_horizontal = 0
 size_flags_vertical = 0
 custom_colors/font_color_focus = Color( 1, 1, 1, 1 )
@@ -223,43 +210,81 @@ custom_fonts/font = SubResource( 62 )
 custom_styles/focus = SubResource( 63 )
 custom_styles/normal = SubResource( 65 )
 text = "Rozanzu - Cyberdyne"
-flat = true
 align = 0
 
 [node name="Button2" type="Button" parent="AnimatedSprite3/Backlit/PanelContainer/ScrollContainer/VBoxContainer"]
-margin_top = 19.0
-margin_right = 122.0
-margin_bottom = 34.0
+margin_top = 37.0
+margin_right = 150.0
+margin_bottom = 52.0
 rect_min_size = Vector2( 0, 10 )
 size_flags_horizontal = 0
 size_flags_vertical = 0
 custom_colors/font_color_focus = Color( 1, 1, 1, 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 62 )
-custom_styles/hover = SubResource( 66 )
-custom_styles/pressed = SubResource( 67 )
 custom_styles/focus = SubResource( 63 )
-custom_styles/normal = SubResource( 68 )
-text = "Rozanzu - Cyberdyne"
-flat = true
+custom_styles/normal = SubResource( 65 )
+text = "MoleMan - Dumpling House"
 align = 0
 
 [node name="Button3" type="Button" parent="AnimatedSprite3/Backlit/PanelContainer/ScrollContainer/VBoxContainer"]
-margin_top = 38.0
-margin_right = 122.0
-margin_bottom = 53.0
+margin_top = 56.0
+margin_right = 92.0
+margin_bottom = 71.0
 rect_min_size = Vector2( 0, 10 )
 size_flags_horizontal = 0
 size_flags_vertical = 0
 custom_colors/font_color_focus = Color( 1, 1, 1, 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 62 )
-custom_styles/hover = SubResource( 66 )
-custom_styles/pressed = SubResource( 67 )
 custom_styles/focus = SubResource( 63 )
-custom_styles/normal = SubResource( 68 )
+custom_styles/normal = SubResource( 65 )
+text = "Helenor - Bad2"
+align = 0
+
+[node name="Button4" type="Button" parent="AnimatedSprite3/Backlit/PanelContainer/ScrollContainer/VBoxContainer"]
+margin_top = 75.0
+margin_right = 158.0
+margin_bottom = 90.0
+rect_min_size = Vector2( 0, 10 )
+size_flags_horizontal = 0
+size_flags_vertical = 0
+custom_colors/font_color_focus = Color( 1, 1, 1, 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 62 )
+custom_styles/focus = SubResource( 63 )
+custom_styles/normal = SubResource( 65 )
+text = "Freak Sweats - Cover Fade"
+align = 0
+
+[node name="Button5" type="Button" parent="AnimatedSprite3/Backlit/PanelContainer/ScrollContainer/VBoxContainer"]
+margin_top = 94.0
+margin_right = 122.0
+margin_bottom = 109.0
+rect_min_size = Vector2( 0, 10 )
+size_flags_horizontal = 0
+size_flags_vertical = 0
+custom_colors/font_color_focus = Color( 1, 1, 1, 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 62 )
+custom_styles/focus = SubResource( 63 )
+custom_styles/normal = SubResource( 65 )
 text = "Rozanzu - Cyberdyne"
-flat = true
+align = 0
+
+[node name="Button6" type="Button" parent="AnimatedSprite3/Backlit/PanelContainer/ScrollContainer/VBoxContainer"]
+margin_top = 113.0
+margin_right = 122.0
+margin_bottom = 128.0
+rect_min_size = Vector2( 0, 10 )
+size_flags_horizontal = 0
+size_flags_vertical = 0
+custom_colors/font_color_focus = Color( 1, 1, 1, 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 62 )
+custom_styles/focus = SubResource( 63 )
+custom_styles/normal = SubResource( 65 )
+text = "Rozanzu - Cyberdyne"
 align = 0
 
 [node name="PixelWav" type="AnimatedSprite" parent="AnimatedSprite3"]
@@ -267,7 +292,7 @@ visible = false
 position = Vector2( 11, 24.333 )
 scale = Vector2( 0.2, 0.12 )
 frames = SubResource( 60 )
-frame = 1
+frame = 3
 playing = true
 
 [node name="PixelWav2" type="AnimatedSprite" parent="AnimatedSprite3"]
@@ -275,6 +300,7 @@ visible = false
 position = Vector2( 11, 27 )
 scale = Vector2( 0.2, 0.12 )
 frames = SubResource( 60 )
+frame = 2
 playing = true
 flip_v = true
 
@@ -287,20 +313,18 @@ custom_styles/panel = SubResource( 61 )
 
 [node name="Signal" type="AnimatedSprite" parent="."]
 modulate = Color( 0.337255, 1, 0, 0.788235 )
-position = Vector2( 114, 47 )
+position = Vector2( 82, 30 )
 scale = Vector2( 1.7, 1.7 )
 frames = SubResource( 23 )
-frame = 6
+frame = 7
 playing = true
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-position = Vector2( -24, -79 )
+position = Vector2( -56, -96 )
 frames = SubResource( 7 )
 playing = true
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_Area2D_area_entered"]
-[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
-[connection signal="timeout" from="Timer2" to="." method="_on_Timer2_timeout"]
-[connection signal="timeout" from="Timer3" to="." method="_on_Timer3_timeout"]
 [connection signal="timeout" from="SkyTimer" to="." method="_on_SkyTimer_timeout"]
 [connection signal="animation_finished" from="AnimatedSprite3" to="." method="_on_AnimatedSprite3_animation_finished"]
+[connection signal="button_down" from="AnimatedSprite3/Backlit/PanelContainer/ScrollContainer/VBoxContainer/Button" to="." method="_on_Button_button_down"]

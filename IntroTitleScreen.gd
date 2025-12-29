@@ -62,7 +62,8 @@ func _on_Button_pressed():
 
 
 func _on_Button2_pressed():
-	SceneTransitionLong.change_scene("res://World/WalkiePickup.tscn")
+	#SceneTransitionLong.change_scene("res://World/WalkiePickup.tscn")
+	SceneTransitionLong.change_scene("res://World/MusicPlayerUI.tscn")
 	popup2.popup()
 
 

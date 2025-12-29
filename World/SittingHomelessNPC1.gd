@@ -11,7 +11,7 @@ func _ready():
 
 func _process(_delta):
 	if inArea and Input.is_action_just_pressed("roll"):
-		npc_prompt.set_text("[center]Thank \n you!")
+		npc_prompt.set_text("[center]Thanks!!")
 		# play a sound here - coin flip sound and a happy grumble or something
 		stats.emit_signal("player_paused")
 		byeTimer.start()
