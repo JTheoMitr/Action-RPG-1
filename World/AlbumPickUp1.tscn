@@ -1,10 +1,11 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://UI/AlbumSpin1.tscn" type="PackedScene" id=1]
 [ext_resource path="res://UI/pixel_wav_visual.png" type="Texture" id=2]
 [ext_resource path="res://UI/Pixel GUI Buttons pack black platform.png" type="Texture" id=3]
 [ext_resource path="res://World/AlbumPickUp1.gd" type="Script" id=4]
 [ext_resource path="res://fonts/PixelTandysoft-0rJG.ttf" type="DynamicFontData" id=5]
+[ext_resource path="res://Music and Sounds/Stab_126bpm_10_D#.wav" type="AudioStream" id=6]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 7, 6 )
@@ -68,7 +69,7 @@ rect_scale = Vector2( 2.5, 2.5 )
 texture = ExtResource( 3 )
 
 [node name="Blackdrop" type="Panel" parent="Popup/Sprite"]
-visible = false
+self_modulate = Color( 0.239216, 0.239216, 0.239216, 1 )
 margin_left = -24.0
 margin_top = -10.0
 margin_right = 24.0
@@ -94,7 +95,6 @@ scale = Vector2( 0.36, 0.36 )
 position = Vector2( -0.5, -1 )
 scale = Vector2( 0.46875, 0.15 )
 frames = SubResource( 7 )
-frame = 1
 playing = true
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Popup"]
@@ -114,8 +114,11 @@ wait_time = 2.5
 one_shot = true
 
 [node name="StopTimer" type="Timer" parent="."]
-wait_time = 2.5
+wait_time = 3.5
 one_shot = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_Area2D_area_entered"]
 [connection signal="timeout" from="PopTimer1" to="." method="_on_PopTimer1_timeout"]

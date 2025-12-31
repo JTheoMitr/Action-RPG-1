@@ -4,7 +4,7 @@ extends Node2D
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
-onready var button1 = $AnimatedSprite3/Backlit/PanelContainer/ScrollContainer/VBoxContainer/Button
+onready var button1 = $AnimatedSprite3/Backlit/PanelContainer/ScrollContainer/VBoxContainer/MarqueeRow
 onready var nightSky1 = $Bgnd1
 onready var nightSky2 = $Bgnd2
 
@@ -32,7 +32,3 @@ func _on_SkyTimer_timeout():
 	else:
 		night_sky_1_up = true
 		night_sky_2_up = false
-
-
-func _on_Button_button_down():
-	$AnimatedSprite3/Backlit/PanelContainer/ScrollContainer/VBoxContainer/Button2.grab_focus()

@@ -182,14 +182,14 @@ rect_scale = Vector2( 0.15, 0.15 )
 custom_styles/panel = SubResource( 64 )
 
 [node name="ScrollContainer" type="ScrollContainer" parent="AnimatedSprite3/Backlit/PanelContainer"]
-margin_right = 170.0
+margin_right = 158.0
 margin_bottom = 125.0
 size_flags_horizontal = 0
 scroll_horizontal_enabled = false
 
 [node name="VBoxContainer" type="VBoxContainer" parent="AnimatedSprite3/Backlit/PanelContainer/ScrollContainer"]
 margin_right = 158.0
-margin_bottom = 128.0
+margin_bottom = 125.0
 rect_min_size = Vector2( 20, 20 )
 rect_clip_content = true
 size_flags_horizontal = 0
@@ -199,57 +199,36 @@ size_flags_vertical = 0
 margin_right = 158.0
 rect_min_size = Vector2( 133, 10 )
 custom_styles/focus = SubResource( 66 )
-title_text = " Rozanzu - Cyberdyne (Single Version Boardwalk Remix 2026)"
+title_text = " Rozanzu - Cyberdyne"
 
-[node name="Button" type="Button" parent="AnimatedSprite3/Backlit/PanelContainer/ScrollContainer/VBoxContainer"]
+[node name="MarqueeRow2" parent="AnimatedSprite3/Backlit/PanelContainer/ScrollContainer/VBoxContainer" instance=ExtResource( 7 )]
 margin_top = 18.0
-margin_right = 122.0
-margin_bottom = 33.0
-rect_min_size = Vector2( 0, 10 )
-size_flags_horizontal = 0
-size_flags_vertical = 0
-custom_colors/font_color_focus = Color( 1, 1, 1, 1 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_fonts/font = SubResource( 62 )
-custom_styles/focus = SubResource( 63 )
-custom_styles/normal = SubResource( 65 )
-text = "Rozanzu - Cyberdyne"
-align = 0
+margin_right = 158.0
+margin_bottom = 32.0
+rect_min_size = Vector2( 133, 10 )
+custom_styles/focus = SubResource( 66 )
+title_text = " Moleman - House of Dumplings"
 
-[node name="Button2" type="Button" parent="AnimatedSprite3/Backlit/PanelContainer/ScrollContainer/VBoxContainer"]
-margin_top = 37.0
-margin_right = 150.0
-margin_bottom = 52.0
-rect_min_size = Vector2( 0, 10 )
-size_flags_horizontal = 0
-size_flags_vertical = 0
-custom_colors/font_color_focus = Color( 1, 1, 1, 1 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_fonts/font = SubResource( 62 )
-custom_styles/focus = SubResource( 63 )
-custom_styles/normal = SubResource( 65 )
-text = "MoleMan - Dumpling House"
-align = 0
+[node name="MarqueeRow3" parent="AnimatedSprite3/Backlit/PanelContainer/ScrollContainer/VBoxContainer" instance=ExtResource( 7 )]
+margin_top = 36.0
+margin_right = 158.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 133, 10 )
+custom_styles/focus = SubResource( 66 )
+title_text = " Helenor - Bad2"
 
-[node name="Button3" type="Button" parent="AnimatedSprite3/Backlit/PanelContainer/ScrollContainer/VBoxContainer"]
-margin_top = 56.0
-margin_right = 92.0
-margin_bottom = 71.0
-rect_min_size = Vector2( 0, 10 )
-size_flags_horizontal = 0
-size_flags_vertical = 0
-custom_colors/font_color_focus = Color( 1, 1, 1, 1 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_fonts/font = SubResource( 62 )
-custom_styles/focus = SubResource( 63 )
-custom_styles/normal = SubResource( 65 )
-text = "Helenor - Bad2"
-align = 0
+[node name="MarqueeRow4" parent="AnimatedSprite3/Backlit/PanelContainer/ScrollContainer/VBoxContainer" instance=ExtResource( 7 )]
+margin_top = 54.0
+margin_right = 158.0
+margin_bottom = 68.0
+rect_min_size = Vector2( 133, 10 )
+custom_styles/focus = SubResource( 66 )
+title_text = " Freak Sweats - Cover Fade"
 
 [node name="Button4" type="Button" parent="AnimatedSprite3/Backlit/PanelContainer/ScrollContainer/VBoxContainer"]
-margin_top = 75.0
+margin_top = 72.0
 margin_right = 158.0
-margin_bottom = 90.0
+margin_bottom = 87.0
 rect_min_size = Vector2( 0, 10 )
 size_flags_horizontal = 0
 size_flags_vertical = 0
@@ -262,9 +241,9 @@ text = "Freak Sweats - Cover Fade"
 align = 0
 
 [node name="Button5" type="Button" parent="AnimatedSprite3/Backlit/PanelContainer/ScrollContainer/VBoxContainer"]
-margin_top = 94.0
+margin_top = 91.0
 margin_right = 122.0
-margin_bottom = 109.0
+margin_bottom = 106.0
 rect_min_size = Vector2( 0, 10 )
 size_flags_horizontal = 0
 size_flags_vertical = 0
@@ -277,9 +256,9 @@ text = "Rozanzu - Cyberdyne"
 align = 0
 
 [node name="Button6" type="Button" parent="AnimatedSprite3/Backlit/PanelContainer/ScrollContainer/VBoxContainer"]
-margin_top = 113.0
+margin_top = 110.0
 margin_right = 122.0
-margin_bottom = 128.0
+margin_bottom = 125.0
 rect_min_size = Vector2( 0, 10 )
 size_flags_horizontal = 0
 size_flags_vertical = 0
@@ -320,15 +299,15 @@ modulate = Color( 0.337255, 1, 0, 0.788235 )
 position = Vector2( 82, 30 )
 scale = Vector2( 1.7, 1.7 )
 frames = SubResource( 23 )
+frame = 1
 playing = true
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( -56, -96 )
 frames = SubResource( 7 )
-frame = 3
+frame = 2
 playing = true
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_Area2D_area_entered"]
 [connection signal="timeout" from="SkyTimer" to="." method="_on_SkyTimer_timeout"]
 [connection signal="animation_finished" from="AnimatedSprite3" to="." method="_on_AnimatedSprite3_animation_finished"]
-[connection signal="button_down" from="AnimatedSprite3/Backlit/PanelContainer/ScrollContainer/VBoxContainer/Button" to="." method="_on_Button_button_down"]

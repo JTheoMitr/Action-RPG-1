@@ -13,7 +13,7 @@ onready var text_2 = $Popup/RichTextLabel
 onready var spinning_album_2 = $Popup/Sprite/AlbumSpin1
 onready var blackDrop = $Popup/Sprite/Blackdrop
 onready var stopTimer = $StopTimer
-
+onready var pickupSound = $AudioStreamPlayer
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass
@@ -29,6 +29,7 @@ func set_pos(value):
 
 func _on_Area2D_area_entered(area):
 	spinning_album.call_deferred("queue_free")
+	pickupSound.play()
 	popup.popup()
 	set_pos(popup)
 	pop_timer.start()
