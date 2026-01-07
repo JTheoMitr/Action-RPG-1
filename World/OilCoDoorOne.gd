@@ -23,7 +23,7 @@ func _process(delta):
 	popup.rect_global_position.y = self.position.y
 
 
-func _on_Area2D_area_entered(area):
+func _on_Area2D_area_entered(area): #need to add red card check here (in player stats, review script and add cards), open sesame if htey have it
 	spooky.volume_db = -5
 	get_tree().current_scene.add_child(humSound)
 	worldStats.emit_signal("fade_music_out")

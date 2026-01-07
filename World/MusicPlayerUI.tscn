@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=2]
+[gd_scene load_steps=43 format=2]
 
 [ext_resource path="res://World/MusicPlayerUI.gd" type="Script" id=1]
 [ext_resource path="res://UI/nightsky1.png" type="Texture" id=2]
@@ -13,6 +13,8 @@
 [ext_resource path="res://UI/walkie_addon_anim.png" type="Texture" id=11]
 [ext_resource path="res://UI/walkie_addon_anim_extended.png" type="Texture" id=12]
 [ext_resource path="res://UI/pixel_wav_visual.png" type="Texture" id=13]
+[ext_resource path="res://UI/RozanzuSpotify.png" type="Texture" id=14]
+[ext_resource path="res://World/roz_cyberdyne.png" type="Texture" id=15]
 
 [sub_resource type="CircleShape2D" id=8]
 
@@ -54,6 +56,10 @@ content_margin_right = 4.0
 content_margin_top = 1.0
 content_margin_bottom = 1.0
 bg_color = Color( 1, 1, 1, 0 )
+
+[sub_resource type="DynamicFont" id=68]
+size = 10
+font_data = ExtResource( 6 )
 
 [sub_resource type="AtlasTexture" id=55]
 atlas = ExtResource( 13 )
@@ -182,6 +188,7 @@ __meta__ = {
 }
 
 [node name="PanelContainer" type="PanelContainer" parent="AnimatedSprite3/Backlit"]
+visible = false
 margin_right = 187.0
 margin_bottom = 125.0
 rect_scale = Vector2( 0.15, 0.15 )
@@ -276,12 +283,32 @@ custom_styles/normal = SubResource( 65 )
 text = "Rozanzu - Cyberdyne"
 align = 0
 
+[node name="Sprite" type="Sprite" parent="AnimatedSprite3/Backlit"]
+position = Vector2( 4.33333, 5.66666 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 15 )
+
+[node name="RichTextLabel" type="RichTextLabel" parent="AnimatedSprite3/Backlit"]
+margin_left = 8.0
+margin_top = 2.66667
+margin_right = 85.0
+margin_bottom = 66.6667
+rect_scale = Vector2( 0.15, 0.15 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+custom_fonts/normal_font = SubResource( 68 )
+bbcode_enabled = true
+bbcode_text = "[center]rozanzu
+cyberdyne
+"
+text = "rozanzu
+cyberdyne
+"
+
 [node name="PixelWav" type="AnimatedSprite" parent="AnimatedSprite3"]
-visible = false
-position = Vector2( 11, 24.333 )
-scale = Vector2( 0.2, 0.12 )
+position = Vector2( 14.6667, 28 )
+scale = Vector2( 0.08, 0.0499997 )
 frames = SubResource( 60 )
-frame = 1
+frame = 4
 playing = true
 
 [node name="PixelWav2" type="AnimatedSprite" parent="AnimatedSprite3"]
@@ -289,6 +316,7 @@ visible = false
 position = Vector2( 11, 27 )
 scale = Vector2( 0.2, 0.12 )
 frames = SubResource( 60 )
+frame = 3
 playing = true
 flip_v = true
 
@@ -304,13 +332,13 @@ modulate = Color( 0.337255, 1, 0, 0.788235 )
 position = Vector2( 100, 1 )
 scale = Vector2( 1.3, 1.3 )
 frames = SubResource( 23 )
-frame = 2
+frame = 4
 playing = true
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( 14, -85 )
 frames = SubResource( 7 )
-frame = 2
+frame = 3
 playing = true
 
 [node name="Sprite2" type="Sprite" parent="."]
@@ -324,6 +352,11 @@ visible = false
 position = Vector2( 75, 16 )
 scale = Vector2( 3, 3 )
 texture = ExtResource( 8 )
+
+[node name="Sprite4" type="Sprite" parent="."]
+position = Vector2( 34.5, 65.5 )
+scale = Vector2( 0.0105, 0.0105 )
+texture = ExtResource( 14 )
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_Area2D_area_entered"]
 [connection signal="timeout" from="SkyTimer" to="." method="_on_SkyTimer_timeout"]

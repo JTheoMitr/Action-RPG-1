@@ -8,6 +8,7 @@ onready var tween_out = $Tween
 onready var blastAnim = $CanvasLayer/AmmoUI/BlastAnim
 onready var stealthUI = $CanvasLayer/StealthUI
 
+
 export var transition_duration = 3.00
 export var transition_type = 1 # TRANS_SINE
 export var laser_effect: PackedScene
@@ -36,6 +37,10 @@ func _process(delta):
 func leveled():
 	if stats.level >= 2:
 		$Timer.start()
+		
+func random_drop_generator(drop_list):
+	drop_list.shuffle()
+	return drop_list.pop_front()
 
 func raise_music_volume():
 	print("fading_in")
@@ -82,3 +87,4 @@ func _on_AudioStreamPlayer_finished():
 
 func _on_Timer_timeout():
 	pass
+

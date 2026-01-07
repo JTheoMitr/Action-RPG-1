@@ -95,7 +95,7 @@ scale = Vector2( 0.36, 0.36 )
 position = Vector2( -0.5, -1 )
 scale = Vector2( 0.46875, 0.15 )
 frames = SubResource( 7 )
-frame = 2
+frame = 3
 playing = true
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Popup"]
