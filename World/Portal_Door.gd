@@ -19,12 +19,17 @@ onready var timer2 = $Timer2
 onready var collisionShape2 = $CollisionShape2D2
 onready var skeleton = $AnimatedSprite2
 onready var electricity = $Electricity
+
 var guardAlive
 var guardDirection
 
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	
+	
 	skeleton.hide()
+	
 	electricity.hide()
 	guardOne.global_position.y = base.global_position.y
 	guardOne.global_position.x = base.global_position.x + 20
@@ -57,6 +62,8 @@ func _process(delta):
 
 #	pass
 func open_ses():
+	var skel_pos = skeleton.global_position
+	var parent = get_parent()
 	if guardAlive && save_data.portal_1_opened == false:
 		$AnimatedSprite.play("default")
 		collisionShape.queue_free()
@@ -64,23 +71,22 @@ func open_ses():
 		$Pop.play()
 		var portalSound = PortalSound.instance()
 		get_tree().current_scene.add_child(portalSound)
+		
 		var bloodSpatter = BloodSpatter.instance()
-		get_parent().call_deferred("add_child", bloodSpatter)
-		bloodSpatter.global_position = skeleton.global_position
+		bloodSpatter.position = parent.to_local(skel_pos + Vector2(0, 10))
+		parent.call_deferred("add_child", bloodSpatter)
 	
 		var bloodSpatter2 = BloodSpatter2.instance()
-		get_parent().call_deferred("add_child", bloodSpatter2)
-		bloodSpatter2.global_position.y = skeleton.global_position.y + 10
-		bloodSpatter2.global_position.x = skeleton.global_position.x
-	
+		bloodSpatter2.position = parent.to_local(skel_pos + Vector2(0, 10))
+		parent.call_deferred("add_child", bloodSpatter2)
+
 		var lungsToss = LungsToss.instance()
-		get_parent().call_deferred("add_child", lungsToss)
-		lungsToss.global_position = skeleton.global_position
-	
+		lungsToss.position = parent.to_local(skel_pos)
+		parent.call_deferred("add_child", lungsToss)
+
 		var gutsToss = GutsToss.instance()
-		get_parent().call_deferred("add_child", gutsToss)
-		gutsToss.global_position.y = skeleton.global_position.y + 1
-		gutsToss.global_position.x = skeleton.global_position.x - 2
+		gutsToss.position = parent.to_local(skel_pos + Vector2(-2, 1))
+		parent.call_deferred("add_child", gutsToss)
 	
 		$Scream.play()
 	
@@ -113,7 +119,7 @@ func _on_Timer_timeout():
 
 
 func _on_AnimatedSprite2_animation_finished():
-	skeleton.queue_free()
+	skeleton.hide()
 
 
 func _on_Electricity_animation_finished():

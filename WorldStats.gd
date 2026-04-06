@@ -12,6 +12,7 @@ signal in_the_tall_grass
 signal out_of_the_tall_grass
 signal play_blast_anim
 signal rage_mode
+signal pylon_activated
 signal portal_opened
 signal portal_2_opened
 signal portal_purp2_opened

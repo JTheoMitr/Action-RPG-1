@@ -9,7 +9,8 @@ onready var blastAnim = $CanvasLayer/AmmoUI/BlastAnim
 onready var stealthUI = $CanvasLayer/StealthUI
 onready var keyAlert = $AlertCanvas/KeyAlert
 onready var camera = $Camera2D
-
+onready var tween = $Camera2D/Tween
+onready var portal_1 = $YSort/Doors/PortalDoor
 
 export var transition_duration = 3.00
 export var transition_type = 1 # TRANS_SINE
@@ -33,6 +34,7 @@ func _ready():
 	worldStats.connect("in_the_tall_grass", self, "stealth_ui_on")
 	worldStats.connect("out_of_the_tall_grass", self, "stealth_ui_off")
 	worldStats.connect("play_blast_anim", self, "blast_animation")
+	worldStats.connect("pylon_activated", self, "pylon_1_popped")
 	stats.connect("level_changed", self, "leveled")
 	#$Timer2.start() // camera timer
 	generate_laser_effect(Vector2(-1248, 459.451538))
@@ -135,3 +137,69 @@ func _on_Timer2_timeout():
 	pass
 	#takePhoto()
 
+func trigger_zoom_and_slow(target_global_pos: Vector2) -> void:
+	var original_zoom = camera.zoom
+	var original_offset = camera.offset
+	var original_time_scale = Engine.time_scale
+
+	# Tune these
+	var slow_scale = 0.65 #was 0.35
+	var zoomed_in = Vector2(0.75, 0.75) #was 1.8, 1.8
+	var pan_strength = 0.75   # 0.0 = no focus shift, 1.0 = full shift toward target
+
+	Engine.time_scale = slow_scale
+
+	# Vector from current camera center to soldier
+	var to_target = target_global_pos - camera.global_position
+	var target_offset = to_target * pan_strength
+
+	tween.stop_all()
+
+	# First: push in and focus the soldier more aggressively
+	tween.interpolate_property(
+		camera, "zoom",
+		original_zoom, zoomed_in, 1.0,
+		Tween.TRANS_SINE, Tween.EASE_IN_OUT
+	)
+
+	tween.interpolate_property(
+		camera, "offset",
+		original_offset, target_offset, 1.0,
+		Tween.TRANS_SINE, Tween.EASE_IN_OUT
+	)
+
+	tween.start()
+	yield(tween, "tween_all_completed")
+
+	# Tiny hold so the player registers what they're seeing
+	yield(get_tree().create_timer(0.08), "timeout")
+
+	# Explosion happens HERE
+	# Example:
+	# soldier.explode()
+	worldStats.emit_signal("portal_opened")
+	# Let the explosion breathe in slow-mo
+	yield(get_tree().create_timer(0.22), "timeout")
+
+	# Restore time first or after, depending on feel
+	Engine.time_scale = original_time_scale
+
+	tween.stop_all()
+
+	tween.interpolate_property(
+		camera, "zoom",
+		camera.zoom, original_zoom, 1.0,
+		Tween.TRANS_SINE, Tween.EASE_IN_OUT
+	)
+
+	tween.interpolate_property(
+		camera, "offset",
+		camera.offset, original_offset, 1.0,
+		Tween.TRANS_SINE, Tween.EASE_IN_OUT
+	)
+
+	tween.start()
+
+
+func pylon_1_popped() -> void:
+	trigger_zoom_and_slow(portal_1.global_position)

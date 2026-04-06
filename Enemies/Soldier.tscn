@@ -156,7 +156,7 @@ height = 0.0
 radius = 1.86016
 
 [sub_resource type="CircleShape2D" id=39]
-radius = 57.6501
+radius = 55.8855
 
 [node name="Soldier" type="KinematicBody2D"]
 scale = Vector2( 1.7, 1.7 )
@@ -173,7 +173,7 @@ position = Vector2( -0.588, 15 )
 scale = Vector2( 0.45, 0.45 )
 frames = SubResource( 7 )
 animation = "idle"
-frame = 4
+frame = 3
 playing = true
 offset = Vector2( 1, -60 )
 

@@ -79,7 +79,7 @@ position = Vector2( 5, -68.3333 )
 rotation = 0.261799
 scale = Vector2( 0.3, 0.3 )
 frames = SubResource( 8 )
-frame = 1
+frame = 2
 playing = true
 
 [node name="Lightning2" type="AnimatedSprite" parent="."]
@@ -87,6 +87,7 @@ position = Vector2( 11.6667, -63.3333 )
 rotation = 0.523599
 scale = Vector2( 0.3, 0.3 )
 frames = SubResource( 8 )
+frame = 1
 playing = true
 
 [node name="Lightning3" type="AnimatedSprite" parent="."]
@@ -94,7 +95,6 @@ position = Vector2( 16.6667, -56.6666 )
 rotation = 0.785398
 scale = Vector2( 0.3, 0.3 )
 frames = SubResource( 8 )
-frame = 4
 playing = true
 
 [node name="Lightning4" type="AnimatedSprite" parent="."]
@@ -102,7 +102,6 @@ position = Vector2( -20, -56.6667 )
 rotation = -0.785398
 scale = Vector2( 0.3, 0.3 )
 frames = SubResource( 8 )
-frame = 4
 playing = true
 
 [node name="Lightning5" type="AnimatedSprite" parent="."]
@@ -110,7 +109,6 @@ position = Vector2( -15, -63.3333 )
 rotation = -0.523599
 scale = Vector2( 0.3, 0.3 )
 frames = SubResource( 8 )
-frame = 4
 playing = true
 
 [node name="Lightning6" type="AnimatedSprite" parent="."]
@@ -118,7 +116,7 @@ position = Vector2( -8.33333, -66.6667 )
 rotation = -0.261799
 scale = Vector2( 0.3, 0.3 )
 frames = SubResource( 8 )
-frame = 3
+frame = 4
 playing = true
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
