@@ -43,7 +43,7 @@ var looking = true
 var shooting = false
 var dead = false
 
-
+signal soldier_struck
 
 func _ready():
 	state = pick_random_state([IDLE, WANDER])
@@ -145,6 +145,7 @@ func _on_Hurtbox_area_entered(area):
 		hurtbox.create_hit_effect()
 		playerDetectionZone.scale.x = (playerDetectionZone.scale.x * 3)
 		playerDetectionZone.scale.y = (playerDetectionZone.scale.y * 3)
+		worldStats.emit_signal("light_hit")
 
 
 func _on_Stats_no_health():

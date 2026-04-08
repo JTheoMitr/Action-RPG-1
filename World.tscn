@@ -127,6 +127,8 @@
 [ext_resource path="res://DirtTileset marsh.png" type="Texture" id=125]
 [ext_resource path="res://Enemies/LabNPCOne.tscn" type="PackedScene" id=126]
 [ext_resource path="res://World/OilcoFire1.tscn" type="PackedScene" id=127]
+[ext_resource path="res://Camera2D.gd" type="Script" id=128]
+[ext_resource path="res://UI/CRTLayer.tscn" type="PackedScene" id=129]
 
 [sub_resource type="ConvexPolygonShape2D" id=53]
 points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
@@ -1141,58 +1143,6 @@ corner_radius_top_right = 1
 corner_radius_bottom_right = 1
 corner_radius_bottom_left = 1
 
-[sub_resource type="Shader" id=101]
-code = "shader_type canvas_item;
-
-uniform float scanline_strength = 0.08;
-uniform float curvature = 0.01; // original test was 0.03
-uniform float vignette_strength = 0.10; // original was 0.18
-uniform float brightness = 1.0;
-uniform float flicker_strength = 0.002; // original flicker was 0.008
-uniform float flicker_enabled = 0.0; // original was on 1.0
-
-void fragment() {
-	vec2 uv = SCREEN_UV;
-
-	// Curvature
-	vec2 centered = uv * 2.0 - 1.0;
-	centered *= 1.0 + curvature * dot(centered, centered);
-	vec2 crt_uv = centered * 0.5 + 0.5;
-
-	// If outside curved screen, paint black
-	if (crt_uv.x < 0.0 || crt_uv.x > 1.0 || crt_uv.y < 0.0 || crt_uv.y > 1.0) {
-		COLOR = vec4(0.0, 0.0, 0.0, 1.0);
-	} else {
-		vec4 col = texture(SCREEN_TEXTURE, crt_uv);
-
-		// Scanlines
-		float scan = sin(crt_uv.y * 900.0) * scanline_strength;
-		col.rgb -= vec3(scan);
-
-		// Vignette
-		float dist = distance(uv, vec2(0.5, 0.5));
-		col.rgb *= 1.0 - dist * vignette_strength;
-
-		// Flicker
-//		if (flicker_enabled > 0.5) {
-//			float flicker = sin(TIME * 60.0) * flicker_strength;
-//			col.rgb += vec3(flicker);
-//		}
-
-		col.rgb *= brightness;
-		COLOR = vec4(col.rgb, 1.0);
-	}
-}"
-
-[sub_resource type="ShaderMaterial" id=102]
-shader = SubResource( 101 )
-shader_param/scanline_strength = 0.08
-shader_param/curvature = 0.03
-shader_param/vignette_strength = 0.18
-shader_param/brightness = 1.0
-shader_param/flicker_strength = 0.008
-shader_param/flicker_enabled = 1.0
-
 [node name="World" type="Node2D"]
 script = ExtResource( 33 )
 laser_effect = ExtResource( 73 )
@@ -1276,56 +1226,58 @@ z_index = 1
 
 [node name="SwarmOne" parent="Swarms" instance=ExtResource( 68 )]
 position = Vector2( -37, 442 )
+frame = 7
 
 [node name="SwarmOne7" parent="Swarms" instance=ExtResource( 68 )]
 position = Vector2( -40, 444 )
 scale = Vector2( 0.475, 0.506251 )
-frame = 6
+frame = 1
 
 [node name="SwarmOne11" parent="Swarms" instance=ExtResource( 68 )]
 position = Vector2( 455, 440 )
 scale = Vector2( 0.475, 0.506251 )
-frame = 6
+frame = 1
 
 [node name="SwarmOne12" parent="Swarms" instance=ExtResource( 68 )]
 position = Vector2( 459, 441 )
 rotation = 1.309
 scale = Vector2( 0.3, 0.3 )
-frame = 5
+frame = 0
 
 [node name="SwarmOne3" parent="Swarms" instance=ExtResource( 68 )]
 position = Vector2( -23, 30 )
-frame = 3
+frame = 6
 
 [node name="SwarmOne8" parent="Swarms" instance=ExtResource( 68 )]
 position = Vector2( -113, -264 )
-frame = 0
+frame = 3
 
 [node name="SwarmOne9" parent="Swarms" instance=ExtResource( 68 )]
 position = Vector2( -115, -263 )
 scale = Vector2( 0.5, 0.4 )
-frame = 0
+frame = 3
 
 [node name="SwarmOne4" parent="Swarms" instance=ExtResource( 68 )]
 position = Vector2( 465, -145 )
-frame = 0
+frame = 3
 
 [node name="SwarmOne5" parent="Swarms" instance=ExtResource( 68 )]
 position = Vector2( 561, -1.00001 )
-frame = 0
+frame = 3
 
 [node name="SwarmOne6" parent="Swarms" instance=ExtResource( 68 )]
 position = Vector2( 684, -261 )
-frame = 0
+frame = 3
 
 [node name="SwarmOne10" parent="Swarms" instance=ExtResource( 68 )]
 position = Vector2( 682, -260 )
 rotation = 1.0472
 scale = Vector2( 0.5, 0.5 )
-frame = 6
+frame = 1
 
 [node name="SwarmOne2" parent="Swarms" instance=ExtResource( 68 )]
 position = Vector2( -78, 221 )
+frame = 7
 
 [node name="WaterTileMap" type="TileMap" parent="."]
 tile_set = SubResource( 52 )
@@ -1357,6 +1309,7 @@ tile_data = PoolIntArray( -1048605, 0, 4, -1048604, 0, 196609, -1048603, 0, 1966
 position = Vector2( -467, 552 )
 current = true
 smoothing_enabled = true
+script = ExtResource( 128 )
 
 [node name="Tween" type="Tween" parent="Camera2D"]
 
@@ -1528,7 +1481,7 @@ position = Vector2( -336, -384 )
 position = Vector2( -220, -264 )
 
 [node name="Bush48" parent="YSort/Bushes" instance=ExtResource( 1 )]
-position = Vector2( -376, -256 )
+position = Vector2( -379, -256 )
 
 [node name="Bush35" parent="YSort/Bushes" instance=ExtResource( 1 )]
 position = Vector2( 752, -160 )
@@ -6931,12 +6884,13 @@ position = Vector2( -471, -451 )
 [node name="Tutorials" type="YSort" parent="YSort"]
 
 [node name="TutorialArea2" parent="YSort/Tutorials" instance=ExtResource( 40 )]
-position = Vector2( -66, 337 )
+position = Vector2( -66, 338 )
 z_index = 1
 
 [node name="TutorialArea3" parent="YSort/Tutorials" instance=ExtResource( 75 )]
-position = Vector2( -93, 191 )
-z_index = 1
+position = Vector2( -93, 189 )
+scale = Vector2( 1.3, 1.3 )
+z_index = 2
 
 [node name="TutorialArea4" parent="YSort/Tutorials" instance=ExtResource( 77 )]
 position = Vector2( -315, 194 )
@@ -6967,6 +6921,7 @@ position = Vector2( -488, 456 )
 
 [node name="StandingGuard1" parent="YSort/Story" instance=ExtResource( 119 )]
 position = Vector2( -416, -392 )
+frame = 1
 
 [node name="Doors" type="YSort" parent="YSort"]
 
@@ -7216,7 +7171,7 @@ position = Vector2( -16, -272 )
 [node name="ScreenCrackleOne" parent="YSort/OilCoDoors" instance=ExtResource( 57 )]
 position = Vector2( -17, -270.5 )
 scale = Vector2( 0.094, 0.0833333 )
-frame = 2
+frame = 4
 
 [node name="Flowers" type="YSort" parent="YSort"]
 
@@ -7426,7 +7381,7 @@ position = Vector2( -135, 91 )
 [node name="OilDrill1" parent="YSort/OilBarrels" instance=ExtResource( 102 )]
 position = Vector2( -915, -258 )
 z_index = 1
-frame = 0
+frame = 23
 
 [node name="BlackHole" parent="YSort/OilBarrels" instance=ExtResource( 103 )]
 position = Vector2( -914, -228 )
@@ -7489,7 +7444,7 @@ position = Vector2( -306, 368 )
 z_index = 2
 
 [node name="OilcoFire5" parent="YSort/OilBarrels" instance=ExtResource( 127 )]
-position = Vector2( -305, 101 )
+position = Vector2( -178, 100 )
 z_index = 2
 
 [node name="OilcoFire3" parent="YSort/OilBarrels" instance=ExtResource( 127 )]
@@ -7514,11 +7469,9 @@ position = Vector2( -305, 346 )
 
 [node name="Bonfire" parent="YSort/Fires" instance=ExtResource( 82 )]
 position = Vector2( 976, -240 )
-frame = 0
 
 [node name="Bonfire2" parent="YSort/Fires" instance=ExtResource( 82 )]
 position = Vector2( 976, -208 )
-frame = 0
 
 [node name="Runes" type="YSort" parent="YSort"]
 
@@ -7549,168 +7502,147 @@ position = Vector2( 568, -8 )
 [node name="Bird" parent="YSort/Sky" instance=ExtResource( 91 )]
 position = Vector2( 6, 252 )
 z_index = 1
-frame = 0
 
 [node name="Bird3" parent="YSort/Sky" instance=ExtResource( 91 )]
 position = Vector2( -263, -31 )
 animation = "eat"
+frame = 4
 flip_h = true
 
 [node name="Bird2" parent="YSort/Sky" instance=ExtResource( 91 )]
 position = Vector2( -240, 498 )
 z_index = 2
-frame = 0
 flip_h = true
 
 [node name="Bird5" parent="YSort/Sky" instance=ExtResource( 91 )]
 position = Vector2( 284, -36 )
 z_index = 1
-frame = 0
 flip_h = true
 
 [node name="Bird4" parent="YSort/Sky" instance=ExtResource( 91 )]
 position = Vector2( -515, 66 )
 z_index = 1
-frame = 0
 flip_h = true
 
 [node name="FlyingBird" parent="YSort/Sky" instance=ExtResource( 71 )]
 position = Vector2( 2691, -226 )
-frame = 1
 
 [node name="FlyingBird2" parent="YSort/Sky" instance=ExtResource( 71 )]
 position = Vector2( 646, -790 )
-frame = 1
 
 [node name="FlyingBird3" parent="YSort/Sky" instance=ExtResource( 71 )]
 position = Vector2( 319, -1106 )
-frame = 1
 
 [node name="FlyingBird4" parent="YSort/Sky" instance=ExtResource( 71 )]
 position = Vector2( 1943, -277 )
-frame = 1
 
 [node name="Bird6" parent="YSort/Sky" instance=ExtResource( 93 )]
 position = Vector2( -130, 69 )
-frame = 1
 flip_h = true
 
 [node name="Bird7" parent="YSort/Sky" instance=ExtResource( 93 )]
 position = Vector2( 45, -29 )
-frame = 1
 flip_h = true
 
 [node name="Bird10" parent="YSort/Sky" instance=ExtResource( 93 )]
 position = Vector2( 582, -265 )
 z_index = 2
-frame = 1
 
 [node name="Bird8" parent="YSort/Sky" instance=ExtResource( 93 )]
 position = Vector2( 171, -277 )
 animation = "eat"
-frame = 2
+frame = 3
 flip_h = true
 
 [node name="Bird9" parent="YSort/Sky" instance=ExtResource( 93 )]
 position = Vector2( 746, -216 )
 animation = "eat"
-frame = 2
+frame = 3
 
 [node name="FlyingBirdOrange" parent="YSort/Sky" instance=ExtResource( 94 )]
 position = Vector2( 2003, -609 )
-frame = 5
+frame = 0
 
 [node name="FlyingBirdOrange3" parent="YSort/Sky" instance=ExtResource( 94 )]
 position = Vector2( 2040, -924 )
-frame = 5
+frame = 0
 
 [node name="FlyingBirdOrange2" parent="YSort/Sky" instance=ExtResource( 94 )]
 position = Vector2( 1178, -745 )
-frame = 5
+frame = 0
 
 [node name="FlyingBirdStraight" parent="YSort/Sky" instance=ExtResource( 96 )]
 position = Vector2( 1537, -205 )
-frame = 1
+frame = 4
 
 [node name="FlyingBirdStraight2" parent="YSort/Sky" instance=ExtResource( 96 )]
 position = Vector2( 2980, -249 )
-frame = 1
+frame = 4
 
 [node name="FlyingBirdStraight4" parent="YSort/Sky" instance=ExtResource( 96 )]
 position = Vector2( 1196, 405 )
-frame = 0
+frame = 3
 
 [node name="FlyingBirdStraight3" parent="YSort/Sky" instance=ExtResource( 96 )]
 position = Vector2( 1821, -17 )
-frame = 1
+frame = 4
 
 [node name="FlyingBirdStraightOrange" parent="YSort/Sky" instance=ExtResource( 95 )]
 position = Vector2( 2351, 52 )
-frame = 1
+frame = 4
 
 [node name="FlyingBirdStraightOrange2" parent="YSort/Sky" instance=ExtResource( 95 )]
 position = Vector2( 3090, -690 )
-frame = 1
+frame = 4
 
 [node name="SkyCloud" parent="YSort/Sky" instance=ExtResource( 76 )]
 position = Vector2( -244, 110 )
-frame = 0
+frame = 1
 
 [node name="SkyCloud9" parent="YSort/Sky" instance=ExtResource( 76 )]
 position = Vector2( -32, -179 )
 scale = Vector2( 1.29286, 1.3 )
-frame = 0
+frame = 1
 
 [node name="SkyCloud10" parent="YSort/Sky" instance=ExtResource( 76 )]
 position = Vector2( 901, -281 )
-frame = 2
 
 [node name="SkyCloud11" parent="YSort/Sky" instance=ExtResource( 76 )]
 position = Vector2( 658, 131 )
-frame = 2
 
 [node name="SkyCloud12" parent="YSort/Sky" instance=ExtResource( 76 )]
 position = Vector2( 1045, -112 )
-frame = 2
 
 [node name="SkyCloud2" parent="YSort/Sky" instance=ExtResource( 76 )]
 position = Vector2( 92, 209 )
-frame = 2
 
 [node name="SkyCloud3" parent="YSort/Sky" instance=ExtResource( 76 )]
 position = Vector2( 129, 214 )
 scale = Vector2( 1.73, 1.86875 )
-frame = 2
 
 [node name="SkyCloud13" parent="YSort/Sky" instance=ExtResource( 76 )]
 position = Vector2( 671, 162 )
 scale = Vector2( 1.73, 1.86875 )
-frame = 2
 
 [node name="SkyCloud8" parent="YSort/Sky" instance=ExtResource( 76 )]
 position = Vector2( -2, -158 )
 scale = Vector2( 1.565, 1.62188 )
-frame = 2
 
 [node name="SkyCloud6" parent="YSort/Sky" instance=ExtResource( 76 )]
 position = Vector2( 153, 195 )
 scale = Vector2( 1.525, 1.62188 )
-frame = 2
 
 [node name="SkyCloud7" parent="YSort/Sky" instance=ExtResource( 76 )]
 position = Vector2( 374, 186 )
 scale = Vector2( 1.525, 1.62188 )
-frame = 2
 
 [node name="SkyCloud4" parent="YSort/Sky" instance=ExtResource( 76 )]
 position = Vector2( 78, 448 )
 scale = Vector2( 1.385, 1.62188 )
-frame = 2
 
 [node name="SkyCloud5" parent="YSort/Sky" instance=ExtResource( 76 )]
 position = Vector2( -267, 130 )
 scale = Vector2( 1.385, 1.62188 )
-frame = 2
 
 [node name="Traps" type="YSort" parent="YSort"]
 
@@ -7868,13 +7800,7 @@ wait_time = 0.5
 
 [node name="Timer2" type="Timer" parent="."]
 
-[node name="CRTLayer" type="CanvasLayer" parent="."]
-
-[node name="ColorRect" type="ColorRect" parent="CRTLayer"]
-material = SubResource( 102 )
-margin_right = 323.0
-margin_bottom = 182.0
-rect_min_size = Vector2( 323, 182 )
+[node name="CRTLayer" parent="." instance=ExtResource( 129 )]
 
 [connection signal="fired_shot" from="YSort/Player" to="." method="_on_Player_fired_shot"]
 [connection signal="finished" from="AudioStreamPlayer" to="." method="_on_AudioStreamPlayer_finished"]

@@ -33,6 +33,7 @@ onready var hitbox = $Hitbox
 onready var timer2 = $Timer2
 
 var playerStats = PlayerStats
+var worldStats = WorldStats
 
 func _ready():
 	state = pick_random_state([IDLE, WANDER])
@@ -99,6 +100,7 @@ func _on_Hurtbox_area_entered(area):
 	if playerStats.purpleCharge == true:
 		# stats.health -= area.damage
 		timer2.start(0.0)
+		worldStats.emit_signal("light_hit")
 		reversePath = input_vector * 150
 		# print_debug(hitbox.collision_mask)
 		knockback = reversePath

@@ -35,6 +35,7 @@ func _ready():
 	worldStats.connect("out_of_the_tall_grass", self, "stealth_ui_off")
 	worldStats.connect("play_blast_anim", self, "blast_animation")
 	worldStats.connect("pylon_activated", self, "pylon_1_popped")
+	worldStats.connect("light_hit", self, "light_shake")
 	stats.connect("level_changed", self, "leveled")
 	#$Timer2.start() // camera timer
 	generate_laser_effect(Vector2(-1248, 459.451538))
@@ -163,8 +164,8 @@ func trigger_zoom_and_slow(target_global_pos: Vector2) -> void:
 	)
 
 	tween.interpolate_property(
-		camera, "offset",
-		original_offset, target_offset, 1.0,
+		camera, "base_offset",
+		original_offset, target_offset, 0.2,
 		Tween.TRANS_SINE, Tween.EASE_IN_OUT
 	)
 
@@ -178,8 +179,9 @@ func trigger_zoom_and_slow(target_global_pos: Vector2) -> void:
 	# Example:
 	# soldier.explode()
 	worldStats.emit_signal("portal_opened")
+	camera.explosion_shake()
 	# Let the explosion breathe in slow-mo
-	yield(get_tree().create_timer(0.22), "timeout")
+	yield(get_tree().create_timer(0.5), "timeout") #was .22
 
 	# Restore time first or after, depending on feel
 	Engine.time_scale = original_time_scale
@@ -193,8 +195,8 @@ func trigger_zoom_and_slow(target_global_pos: Vector2) -> void:
 	)
 
 	tween.interpolate_property(
-		camera, "offset",
-		camera.offset, original_offset, 1.0,
+		camera, "base_offset",
+		camera.base_offset, original_offset, 0.25,
 		Tween.TRANS_SINE, Tween.EASE_IN_OUT
 	)
 
@@ -203,3 +205,6 @@ func trigger_zoom_and_slow(target_global_pos: Vector2) -> void:
 
 func pylon_1_popped() -> void:
 	trigger_zoom_and_slow(portal_1.global_position)
+	
+func light_shake() -> void:
+	camera.light_hit_shake()

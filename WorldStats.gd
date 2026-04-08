@@ -21,6 +21,11 @@ signal bad_trip
 signal flashlight_on
 signal flashlight_off
 
+signal light_hit
+signal medium_hit
+signal explosion_shake
+signal guard_gone
+
 
 	
 

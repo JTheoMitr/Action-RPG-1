@@ -14,6 +14,10 @@ const LaserSeven = preload("res://Enemies/BossLaserRightUpDiag.tscn")
 const LaserEight = preload("res://Enemies/BossLaserLeftUpDiag.tscn")
 const LaserZagR = preload("res://Enemies/BossLaserRightZag.tscn")
 const LaserZagL = preload("res://Enemies/BossLaserLeftZag.tscn")
+const LaserLeft = preload("res://Enemies/BossLaserLeftStraight.tscn")
+const LaserRight = preload("res://Enemies/BossLaserRightStraight.tscn")
+const LaserDown = preload("res://Enemies/BossLaserBottomStraight.tscn")
+const LaserUp = preload("res://Enemies/BossLaserTopStraight.tscn")
 const BossKeyOne = preload("res://World/BossKeyOne.tscn")
 
 const BossLaserSound = preload("res://Music and Sounds/BossLaserSound.tscn")
@@ -348,6 +352,22 @@ func _on_Timer3_timeout():
 	var laserZagL = LaserZagL.instance()
 	get_parent().call_deferred("add_child", laserZagL)
 	laserZagL.global_position = hitbox.global_position
+	
+	var laserLeft = LaserLeft.instance()
+	get_parent().call_deferred("add_child", laserLeft)
+	laserLeft.global_position = hitbox.global_position
+	
+	var laserRight = LaserRight.instance()
+	get_parent().call_deferred("add_child", laserRight)
+	laserRight.global_position = hitbox.global_position
+	
+	var laserTop = LaserUp.instance()
+	get_parent().call_deferred("add_child", laserTop)
+	laserTop.global_position = hitbox.global_position
+	
+	var laserBottom = LaserDown.instance()
+	get_parent().call_deferred("add_child", laserBottom)
+	laserBottom.global_position = hitbox.global_position
 
 
 func _on_Timer4_timeout():
@@ -371,6 +391,7 @@ func _on_Timer5_timeout():
 	$ChatterSound.play(0.0)
 	$CanvasLayer/PopupDialog/RichTextLabel.bbcode_text = "[center]Drillin' fer oil keeps me on a tight schedule...[/center]"
 	$Timer6.start()
+	worldStats.emit_signal("guard_gone")
 
 
 func _on_Timer6_timeout():

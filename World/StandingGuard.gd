@@ -7,6 +7,7 @@ extends AnimatedSprite
 onready var popupText = $PopupDialog/RichTextLabel
 onready var popup = $PopupDialog
 onready var stats = PlayerStats
+onready var worldStats = WorldStats
 onready var grunt = $Grunt
 onready var save_data = SaveFile.g_data
 
@@ -22,6 +23,7 @@ func _ready():
 	popped = false
 	controlsOn = false
 	dialogText = "[center] Wouldn't go that way if I were you, pal...'Big Drill' Larry is on a real tear today"
+	worldStats.connect("guard_gone", self, "_leave_scene")
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -69,3 +71,6 @@ func _on_Area2D_area_entered(area):
 		grunt.play()
 		popup.popup()
 		stats.emit_signal("player_paused")
+
+func _leave_scene() -> void:
+	queue_free()

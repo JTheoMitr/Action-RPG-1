@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=2]
+[gd_scene load_steps=40 format=2]
 
 [ext_resource path="res://Music and Sounds/Kotwb_Loadscreen_100724.mp3" type="AudioStream" id=1]
 [ext_resource path="res://IntroTitleScreen.gd" type="Script" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://World/TallTreeOne.tscn" type="PackedScene" id=6]
 [ext_resource path="res://UI/mountain_scape_1_dark.png" type="Texture" id=7]
 [ext_resource path="res://Effects/LightningStrikeOne.tscn" type="PackedScene" id=8]
+[ext_resource path="res://UI/CRTLayer.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Music and Sounds/KOTWB_CHIME_1.wav" type="AudioStream" id=10]
 [ext_resource path="res://Music and Sounds/KOTWB_CHIME_2.wav" type="AudioStream" id=11]
 [ext_resource path="res://fonts/PixelTandysoft-0rJG.ttf" type="DynamicFontData" id=12]
@@ -210,21 +211,21 @@ visible = false
 position = Vector2( 163, 83.75 )
 scale = Vector2( 0.585, 1.025 )
 animation = "New Anim"
-frame = 23
+frame = 69
 
 [node name="SnowFallOne2" parent="." instance=ExtResource( 5 )]
 modulate = Color( 1, 1, 1, 0.305882 )
 position = Vector2( 83, 89.5 )
 scale = Vector2( 1.6125, 1.81 )
 animation = "New Anim"
-frame = 23
+frame = 69
 
 [node name="SnowFallOne3" parent="." instance=ExtResource( 5 )]
 modulate = Color( 1, 1, 1, 0.305882 )
 position = Vector2( 241, 90 )
 scale = Vector2( 1.6125, 1.82 )
 animation = "New Anim"
-frame = 76
+frame = 42
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 margin_left = 133.0
@@ -454,6 +455,8 @@ pitch_scale = 0.9
 [node name="SCTimer" type="Timer" parent="."]
 wait_time = 2.0
 one_shot = true
+
+[node name="CRTLayer" parent="." instance=ExtResource( 9 )]
 
 [connection signal="focus_entered" from="VBoxContainer/Button" to="." method="_on_Button_focus_entered"]
 [connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_Button_pressed"]
