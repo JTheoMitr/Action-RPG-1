@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/gdb-playstation-2 R1 Pressed Single.png-b2f1a836f57dc40a638b6930a7973d19.stex"
+path="res://.import/gdb-playstation-2 R1 pressed single.png-21a191cd1bb808f8bdd9b1b625c7bbd5.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://UI/gdb-playstation-2 R1 Pressed Single.png"
-dest_files=[ "res://.import/gdb-playstation-2 R1 Pressed Single.png-b2f1a836f57dc40a638b6930a7973d19.stex" ]
+source_file="res://UI/gdb-playstation-2 R1 pressed single.png"
+dest_files=[ "res://.import/gdb-playstation-2 R1 pressed single.png-21a191cd1bb808f8bdd9b1b625c7bbd5.stex" ]
 
 [params]
 
