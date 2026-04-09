@@ -353,7 +353,7 @@ func _on_Splode_animation_finished():
 
 
 func _on_SkyTimer_timeout():
-	print_debug("skytimer")
+	#print_debug("skytimer")
 	if night_sky_1_up:
 		night_sky_2_up = true
 		night_sky_1_up = false

@@ -181,7 +181,7 @@ func trigger_zoom_and_slow(target_global_pos: Vector2) -> void:
 	worldStats.emit_signal("portal_opened")
 	camera.explosion_shake()
 	# Let the explosion breathe in slow-mo
-	yield(get_tree().create_timer(0.5), "timeout") #was .22
+	yield(get_tree().create_timer(1.5), "timeout") #was .22
 
 	# Restore time first or after, depending on feel
 	Engine.time_scale = original_time_scale
