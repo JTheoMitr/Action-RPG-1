@@ -10,6 +10,8 @@ const BreakSound = preload("res://Music and Sounds/BarrelBreakSound.tscn")
 var bounced = false
 var barrelBounce = BarrelBounce.instance()
 
+var worldStats = WorldStats
+
 func set_pos(value):
 	value.global_position.x = global_position.x
 	value.global_position.y = global_position.y - 1
@@ -36,6 +38,9 @@ func random_drop_generator(drop_list):
 
 
 func _on_Hurtbox_area_entered(area):
+	if (area.collision_mask == 8):
+			worldStats.emit_signal("light_hit") #put this if on any enemies/objects for small hit shake
+		
 	if (bounced):
 		create_barrel_effect()
 		call_deferred("queue_free")

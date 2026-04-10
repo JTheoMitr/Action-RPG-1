@@ -1531,7 +1531,7 @@ one_shot = true
 modulate = Color( 0.67451, 0.580392, 0.698039, 0.866667 )
 position = Vector2( 0, -10 )
 frames = SubResource( 85 )
-frame = 5
+frame = 1
 playing = true
 
 [node name="ZoomTimer" type="Timer" parent="."]

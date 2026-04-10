@@ -145,7 +145,12 @@ func _on_Hurtbox_area_entered(area):
 		hurtbox.create_hit_effect()
 		playerDetectionZone.scale.x = (playerDetectionZone.scale.x * 3)
 		playerDetectionZone.scale.y = (playerDetectionZone.scale.y * 3)
-		worldStats.emit_signal("light_hit")
+		
+		print_debug(area.collision_mask) #projectile is 64, sword is 8
+		if (area.collision_mask == 8):
+			worldStats.emit_signal("light_hit") #put this if on any enemies/objects for small hit shake
+			
+			
 
 
 func _on_Stats_no_health():
