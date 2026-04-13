@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=444 format=2]
 
 [ext_resource path="res://World/TeslaCoilRod.png" type="Texture" id=1]
 [ext_resource path="res://TeslaCoilSwitch.gd" type="Script" id=2]
@@ -8,6 +8,427 @@
 [ext_resource path="res://UI/06 Border 01.png" type="Texture" id=6]
 [ext_resource path="res://fonts/PixelTandysoft-0rJG.ttf" type="DynamicFontData" id=7]
 [ext_resource path="res://Music and Sounds/DB Chirp SFX.wav" type="AudioStream" id=8]
+[ext_resource path="res://World/red_pylon_cross.png" type="Texture" id=9]
+[ext_resource path="res://UI/tilemap_btm_btn.png" type="Texture" id=10]
+[ext_resource path="res://UI/pylonanim1/frame_024_delay-0.02s.png" type="Texture" id=11]
+[ext_resource path="res://UI/pylonanim1/frame_202_delay-0.02s.png" type="Texture" id=12]
+[ext_resource path="res://UI/pylonanim1/frame_201_delay-0.02s.png" type="Texture" id=13]
+[ext_resource path="res://UI/pylonanim1/frame_199_delay-0.02s.png" type="Texture" id=14]
+[ext_resource path="res://UI/pylonanim1/frame_217_delay-0.02s.png" type="Texture" id=15]
+[ext_resource path="res://UI/pylonanim1/frame_178_delay-0.02s.png" type="Texture" id=16]
+[ext_resource path="res://UI/pylonanim1/frame_179_delay-0.02s.png" type="Texture" id=17]
+[ext_resource path="res://UI/pylonanim1/frame_020_delay-0.02s.png" type="Texture" id=18]
+[ext_resource path="res://UI/pylonanim1/frame_241_delay-0.02s.png" type="Texture" id=19]
+[ext_resource path="res://UI/pylonanim1/frame_242_delay-0.02s.png" type="Texture" id=20]
+[ext_resource path="res://UI/pylonanim1/frame_243_delay-0.02s.png" type="Texture" id=21]
+[ext_resource path="res://UI/pylonanim1/frame_003_delay-0.02s.png" type="Texture" id=22]
+[ext_resource path="res://UI/pylonanim1/frame_004_delay-0.02s.png" type="Texture" id=23]
+[ext_resource path="res://UI/pylonanim1/frame_014_delay-0.02s.png" type="Texture" id=24]
+[ext_resource path="res://UI/pylonanim1/frame_019_delay-0.02s.png" type="Texture" id=25]
+[ext_resource path="res://UI/pylonanim1/frame_021_delay-0.02s.png" type="Texture" id=26]
+[ext_resource path="res://UI/pylonanim1/frame_244_delay-0.02s.png" type="Texture" id=27]
+[ext_resource path="res://UI/pylonanim1/frame_246_delay-0.02s.png" type="Texture" id=28]
+[ext_resource path="res://UI/pylonanim1/frame_247_delay-0.02s.png" type="Texture" id=29]
+[ext_resource path="res://UI/pylonanim1/frame_248_delay-0.02s.png" type="Texture" id=30]
+[ext_resource path="res://UI/pylonanim1/frame_249_delay-0.02s.png" type="Texture" id=31]
+[ext_resource path="res://UI/pylonanim1/frame_250_delay-0.02s.png" type="Texture" id=32]
+[ext_resource path="res://UI/pylonanim1/frame_251_delay-0.02s.png" type="Texture" id=33]
+[ext_resource path="res://UI/pylonanim1/frame_252_delay-0.02s.png" type="Texture" id=34]
+[ext_resource path="res://UI/pylonanim1/frame_253_delay-0.02s.png" type="Texture" id=35]
+[ext_resource path="res://UI/pylonanim1/frame_254_delay-0.02s.png" type="Texture" id=36]
+[ext_resource path="res://UI/pylonanim1/frame_255_delay-0.02s.png" type="Texture" id=37]
+[ext_resource path="res://UI/pylonanim1/frame_256_delay-0.02s.png" type="Texture" id=38]
+[ext_resource path="res://UI/pylonanim1/frame_257_delay-0.02s.png" type="Texture" id=39]
+[ext_resource path="res://UI/pylonanim1/frame_258_delay-0.02s.png" type="Texture" id=40]
+[ext_resource path="res://UI/pylonanim1/frame_300_delay-0.02s.png" type="Texture" id=41]
+[ext_resource path="res://UI/pylonanim1/frame_301_delay-0.02s.png" type="Texture" id=42]
+[ext_resource path="res://UI/pylonanim1/frame_302_delay-0.02s.png" type="Texture" id=43]
+[ext_resource path="res://UI/pylonanim1/frame_316_delay-0.02s.png" type="Texture" id=44]
+[ext_resource path="res://UI/pylonanim1/frame_317_delay-0.02s.png" type="Texture" id=45]
+[ext_resource path="res://UI/pylonanim1/frame_342_delay-0.02s.png" type="Texture" id=46]
+[ext_resource path="res://UI/pylonanim1/frame_369_delay-0.02s.png" type="Texture" id=47]
+[ext_resource path="res://UI/pylonanim1/frame_370_delay-0.02s.png" type="Texture" id=48]
+[ext_resource path="res://UI/pylonanim1/frame_371_delay-0.02s.png" type="Texture" id=49]
+[ext_resource path="res://UI/pylonanim1/frame_400_delay-0.02s.png" type="Texture" id=50]
+[ext_resource path="res://UI/pylonanim1/frame_412_delay-0.02s.png" type="Texture" id=51]
+[ext_resource path="res://UI/pylonanim1/frame_413_delay-0.02s.png" type="Texture" id=52]
+[ext_resource path="res://UI/pylonanim1/frame_414_delay-0.02s.png" type="Texture" id=53]
+[ext_resource path="res://UI/pylonanim1/frame_415_delay-0.02s.png" type="Texture" id=54]
+[ext_resource path="res://UI/pylonanim1/frame_218_delay-0.02s.png" type="Texture" id=55]
+[ext_resource path="res://UI/pylonanim1/frame_219_delay-0.02s.png" type="Texture" id=56]
+[ext_resource path="res://UI/pylonanim1/frame_220_delay-0.02s.png" type="Texture" id=57]
+[ext_resource path="res://UI/pylonanim1/frame_221_delay-0.02s.png" type="Texture" id=58]
+[ext_resource path="res://UI/pylonanim1/frame_222_delay-0.02s.png" type="Texture" id=59]
+[ext_resource path="res://UI/pylonanim1/frame_215_delay-0.02s.png" type="Texture" id=60]
+[ext_resource path="res://UI/pylonanim1/frame_022_delay-0.02s.png" type="Texture" id=61]
+[ext_resource path="res://UI/pylonanim1/frame_023_delay-0.02s.png" type="Texture" id=62]
+[ext_resource path="res://UI/pylonanim1/frame_025_delay-0.02s.png" type="Texture" id=63]
+[ext_resource path="res://UI/pylonanim1/frame_026_delay-0.02s.png" type="Texture" id=64]
+[ext_resource path="res://UI/pylonanim1/frame_223_delay-0.02s.png" type="Texture" id=65]
+[ext_resource path="res://UI/pylonanim1/frame_027_delay-0.02s.png" type="Texture" id=66]
+[ext_resource path="res://UI/pylonanim1/frame_029_delay-0.02s.png" type="Texture" id=67]
+[ext_resource path="res://UI/pylonanim1/frame_030_delay-0.02s.png" type="Texture" id=68]
+[ext_resource path="res://UI/pylonanim1/frame_031_delay-0.02s.png" type="Texture" id=69]
+[ext_resource path="res://UI/pylonanim1/frame_048_delay-0.02s.png" type="Texture" id=70]
+[ext_resource path="res://UI/pylonanim1/frame_049_delay-0.02s.png" type="Texture" id=71]
+[ext_resource path="res://UI/pylonanim1/frame_086_delay-0.02s.png" type="Texture" id=72]
+[ext_resource path="res://UI/pylonanim1/frame_087_delay-0.02s.png" type="Texture" id=73]
+[ext_resource path="res://UI/pylonanim1/frame_129_delay-0.02s.png" type="Texture" id=74]
+[ext_resource path="res://UI/pylonanim1/frame_239_delay-0.02s.png" type="Texture" id=75]
+[ext_resource path="res://UI/pylonanim1/frame_240_delay-0.02s.png" type="Texture" id=76]
+[ext_resource path="res://UI/pylonanim1/frame_245_delay-0.02s.png" type="Texture" id=77]
+[ext_resource path="res://UI/pylonanim1/frame_205_delay-0.02s.png" type="Texture" id=78]
+[ext_resource path="res://UI/pylonanim1/frame_206_delay-0.02s.png" type="Texture" id=79]
+[ext_resource path="res://UI/pylonanim1/frame_207_delay-0.02s.png" type="Texture" id=80]
+[ext_resource path="res://UI/pylonanim1/frame_208_delay-0.02s.png" type="Texture" id=81]
+[ext_resource path="res://UI/pylonanim1/frame_409_delay-0.02s.png" type="Texture" id=82]
+[ext_resource path="res://UI/pylonanim1/frame_309_delay-0.02s.png" type="Texture" id=83]
+[ext_resource path="res://UI/pylonanim1/frame_310_delay-0.02s.png" type="Texture" id=84]
+[ext_resource path="res://UI/pylonanim1/frame_311_delay-0.02s.png" type="Texture" id=85]
+[ext_resource path="res://UI/pylonanim1/frame_312_delay-0.02s.png" type="Texture" id=86]
+[ext_resource path="res://UI/pylonanim1/frame_313_delay-0.02s.png" type="Texture" id=87]
+[ext_resource path="res://UI/pylonanim1/frame_314_delay-0.02s.png" type="Texture" id=88]
+[ext_resource path="res://UI/pylonanim1/frame_315_delay-0.02s.png" type="Texture" id=89]
+[ext_resource path="res://UI/pylonanim1/frame_318_delay-0.02s.png" type="Texture" id=90]
+[ext_resource path="res://UI/pylonanim1/frame_319_delay-0.02s.png" type="Texture" id=91]
+[ext_resource path="res://UI/pylonanim1/frame_320_delay-0.02s.png" type="Texture" id=92]
+[ext_resource path="res://UI/pylonanim1/frame_216_delay-0.02s.png" type="Texture" id=93]
+[ext_resource path="res://UI/pylonanim1/frame_224_delay-0.02s.png" type="Texture" id=94]
+[ext_resource path="res://UI/pylonanim1/frame_225_delay-0.02s.png" type="Texture" id=95]
+[ext_resource path="res://UI/pylonanim1/frame_226_delay-0.02s.png" type="Texture" id=96]
+[ext_resource path="res://UI/pylonanim1/frame_227_delay-0.02s.png" type="Texture" id=97]
+[ext_resource path="res://UI/pylonanim1/frame_230_delay-0.02s.png" type="Texture" id=98]
+[ext_resource path="res://UI/pylonanim1/frame_231_delay-0.02s.png" type="Texture" id=99]
+[ext_resource path="res://UI/pylonanim1/frame_235_delay-0.02s.png" type="Texture" id=100]
+[ext_resource path="res://UI/pylonanim1/frame_398_delay-0.02s.png" type="Texture" id=101]
+[ext_resource path="res://UI/pylonanim1/frame_399_delay-0.02s.png" type="Texture" id=102]
+[ext_resource path="res://UI/pylonanim1/frame_296_delay-0.02s.png" type="Texture" id=103]
+[ext_resource path="res://UI/pylonanim1/frame_306_delay-0.02s.png" type="Texture" id=104]
+[ext_resource path="res://UI/pylonanim1/frame_307_delay-0.02s.png" type="Texture" id=105]
+[ext_resource path="res://UI/pylonanim1/frame_390_delay-0.02s.png" type="Texture" id=106]
+[ext_resource path="res://UI/pylonanim1/frame_391_delay-0.02s.png" type="Texture" id=107]
+[ext_resource path="res://UI/pylonanim1/frame_392_delay-0.02s.png" type="Texture" id=108]
+[ext_resource path="res://UI/pylonanim1/frame_393_delay-0.02s.png" type="Texture" id=109]
+[ext_resource path="res://UI/pylonanim1/frame_394_delay-0.02s.png" type="Texture" id=110]
+[ext_resource path="res://UI/pylonanim1/frame_236_delay-0.02s.png" type="Texture" id=111]
+[ext_resource path="res://UI/pylonanim1/frame_237_delay-0.02s.png" type="Texture" id=112]
+[ext_resource path="res://UI/pylonanim1/frame_238_delay-0.02s.png" type="Texture" id=113]
+[ext_resource path="res://UI/pylonanim1/frame_395_delay-0.02s.png" type="Texture" id=114]
+[ext_resource path="res://UI/pylonanim1/frame_396_delay-0.02s.png" type="Texture" id=115]
+[ext_resource path="res://UI/pylonanim1/frame_397_delay-0.02s.png" type="Texture" id=116]
+[ext_resource path="res://UI/pylonanim1/frame_304_delay-0.02s.png" type="Texture" id=117]
+[ext_resource path="res://UI/pylonanim1/frame_356_delay-0.02s.png" type="Texture" id=118]
+[ext_resource path="res://UI/pylonanim1/frame_321_delay-0.02s.png" type="Texture" id=119]
+[ext_resource path="res://UI/pylonanim1/frame_297_delay-0.02s.png" type="Texture" id=120]
+[ext_resource path="res://UI/pylonanim1/frame_305_delay-0.02s.png" type="Texture" id=121]
+[ext_resource path="res://UI/pylonanim1/frame_322_delay-0.02s.png" type="Texture" id=122]
+[ext_resource path="res://UI/pylonanim1/frame_323_delay-0.02s.png" type="Texture" id=123]
+[ext_resource path="res://UI/pylonanim1/frame_324_delay-0.02s.png" type="Texture" id=124]
+[ext_resource path="res://UI/pylonanim1/frame_325_delay-0.02s.png" type="Texture" id=125]
+[ext_resource path="res://UI/pylonanim1/frame_326_delay-0.02s.png" type="Texture" id=126]
+[ext_resource path="res://UI/pylonanim1/frame_346_delay-0.02s.png" type="Texture" id=127]
+[ext_resource path="res://UI/pylonanim1/frame_347_delay-0.02s.png" type="Texture" id=128]
+[ext_resource path="res://UI/pylonanim1/frame_355_delay-0.02s.png" type="Texture" id=129]
+[ext_resource path="res://UI/pylonanim1/frame_354_delay-0.02s.png" type="Texture" id=130]
+[ext_resource path="res://UI/pylonanim1/frame_234_delay-0.02s.png" type="Texture" id=131]
+[ext_resource path="res://UI/pylonanim1/frame_262_delay-0.02s.png" type="Texture" id=132]
+[ext_resource path="res://UI/pylonanim1/frame_263_delay-0.02s.png" type="Texture" id=133]
+[ext_resource path="res://UI/pylonanim1/frame_264_delay-0.02s.png" type="Texture" id=134]
+[ext_resource path="res://UI/pylonanim1/frame_265_delay-0.02s.png" type="Texture" id=135]
+[ext_resource path="res://UI/pylonanim1/frame_266_delay-0.02s.png" type="Texture" id=136]
+[ext_resource path="res://UI/pylonanim1/frame_267_delay-0.02s.png" type="Texture" id=137]
+[ext_resource path="res://UI/pylonanim1/frame_268_delay-0.02s.png" type="Texture" id=138]
+[ext_resource path="res://UI/pylonanim1/frame_269_delay-0.02s.png" type="Texture" id=139]
+[ext_resource path="res://UI/pylonanim1/frame_270_delay-0.02s.png" type="Texture" id=140]
+[ext_resource path="res://UI/pylonanim1/frame_271_delay-0.02s.png" type="Texture" id=141]
+[ext_resource path="res://UI/pylonanim1/frame_272_delay-0.02s.png" type="Texture" id=142]
+[ext_resource path="res://UI/pylonanim1/frame_273_delay-0.02s.png" type="Texture" id=143]
+[ext_resource path="res://UI/pylonanim1/frame_274_delay-0.02s.png" type="Texture" id=144]
+[ext_resource path="res://UI/pylonanim1/frame_275_delay-0.02s.png" type="Texture" id=145]
+[ext_resource path="res://UI/pylonanim1/frame_276_delay-0.02s.png" type="Texture" id=146]
+[ext_resource path="res://UI/pylonanim1/frame_277_delay-0.02s.png" type="Texture" id=147]
+[ext_resource path="res://UI/pylonanim1/frame_278_delay-0.02s.png" type="Texture" id=148]
+[ext_resource path="res://UI/pylonanim1/frame_279_delay-0.02s.png" type="Texture" id=149]
+[ext_resource path="res://UI/pylonanim1/frame_280_delay-0.02s.png" type="Texture" id=150]
+[ext_resource path="res://UI/pylonanim1/frame_281_delay-0.02s.png" type="Texture" id=151]
+[ext_resource path="res://UI/pylonanim1/frame_282_delay-0.02s.png" type="Texture" id=152]
+[ext_resource path="res://UI/pylonanim1/frame_283_delay-0.02s.png" type="Texture" id=153]
+[ext_resource path="res://UI/pylonanim1/frame_284_delay-0.02s.png" type="Texture" id=154]
+[ext_resource path="res://UI/pylonanim1/frame_285_delay-0.02s.png" type="Texture" id=155]
+[ext_resource path="res://UI/pylonanim1/frame_286_delay-0.02s.png" type="Texture" id=156]
+[ext_resource path="res://UI/pylonanim1/frame_287_delay-0.02s.png" type="Texture" id=157]
+[ext_resource path="res://UI/pylonanim1/frame_288_delay-0.02s.png" type="Texture" id=158]
+[ext_resource path="res://UI/pylonanim1/frame_292_delay-0.02s.png" type="Texture" id=159]
+[ext_resource path="res://UI/pylonanim1/frame_293_delay-0.02s.png" type="Texture" id=160]
+[ext_resource path="res://UI/pylonanim1/frame_294_delay-0.02s.png" type="Texture" id=161]
+[ext_resource path="res://UI/pylonanim1/frame_295_delay-0.02s.png" type="Texture" id=162]
+[ext_resource path="res://UI/pylonanim1/frame_298_delay-0.02s.png" type="Texture" id=163]
+[ext_resource path="res://UI/pylonanim1/frame_299_delay-0.02s.png" type="Texture" id=164]
+[ext_resource path="res://UI/pylonanim1/frame_303_delay-0.02s.png" type="Texture" id=165]
+[ext_resource path="res://UI/pylonanim1/frame_411_delay-0.02s.png" type="Texture" id=166]
+[ext_resource path="res://UI/pylonanim1/frame_387_delay-0.02s.png" type="Texture" id=167]
+[ext_resource path="res://UI/pylonanim1/frame_388_delay-0.02s.png" type="Texture" id=168]
+[ext_resource path="res://UI/pylonanim1/frame_389_delay-0.02s.png" type="Texture" id=169]
+[ext_resource path="res://UI/pylonanim1/frame_410_delay-0.02s.png" type="Texture" id=170]
+[ext_resource path="res://UI/pylonanim1/frame_084_delay-0.02s.png" type="Texture" id=171]
+[ext_resource path="res://UI/pylonanim1/frame_085_delay-0.02s.png" type="Texture" id=172]
+[ext_resource path="res://UI/pylonanim1/frame_115_delay-0.02s.png" type="Texture" id=173]
+[ext_resource path="res://UI/pylonanim1/frame_116_delay-0.02s.png" type="Texture" id=174]
+[ext_resource path="res://UI/pylonanim1/frame_117_delay-0.02s.png" type="Texture" id=175]
+[ext_resource path="res://UI/pylonanim1/frame_118_delay-0.02s.png" type="Texture" id=176]
+[ext_resource path="res://UI/pylonanim1/frame_119_delay-0.02s.png" type="Texture" id=177]
+[ext_resource path="res://UI/pylonanim1/frame_120_delay-0.02s.png" type="Texture" id=178]
+[ext_resource path="res://UI/pylonanim1/frame_121_delay-0.02s.png" type="Texture" id=179]
+[ext_resource path="res://UI/pylonanim1/frame_122_delay-0.02s.png" type="Texture" id=180]
+[ext_resource path="res://UI/pylonanim1/frame_123_delay-0.02s.png" type="Texture" id=181]
+[ext_resource path="res://UI/pylonanim1/frame_124_delay-0.02s.png" type="Texture" id=182]
+[ext_resource path="res://UI/pylonanim1/frame_125_delay-0.02s.png" type="Texture" id=183]
+[ext_resource path="res://UI/pylonanim1/frame_126_delay-0.02s.png" type="Texture" id=184]
+[ext_resource path="res://UI/pylonanim1/frame_127_delay-0.02s.png" type="Texture" id=185]
+[ext_resource path="res://UI/pylonanim1/frame_128_delay-0.02s.png" type="Texture" id=186]
+[ext_resource path="res://UI/pylonanim1/frame_132_delay-0.02s.png" type="Texture" id=187]
+[ext_resource path="res://UI/pylonanim1/frame_133_delay-0.02s.png" type="Texture" id=188]
+[ext_resource path="res://UI/pylonanim1/frame_134_delay-0.02s.png" type="Texture" id=189]
+[ext_resource path="res://UI/pylonanim1/frame_135_delay-0.02s.png" type="Texture" id=190]
+[ext_resource path="res://UI/pylonanim1/frame_144_delay-0.02s.png" type="Texture" id=191]
+[ext_resource path="res://UI/pylonanim1/frame_145_delay-0.02s.png" type="Texture" id=192]
+[ext_resource path="res://UI/pylonanim1/frame_148_delay-0.02s.png" type="Texture" id=193]
+[ext_resource path="res://UI/pylonanim1/frame_149_delay-0.02s.png" type="Texture" id=194]
+[ext_resource path="res://UI/pylonanim1/frame_150_delay-0.02s.png" type="Texture" id=195]
+[ext_resource path="res://UI/pylonanim1/frame_151_delay-0.02s.png" type="Texture" id=196]
+[ext_resource path="res://UI/pylonanim1/frame_152_delay-0.02s.png" type="Texture" id=197]
+[ext_resource path="res://UI/pylonanim1/frame_153_delay-0.02s.png" type="Texture" id=198]
+[ext_resource path="res://UI/pylonanim1/frame_154_delay-0.02s.png" type="Texture" id=199]
+[ext_resource path="res://UI/pylonanim1/frame_155_delay-0.02s.png" type="Texture" id=200]
+[ext_resource path="res://UI/pylonanim1/frame_156_delay-0.02s.png" type="Texture" id=201]
+[ext_resource path="res://UI/pylonanim1/frame_188_delay-0.02s.png" type="Texture" id=202]
+[ext_resource path="res://UI/pylonanim1/frame_195_delay-0.02s.png" type="Texture" id=203]
+[ext_resource path="res://UI/pylonanim1/frame_196_delay-0.02s.png" type="Texture" id=204]
+[ext_resource path="res://UI/pylonanim1/frame_197_delay-0.02s.png" type="Texture" id=205]
+[ext_resource path="res://UI/pylonanim1/frame_198_delay-0.02s.png" type="Texture" id=206]
+[ext_resource path="res://UI/pylonanim1/frame_232_delay-0.02s.png" type="Texture" id=207]
+[ext_resource path="res://UI/pylonanim1/frame_233_delay-0.02s.png" type="Texture" id=208]
+[ext_resource path="res://UI/pylonanim1/frame_289_delay-0.02s.png" type="Texture" id=209]
+[ext_resource path="res://UI/pylonanim1/frame_290_delay-0.02s.png" type="Texture" id=210]
+[ext_resource path="res://UI/pylonanim1/frame_291_delay-0.02s.png" type="Texture" id=211]
+[ext_resource path="res://UI/pylonanim1/frame_308_delay-0.02s.png" type="Texture" id=212]
+[ext_resource path="res://UI/pylonanim1/frame_327_delay-0.02s.png" type="Texture" id=213]
+[ext_resource path="res://UI/pylonanim1/frame_328_delay-0.02s.png" type="Texture" id=214]
+[ext_resource path="res://UI/pylonanim1/frame_329_delay-0.02s.png" type="Texture" id=215]
+[ext_resource path="res://UI/pylonanim1/frame_330_delay-0.02s.png" type="Texture" id=216]
+[ext_resource path="res://UI/pylonanim1/frame_331_delay-0.02s.png" type="Texture" id=217]
+[ext_resource path="res://UI/pylonanim1/frame_332_delay-0.02s.png" type="Texture" id=218]
+[ext_resource path="res://UI/pylonanim1/frame_333_delay-0.02s.png" type="Texture" id=219]
+[ext_resource path="res://UI/pylonanim1/frame_334_delay-0.02s.png" type="Texture" id=220]
+[ext_resource path="res://UI/pylonanim1/frame_335_delay-0.02s.png" type="Texture" id=221]
+[ext_resource path="res://UI/pylonanim1/frame_336_delay-0.02s.png" type="Texture" id=222]
+[ext_resource path="res://UI/pylonanim1/frame_337_delay-0.02s.png" type="Texture" id=223]
+[ext_resource path="res://UI/pylonanim1/frame_338_delay-0.02s.png" type="Texture" id=224]
+[ext_resource path="res://UI/pylonanim1/frame_339_delay-0.02s.png" type="Texture" id=225]
+[ext_resource path="res://UI/pylonanim1/frame_340_delay-0.02s.png" type="Texture" id=226]
+[ext_resource path="res://UI/pylonanim1/frame_341_delay-0.02s.png" type="Texture" id=227]
+[ext_resource path="res://UI/pylonanim1/frame_343_delay-0.02s.png" type="Texture" id=228]
+[ext_resource path="res://UI/pylonanim1/frame_344_delay-0.02s.png" type="Texture" id=229]
+[ext_resource path="res://UI/pylonanim1/frame_345_delay-0.02s.png" type="Texture" id=230]
+[ext_resource path="res://UI/pylonanim1/frame_348_delay-0.02s.png" type="Texture" id=231]
+[ext_resource path="res://UI/pylonanim1/frame_349_delay-0.02s.png" type="Texture" id=232]
+[ext_resource path="res://UI/pylonanim1/frame_350_delay-0.02s.png" type="Texture" id=233]
+[ext_resource path="res://UI/pylonanim1/frame_351_delay-0.02s.png" type="Texture" id=234]
+[ext_resource path="res://UI/pylonanim1/frame_372_delay-0.02s.png" type="Texture" id=235]
+[ext_resource path="res://UI/pylonanim1/frame_386_delay-0.02s.png" type="Texture" id=236]
+[ext_resource path="res://UI/pylonanim1/frame_416_delay-0.02s.png" type="Texture" id=237]
+[ext_resource path="res://UI/pylonanim1/frame_417_delay-0.02s.png" type="Texture" id=238]
+[ext_resource path="res://UI/pylonanim1/frame_418_delay-0.02s.png" type="Texture" id=239]
+[ext_resource path="res://UI/pylonanim1/frame_065_delay-0.02s.png" type="Texture" id=240]
+[ext_resource path="res://UI/pylonanim1/frame_066_delay-0.02s.png" type="Texture" id=241]
+[ext_resource path="res://UI/pylonanim1/frame_067_delay-0.02s.png" type="Texture" id=242]
+[ext_resource path="res://UI/pylonanim1/frame_068_delay-0.02s.png" type="Texture" id=243]
+[ext_resource path="res://UI/pylonanim1/frame_069_delay-0.02s.png" type="Texture" id=244]
+[ext_resource path="res://UI/pylonanim1/frame_070_delay-0.02s.png" type="Texture" id=245]
+[ext_resource path="res://UI/pylonanim1/frame_075_delay-0.02s.png" type="Texture" id=246]
+[ext_resource path="res://UI/pylonanim1/frame_076_delay-0.02s.png" type="Texture" id=247]
+[ext_resource path="res://UI/pylonanim1/frame_077_delay-0.02s.png" type="Texture" id=248]
+[ext_resource path="res://UI/pylonanim1/frame_007_delay-0.02s.png" type="Texture" id=249]
+[ext_resource path="res://UI/pylonanim1/frame_064_delay-0.02s.png" type="Texture" id=250]
+[ext_resource path="res://UI/pylonanim1/frame_017_delay-0.02s.png" type="Texture" id=251]
+[ext_resource path="res://UI/pylonanim1/frame_018_delay-0.02s.png" type="Texture" id=252]
+[ext_resource path="res://UI/pylonanim1/frame_057_delay-0.02s.png" type="Texture" id=253]
+[ext_resource path="res://UI/pylonanim1/frame_058_delay-0.02s.png" type="Texture" id=254]
+[ext_resource path="res://UI/pylonanim1/frame_059_delay-0.02s.png" type="Texture" id=255]
+[ext_resource path="res://UI/pylonanim1/frame_060_delay-0.02s.png" type="Texture" id=256]
+[ext_resource path="res://UI/pylonanim1/frame_061_delay-0.02s.png" type="Texture" id=257]
+[ext_resource path="res://UI/pylonanim1/frame_062_delay-0.02s.png" type="Texture" id=258]
+[ext_resource path="res://UI/pylonanim1/frame_008_delay-0.02s.png" type="Texture" id=259]
+[ext_resource path="res://UI/pylonanim1/frame_009_delay-0.02s.png" type="Texture" id=260]
+[ext_resource path="res://UI/pylonanim1/frame_015_delay-0.02s.png" type="Texture" id=261]
+[ext_resource path="res://UI/pylonanim1/frame_016_delay-0.02s.png" type="Texture" id=262]
+[ext_resource path="res://UI/pylonanim1/frame_063_delay-0.02s.png" type="Texture" id=263]
+[ext_resource path="res://UI/pylonanim1/frame_002_delay-0.02s.png" type="Texture" id=264]
+[ext_resource path="res://UI/pylonanim1/frame_010_delay-0.02s.png" type="Texture" id=265]
+[ext_resource path="res://UI/pylonanim1/frame_028_delay-0.02s.png" type="Texture" id=266]
+[ext_resource path="res://UI/pylonanim1/frame_032_delay-0.02s.png" type="Texture" id=267]
+[ext_resource path="res://UI/pylonanim1/frame_050_delay-0.02s.png" type="Texture" id=268]
+[ext_resource path="res://UI/pylonanim1/frame_071_delay-0.02s.png" type="Texture" id=269]
+[ext_resource path="res://UI/pylonanim1/frame_072_delay-0.02s.png" type="Texture" id=270]
+[ext_resource path="res://UI/pylonanim1/frame_073_delay-0.02s.png" type="Texture" id=271]
+[ext_resource path="res://UI/pylonanim1/frame_074_delay-0.02s.png" type="Texture" id=272]
+[ext_resource path="res://UI/pylonanim1/frame_114_delay-0.02s.png" type="Texture" id=273]
+[ext_resource path="res://UI/pylonanim1/frame_131_delay-0.02s.png" type="Texture" id=274]
+[ext_resource path="res://UI/pylonanim1/frame_157_delay-0.02s.png" type="Texture" id=275]
+[ext_resource path="res://UI/pylonanim1/frame_173_delay-0.02s.png" type="Texture" id=276]
+[ext_resource path="res://UI/pylonanim1/frame_174_delay-0.02s.png" type="Texture" id=277]
+[ext_resource path="res://UI/pylonanim1/frame_175_delay-0.02s.png" type="Texture" id=278]
+[ext_resource path="res://UI/pylonanim1/frame_176_delay-0.02s.png" type="Texture" id=279]
+[ext_resource path="res://UI/pylonanim1/frame_177_delay-0.02s.png" type="Texture" id=280]
+[ext_resource path="res://UI/pylonanim1/frame_189_delay-0.02s.png" type="Texture" id=281]
+[ext_resource path="res://UI/pylonanim1/frame_190_delay-0.02s.png" type="Texture" id=282]
+[ext_resource path="res://UI/pylonanim1/frame_191_delay-0.02s.png" type="Texture" id=283]
+[ext_resource path="res://UI/pylonanim1/frame_192_delay-0.02s.png" type="Texture" id=284]
+[ext_resource path="res://UI/pylonanim1/frame_193_delay-0.02s.png" type="Texture" id=285]
+[ext_resource path="res://UI/pylonanim1/frame_209_delay-0.02s.png" type="Texture" id=286]
+[ext_resource path="res://UI/pylonanim1/frame_210_delay-0.02s.png" type="Texture" id=287]
+[ext_resource path="res://UI/pylonanim1/frame_211_delay-0.02s.png" type="Texture" id=288]
+[ext_resource path="res://UI/pylonanim1/frame_212_delay-0.02s.png" type="Texture" id=289]
+[ext_resource path="res://UI/pylonanim1/frame_213_delay-0.02s.png" type="Texture" id=290]
+[ext_resource path="res://UI/pylonanim1/frame_214_delay-0.02s.png" type="Texture" id=291]
+[ext_resource path="res://UI/pylonanim1/frame_228_delay-0.02s.png" type="Texture" id=292]
+[ext_resource path="res://UI/pylonanim1/frame_259_delay-0.02s.png" type="Texture" id=293]
+[ext_resource path="res://UI/pylonanim1/frame_260_delay-0.02s.png" type="Texture" id=294]
+[ext_resource path="res://UI/pylonanim1/frame_261_delay-0.02s.png" type="Texture" id=295]
+[ext_resource path="res://UI/pylonanim1/frame_352_delay-0.02s.png" type="Texture" id=296]
+[ext_resource path="res://UI/pylonanim1/frame_353_delay-0.02s.png" type="Texture" id=297]
+[ext_resource path="res://UI/pylonanim1/frame_357_delay-0.02s.png" type="Texture" id=298]
+[ext_resource path="res://UI/pylonanim1/frame_358_delay-0.02s.png" type="Texture" id=299]
+[ext_resource path="res://UI/pylonanim1/frame_359_delay-0.02s.png" type="Texture" id=300]
+[ext_resource path="res://UI/pylonanim1/frame_360_delay-0.02s.png" type="Texture" id=301]
+[ext_resource path="res://UI/pylonanim1/frame_361_delay-0.02s.png" type="Texture" id=302]
+[ext_resource path="res://UI/pylonanim1/frame_362_delay-0.02s.png" type="Texture" id=303]
+[ext_resource path="res://UI/pylonanim1/frame_363_delay-0.02s.png" type="Texture" id=304]
+[ext_resource path="res://UI/pylonanim1/frame_364_delay-0.02s.png" type="Texture" id=305]
+[ext_resource path="res://UI/pylonanim1/frame_365_delay-0.02s.png" type="Texture" id=306]
+[ext_resource path="res://UI/pylonanim1/frame_366_delay-0.02s.png" type="Texture" id=307]
+[ext_resource path="res://UI/pylonanim1/frame_367_delay-0.02s.png" type="Texture" id=308]
+[ext_resource path="res://UI/pylonanim1/frame_368_delay-0.02s.png" type="Texture" id=309]
+[ext_resource path="res://UI/pylonanim1/frame_373_delay-0.02s.png" type="Texture" id=310]
+[ext_resource path="res://UI/pylonanim1/frame_374_delay-0.02s.png" type="Texture" id=311]
+[ext_resource path="res://UI/pylonanim1/frame_375_delay-0.02s.png" type="Texture" id=312]
+[ext_resource path="res://UI/pylonanim1/frame_376_delay-0.02s.png" type="Texture" id=313]
+[ext_resource path="res://UI/pylonanim1/frame_377_delay-0.02s.png" type="Texture" id=314]
+[ext_resource path="res://UI/pylonanim1/frame_378_delay-0.02s.png" type="Texture" id=315]
+[ext_resource path="res://UI/pylonanim1/frame_379_delay-0.02s.png" type="Texture" id=316]
+[ext_resource path="res://UI/pylonanim1/frame_380_delay-0.02s.png" type="Texture" id=317]
+[ext_resource path="res://UI/pylonanim1/frame_381_delay-0.02s.png" type="Texture" id=318]
+[ext_resource path="res://UI/pylonanim1/frame_382_delay-0.02s.png" type="Texture" id=319]
+[ext_resource path="res://UI/pylonanim1/frame_383_delay-0.02s.png" type="Texture" id=320]
+[ext_resource path="res://UI/pylonanim1/frame_384_delay-0.02s.png" type="Texture" id=321]
+[ext_resource path="res://UI/pylonanim1/frame_385_delay-0.02s.png" type="Texture" id=322]
+[ext_resource path="res://UI/pylonanim1/frame_401_delay-0.02s.png" type="Texture" id=323]
+[ext_resource path="res://UI/pylonanim1/frame_402_delay-0.02s.png" type="Texture" id=324]
+[ext_resource path="res://UI/pylonanim1/frame_403_delay-0.02s.png" type="Texture" id=325]
+[ext_resource path="res://UI/pylonanim1/frame_404_delay-0.02s.png" type="Texture" id=326]
+[ext_resource path="res://UI/pylonanim1/frame_405_delay-0.02s.png" type="Texture" id=327]
+[ext_resource path="res://UI/pylonanim1/frame_406_delay-0.02s.png" type="Texture" id=328]
+[ext_resource path="res://UI/pylonanim1/frame_407_delay-0.02s.png" type="Texture" id=329]
+[ext_resource path="res://UI/pylonanim1/frame_408_delay-0.02s.png" type="Texture" id=330]
+[ext_resource path="res://UI/pylonanim1/frame_000_delay-0.02s.png" type="Texture" id=331]
+[ext_resource path="res://UI/pylonanim1/frame_001_delay-0.02s.png" type="Texture" id=332]
+[ext_resource path="res://UI/pylonanim1/frame_005_delay-0.02s.png" type="Texture" id=333]
+[ext_resource path="res://UI/pylonanim1/frame_006_delay-0.02s.png" type="Texture" id=334]
+[ext_resource path="res://UI/pylonanim1/frame_011_delay-0.02s.png" type="Texture" id=335]
+[ext_resource path="res://UI/pylonanim1/frame_012_delay-0.02s.png" type="Texture" id=336]
+[ext_resource path="res://UI/pylonanim1/frame_203_delay-0.02s.png" type="Texture" id=337]
+[ext_resource path="res://UI/pylonanim1/frame_047_delay-0.02s.png" type="Texture" id=338]
+[ext_resource path="res://UI/pylonanim1/frame_051_delay-0.02s.png" type="Texture" id=339]
+[ext_resource path="res://UI/pylonanim1/frame_053_delay-0.02s.png" type="Texture" id=340]
+[ext_resource path="res://UI/pylonanim1/frame_161_delay-0.02s.png" type="Texture" id=341]
+[ext_resource path="res://UI/pylonanim1/frame_162_delay-0.02s.png" type="Texture" id=342]
+[ext_resource path="res://UI/pylonanim1/frame_163_delay-0.02s.png" type="Texture" id=343]
+[ext_resource path="res://UI/pylonanim1/frame_164_delay-0.02s.png" type="Texture" id=344]
+[ext_resource path="res://UI/pylonanim1/frame_181_delay-0.02s.png" type="Texture" id=345]
+[ext_resource path="res://UI/pylonanim1/frame_079_delay-0.02s.png" type="Texture" id=346]
+[ext_resource path="res://UI/pylonanim1/frame_080_delay-0.02s.png" type="Texture" id=347]
+[ext_resource path="res://UI/pylonanim1/frame_081_delay-0.02s.png" type="Texture" id=348]
+[ext_resource path="res://UI/pylonanim1/frame_165_delay-0.02s.png" type="Texture" id=349]
+[ext_resource path="res://UI/pylonanim1/frame_166_delay-0.02s.png" type="Texture" id=350]
+[ext_resource path="res://UI/pylonanim1/frame_167_delay-0.02s.png" type="Texture" id=351]
+[ext_resource path="res://UI/pylonanim1/frame_168_delay-0.02s.png" type="Texture" id=352]
+[ext_resource path="res://UI/pylonanim1/frame_169_delay-0.02s.png" type="Texture" id=353]
+[ext_resource path="res://UI/pylonanim1/frame_170_delay-0.02s.png" type="Texture" id=354]
+[ext_resource path="res://UI/pylonanim1/frame_171_delay-0.02s.png" type="Texture" id=355]
+[ext_resource path="res://UI/pylonanim1/frame_040_delay-0.02s.png" type="Texture" id=356]
+[ext_resource path="res://UI/pylonanim1/frame_045_delay-0.02s.png" type="Texture" id=357]
+[ext_resource path="res://UI/pylonanim1/frame_046_delay-0.02s.png" type="Texture" id=358]
+[ext_resource path="res://UI/pylonanim1/frame_180_delay-0.02s.png" type="Texture" id=359]
+[ext_resource path="res://UI/pylonanim1/frame_054_delay-0.02s.png" type="Texture" id=360]
+[ext_resource path="res://UI/pylonanim1/frame_052_delay-0.02s.png" type="Texture" id=361]
+[ext_resource path="res://UI/pylonanim1/frame_182_delay-0.02s.png" type="Texture" id=362]
+[ext_resource path="res://UI/pylonanim1/frame_184_delay-0.02s.png" type="Texture" id=363]
+[ext_resource path="res://UI/pylonanim1/frame_158_delay-0.02s.png" type="Texture" id=364]
+[ext_resource path="res://UI/pylonanim1/frame_159_delay-0.02s.png" type="Texture" id=365]
+[ext_resource path="res://UI/pylonanim1/frame_160_delay-0.02s.png" type="Texture" id=366]
+[ext_resource path="res://UI/pylonanim1/frame_013_delay-0.02s.png" type="Texture" id=367]
+[ext_resource path="res://UI/pylonanim1/frame_033_delay-0.02s.png" type="Texture" id=368]
+[ext_resource path="res://UI/pylonanim1/frame_034_delay-0.02s.png" type="Texture" id=369]
+[ext_resource path="res://UI/pylonanim1/frame_035_delay-0.02s.png" type="Texture" id=370]
+[ext_resource path="res://UI/pylonanim1/frame_036_delay-0.02s.png" type="Texture" id=371]
+[ext_resource path="res://UI/pylonanim1/frame_186_delay-0.02s.png" type="Texture" id=372]
+[ext_resource path="res://UI/pylonanim1/frame_042_delay-0.02s.png" type="Texture" id=373]
+[ext_resource path="res://UI/pylonanim1/frame_204_delay-0.02s.png" type="Texture" id=374]
+[ext_resource path="res://UI/pylonanim1/frame_043_delay-0.02s.png" type="Texture" id=375]
+[ext_resource path="res://UI/pylonanim1/frame_044_delay-0.02s.png" type="Texture" id=376]
+[ext_resource path="res://UI/pylonanim1/frame_187_delay-0.02s.png" type="Texture" id=377]
+[ext_resource path="res://UI/pylonanim1/frame_194_delay-0.02s.png" type="Texture" id=378]
+[ext_resource path="res://UI/pylonanim1/frame_185_delay-0.02s.png" type="Texture" id=379]
+[ext_resource path="res://UI/pylonanim1/frame_200_delay-0.02s.png" type="Texture" id=380]
+[ext_resource path="res://UI/pylonanim1/frame_172_delay-0.02s.png" type="Texture" id=381]
+[ext_resource path="res://UI/pylonanim1/frame_183_delay-0.02s.png" type="Texture" id=382]
+[ext_resource path="res://UI/pylonanim1/frame_055_delay-0.02s.png" type="Texture" id=383]
+[ext_resource path="res://UI/pylonanim1/frame_056_delay-0.02s.png" type="Texture" id=384]
+[ext_resource path="res://UI/pylonanim1/frame_037_delay-0.02s.png" type="Texture" id=385]
+[ext_resource path="res://UI/pylonanim1/frame_038_delay-0.02s.png" type="Texture" id=386]
+[ext_resource path="res://UI/pylonanim1/frame_039_delay-0.02s.png" type="Texture" id=387]
+[ext_resource path="res://UI/pylonanim1/frame_041_delay-0.02s.png" type="Texture" id=388]
+[ext_resource path="res://UI/pylonanim1/frame_078_delay-0.02s.png" type="Texture" id=389]
+[ext_resource path="res://UI/pylonanim1/frame_082_delay-0.02s.png" type="Texture" id=390]
+[ext_resource path="res://UI/pylonanim1/frame_083_delay-0.02s.png" type="Texture" id=391]
+[ext_resource path="res://UI/pylonanim1/frame_088_delay-0.02s.png" type="Texture" id=392]
+[ext_resource path="res://UI/pylonanim1/frame_089_delay-0.02s.png" type="Texture" id=393]
+[ext_resource path="res://UI/pylonanim1/frame_090_delay-0.02s.png" type="Texture" id=394]
+[ext_resource path="res://UI/pylonanim1/frame_091_delay-0.02s.png" type="Texture" id=395]
+[ext_resource path="res://UI/pylonanim1/frame_092_delay-0.02s.png" type="Texture" id=396]
+[ext_resource path="res://UI/pylonanim1/frame_093_delay-0.02s.png" type="Texture" id=397]
+[ext_resource path="res://UI/pylonanim1/frame_094_delay-0.02s.png" type="Texture" id=398]
+[ext_resource path="res://UI/pylonanim1/frame_095_delay-0.02s.png" type="Texture" id=399]
+[ext_resource path="res://UI/pylonanim1/frame_096_delay-0.02s.png" type="Texture" id=400]
+[ext_resource path="res://UI/pylonanim1/frame_097_delay-0.02s.png" type="Texture" id=401]
+[ext_resource path="res://UI/pylonanim1/frame_098_delay-0.02s.png" type="Texture" id=402]
+[ext_resource path="res://UI/pylonanim1/frame_099_delay-0.02s.png" type="Texture" id=403]
+[ext_resource path="res://UI/pylonanim1/frame_100_delay-0.02s.png" type="Texture" id=404]
+[ext_resource path="res://UI/pylonanim1/frame_101_delay-0.02s.png" type="Texture" id=405]
+[ext_resource path="res://UI/pylonanim1/frame_102_delay-0.02s.png" type="Texture" id=406]
+[ext_resource path="res://UI/pylonanim1/frame_103_delay-0.02s.png" type="Texture" id=407]
+[ext_resource path="res://UI/pylonanim1/frame_104_delay-0.02s.png" type="Texture" id=408]
+[ext_resource path="res://UI/pylonanim1/frame_105_delay-0.02s.png" type="Texture" id=409]
+[ext_resource path="res://UI/pylonanim1/frame_106_delay-0.02s.png" type="Texture" id=410]
+[ext_resource path="res://UI/pylonanim1/frame_107_delay-0.02s.png" type="Texture" id=411]
+[ext_resource path="res://UI/pylonanim1/frame_108_delay-0.02s.png" type="Texture" id=412]
+[ext_resource path="res://UI/pylonanim1/frame_109_delay-0.02s.png" type="Texture" id=413]
+[ext_resource path="res://UI/pylonanim1/frame_110_delay-0.02s.png" type="Texture" id=414]
+[ext_resource path="res://UI/pylonanim1/frame_111_delay-0.02s.png" type="Texture" id=415]
+[ext_resource path="res://UI/pylonanim1/frame_112_delay-0.02s.png" type="Texture" id=416]
+[ext_resource path="res://UI/pylonanim1/frame_113_delay-0.02s.png" type="Texture" id=417]
+[ext_resource path="res://UI/pylonanim1/frame_130_delay-0.02s.png" type="Texture" id=418]
+[ext_resource path="res://UI/pylonanim1/frame_136_delay-0.02s.png" type="Texture" id=419]
+[ext_resource path="res://UI/pylonanim1/frame_137_delay-0.02s.png" type="Texture" id=420]
+[ext_resource path="res://UI/pylonanim1/frame_138_delay-0.02s.png" type="Texture" id=421]
+[ext_resource path="res://UI/pylonanim1/frame_139_delay-0.02s.png" type="Texture" id=422]
+[ext_resource path="res://UI/pylonanim1/frame_140_delay-0.02s.png" type="Texture" id=423]
+[ext_resource path="res://UI/pylonanim1/frame_141_delay-0.02s.png" type="Texture" id=424]
+[ext_resource path="res://UI/pylonanim1/frame_142_delay-0.02s.png" type="Texture" id=425]
+[ext_resource path="res://UI/pylonanim1/frame_143_delay-0.02s.png" type="Texture" id=426]
+[ext_resource path="res://UI/pylonanim1/frame_146_delay-0.02s.png" type="Texture" id=427]
+[ext_resource path="res://UI/pylonanim1/frame_147_delay-0.02s.png" type="Texture" id=428]
+[ext_resource path="res://UI/pylonanim1/frame_229_delay-0.02s.png" type="Texture" id=429]
 
 [sub_resource type="CapsuleShape2D" id=1]
 height = 23.3333
@@ -46,11 +467,36 @@ animations = [ {
 [sub_resource type="CircleShape2D" id=9]
 radius = 58.3571
 
+[sub_resource type="SpriteFrames" id=14]
+animations = [ {
+"frames": [ ExtResource( 331 ), ExtResource( 332 ), ExtResource( 264 ), ExtResource( 22 ), ExtResource( 23 ), ExtResource( 333 ), ExtResource( 334 ), ExtResource( 249 ), ExtResource( 259 ), ExtResource( 260 ), ExtResource( 265 ), ExtResource( 335 ), ExtResource( 336 ), ExtResource( 367 ), ExtResource( 24 ), ExtResource( 261 ), ExtResource( 262 ), ExtResource( 251 ), ExtResource( 252 ), ExtResource( 25 ), ExtResource( 18 ), ExtResource( 26 ), ExtResource( 61 ), ExtResource( 62 ), ExtResource( 11 ), ExtResource( 63 ), ExtResource( 64 ), ExtResource( 66 ), ExtResource( 266 ), ExtResource( 67 ), ExtResource( 68 ), ExtResource( 69 ), ExtResource( 267 ), ExtResource( 368 ), ExtResource( 369 ), ExtResource( 370 ), ExtResource( 371 ), ExtResource( 385 ), ExtResource( 386 ), ExtResource( 387 ), ExtResource( 356 ), ExtResource( 388 ), ExtResource( 373 ), ExtResource( 375 ), ExtResource( 376 ), ExtResource( 357 ), ExtResource( 358 ), ExtResource( 338 ), ExtResource( 70 ), ExtResource( 71 ), ExtResource( 268 ), ExtResource( 339 ), ExtResource( 361 ), ExtResource( 340 ), ExtResource( 360 ), ExtResource( 383 ), ExtResource( 384 ), ExtResource( 253 ), ExtResource( 254 ), ExtResource( 255 ), ExtResource( 256 ), ExtResource( 257 ), ExtResource( 258 ), ExtResource( 263 ), ExtResource( 250 ), ExtResource( 240 ), ExtResource( 241 ), ExtResource( 242 ), ExtResource( 243 ), ExtResource( 244 ), ExtResource( 245 ), ExtResource( 269 ), ExtResource( 270 ), ExtResource( 271 ), ExtResource( 272 ), ExtResource( 246 ), ExtResource( 247 ), ExtResource( 248 ), ExtResource( 389 ), ExtResource( 346 ), ExtResource( 347 ), ExtResource( 348 ), ExtResource( 390 ), ExtResource( 391 ), ExtResource( 171 ), ExtResource( 172 ), ExtResource( 72 ), ExtResource( 73 ), ExtResource( 392 ), ExtResource( 393 ), ExtResource( 394 ), ExtResource( 395 ), ExtResource( 396 ), ExtResource( 397 ), ExtResource( 398 ), ExtResource( 399 ), ExtResource( 400 ), ExtResource( 401 ), ExtResource( 402 ), ExtResource( 403 ), ExtResource( 404 ), ExtResource( 405 ), ExtResource( 406 ), ExtResource( 407 ), ExtResource( 408 ), ExtResource( 409 ), ExtResource( 410 ), ExtResource( 411 ), ExtResource( 412 ), ExtResource( 413 ), ExtResource( 414 ), ExtResource( 415 ), ExtResource( 416 ), ExtResource( 417 ), ExtResource( 273 ), ExtResource( 173 ), ExtResource( 174 ), ExtResource( 175 ), ExtResource( 176 ), ExtResource( 177 ), ExtResource( 178 ), ExtResource( 179 ), ExtResource( 180 ), ExtResource( 181 ), ExtResource( 182 ), ExtResource( 183 ), ExtResource( 184 ), ExtResource( 185 ), ExtResource( 186 ), ExtResource( 74 ), ExtResource( 418 ), ExtResource( 274 ), ExtResource( 187 ), ExtResource( 188 ), ExtResource( 189 ), ExtResource( 190 ), ExtResource( 419 ), ExtResource( 420 ), ExtResource( 421 ), ExtResource( 422 ), ExtResource( 423 ), ExtResource( 424 ), ExtResource( 425 ), ExtResource( 426 ), ExtResource( 191 ), ExtResource( 192 ), ExtResource( 427 ), ExtResource( 428 ), ExtResource( 193 ), ExtResource( 194 ), ExtResource( 195 ), ExtResource( 196 ), ExtResource( 197 ), ExtResource( 198 ), ExtResource( 199 ), ExtResource( 200 ), ExtResource( 201 ), ExtResource( 275 ), ExtResource( 364 ), ExtResource( 365 ), ExtResource( 366 ), ExtResource( 341 ), ExtResource( 342 ), ExtResource( 343 ), ExtResource( 344 ), ExtResource( 349 ), ExtResource( 350 ), ExtResource( 351 ), ExtResource( 352 ), ExtResource( 353 ), ExtResource( 354 ), ExtResource( 355 ), ExtResource( 381 ), ExtResource( 276 ), ExtResource( 277 ), ExtResource( 278 ), ExtResource( 279 ), ExtResource( 280 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 359 ), ExtResource( 345 ), ExtResource( 362 ), ExtResource( 382 ), ExtResource( 363 ), ExtResource( 379 ), ExtResource( 372 ), ExtResource( 377 ), ExtResource( 202 ), ExtResource( 281 ), ExtResource( 282 ), ExtResource( 283 ), ExtResource( 284 ), ExtResource( 285 ), ExtResource( 378 ), ExtResource( 203 ), ExtResource( 204 ), ExtResource( 205 ), ExtResource( 206 ), ExtResource( 14 ), ExtResource( 380 ), ExtResource( 13 ), ExtResource( 12 ), ExtResource( 337 ), ExtResource( 374 ), ExtResource( 78 ), ExtResource( 79 ), ExtResource( 80 ), ExtResource( 81 ), ExtResource( 286 ), ExtResource( 287 ), ExtResource( 288 ), ExtResource( 289 ), ExtResource( 290 ), ExtResource( 291 ), ExtResource( 60 ), ExtResource( 93 ), ExtResource( 15 ), ExtResource( 55 ), ExtResource( 56 ), ExtResource( 57 ), ExtResource( 58 ), ExtResource( 59 ), ExtResource( 65 ), ExtResource( 94 ), ExtResource( 95 ), ExtResource( 96 ), ExtResource( 97 ), ExtResource( 292 ), ExtResource( 429 ), ExtResource( 98 ), ExtResource( 99 ), ExtResource( 207 ), ExtResource( 208 ), ExtResource( 131 ), ExtResource( 100 ), ExtResource( 111 ), ExtResource( 112 ), ExtResource( 113 ), ExtResource( 75 ), ExtResource( 76 ), ExtResource( 19 ), ExtResource( 20 ), ExtResource( 21 ), ExtResource( 27 ), ExtResource( 77 ), ExtResource( 28 ), ExtResource( 29 ), ExtResource( 30 ), ExtResource( 31 ), ExtResource( 32 ), ExtResource( 33 ), ExtResource( 34 ), ExtResource( 35 ), ExtResource( 36 ), ExtResource( 37 ), ExtResource( 38 ), ExtResource( 39 ), ExtResource( 40 ), ExtResource( 293 ), ExtResource( 294 ), ExtResource( 295 ), ExtResource( 132 ), ExtResource( 133 ), ExtResource( 134 ), ExtResource( 135 ), ExtResource( 136 ), ExtResource( 137 ), ExtResource( 138 ), ExtResource( 139 ), ExtResource( 140 ), ExtResource( 141 ), ExtResource( 142 ), ExtResource( 143 ), ExtResource( 144 ), ExtResource( 145 ), ExtResource( 146 ), ExtResource( 147 ), ExtResource( 148 ), ExtResource( 149 ), ExtResource( 150 ), ExtResource( 151 ), ExtResource( 152 ), ExtResource( 153 ), ExtResource( 154 ), ExtResource( 155 ), ExtResource( 156 ), ExtResource( 157 ), ExtResource( 158 ), ExtResource( 209 ), ExtResource( 210 ), ExtResource( 211 ), ExtResource( 159 ), ExtResource( 160 ), ExtResource( 161 ), ExtResource( 162 ), ExtResource( 103 ), ExtResource( 120 ), ExtResource( 163 ), ExtResource( 164 ), ExtResource( 41 ), ExtResource( 42 ), ExtResource( 43 ), ExtResource( 165 ), ExtResource( 117 ), ExtResource( 121 ), ExtResource( 104 ), ExtResource( 105 ), ExtResource( 212 ), ExtResource( 83 ), ExtResource( 84 ), ExtResource( 85 ), ExtResource( 86 ), ExtResource( 87 ), ExtResource( 88 ), ExtResource( 89 ), ExtResource( 44 ), ExtResource( 45 ), ExtResource( 90 ), ExtResource( 91 ), ExtResource( 92 ), ExtResource( 119 ), ExtResource( 122 ), ExtResource( 123 ), ExtResource( 124 ), ExtResource( 125 ), ExtResource( 126 ), ExtResource( 213 ), ExtResource( 214 ), ExtResource( 215 ), ExtResource( 216 ), ExtResource( 217 ), ExtResource( 218 ), ExtResource( 219 ), ExtResource( 220 ), ExtResource( 221 ), ExtResource( 222 ), ExtResource( 223 ), ExtResource( 224 ), ExtResource( 225 ), ExtResource( 226 ), ExtResource( 227 ), ExtResource( 46 ), ExtResource( 228 ), ExtResource( 229 ), ExtResource( 230 ), ExtResource( 127 ), ExtResource( 128 ), ExtResource( 231 ), ExtResource( 232 ), ExtResource( 233 ), ExtResource( 234 ), ExtResource( 296 ), ExtResource( 297 ), ExtResource( 130 ), ExtResource( 129 ), ExtResource( 118 ), ExtResource( 298 ), ExtResource( 299 ), ExtResource( 300 ), ExtResource( 301 ), ExtResource( 302 ), ExtResource( 303 ), ExtResource( 304 ), ExtResource( 305 ), ExtResource( 306 ), ExtResource( 307 ), ExtResource( 308 ), ExtResource( 309 ), ExtResource( 47 ), ExtResource( 48 ), ExtResource( 49 ), ExtResource( 235 ), ExtResource( 310 ), ExtResource( 311 ), ExtResource( 312 ), ExtResource( 313 ), ExtResource( 314 ), ExtResource( 315 ), ExtResource( 316 ), ExtResource( 317 ), ExtResource( 318 ), ExtResource( 319 ), ExtResource( 320 ), ExtResource( 321 ), ExtResource( 322 ), ExtResource( 236 ), ExtResource( 167 ), ExtResource( 168 ), ExtResource( 169 ), ExtResource( 106 ), ExtResource( 107 ), ExtResource( 108 ), ExtResource( 109 ), ExtResource( 110 ), ExtResource( 114 ), ExtResource( 115 ), ExtResource( 116 ), ExtResource( 101 ), ExtResource( 102 ), ExtResource( 50 ), ExtResource( 323 ), ExtResource( 324 ), ExtResource( 325 ), ExtResource( 326 ), ExtResource( 327 ), ExtResource( 328 ), ExtResource( 329 ), ExtResource( 330 ), ExtResource( 82 ), ExtResource( 170 ), ExtResource( 166 ), ExtResource( 51 ), ExtResource( 52 ), ExtResource( 53 ), ExtResource( 54 ), ExtResource( 237 ), ExtResource( 238 ), ExtResource( 239 ) ],
+"loop": true,
+"name": "default",
+"speed": 35.0
+} ]
+
 [sub_resource type="DynamicFont" id=10]
 size = 10
 font_data = ExtResource( 7 )
 
+[sub_resource type="AtlasTexture" id=11]
+atlas = ExtResource( 10 )
+region = Rect2( 0, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=12]
+atlas = ExtResource( 10 )
+region = Rect2( 0, 17, 16, 16 )
+
+[sub_resource type="SpriteFrames" id=13]
+animations = [ {
+"frames": [ SubResource( 11 ), SubResource( 12 ) ],
+"loop": true,
+"name": "default",
+"speed": 2.0
+} ]
+
 [node name="TeslaCoilSwitch" type="StaticBody2D"]
+pause_mode = 2
 scale = Vector2( 0.6, 0.6 )
 script = ExtResource( 2 )
 
@@ -79,7 +525,7 @@ position = Vector2( 5, -68.3333 )
 rotation = 0.261799
 scale = Vector2( 0.3, 0.3 )
 frames = SubResource( 8 )
-frame = 2
+frame = 3
 playing = true
 
 [node name="Lightning2" type="AnimatedSprite" parent="."]
@@ -87,7 +533,7 @@ position = Vector2( 11.6667, -63.3333 )
 rotation = 0.523599
 scale = Vector2( 0.3, 0.3 )
 frames = SubResource( 8 )
-frame = 1
+frame = 2
 playing = true
 
 [node name="Lightning3" type="AnimatedSprite" parent="."]
@@ -95,6 +541,7 @@ position = Vector2( 16.6667, -56.6666 )
 rotation = 0.785398
 scale = Vector2( 0.3, 0.3 )
 frames = SubResource( 8 )
+frame = 1
 playing = true
 
 [node name="Lightning4" type="AnimatedSprite" parent="."]
@@ -102,6 +549,7 @@ position = Vector2( -20, -56.6667 )
 rotation = -0.785398
 scale = Vector2( 0.3, 0.3 )
 frames = SubResource( 8 )
+frame = 1
 playing = true
 
 [node name="Lightning5" type="AnimatedSprite" parent="."]
@@ -109,6 +557,7 @@ position = Vector2( -15, -63.3333 )
 rotation = -0.523599
 scale = Vector2( 0.3, 0.3 )
 frames = SubResource( 8 )
+frame = 1
 playing = true
 
 [node name="Lightning6" type="AnimatedSprite" parent="."]
@@ -116,7 +565,6 @@ position = Vector2( -8.33333, -66.6667 )
 rotation = -0.261799
 scale = Vector2( 0.3, 0.3 )
 frames = SubResource( 8 )
-frame = 4
 playing = true
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
@@ -137,17 +585,35 @@ shape = SubResource( 9 )
 
 [node name="PopupDialog" type="PopupDialog" parent="."]
 visible = true
+margin_left = 15.0
+margin_right = 15.0
 
 [node name="Sprite" type="Sprite" parent="PopupDialog"]
-position = Vector2( 48.3333, -15 )
+position = Vector2( 0.833343, -7.5 )
+scale = Vector2( 2.78646, 2.47396 )
+z_index = 1
 texture = ExtResource( 6 )
+
+[node name="AnimatedSprite2" type="AnimatedSprite" parent="PopupDialog/Sprite"]
+position = Vector2( -0.8972, -6.4 )
+scale = Vector2( 0.06, 0.06 )
+frames = SubResource( 14 )
+frame = 401
+playing = true
+
+[node name="Panel" type="Panel" parent="PopupDialog/Sprite"]
+self_modulate = Color( 1, 1, 1, 0.639216 )
+margin_left = -25.0
+margin_top = 1.0
+margin_right = 23.0
+margin_bottom = 17.0
 
 [node name="RichTextLabel" type="RichTextLabel" parent="PopupDialog/Sprite"]
 self_modulate = Color( 0.101961, 1, 0, 1 )
-margin_left = -20.0
-margin_top = -23.3333
-margin_right = 57.0
-margin_bottom = -1.33329
+margin_left = -19.3597
+margin_top = -27.8974
+margin_right = 57.6403
+margin_bottom = -5.89743
 rect_scale = Vector2( 0.5, 0.5 )
 custom_fonts/normal_font = SubResource( 10 )
 bbcode_enabled = true
@@ -156,11 +622,11 @@ text = "gate pylon"
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="PopupDialog/Sprite"]
 self_modulate = Color( 0.219608, 1, 0, 1 )
-margin_left = -25.0
-margin_top = -9.66663
-margin_right = 123.0
-margin_bottom = 90.3334
-rect_scale = Vector2( 0.35, 0.35 )
+margin_left = -25.4206
+margin_top = 1.83908
+margin_right = 179.579
+margin_bottom = 101.839
+rect_scale = Vector2( 0.25, 0.25 )
 custom_fonts/normal_font = SubResource( 10 )
 bbcode_enabled = true
 bbcode_text = "[center]        Ensure no personnel are near gate when pylon is activated. Oilco is not responsible for employee harm or fatal injury"
@@ -168,18 +634,36 @@ text = "        Ensure no personnel are near gate when pylon is activated. Oilco
 
 [node name="RichTextLabel3" type="RichTextLabel" parent="PopupDialog/Sprite"]
 self_modulate = Color( 1, 0, 0, 1 )
-margin_left = -25.0
-margin_top = -9.66663
-margin_right = 123.0
-margin_bottom = 90.3334
-rect_scale = Vector2( 0.35, 0.35 )
+margin_left = -34.9907
+margin_top = 1.83908
+margin_right = 165.009
+margin_bottom = 101.839
+rect_scale = Vector2( 0.25, 0.25 )
 custom_fonts/normal_font = SubResource( 10 )
 bbcode_enabled = true
 bbcode_text = "[center]Caution:           "
 text = "Caution:           "
 
+[node name="RichTextLabel4" type="RichTextLabel" parent="PopupDialog/Sprite"]
+self_modulate = Color( 0.054902, 1, 0, 1 )
+margin_left = 2.0
+margin_top = 18.023
+margin_right = 27.0
+margin_bottom = 40.023
+rect_scale = Vector2( 0.45, 0.45 )
+custom_fonts/normal_font = SubResource( 10 )
+text = "OK"
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="PopupDialog/Sprite"]
+self_modulate = Color( 0.0784314, 1, 0, 1 )
+position = Vector2( -3.88785, 21.7012 )
+scale = Vector2( 0.358878, 0.441379 )
+frames = SubResource( 13 )
+frame = 1
+playing = true
+
 [node name="Timer2" type="Timer" parent="."]
-wait_time = 6.0
+wait_time = 5.0
 one_shot = true
 
 [node name="WarningSound" type="AudioStreamPlayer" parent="."]
@@ -187,8 +671,18 @@ stream = ExtResource( 8 )
 volume_db = -5.0
 pitch_scale = 0.2
 
+[node name="Sprite3" type="Sprite" parent="."]
+position = Vector2( -3.33333, -45 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 9 )
+
+[node name="Timer3" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
 [connection signal="area_entered" from="SwitchArea2D" to="." method="_on_SwitchArea2D_area_entered"]
 [connection signal="finished" from="AudioStreamPlayer" to="." method="_on_AudioStreamPlayer_finished"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 [connection signal="area_entered" from="AlertArea2D" to="." method="_on_AlertArea2D_area_entered"]
 [connection signal="timeout" from="Timer2" to="." method="_on_Timer2_timeout"]
+[connection signal="timeout" from="Timer3" to="." method="_on_Timer3_timeout"]

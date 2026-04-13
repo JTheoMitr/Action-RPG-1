@@ -36,6 +36,7 @@ func _ready():
 	worldStats.connect("play_blast_anim", self, "blast_animation")
 	worldStats.connect("pylon_activated", self, "pylon_1_popped")
 	worldStats.connect("light_hit", self, "light_shake")
+	worldStats.connect("medium_hit", self, "medium_shake")
 	stats.connect("level_changed", self, "leveled")
 	#$Timer2.start() // camera timer
 	generate_laser_effect(Vector2(-1248, 459.451538))
@@ -137,12 +138,37 @@ func _on_Timer_timeout():
 func _on_Timer2_timeout():
 	pass
 	#takePhoto()
+	
+func boss_zoom_out() -> void:
+	var original_zoom = camera.zoom
+	print_debug(original_zoom)
+	var zoomed_out = Vector2(2.75, 2.75) #was 1.8, 1.8
+	tween.stop_all()
+	# push out and hold this zoom until boss defeated
+	tween.interpolate_property(
+		camera, "zoom",
+		original_zoom, zoomed_out, 1.0,
+		Tween.TRANS_SINE, Tween.EASE_IN_OUT
+	)
+	
+func boss_defeated_zoom_in() -> void:
+	var original_zoom = camera.zoom
+	var zoom_back_in = Vector2(1, 1) #need to use og zoom level, find in the debug print
+
+	tween.stop_all()
+	# zoom back to OG level
+	tween.interpolate_property(
+		camera, "zoom",
+		camera.zoom, original_zoom, 1.0,
+		Tween.TRANS_SINE, Tween.EASE_IN_OUT
+	)
+		
 
 func trigger_zoom_and_slow(target_global_pos: Vector2) -> void:
 	var original_zoom = camera.zoom
 	var original_offset = camera.offset
 	var original_time_scale = Engine.time_scale
-
+	
 	# Tune these
 	var slow_scale = 0.65 #was 0.35
 	var zoomed_in = Vector2(0.75, 0.75) #was 1.8, 1.8
@@ -155,7 +181,7 @@ func trigger_zoom_and_slow(target_global_pos: Vector2) -> void:
 	var target_offset = to_target * pan_strength
 
 	tween.stop_all()
-
+	print_debug(original_zoom)
 	# First: push in and focus the soldier more aggressively
 	tween.interpolate_property(
 		camera, "zoom",
@@ -196,7 +222,7 @@ func trigger_zoom_and_slow(target_global_pos: Vector2) -> void:
 
 	tween.interpolate_property(
 		camera, "base_offset",
-		camera.base_offset, original_offset, 0.25,
+		camera.base_offset, original_offset, 0.95,
 		Tween.TRANS_SINE, Tween.EASE_IN_OUT
 	)
 
@@ -208,3 +234,7 @@ func pylon_1_popped() -> void:
 	
 func light_shake() -> void:
 	camera.light_hit_shake()
+
+func medium_shake() -> void:
+	camera.medium_hit_shake()
+	

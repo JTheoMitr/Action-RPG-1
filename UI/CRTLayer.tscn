@@ -3,7 +3,7 @@
 [sub_resource type="Shader" id=101]
 code = "shader_type canvas_item;
 
-uniform float scanline_strength = 0.06;
+uniform float scanline_strength = 0.15; // was .06
 uniform float brightness = 1.0;
 uniform float flicker_strength = 0.002;
 uniform float flicker_enabled = 0.0;

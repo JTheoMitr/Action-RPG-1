@@ -6,7 +6,7 @@
 [ext_resource path="res://Music and Sounds/Blink_Reeds Windwood_C.wav" type="AudioStream" id=4]
 
 [sub_resource type="CapsuleShape2D" id=9]
-radius = 26.2193
+radius = 37.0959
 height = 71.5951
 
 [sub_resource type="StyleBoxFlat" id=2]

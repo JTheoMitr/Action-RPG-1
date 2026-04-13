@@ -38,9 +38,9 @@ func random_drop_generator(drop_list):
 
 
 func _on_Hurtbox_area_entered(area):
-	if (area.collision_mask == 8):
-			worldStats.emit_signal("light_hit") #put this if on any enemies/objects for small hit shake
-		
+#	if (area.collision_mask == 8):
+#			worldStats.emit_signal("light_hit") #put this if on any enemies/objects for small hit shake
+#
 	if (bounced):
 		create_barrel_effect()
 		call_deferred("queue_free")

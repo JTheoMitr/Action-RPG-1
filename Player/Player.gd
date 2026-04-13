@@ -179,7 +179,9 @@ func _ready():
 	specialOne.hide()
 	playerInventory.hide()
 	laserSprite.hide()
+	laserSprite.stop()
 	laserTwo.hide()
+	laserTwo.stop()
 	laserZone.disabled = true
 	blastZone.disabled = true
 	
@@ -414,15 +416,43 @@ func move_state(delta):
 				playerSpriteSpecials.hide()
 				aura.hide()
 				aura.stop()
+				
+#		if Input.is_action_just_pressed("aim_down"):
+#			self.MAX_SPEED = 0
+#			crosshair.show()
+#		if Input.is_action_just_pressed("aim_up"):
+#			self.MAX_SPEED = 0
+#			crosshair.show()
+#		if Input.is_action_just_pressed("aim_right"):
+#			self.MAX_SPEED = 0
+#			crosshair.show()
+#		if Input.is_action_just_pressed("aim_left"):
+#			self.MAX_SPEED = 0
+#			crosshair.show()
+#		if Input.is_action_just_released("aim_down") && Input.is_action_just_released("aim_up") && Input.is_action_just_released("aim_left") && Input.is_action_just_released("aim_right"):
+#			self.MAX_SPEED = 90
+#			crosshair.hide()
+#		if Input.is_action_just_released("aim_up"):
+#			veLockity = false
+#			crosshair.hide()
+#		if Input.is_action_just_released("aim_left"):
+#			veLockity = false
+#			crosshair.hide()
+#		if Input.is_action_just_released("aim_right"):
+#			veLockity = false
+#			crosshair.hide()
 			
 			#laser logic for Ray2D
 		if Input.is_action_just_released("laser"):
 			crosshair.hide()
+			veLockity = false
 			if stats.ammo > 0 && laserboi == true:
 				stats.ammo -= 1
 				laserboi = false
 				if !laserTop:
 					laserSprite.show()
+					laserSprite.frame = 0
+					laserSprite.play("default")
 				laserSpeed.start()
 				laserZone.disabled = false
 				worldStats.emit_signal("play_blast_anim")
@@ -433,6 +463,8 @@ func move_state(delta):
 					emit_signal("fired_shot", ray.get_collision_point())
 				if laserTop:
 					laserTwo.show()
+					laserTwo.frame = 0
+					laserTwo.play("default")
 			else:
 				pass
 				
@@ -629,6 +661,7 @@ func _on_Hurtbox_area_entered(area):
 	sprite.hide()
 	playerSpriteHit.show()
 	hitSpriteTimer.start()
+	worldStats.emit_signal("medium_hit")
 
 func _on_Timer_timeout():
 	if horiZone == false:
@@ -636,7 +669,9 @@ func _on_Timer_timeout():
 
 func _on_LaserTimer_timeout():
 	laserSprite.hide()
+	laserSprite.stop()
 	laserTwo.hide()
+	laserTwo.stop()
 	laserZone.disabled = true
 
 

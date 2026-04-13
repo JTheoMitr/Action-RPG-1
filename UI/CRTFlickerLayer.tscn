@@ -1,0 +1,44 @@
+[gd_scene load_steps=3 format=2]
+
+[sub_resource type="Shader" id=103]
+code = "shader_type canvas_item;
+
+uniform float scanline_strength = 0.15; // was .06
+uniform float brightness = 1.0;
+uniform float flicker_strength = 5.02;
+uniform float flicker_enabled = 0.0;
+
+void fragment() {
+	vec2 uv = SCREEN_UV;
+	vec4 col = texture(SCREEN_TEXTURE, uv);
+
+	// Smooth scanlines (0 → 1 range)
+	float scan = (sin(uv.y * 800.0) * 0.5 + 0.5) * scanline_strength;
+
+	// Apply as multiplier instead of subtract
+	col.rgb *= 1.0 - scan;
+
+	// Optional flicker
+	if (flicker_enabled > 0.5) {
+		float flicker = sin(TIME * 6.0) * flicker_strength;
+		col.rgb += vec3(flicker);
+	}
+
+	col.rgb *= brightness;
+	COLOR = vec4(col.rgb, 1.0);
+}"
+
+[sub_resource type="ShaderMaterial" id=102]
+shader = SubResource( 103 )
+shader_param/scanline_strength = 0.08
+shader_param/brightness = 1.0
+shader_param/flicker_strength = 0.008
+shader_param/flicker_enabled = 1.0
+
+[node name="CRTFlickerLayer" type="CanvasLayer"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource( 102 )
+margin_right = 323.0
+margin_bottom = 182.0
+rect_min_size = Vector2( 323, 182 )

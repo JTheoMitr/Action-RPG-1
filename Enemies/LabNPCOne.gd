@@ -39,7 +39,7 @@ var looking = true
 
 func _ready():
 	state = pick_random_state([IDLE, WANDER])
-	worldStats.connect("in_the_tall_grass", self, "cant_find_player")
+	#worldStats.connect("in_the_tall_grass", self, "cant_find_player")
 
 func _physics_process(delta):
 	knockback = knockback.move_toward(Vector2.ZERO, FRICTION * delta)

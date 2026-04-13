@@ -111,6 +111,7 @@ func _process(delta):
 func _reset():
 	
 	popup.hide()
+	panel.hide() #should solve panel lingering after no response
 	inArea = false
 	stats.emit_signal("player_resumed")
 	textNumber = 0

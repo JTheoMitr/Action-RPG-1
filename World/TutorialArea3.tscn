@@ -1,6 +1,6 @@
 [gd_scene load_steps=13 format=2]
 
-[ext_resource path="res://TutorialArea2.gd" type="Script" id=1]
+[ext_resource path="res://World/TutorialArea3.gd" type="Script" id=1]
 [ext_resource path="res://UI/tilemap_rt_btn.png" type="Texture" id=2]
 [ext_resource path="res://fonts/PixelTandysoft-0rJG.ttf" type="DynamicFontData" id=3]
 [ext_resource path="res://Music and Sounds/Blink_Reeds Windwood_C.wav" type="AudioStream" id=4]
@@ -42,6 +42,7 @@ collision_mask = 2
 script = ExtResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 32, 17 )
 shape = SubResource( 1 )
 
 [node name="PopupDialog" type="PopupDialog" parent="."]
@@ -53,9 +54,9 @@ rect_scale = Vector2( 0.8, 0.8 )
 custom_styles/panel = SubResource( 2 )
 
 [node name="RichTextLabel" type="RichTextLabel" parent="PopupDialog"]
-margin_left = 7.5
+margin_left = -6.25
 margin_top = 1.25
-margin_right = 136.5
+margin_right = 122.75
 margin_bottom = 52.25
 rect_scale = Vector2( 0.9, 0.9 )
 custom_fonts/normal_font = SubResource( 8 )
@@ -66,49 +67,48 @@ text = "Laser Eye
 "
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="PopupDialog"]
-margin_left = 1.25
-margin_top = 13.75
-margin_right = 272.25
-margin_bottom = 78.75
-rect_scale = Vector2( 0.4, 0.4 )
+margin_left = 1.0
+margin_top = 13.0
+margin_right = 197.0
+margin_bottom = 78.0
+rect_scale = Vector2( 0.55, 0.55 )
 custom_fonts/normal_font = SubResource( 8 )
 bbcode_enabled = true
-bbcode_text = "[center]	      Ranged Weapon: Tap for quick fire"
-text = "	      Ranged Weapon: Tap for quick fire"
+bbcode_text = "[center]Tap for quick fire"
+text = "Tap for quick fire"
 
 [node name="RichTextLabel3" type="RichTextLabel" parent="PopupDialog"]
-margin_left = 19.0
-margin_top = 16.25
-margin_right = 290.0
-margin_bottom = 62.25
-rect_scale = Vector2( 0.35, 0.35 )
+margin_top = 5.0
+margin_right = 241.0
+margin_bottom = 61.0
+rect_scale = Vector2( 0.55, 0.55 )
 custom_fonts/normal_font = SubResource( 8 )
 bbcode_enabled = true
 bbcode_text = "[center]
-OR: Hold to aim    release to fire
-"
+
+Hold for precision aiming"
 text = "
-OR: Hold to aim    release to fire
-"
+
+Hold for precision aiming"
 
 [node name="Panel" type="Panel" parent="PopupDialog"]
 margin_left = 5.0
-margin_top = 5.0
+margin_top = 6.25
 margin_right = 45.0
-margin_bottom = 45.0
-rect_scale = Vector2( 0.5, 0.5 )
+margin_bottom = 46.25
+rect_scale = Vector2( 0.45, 0.45 )
 custom_styles/panel = SubResource( 11 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="PopupDialog"]
-position = Vector2( 15, 15 )
+position = Vector2( 14, 15.75 )
 frames = SubResource( 7 )
 animation = "Animate"
 frame = 1
 playing = true
 
 [node name="Sprite" type="Sprite" parent="PopupDialog"]
-position = Vector2( 65.5, 23.5 )
-scale = Vector2( 0.05, 0.05 )
+position = Vector2( 96.25, 11.25 )
+scale = Vector2( 0.12, 0.12 )
 texture = ExtResource( 5 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]

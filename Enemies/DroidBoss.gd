@@ -246,6 +246,10 @@ func _on_Hurtbox_area_entered(area):
 	oof.play()
 	playerDetectionZone.scale.x = (playerDetectionZone.scale.x * 3)
 	playerDetectionZone.scale.y = (playerDetectionZone.scale.y * 3)
+	if (area.collision_mask == 8):
+			worldStats.emit_signal("light_hit") #put this if on any enemies/objects for small hit shake
+			
+	
 	
 	# print(atkHitbox.monitorable)
 
@@ -278,6 +282,7 @@ func _on_Stats_no_health():
 
 func _on_Timer_timeout():
 		atkHitbox.monitorable = true
+		hurtbox.monitorable = false
 		sprite.play("attack")
 
 
@@ -294,10 +299,14 @@ func _on_Timer2_timeout():
 		stagSound.play()
 		laserTimer.start(0.0)
 		atkHitbox.monitorable = false
+		hurtbox.monitorable = true
+		hurtbox.monitoring = true
 
 	elif frozen == true:
 		frozen = false
 		atkHitbox.monitorable = true
+		hurtbox.monitorable = false
+		hurtbox.monitoring = false
 		sprite.play("attack")
 		laserTimer.stop()
 	

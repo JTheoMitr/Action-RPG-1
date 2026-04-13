@@ -10,7 +10,7 @@ func _ready():
 	
 func _process(delta):
 	popup.rect_global_position.x = self.position.x
-	popup.rect_global_position.y = self.position.y
+	popup.rect_global_position.y = self.position.y + 2
 
 
 func _on_TutorialArea2_area_entered(area):

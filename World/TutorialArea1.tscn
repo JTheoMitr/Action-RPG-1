@@ -1,13 +1,14 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://TutorialArea1.gd" type="Script" id=1]
 [ext_resource path="res://UI/tilemap_left_btn.png" type="Texture" id=2]
 [ext_resource path="res://fonts/PixelTandysoft-0rJG.ttf" type="DynamicFontData" id=3]
 [ext_resource path="res://UI/deflectnosoundtrimmed.webm" type="VideoStream" id=4]
 [ext_resource path="res://Music and Sounds/Blink_Reeds Windwood_C.wav" type="AudioStream" id=5]
+[ext_resource path="res://UI/tilemap_btm_btn.png" type="Texture" id=6]
 
 [sub_resource type="CircleShape2D" id=1]
-radius = 44.0114
+radius = 35.0
 
 [sub_resource type="StyleBoxFlat" id=2]
 bg_color = Color( 0.184314, 0.152941, 0.152941, 0.682353 )
@@ -36,18 +37,35 @@ animations = [ {
 "speed": 2.0
 } ]
 
+[sub_resource type="AtlasTexture" id=12]
+atlas = ExtResource( 6 )
+region = Rect2( 0, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=13]
+atlas = ExtResource( 6 )
+region = Rect2( 0, 17, 16, 16 )
+
+[sub_resource type="SpriteFrames" id=14]
+animations = [ {
+"frames": [ SubResource( 12 ), SubResource( 13 ) ],
+"loop": true,
+"name": "default",
+"speed": 2.0
+} ]
+
 [node name="TutorialArea1" type="Area2D"]
+pause_mode = 2
 z_index = 3
 collision_layer = 0
 collision_mask = 2
 script = ExtResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 156, 92 )
+position = Vector2( 170, 110 )
 shape = SubResource( 1 )
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 8.0
+wait_time = 3.0
 one_shot = true
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
@@ -77,15 +95,15 @@ bbcode_text = "[center] plasma  blade [/center]"
 text = " plasma  blade "
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="PopupDialog"]
-margin_left = 8.75
-margin_top = 32.5
-margin_right = 121.75
-margin_bottom = 149.5
+margin_left = 4.0
+margin_top = 33.0
+margin_right = 134.0
+margin_bottom = 151.0
 rect_scale = Vector2( 0.65, 0.65 )
 custom_fonts/normal_font = SubResource( 8 )
 bbcode_enabled = true
-bbcode_text = "[center] Melee Weapon - Hold Direction while attacking to deflect enemy projectiles [/center]"
-text = " Melee Weapon - Hold Direction while attacking to deflect enemy projectiles "
+bbcode_text = "[center] Primary Melee Weapon - Hold Direction while attacking to deflect incoming enemy projectiles [/center]"
+text = " Primary Melee Weapon - Hold Direction while attacking to deflect incoming enemy projectiles "
 
 [node name="Panel" type="Panel" parent="PopupDialog"]
 margin_left = 7.5
@@ -99,16 +117,40 @@ custom_styles/panel = SubResource( 11 )
 position = Vector2( 18, 17.5 )
 frames = SubResource( 7 )
 animation = "Animate"
-frame = 1
 playing = true
 
 [node name="VideoPlayer" type="VideoPlayer" parent="PopupDialog"]
 margin_left = 88.75
-margin_top = 15.0
+margin_top = 5.0
 margin_right = 187.75
-margin_bottom = 71.0
+margin_bottom = 61.0
 stream = ExtResource( 4 )
 autoplay = true
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="PopupDialog"]
+margin_left = 82.0
+margin_top = 63.0
+margin_right = 212.0
+margin_bottom = 182.0
+custom_fonts/normal_font = SubResource( 8 )
+bbcode_enabled = true
+bbcode_text = "[center] OK [/center]"
+text = " OK "
+
+[node name="Panel2" type="Panel" parent="PopupDialog"]
+margin_left = 120.0
+margin_top = 63.0
+margin_right = 160.0
+margin_bottom = 103.0
+rect_scale = Vector2( 0.35, 0.35 )
+custom_styles/panel = SubResource( 11 )
+
+[node name="AnimatedSprite2" type="AnimatedSprite" parent="PopupDialog"]
+position = Vector2( 127, 70 )
+scale = Vector2( 0.75, 0.75 )
+frames = SubResource( 14 )
+frame = 1
+playing = true
 
 [connection signal="area_entered" from="." to="." method="_on_TutorialArea1_area_entered"]
 [connection signal="area_exited" from="." to="." method="_on_TutorialArea1_area_exited"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=184 format=2]
+[gd_scene load_steps=198 format=2]
 
 [ext_resource path="res://Player/Player.gd" type="Script" id=1]
 [ext_resource path="res://Effects/PlasmaSwordChargeAttackFX.png" type="Texture" id=2]
@@ -7,7 +7,7 @@
 [ext_resource path="res://Hitboxes and Hurtboxes/Hurtbox.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Shadows/MediumShadow.png" type="Texture" id=6]
 [ext_resource path="res://Music and Sounds/saber_swipe.wav" type="AudioStream" id=7]
-[ext_resource path="res://Effects/eye_laser_1.png" type="Texture" id=8]
+[ext_resource path="res://Effects/laser_anim_new.png" type="Texture" id=8]
 [ext_resource path="res://Player/Player SpecialOne.png" type="Texture" id=9]
 [ext_resource path="res://Player/SpecialAttackArea.gd" type="Script" id=10]
 [ext_resource path="res://Inventory/PlayerInventory.tscn" type="PackedScene" id=11]
@@ -28,9 +28,73 @@
 [sub_resource type="CircleShape2D" id=52]
 radius = 49.6488
 
+[sub_resource type="AtlasTexture" id=191]
+atlas = ExtResource( 8 )
+region = Rect2( 0, 10, 128, 10 )
+
+[sub_resource type="AtlasTexture" id=192]
+atlas = ExtResource( 8 )
+region = Rect2( 0, 20, 128, 10 )
+
+[sub_resource type="AtlasTexture" id=193]
+atlas = ExtResource( 8 )
+region = Rect2( 0, 30, 128, 10 )
+
+[sub_resource type="AtlasTexture" id=194]
+atlas = ExtResource( 8 )
+region = Rect2( 0, 40, 128, 10 )
+
+[sub_resource type="AtlasTexture" id=195]
+atlas = ExtResource( 8 )
+region = Rect2( 0, 50, 128, 10 )
+
+[sub_resource type="AtlasTexture" id=203]
+atlas = ExtResource( 8 )
+region = Rect2( 0, 0, 128, 10 )
+
+[sub_resource type="SpriteFrames" id=196]
+animations = [ {
+"frames": [ SubResource( 191 ), SubResource( 192 ), SubResource( 193 ), SubResource( 194 ), SubResource( 195 ), SubResource( 203 ) ],
+"loop": true,
+"name": "default",
+"speed": 45.0
+} ]
+
 [sub_resource type="CapsuleShape2D" id=53]
 radius = 5.0
 height = 144.0
+
+[sub_resource type="AtlasTexture" id=197]
+atlas = ExtResource( 8 )
+region = Rect2( 0, 10, 128, 10 )
+
+[sub_resource type="AtlasTexture" id=198]
+atlas = ExtResource( 8 )
+region = Rect2( 0, 20, 128, 10 )
+
+[sub_resource type="AtlasTexture" id=199]
+atlas = ExtResource( 8 )
+region = Rect2( 0, 30, 128, 10 )
+
+[sub_resource type="AtlasTexture" id=200]
+atlas = ExtResource( 8 )
+region = Rect2( 0, 40, 128, 10 )
+
+[sub_resource type="AtlasTexture" id=201]
+atlas = ExtResource( 8 )
+region = Rect2( 0, 50, 128, 10 )
+
+[sub_resource type="AtlasTexture" id=204]
+atlas = ExtResource( 8 )
+region = Rect2( 0, 0, 128, 10 )
+
+[sub_resource type="SpriteFrames" id=202]
+animations = [ {
+"frames": [ SubResource( 197 ), SubResource( 198 ), SubResource( 199 ), SubResource( 200 ), SubResource( 201 ), SubResource( 204 ) ],
+"loop": true,
+"name": "default",
+"speed": 45.0
+} ]
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 4.0
@@ -1380,10 +1444,10 @@ disabled = true
 [node name="Pointer" type="Node2D" parent="."]
 position = Vector2( 0, -13.5 )
 
-[node name="Sprite" type="Sprite" parent="Pointer"]
-position = Vector2( 10, 0 )
-scale = Vector2( 0.45, 0.45 )
-texture = ExtResource( 8 )
+[node name="Sprite" type="AnimatedSprite" parent="Pointer"]
+position = Vector2( 45, 0 )
+scale = Vector2( 0.65, 0.35 )
+frames = SubResource( 196 )
 
 [node name="LaserZone" type="Area2D" parent="Pointer/Sprite"]
 position = Vector2( 45, -2 )
@@ -1397,11 +1461,11 @@ position = Vector2( 48, 0 )
 rotation = 1.5708
 shape = SubResource( 53 )
 
-[node name="Sprite2" type="Sprite" parent="Pointer"]
-position = Vector2( 7, -1 )
-scale = Vector2( 0.45, 0.45 )
+[node name="Sprite2" type="AnimatedSprite" parent="Pointer"]
+position = Vector2( 45, -1 )
+scale = Vector2( 0.65, 0.35 )
 z_index = 1
-texture = ExtResource( 8 )
+frames = SubResource( 202 )
 
 [node name="RayCast2D" type="RayCast2D" parent="Pointer"]
 position = Vector2( 0, -2 )
@@ -1411,7 +1475,7 @@ collision_mask = 9
 collide_with_areas = true
 
 [node name="LaserTimer" type="Timer" parent="Pointer"]
-wait_time = 0.1
+wait_time = 0.15
 
 [node name="LaserSpeed" type="Timer" parent="Pointer"]
 wait_time = 0.7
@@ -1576,14 +1640,14 @@ one_shot = true
 position = Vector2( -6.3, -13 )
 scale = Vector2( 0.2, 0.2 )
 frames = SubResource( 99 )
-frame = 2
+frame = 3
 playing = true
 
 [node name="SpinningGearFront2" type="AnimatedSprite" parent="."]
 position = Vector2( 5.5, -13 )
 scale = Vector2( 0.2, 0.2 )
 frames = SubResource( 99 )
-frame = 2
+frame = 3
 playing = true
 
 [node name="RollTimer" type="Timer" parent="."]
