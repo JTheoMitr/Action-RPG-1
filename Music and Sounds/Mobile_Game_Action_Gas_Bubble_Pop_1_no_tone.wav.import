@@ -1,0 +1,23 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Mobile_Game_Action_Gas_Bubble_Pop_1_no_tone.wav-191a23d5765232cd7339c6fda5dd66be.sample"
+
+[deps]
+
+source_file="res://Music and Sounds/Mobile_Game_Action_Gas_Bubble_Pop_1_no_tone.wav"
+dest_files=[ "res://.import/Mobile_Game_Action_Gas_Bubble_Pop_1_no_tone.wav-191a23d5765232cd7339c6fda5dd66be.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

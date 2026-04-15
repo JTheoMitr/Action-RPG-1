@@ -298,7 +298,7 @@ func move_state(delta):
 			gearOneShow = false
 			gearTwoShow = false
 			stats.globalPos = self.global_position
-			print_debug(self.global_position)
+			#print_debug(self.global_position)
 			spinningGearTimer.start()
 			spinningGearTimer2.start()
 			
@@ -388,8 +388,8 @@ func move_state(delta):
 			spinningGear2.position.x -= 1
 			
 			#commenting out the following two lines to block charge attack for demo
-			chargeTimer.start(0.0)
-			chargeReady = false
+			#chargeTimer.start(0.0)
+			#chargeReady = false
 			
 			#commenting out all action released code to block charge attack for demo
 		if Input.is_action_just_released("attack"):

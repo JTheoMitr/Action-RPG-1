@@ -141,7 +141,7 @@ func _on_Stats_no_health():
 		get_parent().call_deferred("add_child", ammo)
 		ammo.global_position = global_position
 	
-
+	worldStats.emit_signal("medium_hit") #put this if on any enemies/objects for small hit shake
 
 
 func _on_Timer_timeout():

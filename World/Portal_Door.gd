@@ -79,6 +79,14 @@ func open_ses():
 		var bloodSpatter2 = BloodSpatter2.instance()
 		bloodSpatter2.position = parent.to_local(skel_pos + Vector2(0, 10))
 		parent.call_deferred("add_child", bloodSpatter2)
+		
+		var bloodSpatter3 = BloodSpatter.instance()
+		bloodSpatter3.position = parent.to_local(skel_pos + Vector2(0, 5))
+		parent.call_deferred("add_child", bloodSpatter3)
+	
+		var bloodSpatter4 = BloodSpatter2.instance()
+		bloodSpatter4.position = parent.to_local(skel_pos + Vector2(1, 3))
+		parent.call_deferred("add_child", bloodSpatter4)
 
 		var lungsToss = LungsToss.instance()
 		lungsToss.position = parent.to_local(skel_pos)

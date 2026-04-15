@@ -1,0 +1,23 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/ESM_Builder_Game_Lock_High_Tech_7_Click_Button_Tab_Select_Particle_Chirp.wav-2ed958083d7c6fece143d623aef5b7e9.sample"
+
+[deps]
+
+source_file="res://Music and Sounds/ESM_Builder_Game_Lock_High_Tech_7_Click_Button_Tab_Select_Particle_Chirp.wav"
+dest_files=[ "res://.import/ESM_Builder_Game_Lock_High_Tech_7_Click_Button_Tab_Select_Particle_Chirp.wav-2ed958083d7c6fece143d623aef5b7e9.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

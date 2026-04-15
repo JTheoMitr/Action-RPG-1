@@ -7,6 +7,7 @@ var bearVapor = BearVaporEffect.instance()
 
 onready var stats = PlayerStats
 onready var save_data = SaveFile.g_data
+onready var bunny_sound = $AudioStreamPlayer
 
 func _ready():
 	if save_data.forest_bunny_saved == true:
@@ -25,6 +26,7 @@ func _process(delta):
 
 func _on_Area2D_area_entered(area):
 	popup.popup()
+	bunny_sound.play()
 	$Timer.start()
 	bunny.hide()
 	shadow.hide()
@@ -48,4 +50,5 @@ func _on_Timer_timeout():
 
 
 func _on_Timer2_timeout():
+	print_debug(save_data)
 	queue_free()

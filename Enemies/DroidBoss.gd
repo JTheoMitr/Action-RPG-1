@@ -411,12 +411,13 @@ func _on_Timer6_timeout():
 
 func _on_Timer7_timeout():
 	playerStats.emit_signal("player_resumed")
-	self.MAX_SPEED = 50
+	self.MAX_SPEED = 70
 	state = CHASE
 	timer.start()
 	$Timer2.start()
 	$CanvasLayer/PopupDialog.hide()
 	panel.hide()
+	worldStats.emit_signal("zoom_out")
 
 
 func _on_HitTimer_timeout():

@@ -3,37 +3,82 @@
 [sub_resource type="Shader" id=101]
 code = "shader_type canvas_item;
 
-uniform float scanline_strength = 0.15; // was .06
+uniform float scanline_strength = 0.05;
+uniform float scanline_density = 700.0;
+
 uniform float brightness = 1.0;
-uniform float flicker_strength = 0.002;
+
+uniform float saturation = 0.92;   // 1.0 = normal
+uniform float warmth = 0.025;      // subtle warm tint, og tint is .015
+
+uniform float glow_strength = 0.14;     // subtle highlight lift, was .04
+uniform float glow_threshold = 0.75;    // only brighter pixels get boosted
+
+uniform float flicker_strength = 0.0015;
 uniform float flicker_enabled = 0.0;
+
+uniform float rgb_shift = 0.0;     // try 0.001 for subtle split, 0.0 = off
+
+
+vec3 apply_saturation(vec3 col, float sat) {
+	float gray = dot(col, vec3(0.299, 0.587, 0.114));
+	return mix(vec3(gray), col, sat);
+}
+
 
 void fragment() {
 	vec2 uv = SCREEN_UV;
-	vec4 col = texture(SCREEN_TEXTURE, uv);
 
-	// Smooth scanlines (0 → 1 range)
-	float scan = (sin(uv.y * 800.0) * 0.5 + 0.5) * scanline_strength;
+	vec3 col;
 
-	// Apply as multiplier instead of subtract
-	col.rgb *= 1.0 - scan;
+	// Optional subtle RGB split
+	if (rgb_shift > 0.0) {
+		float r = texture(SCREEN_TEXTURE, uv + vec2(rgb_shift, 0.0)).r;
+		float g = texture(SCREEN_TEXTURE, uv).g;
+		float b = texture(SCREEN_TEXTURE, uv - vec2(rgb_shift, 0.0)).b;
+		col = vec3(r, g, b);
+	} else {
+		col = texture(SCREEN_TEXTURE, uv).rgb;
+	}
+
+	// Scanlines (multiplicative, softer than subtracting)
+	float scan = (sin(uv.y * scanline_density) * 0.5 + 0.5) * scanline_strength;
+	col *= 1.0 - scan;
+
+	// Saturation / slight desaturation
+	col = apply_saturation(col, saturation);
+
+	// Warm tint
+	col.r += warmth;
+	col.g += warmth * 0.5;
+
+	// Subtle glow lift on brighter pixels
+	float glow = smoothstep(glow_threshold, 1.0, max(max(col.r, col.g), col.b));
+	col += vec3(glow * glow_strength);
 
 	// Optional flicker
 //	if (flicker_enabled > 0.5) {
 //		float flicker = sin(TIME * 60.0) * flicker_strength;
-//		col.rgb += vec3(flicker);
+//		col += vec3(flicker);
 //	}
 
-	col.rgb *= brightness;
-	COLOR = vec4(col.rgb, 1.0);
+	col *= brightness;
+
+	COLOR = vec4(col, 1.0);
 }"
 
 [sub_resource type="ShaderMaterial" id=102]
 shader = SubResource( 101 )
 shader_param/scanline_strength = 0.08
+shader_param/scanline_density = 700.0
 shader_param/brightness = 1.0
+shader_param/saturation = 0.92
+shader_param/warmth = 0.025
+shader_param/glow_strength = 0.14
+shader_param/glow_threshold = 0.75
 shader_param/flicker_strength = 0.008
 shader_param/flicker_enabled = 1.0
+shader_param/rgb_shift = 0.0
 
 [node name="CRTLayer" type="CanvasLayer"]
 

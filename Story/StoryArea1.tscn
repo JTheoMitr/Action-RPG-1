@@ -1,10 +1,11 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Story/StoryArea1.gd" type="Script" id=1]
 [ext_resource path="res://Dialogue Headshots/main_player_face_still.png" type="Texture" id=2]
 [ext_resource path="res://UI/tilemap_btm_btn_still.png" type="Texture" id=3]
 [ext_resource path="res://UI/panel_Intro.png" type="Texture" id=4]
 [ext_resource path="res://fonts/PixelTandysoft-0rJG.ttf" type="DynamicFontData" id=5]
+[ext_resource path="res://Music and Sounds/Mobile_Game_Action_Pixie_Bubble_1.wav" type="AudioStream" id=6]
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 12.1269
@@ -66,8 +67,8 @@ custom_colors/default_color = Color( 1, 1, 1, 1 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_fonts/normal_font = SubResource( 4 )
 bbcode_enabled = true
-bbcode_text = "[center]
-Bunny?! Hang on, I'll get you out of there![/center]"
+bbcode_text = "[center][shake]
+Bunny?![/shake] Hang on, I'll get you out of there![/center]"
 text = "
 Bunny?! Hang on, I'll get you out of there!"
 
@@ -90,6 +91,11 @@ custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_fonts/normal_font = SubResource( 5 )
 text = "Continue
 "
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )
+volume_db = -6.0
+pitch_scale = 0.48
 
 [connection signal="area_entered" from="." to="." method="_on_StoryArea1_area_entered"]
 [connection signal="area_exited" from="." to="." method="_on_StoryArea1_area_exited"]

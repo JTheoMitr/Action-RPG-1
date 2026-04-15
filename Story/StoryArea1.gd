@@ -3,6 +3,7 @@ extends Area2D
 onready var popup = $StoryDialog1
 onready var stats = PlayerStats
 onready var save_data = SaveFile.g_data
+onready var woo_sound = $AudioStreamPlayer
 
 var inArea = false
 
@@ -23,6 +24,7 @@ func _process(delta):
 
 func _on_StoryArea1_area_entered(area):
 	popup.popup()
+	woo_sound.play()
 	inArea = true
 	stats.emit_signal("player_paused")
 

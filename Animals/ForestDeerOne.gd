@@ -6,6 +6,7 @@ onready var worldStats = WorldStats
 var bearVapor = BearVaporEffect.instance()
 onready var save_data = SaveFile.g_data
 onready var stats = PlayerStats
+onready var deer_chatter = $AudioStreamPlayer
 
 func _ready():
 	if save_data.forest_deer_saved == true:
@@ -25,6 +26,7 @@ func _process(delta):
 func _on_Area2D_area_entered(area):
 	popup.popup()
 	$Timer.start()
+	deer_chatter.play()
 	
 	
 

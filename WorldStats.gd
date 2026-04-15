@@ -26,6 +26,8 @@ signal medium_hit
 signal explosion_shake
 signal guard_gone
 
+signal zoom_out
+
 
 	
 

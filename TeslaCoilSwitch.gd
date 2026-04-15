@@ -15,6 +15,7 @@ var worldStats = WorldStats
 var playerStats = PlayerStats
 
 var button_showing = false
+var button_pressed = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -35,11 +36,13 @@ func _process(delta):
 	popup.rect_global_position.x = switchArea.global_position.x + 5
 	spinCross.rotation_degrees += 2
 	if button_showing:
-		if Input.is_action_just_pressed("roll"):
-			popup.hide()
-			$AlertArea2D/CollisionShape2D.disabled = true
-			playerStats.emit_signal("player_resumed")
-			$Timer2.start()
+		if button_pressed == false:
+			if Input.is_action_just_pressed("roll"):
+				popup.hide()
+				$AlertArea2D/CollisionShape2D.disabled = true
+				playerStats.emit_signal("player_resumed")
+				$Timer2.start()
+				button_pressed = true
 			
 
 func _on_SwitchArea2D_area_entered(area):
@@ -81,6 +84,7 @@ func _on_Timer2_timeout():
 	popup.hide()
 	$AlertArea2D/CollisionShape2D.disabled = false
 	button_showing = false
+	button_pressed = false
 	ok_text.hide()
 	button_anim.hide()
 
