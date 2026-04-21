@@ -2,6 +2,7 @@ extends KinematicBody2D
 
 const EnemyDeathEffect = preload("res://Effects/EnemyDeathEffect.tscn")
 const ExpSound = preload("res://Music and Sounds/XpSound.tscn")
+const XpLabel = preload("res://XPLabelPlusTen.tscn")
 
 
 
@@ -96,4 +97,9 @@ func _on_Area2D_area_entered(area):
 	stats.xp += 10
 	var ting = ExpSound.instance()
 	get_parent().add_child(ting)
+	var plus_ten = XpLabel.instance()
+	get_parent().add_child(plus_ten)
+	plus_ten.rect_global_position = self.global_position
 	self.call_deferred("queue_free")	
+	if stats.resetValue == true:
+		stats.resetValue = false
