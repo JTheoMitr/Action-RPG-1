@@ -10,7 +10,7 @@ onready var sprite = $Sprite
 onready var blueFrame = $Sprite2
 
 func _process(delta):
-	$RichTextLabel.text = "" + str(stats.xp) + " / " + str(stats.xpCap)
+	$RichTextLabel.text = "" + str(stats.xp) + "/" + str(stats.xpCap)
 	
 	if Input.is_action_just_pressed("attack"):
 		# bypassing this method to block this special for demo

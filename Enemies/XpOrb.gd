@@ -2,6 +2,7 @@ extends KinematicBody2D
 
 const EnemyDeathEffect = preload("res://Effects/EnemyDeathEffect.tscn")
 const ExpSound = preload("res://Music and Sounds/XpSound.tscn")
+const XpLabel = preload("res://XPLabelPlusOne.tscn")
 
 
 
@@ -30,9 +31,9 @@ onready var softCollision = $SoftCollision
 onready var wanderController = $WanderController
 
 
+
 func _ready():
 	state = pick_random_state([IDLE, WANDER])
-
 
 
 func _physics_process(delta):
@@ -99,6 +100,9 @@ func _on_Area2D_area_entered(area):
 	stats.xp += 1
 	var ting = ExpSound.instance()
 	get_parent().add_child(ting)
+	var plus_one = XpLabel.instance()
+	get_parent().add_child(plus_one)
+	plus_one.rect_global_position = self.global_position
 	self.call_deferred("queue_free")	
 	if stats.resetValue == true:
 		stats.resetValue = false

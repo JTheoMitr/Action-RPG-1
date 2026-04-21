@@ -598,7 +598,7 @@ texture = ExtResource( 6 )
 position = Vector2( -0.8972, -6.4 )
 scale = Vector2( 0.06, 0.06 )
 frames = SubResource( 14 )
-frame = 306
+frame = 108
 playing = true
 
 [node name="Panel" type="Panel" parent="PopupDialog/Sprite"]
@@ -659,10 +659,11 @@ self_modulate = Color( 0.0784314, 1, 0, 1 )
 position = Vector2( -3.88785, 21.7012 )
 scale = Vector2( 0.358878, 0.441379 )
 frames = SubResource( 13 )
+frame = 1
 playing = true
 
 [node name="Timer2" type="Timer" parent="."]
-wait_time = 5.0
+wait_time = 25.0
 one_shot = true
 
 [node name="WarningSound" type="AudioStreamPlayer" parent="."]

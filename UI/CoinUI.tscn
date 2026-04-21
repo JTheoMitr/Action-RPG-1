@@ -5,7 +5,7 @@
 [ext_resource path="res://fonts/PixelTandysoft-0rJG.ttf" type="DynamicFontData" id=3]
 
 [sub_resource type="DynamicFont" id=1]
-size = 12
+size = 10
 font_data = ExtResource( 3 )
 
 [node name="CoinUI" type="Control"]
@@ -22,9 +22,9 @@ texture = ExtResource( 1 )
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
 margin_left = 20.0
-margin_top = 3.0
+margin_top = -1.0
 margin_right = 290.0
 margin_bottom = 50.0
-rect_scale = Vector2( 0.6, 0.6 )
+rect_scale = Vector2( 1.2, 1.2 )
 custom_fonts/normal_font = SubResource( 1 )
-text = "x 0"
+text = "0"

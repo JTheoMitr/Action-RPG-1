@@ -34,7 +34,6 @@ font_data = ExtResource( 5 )
 [node name="StandingGuard1" type="AnimatedSprite"]
 scale = Vector2( 0.3, 0.3 )
 frames = SubResource( 3 )
-frame = 1
 playing = true
 script = ExtResource( 4 )
 

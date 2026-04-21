@@ -17,6 +17,8 @@ var playerStats = PlayerStats
 var button_showing = false
 var button_pressed = false
 
+var activated_spin = false
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$Lightning1.hide()
@@ -34,7 +36,11 @@ func _ready():
 func _process(delta):
 	popup.rect_global_position.y = switchArea.global_position.y
 	popup.rect_global_position.x = switchArea.global_position.x + 5
-	spinCross.rotation_degrees += 2
+	
+	if activated_spin == true:
+		spinCross.rotation_degrees += 3
+	else:
+		spinCross.rotation_degrees += 1
 	if button_showing:
 		if button_pressed == false:
 			if Input.is_action_just_pressed("roll"):
@@ -55,6 +61,7 @@ func _on_SwitchArea2D_area_entered(area):
 	$Lightning5.show()
 	$Lightning6.show()
 	$AudioStreamPlayer.play()
+	activated_spin = true
 	$Timer.start()
 
 

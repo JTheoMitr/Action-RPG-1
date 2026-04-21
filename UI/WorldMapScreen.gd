@@ -183,24 +183,24 @@ func _on_CaveButton_pressed():
 
 
 func _on_MarshButton_pressed():
-	#denied.popup()
-	#timer2.start()
-	#deniedSound.play()
-	SceneTransitionLong.change_scene("res://World3.tscn")
+	denied.popup()
+	timer2.start()
+	deniedSound.play()
+	#SceneTransitionLong.change_scene("res://World3.tscn")
 	#SceneTransitionLong.change_scene("res://World/GoGrab1.tscn")
 	#SceneTransitionLong.change_scene("res://EnemyDisplayDemo.tscn")
 	#SceneTransitionLong.change_scene("res://UI/YetiMushroomIntake.tscn")
-	pressSound.play(0.0)
-	fade_out(mapMusic)
+	#pressSound.play(0.0)
+	#fade_out(mapMusic)
 
 
 func _on_CityButton_pressed():
-	#denied.popup()
-	#timer2.start()
-	#deniedSound.play()
-	SceneTransitionLong.change_scene("res://World4.tscn")
-	pressSound.play(0.0)
-	fade_out(mapMusic)
+	denied.popup()
+	timer2.start()
+	deniedSound.play()
+	#SceneTransitionLong.change_scene("res://World4.tscn")
+	#pressSound.play(0.0)
+	#fade_out(mapMusic)
 
 
 func _on_Timer2_timeout():

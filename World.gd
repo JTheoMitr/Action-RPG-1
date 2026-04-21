@@ -145,7 +145,7 @@ func _on_Timer2_timeout():
 func boss_zoom_out() -> void:
 	var original_zoom = camera.zoom
 
-	var zoomed_out = Vector2(2.1, 2.1) #was 1.8, 1.8
+	var zoomed_out = Vector2(1.6, 1.6) #was 1.8, 1.8
 	tween.stop_all()
 	# push out and hold this zoom until boss defeated
 	tween.interpolate_property(
@@ -175,7 +175,7 @@ func trigger_zoom_and_slow(target_global_pos: Vector2) -> void:
 	var original_time_scale = Engine.time_scale
 	
 	# Tune these
-	var slow_scale = 0.65 #was 0.35
+	var slow_scale = 0.75 #was 0.35
 	var zoomed_in = Vector2(0.75, 0.75) #was 1.8, 1.8
 	var pan_strength = 0.75   # 0.0 = no focus shift, 1.0 = full shift toward target
 
@@ -186,7 +186,8 @@ func trigger_zoom_and_slow(target_global_pos: Vector2) -> void:
 	var target_offset = to_target * pan_strength
 
 	tween.stop_all()
-	print_debug(original_zoom) # it is (1, 1)
+	yield(get_tree().create_timer(0.5), "timeout")
+	# print_debug(original_zoom) # it is (1, 1)
 	# First: push in and focus the soldier more aggressively
 	tween.interpolate_property(
 		camera, "zoom",

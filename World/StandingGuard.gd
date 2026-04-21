@@ -64,6 +64,7 @@ func _process(delta):
 				grunt.play()
 				controlsOn = false
 				stats.emit_signal("player_resumed")
+				_leave_scene()
 
 func _on_Area2D_area_entered(area):
 	controlsOn = true

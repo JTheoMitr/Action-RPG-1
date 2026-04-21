@@ -117,7 +117,6 @@ custom_styles/panel = SubResource( 11 )
 position = Vector2( 18, 17.5 )
 frames = SubResource( 7 )
 animation = "Animate"
-frame = 1
 playing = true
 
 [node name="Panel3" type="Panel" parent="PopupDialog"]
@@ -156,6 +155,7 @@ custom_styles/panel = SubResource( 11 )
 position = Vector2( 127, 70 )
 scale = Vector2( 0.75, 0.75 )
 frames = SubResource( 14 )
+frame = 1
 playing = true
 
 [connection signal="area_entered" from="." to="." method="_on_TutorialArea1_area_entered"]

@@ -22,6 +22,8 @@ const BossKeyOne = preload("res://World/BossKeyOne.tscn")
 
 const BossLaserSound = preload("res://Music and Sounds/BossLaserSound.tscn")
 
+const HitEffect = preload("res://Effects/HitEffect.tscn")
+
 
 export var ACCELERATION = 280
 export var MAX_SPEED = 40
@@ -75,6 +77,7 @@ onready var warningText = $CanvasLayer/PopupDialog/WarningText
 onready var warningSign = $CanvasLayer/PopupDialog/WarningSign
 onready var hitTimer = $HitTimer
 onready var oof = $Oof
+onready var plink_sound = $Plink
 
 var introduced = false
 
@@ -101,7 +104,7 @@ func _physics_process(delta):
 	if frozen == true:
 		velocity = Vector2.ZERO
 		sprite.play("stagger")
-		laserTimerTwo.start(0.0)
+		#laserTimerTwo.start(0.0)
 	
 	match self.stats.health:
 		8:
@@ -425,3 +428,12 @@ func _on_HitTimer_timeout():
 	sprite.modulate.g = 1.00
 	sprite.modulate.b = 1.00
 	sprite.modulate.a = 1.00
+
+
+func _on_Hitbox2_area_entered(area):
+	if frozen == false:
+		plink_sound.play()
+		var hit_spark = HitEffect.instance()
+		hit_spark.global_position = atkHitbox.global_position
+		get_parent().add_child(hit_spark)
+		

@@ -103,7 +103,6 @@ custom_styles/panel = SubResource( 11 )
 position = Vector2( 14, 15.75 )
 frames = SubResource( 7 )
 animation = "Animate"
-frame = 1
 playing = true
 
 [node name="Sprite" type="Sprite" parent="PopupDialog"]

@@ -1509,9 +1509,10 @@ custom_fonts/normal_font = SubResource( 14 )
 text = "Controls"
 
 [node name="ControlsPanel" type="Panel" parent="."]
-visible = false
-margin_right = 200.0
-margin_bottom = 104.0
+margin_left = 5.71429
+margin_top = -11.4286
+margin_right = 205.714
+margin_bottom = 92.5714
 
 [node name="Sprite" type="Sprite" parent="ControlsPanel"]
 position = Vector2( 101.429, 54.2857 )
@@ -1569,7 +1570,7 @@ margin_right = 240.0
 margin_bottom = 57.0
 rect_scale = Vector2( 0.4, 0.4 )
 custom_fonts/normal_font = SubResource( 22 )
-text = "Sword ----"
+text = "Blade ----"
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.3
