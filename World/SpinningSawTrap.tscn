@@ -1,8 +1,9 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://World/Suriken.png" type="Texture" id=1]
 [ext_resource path="res://World/SpinningSawTrap.gd" type="Script" id=2]
 [ext_resource path="res://Music and Sounds/SYNTH HIT 2_1.wav" type="AudioStream" id=3]
+[ext_resource path="res://Hitboxes and Hurtboxes/Hitbox.tscn" type="PackedScene" id=4]
 
 [sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 1 )
@@ -50,6 +51,9 @@ radius = 16.0
 [sub_resource type="CircleShape2D" id=11]
 radius = 39.0128
 
+[sub_resource type="CircleShape2D" id=12]
+radius = 17.0
+
 [node name="SpinningSawTrap" type="Area2D"]
 collision_layer = 0
 collision_mask = 4
@@ -57,7 +61,7 @@ script = ExtResource( 2 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 9 )
-frame = 6
+frame = 7
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -81,7 +85,15 @@ collision_mask = 2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource( 11 )
 
+[node name="Hitbox" parent="." instance=ExtResource( 4 )]
+collision_mask = 8
+
+[node name="CollisionShape2D" parent="Hitbox" index="0"]
+shape = SubResource( 12 )
+
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 [connection signal="timeout" from="Timer2" to="." method="_on_Timer2_timeout"]
 [connection signal="area_entered" from="Area2D" to="." method="_on_Area2D_area_entered"]
 [connection signal="area_exited" from="Area2D" to="." method="_on_Area2D_area_exited"]
+
+[editable path="Hitbox"]

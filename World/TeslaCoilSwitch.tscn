@@ -585,8 +585,10 @@ shape = SubResource( 9 )
 
 [node name="PopupDialog" type="PopupDialog" parent="."]
 visible = true
-margin_left = 15.0
-margin_right = 15.0
+margin_left = 17.0
+margin_top = 3.0
+margin_right = 17.0
+margin_bottom = 3.0
 
 [node name="Sprite" type="Sprite" parent="PopupDialog"]
 position = Vector2( 0.833343, -7.5 )
@@ -598,7 +600,7 @@ texture = ExtResource( 6 )
 position = Vector2( -0.8972, -6.4 )
 scale = Vector2( 0.06, 0.06 )
 frames = SubResource( 14 )
-frame = 108
+frame = 261
 playing = true
 
 [node name="Panel" type="Panel" parent="PopupDialog/Sprite"]

@@ -239,7 +239,7 @@ func random_drop_generator(drop_list):
 func _on_Hurtbox_area_entered(area):
 	stats.health -= area.damage
 	print(stats.health)
-	knockback = area.knockback_vector * 130
+	#knockback = area.knockback_vector * 130
 	hurtbox.create_hit_effect()
 	sprite.modulate.r = 1.00
 	sprite.modulate.g = 0.00
@@ -341,26 +341,26 @@ func _on_Timer3_timeout():
 	get_parent().call_deferred("add_child", laserFour)
 	laserFour.global_position = hitbox.global_position
 	
-	var laserFive = LaserFive.instance()
-	get_parent().call_deferred("add_child", laserFive)
-	laserFive.global_position = hitbox.global_position
-	
-	var laserSix = LaserSix.instance()
-	get_parent().call_deferred("add_child", laserSix)
-	laserSix.global_position = hitbox.global_position
-	
-	var laserSeven = LaserSeven.instance()
-	get_parent().call_deferred("add_child", laserSeven)
-	laserSeven.global_position = hitbox.global_position
-	
-	var laserEight = LaserEight.instance()
-	get_parent().call_deferred("add_child", laserEight)
-	laserEight.global_position = hitbox.global_position
+#	var laserFive = LaserFive.instance()
+#	get_parent().call_deferred("add_child", laserFive)
+#	laserFive.global_position = hitbox.global_position
+#
+#	var laserSix = LaserSix.instance()
+#	get_parent().call_deferred("add_child", laserSix)
+#	laserSix.global_position = hitbox.global_position
+#
+#	var laserSeven = LaserSeven.instance()
+#	get_parent().call_deferred("add_child", laserSeven)
+#	laserSeven.global_position = hitbox.global_position
+#
+#	var laserEight = LaserEight.instance()
+#	get_parent().call_deferred("add_child", laserEight)
+#	laserEight.global_position = hitbox.global_position
 	
 	var laserZagR = LaserZagR.instance()
 	get_parent().call_deferred("add_child", laserZagR)
 	laserZagR.global_position = hitbox.global_position
-	
+
 	var laserZagL = LaserZagL.instance()
 	get_parent().call_deferred("add_child", laserZagL)
 	laserZagL.global_position = hitbox.global_position

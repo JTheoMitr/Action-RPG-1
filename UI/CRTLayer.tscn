@@ -3,8 +3,8 @@
 [sub_resource type="Shader" id=101]
 code = "shader_type canvas_item;
 
-uniform float scanline_strength = 0.05;
-uniform float scanline_density = 700.0;
+uniform float scanline_strength = 0.25; // was 0.05
+uniform float scanline_density = 800.0; // was 700.0
 
 uniform float brightness = 1.0;
 

@@ -8,6 +8,7 @@ onready var collision = $CollisionShape2D
 onready var panel2 = $PopupDialog/Panel2
 onready  var text3 = $PopupDialog/RichTextLabel3
 onready var animSprite = $PopupDialog/AnimatedSprite2
+onready var cloud_ring = $AnimatedSprite
 
 var messageUp = false
 # Called when the node enters the scene tree for the first time.
@@ -33,6 +34,7 @@ func _on_TutorialArea1_area_entered(area):
 	$Timer.start()
 	stats.emit_signal("player_paused")
 	popup.popup()
+	cloud_ring.hide()
 	print_debug(self.position.x)
 	print_debug(self.position.y)
 	print_debug($CollisionShape2D.position.x)

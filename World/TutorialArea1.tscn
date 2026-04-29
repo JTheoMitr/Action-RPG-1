@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=29 format=2]
 
 [ext_resource path="res://TutorialArea1.gd" type="Script" id=1]
 [ext_resource path="res://UI/tilemap_left_btn.png" type="Texture" id=2]
@@ -6,9 +6,10 @@
 [ext_resource path="res://UI/deflectnosoundtrimmed.webm" type="VideoStream" id=4]
 [ext_resource path="res://Music and Sounds/Blink_Reeds Windwood_C.wav" type="AudioStream" id=5]
 [ext_resource path="res://UI/tilemap_btm_btn.png" type="Texture" id=6]
+[ext_resource path="res://Effects/rune_glint.png" type="Texture" id=7]
 
 [sub_resource type="CircleShape2D" id=1]
-radius = 35.0
+radius = 39.0128
 
 [sub_resource type="StyleBoxFlat" id=2]
 bg_color = Color( 0.184314, 0.152941, 0.152941, 0.682353 )
@@ -51,6 +52,54 @@ animations = [ {
 "loop": true,
 "name": "default",
 "speed": 2.0
+} ]
+
+[sub_resource type="AtlasTexture" id=15]
+atlas = ExtResource( 7 )
+region = Rect2( 0, 400, 100, 100 )
+
+[sub_resource type="AtlasTexture" id=16]
+atlas = ExtResource( 7 )
+region = Rect2( 100, 400, 100, 100 )
+
+[sub_resource type="AtlasTexture" id=17]
+atlas = ExtResource( 7 )
+region = Rect2( 200, 400, 100, 100 )
+
+[sub_resource type="AtlasTexture" id=18]
+atlas = ExtResource( 7 )
+region = Rect2( 300, 400, 100, 100 )
+
+[sub_resource type="AtlasTexture" id=19]
+atlas = ExtResource( 7 )
+region = Rect2( 400, 400, 100, 100 )
+
+[sub_resource type="AtlasTexture" id=20]
+atlas = ExtResource( 7 )
+region = Rect2( 500, 400, 100, 100 )
+
+[sub_resource type="AtlasTexture" id=21]
+atlas = ExtResource( 7 )
+region = Rect2( 600, 400, 100, 100 )
+
+[sub_resource type="AtlasTexture" id=22]
+atlas = ExtResource( 7 )
+region = Rect2( 700, 400, 100, 100 )
+
+[sub_resource type="AtlasTexture" id=23]
+atlas = ExtResource( 7 )
+region = Rect2( 800, 400, 100, 100 )
+
+[sub_resource type="AtlasTexture" id=24]
+atlas = ExtResource( 7 )
+region = Rect2( 900, 400, 100, 100 )
+
+[sub_resource type="SpriteFrames" id=25]
+animations = [ {
+"frames": [ SubResource( 15 ), SubResource( 16 ), SubResource( 17 ), SubResource( 18 ), SubResource( 19 ), SubResource( 20 ), SubResource( 21 ), SubResource( 22 ), SubResource( 23 ), SubResource( 24 ), SubResource( 23 ), SubResource( 22 ), SubResource( 21 ), SubResource( 20 ), SubResource( 19 ), SubResource( 18 ), SubResource( 17 ), SubResource( 16 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
 } ]
 
 [node name="TutorialArea1" type="Area2D"]
@@ -156,6 +205,13 @@ position = Vector2( 127, 70 )
 scale = Vector2( 0.75, 0.75 )
 frames = SubResource( 14 )
 frame = 1
+playing = true
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+self_modulate = Color( 1, 1, 1, 0.6 )
+position = Vector2( 168, 109 )
+frames = SubResource( 25 )
+frame = 5
 playing = true
 
 [connection signal="area_entered" from="." to="." method="_on_TutorialArea1_area_entered"]

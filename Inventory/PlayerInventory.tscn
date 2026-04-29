@@ -1474,9 +1474,9 @@ margin_left = 24.2857
 margin_top = 3.00004
 margin_right = 97.2853
 margin_bottom = 20.0001
-rect_scale = Vector2( 0.35, 0.35 )
+rect_scale = Vector2( 0.45, 0.45 )
 custom_fonts/normal_font = SubResource( 15 )
-text = "Level 1"
+text = "Lvl 1"
 
 [node name="ExitButton" type="Button" parent="Control/CenterContainer/HBoxContainer/Panel"]
 margin_left = 65.0

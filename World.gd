@@ -40,6 +40,7 @@ func _ready():
 	worldStats.connect("medium_hit", self, "medium_shake")
 	worldStats.connect("explosion_shake", self, "camera_explosion_shake")
 	worldStats.connect("zoom_out", self, "boss_zoom_out")
+	stats.connect("boss_key_acquired", self, "boss_defeated_zoom_in")
 	stats.connect("level_changed", self, "leveled")
 	#$Timer2.start() // camera timer
 	generate_laser_effect(Vector2(-1248, 459.451538))
@@ -167,6 +168,8 @@ func boss_defeated_zoom_in() -> void:
 		current_zoom, zoom_back_in, 1.0,
 		Tween.TRANS_SINE, Tween.EASE_IN_OUT
 	)
+	tween.start()
+	yield(tween, "tween_all_completed")
 		
 
 func trigger_zoom_and_slow(target_global_pos: Vector2) -> void:

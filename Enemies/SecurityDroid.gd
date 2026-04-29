@@ -45,6 +45,7 @@ onready var timer = $Timer
 onready var timer2 = $Timer2
 onready var timer3 = $Timer3
 onready var smoke = $AnimatedSprite6
+onready var hit_timer = $HitTimer
 
 var laserEngaged = false
 var droneSound = DroneSound.instance()
@@ -59,6 +60,11 @@ func _ready():
 	self.stats.max_health = 5
 	self.stats.health = 5
 	smoke.hide()
+	
+	sprite.modulate.r = 1.00
+	sprite.modulate.g = 1.00
+	sprite.modulate.b = 1.00
+	sprite.modulate.a = 1.00
 	
 	
 
@@ -150,6 +156,11 @@ func _on_Hurtbox_area_entered(area):
 	hurtbox.create_hit_effect()
 	playerDetectionZone.scale.x = (playerDetectionZone.scale.x * 3)
 	playerDetectionZone.scale.y = (playerDetectionZone.scale.y * 3)
+	sprite.modulate.r = 1.00
+	sprite.modulate.g = 0.00
+	sprite.modulate.b = 0.00
+	sprite.modulate.a = 1.00
+	hit_timer.start()
 
 
 func _on_Stats_no_health():
@@ -251,3 +262,10 @@ func _on_Timer3_timeout():
 	var laserFour = LaserEight.instance()
 	get_parent().call_deferred("add_child", laserFour)
 	laserFour.global_position = global_position
+
+
+func _on_HitTimer_timeout():
+	sprite.modulate.r = 1.00
+	sprite.modulate.g = 1.00
+	sprite.modulate.b = 1.00
+	sprite.modulate.a = 1.00

@@ -138,5 +138,7 @@ func _on_Timer2_timeout():
 	if guardAlive == true:
 		if guardDirection == 0:
 			guardOne.global_position.x -= 2
+			skeleton.flip_h = true
 		else:
 			guardOne.global_position.x += 2
+			skeleton.flip_h = false

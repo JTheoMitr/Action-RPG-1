@@ -175,7 +175,7 @@ func _process(_delta):
 	redPop.text = str(stats.redpops)
 	floppy.text = str(stats.bluepops)
 	appleQ.text = str(stats.apples)
-	levelText.text = "Level " + str(stats.level)
+	levelText.text = "Lvl " + str(stats.level)
 	
 	#coloring for buttons
 	if stats.redpops == 0:

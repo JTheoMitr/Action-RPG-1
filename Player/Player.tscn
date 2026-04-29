@@ -1,4 +1,4 @@
-[gd_scene load_steps=198 format=2]
+[gd_scene load_steps=199 format=2]
 
 [ext_resource path="res://Player/Player.gd" type="Script" id=1]
 [ext_resource path="res://Effects/PlasmaSwordChargeAttackFX.png" type="Texture" id=2]
@@ -24,6 +24,7 @@
 [ext_resource path="res://Music and Sounds/thunder1.wav" type="AudioStream" id=22]
 [ext_resource path="res://Effects/rune_glint.png" type="Texture" id=23]
 [ext_resource path="res://Effects/LampGlow1.png" type="Texture" id=24]
+[ext_resource path="res://Effects/HitEffect copy.png" type="Texture" id=25]
 
 [sub_resource type="CircleShape2D" id=52]
 radius = 49.6488
@@ -1445,7 +1446,7 @@ disabled = true
 position = Vector2( 0, -13.5 )
 
 [node name="Sprite" type="AnimatedSprite" parent="Pointer"]
-position = Vector2( 45, 0 )
+position = Vector2( 45, -1 )
 scale = Vector2( 0.65, 0.35 )
 frames = SubResource( 196 )
 
@@ -1461,11 +1462,24 @@ position = Vector2( 48, 0 )
 rotation = 1.5708
 shape = SubResource( 53 )
 
+[node name="Sprite" type="Sprite" parent="Pointer/Sprite"]
+self_modulate = Color( 0.0431373, 1, 0, 1 )
+position = Vector2( -65, 1 )
+scale = Vector2( 0.3, 0.55 )
+z_index = 1
+texture = ExtResource( 25 )
+
 [node name="Sprite2" type="AnimatedSprite" parent="Pointer"]
 position = Vector2( 45, -1 )
 scale = Vector2( 0.65, 0.35 )
 z_index = 1
 frames = SubResource( 202 )
+
+[node name="Sprite" type="Sprite" parent="Pointer/Sprite2"]
+self_modulate = Color( 0.12549, 1, 0, 1 )
+position = Vector2( -65, 1 )
+scale = Vector2( 0.3, 0.55 )
+texture = ExtResource( 25 )
 
 [node name="RayCast2D" type="RayCast2D" parent="Pointer"]
 position = Vector2( 0, -2 )
@@ -1595,7 +1609,7 @@ one_shot = true
 modulate = Color( 0.67451, 0.580392, 0.698039, 0.866667 )
 position = Vector2( 0, -10 )
 frames = SubResource( 85 )
-frame = 3
+frame = 1
 playing = true
 
 [node name="ZoomTimer" type="Timer" parent="."]
@@ -1640,14 +1654,14 @@ one_shot = true
 position = Vector2( -6.3, -13 )
 scale = Vector2( 0.2, 0.2 )
 frames = SubResource( 99 )
-frame = 3
+frame = 2
 playing = true
 
 [node name="SpinningGearFront2" type="AnimatedSprite" parent="."]
 position = Vector2( 5.5, -13 )
 scale = Vector2( 0.2, 0.2 )
 frames = SubResource( 99 )
-frame = 3
+frame = 2
 playing = true
 
 [node name="RollTimer" type="Timer" parent="."]
