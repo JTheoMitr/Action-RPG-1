@@ -214,7 +214,7 @@ func _process(_delta):
 		cellKeyText.text = "- Find 3 Cell Keys (1/3)"
 		
 		#add a get_parent() check here to determine which 'freed' animals we're checking against (forest, cave, etc)
-	if displayMap == $ForestWorldMap:
+	if (get_parent().get_parent().get_parent()).to_string().begins_with("World:"):
 		if save_file.forest_bear_saved && save_file.forest_deer_saved && save_file.forest_bunny_saved: #stats.forest_freed == 3:
 			animalsText.text = "- Free Animals"
 			cellCheckTwo.show()
@@ -293,8 +293,8 @@ func _on_Timer2_timeout():
 
 
 func _on_Syringe_focus_entered():
-	description.bbcode_text = "[right] Can be used for scrap [/right]"
-	selectedItem.text = "Syringe"
+	description.bbcode_text = "[right] +4 Health [/right]"
+	selectedItem.text = "Glizzy"
 	focused()
 
 

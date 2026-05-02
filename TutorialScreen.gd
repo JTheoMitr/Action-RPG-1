@@ -113,7 +113,7 @@ func _on_Button5_focus_entered():
 
 
 func _on_Button7_focus_entered():
-	videoPlayer.stream = load("res://UI/phaseAtk.webm")
+	videoPlayer.stream = load("res://UI/phase_art_clipped_mute.webm")
 	videoPlayer.play()
 	tvFuzz.show()
 	timer.start()

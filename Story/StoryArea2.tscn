@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=2]
+[gd_scene load_steps=43 format=2]
 
 [ext_resource path="res://StoryArea2.gd" type="Script" id=1]
 [ext_resource path="res://Dialogue Headshots/robot_guide_face_still.png" type="Texture" id=2]
@@ -7,11 +7,12 @@
 [ext_resource path="res://UI/tilemap_top_btn_still.png" type="Texture" id=5]
 [ext_resource path="res://UI/skill_panel_1.png" type="Texture" id=6]
 [ext_resource path="res://Player/overcharge_still.png" type="Texture" id=7]
+[ext_resource path="res://Effects/Eletric Aura.png" type="Texture" id=8]
 [ext_resource path="res://UI/Pixel GUI Button Black Wide Unpressed.png" type="Texture" id=9]
 [ext_resource path="res://UI/Pixel GUI Buttons Black Wide Pressed.png" type="Texture" id=10]
 [ext_resource path="res://UI/Pixel GUI Buttons Black Wide Focused.png" type="Texture" id=11]
 [ext_resource path="res://UI/Pixel GUI Buttons pack black platform.png" type="Texture" id=12]
-[ext_resource path="res://Effects/lightning_line1a2.png" type="Texture" id=13]
+[ext_resource path="res://Music and Sounds/electricity_glitch_11.wav" type="AudioStream" id=13]
 [ext_resource path="res://Effects/HitEffect copy.png" type="Texture" id=14]
 [ext_resource path="res://UI/tilemap_btm_btn_still.png" type="Texture" id=15]
 
@@ -47,7 +48,44 @@ font_data = ExtResource( 3 )
 size = 15
 font_data = ExtResource( 3 )
 
+[sub_resource type="AtlasTexture" id=23]
+atlas = ExtResource( 8 )
+region = Rect2( 0, 0, 96, 96 )
+
+[sub_resource type="AtlasTexture" id=24]
+atlas = ExtResource( 8 )
+region = Rect2( 96, 0, 96, 96 )
+
+[sub_resource type="AtlasTexture" id=25]
+atlas = ExtResource( 8 )
+region = Rect2( 192, 0, 96, 96 )
+
+[sub_resource type="AtlasTexture" id=26]
+atlas = ExtResource( 8 )
+region = Rect2( 288, 0, 96, 96 )
+
+[sub_resource type="AtlasTexture" id=27]
+atlas = ExtResource( 8 )
+region = Rect2( 384, 0, 96, 96 )
+
+[sub_resource type="AtlasTexture" id=28]
+atlas = ExtResource( 8 )
+region = Rect2( 0, 96, 96, 96 )
+
+[sub_resource type="AtlasTexture" id=29]
+atlas = ExtResource( 8 )
+region = Rect2( 96, 96, 96, 96 )
+
+[sub_resource type="SpriteFrames" id=30]
+animations = [ {
+"frames": [ SubResource( 23 ), SubResource( 24 ), SubResource( 25 ), SubResource( 26 ), SubResource( 27 ), SubResource( 28 ), SubResource( 29 ) ],
+"loop": true,
+"name": "default",
+"speed": 10.0
+} ]
+
 [sub_resource type="DynamicFont" id=11]
+size = 10
 font_data = ExtResource( 3 )
 
 [sub_resource type="DynamicFont" id=8]
@@ -242,22 +280,27 @@ __meta__ = {
 "_edit_group_": true
 }
 
-[node name="Sprite" type="Sprite" parent="CanvasLayer/Response"]
-position = Vector2( 75, 14 )
-scale = Vector2( 1.5, 1.5 )
-texture = ExtResource( 13 )
+[node name="Sprite" type="AnimatedSprite" parent="CanvasLayer/Response"]
+position = Vector2( 73.797, 12.797 )
+rotation = 1.5708
+scale = Vector2( 0.680078, 2.20535 )
+frames = SubResource( 30 )
+frame = 6
+playing = true
 
 [node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/Response"]
 margin_left = -18.0
-margin_top = 1.0
-margin_right = 175.0
-margin_bottom = 25.0
+margin_top = -1.0
+margin_right = 81.0
+margin_bottom = 27.0
+rect_scale = Vector2( 2, 2 )
 custom_fonts/normal_font = SubResource( 11 )
 bbcode_enabled = true
 bbcode_text = "[center] OVERCHARGE [/center]"
 text = " OVERCHARGE "
 
 [node name="Sprite2" type="Sprite" parent="CanvasLayer/Response"]
+visible = false
 position = Vector2( 140, 11 )
 scale = Vector2( 0.3, 0.3 )
 texture = ExtResource( 14 )
@@ -320,6 +363,10 @@ text = "NO"
 [node name="Timer2" type="Timer" parent="."]
 wait_time = 0.3
 one_shot = true
+
+[node name="ElectricHum" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 13 )
+pitch_scale = 1.15
 
 [connection signal="area_entered" from="." to="." method="_on_StoryArea2_area_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

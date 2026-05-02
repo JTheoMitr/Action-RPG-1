@@ -16,6 +16,7 @@ onready var skillPop = $CanvasLayer/SkillPopUp
 onready var save_file = SaveFile.g_data
 onready var panel = $CanvasLayer/Panel
 onready var finaleTimer = $Timer2
+onready var electric_hum = $ElectricHum
 # onready var chatterSound = ChatterSound.instance()
 
 var inArea = false
@@ -80,6 +81,8 @@ func _process(delta):
 					timer.start()
 				soundCatch = true
 				response.show()
+				#play anouther sound
+				electric_hum.play()
 				popup.hide()
 				responseText.bbcode_text = textOptionsTwo[textNumberTwo]
 				

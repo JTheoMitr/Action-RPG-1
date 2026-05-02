@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://UI/deflectnosoundtrimmed.webm" type="VideoStream" id=1]
 [ext_resource path="res://TutorialScreen.gd" type="Script" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://fonts/PixelTandysoft-0rJG.ttf" type="DynamicFontData" id=5]
 [ext_resource path="res://UI/night_room_apt.jpg" type="Texture" id=6]
 [ext_resource path="res://UI/Radio.tscn" type="PackedScene" id=7]
+[ext_resource path="res://UI/CRTLayer.tscn" type="PackedScene" id=8]
 
 [sub_resource type="DynamicFont" id=2]
 size = 10
@@ -238,6 +239,8 @@ pitch_scale = 0.9
 [node name="Radio" parent="." instance=ExtResource( 7 )]
 position = Vector2( 305, 19 )
 scale = Vector2( 0.7, 0.7 )
+
+[node name="CRTLayer" parent="." instance=ExtResource( 8 )]
 
 [connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
 [connection signal="finished" from="VideoPlayer" to="." method="_on_VideoPlayer_finished"]

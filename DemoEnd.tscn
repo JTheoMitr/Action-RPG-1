@@ -40,10 +40,10 @@ custom_fonts/normal_font = SubResource( 1 )
 bbcode_enabled = true
 bbcode_text = "[center] 
 
- Thank you for playing our demo[/center]"
+ Thank you for playing my demo[/center]"
 text = " 
 
- Thank you for playing our demo"
+ Thank you for playing my demo"
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="ColorRect"]
 margin_right = 318.0
@@ -72,12 +72,12 @@ custom_fonts/normal_font = SubResource( 1 )
 bbcode_enabled = true
 bbcode_text = "[center] 
 
-Please reach out and let us know what you think
+Please reach out and let me know what you think
 
     @vomvisstudio        vomvisstudio@gmail.com[/center]"
 text = " 
 
-Please reach out and let us know what you think
+Please reach out and let me know what you think
 
     @vomvisstudio        vomvisstudio@gmail.com"
 

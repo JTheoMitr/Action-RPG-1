@@ -43,6 +43,7 @@ func _on_Area2D_area_entered(area):
 	var newSkill = NewSkill.instance()
 	get_tree().current_scene.add_child(newSkill)
 	save_file.player_max_health = 5
+	#save here?
 	playerStats.controlsOn = false
 	
 	

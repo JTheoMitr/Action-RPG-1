@@ -1,9 +1,9 @@
-[gd_scene load_steps=52 format=2]
+[gd_scene load_steps=391 format=2]
 
 [ext_resource path="res://UI/MapFinal1.png" type="Texture" id=1]
 [ext_resource path="res://UI/EquipmentIconsC330.png" type="Texture" id=2]
 [ext_resource path="res://UI/EquipmentIconsC358.png" type="Texture" id=3]
-[ext_resource path="res://Dialogue Headshots/main_player_face_still.png" type="Texture" id=4]
+[ext_resource path="res://Player/Main Player One Ranger Helmet GREEN three lighteroutline redbackpack detailed.png" type="Texture" id=4]
 [ext_resource path="res://UI/WorldMapScreen.gd" type="Script" id=5]
 [ext_resource path="res://Effects/MotionWaterMap.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Effects/SmokeStackEffectOne.tscn" type="PackedScene" id=7]
@@ -27,27 +27,382 @@
 [ext_resource path="res://UI/military_incursion_bot_death_anim_red bust.png" type="Texture" id=25]
 [ext_resource path="res://UI/UI_Flat_Button_Medium_Lock_02a1 copy.png" type="Texture" id=26]
 [ext_resource path="res://Music and Sounds/Synth Hit 08.wav" type="AudioStream" id=27]
-[ext_resource path="res://Effects/Free Smoke Fx  Pixel 05 copy.png" type="Texture" id=28]
+[ext_resource path="res://UI/redarrownew1/frame_001_delay-0.02s.png" type="Texture" id=28]
 [ext_resource path="res://UI/CRTLayer.tscn" type="PackedScene" id=29]
+[ext_resource path="res://UI/redarrownew1/frame_002_delay-0.02s.png" type="Texture" id=30]
+[ext_resource path="res://UI/redarrownew1/frame_003_delay-0.02s.png" type="Texture" id=31]
+[ext_resource path="res://UI/redarrownew1/frame_005_delay-0.02s.png" type="Texture" id=32]
+[ext_resource path="res://UI/redarrownew1/frame_007_delay-0.02s.png" type="Texture" id=33]
+[ext_resource path="res://UI/redarrownew1/frame_009_delay-0.02s.png" type="Texture" id=34]
+[ext_resource path="res://UI/redarrownew1/frame_010_delay-0.02s.png" type="Texture" id=35]
+[ext_resource path="res://UI/redarrownew1/frame_011_delay-0.02s.png" type="Texture" id=36]
+[ext_resource path="res://UI/redarrownew1/frame_012_delay-0.02s.png" type="Texture" id=37]
+[ext_resource path="res://UI/redarrownew1/frame_013_delay-0.02s.png" type="Texture" id=38]
+[ext_resource path="res://UI/redarrownew1/frame_014_delay-0.02s.png" type="Texture" id=39]
+[ext_resource path="res://UI/redarrownew1/frame_015_delay-0.02s.png" type="Texture" id=40]
+[ext_resource path="res://UI/redarrownew1/frame_016_delay-0.02s.png" type="Texture" id=41]
+[ext_resource path="res://UI/redarrownew1/frame_017_delay-0.02s.png" type="Texture" id=42]
+[ext_resource path="res://UI/redarrownew1/frame_019_delay-0.02s.png" type="Texture" id=43]
+[ext_resource path="res://UI/redarrownew1/frame_020_delay-0.02s.png" type="Texture" id=44]
+[ext_resource path="res://UI/redarrownew1/frame_021_delay-0.02s.png" type="Texture" id=45]
+[ext_resource path="res://UI/redarrownew1/frame_022_delay-0.02s.png" type="Texture" id=46]
+[ext_resource path="res://UI/redarrownew1/frame_023_delay-0.02s.png" type="Texture" id=47]
+[ext_resource path="res://UI/redarrownew1/frame_024_delay-0.02s.png" type="Texture" id=48]
+[ext_resource path="res://UI/redarrownew1/frame_025_delay-0.02s.png" type="Texture" id=49]
+[ext_resource path="res://UI/redarrownew1/frame_026_delay-0.02s.png" type="Texture" id=50]
+[ext_resource path="res://UI/redarrownew1/frame_027_delay-0.02s.png" type="Texture" id=51]
+[ext_resource path="res://UI/redarrownew1/frame_028_delay-0.02s.png" type="Texture" id=52]
+[ext_resource path="res://UI/redarrownew1/frame_029_delay-0.02s.png" type="Texture" id=53]
+[ext_resource path="res://UI/redarrownew1/frame_030_delay-0.02s.png" type="Texture" id=54]
+[ext_resource path="res://UI/redarrownew1/frame_031_delay-0.02s.png" type="Texture" id=55]
+[ext_resource path="res://UI/redarrownew1/frame_033_delay-0.02s.png" type="Texture" id=56]
+[ext_resource path="res://UI/redarrownew1/frame_035_delay-0.02s.png" type="Texture" id=57]
+[ext_resource path="res://UI/redarrownew1/frame_036_delay-0.02s.png" type="Texture" id=58]
+[ext_resource path="res://UI/redarrownew1/frame_037_delay-0.02s.png" type="Texture" id=59]
+[ext_resource path="res://UI/redarrownew1/frame_038_delay-0.02s.png" type="Texture" id=60]
+[ext_resource path="res://UI/redarrownew1/frame_039_delay-0.02s.png" type="Texture" id=61]
+[ext_resource path="res://UI/redarrownew1/frame_040_delay-0.02s.png" type="Texture" id=62]
+[ext_resource path="res://UI/redarrownew1/frame_041_delay-0.02s.png" type="Texture" id=63]
+[ext_resource path="res://UI/redarrownew1/frame_042_delay-0.02s.png" type="Texture" id=64]
+[ext_resource path="res://UI/redarrownew1/frame_043_delay-0.02s.png" type="Texture" id=65]
+[ext_resource path="res://UI/redarrownew1/frame_044_delay-0.02s.png" type="Texture" id=66]
+[ext_resource path="res://UI/redarrownew1/frame_045_delay-0.02s.png" type="Texture" id=67]
+[ext_resource path="res://UI/redarrownew1/frame_046_delay-0.02s.png" type="Texture" id=68]
+[ext_resource path="res://UI/redarrownew1/frame_047_delay-0.02s.png" type="Texture" id=69]
+[ext_resource path="res://UI/redarrownew1/frame_049_delay-0.02s.png" type="Texture" id=70]
+[ext_resource path="res://UI/redarrownew1/frame_050_delay-0.02s.png" type="Texture" id=71]
+[ext_resource path="res://UI/redarrownew1/frame_051_delay-0.02s.png" type="Texture" id=72]
+[ext_resource path="res://UI/redarrownew1/frame_053_delay-0.02s.png" type="Texture" id=73]
+[ext_resource path="res://UI/redarrownew1/frame_054_delay-0.02s.png" type="Texture" id=74]
+[ext_resource path="res://UI/redarrownew1/frame_056_delay-0.02s.png" type="Texture" id=75]
+[ext_resource path="res://UI/redarrownew1/frame_057_delay-0.02s.png" type="Texture" id=76]
+[ext_resource path="res://UI/redarrownew1/frame_058_delay-0.02s.png" type="Texture" id=77]
+[ext_resource path="res://UI/redarrownew1/frame_059_delay-0.02s.png" type="Texture" id=78]
+[ext_resource path="res://UI/redarrownew1/frame_061_delay-0.02s.png" type="Texture" id=79]
+[ext_resource path="res://UI/redarrownew1/frame_063_delay-0.02s.png" type="Texture" id=80]
+[ext_resource path="res://UI/redarrownew1/frame_064_delay-0.02s.png" type="Texture" id=81]
+[ext_resource path="res://UI/redarrownew1/frame_065_delay-0.02s.png" type="Texture" id=82]
+[ext_resource path="res://UI/redarrownew1/frame_066_delay-0.02s.png" type="Texture" id=83]
+[ext_resource path="res://UI/redarrownew1/frame_069_delay-0.02s.png" type="Texture" id=84]
+[ext_resource path="res://UI/redarrownew1/frame_070_delay-0.02s.png" type="Texture" id=85]
+[ext_resource path="res://UI/redarrownew1/frame_071_delay-0.02s.png" type="Texture" id=86]
+[ext_resource path="res://UI/redarrownew1/frame_073_delay-0.02s.png" type="Texture" id=87]
+[ext_resource path="res://UI/redarrownew1/frame_074_delay-0.02s.png" type="Texture" id=88]
+[ext_resource path="res://UI/redarrownew1/frame_075_delay-0.02s.png" type="Texture" id=89]
+[ext_resource path="res://UI/redarrownew1/frame_076_delay-0.02s.png" type="Texture" id=90]
+[ext_resource path="res://UI/redarrownew1/frame_077_delay-0.02s.png" type="Texture" id=91]
+[ext_resource path="res://UI/redarrownew1/frame_078_delay-0.02s.png" type="Texture" id=92]
+[ext_resource path="res://UI/redarrownew1/frame_079_delay-0.02s.png" type="Texture" id=93]
+[ext_resource path="res://UI/redarrownew1/frame_081_delay-0.02s.png" type="Texture" id=94]
+[ext_resource path="res://UI/redarrownew1/frame_082_delay-0.02s.png" type="Texture" id=95]
+[ext_resource path="res://UI/redarrownew1/frame_083_delay-0.02s.png" type="Texture" id=96]
+[ext_resource path="res://UI/redarrownew1/frame_087_delay-0.02s.png" type="Texture" id=97]
+[ext_resource path="res://UI/redarrownew1/frame_088_delay-0.02s.png" type="Texture" id=98]
+[ext_resource path="res://UI/redarrownew1/frame_089_delay-0.02s.png" type="Texture" id=99]
+[ext_resource path="res://UI/redarrownew1/frame_091_delay-0.02s.png" type="Texture" id=100]
+[ext_resource path="res://UI/redarrownew1/frame_092_delay-0.02s.png" type="Texture" id=101]
+[ext_resource path="res://UI/redarrownew1/frame_093_delay-0.02s.png" type="Texture" id=102]
+[ext_resource path="res://UI/redarrownew1/frame_097_delay-0.02s.png" type="Texture" id=103]
+[ext_resource path="res://UI/redarrownew1/frame_098_delay-0.02s.png" type="Texture" id=104]
+[ext_resource path="res://UI/redarrownew1/frame_099_delay-0.02s.png" type="Texture" id=105]
+[ext_resource path="res://UI/redarrownew1/frame_101_delay-0.02s.png" type="Texture" id=106]
+[ext_resource path="res://UI/redarrownew1/frame_103_delay-0.02s.png" type="Texture" id=107]
+[ext_resource path="res://UI/redarrownew1/frame_104_delay-0.02s.png" type="Texture" id=108]
+[ext_resource path="res://UI/redarrownew1/frame_105_delay-0.02s.png" type="Texture" id=109]
+[ext_resource path="res://UI/redarrownew1/frame_106_delay-0.02s.png" type="Texture" id=110]
+[ext_resource path="res://UI/redarrownew1/frame_107_delay-0.02s.png" type="Texture" id=111]
+[ext_resource path="res://UI/redarrownew1/frame_109_delay-0.02s.png" type="Texture" id=112]
+[ext_resource path="res://UI/redarrownew1/frame_110_delay-0.02s.png" type="Texture" id=113]
+[ext_resource path="res://UI/redarrownew1/frame_112_delay-0.02s.png" type="Texture" id=114]
+[ext_resource path="res://UI/redarrownew1/frame_115_delay-0.02s.png" type="Texture" id=115]
+[ext_resource path="res://UI/redarrownew1/frame_117_delay-0.02s.png" type="Texture" id=116]
+[ext_resource path="res://UI/redarrownew1/frame_116_delay-0.02s.png" type="Texture" id=117]
+[ext_resource path="res://UI/redarrownew1/frame_120_delay-0.02s.png" type="Texture" id=118]
+[ext_resource path="res://UI/redarrownew1/frame_121_delay-0.02s.png" type="Texture" id=119]
+[ext_resource path="res://UI/redarrownew1/frame_122_delay-0.02s.png" type="Texture" id=120]
+[ext_resource path="res://UI/redarrownew1/frame_123_delay-0.02s.png" type="Texture" id=121]
+[ext_resource path="res://UI/redarrownew1/frame_124_delay-0.02s.png" type="Texture" id=122]
+[ext_resource path="res://UI/redarrownew1/frame_125_delay-0.02s.png" type="Texture" id=123]
+[ext_resource path="res://UI/redarrownew1/frame_128_delay-0.02s.png" type="Texture" id=124]
+[ext_resource path="res://UI/redarrownew1/frame_129_delay-0.02s.png" type="Texture" id=125]
+[ext_resource path="res://UI/redarrownew1/frame_132_delay-0.02s.png" type="Texture" id=126]
+[ext_resource path="res://UI/redarrownew1/frame_133_delay-0.02s.png" type="Texture" id=127]
+[ext_resource path="res://UI/redarrownew1/frame_134_delay-0.02s.png" type="Texture" id=128]
+[ext_resource path="res://UI/redarrownew1/frame_135_delay-0.02s.png" type="Texture" id=129]
+[ext_resource path="res://UI/redarrownew1/frame_136_delay-0.02s.png" type="Texture" id=130]
+[ext_resource path="res://UI/redarrownew1/frame_138_delay-0.02s.png" type="Texture" id=131]
+[ext_resource path="res://UI/redarrownew1/frame_139_delay-0.02s.png" type="Texture" id=132]
+[ext_resource path="res://UI/redarrownew1/frame_140_delay-0.02s.png" type="Texture" id=133]
+[ext_resource path="res://UI/redarrownew1/frame_141_delay-0.02s.png" type="Texture" id=134]
+[ext_resource path="res://UI/redarrownew1/frame_142_delay-0.02s.png" type="Texture" id=135]
+[ext_resource path="res://UI/redarrownew1/frame_143_delay-0.02s.png" type="Texture" id=136]
+[ext_resource path="res://UI/redarrownew1/frame_144_delay-0.02s.png" type="Texture" id=137]
+[ext_resource path="res://UI/redarrownew1/frame_146_delay-0.02s.png" type="Texture" id=138]
+[ext_resource path="res://UI/redarrownew1/frame_147_delay-0.02s.png" type="Texture" id=139]
+[ext_resource path="res://UI/redarrownew1/frame_148_delay-0.02s.png" type="Texture" id=140]
+[ext_resource path="res://UI/redarrownew1/frame_149_delay-0.02s.png" type="Texture" id=141]
+[ext_resource path="res://UI/redarrownew1/frame_150_delay-0.02s.png" type="Texture" id=142]
+[ext_resource path="res://UI/redarrownew1/frame_151_delay-0.02s.png" type="Texture" id=143]
+[ext_resource path="res://UI/redarrownew1/frame_152_delay-0.02s.png" type="Texture" id=144]
+[ext_resource path="res://UI/redarrownew1/frame_153_delay-0.02s.png" type="Texture" id=145]
+[ext_resource path="res://UI/redarrownew1/frame_155_delay-0.02s.png" type="Texture" id=146]
+[ext_resource path="res://UI/redarrownew1/frame_156_delay-0.02s.png" type="Texture" id=147]
+[ext_resource path="res://UI/redarrownew1/frame_157_delay-0.02s.png" type="Texture" id=148]
+[ext_resource path="res://UI/redarrownew1/frame_158_delay-0.02s.png" type="Texture" id=149]
+[ext_resource path="res://UI/redarrownew1/frame_159_delay-0.02s.png" type="Texture" id=150]
+[ext_resource path="res://UI/redarrownew1/frame_160_delay-0.02s.png" type="Texture" id=151]
+[ext_resource path="res://UI/redarrownew1/frame_162_delay-0.02s.png" type="Texture" id=152]
+[ext_resource path="res://UI/redarrownew1/frame_163_delay-0.02s.png" type="Texture" id=153]
+[ext_resource path="res://UI/redarrownew1/frame_167_delay-0.02s.png" type="Texture" id=154]
+[ext_resource path="res://UI/redarrownew1/frame_168_delay-0.02s.png" type="Texture" id=155]
+[ext_resource path="res://UI/redarrownew1/frame_169_delay-0.02s.png" type="Texture" id=156]
+[ext_resource path="res://UI/redarrownew1/frame_171_delay-0.02s.png" type="Texture" id=157]
+[ext_resource path="res://UI/redarrownew1/frame_172_delay-0.02s.png" type="Texture" id=158]
+[ext_resource path="res://UI/redarrownew1/frame_174_delay-0.02s.png" type="Texture" id=159]
+[ext_resource path="res://UI/redarrownew1/frame_175_delay-0.02s.png" type="Texture" id=160]
+[ext_resource path="res://UI/redarrownew1/frame_176_delay-0.02s.png" type="Texture" id=161]
+[ext_resource path="res://UI/redarrownew1/frame_178_delay-0.02s.png" type="Texture" id=162]
+[ext_resource path="res://UI/redarrownew1/frame_179_delay-0.02s.png" type="Texture" id=163]
+[ext_resource path="res://UI/redarrownew1/frame_181_delay-0.02s.png" type="Texture" id=164]
+[ext_resource path="res://UI/redarrownew1/frame_183_delay-0.02s.png" type="Texture" id=165]
+[ext_resource path="res://UI/redarrownew1/frame_185_delay-0.02s.png" type="Texture" id=166]
+[ext_resource path="res://UI/redarrownew1/frame_186_delay-0.02s.png" type="Texture" id=167]
+[ext_resource path="res://UI/redarrownew1/frame_187_delay-0.02s.png" type="Texture" id=168]
+[ext_resource path="res://UI/redarrownew1/frame_188_delay-0.02s.png" type="Texture" id=169]
+[ext_resource path="res://UI/redarrownew1/frame_189_delay-0.02s.png" type="Texture" id=170]
+[ext_resource path="res://UI/redarrownew1/frame_190_delay-0.02s.png" type="Texture" id=171]
+[ext_resource path="res://UI/redarrownew1/frame_191_delay-0.02s.png" type="Texture" id=172]
+[ext_resource path="res://UI/redarrownew1/frame_192_delay-0.02s.png" type="Texture" id=173]
+[ext_resource path="res://UI/redarrownew1/frame_195_delay-0.02s.png" type="Texture" id=174]
+[ext_resource path="res://UI/redarrownew1/frame_196_delay-0.02s.png" type="Texture" id=175]
+[ext_resource path="res://UI/redarrownew1/frame_197_delay-0.02s.png" type="Texture" id=176]
+[ext_resource path="res://UI/redarrownew1/frame_200_delay-0.02s.png" type="Texture" id=177]
+[ext_resource path="res://UI/redarrownew1/frame_201_delay-0.02s.png" type="Texture" id=178]
+[ext_resource path="res://UI/redarrownew1/frame_202_delay-0.02s.png" type="Texture" id=179]
+[ext_resource path="res://UI/redarrownew1/frame_203_delay-0.02s.png" type="Texture" id=180]
+[ext_resource path="res://UI/redarrownew1/frame_205_delay-0.02s.png" type="Texture" id=181]
+[ext_resource path="res://UI/redarrownew1/frame_207_delay-0.02s.png" type="Texture" id=182]
+[ext_resource path="res://UI/redarrownew1/frame_208_delay-0.02s.png" type="Texture" id=183]
+[ext_resource path="res://UI/redarrownew1/frame_209_delay-0.02s.png" type="Texture" id=184]
+[ext_resource path="res://UI/redarrownew1/frame_210_delay-0.02s.png" type="Texture" id=185]
+[ext_resource path="res://UI/redarrownew1/frame_212_delay-0.02s.png" type="Texture" id=186]
+[ext_resource path="res://UI/redarrownew1/frame_214_delay-0.02s.png" type="Texture" id=187]
+[ext_resource path="res://UI/redarrownew1/frame_215_delay-0.02s.png" type="Texture" id=188]
+[ext_resource path="res://UI/redarrownew1/frame_216_delay-0.02s.png" type="Texture" id=189]
+[ext_resource path="res://UI/redarrownew1/frame_217_delay-0.02s.png" type="Texture" id=190]
+[ext_resource path="res://UI/redarrownew1/frame_221_delay-0.02s.png" type="Texture" id=191]
+[ext_resource path="res://UI/redarrownew1/frame_222_delay-0.02s.png" type="Texture" id=192]
+[ext_resource path="res://UI/redarrownew1/frame_223_delay-0.02s.png" type="Texture" id=193]
+[ext_resource path="res://UI/redarrownew1/frame_224_delay-0.02s.png" type="Texture" id=194]
+[ext_resource path="res://UI/redarrownew1/frame_225_delay-0.02s.png" type="Texture" id=195]
+[ext_resource path="res://UI/redarrownew1/frame_226_delay-0.02s.png" type="Texture" id=196]
+[ext_resource path="res://UI/redarrownew1/frame_227_delay-0.02s.png" type="Texture" id=197]
+[ext_resource path="res://UI/redarrownew1/frame_229_delay-0.02s.png" type="Texture" id=198]
+[ext_resource path="res://UI/redarrownew1/frame_231_delay-0.02s.png" type="Texture" id=199]
+[ext_resource path="res://UI/redarrownew1/frame_233_delay-0.02s.png" type="Texture" id=200]
+[ext_resource path="res://UI/redarrownew1/frame_234_delay-0.02s.png" type="Texture" id=201]
+[ext_resource path="res://UI/redarrownew1/frame_236_delay-0.02s.png" type="Texture" id=202]
+[ext_resource path="res://UI/redarrownew1/frame_238_delay-0.02s.png" type="Texture" id=203]
+[ext_resource path="res://UI/redarrownew1/frame_239_delay-0.02s.png" type="Texture" id=204]
+[ext_resource path="res://UI/redarrownew1/frame_240_delay-0.02s.png" type="Texture" id=205]
+[ext_resource path="res://UI/redarrownew1/frame_242_delay-0.02s.png" type="Texture" id=206]
+[ext_resource path="res://UI/redarrownew1/frame_244_delay-0.02s.png" type="Texture" id=207]
+[ext_resource path="res://UI/redarrownew1/frame_245_delay-0.02s.png" type="Texture" id=208]
+[ext_resource path="res://UI/redarrownew1/frame_247_delay-0.02s.png" type="Texture" id=209]
+[ext_resource path="res://UI/redarrownew1/frame_249_delay-0.02s.png" type="Texture" id=210]
+[ext_resource path="res://UI/redarrownew1/frame_251_delay-0.02s.png" type="Texture" id=211]
+[ext_resource path="res://UI/redarrownew1/frame_252_delay-0.02s.png" type="Texture" id=212]
+[ext_resource path="res://UI/redarrownew1/frame_253_delay-0.02s.png" type="Texture" id=213]
+[ext_resource path="res://UI/redarrownew1/frame_254_delay-0.02s.png" type="Texture" id=214]
+[ext_resource path="res://UI/redarrownew1/frame_255_delay-0.02s.png" type="Texture" id=215]
+[ext_resource path="res://UI/redarrownew1/frame_257_delay-0.02s.png" type="Texture" id=216]
+[ext_resource path="res://UI/redarrownew1/frame_258_delay-0.02s.png" type="Texture" id=217]
+[ext_resource path="res://UI/redarrownew1/frame_259_delay-0.02s.png" type="Texture" id=218]
+[ext_resource path="res://UI/redarrownew1/frame_260_delay-0.02s.png" type="Texture" id=219]
+[ext_resource path="res://UI/redarrownew1/frame_261_delay-0.02s.png" type="Texture" id=220]
+[ext_resource path="res://UI/redarrownew1/frame_262_delay-0.02s.png" type="Texture" id=221]
+[ext_resource path="res://UI/redarrownew1/frame_263_delay-0.02s.png" type="Texture" id=222]
+[ext_resource path="res://UI/redarrownew1/frame_264_delay-0.02s.png" type="Texture" id=223]
+[ext_resource path="res://UI/redarrownew1/frame_265_delay-0.02s.png" type="Texture" id=224]
+[ext_resource path="res://UI/redarrownew1/frame_267_delay-0.02s.png" type="Texture" id=225]
+[ext_resource path="res://UI/redarrownew1/frame_270_delay-0.02s.png" type="Texture" id=226]
+[ext_resource path="res://UI/redarrownew1/frame_272_delay-0.02s.png" type="Texture" id=227]
+[ext_resource path="res://UI/redarrownew1/frame_273_delay-0.02s.png" type="Texture" id=228]
+[ext_resource path="res://UI/redarrownew1/frame_274_delay-0.02s.png" type="Texture" id=229]
+[ext_resource path="res://UI/redarrownew1/frame_276_delay-0.02s.png" type="Texture" id=230]
+[ext_resource path="res://UI/redarrownew1/frame_277_delay-0.02s.png" type="Texture" id=231]
+[ext_resource path="res://UI/redarrownew1/frame_278_delay-0.02s.png" type="Texture" id=232]
+[ext_resource path="res://UI/redarrownew1/frame_280_delay-0.02s.png" type="Texture" id=233]
+[ext_resource path="res://UI/redarrownew1/frame_281_delay-0.02s.png" type="Texture" id=234]
+[ext_resource path="res://UI/redarrownew1/frame_282_delay-0.02s.png" type="Texture" id=235]
+[ext_resource path="res://UI/redarrownew1/frame_283_delay-0.02s.png" type="Texture" id=236]
+[ext_resource path="res://UI/redarrownew1/frame_284_delay-0.02s.png" type="Texture" id=237]
+[ext_resource path="res://UI/redarrownew1/frame_285_delay-0.02s.png" type="Texture" id=238]
+[ext_resource path="res://UI/redarrownew1/frame_287_delay-0.02s.png" type="Texture" id=239]
+[ext_resource path="res://UI/redarrownew1/frame_288_delay-0.02s.png" type="Texture" id=240]
+[ext_resource path="res://UI/redarrownew1/frame_289_delay-0.02s.png" type="Texture" id=241]
+[ext_resource path="res://UI/redarrownew1/frame_290_delay-0.02s.png" type="Texture" id=242]
+[ext_resource path="res://UI/redarrownew1/frame_291_delay-0.02s.png" type="Texture" id=243]
+[ext_resource path="res://UI/redarrownew1/frame_292_delay-0.02s.png" type="Texture" id=244]
+[ext_resource path="res://UI/redarrownew1/frame_293_delay-0.02s.png" type="Texture" id=245]
+[ext_resource path="res://UI/redarrownew1/frame_294_delay-0.02s.png" type="Texture" id=246]
+[ext_resource path="res://UI/redarrownew1/frame_295_delay-0.02s.png" type="Texture" id=247]
+[ext_resource path="res://UI/redarrownew1/frame_297_delay-0.02s.png" type="Texture" id=248]
+[ext_resource path="res://UI/redarrownew1/frame_298_delay-0.02s.png" type="Texture" id=249]
+[ext_resource path="res://UI/redarrownew1/frame_299_delay-0.02s.png" type="Texture" id=250]
+[ext_resource path="res://UI/redarrownew1/frame_300_delay-0.02s.png" type="Texture" id=251]
+[ext_resource path="res://UI/redarrownew1/frame_301_delay-0.02s.png" type="Texture" id=252]
+[ext_resource path="res://UI/redarrownew1/frame_302_delay-0.02s.png" type="Texture" id=253]
+[ext_resource path="res://UI/redarrownew1/frame_303_delay-0.02s.png" type="Texture" id=254]
+[ext_resource path="res://UI/redarrownew1/frame_304_delay-0.02s.png" type="Texture" id=255]
+[ext_resource path="res://UI/redarrownew1/frame_305_delay-0.02s.png" type="Texture" id=256]
+[ext_resource path="res://UI/redarrownew1/frame_306_delay-0.02s.png" type="Texture" id=257]
+[ext_resource path="res://UI/redarrownew1/frame_307_delay-0.02s.png" type="Texture" id=258]
+[ext_resource path="res://UI/redarrownew1/frame_310_delay-0.02s.png" type="Texture" id=259]
+[ext_resource path="res://UI/redarrownew1/frame_312_delay-0.02s.png" type="Texture" id=260]
+[ext_resource path="res://UI/redarrownew1/frame_315_delay-0.02s.png" type="Texture" id=261]
+[ext_resource path="res://UI/redarrownew1/frame_316_delay-0.02s.png" type="Texture" id=262]
+[ext_resource path="res://UI/redarrownew1/frame_317_delay-0.02s.png" type="Texture" id=263]
+[ext_resource path="res://UI/redarrownew1/frame_318_delay-0.02s.png" type="Texture" id=264]
+[ext_resource path="res://UI/redarrownew1/frame_319_delay-0.02s.png" type="Texture" id=265]
+[ext_resource path="res://UI/redarrownew1/frame_321_delay-0.02s.png" type="Texture" id=266]
+[ext_resource path="res://UI/redarrownew1/frame_322_delay-0.02s.png" type="Texture" id=267]
+[ext_resource path="res://UI/redarrownew1/frame_323_delay-0.02s.png" type="Texture" id=268]
+[ext_resource path="res://UI/redarrownew1/frame_325_delay-0.02s.png" type="Texture" id=269]
+[ext_resource path="res://UI/redarrownew1/frame_326_delay-0.02s.png" type="Texture" id=270]
+[ext_resource path="res://UI/redarrownew1/frame_327_delay-0.02s.png" type="Texture" id=271]
+[ext_resource path="res://UI/redarrownew1/frame_328_delay-0.02s.png" type="Texture" id=272]
+[ext_resource path="res://UI/redarrownew1/frame_329_delay-0.02s.png" type="Texture" id=273]
+[ext_resource path="res://UI/redarrownew1/frame_330_delay-0.02s.png" type="Texture" id=274]
+[ext_resource path="res://UI/redarrownew1/frame_331_delay-0.02s.png" type="Texture" id=275]
+[ext_resource path="res://UI/redarrownew1/frame_332_delay-0.02s.png" type="Texture" id=276]
+[ext_resource path="res://UI/redarrownew1/frame_333_delay-0.02s.png" type="Texture" id=277]
+[ext_resource path="res://UI/redarrownew1/frame_334_delay-0.02s.png" type="Texture" id=278]
+[ext_resource path="res://UI/redarrownew1/frame_335_delay-0.02s.png" type="Texture" id=279]
+[ext_resource path="res://UI/redarrownew1/frame_008_delay-0.02s.png" type="Texture" id=280]
+[ext_resource path="res://UI/redarrownew1/frame_018_delay-0.02s.png" type="Texture" id=281]
+[ext_resource path="res://UI/redarrownew1/frame_060_delay-0.02s.png" type="Texture" id=282]
+[ext_resource path="res://UI/redarrownew1/frame_067_delay-0.02s.png" type="Texture" id=283]
+[ext_resource path="res://UI/redarrownew1/frame_080_delay-0.02s.png" type="Texture" id=284]
+[ext_resource path="res://UI/redarrownew1/frame_086_delay-0.02s.png" type="Texture" id=285]
+[ext_resource path="res://UI/redarrownew1/frame_090_delay-0.02s.png" type="Texture" id=286]
+[ext_resource path="res://UI/redarrownew1/frame_094_delay-0.02s.png" type="Texture" id=287]
+[ext_resource path="res://UI/redarrownew1/frame_100_delay-0.02s.png" type="Texture" id=288]
+[ext_resource path="res://UI/redarrownew1/frame_111_delay-0.02s.png" type="Texture" id=289]
+[ext_resource path="res://UI/redarrownew1/frame_113_delay-0.02s.png" type="Texture" id=290]
+[ext_resource path="res://UI/redarrownew1/frame_145_delay-0.02s.png" type="Texture" id=291]
+[ext_resource path="res://UI/redarrownew1/frame_161_delay-0.02s.png" type="Texture" id=292]
+[ext_resource path="res://UI/redarrownew1/frame_165_delay-0.02s.png" type="Texture" id=293]
+[ext_resource path="res://UI/redarrownew1/frame_170_delay-0.02s.png" type="Texture" id=294]
+[ext_resource path="res://UI/redarrownew1/frame_177_delay-0.02s.png" type="Texture" id=295]
+[ext_resource path="res://UI/redarrownew1/frame_194_delay-0.02s.png" type="Texture" id=296]
+[ext_resource path="res://UI/redarrownew1/frame_219_delay-0.02s.png" type="Texture" id=297]
+[ext_resource path="res://UI/redarrownew1/frame_220_delay-0.02s.png" type="Texture" id=298]
+[ext_resource path="res://UI/redarrownew1/frame_235_delay-0.02s.png" type="Texture" id=299]
+[ext_resource path="res://UI/redarrownew1/frame_241_delay-0.02s.png" type="Texture" id=300]
+[ext_resource path="res://UI/redarrownew1/frame_246_delay-0.02s.png" type="Texture" id=301]
+[ext_resource path="res://UI/redarrownew1/frame_250_delay-0.02s.png" type="Texture" id=302]
+[ext_resource path="res://UI/redarrownew1/frame_269_delay-0.02s.png" type="Texture" id=303]
+[ext_resource path="res://UI/redarrownew1/frame_271_delay-0.02s.png" type="Texture" id=304]
+[ext_resource path="res://UI/redarrownew1/frame_279_delay-0.02s.png" type="Texture" id=305]
+[ext_resource path="res://UI/redarrownew1/frame_314_delay-0.02s.png" type="Texture" id=306]
+[ext_resource path="res://UI/redarrownew1/frame_055_delay-0.02s.png" type="Texture" id=307]
+[ext_resource path="res://UI/redarrownew1/frame_180_delay-0.02s.png" type="Texture" id=308]
+[ext_resource path="res://UI/redarrownew1/frame_182_delay-0.02s.png" type="Texture" id=309]
+[ext_resource path="res://UI/redarrownew1/frame_068_delay-0.02s.png" type="Texture" id=310]
+[ext_resource path="res://UI/redarrownew1/frame_137_delay-0.02s.png" type="Texture" id=311]
+[ext_resource path="res://UI/redarrownew1/frame_164_delay-0.02s.png" type="Texture" id=312]
+[ext_resource path="res://UI/redarrownew1/frame_000_delay-0.02s.png" type="Texture" id=313]
+[ext_resource path="res://UI/redarrownew1/frame_006_delay-0.02s.png" type="Texture" id=314]
+[ext_resource path="res://UI/redarrownew1/frame_048_delay-0.02s.png" type="Texture" id=315]
+[ext_resource path="res://UI/redarrownew1/frame_184_delay-0.02s.png" type="Texture" id=316]
+[ext_resource path="res://UI/redarrownew1/frame_198_delay-0.02s.png" type="Texture" id=317]
+[ext_resource path="res://UI/redarrownew1/frame_199_delay-0.02s.png" type="Texture" id=318]
+[ext_resource path="res://UI/redarrownew1/frame_119_delay-0.02s.png" type="Texture" id=319]
+[ext_resource path="res://UI/redarrownew1/frame_126_delay-0.02s.png" type="Texture" id=320]
+[ext_resource path="res://UI/redarrownew1/frame_131_delay-0.02s.png" type="Texture" id=321]
+[ext_resource path="res://UI/redarrownew1/frame_108_delay-0.02s.png" type="Texture" id=322]
+[ext_resource path="res://UI/redarrownew1/frame_084_delay-0.02s.png" type="Texture" id=323]
+[ext_resource path="res://UI/redarrownew1/frame_096_delay-0.02s.png" type="Texture" id=324]
+[ext_resource path="res://UI/redarrownew1/frame_004_delay-0.02s.png" type="Texture" id=325]
+[ext_resource path="res://UI/redarrownew1/frame_032_delay-0.02s.png" type="Texture" id=326]
+[ext_resource path="res://UI/redarrownew1/frame_034_delay-0.02s.png" type="Texture" id=327]
+[ext_resource path="res://UI/redarrownew1/frame_052_delay-0.02s.png" type="Texture" id=328]
+[ext_resource path="res://UI/redarrownew1/frame_072_delay-0.02s.png" type="Texture" id=329]
+[ext_resource path="res://UI/redarrownew1/frame_085_delay-0.02s.png" type="Texture" id=330]
+[ext_resource path="res://UI/redarrownew1/frame_095_delay-0.02s.png" type="Texture" id=331]
+[ext_resource path="res://UI/redarrownew1/frame_118_delay-0.02s.png" type="Texture" id=332]
+[ext_resource path="res://UI/redarrownew1/frame_127_delay-0.02s.png" type="Texture" id=333]
+[ext_resource path="res://UI/redarrownew1/frame_154_delay-0.02s.png" type="Texture" id=334]
+[ext_resource path="res://UI/redarrownew1/frame_173_delay-0.02s.png" type="Texture" id=335]
+[ext_resource path="res://UI/redarrownew1/frame_193_delay-0.02s.png" type="Texture" id=336]
+[ext_resource path="res://UI/redarrownew1/frame_204_delay-0.02s.png" type="Texture" id=337]
+[ext_resource path="res://UI/redarrownew1/frame_211_delay-0.02s.png" type="Texture" id=338]
+[ext_resource path="res://UI/redarrownew1/frame_230_delay-0.02s.png" type="Texture" id=339]
+[ext_resource path="res://UI/redarrownew1/frame_296_delay-0.02s.png" type="Texture" id=340]
+[ext_resource path="res://UI/redarrownew1/frame_311_delay-0.02s.png" type="Texture" id=341]
+[ext_resource path="res://UI/redarrownew1/frame_206_delay-0.02s.png" type="Texture" id=342]
+[ext_resource path="res://UI/redarrownew1/frame_218_delay-0.02s.png" type="Texture" id=343]
+[ext_resource path="res://UI/redarrownew1/frame_228_delay-0.02s.png" type="Texture" id=344]
+[ext_resource path="res://UI/redarrownew1/frame_232_delay-0.02s.png" type="Texture" id=345]
+[ext_resource path="res://UI/redarrownew1/frame_237_delay-0.02s.png" type="Texture" id=346]
+[ext_resource path="res://UI/redarrownew1/frame_248_delay-0.02s.png" type="Texture" id=347]
+[ext_resource path="res://UI/redarrownew1/frame_256_delay-0.02s.png" type="Texture" id=348]
+[ext_resource path="res://UI/redarrownew1/frame_266_delay-0.02s.png" type="Texture" id=349]
+[ext_resource path="res://UI/redarrownew1/frame_268_delay-0.02s.png" type="Texture" id=350]
+[ext_resource path="res://UI/redarrownew1/frame_286_delay-0.02s.png" type="Texture" id=351]
+[ext_resource path="res://UI/redarrownew1/frame_308_delay-0.02s.png" type="Texture" id=352]
+[ext_resource path="res://UI/redarrownew1/frame_309_delay-0.02s.png" type="Texture" id=353]
+[ext_resource path="res://UI/redarrownew1/frame_313_delay-0.02s.png" type="Texture" id=354]
+[ext_resource path="res://UI/redarrownew1/frame_324_delay-0.02s.png" type="Texture" id=355]
+[ext_resource path="res://UI/redarrownew1/frame_130_delay-0.02s.png" type="Texture" id=356]
+[ext_resource path="res://UI/redarrownew1/frame_275_delay-0.02s.png" type="Texture" id=357]
+[ext_resource path="res://UI/redarrownew1/frame_320_delay-0.02s.png" type="Texture" id=358]
+[ext_resource path="res://UI/redarrownew1/frame_062_delay-0.02s.png" type="Texture" id=359]
+[ext_resource path="res://UI/redarrownew1/frame_114_delay-0.02s.png" type="Texture" id=360]
+[ext_resource path="res://UI/redarrownew1/frame_166_delay-0.02s.png" type="Texture" id=361]
+[ext_resource path="res://UI/redarrownew1/frame_243_delay-0.02s.png" type="Texture" id=362]
+[ext_resource path="res://UI/redarrownew1/frame_213_delay-0.02s.png" type="Texture" id=363]
+[ext_resource path="res://UI/redarrownew1/frame_102_delay-0.02s.png" type="Texture" id=364]
 
-[sub_resource type="AtlasTexture" id=19]
-atlas = ExtResource( 28 )
+[sub_resource type="AtlasTexture" id=30]
+atlas = ExtResource( 4 )
+region = Rect2( 0, 0, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=31]
+atlas = ExtResource( 4 )
+region = Rect2( 64, 0, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=32]
+atlas = ExtResource( 4 )
+region = Rect2( 128, 0, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=33]
+atlas = ExtResource( 4 )
+region = Rect2( 192, 0, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=34]
+atlas = ExtResource( 4 )
+region = Rect2( 256, 0, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=35]
+atlas = ExtResource( 4 )
 region = Rect2( 320, 0, 64, 64 )
 
-[sub_resource type="AtlasTexture" id=20]
-atlas = ExtResource( 28 )
-region = Rect2( 384, 0, 64, 64 )
-
-[sub_resource type="AtlasTexture" id=21]
-atlas = ExtResource( 28 )
-region = Rect2( 448, 0, 64, 64 )
+[sub_resource type="SpriteFrames" id=29]
+animations = [ {
+"frames": [ SubResource( 30 ), SubResource( 31 ), SubResource( 32 ), SubResource( 33 ), SubResource( 34 ), SubResource( 35 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
 
 [sub_resource type="SpriteFrames" id=22]
 animations = [ {
-"frames": [ SubResource( 19 ), SubResource( 20 ), SubResource( 21 ), SubResource( 20 ) ],
+"frames": [ ExtResource( 313 ), ExtResource( 28 ), ExtResource( 30 ), ExtResource( 31 ), ExtResource( 325 ), ExtResource( 32 ), ExtResource( 314 ), ExtResource( 33 ), ExtResource( 280 ), ExtResource( 34 ), ExtResource( 35 ), ExtResource( 36 ), ExtResource( 37 ), ExtResource( 38 ), ExtResource( 39 ), ExtResource( 40 ), ExtResource( 41 ), ExtResource( 42 ), ExtResource( 281 ), ExtResource( 43 ), ExtResource( 44 ), ExtResource( 45 ), ExtResource( 46 ), ExtResource( 47 ), ExtResource( 48 ), ExtResource( 49 ), ExtResource( 50 ), ExtResource( 51 ), ExtResource( 52 ), ExtResource( 53 ), ExtResource( 54 ), ExtResource( 55 ), ExtResource( 326 ), ExtResource( 56 ), ExtResource( 327 ), ExtResource( 57 ), ExtResource( 58 ), ExtResource( 59 ), ExtResource( 60 ), ExtResource( 61 ), ExtResource( 62 ), ExtResource( 63 ), ExtResource( 64 ), ExtResource( 65 ), ExtResource( 66 ), ExtResource( 67 ), ExtResource( 68 ), ExtResource( 69 ), ExtResource( 315 ), ExtResource( 70 ), ExtResource( 71 ), ExtResource( 72 ), ExtResource( 328 ), ExtResource( 73 ), ExtResource( 74 ), ExtResource( 307 ), ExtResource( 75 ), ExtResource( 76 ), ExtResource( 77 ), ExtResource( 78 ), ExtResource( 282 ), ExtResource( 79 ), ExtResource( 359 ), ExtResource( 80 ), ExtResource( 81 ), ExtResource( 82 ), ExtResource( 83 ), ExtResource( 283 ), ExtResource( 310 ), ExtResource( 84 ), ExtResource( 85 ), ExtResource( 86 ), ExtResource( 329 ), ExtResource( 87 ), ExtResource( 88 ), ExtResource( 89 ), ExtResource( 90 ), ExtResource( 91 ), ExtResource( 92 ), ExtResource( 93 ), ExtResource( 284 ), ExtResource( 94 ), ExtResource( 95 ), ExtResource( 96 ), ExtResource( 323 ), ExtResource( 330 ), ExtResource( 285 ), ExtResource( 97 ), ExtResource( 98 ), ExtResource( 99 ), ExtResource( 286 ), ExtResource( 100 ), ExtResource( 101 ), ExtResource( 102 ), ExtResource( 287 ), ExtResource( 331 ), ExtResource( 324 ), ExtResource( 103 ), ExtResource( 104 ), ExtResource( 105 ), ExtResource( 288 ), ExtResource( 106 ), ExtResource( 364 ), ExtResource( 107 ), ExtResource( 108 ), ExtResource( 109 ), ExtResource( 110 ), ExtResource( 111 ), ExtResource( 322 ), ExtResource( 112 ), ExtResource( 113 ), ExtResource( 289 ), ExtResource( 114 ), ExtResource( 290 ), ExtResource( 360 ), ExtResource( 115 ), ExtResource( 117 ), ExtResource( 116 ), ExtResource( 332 ), ExtResource( 319 ), ExtResource( 118 ), ExtResource( 119 ), ExtResource( 120 ), ExtResource( 121 ), ExtResource( 122 ), ExtResource( 123 ), ExtResource( 320 ), ExtResource( 333 ), ExtResource( 124 ), ExtResource( 125 ), ExtResource( 356 ), ExtResource( 321 ), ExtResource( 126 ), ExtResource( 127 ), ExtResource( 128 ), ExtResource( 129 ), ExtResource( 130 ), ExtResource( 311 ), ExtResource( 131 ), ExtResource( 132 ), ExtResource( 133 ), ExtResource( 134 ), ExtResource( 135 ), ExtResource( 136 ), ExtResource( 137 ), ExtResource( 291 ), ExtResource( 138 ), ExtResource( 139 ), ExtResource( 140 ), ExtResource( 141 ), ExtResource( 142 ), ExtResource( 143 ), ExtResource( 144 ), ExtResource( 145 ), ExtResource( 334 ), ExtResource( 146 ), ExtResource( 147 ), ExtResource( 148 ), ExtResource( 149 ), ExtResource( 150 ), ExtResource( 151 ), ExtResource( 292 ), ExtResource( 152 ), ExtResource( 153 ), ExtResource( 312 ), ExtResource( 293 ), ExtResource( 361 ), ExtResource( 154 ), ExtResource( 155 ), ExtResource( 156 ), ExtResource( 294 ), ExtResource( 157 ), ExtResource( 158 ), ExtResource( 335 ), ExtResource( 159 ), ExtResource( 160 ), ExtResource( 161 ), ExtResource( 295 ), ExtResource( 162 ), ExtResource( 163 ), ExtResource( 308 ), ExtResource( 164 ), ExtResource( 309 ), ExtResource( 165 ), ExtResource( 316 ), ExtResource( 166 ), ExtResource( 167 ), ExtResource( 168 ), ExtResource( 169 ), ExtResource( 170 ), ExtResource( 171 ), ExtResource( 172 ), ExtResource( 173 ), ExtResource( 336 ), ExtResource( 296 ), ExtResource( 174 ), ExtResource( 175 ), ExtResource( 176 ), ExtResource( 317 ), ExtResource( 318 ), ExtResource( 177 ), ExtResource( 178 ), ExtResource( 179 ), ExtResource( 180 ), ExtResource( 337 ), ExtResource( 181 ), ExtResource( 342 ), ExtResource( 182 ), ExtResource( 183 ), ExtResource( 184 ), ExtResource( 185 ), ExtResource( 338 ), ExtResource( 186 ), ExtResource( 363 ), ExtResource( 187 ), ExtResource( 188 ), ExtResource( 189 ), ExtResource( 190 ), ExtResource( 343 ), ExtResource( 297 ), ExtResource( 298 ), ExtResource( 191 ), ExtResource( 192 ), ExtResource( 193 ), ExtResource( 194 ), ExtResource( 195 ), ExtResource( 196 ), ExtResource( 197 ), ExtResource( 344 ), ExtResource( 198 ), ExtResource( 339 ), ExtResource( 199 ), ExtResource( 345 ), ExtResource( 200 ), ExtResource( 201 ), ExtResource( 299 ), ExtResource( 202 ), ExtResource( 346 ), ExtResource( 203 ), ExtResource( 204 ), ExtResource( 205 ), ExtResource( 300 ), ExtResource( 206 ), ExtResource( 362 ), ExtResource( 207 ), ExtResource( 208 ), ExtResource( 301 ), ExtResource( 209 ), ExtResource( 347 ), ExtResource( 210 ), ExtResource( 302 ), ExtResource( 211 ), ExtResource( 212 ), ExtResource( 213 ), ExtResource( 214 ), ExtResource( 215 ), ExtResource( 348 ), ExtResource( 216 ), ExtResource( 217 ), ExtResource( 218 ), ExtResource( 219 ), ExtResource( 220 ), ExtResource( 221 ), ExtResource( 222 ), ExtResource( 223 ), ExtResource( 224 ), ExtResource( 349 ), ExtResource( 225 ), ExtResource( 350 ), ExtResource( 303 ), ExtResource( 226 ), ExtResource( 304 ), ExtResource( 227 ), ExtResource( 228 ), ExtResource( 229 ), ExtResource( 357 ), ExtResource( 230 ), ExtResource( 231 ), ExtResource( 232 ), ExtResource( 305 ), ExtResource( 233 ), ExtResource( 234 ), ExtResource( 235 ), ExtResource( 236 ), ExtResource( 237 ), ExtResource( 238 ), ExtResource( 351 ), ExtResource( 239 ), ExtResource( 240 ), ExtResource( 241 ), ExtResource( 242 ), ExtResource( 243 ), ExtResource( 244 ), ExtResource( 245 ), ExtResource( 246 ), ExtResource( 247 ), ExtResource( 340 ), ExtResource( 248 ), ExtResource( 249 ), ExtResource( 250 ), ExtResource( 251 ), ExtResource( 252 ), ExtResource( 253 ), ExtResource( 254 ), ExtResource( 255 ), ExtResource( 256 ), ExtResource( 257 ), ExtResource( 258 ), ExtResource( 352 ), ExtResource( 353 ), ExtResource( 259 ), ExtResource( 341 ), ExtResource( 260 ), ExtResource( 354 ), ExtResource( 306 ), ExtResource( 261 ), ExtResource( 262 ), ExtResource( 263 ), ExtResource( 264 ), ExtResource( 265 ), ExtResource( 358 ), ExtResource( 266 ), ExtResource( 267 ), ExtResource( 268 ), ExtResource( 355 ), ExtResource( 269 ), ExtResource( 270 ), ExtResource( 271 ), ExtResource( 272 ), ExtResource( 273 ), ExtResource( 274 ), ExtResource( 275 ), ExtResource( 276 ), ExtResource( 277 ), ExtResource( 278 ), ExtResource( 279 ) ],
 "loop": true,
 "name": "default",
-"speed": 3.0
+"speed": 35.0
 } ]
 
 [sub_resource type="DynamicFont" id=1]
@@ -141,19 +496,24 @@ position = Vector2( 157, 87 )
 scale = Vector2( 0.4, 0.4 )
 texture = ExtResource( 1 )
 
-[node name="WhiteWolf" type="Sprite" parent="."]
+[node name="WhiteWolf" type="AnimatedSprite" parent="."]
 position = Vector2( 152, 34 )
-scale = Vector2( 0.6, 0.6 )
+scale = Vector2( 0.55, 0.55 )
 z_index = 1
-texture = ExtResource( 4 )
+frames = SubResource( 29 )
+frame = 1
+playing = true
+offset = Vector2( 0, -5 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="WhiteWolf"]
-self_modulate = Color( 0.705882, 0.32549, 0.992157, 0.568627 )
+self_modulate = Color( 0.945098, 0.458824, 0.458824, 1 )
 position = Vector2( 0, -5 )
-scale = Vector2( 0.7, 0.7 )
+rotation = 4.71239
+scale = Vector2( 0.055, 0.055 )
 frames = SubResource( 22 )
-frame = 2
+frame = 150
 playing = true
+offset = Vector2( 0, 430 )
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 margin_right = 40.0
@@ -274,83 +634,79 @@ position = Vector2( 154, 63.1476 )
 rotation = 1.5708
 scale = Vector2( 0.105515, 0.162135 )
 z_index = 1
+frame = 2
 
 [node name="SmokeStackEffectOne2" parent="YSort" instance=ExtResource( 7 )]
 position = Vector2( 160.708, 62.6218 )
 rotation = 1.5708
 scale = Vector2( 0.0979507, 0.0814104 )
 z_index = 1
-frame = 0
 
 [node name="SandDustEffectOne" parent="YSort" instance=ExtResource( 8 )]
 position = Vector2( 118.071, 91 )
 scale = Vector2( 0.275267, 0.321116 )
-frame = 1
 
 [node name="SandDustEffectOne3" parent="YSort" instance=ExtResource( 8 )]
 position = Vector2( 130, 88 )
 scale = Vector2( 0.176063, 0.252752 )
-frame = 1
 
 [node name="SandDustEffectOne4" parent="YSort" instance=ExtResource( 8 )]
 position = Vector2( 129, 100 )
-frame = 0
+frame = 1
 
 [node name="SandDustEffectOne5" parent="YSort" instance=ExtResource( 8 )]
 position = Vector2( 124, 103 )
 scale = Vector2( 0.172111, 0.268454 )
-frame = 3
+frame = 0
 
 [node name="SandDustEffectOne6" parent="YSort" instance=ExtResource( 8 )]
 position = Vector2( 110, 79 )
 scale = Vector2( 0.207118, 0.365592 )
-frame = 3
+frame = 0
 
 [node name="SandDustEffectOne2" parent="YSort" instance=ExtResource( 8 )]
 position = Vector2( 124, 75 )
 scale = Vector2( 0.170904, 0.293682 )
-frame = 0
+frame = 1
 
 [node name="SandDustEffectOne7" parent="YSort" instance=ExtResource( 8 )]
 position = Vector2( 115, 66 )
-frame = 0
+frame = 1
 
 [node name="MapClouds" parent="YSort" instance=ExtResource( 9 )]
 position = Vector2( 173, 150 )
-frame = 1
+frame = 2
 
 [node name="MapClouds2" parent="YSort" instance=ExtResource( 9 )]
 position = Vector2( 171, 151 )
-frame = 2
 
 [node name="MapClouds4" parent="YSort" instance=ExtResource( 9 )]
 position = Vector2( 160, 121 )
-frame = 1
+frame = 2
 
 [node name="MapClouds5" parent="YSort" instance=ExtResource( 9 )]
 position = Vector2( 169, 116 )
-frame = 1
+frame = 2
 
 [node name="MapClouds3" parent="YSort" instance=ExtResource( 9 )]
 position = Vector2( 169, 156 )
-frame = 2
 
 [node name="SnowFallOne" parent="YSort" instance=ExtResource( 13 )]
 position = Vector2( 164.75, 38 )
 scale = Vector2( 0.695, 0.42 )
 z_index = 2
 animation = "New Anim"
-frame = 48
+frame = 74
 
 [node name="SwarmOne" parent="YSort" instance=ExtResource( 15 )]
 position = Vector2( 180, 97 )
 scale = Vector2( 0.38125, 0.38125 )
-frame = 3
+frame = 0
 
 [node name="SwarmOne2" parent="YSort" instance=ExtResource( 15 )]
 position = Vector2( 182, 95 )
 scale = Vector2( 0.38125, 0.38125 )
-frame = 3
+frame = 0
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 106, 158 )
@@ -436,7 +792,7 @@ visible = false
 position = Vector2( 16, 45 )
 scale = Vector2( 0.4, 0.4 )
 frames = SubResource( 7 )
-frame = 2
+frame = 1
 playing = true
 
 [node name="XpText" type="RichTextLabel" parent="."]
@@ -550,7 +906,7 @@ text = "Drill Toppled"
 position = Vector2( 263, 171.5 )
 scale = Vector2( 0.12, 0.12 )
 frames = SubResource( 17 )
-frame = 1
+frame = 6
 playing = true
 
 [node name="DrillFrame" type="Sprite" parent="."]
@@ -603,17 +959,17 @@ pitch_scale = 1.5
 [connection signal="pressed" from="ForestButton" to="." method="_on_ForestButton_pressed"]
 [connection signal="focus_entered" from="CaveButton" to="." method="_on_CaveButton_focus_entered"]
 [connection signal="pressed" from="CaveButton" to="." method="_on_CaveButton_pressed"]
-[connection signal="focus_entered" from="MarshButton" to="." method="_on_CaveButton_focus_entered"]
 [connection signal="focus_entered" from="MarshButton" to="." method="_on_MarshButton_focus_entered"]
+[connection signal="focus_entered" from="MarshButton" to="." method="_on_CaveButton_focus_entered"]
 [connection signal="pressed" from="MarshButton" to="." method="_on_MarshButton_pressed"]
-[connection signal="focus_entered" from="CityButton" to="." method="_on_CityButton_focus_entered"]
 [connection signal="focus_entered" from="CityButton" to="." method="_on_CaveButton_focus_entered"]
+[connection signal="focus_entered" from="CityButton" to="." method="_on_CityButton_focus_entered"]
 [connection signal="pressed" from="CityButton" to="." method="_on_CityButton_pressed"]
 [connection signal="focus_entered" from="DesertButton" to="." method="_on_CaveButton_focus_entered"]
 [connection signal="focus_entered" from="DesertButton" to="." method="_on_DesertButton_focus_entered"]
 [connection signal="pressed" from="DesertButton" to="." method="_on_DesertButton_pressed"]
-[connection signal="focus_entered" from="BlizzardButton" to="." method="_on_BlizzardButton_focus_entered"]
 [connection signal="focus_entered" from="BlizzardButton" to="." method="_on_CaveButton_focus_entered"]
+[connection signal="focus_entered" from="BlizzardButton" to="." method="_on_BlizzardButton_focus_entered"]
 [connection signal="pressed" from="BlizzardButton" to="." method="_on_BlizzardButton_pressed"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 [connection signal="timeout" from="Timer2" to="." method="_on_Timer2_timeout"]

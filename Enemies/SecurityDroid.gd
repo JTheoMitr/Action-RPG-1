@@ -154,6 +154,7 @@ func _on_Hurtbox_area_entered(area):
 	# print(stats.health)
 	knockback = area.knockback_vector * 130
 	hurtbox.create_hit_effect()
+	hurtbox.create_hit_effect() #doubled for emphasis
 	playerDetectionZone.scale.x = (playerDetectionZone.scale.x * 3)
 	playerDetectionZone.scale.y = (playerDetectionZone.scale.y * 3)
 	sprite.modulate.r = 1.00
